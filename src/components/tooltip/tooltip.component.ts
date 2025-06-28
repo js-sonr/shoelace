@@ -8,7 +8,7 @@ import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import NebulaElement from '../../internal/nebula-element.js';
-import SlPopup from '../popup/popup.component.js';
+import NuPopup from '../popup/popup.component.js';
 import styles from './tooltip.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -28,7 +28,7 @@ import type { CSSResultGroup } from 'lit';
  * @event sl-hide - Emitted when the tooltip begins to hide.
  * @event sl-after-hide - Emitted after the tooltip has hidden and all animations are complete.
  *
- * @csspart base - The component's base wrapper, an `<sl-popup>` element.
+ * @csspart base - The component's base wrapper, an `<nu-popup>` element.
  * @csspart base__popup - The popup's exported `popup` part. Use this to target the tooltip's popup container.
  * @csspart base__arrow - The popup's exported `arrow` part. Use this to target the tooltip's arrow.
  * @csspart body - The tooltip's body where its content is rendered.
@@ -40,9 +40,9 @@ import type { CSSResultGroup } from 'lit';
  * @animation tooltip.show - The animation to use when showing the tooltip.
  * @animation tooltip.hide - The animation to use when hiding the tooltip.
  */
-export default class SlTooltip extends NebulaElement {
+export default class NuTooltip extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
-  static dependencies = { 'sl-popup': SlPopup };
+  static dependencies = { 'nu-popup': NuPopup };
 
   private hoverTimeout: number;
   private readonly localize = new LocalizeController(this);
@@ -50,7 +50,7 @@ export default class SlTooltip extends NebulaElement {
 
   @query('slot:not([name])') defaultSlot: HTMLSlotElement;
   @query('.tooltip__body') body: HTMLElement;
-  @query('sl-popup') popup: SlPopup;
+  @query('sl-popup') popup: NuPopup;
 
   /** The tooltip's content. If you need to display HTML, use the `content` slot instead. */
   @property() content = '';
@@ -183,7 +183,7 @@ export default class SlTooltip extends NebulaElement {
       }
 
       // Show
-      this.emit('sl-show');
+      this.emit('nu-show');
       if ('CloseWatcher' in window) {
         this.closeWatcher?.destroy();
         this.closeWatcher = new CloseWatcher();
@@ -201,10 +201,10 @@ export default class SlTooltip extends NebulaElement {
       await animateTo(this.popup.popup, keyframes, options);
       this.popup.reposition();
 
-      this.emit('sl-after-show');
+      this.emit('nu-after-show');
     } else {
       // Hide
-      this.emit('sl-hide');
+      this.emit('nu-hide');
       this.closeWatcher?.destroy();
       document.removeEventListener('keydown', this.handleDocumentKeyDown);
 
@@ -214,7 +214,7 @@ export default class SlTooltip extends NebulaElement {
       this.popup.active = false;
       this.body.hidden = true;
 
-      this.emit('sl-after-hide');
+      this.emit('nu-after-hide');
     }
   }
 
@@ -256,12 +256,12 @@ export default class SlTooltip extends NebulaElement {
   //
   // NOTE: Tooltip is a bit unique in that we're using aria-live instead of aria-labelledby to trick screen readers into
   // announcing the content. It works really well, but it violates an accessibility rule. We're also adding the
-  // aria-describedby attribute to a slot, which is required by <sl-popup> to correctly locate the first assigned
+  // aria-describedby attribute to a slot, which is required by <nu-popup> to correctly locate the first assigned
   // element, otherwise positioning is incorrect.
   //
   render() {
     return html`
-      <sl-popup
+      <nu-popup
         part="base"
         exportparts="
           popup:base__popup,
@@ -287,7 +287,7 @@ export default class SlTooltip extends NebulaElement {
         <div part="body" id="tooltip" class="tooltip__body" role="tooltip" aria-live=${this.open ? 'polite' : 'off'}>
           <slot name="content">${this.content}</slot>
         </div>
-      </sl-popup>
+      </nu-popup>
     `;
   }
 }

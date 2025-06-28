@@ -33,7 +33,7 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty [--min=0] - The minimum allowed size of the primary panel.
  * @cssproperty [--max=100%] - The maximum allowed size of the primary panel.
  */
-export default class SlSplitPanel extends NebulaElement {
+export default class NuSplitPanel extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   private cachedPositionInPixels: number;
@@ -207,7 +207,7 @@ export default class SlSplitPanel extends NebulaElement {
   handlePositionChange() {
     this.cachedPositionInPixels = this.percentageToPixels(this.position);
     this.positionInPixels = this.percentageToPixels(this.position);
-    this.emit('sl-reposition');
+    this.emit('nu-reposition');
   }
 
   @watch('positionInPixels')
@@ -280,6 +280,6 @@ export default class SlSplitPanel extends NebulaElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-split-panel': SlSplitPanel;
+    'sl-split-panel': NuSplitPanel;
   }
 }

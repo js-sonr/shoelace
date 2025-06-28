@@ -9,9 +9,9 @@ import { watch } from '../../internal/watch.js';
 import { when } from 'lit/directives/when.js';
 import componentStyles from '../../styles/component.styles.js';
 import NebulaElement from '../../internal/nebula-element.js';
-import SlCheckbox from '../checkbox/checkbox.component.js';
-import SlIcon from '../icon/icon.component.js';
-import SlSpinner from '../spinner/spinner.component.js';
+import NuCheckbox from '../checkbox/checkbox.component.js';
+import NuIcon from '../icon/icon.component.js';
+import NuSpinner from '../spinner/spinner.component.js';
 import styles from './tree-item.styles.js';
 import type { CSSResultGroup, PropertyValueMap } from 'lit';
 
@@ -59,12 +59,12 @@ import type { CSSResultGroup, PropertyValueMap } from 'lit';
  * @csspart checkbox__indeterminate-icon - The checkbox's exported `indeterminate-icon` part.
  * @csspart checkbox__label - The checkbox's exported `label` part.
  */
-export default class SlTreeItem extends NebulaElement {
+export default class NuTreeItem extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = {
-    'sl-checkbox': SlCheckbox,
-    'sl-icon': SlIcon,
-    'sl-spinner': SlSpinner
+    'nu-checkbox': NuCheckbox,
+    'nu-icon': NuIcon,
+    'nu-spinner': NuSpinner
   };
 
   static isTreeItem(node: Node) {
@@ -116,7 +116,7 @@ export default class SlTreeItem extends NebulaElement {
   }
 
   private async animateCollapse() {
-    this.emit('sl-collapse');
+    this.emit('nu-collapse');
 
     await stopAnimations(this.childrenContainer);
 
@@ -128,13 +128,13 @@ export default class SlTreeItem extends NebulaElement {
     );
     this.childrenContainer.hidden = true;
 
-    this.emit('sl-after-collapse');
+    this.emit('nu-after-collapse');
   }
 
   // Checks whether the item is nested into an item
   private isNestedItem(): boolean {
     const parent = this.parentElement;
-    return !!parent && SlTreeItem.isTreeItem(parent);
+    return !!parent && NuTreeItem.isTreeItem(parent);
   }
 
   private handleChildrenSlotChange() {
@@ -142,14 +142,14 @@ export default class SlTreeItem extends NebulaElement {
     this.isLeaf = !this.lazy && this.getChildrenItems().length === 0;
   }
 
-  protected willUpdate(changedProperties: PropertyValueMap<SlTreeItem> | Map<PropertyKey, unknown>) {
+  protected willUpdate(changedProperties: PropertyValueMap<NuTreeItem> | Map<PropertyKey, unknown>) {
     if (changedProperties.has('selected') && !changedProperties.has('indeterminate')) {
       this.indeterminate = false;
     }
   }
 
   private async animateExpand() {
-    this.emit('sl-expand');
+    this.emit('nu-expand');
 
     await stopAnimations(this.childrenContainer);
     this.childrenContainer.hidden = false;
@@ -162,7 +162,7 @@ export default class SlTreeItem extends NebulaElement {
     );
     this.childrenContainer.style.height = 'auto';
 
-    this.emit('sl-after-expand');
+    this.emit('nu-after-expand');
   }
 
   @watch('loading', { waitUntilFirstUpdate: true })
@@ -199,7 +199,7 @@ export default class SlTreeItem extends NebulaElement {
       if (this.lazy) {
         this.loading = true;
 
-        this.emit('sl-lazy-load');
+        this.emit('nu-lazy-load');
       } else {
         this.animateExpand();
       }
@@ -210,15 +210,15 @@ export default class SlTreeItem extends NebulaElement {
 
   @watch('lazy', { waitUntilFirstUpdate: true })
   handleLazyChange() {
-    this.emit('sl-lazy-change');
+    this.emit('nu-lazy-change');
   }
 
   /** Gets all the nested tree items in this node. */
-  getChildrenItems({ includeDisabled = true }: { includeDisabled?: boolean } = {}): SlTreeItem[] {
+  getChildrenItems({ includeDisabled = true }: { includeDisabled?: boolean } = {}): NuTreeItem[] {
     return this.childrenSlot
       ? ([...this.childrenSlot.assignedElements({ flatten: true })].filter(
-          (item: SlTreeItem) => SlTreeItem.isTreeItem(item) && (includeDisabled || !item.disabled)
-        ) as SlTreeItem[])
+          (item: NuTreeItem) => NuTreeItem.isTreeItem(item) && (includeDisabled || !item.disabled)
+        ) as NuTreeItem[])
       : [];
   }
 
@@ -261,20 +261,20 @@ export default class SlTreeItem extends NebulaElement {
           >
             ${when(
               this.loading,
-              () => html` <sl-spinner part="spinner" exportparts="base:spinner__base"></sl-spinner> `
+              () => html` <nu-spinner part="spinner" exportparts="base:spinner__base"></nu-spinner> `
             )}
             <slot class="tree-item__expand-icon-slot" name="expand-icon">
-              <sl-icon library="system" name=${isRtl ? 'chevron-left' : 'chevron-right'}></sl-icon>
+              <nu-icon library="system" name=${isRtl ? 'chevron-left' : 'chevron-right'}></nu-icon>
             </slot>
             <slot class="tree-item__expand-icon-slot" name="collapse-icon">
-              <sl-icon library="system" name=${isRtl ? 'chevron-left' : 'chevron-right'}></sl-icon>
+              <nu-icon library="system" name=${isRtl ? 'chevron-left' : 'chevron-right'}></nu-icon>
             </slot>
           </div>
 
           ${when(
             this.selectable,
             () => html`
-              <sl-checkbox
+              <nu-checkbox
                 part="checkbox"
                 exportparts="
                     base:checkbox__base,
@@ -290,7 +290,7 @@ export default class SlTreeItem extends NebulaElement {
                 ?checked="${live(this.selected)}"
                 ?indeterminate="${this.indeterminate}"
                 tabindex="-1"
-              ></sl-checkbox>
+              ></nu-checkbox>
             `
           )}
 

@@ -1,12 +1,12 @@
-import SlBreadcrumbItem from './breadcrumb-item.component.js';
+import NuBreadcrumbItem from './breadcrumb-item.component.js';
 
 export * from './breadcrumb-item.component.js';
-export default SlBreadcrumbItem;
+export default NuBreadcrumbItem;
 
-SlBreadcrumbItem.define('sl-breadcrumb-item');
+NuBreadcrumbItem.define('nu-breadcrumb-item');
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-breadcrumb-item': SlBreadcrumbItem;
+    'nu-breadcrumb-item': NuBreadcrumbItem;
   }
 }

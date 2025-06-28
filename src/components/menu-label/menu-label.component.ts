@@ -14,7 +14,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @csspart base - The component's base wrapper.
  */
-export default class SlMenuLabel extends NebulaElement {
+export default class NuMenuLabel extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   render() {
@@ -24,6 +24,6 @@ export default class SlMenuLabel extends NebulaElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-menu-label': SlMenuLabel;
+    'sl-menu-label': NuMenuLabel;
   }
 }

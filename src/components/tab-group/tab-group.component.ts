@@ -6,11 +6,11 @@ import { scrollIntoView } from '../../internal/scroll.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import NebulaElement from '../../internal/nebula-element.js';
-import SlIconButton from '../icon-button/icon-button.component.js';
+import NuIconButton from '../icon-button/icon-button.component.js';
 import styles from './tab-group.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type SlTab from '../tab/tab.js';
-import type SlTabPanel from '../tab-panel/tab-panel.js';
+import type NuTab from '../tab/tab.js';
+import type NuTabPanel from '../tab-panel/tab-panel.js';
 
 /**
  * @summary Tab groups organize content into a container that shows one section at a time.
@@ -20,8 +20,8 @@ import type SlTabPanel from '../tab-panel/tab-panel.js';
  *
  * @dependency sl-icon-button
  *
- * @slot - Used for grouping tab panels in the tab group. Must be `<sl-tab-panel>` elements.
- * @slot nav - Used for grouping tabs in the tab group. Must be `<sl-tab>` elements.
+ * @slot - Used for grouping tab panels in the tab group. Must be `<nu-tab-panel>` elements.
+ * @slot nav - Used for grouping tabs in the tab group. Must be `<nu-tab>` elements.
  *
  * @event {{ name: String }} sl-tab-show - Emitted when a tab is shown.
  * @event {{ name: String }} sl-tab-hide - Emitted when a tab is hidden.
@@ -31,7 +31,7 @@ import type SlTabPanel from '../tab-panel/tab-panel.js';
  * @csspart tabs - The container that wraps the tabs.
  * @csspart active-tab-indicator - The line that highlights the currently selected tab.
  * @csspart body - The tab group's body where tab panels are slotted in.
- * @csspart scroll-button - The previous/next scroll buttons that show when tabs are scrollable, an `<sl-icon-button>`.
+ * @csspart scroll-button - The previous/next scroll buttons that show when tabs are scrollable, an `<nu-icon-button>`.
  * @csspart scroll-button--start - The starting scroll button.
  * @csspart scroll-button--end - The ending scroll button.
  * @csspart scroll-button__base - The scroll button's exported `base` part.
@@ -40,18 +40,18 @@ import type SlTabPanel from '../tab-panel/tab-panel.js';
  * @cssproperty --track-color - The color of the indicator's track (the line that separates tabs from panels).
  * @cssproperty --track-width - The width of the indicator's track (the line that separates tabs from panels).
  */
-export default class SlTabGroup extends NebulaElement {
+export default class NuTabGroup extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
-  static dependencies = { 'sl-icon-button': SlIconButton };
+  static dependencies = { 'nu-icon-button': NuIconButton };
 
   private readonly localize = new LocalizeController(this);
 
-  private activeTab?: SlTab;
+  private activeTab?: NuTab;
   private mutationObserver: MutationObserver;
   private resizeObserver: ResizeObserver;
-  private tabs: SlTab[] = [];
-  private focusableTabs: SlTab[] = [];
-  private panels: SlTabPanel[] = [];
+  private tabs: NuTab[] = [];
+  private focusableTabs: NuTab[] = [];
+  private panels: NuTabPanel[] = [];
 
   @query('.tab-group') tabGroup: HTMLElement;
   @query('.tab-group__body') body: HTMLSlotElement;
@@ -127,11 +127,11 @@ export default class SlTabGroup extends NebulaElement {
   private getAllTabs() {
     const slot = this.shadowRoot!.querySelector<HTMLSlotElement>('slot[name="nav"]')!;
 
-    return slot.assignedElements() as SlTab[];
+    return slot.assignedElements() as NuTab[];
   }
 
   private getAllPanels() {
-    return [...this.body.assignedElements()].filter(el => el.tagName.toLowerCase() === 'sl-tab-panel') as [SlTabPanel];
+    return [...this.body.assignedElements()].filter(el => el.tagName.toLowerCase() === 'sl-tab-panel') as [NuTabPanel];
   }
 
   private getActiveTab() {
@@ -175,7 +175,7 @@ export default class SlTabGroup extends NebulaElement {
     if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'].includes(event.key)) {
       const activeEl = this.tabs.find(t => t.matches(':focus'));
       const isRtl = this.matches(':dir(rtl)');
-      let nextTab: null | SlTab = null;
+      let nextTab: null | NuTab = null;
 
       if (activeEl?.tagName.toLowerCase() === 'sl-tab') {
         if (event.key === 'Home') {
@@ -240,7 +240,7 @@ export default class SlTabGroup extends NebulaElement {
     });
   }
 
-  private setActiveTab(tab: SlTab, options?: { emitEvents?: boolean; scrollBehavior?: 'auto' | 'smooth' }) {
+  private setActiveTab(tab: NuTab, options?: { emitEvents?: boolean; scrollBehavior?: 'auto' | 'smooth' }) {
     options = {
       emitEvents: true,
       scrollBehavior: 'auto',
@@ -266,10 +266,10 @@ export default class SlTabGroup extends NebulaElement {
       // Emit events
       if (options.emitEvents) {
         if (previousTab) {
-          this.emit('sl-tab-hide', { detail: { name: previousTab.panel } });
+          this.emit('nu-tab-hide', { detail: { name: previousTab.panel } });
         }
 
-        this.emit('sl-tab-show', { detail: { name: this.activeTab.panel } });
+        this.emit('nu-tab-show', { detail: { name: this.activeTab.panel } });
       }
     }
   }
@@ -422,7 +422,7 @@ export default class SlTabGroup extends NebulaElement {
         <div class="tab-group__nav-container" part="nav">
           ${this.hasScrollControls
             ? html`
-                <sl-icon-button
+                <nu-icon-button
                   part="scroll-button scroll-button--start"
                   exportparts="base:scroll-button__base"
                   class="tab-group__scroll-button tab-group__scroll-button--start"
@@ -430,7 +430,7 @@ export default class SlTabGroup extends NebulaElement {
                   library="system"
                   label=${this.localize.term('scrollToStart')}
                   @click=${this.handleScrollToStart}
-                ></sl-icon-button>
+                ></nu-icon-button>
               `
             : ''}
 
@@ -443,7 +443,7 @@ export default class SlTabGroup extends NebulaElement {
 
           ${this.hasScrollControls
             ? html`
-                <sl-icon-button
+                <nu-icon-button
                   part="scroll-button scroll-button--end"
                   exportparts="base:scroll-button__base"
                   class="tab-group__scroll-button tab-group__scroll-button--end"
@@ -451,7 +451,7 @@ export default class SlTabGroup extends NebulaElement {
                   library="system"
                   label=${this.localize.term('scrollToEnd')}
                   @click=${this.handleScrollToEnd}
-                ></sl-icon-button>
+                ></nu-icon-button>
               `
             : ''}
         </div>
@@ -464,6 +464,6 @@ export default class SlTabGroup extends NebulaElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-tab-group': SlTabGroup;
+    'sl-tab-group': NuTabGroup;
   }
 }

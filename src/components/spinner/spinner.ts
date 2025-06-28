@@ -1,12 +1,12 @@
-import SlSpinner from './spinner.component.js';
+import NuSpinner from './spinner.component.js';
 
 export * from './spinner.component.js';
-export default SlSpinner;
+export default NuSpinner;
 
-SlSpinner.define('sl-spinner');
+NuSpinner.define('nu-spinner');
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-spinner': SlSpinner;
+    'nu-spinner': NuSpinner;
   }
 }

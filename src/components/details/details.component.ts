@@ -8,7 +8,7 @@ import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import NebulaElement from '../../internal/nebula-element.js';
-import SlIcon from '../icon/icon.component.js';
+import NuIcon from '../icon/icon.component.js';
 import styles from './details.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -22,8 +22,8 @@ import type { CSSResultGroup } from 'lit';
  *
  * @slot - The details' main content.
  * @slot summary - The details' summary. Alternatively, you can use the `summary` attribute.
- * @slot expand-icon - Optional expand icon to use instead of the default. Works best with `<sl-icon>`.
- * @slot collapse-icon - Optional collapse icon to use instead of the default. Works best with `<sl-icon>`.
+ * @slot expand-icon - Optional expand icon to use instead of the default. Works best with `<nu-icon>`.
+ * @slot collapse-icon - Optional collapse icon to use instead of the default. Works best with `<nu-icon>`.
  *
  * @event sl-show - Emitted when the details opens.
  * @event sl-after-show - Emitted after the details opens and all animations are complete.
@@ -39,11 +39,11 @@ import type { CSSResultGroup } from 'lit';
  * @animation details.show - The animation to use when showing details. You can use `height: auto` with this animation.
  * @animation details.hide - The animation to use when hiding details. You can use `height: auto` with this animation.
  */
-export default class SlDetails extends NebulaElement {
+export default class NuDetails extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   static dependencies = {
-    'sl-icon': SlIcon
+    'nu-icon': NuIcon
   };
 
   private readonly localize = new LocalizeController(this);
@@ -132,7 +132,7 @@ export default class SlDetails extends NebulaElement {
     if (this.open) {
       this.details.open = true;
       // Show
-      const slShow = this.emit('sl-show', { cancelable: true });
+      const slShow = this.emit('nu-show', { cancelable: true });
       if (slShow.defaultPrevented) {
         this.open = false;
         this.details.open = false;
@@ -145,10 +145,10 @@ export default class SlDetails extends NebulaElement {
       await animateTo(this.body, shimKeyframesHeightAuto(keyframes, this.body.scrollHeight), options);
       this.body.style.height = 'auto';
 
-      this.emit('sl-after-show');
+      this.emit('nu-after-show');
     } else {
       // Hide
-      const slHide = this.emit('sl-hide', { cancelable: true });
+      const slHide = this.emit('nu-hide', { cancelable: true });
       if (slHide.defaultPrevented) {
         this.details.open = true;
         this.open = true;
@@ -162,7 +162,7 @@ export default class SlDetails extends NebulaElement {
       this.body.style.height = 'auto';
 
       this.details.open = false;
-      this.emit('sl-after-hide');
+      this.emit('nu-after-hide');
     }
   }
 
@@ -215,10 +215,10 @@ export default class SlDetails extends NebulaElement {
 
           <span part="summary-icon" class="details__summary-icon">
             <slot name="expand-icon">
-              <sl-icon library="system" name=${isRtl ? 'chevron-left' : 'chevron-right'}></sl-icon>
+              <nu-icon library="system" name=${isRtl ? 'chevron-left' : 'chevron-right'}></nu-icon>
             </slot>
             <slot name="collapse-icon">
-              <sl-icon library="system" name=${isRtl ? 'chevron-left' : 'chevron-right'}></sl-icon>
+              <nu-icon library="system" name=${isRtl ? 'chevron-left' : 'chevron-right'}></nu-icon>
             </slot>
           </span>
         </summary>

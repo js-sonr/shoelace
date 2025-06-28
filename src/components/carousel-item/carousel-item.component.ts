@@ -15,7 +15,7 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --aspect-ratio - The slide's aspect ratio. Inherited from the carousel by default.
  *
  */
-export default class SlCarouselItem extends NebulaElement {
+export default class NuCarouselItem extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   connectedCallback() {

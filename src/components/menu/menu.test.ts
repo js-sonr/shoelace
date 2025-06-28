@@ -4,21 +4,21 @@ import { expect, fixture } from '@open-wc/testing';
 import { html } from 'lit';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
-import type { SlSelectEvent } from '../../events/sl-select.js';
-import type SlMenu from './menu.js';
+import type { NuSelectEvent } from ../../events/nu-select.js';
+import type NuMenu from './menu.js';
 
-describe('<sl-menu>', () => {
+describe('<nu-menu>', () => {
   it('emits sl-select with the correct event detail when clicking an item', async () => {
-    const menu = await fixture<SlMenu>(html`
-      <sl-menu>
-        <sl-menu-item value="item-1">Item 1</sl-menu-item>
-        <sl-menu-item value="item-2">Item 2</sl-menu-item>
-        <sl-menu-item value="item-3">Item 3</sl-menu-item>
-        <sl-menu-item value="item-4">Item 4</sl-menu-item>
-      </sl-menu>
+    const menu = await fixture<NuMenu>(html`
+      <nu-menu>
+        <nu-menu-item value="item-1">Item 1</nu-menu-item>
+        <nu-menu-item value="item-2">Item 2</nu-menu-item>
+        <nu-menu-item value="item-3">Item 3</nu-menu-item>
+        <nu-menu-item value="item-4">Item 4</nu-menu-item>
+      </nu-menu>
     `);
-    const item2 = menu.querySelectorAll('sl-menu-item')[1];
-    const selectHandler = sinon.spy((event: SlSelectEvent) => {
+    const item2 = menu.querySelectorAll('nu-menu-item')[1];
+    const selectHandler = sinon.spy((event: NuSelectEvent) => {
       const item = event.detail.item;
       if (item !== item2) {
         expect.fail('Incorrect event detail emitted with sl-select');
@@ -32,16 +32,16 @@ describe('<sl-menu>', () => {
   });
 
   it('can be selected via keyboard', async () => {
-    const menu = await fixture<SlMenu>(html`
-      <sl-menu>
-        <sl-menu-item value="item-1">Item 1</sl-menu-item>
-        <sl-menu-item value="item-2">Item 2</sl-menu-item>
-        <sl-menu-item value="item-3">Item 3</sl-menu-item>
-        <sl-menu-item value="item-4">Item 4</sl-menu-item>
-      </sl-menu>
+    const menu = await fixture<NuMenu>(html`
+      <nu-menu>
+        <nu-menu-item value="item-1">Item 1</nu-menu-item>
+        <nu-menu-item value="item-2">Item 2</nu-menu-item>
+        <nu-menu-item value="item-3">Item 3</nu-menu-item>
+        <nu-menu-item value="item-4">Item 4</nu-menu-item>
+      </nu-menu>
     `);
-    const [item1, item2] = menu.querySelectorAll('sl-menu-item');
-    const selectHandler = sinon.spy((event: SlSelectEvent) => {
+    const [item1, item2] = menu.querySelectorAll('nu-menu-item');
+    const selectHandler = sinon.spy((event: NuSelectEvent) => {
       const item = event.detail.item;
       if (item !== item2) {
         expect.fail('Incorrect item selected');
@@ -59,15 +59,15 @@ describe('<sl-menu>', () => {
   });
 
   it('does not select disabled items when clicking', async () => {
-    const menu = await fixture<SlMenu>(html`
-      <sl-menu>
-        <sl-menu-item value="item-1">Item 1</sl-menu-item>
-        <sl-menu-item value="item-2" disabled>Item 2</sl-menu-item>
-        <sl-menu-item value="item-3">Item 3</sl-menu-item>
-        <sl-menu-item value="item-4">Item 4</sl-menu-item>
-      </sl-menu>
+    const menu = await fixture<NuMenu>(html`
+      <nu-menu>
+        <nu-menu-item value="item-1">Item 1</nu-menu-item>
+        <nu-menu-item value="item-2" disabled>Item 2</nu-menu-item>
+        <nu-menu-item value="item-3">Item 3</nu-menu-item>
+        <nu-menu-item value="item-4">Item 4</nu-menu-item>
+      </nu-menu>
     `);
-    const item2 = menu.querySelectorAll('sl-menu-item')[1];
+    const item2 = menu.querySelectorAll('nu-menu-item')[1];
     const selectHandler = sinon.spy();
 
     menu.addEventListener('sl-select', selectHandler);
@@ -78,15 +78,15 @@ describe('<sl-menu>', () => {
   });
 
   it('does not select disabled items when pressing enter', async () => {
-    const menu = await fixture<SlMenu>(html`
-      <sl-menu>
-        <sl-menu-item value="item-1">Item 1</sl-menu-item>
-        <sl-menu-item value="item-2" disabled>Item 2</sl-menu-item>
-        <sl-menu-item value="item-3">Item 3</sl-menu-item>
-        <sl-menu-item value="item-4">Item 4</sl-menu-item>
-      </sl-menu>
+    const menu = await fixture<NuMenu>(html`
+      <nu-menu>
+        <nu-menu-item value="item-1">Item 1</nu-menu-item>
+        <nu-menu-item value="item-2" disabled>Item 2</nu-menu-item>
+        <nu-menu-item value="item-3">Item 3</nu-menu-item>
+        <nu-menu-item value="item-4">Item 4</nu-menu-item>
+      </nu-menu>
     `);
-    const [item1, item2] = menu.querySelectorAll('sl-menu-item');
+    const [item1, item2] = menu.querySelectorAll('nu-menu-item');
     const selectHandler = sinon.spy();
 
     menu.addEventListener('sl-select', selectHandler);
@@ -107,12 +107,12 @@ it('Should fire "sl-select" when clicking an element within a menu-item', async 
   // eslint-disable-next-line
   const selectHandler = sinon.spy(() => {});
 
-  const menu: SlMenu = await fixture(html`
-    <sl-menu>
-      <sl-menu-item>
+  const menu: NuMenu = await fixture(html`
+    <nu-menu>
+      <nu-menu-item>
         <span>Menu item</span>
-      </sl-menu-item>
-    </sl-menu>
+      </nu-menu-item>
+    </nu-menu>
   `);
 
   menu.addEventListener('sl-select', selectHandler);

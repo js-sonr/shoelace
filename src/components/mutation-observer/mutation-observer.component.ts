@@ -16,7 +16,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @slot - The content to watch for mutations.
  */
-export default class SlMutationObserver extends NebulaElement {
+export default class NuMutationObserver extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   private mutationObserver: MutationObserver;
@@ -58,7 +58,7 @@ export default class SlMutationObserver extends NebulaElement {
   }
 
   private handleMutation = (mutationList: MutationRecord[]) => {
-    this.emit('sl-mutation', {
+    this.emit('nu-mutation', {
       detail: { mutationList }
     });
   };

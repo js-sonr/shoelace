@@ -8,12 +8,12 @@ export default css`
   .tab {
     display: inline-flex;
     align-items: center;
-    font-family: var(--sl-font-sans);
-    font-size: var(--sl-font-size-small);
-    font-weight: var(--sl-font-weight-semibold);
-    border-radius: var(--sl-border-radius-medium);
-    color: var(--sl-color-neutral-600);
-    padding: var(--sl-spacing-medium) var(--sl-spacing-large);
+    font-family: var(--nu-font-sans);
+    font-size: var(--nu-font-size-small);
+    font-weight: var(--nu-font-weight-semibold);
+    border-radius: var(--nu-border-radius-medium);
+    color: var(--nu-color-neutral-600);
+    padding: var(--nu-spacing-medium) var(--nu-spacing-large);
     white-space: nowrap;
     user-select: none;
     -webkit-user-select: none;
@@ -24,7 +24,7 @@ export default css`
   }
 
   .tab:hover:not(.tab--disabled) {
-    color: var(--sl-color-primary-600);
+    color: var(--nu-color-primary-600);
   }
 
   :host(:focus) {
@@ -32,20 +32,20 @@ export default css`
   }
 
   :host(:focus-visible):not([disabled]) {
-    color: var(--sl-color-primary-600);
+    color: var(--nu-color-primary-600);
   }
 
   :host(:focus-visible) {
-    outline: var(--sl-focus-ring);
-    outline-offset: calc(-1 * var(--sl-focus-ring-width) - var(--sl-focus-ring-offset));
+    outline: var(--nu-focus-ring);
+    outline-offset: calc(-1 * var(--nu-focus-ring-width) - var(--nu-focus-ring-offset));
   }
 
   .tab.tab--active:not(.tab--disabled) {
-    color: var(--sl-color-primary-600);
+    color: var(--nu-color-primary-600);
   }
 
   .tab.tab--closable {
-    padding-inline-end: var(--sl-spacing-small);
+    padding-inline-end: var(--nu-spacing-small);
   }
 
   .tab.tab--disabled {
@@ -54,12 +54,12 @@ export default css`
   }
 
   .tab__close-button {
-    font-size: var(--sl-font-size-small);
-    margin-inline-start: var(--sl-spacing-small);
+    font-size: var(--nu-font-size-small);
+    margin-inline-start: var(--nu-spacing-small);
   }
 
   .tab__close-button::part(base) {
-    padding: var(--sl-spacing-3x-small);
+    padding: var(--nu-spacing-3x-small);
   }
 
   @media (forced-colors: active) {

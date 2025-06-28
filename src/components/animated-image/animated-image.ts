@@ -1,12 +1,12 @@
-import SlAnimatedImage from './animated-image.component.js';
+import NuAnimatedImage from './animated-image.component.js';
 
 export * from './animated-image.component.js';
-export default SlAnimatedImage;
+export default NuAnimatedImage;
 
-SlAnimatedImage.define('sl-animated-image');
+NuAnimatedImage.define('nu-animated-image');
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-animated-image': SlAnimatedImage;
+    'nu-animated-image': NuAnimatedImage;
   }
 }

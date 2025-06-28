@@ -1,12 +1,12 @@
-import SlSkeleton from './skeleton.component.js';
+import NuSkeleton from './skeleton.component.js';
 
 export * from './skeleton.component.js';
-export default SlSkeleton;
+export default NuSkeleton;
 
-SlSkeleton.define('sl-skeleton');
+NuSkeleton.define('nu-skeleton');
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-skeleton': SlSkeleton;
+    'nu-skeleton': NuSkeleton;
   }
 }

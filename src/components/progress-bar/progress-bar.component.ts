@@ -26,7 +26,7 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --indicator-color - The color of the indicator.
  * @cssproperty --label-color - The color of the label.
  */
-export default class SlProgressBar extends NebulaElement {
+export default class NuProgressBar extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
   private readonly localize = new LocalizeController(this);
 

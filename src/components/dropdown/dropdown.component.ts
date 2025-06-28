@@ -10,13 +10,13 @@ import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import NebulaElement from '../../internal/nebula-element.js';
-import SlPopup from '../popup/popup.component.js';
+import NuPopup from '../popup/popup.component.js';
 import styles from './dropdown.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type { SlSelectEvent } from '../../events/sl-select.js';
-import type SlButton from '../button/button.js';
-import type SlIconButton from '../icon-button/icon-button.js';
-import type SlMenu from '../menu/menu.js';
+import type { NuSelectEvent } from ../../events/nu-select.js';
+import type NuButton from '../button/button.js';
+import type NuIconButton from '../icon-button/icon-button.js';
+import type NuMenu from '../menu/menu.js';
 
 /**
  * @summary Dropdowns expose additional content that "drops down" in a panel.
@@ -27,14 +27,14 @@ import type SlMenu from '../menu/menu.js';
  * @dependency sl-popup
  *
  * @slot - The dropdown's main content.
- * @slot trigger - The dropdown's trigger, usually a `<sl-button>` element.
+ * @slot trigger - The dropdown's trigger, usually a `<nu-button>` element.
  *
  * @event sl-show - Emitted when the dropdown opens.
  * @event sl-after-show - Emitted after the dropdown opens and all animations are complete.
  * @event sl-hide - Emitted when the dropdown closes.
  * @event sl-after-hide - Emitted after the dropdown closes and all animations are complete.
  *
- * @csspart base - The component's base wrapper, an `<sl-popup>` element.
+ * @csspart base - The component's base wrapper, an `<nu-popup>` element.
  * @csspart base__popup - The popup's exported `popup` part. Use this to target the tooltip's popup container.
  * @csspart trigger - The container that wraps the trigger.
  * @csspart panel - The panel that gets shown when the dropdown is open.
@@ -42,11 +42,11 @@ import type SlMenu from '../menu/menu.js';
  * @animation dropdown.show - The animation to use when showing the dropdown.
  * @animation dropdown.hide - The animation to use when hiding the dropdown.
  */
-export default class SlDropdown extends NebulaElement {
+export default class NuDropdown extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
-  static dependencies = { 'sl-popup': SlPopup };
+  static dependencies = { 'nu-popup': NuPopup };
 
-  @query('.dropdown') popup: SlPopup;
+  @query('.dropdown') popup: NuPopup;
   @query('.dropdown__trigger') trigger: HTMLSlotElement;
   @query('.dropdown__panel') panel: HTMLSlotElement;
 
@@ -142,7 +142,7 @@ export default class SlDropdown extends NebulaElement {
 
   getMenu() {
     return this.panel.assignedElements({ flatten: true }).find(el => el.tagName.toLowerCase() === 'sl-menu') as
-      | SlMenu
+      | NuMenu
       | undefined;
   }
 
@@ -203,7 +203,7 @@ export default class SlDropdown extends NebulaElement {
     }
   };
 
-  private handlePanelSelect = (event: SlSelectEvent) => {
+  private handlePanelSelect = (event: NuSelectEvent) => {
     const target = event.target as HTMLElement;
 
     // Hide the dropdown when a menu item is selected
@@ -287,7 +287,7 @@ export default class SlDropdown extends NebulaElement {
   // that gets slotted in) so screen readers will understand them. The accessible trigger could be the slotted element,
   // a child of the slotted element, or an element in the slotted element's shadow root.
   //
-  // For example, the accessible trigger of an <sl-button> is a <button> located inside its shadow root.
+  // For example, the accessible trigger of an <nu-button> is a <button> located inside its shadow root.
   //
   // To determine this, we assume the first tabbable element in the trigger slot is the "accessible trigger."
   //
@@ -301,7 +301,7 @@ export default class SlDropdown extends NebulaElement {
         // Shoelace buttons have to update the internal button so it's announced correctly by screen readers
         case 'sl-button':
         case 'sl-icon-button':
-          target = (accessibleTrigger as SlButton | SlIconButton).button;
+          target = (accessibleTrigger as NuButton | NuIconButton).button;
           break;
 
         default:
@@ -378,7 +378,7 @@ export default class SlDropdown extends NebulaElement {
 
     if (this.open) {
       // Show
-      this.emit('sl-show');
+      this.emit('nu-show');
       this.addOpenListeners();
 
       await stopAnimations(this);
@@ -387,10 +387,10 @@ export default class SlDropdown extends NebulaElement {
       const { keyframes, options } = getAnimation(this, 'dropdown.show', { dir: this.localize.dir() });
       await animateTo(this.popup.popup, keyframes, options);
 
-      this.emit('sl-after-show');
+      this.emit('nu-after-show');
     } else {
       // Hide
-      this.emit('sl-hide');
+      this.emit('nu-hide');
       this.removeOpenListeners();
 
       await stopAnimations(this);
@@ -399,13 +399,13 @@ export default class SlDropdown extends NebulaElement {
       this.panel.hidden = true;
       this.popup.active = false;
 
-      this.emit('sl-after-hide');
+      this.emit('nu-after-hide');
     }
   }
 
   render() {
     return html`
-      <sl-popup
+      <nu-popup
         part="base"
         exportparts="popup:base__popup"
         id="dropdown"
@@ -437,7 +437,7 @@ export default class SlDropdown extends NebulaElement {
         <div aria-hidden=${this.open ? 'false' : 'true'} aria-labelledby="dropdown">
           <slot part="panel" class="dropdown__panel"></slot>
         </div>
-      </sl-popup>
+      </nu-popup>
     `;
   }
 }

@@ -5,7 +5,7 @@ import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import NebulaElement from '../../internal/nebula-element.js';
-import SlIcon from '../icon/icon.component.js';
+import NuIcon from '../icon/icon.component.js';
 import styles from './option.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -21,15 +21,15 @@ import type { CSSResultGroup } from 'lit';
  * @slot prefix - Used to prepend an icon or similar element to the menu item.
  * @slot suffix - Used to append an icon or similar element to the menu item.
  *
- * @csspart checked-icon - The checked icon, an `<sl-icon>` element.
+ * @csspart checked-icon - The checked icon, an `<nu-icon>` element.
  * @csspart base - The component's base wrapper.
  * @csspart label - The option's label.
  * @csspart prefix - The container that wraps the prefix.
  * @csspart suffix - The container that wraps the suffix.
  */
-export default class SlOption extends NebulaElement {
+export default class NuOption extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
-  static dependencies = { 'sl-icon': SlIcon };
+  static dependencies = { 'nu-icon': NuIcon };
 
   private cachedTextLabel: string;
   // @ts-expect-error - Controller is currently unused
@@ -139,7 +139,7 @@ export default class SlOption extends NebulaElement {
         @mouseenter=${this.handleMouseEnter}
         @mouseleave=${this.handleMouseLeave}
       >
-        <sl-icon part="checked-icon" class="option__check" name="check" library="system" aria-hidden="true"></sl-icon>
+        <nu-icon part="checked-icon" class="option__check" name="check" library="system" aria-hidden="true"></nu-icon>
         <slot part="prefix" name="prefix" class="option__prefix"></slot>
         <slot part="label" class="option__label" @slotchange=${this.handleDefaultSlotChange}></slot>
         <slot part="suffix" name="suffix" class="option__suffix"></slot>

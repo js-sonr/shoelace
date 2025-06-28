@@ -16,7 +16,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @csspart base - The component's base wrapper.
  */
-export default class SlQrCode extends NebulaElement {
+export default class NuQrCode extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   @query('canvas') canvas: HTMLElement;

@@ -3,12 +3,12 @@ import '../../../dist/shoelace.js';
 import { expect, fixture, html, waitUntil } from '@open-wc/testing';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
-import type SlDrawer from './drawer.js';
+import type NuDrawer from './drawer.js';
 
-describe('<sl-drawer>', () => {
+describe('<nu-drawer>', () => {
   it('should be visible with the open attribute', async () => {
-    const el = await fixture<SlDrawer>(html`
-      <sl-drawer open>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</sl-drawer>
+    const el = await fixture<NuDrawer>(html`
+      <nu-drawer open>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</nu-drawer>
     `);
     const base = el.shadowRoot!.querySelector<HTMLElement>('[part~="base"]')!;
 
@@ -16,8 +16,8 @@ describe('<sl-drawer>', () => {
   });
 
   it('should not be visible without the open attribute', async () => {
-    const el = await fixture<SlDrawer>(html`
-      <sl-drawer>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</sl-drawer>
+    const el = await fixture<NuDrawer>(html`
+      <nu-drawer>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</nu-drawer>
     `);
     const base = el.shadowRoot!.querySelector<HTMLElement>('[part~="base"]')!;
 
@@ -25,8 +25,8 @@ describe('<sl-drawer>', () => {
   });
 
   it('should emit sl-show and sl-after-show when calling show()', async () => {
-    const el = await fixture<SlDrawer>(html`
-      <sl-drawer>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</sl-drawer>
+    const el = await fixture<NuDrawer>(html`
+      <nu-drawer>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</nu-drawer>
     `);
     const base = el.shadowRoot!.querySelector<HTMLElement>('[part~="base"]')!;
     const showHandler = sinon.spy();
@@ -45,8 +45,8 @@ describe('<sl-drawer>', () => {
   });
 
   it('should emit sl-hide and sl-after-hide when calling hide()', async () => {
-    const el = await fixture<SlDrawer>(html`
-      <sl-drawer open>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</sl-drawer>
+    const el = await fixture<NuDrawer>(html`
+      <nu-drawer open>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</nu-drawer>
     `);
     const base = el.shadowRoot!.querySelector<HTMLElement>('[part~="base"]')!;
     const hideHandler = sinon.spy();
@@ -65,8 +65,8 @@ describe('<sl-drawer>', () => {
   });
 
   it('should emit sl-show and sl-after-show when setting open = true', async () => {
-    const el = await fixture<SlDrawer>(html`
-      <sl-drawer>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</sl-drawer>
+    const el = await fixture<NuDrawer>(html`
+      <nu-drawer>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</nu-drawer>
     `);
     const base = el.shadowRoot!.querySelector<HTMLElement>('[part~="base"]')!;
     const showHandler = sinon.spy();
@@ -85,8 +85,8 @@ describe('<sl-drawer>', () => {
   });
 
   it('should emit sl-hide and sl-after-hide when setting open = false', async () => {
-    const el = await fixture<SlDrawer>(html`
-      <sl-drawer open>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</sl-drawer>
+    const el = await fixture<NuDrawer>(html`
+      <nu-drawer open>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</nu-drawer>
     `);
     const base = el.shadowRoot!.querySelector<HTMLElement>('[part~="base"]')!;
     const hideHandler = sinon.spy();
@@ -105,8 +105,8 @@ describe('<sl-drawer>', () => {
   });
 
   it('should not close when sl-request-close is prevented', async () => {
-    const el = await fixture<SlDrawer>(html`
-      <sl-drawer open>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</sl-drawer>
+    const el = await fixture<NuDrawer>(html`
+      <nu-drawer open>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</nu-drawer>
     `);
     const overlay = el.shadowRoot!.querySelector<HTMLElement>('[part~="overlay"]')!;
 
@@ -119,7 +119,7 @@ describe('<sl-drawer>', () => {
   });
 
   it('should allow initial focus to be set', async () => {
-    const el = await fixture<SlDrawer>(html` <sl-drawer><input /></sl-drawer> `);
+    const el = await fixture<NuDrawer>(html` <nu-drawer><input /></nu-drawer> `);
     const input = el.querySelector<HTMLInputElement>('input')!;
     const initialFocusHandler = sinon.spy((event: InputEvent) => {
       event.preventDefault();
@@ -136,7 +136,7 @@ describe('<sl-drawer>', () => {
   });
 
   it('should close when pressing Escape', async () => {
-    const el = await fixture<SlDrawer>(html` <sl-drawer open></sl-drawer> `);
+    const el = await fixture<NuDrawer>(html` <nu-drawer open></nu-drawer> `);
     const hideHandler = sinon.spy();
 
     el.addEventListener('sl-hide', hideHandler);

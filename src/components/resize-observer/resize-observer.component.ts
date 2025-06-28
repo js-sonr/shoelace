@@ -16,7 +16,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @event {{ entries: ResizeObserverEntry[] }} sl-resize - Emitted when the element is resized.
  */
-export default class SlResizeObserver extends NebulaElement {
+export default class NuResizeObserver extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   private resizeObserver: ResizeObserver;
@@ -28,7 +28,7 @@ export default class SlResizeObserver extends NebulaElement {
   connectedCallback() {
     super.connectedCallback();
     this.resizeObserver = new ResizeObserver((entries: ResizeObserverEntry[]) => {
-      this.emit('sl-resize', { detail: { entries } });
+      this.emit('nu-resize', { detail: { entries } });
     });
 
     if (!this.disabled) {
@@ -85,6 +85,6 @@ export default class SlResizeObserver extends NebulaElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-resize-observer': SlResizeObserver;
+    'sl-resize-observer': NuResizeObserver;
   }
 }

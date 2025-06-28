@@ -4,10 +4,10 @@ import componentStyles from '../../styles/component.styles.js';
 import NebulaElement from '../../internal/nebula-element.js';
 import styles from './menu.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type SlMenuItem from '../menu-item/menu-item.component.js';
+import type NuMenuItem from '../menu-item/menu-item.component.js';
 
 export interface MenuSelectEventDetail {
-  item: SlMenuItem;
+  item: NuMenuItem;
 }
 
 /**
@@ -18,9 +18,9 @@ export interface MenuSelectEventDetail {
  *
  * @slot - The menu's content, including menu items, menu labels, and dividers.
  *
- * @event {{ item: SlMenuItem }} sl-select - Emitted when a menu item is selected.
+ * @event {{ item: NuMenuItem }} sl-select - Emitted when a menu item is selected.
  */
-export default class SlMenu extends NebulaElement {
+export default class NuMenu extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   @query('slot') defaultSlot: HTMLSlotElement;
@@ -38,13 +38,13 @@ export default class SlMenu extends NebulaElement {
     if (!target) return;
 
     // This isn't true. But we use it for TypeScript checks below.
-    const item = target as SlMenuItem;
+    const item = target as NuMenuItem;
 
     if (item.type === 'checkbox') {
       item.checked = !item.checked;
     }
 
-    this.emit('sl-select', { detail: { item } });
+    this.emit('nu-select', { detail: { item } });
   }
 
   private handleKeyDown(event: KeyboardEvent) {
@@ -95,7 +95,7 @@ export default class SlMenu extends NebulaElement {
     const target = event.target as HTMLElement;
 
     if (this.isMenuItem(target)) {
-      this.setCurrentItem(target as SlMenuItem);
+      this.setCurrentItem(target as NuMenuItem);
     }
   }
 
@@ -122,7 +122,7 @@ export default class SlMenu extends NebulaElement {
         return false;
       }
       return true;
-    }) as SlMenuItem[];
+    }) as NuMenuItem[];
   }
 
   /**
@@ -137,7 +137,7 @@ export default class SlMenu extends NebulaElement {
    * @internal Sets the current menu item to the specified element. This sets `tabindex="0"` on the target element and
    * `tabindex="-1"` to all other items. This method must be called prior to setting focus on a menu item.
    */
-  setCurrentItem(item: SlMenuItem) {
+  setCurrentItem(item: NuMenuItem) {
     const items = this.getAllItems();
 
     // Update tab indexes

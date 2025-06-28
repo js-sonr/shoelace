@@ -39,13 +39,13 @@ import type { NebulaFormControl } from '../../internal/nebula-element.js';
  * @cssproperty --height - The height of the switch.
  * @cssproperty --thumb-size - The size of the thumb.
  */
-export default class SlSwitch extends NebulaElement implements NebulaFormControl {
+export default class NuSwitch extends NebulaElement implements NebulaFormControl {
   static styles: CSSResultGroup = [componentStyles, formControlStyles, styles];
 
   private readonly formControlController = new FormControlController(this, {
-    value: (control: SlSwitch) => (control.checked ? control.value || 'on' : undefined),
-    defaultValue: (control: SlSwitch) => control.defaultChecked,
-    setValue: (control: SlSwitch, checked: boolean) => (control.checked = checked)
+    value: (control: NuSwitch) => (control.checked ? control.value || 'on' : undefined),
+    defaultValue: (control: NuSwitch) => control.defaultChecked,
+    setValue: (control: NuSwitch, checked: boolean) => (control.checked = checked)
   });
   private readonly hasSlotController = new HasSlotController(this, 'help-text');
 
@@ -101,11 +101,11 @@ export default class SlSwitch extends NebulaElement implements NebulaFormControl
 
   private handleBlur() {
     this.hasFocus = false;
-    this.emit('sl-blur');
+    this.emit('nu-blur');
   }
 
   private handleInput() {
-    this.emit('sl-input');
+    this.emit('nu-input');
   }
 
   private handleInvalid(event: Event) {
@@ -115,27 +115,27 @@ export default class SlSwitch extends NebulaElement implements NebulaFormControl
 
   private handleClick() {
     this.checked = !this.checked;
-    this.emit('sl-change');
+    this.emit('nu-change');
   }
 
   private handleFocus() {
     this.hasFocus = true;
-    this.emit('sl-focus');
+    this.emit('nu-focus');
   }
 
   private handleKeyDown(event: KeyboardEvent) {
     if (event.key === 'ArrowLeft') {
       event.preventDefault();
       this.checked = false;
-      this.emit('sl-change');
-      this.emit('sl-input');
+      this.emit('nu-change');
+      this.emit('nu-input');
     }
 
     if (event.key === 'ArrowRight') {
       event.preventDefault();
       this.checked = true;
-      this.emit('sl-change');
-      this.emit('sl-input');
+      this.emit('nu-change');
+      this.emit('nu-input');
     }
   }
 
@@ -257,6 +257,6 @@ export default class SlSwitch extends NebulaElement implements NebulaFormControl
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-switch': SlSwitch;
+    'sl-switch': NuSwitch;
   }
 }

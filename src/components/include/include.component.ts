@@ -16,7 +16,7 @@ import type { CSSResultGroup } from 'lit';
  * @event sl-load - Emitted when the included file is loaded.
  * @event {{ status: number }} sl-error - Emitted when the included file fails to load due to an error.
  */
-export default class SlInclude extends NebulaElement {
+export default class NuInclude extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   /**
@@ -54,7 +54,7 @@ export default class SlInclude extends NebulaElement {
       }
 
       if (!file.ok) {
-        this.emit('sl-error', { detail: { status: file.status } });
+        this.emit('nu-error', { detail: { status: file.status } });
         return;
       }
 
@@ -64,9 +64,9 @@ export default class SlInclude extends NebulaElement {
         [...this.querySelectorAll('script')].forEach(script => this.executeScript(script));
       }
 
-      this.emit('sl-load');
+      this.emit('nu-load');
     } catch {
-      this.emit('sl-error', { detail: { status: -1 } });
+      this.emit('nu-error', { detail: { status: -1 } });
     }
   }
 

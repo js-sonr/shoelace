@@ -51,7 +51,7 @@ function isVirtualElement(e: unknown): e is VirtualElement {
  *  popup can be before overflowing. Useful for positioning child elements that need to overflow. This property is only
  *  available when using `auto-size`.
  */
-export default class SlPopup extends NebulaElement {
+export default class NuPopup extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   private anchorEl: Element | VirtualElement | null;
@@ -466,7 +466,7 @@ export default class SlPopup extends NebulaElement {
     // Wait until the new position is drawn before updating the hover bridge, otherwise it can get out of sync
     requestAnimationFrame(() => this.updateHoverBridge());
 
-    this.emit('sl-reposition');
+    this.emit('nu-reposition');
   }
 
   private updateHoverBridge = () => {

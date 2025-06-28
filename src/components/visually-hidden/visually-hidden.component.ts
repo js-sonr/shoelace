@@ -12,7 +12,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @slot - The content to be visually hidden.
  */
-export default class SlVisuallyHidden extends NebulaElement {
+export default class NuVisuallyHidden extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   render() {

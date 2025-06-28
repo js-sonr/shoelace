@@ -2,13 +2,13 @@ import { createRef, ref, type Ref } from 'lit/directives/ref.js';
 import { type HasSlotController } from '../../internal/slot.js';
 import { html } from 'lit';
 import type { ReactiveController, ReactiveControllerHost } from 'lit';
-import type SlMenuItem from './menu-item.js';
-import type SlPopup from '../popup/popup.js';
+import type NuMenuItem from './menu-item.js';
+import type NuPopup from '../popup/popup.js';
 
 /** A reactive controller to manage the registration of event listeners for submenus. */
 export class SubmenuController implements ReactiveController {
-  private host: ReactiveControllerHost & SlMenuItem;
-  private popupRef: Ref<SlPopup> = createRef();
+  private host: ReactiveControllerHost & NuMenuItem;
+  private popupRef: Ref<NuPopup> = createRef();
   private enableSubmenuTimer = -1;
   private isConnected = false;
   private isPopupConnected = false;
@@ -16,7 +16,7 @@ export class SubmenuController implements ReactiveController {
   private readonly hasSlotController: HasSlotController;
   private readonly submenuOpenDelay = 100;
 
-  constructor(host: ReactiveControllerHost & SlMenuItem, hasSlotController: HasSlotController) {
+  constructor(host: ReactiveControllerHost & NuMenuItem, hasSlotController: HasSlotController) {
     (this.host = host).addController(this);
     this.hasSlotController = hasSlotController;
   }
@@ -104,7 +104,7 @@ export class SubmenuController implements ReactiveController {
     // Menus
     let menuItems: NodeListOf<Element> | null = null;
     for (const elt of submenuSlot.assignedElements()) {
-      menuItems = elt.querySelectorAll("sl-menu-item, [role^='menuitem']");
+      menuItems = elt.querySelectorAll("nu-menu-item, [role^='menuitem']");
       if (menuItems.length !== 0) {
         break;
       }
@@ -261,13 +261,13 @@ export class SubmenuController implements ReactiveController {
   renderSubmenu() {
     const isRtl = this.host.matches(':dir(rtl)');
 
-    // Always render the slot, but conditionally render the outer <sl-popup>
+    // Always render the slot, but conditionally render the outer <nu-popup>
     if (!this.isConnected) {
       return html` <slot name="submenu" hidden></slot> `;
     }
 
     return html`
-      <sl-popup
+      <nu-popup
         ${ref(this.popupRef)}
         placement=${isRtl ? 'left-start' : 'right-start'}
         anchor="anchor"
@@ -279,7 +279,7 @@ export class SubmenuController implements ReactiveController {
         auto-size-padding="10"
       >
         <slot name="submenu"></slot>
-      </sl-popup>
+      </nu-popup>
     `;
   }
 }

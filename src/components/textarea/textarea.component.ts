@@ -36,7 +36,7 @@ import type { NebulaFormControl } from '../../internal/nebula-element.js';
  * @csspart base - The component's base wrapper.
  * @csspart textarea - The internal `<textarea>` control.
  */
-export default class SlTextarea extends NebulaElement implements NebulaFormControl {
+export default class NuTextarea extends NebulaElement implements NebulaFormControl {
   static styles: CSSResultGroup = [componentStyles, formControlStyles, styles];
 
   private readonly formControlController = new FormControlController(this, {
@@ -170,23 +170,23 @@ export default class SlTextarea extends NebulaElement implements NebulaFormContr
 
   private handleBlur() {
     this.hasFocus = false;
-    this.emit('sl-blur');
+    this.emit('nu-blur');
   }
 
   private handleChange() {
     this.value = this.input.value;
     this.setTextareaHeight();
-    this.emit('sl-change');
+    this.emit('nu-change');
   }
 
   private handleFocus() {
     this.hasFocus = true;
-    this.emit('sl-focus');
+    this.emit('nu-focus');
   }
 
   private handleInput() {
     this.value = this.input.value;
-    this.emit('sl-input');
+    this.emit('nu-input');
   }
 
   private handleInvalid(event: Event) {

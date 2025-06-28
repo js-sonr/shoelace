@@ -45,7 +45,7 @@ import type { NebulaFormControl } from '../../internal/nebula-element.js';
  * @cssproperty --track-height - The height of the track.
  * @cssproperty --track-active-offset - The point of origin of the active track.
  */
-export default class SlRange extends NebulaElement implements NebulaFormControl {
+export default class NuRange extends NebulaElement implements NebulaFormControl {
   static styles: CSSResultGroup = [componentStyles, formControlStyles, styles];
 
   private readonly formControlController = new FormControlController(this);
@@ -136,25 +136,25 @@ export default class SlRange extends NebulaElement implements NebulaFormControl 
   }
 
   private handleChange() {
-    this.emit('sl-change');
+    this.emit('nu-change');
   }
 
   private handleInput() {
     this.value = parseFloat(this.input.value);
-    this.emit('sl-input');
+    this.emit('nu-input');
     this.syncRange();
   }
 
   private handleBlur() {
     this.hasFocus = false;
     this.hasTooltip = false;
-    this.emit('sl-blur');
+    this.emit('nu-blur');
   }
 
   private handleFocus() {
     this.hasFocus = true;
     this.hasTooltip = true;
-    this.emit('sl-focus');
+    this.emit('nu-focus');
   }
 
   @eventOptions({ passive: true })

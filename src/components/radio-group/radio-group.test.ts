@@ -4,29 +4,29 @@ import { clickOnElement } from '../../internal/test.js';
 import { runFormControlBaseTests } from '../../internal/test/form-control-base-tests.js';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
-import type { SlChangeEvent } from '../../events/sl-change.js';
-import type SlRadio from '../radio/radio.js';
-import type SlRadioGroup from './radio-group.js';
+import type { NuChangeEvent } from ../../events/nu-change.js';
+import type NuRadio from '../radio/radio.js';
+import type NuRadioGroup from './radio-group.js';
 
-describe('<sl-radio-group>', () => {
+describe('<nu-radio-group>', () => {
   describe('validation tests', () => {
     it('should be invalid initially when required and no radio is checked', async () => {
-      const radioGroup = await fixture<SlRadioGroup>(html`
-        <sl-radio-group required>
-          <sl-radio value="1"></sl-radio>
-          <sl-radio value="2"></sl-radio>
-        </sl-radio-group>
+      const radioGroup = await fixture<NuRadioGroup>(html`
+        <nu-radio-group required>
+          <nu-radio value="1"></nu-radio>
+          <nu-radio value="2"></nu-radio>
+        </nu-radio-group>
       `);
 
       expect(radioGroup.checkValidity()).to.be.false;
     });
 
     it('should become valid when an option is checked', async () => {
-      const radioGroup = await fixture<SlRadioGroup>(html`
-        <sl-radio-group required>
-          <sl-radio value="1"></sl-radio>
-          <sl-radio value="2"></sl-radio>
-        </sl-radio-group>
+      const radioGroup = await fixture<NuRadioGroup>(html`
+        <nu-radio-group required>
+          <nu-radio value="1"></nu-radio>
+          <nu-radio value="2"></nu-radio>
+        </nu-radio-group>
       `);
 
       radioGroup.value = '1';
@@ -36,48 +36,48 @@ describe('<sl-radio-group>', () => {
     });
 
     it(`should be valid when required and one radio is checked`, async () => {
-      const el = await fixture<SlRadioGroup>(html`
-        <sl-radio-group label="Select an option" value="1" required>
-          <sl-radio name="option" value="1">Option 1</sl-radio>
-          <sl-radio name="option" value="2">Option 2</sl-radio>
-          <sl-radio name="option" value="3">Option 3</sl-radio>
-        </sl-radio-group>
+      const el = await fixture<NuRadioGroup>(html`
+        <nu-radio-group label="Select an option" value="1" required>
+          <nu-radio name="option" value="1">Option 1</nu-radio>
+          <nu-radio name="option" value="2">Option 2</nu-radio>
+          <nu-radio name="option" value="3">Option 3</nu-radio>
+        </nu-radio-group>
       `);
 
       expect(el.checkValidity()).to.be.true;
     });
 
     it(`should be invalid when required and no radios are checked`, async () => {
-      const el = await fixture<SlRadioGroup>(html`
-        <sl-radio-group label="Select an option" required>
-          <sl-radio name="option" value="1">Option 1</sl-radio>
-          <sl-radio name="option" value="2">Option 2</sl-radio>
-          <sl-radio name="option" value="3">Option 3</sl-radio>
-        </sl-radio-group>
+      const el = await fixture<NuRadioGroup>(html`
+        <nu-radio-group label="Select an option" required>
+          <nu-radio name="option" value="1">Option 1</nu-radio>
+          <nu-radio name="option" value="2">Option 2</nu-radio>
+          <nu-radio name="option" value="3">Option 3</nu-radio>
+        </nu-radio-group>
       `);
 
       expect(el.checkValidity()).to.be.false;
     });
 
     it(`should be valid when required and a different radio is checked`, async () => {
-      const el = await fixture<SlRadioGroup>(html`
-        <sl-radio-group label="Select an option" value="3" required>
-          <sl-radio name="option" value="1">Option 1</sl-radio>
-          <sl-radio name="option" value="2">Option 2</sl-radio>
-          <sl-radio name="option" value="3">Option 3</sl-radio>
-        </sl-radio-group>
+      const el = await fixture<NuRadioGroup>(html`
+        <nu-radio-group label="Select an option" value="3" required>
+          <nu-radio name="option" value="1">Option 1</nu-radio>
+          <nu-radio name="option" value="2">Option 2</nu-radio>
+          <nu-radio name="option" value="3">Option 3</nu-radio>
+        </nu-radio-group>
       `);
 
       expect(el.checkValidity()).to.be.true;
     });
 
     it(`should be invalid when custom validity is set`, async () => {
-      const el = await fixture<SlRadioGroup>(html`
-        <sl-radio-group label="Select an option">
-          <sl-radio name="option" value="1">Option 1</sl-radio>
-          <sl-radio name="option" value="2">Option 2</sl-radio>
-          <sl-radio name="option" value="3">Option 3</sl-radio>
-        </sl-radio-group>
+      const el = await fixture<NuRadioGroup>(html`
+        <nu-radio-group label="Select an option">
+          <nu-radio name="option" value="1">Option 1</nu-radio>
+          <nu-radio name="option" value="2">Option 2</nu-radio>
+          <nu-radio name="option" value="3">Option 3</nu-radio>
+        </nu-radio-group>
       `);
 
       el.setCustomValidity('Error');
@@ -86,13 +86,13 @@ describe('<sl-radio-group>', () => {
     });
 
     it('should receive the correct validation attributes ("states") when valid', async () => {
-      const radioGroup = await fixture<SlRadioGroup>(html`
-        <sl-radio-group value="1" required>
-          <sl-radio value="1"></sl-radio>
-          <sl-radio value="2"></sl-radio>
-        </sl-radio-group>
+      const radioGroup = await fixture<NuRadioGroup>(html`
+        <nu-radio-group value="1" required>
+          <nu-radio value="1"></nu-radio>
+          <nu-radio value="2"></nu-radio>
+        </nu-radio-group>
       `);
-      const secondRadio = radioGroup.querySelectorAll('sl-radio')[1];
+      const secondRadio = radioGroup.querySelectorAll('nu-radio')[1];
 
       expect(radioGroup.checkValidity()).to.be.true;
       expect(radioGroup.hasAttribute('data-required')).to.be.true;
@@ -111,13 +111,13 @@ describe('<sl-radio-group>', () => {
     });
 
     it('should receive the correct validation attributes ("states") when invalid', async () => {
-      const radioGroup = await fixture<SlRadioGroup>(html`
-        <sl-radio-group required>
-          <sl-radio value="1"></sl-radio>
-          <sl-radio value="2"></sl-radio>
-        </sl-radio-group>
+      const radioGroup = await fixture<NuRadioGroup>(html`
+        <nu-radio-group required>
+          <nu-radio value="1"></nu-radio>
+          <nu-radio value="2"></nu-radio>
+        </nu-radio-group>
       `);
-      const secondRadio = radioGroup.querySelectorAll('sl-radio')[1];
+      const secondRadio = radioGroup.querySelectorAll('nu-radio')[1];
 
       expect(radioGroup.hasAttribute('data-required')).to.be.true;
       expect(radioGroup.hasAttribute('data-optional')).to.be.false;
@@ -137,13 +137,13 @@ describe('<sl-radio-group>', () => {
     it('should receive validation attributes ("states") even when novalidate is used on the parent form', async () => {
       const el = await fixture<HTMLFormElement>(html`
         <form novalidate>
-          <sl-radio-group required>
-            <sl-radio value="1"></sl-radio>
-            <sl-radio value="2"></sl-radio>
-          </sl-radio-group>
+          <nu-radio-group required>
+            <nu-radio value="1"></nu-radio>
+            <nu-radio value="2"></nu-radio>
+          </nu-radio-group>
         </form>
       `);
-      const radioGroup = el.querySelector<SlRadioGroup>('sl-radio-group')!;
+      const radioGroup = el.querySelector<NuRadioGroup>('nu-radio-group')!;
 
       expect(radioGroup.hasAttribute('data-required')).to.be.true;
       expect(radioGroup.hasAttribute('data-optional')).to.be.false;
@@ -156,15 +156,15 @@ describe('<sl-radio-group>', () => {
     it('should show a constraint validation error when setCustomValidity() is called', async () => {
       const form = await fixture<HTMLFormElement>(html`
         <form>
-          <sl-radio-group value="1">
-            <sl-radio id="radio-1" name="a" value="1"></sl-radio>
-            <sl-radio id="radio-2" name="a" value="2"></sl-radio>
-          </sl-radio-group>
-          <sl-button type="submit">Submit</sl-button>
+          <nu-radio-group value="1">
+            <nu-radio id="radio-1" name="a" value="1"></nu-radio>
+            <nu-radio id="radio-2" name="a" value="2"></nu-radio>
+          </nu-radio-group>
+          <nu-button type="submit">Submit</nu-button>
         </form>
       `);
-      const button = form.querySelector('sl-button')!;
-      const radioGroup = form.querySelector<SlRadioGroup>('sl-radio-group')!;
+      const button = form.querySelector('nu-button')!;
+      const radioGroup = form.querySelector<NuRadioGroup>('nu-radio-group')!;
       const submitHandler = sinon.spy((event: SubmitEvent) => event.preventDefault());
 
       // Submitting the form after setting custom validity should not trigger the handler
@@ -183,15 +183,15 @@ describe('when resetting a form', () => {
   it('should reset the element to its initial value', async () => {
     const form = await fixture<HTMLFormElement>(html`
       <form>
-        <sl-radio-group value="1">
-          <sl-radio value="1"></sl-radio>
-          <sl-radio value="2"></sl-radio>
-        </sl-radio-group>
-        <sl-button type="reset">Reset</sl-button>
+        <nu-radio-group value="1">
+          <nu-radio value="1"></nu-radio>
+          <nu-radio value="2"></nu-radio>
+        </nu-radio-group>
+        <nu-button type="reset">Reset</nu-button>
       </form>
     `);
-    const button = form.querySelector('sl-button')!;
-    const radioGroup = form.querySelector('sl-radio-group')!;
+    const button = form.querySelector('nu-button')!;
+    const radioGroup = form.querySelector('nu-radio-group')!;
     radioGroup.value = '2';
 
     await radioGroup.updateComplete;
@@ -208,16 +208,16 @@ describe('when submitting a form', () => {
   it('should submit the correct value when a value is provided', async () => {
     const form = await fixture<HTMLFormElement>(html`
       <form>
-        <sl-radio-group name="a" value="1">
-          <sl-radio id="radio-1" value="1"></sl-radio>
-          <sl-radio id="radio-2" value="2"></sl-radio>
-          <sl-radio id="radio-3" value="3"></sl-radio>
-        </sl-radio-group>
-        <sl-button type="submit">Submit</sl-button>
+        <nu-radio-group name="a" value="1">
+          <nu-radio id="radio-1" value="1"></nu-radio>
+          <nu-radio id="radio-2" value="2"></nu-radio>
+          <nu-radio id="radio-3" value="3"></nu-radio>
+        </nu-radio-group>
+        <nu-button type="submit">Submit</nu-button>
       </form>
     `);
-    const button = form.querySelector('sl-button')!;
-    const radio = form.querySelectorAll('sl-radio')[1]!;
+    const button = form.querySelector('nu-button')!;
+    const radio = form.querySelectorAll('nu-radio')[1]!;
     const submitHandler = sinon.spy((event: SubmitEvent) => {
       formData = new FormData(form);
 
@@ -237,13 +237,13 @@ describe('when submitting a form', () => {
     const el = await fixture<HTMLFormElement>(html`
       <div>
         <form id="f">
-          <sl-button type="submit">Submit</sl-button>
+          <nu-button type="submit">Submit</nu-button>
         </form>
-        <sl-radio-group form="f" name="a" value="1">
-          <sl-radio id="radio-1" value="1"></sl-radio>
-          <sl-radio id="radio-2" value="2"></sl-radio>
-          <sl-radio id="radio-3" value="3"></sl-radio>
-        </sl-radio-group>
+        <nu-radio-group form="f" name="a" value="1">
+          <nu-radio id="radio-1" value="1"></nu-radio>
+          <nu-radio id="radio-2" value="2"></nu-radio>
+          <nu-radio id="radio-3" value="3"></nu-radio>
+        </nu-radio-group>
       </div>
     `);
     const form = el.querySelector('form')!;
@@ -255,39 +255,39 @@ describe('when submitting a form', () => {
 
 describe('when a size is applied', () => {
   it('should apply the same size to all radios', async () => {
-    const radioGroup = await fixture<SlRadioGroup>(html`
-      <sl-radio-group size="large">
-        <sl-radio id="radio-1" value="1"></sl-radio>
-        <sl-radio id="radio-2" value="2"></sl-radio>
-      </sl-radio-group>
+    const radioGroup = await fixture<NuRadioGroup>(html`
+      <nu-radio-group size="large">
+        <nu-radio id="radio-1" value="1"></nu-radio>
+        <nu-radio id="radio-2" value="2"></nu-radio>
+      </nu-radio-group>
     `);
-    const [radio1, radio2] = radioGroup.querySelectorAll('sl-radio')!;
+    const [radio1, radio2] = radioGroup.querySelectorAll('nu-radio')!;
 
     expect(radio1.size).to.equal('large');
     expect(radio2.size).to.equal('large');
   });
 
   it('should apply the same size to all radio buttons', async () => {
-    const radioGroup = await fixture<SlRadioGroup>(html`
-      <sl-radio-group size="large">
-        <sl-radio-button id="radio-1" value="1"></sl-radio-button>
-        <sl-radio-button id="radio-2" value="2"></sl-radio-button>
-      </sl-radio-group>
+    const radioGroup = await fixture<NuRadioGroup>(html`
+      <nu-radio-group size="large">
+        <nu-radio-button id="radio-1" value="1"></nu-radio-button>
+        <nu-radio-button id="radio-2" value="2"></nu-radio-button>
+      </nu-radio-group>
     `);
-    const [radio1, radio2] = radioGroup.querySelectorAll('sl-radio-button')!;
+    const [radio1, radio2] = radioGroup.querySelectorAll('nu-radio-button')!;
 
     expect(radio1.size).to.equal('large');
     expect(radio2.size).to.equal('large');
   });
 
   it('should update the size of all radio buttons when size changes', async () => {
-    const radioGroup = await fixture<SlRadioGroup>(html`
-      <sl-radio-group size="small">
-        <sl-radio-button id="radio-1" value="1"></sl-radio-button>
-        <sl-radio-button id="radio-2" value="2"></sl-radio-button>
-      </sl-radio-group>
+    const radioGroup = await fixture<NuRadioGroup>(html`
+      <nu-radio-group size="small">
+        <nu-radio-button id="radio-1" value="1"></nu-radio-button>
+        <nu-radio-button id="radio-2" value="2"></nu-radio-button>
+      </nu-radio-group>
     `);
-    const [radio1, radio2] = radioGroup.querySelectorAll('sl-radio-button')!;
+    const [radio1, radio2] = radioGroup.querySelectorAll('nu-radio-button')!;
 
     expect(radio1.size).to.equal('small');
     expect(radio2.size).to.equal('small');
@@ -302,13 +302,13 @@ describe('when a size is applied', () => {
 
 describe('when the value changes', () => {
   it('should emit sl-change when toggled with the arrow keys', async () => {
-    const radioGroup = await fixture<SlRadioGroup>(html`
-      <sl-radio-group>
-        <sl-radio id="radio-1" value="1"></sl-radio>
-        <sl-radio id="radio-2" value="2"></sl-radio>
-      </sl-radio-group>
+    const radioGroup = await fixture<NuRadioGroup>(html`
+      <nu-radio-group>
+        <nu-radio id="radio-1" value="1"></nu-radio>
+        <nu-radio id="radio-2" value="2"></nu-radio>
+      </nu-radio-group>
     `);
-    const firstRadio = radioGroup.querySelector<SlRadio>('#radio-1')!;
+    const firstRadio = radioGroup.querySelector<NuRadio>('#radio-1')!;
     const changeHandler = sinon.spy();
     const inputHandler = sinon.spy();
 
@@ -324,40 +324,40 @@ describe('when the value changes', () => {
   });
 
   it('should emit sl-change and sl-input when clicked', async () => {
-    const radioGroup = await fixture<SlRadioGroup>(html`
-      <sl-radio-group>
-        <sl-radio id="radio-1" value="1"></sl-radio>
-        <sl-radio id="radio-2" value="2"></sl-radio>
-      </sl-radio-group>
+    const radioGroup = await fixture<NuRadioGroup>(html`
+      <nu-radio-group>
+        <nu-radio id="radio-1" value="1"></nu-radio>
+        <nu-radio id="radio-2" value="2"></nu-radio>
+      </nu-radio-group>
     `);
-    const radio = radioGroup.querySelector<SlRadio>('#radio-1')!;
+    const radio = radioGroup.querySelector<NuRadio>('#radio-1')!;
     setTimeout(() => radio.click());
-    const event = (await oneEvent(radioGroup, 'sl-change')) as SlChangeEvent;
+    const event = (await oneEvent(radioGroup, 'sl-change')) as NuChangeEvent;
     expect(event.target).to.equal(radioGroup);
     expect(radioGroup.value).to.equal('1');
   });
 
   it('should emit sl-change and sl-input when toggled with spacebar', async () => {
-    const radioGroup = await fixture<SlRadioGroup>(html`
-      <sl-radio-group>
-        <sl-radio id="radio-1" value="1"></sl-radio>
-        <sl-radio id="radio-2" value="2"></sl-radio>
-      </sl-radio-group>
+    const radioGroup = await fixture<NuRadioGroup>(html`
+      <nu-radio-group>
+        <nu-radio id="radio-1" value="1"></nu-radio>
+        <nu-radio id="radio-2" value="2"></nu-radio>
+      </nu-radio-group>
     `);
-    const radio = radioGroup.querySelector<SlRadio>('#radio-1')!;
+    const radio = radioGroup.querySelector<NuRadio>('#radio-1')!;
     radio.focus();
     setTimeout(() => sendKeys({ press: ' ' }));
-    const event = (await oneEvent(radioGroup, 'sl-change')) as SlChangeEvent;
+    const event = (await oneEvent(radioGroup, 'sl-change')) as NuChangeEvent;
     expect(event.target).to.equal(radioGroup);
     expect(radioGroup.value).to.equal('1');
   });
 
   it('should not emit sl-change or sl-input when the value is changed programmatically', async () => {
-    const radioGroup = await fixture<SlRadioGroup>(html`
-      <sl-radio-group value="1">
-        <sl-radio id="radio-1" value="1"></sl-radio>
-        <sl-radio id="radio-2" value="2"></sl-radio>
-      </sl-radio-group>
+    const radioGroup = await fixture<NuRadioGroup>(html`
+      <nu-radio-group value="1">
+        <nu-radio id="radio-1" value="1"></nu-radio>
+        <nu-radio id="radio-2" value="2"></nu-radio>
+      </nu-radio-group>
     `);
 
     radioGroup.addEventListener('sl-change', () => expect.fail('sl-change should not be emitted'));
@@ -370,10 +370,10 @@ describe('when the value changes', () => {
     //
     // See https://github.com/shoelace-style/shoelace/issues/1380
     //
-    const radioGroup = await fixture<SlRadioGroup>(html`
-      <sl-radio-group value="1">
-        <sl-radio id="radio-1" value="1"></sl-radio>
-      </sl-radio-group>
+    const radioGroup = await fixture<NuRadioGroup>(html`
+      <nu-radio-group value="1">
+        <nu-radio id="radio-1" value="1"></nu-radio>
+      </nu-radio-group>
     `);
 
     const formControl = radioGroup.shadowRoot!.querySelector('.form-control')!;
@@ -390,28 +390,28 @@ describe('when the value changes', () => {
    * to non-auto-defining components and not auto-defining for tests.
    */
   it.skip('should sync up radios and radio buttons if defined after radio group', async () => {
-    // customElements.define("sl-radio-group", SlRadioGroup)
+    // customElements.define("sl-radio-group", NuRadioGroup)
     //
-    // const radioGroup = await fixture<SlRadioGroup>(html`
-    //   <sl-radio-group value="1">
-    //     <sl-radio id="radio-1" value="1"></sl-radio>
-    //     <sl-radio id="radio-2" value="2"></sl-radio>
-    //   </sl-radio-group>
+    // const radioGroup = await fixture<NuRadioGroup>(html`
+    //   <nu-radio-group value="1">
+    //     <nu-radio id="radio-1" value="1"></nu-radio>
+    //     <nu-radio id="radio-2" value="2"></nu-radio>
+    //   </nu-radio-group>
     // `);
     //
     // await aTimeout(1)
     //
-    // customElements.define("sl-radio-button", SlRadioButton)
+    // customElements.define("sl-radio-button", NuRadioButton)
     //
-    // expect(radioGroup.querySelector("sl-radio")?.getAttribute("aria-checked")).to.equal("false")
-    //
-    // await aTimeout(1)
-    //
-    // customElements.define("sl-radio", SlRadio)
+    // expect(radioGroup.querySelector("nu-radio")?.getAttribute("aria-checked")).to.equal("false")
     //
     // await aTimeout(1)
     //
-    // expect(radioGroup.querySelector("sl-radio")?.getAttribute("aria-checked")).to.equal("true")
+    // customElements.define("sl-radio", NuRadio)
+    //
+    // await aTimeout(1)
+    //
+    // expect(radioGroup.querySelector("nu-radio")?.getAttribute("aria-checked")).to.equal("true")
   });
 
   runFormControlBaseTests('sl-radio-group');

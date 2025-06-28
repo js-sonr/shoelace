@@ -1,6 +1,6 @@
 import type { ReactiveController, ReactiveControllerHost } from 'lit';
 import type { NebulaFormControl } from '../internal/nebula-element.js';
-import type SlButton from '../components/button/button.js';
+import type NuButton from '../components/button/button.js';
 
 //
 // We store a WeakMap of forms + controls so we can keep references to all Shoelace controls within a given form. As
@@ -68,7 +68,7 @@ export class FormControlController implements ReactiveController {
     this.options = {
       form: input => {
         // If there's a form attribute, use it to find the target form by id
-        // Controls may not always reflect the 'form' property. For example, `<sl-button>` doesn't reflect.
+        // Controls may not always reflect the 'form' property. For example, `<nu-button>` doesn't reflect.
         const formId = input.form;
 
         if (formId) {
@@ -338,7 +338,7 @@ export class FormControlController implements ReactiveController {
     el.requestUpdate();
   }
 
-  private doAction(type: 'submit' | 'reset', submitter?: HTMLInputElement | SlButton) {
+  private doAction(type: 'submit' | 'reset', submitter?: HTMLInputElement | NuButton) {
     if (this.form) {
       const button = document.createElement('button');
       button.type = type;
@@ -373,12 +373,12 @@ export class FormControlController implements ReactiveController {
   }
 
   /** Resets the form, restoring all the control to their default value */
-  reset(submitter?: HTMLInputElement | SlButton) {
+  reset(submitter?: HTMLInputElement | NuButton) {
     this.doAction('reset', submitter);
   }
 
   /** Submits the form, triggering validation and form data injection. */
-  submit(submitter?: HTMLInputElement | SlButton) {
+  submit(submitter?: HTMLInputElement | NuButton) {
     // Calling form.submit() bypasses the submit event and constraint validation. To prevent this, we can inject a
     // native submit button into the form, "click" it, then remove it to simulate a standard form submission.
     this.doAction('submit', submitter);

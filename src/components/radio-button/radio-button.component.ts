@@ -29,7 +29,7 @@ import type { CSSResultGroup } from 'lit';
  * @csspart label - The container that wraps the radio button's label.
  * @csspart suffix - The container that wraps the suffix.
  */
-export default class SlRadioButton extends NebulaElement {
+export default class NuRadioButton extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   private readonly hasSlotController = new HasSlotController(this, '[default]', 'prefix', 'suffix');
@@ -67,7 +67,7 @@ export default class SlRadioButton extends NebulaElement {
 
   private handleBlur() {
     this.hasFocus = false;
-    this.emit('sl-blur');
+    this.emit('nu-blur');
   }
 
   private handleClick(e: MouseEvent) {
@@ -82,7 +82,7 @@ export default class SlRadioButton extends NebulaElement {
 
   private handleFocus() {
     this.hasFocus = true;
-    this.emit('sl-focus');
+    this.emit('nu-focus');
   }
 
   @watch('disabled', { waitUntilFirstUpdate: true })

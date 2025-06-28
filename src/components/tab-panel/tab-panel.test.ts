@@ -1,15 +1,15 @@
 import '../../../dist/shoelace.js';
 import { aTimeout, expect, fixture, html } from '@open-wc/testing';
-import type SlTabPanel from './tab-panel.js';
+import type NuTabPanel from './tab-panel.js';
 
-describe('<sl-tab-panel>', () => {
+describe('<nu-tab-panel>', () => {
   it('passes accessibility test', async () => {
-    const el = await fixture<SlTabPanel>(html` <sl-tab-panel>Test</sl-tab-panel> `);
+    const el = await fixture<NuTabPanel>(html` <nu-tab-panel>Test</nu-tab-panel> `);
     await expect(el).to.be.accessible();
   });
 
   it('default properties', async () => {
-    const el = await fixture<SlTabPanel>(html` <sl-tab-panel>Test</sl-tab-panel> `);
+    const el = await fixture<NuTabPanel>(html` <nu-tab-panel>Test</nu-tab-panel> `);
 
     expect(el.id).to.equal('sl-tab-panel-2');
     expect(el.name).to.equal('');
@@ -19,7 +19,7 @@ describe('<sl-tab-panel>', () => {
   });
 
   it('properties should reflect', async () => {
-    const el = await fixture<SlTabPanel>(html` <sl-tab-panel>Test</sl-tab-panel> `);
+    const el = await fixture<NuTabPanel>(html` <nu-tab-panel>Test</nu-tab-panel> `);
 
     el.name = 'test';
     el.active = true;
@@ -29,7 +29,7 @@ describe('<sl-tab-panel>', () => {
   });
 
   it('changing active should always update aria-hidden role', async () => {
-    const el = await fixture<SlTabPanel>(html` <sl-tab-panel>Test</sl-tab-panel> `);
+    const el = await fixture<NuTabPanel>(html` <nu-tab-panel>Test</nu-tab-panel> `);
 
     el.active = true;
     await aTimeout(100);
@@ -37,7 +37,7 @@ describe('<sl-tab-panel>', () => {
   });
 
   it('passed id should be used', async () => {
-    const el = await fixture<SlTabPanel>(html` <sl-tab-panel id="test-id">Test</sl-tab-panel> `);
+    const el = await fixture<NuTabPanel>(html` <nu-tab-panel id="test-id">Test</nu-tab-panel> `);
 
     expect(el.id).to.equal('test-id');
   });

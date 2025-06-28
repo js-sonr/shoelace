@@ -3,7 +3,7 @@ import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import NebulaElement from '../../internal/nebula-element.js';
-import SlIcon from '../icon/icon.component.js';
+import NuIcon from '../icon/icon.component.js';
 import styles from './animated-image.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -18,17 +18,17 @@ import type { CSSResultGroup } from 'lit';
  * @event sl-load - Emitted when the image loads successfully.
  * @event sl-error - Emitted when the image fails to load.
  *
- * @slot play-icon - Optional play icon to use instead of the default. Works best with `<sl-icon>`.
- * @slot pause-icon - Optional pause icon to use instead of the default. Works best with `<sl-icon>`.
+ * @slot play-icon - Optional play icon to use instead of the default. Works best with `<nu-icon>`.
+ * @slot pause-icon - Optional pause icon to use instead of the default. Works best with `<nu-icon>`.
  *
  * @part control-box - The container that surrounds the pause/play icons and provides their background.
  *
  * @cssproperty --control-box-size - The size of the icon box.
  * @cssproperty --icon-size - The size of the play/pause icons.
  */
-export default class SlAnimatedImage extends NebulaElement {
+export default class NuAnimatedImage extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
-  static dependencies = { 'sl-icon': SlIcon };
+  static dependencies = { 'nu-icon': NuIcon };
 
   @query('.animated-image__animated') animatedImage: HTMLImageElement;
 
@@ -57,13 +57,13 @@ export default class SlAnimatedImage extends NebulaElement {
     this.frozenFrame = canvas.toDataURL('image/gif');
 
     if (!this.isLoaded) {
-      this.emit('sl-load');
+      this.emit('nu-load');
       this.isLoaded = true;
     }
   }
 
   private handleError() {
-    this.emit('sl-error');
+    this.emit('nu-error');
   }
 
   @watch('play', { waitUntilFirstUpdate: true })
@@ -106,8 +106,8 @@ export default class SlAnimatedImage extends NebulaElement {
               />
 
               <div part="control-box" class="animated-image__control-box">
-                <slot name="play-icon"><sl-icon name="play-fill" library="system"></sl-icon></slot>
-                <slot name="pause-icon"><sl-icon name="pause-fill" library="system"></sl-icon></slot>
+                <slot name="play-icon"><nu-icon name="play-fill" library="system"></nu-icon></slot>
+                <slot name="pause-icon"><nu-icon name="pause-fill" library="system"></nu-icon></slot>
               </div>
             `
           : ''}

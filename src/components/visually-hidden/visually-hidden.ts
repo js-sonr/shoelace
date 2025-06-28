@@ -1,12 +1,12 @@
-import SlVisuallyHidden from './visually-hidden.component.js';
+import NuVisuallyHidden from './visually-hidden.component.js';
 
 export * from './visually-hidden.component.js';
-export default SlVisuallyHidden;
+export default NuVisuallyHidden;
 
-SlVisuallyHidden.define('sl-visually-hidden');
+NuVisuallyHidden.define('nu-visually-hidden');
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-visually-hidden': SlVisuallyHidden;
+    'nu-visually-hidden': NuVisuallyHidden;
   }
 }

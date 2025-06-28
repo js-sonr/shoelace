@@ -105,7 +105,7 @@ function runAllValidityTests(
       expect(emittedEvents.length).to.equal(0);
     });
 
-    // TODO: As soon as `SlRadioGroup` has a property `disabled` this
+    // TODO: As soon as `NuRadioGroup` has a property `disabled` this
     // condition can be removed
     if (tagName !== 'sl-radio-group') {
       it('should not emit an `sl-invalid` event when `.checkValidity()` is called in custom error case while disabled', async () => {
@@ -163,7 +163,7 @@ function runAllValidityTests(
 }
 
 //
-//  Special tests for <sl-button type="button">
+//  Special tests for <nu-button type="button">
 //
 function runSpecialTests_slButtonOfTypeButton(createControl: CreateControlFn) {
   it('should make sure that `.validity.valid` is `false` in custom error case', async () => {
@@ -205,7 +205,7 @@ function runSpecialTests_slButtonOfTypeButton(createControl: CreateControlFn) {
 }
 
 //
-// Special tests for <sl-button href="...">
+// Special tests for <nu-button href="...">
 //
 function runSpecialTests_slButtonWithHref(createControl: CreateControlFn) {
   it('should make sure that calling `.checkValidity()` will return `true` in custom error case', async () => {
@@ -319,7 +319,7 @@ function getMode(control: NebulaFormControl) {
     return 'slButtonOfTypeButton';
   }
 
-  // <sl-button href="...">
+  // <nu-button href="...">
   if (control.localName === 'sl-button' && 'href' in control && !!control.href) {
     return 'slButtonWithHRef';
   }

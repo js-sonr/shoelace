@@ -3,9 +3,9 @@ import { css } from 'lit';
 export default css`
   :host {
     --size: 25rem;
-    --header-spacing: var(--sl-spacing-large);
-    --body-spacing: var(--sl-spacing-large);
-    --footer-spacing: var(--sl-spacing-large);
+    --header-spacing: var(--nu-spacing-large);
+    --body-spacing: var(--nu-spacing-large);
+    --footer-spacing: var(--nu-spacing-large);
 
     display: contents;
   }
@@ -26,7 +26,7 @@ export default css`
 
   .drawer--fixed {
     position: fixed;
-    z-index: var(--sl-z-index-drawer);
+    z-index: var(--nu-z-index-drawer);
   }
 
   .drawer__panel {
@@ -36,8 +36,8 @@ export default css`
     z-index: 2;
     max-width: 100%;
     max-height: 100%;
-    background-color: var(--sl-panel-background-color);
-    box-shadow: var(--sl-shadow-x-large);
+    background-color: var(--nu-panel-background-color);
+    box-shadow: var(--nu-shadow-x-large);
     overflow: auto;
     pointer-events: all;
   }
@@ -89,8 +89,8 @@ export default css`
   .drawer__title {
     flex: 1 1 auto;
     font: inherit;
-    font-size: var(--sl-font-size-large);
-    line-height: var(--sl-line-height-dense);
+    font-size: var(--nu-font-size-large);
+    line-height: var(--nu-line-height-dense);
     padding: var(--header-spacing);
     margin: 0;
   }
@@ -100,7 +100,7 @@ export default css`
     display: flex;
     flex-wrap: wrap;
     justify-content: end;
-    gap: var(--sl-spacing-2x-small);
+    gap: var(--nu-spacing-2x-small);
     padding: 0 var(--header-spacing);
   }
 
@@ -109,7 +109,7 @@ export default css`
     flex: 0 0 auto;
     display: flex;
     align-items: center;
-    font-size: var(--sl-font-size-medium);
+    font-size: var(--nu-font-size-medium);
   }
 
   .drawer__body {
@@ -126,7 +126,7 @@ export default css`
   }
 
   .drawer__footer ::slotted(sl-button:not(:last-of-type)) {
-    margin-inline-end: var(--sl-spacing-x-small);
+    margin-inline-end: var(--nu-spacing-x-small);
   }
 
   .drawer:not(.drawer--has-footer) .drawer__footer {
@@ -140,7 +140,7 @@ export default css`
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: var(--sl-overlay-background-color);
+    background-color: var(--nu-overlay-background-color);
     pointer-events: all;
   }
 
@@ -150,7 +150,7 @@ export default css`
 
   @media (forced-colors: active) {
     .drawer__panel {
-      border: solid 1px var(--sl-color-neutral-0);
+      border: solid 1px var(--nu-color-neutral-0);
     }
   }
 `;

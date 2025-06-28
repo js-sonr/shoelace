@@ -32,7 +32,7 @@ interface IconSource {
  * @csspart svg - The internal SVG element.
  * @csspart use - The <use> element generated when using `spriteSheet: true`
  */
-export default class SlIcon extends NebulaElement {
+export default class NuIcon extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   private initialRender = false;
@@ -192,12 +192,12 @@ export default class SlIcon extends NebulaElement {
       case RETRYABLE_ERROR:
       case CACHEABLE_ERROR:
         this.svg = null;
-        this.emit('sl-error');
+        this.emit('nu-error');
         break;
       default:
         this.svg = svg.cloneNode(true) as SVGElement;
         library?.mutator?.(this.svg);
-        this.emit('sl-load');
+        this.emit('nu-load');
     }
   }
 

@@ -4,7 +4,7 @@ import { LocalizeController } from '../../utilities/localize.js';
 import { property } from 'lit/decorators.js';
 import componentStyles from '../../styles/component.styles.js';
 import NebulaElement from '../../internal/nebula-element.js';
-import SlIconButton from '../icon-button/icon-button.component.js';
+import NuIconButton from '../icon-button/icon-button.component.js';
 import styles from './tag.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -22,12 +22,12 @@ import type { CSSResultGroup } from 'lit';
  *
  * @csspart base - The component's base wrapper.
  * @csspart content - The tag's content.
- * @csspart remove-button - The tag's remove button, an `<sl-icon-button>`.
+ * @csspart remove-button - The tag's remove button, an `<nu-icon-button>`.
  * @csspart remove-button__base - The remove button's exported `base` part.
  */
-export default class SlTag extends NebulaElement {
+export default class NuTag extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
-  static dependencies = { 'sl-icon-button': SlIconButton };
+  static dependencies = { 'nu-icon-button': NuIconButton };
 
   private readonly localize = new LocalizeController(this);
 
@@ -44,7 +44,7 @@ export default class SlTag extends NebulaElement {
   @property({ type: Boolean }) removable = false;
 
   private handleRemoveClick() {
-    this.emit('sl-remove');
+    this.emit('nu-remove');
   }
 
   render() {
@@ -76,7 +76,7 @@ export default class SlTag extends NebulaElement {
 
         ${this.removable
           ? html`
-              <sl-icon-button
+              <nu-icon-button
                 part="remove-button"
                 exportparts="base:remove-button__base"
                 name="x-lg"
@@ -85,7 +85,7 @@ export default class SlTag extends NebulaElement {
                 class="tag__remove"
                 @click=${this.handleRemoveClick}
                 tabindex="-1"
-              ></sl-icon-button>
+              ></nu-icon-button>
             `
           : ''}
       </span>

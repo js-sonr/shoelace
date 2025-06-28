@@ -21,7 +21,7 @@ let id = 0;
  *
  * @cssproperty --padding - The tab panel's padding.
  */
-export default class SlTabPanel extends NebulaElement {
+export default class NuTabPanel extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   private readonly attrId = ++id;

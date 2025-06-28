@@ -11,11 +11,11 @@ import type { CSSResultGroup } from 'lit';
  * @status stable
  * @since 2.0
  *
- * @slot - One or more `<sl-button>` elements to display in the button group.
+ * @slot - One or more `<nu-button>` elements to display in the button group.
  *
  * @csspart base - The component's base wrapper.
  */
-export default class SlButtonGroup extends NebulaElement {
+export default class NuButtonGroup extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   @query('slot') defaultSlot: HTMLSlotElement;

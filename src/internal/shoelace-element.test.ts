@@ -2,11 +2,11 @@
 import { expect } from '@open-wc/testing';
 import { readFile } from '@web/test-runner-commands';
 
-import SlButton from '../../dist/components/button/button.component.js';
+import NuButton from '../../dist/components/button/button.component.js';
 
 // We don't use ShoelaceElement directly because it shouldn't exist in the final bundle.
 /* eslint-disable */
-const ShoelaceElement = Object.getPrototypeOf(SlButton);
+const ShoelaceElement = Object.getPrototypeOf(NuButton);
 /* eslint-enable */
 
 // @ts-expect-error Isn't written in TS.
@@ -47,7 +47,7 @@ beforeEach(() => {
 });
 
 it('Should provide a console warning if attempting to register the same tag twice', () => {
-  class MyButton extends SlButton {
+  class MyButton extends NuButton {
     static version = '0.4.5';
   }
 
@@ -55,7 +55,7 @@ it('Should provide a console warning if attempting to register the same tag twic
 
   expect(Boolean(window.customElements.get('sl-button'))).to.be.false;
   /* eslint-disable */
-  SlButton.define('sl-button');
+  NuButton.define('sl-button');
   expect(Boolean(window.customElements.get('sl-button'))).to.be.true;
   MyButton.define('sl-button');
   /* eslint-enable */
@@ -67,7 +67,7 @@ it('Should provide a console warning if attempting to register the same tag twic
   expect(warning).to.match(
     new RegExp(
       /* eslint-disable */
-      `Attempted to register <sl-button> v${MyButton.version}, but <sl-button> v${SlButton.version} has already been registered`
+      `Attempted to register <nu-button> v${MyButton.version}, but <nu-button> v${NuButton.version} has already been registered`
       /* eslint-enable */
     ),
     'i'
@@ -75,13 +75,13 @@ it('Should provide a console warning if attempting to register the same tag twic
 });
 
 it('Should not provide a console warning if versions match', () => {
-  class MyButton extends SlButton {}
+  class MyButton extends NuButton {}
 
   const stub = Sinon.stub(console, 'warn');
 
   /* eslint-disable */
   expect(Boolean(window.customElements.get('sl-button'))).to.be.false;
-  SlButton.define('sl-button');
+  NuButton.define('sl-button');
   expect(Boolean(window.customElements.get('sl-button'))).to.be.true;
   MyButton.define('sl-button');
   /* eslint-enable */
@@ -92,7 +92,7 @@ it('Should not provide a console warning if versions match', () => {
 it('Should register dependencies when the element is constructed the first time', () => {
   /* eslint-disable */
   class MyElement extends NebulaElement {
-    static dependencies = { 'sl-button': SlButton };
+    static dependencies = { 'sl-button': NuButton };
     static version = 'random-version';
   }
   /* eslint-enable */

@@ -1,23 +1,23 @@
 import '../../../dist/shoelace.js';
 import { expect, fixture, html } from '@open-wc/testing';
-import type SlBreadcrumb from './breadcrumb.js';
+import type NuBreadcrumb from './breadcrumb.js';
 
 // The default link color just misses AA contrast, but the next step up is way too dark. Maybe we can solve this in the
 // future with a prefers-contrast media query.
 const ignoredRules = ['color-contrast'];
 
-describe('<sl-breadcrumb>', () => {
-  let el: SlBreadcrumb;
+describe('<nu-breadcrumb>', () => {
+  let el: NuBreadcrumb;
 
   describe('when provided a standard list of el-breadcrumb-item children and no parameters', () => {
     before(async () => {
-      el = await fixture<SlBreadcrumb>(html`
-        <sl-breadcrumb>
-          <sl-breadcrumb-item>Catalog</sl-breadcrumb-item>
-          <sl-breadcrumb-item>Clothing</sl-breadcrumb-item>
-          <sl-breadcrumb-item>Women's</sl-breadcrumb-item>
-          <sl-breadcrumb-item>Shirts &amp; Tops</sl-breadcrumb-item>
-        </sl-breadcrumb>
+      el = await fixture<NuBreadcrumb>(html`
+        <nu-breadcrumb>
+          <nu-breadcrumb-item>Catalog</nu-breadcrumb-item>
+          <nu-breadcrumb-item>Clothing</nu-breadcrumb-item>
+          <nu-breadcrumb-item>Women's</nu-breadcrumb-item>
+          <nu-breadcrumb-item>Shirts &amp; Tops</nu-breadcrumb-item>
+        </nu-breadcrumb>
       `);
     });
 
@@ -26,11 +26,11 @@ describe('<sl-breadcrumb>', () => {
     });
 
     it('should render sl-icon as separator', () => {
-      expect(el.querySelectorAll('sl-icon').length).to.eq(4);
+      expect(el.querySelectorAll('nu-icon').length).to.eq(4);
     });
 
     it('should attach aria-current "page" on the last breadcrumb item.', () => {
-      const breadcrumbItems = el.querySelectorAll('sl-breadcrumb-item');
+      const breadcrumbItems = el.querySelectorAll('nu-breadcrumb-item');
       const lastNode = breadcrumbItems[3];
       expect(lastNode).attribute('aria-current', 'page');
     });
@@ -38,13 +38,13 @@ describe('<sl-breadcrumb>', () => {
 
   describe('when provided a standard list of el-breadcrumb-item children and an element in the slot "separator" to support Custom Separators', () => {
     before(async () => {
-      el = await fixture<SlBreadcrumb>(html`
-        <sl-breadcrumb>
+      el = await fixture<NuBreadcrumb>(html`
+        <nu-breadcrumb>
           <span class="replacement-separator" slot="separator">/</span>
-          <sl-breadcrumb-item>First</sl-breadcrumb-item>
-          <sl-breadcrumb-item>Second</sl-breadcrumb-item>
-          <sl-breadcrumb-item>Third</sl-breadcrumb-item>
-        </sl-breadcrumb>
+          <nu-breadcrumb-item>First</nu-breadcrumb-item>
+          <nu-breadcrumb-item>Second</nu-breadcrumb-item>
+          <nu-breadcrumb-item>Third</nu-breadcrumb-item>
+        </nu-breadcrumb>
       `);
     });
 
@@ -61,22 +61,22 @@ describe('<sl-breadcrumb>', () => {
 
     it('should replace the sl-icon separator with the provided separator', () => {
       expect(el.querySelectorAll('.replacement-separator').length).to.eq(4);
-      expect(el.querySelectorAll('sl-icon').length).to.eq(0);
+      expect(el.querySelectorAll('nu-icon').length).to.eq(0);
     });
   });
 
   describe('when provided a standard list of el-breadcrumb-item children and an element in the slot "prefix" to support prefix icons', () => {
     before(async () => {
-      el = await fixture<SlBreadcrumb>(html`
-        <sl-breadcrumb>
-          <sl-breadcrumb-item>
+      el = await fixture<NuBreadcrumb>(html`
+        <nu-breadcrumb>
+          <nu-breadcrumb-item>
             <span class="prefix-example" slot="prefix">/</span>
             Home
-          </sl-breadcrumb-item>
-          <sl-breadcrumb-item>First</sl-breadcrumb-item>
-          <sl-breadcrumb-item>Second</sl-breadcrumb-item>
-          <sl-breadcrumb-item>Third</sl-breadcrumb-item>
-        </sl-breadcrumb>
+          </nu-breadcrumb-item>
+          <nu-breadcrumb-item>First</nu-breadcrumb-item>
+          <nu-breadcrumb-item>Second</nu-breadcrumb-item>
+          <nu-breadcrumb-item>Third</nu-breadcrumb-item>
+        </nu-breadcrumb>
       `);
     });
 
@@ -87,16 +87,16 @@ describe('<sl-breadcrumb>', () => {
 
   describe('when provided a standard list of el-breadcrumb-item children and an element in the slot "suffix" to support suffix icons', () => {
     before(async () => {
-      el = await fixture<SlBreadcrumb>(html`
-        <sl-breadcrumb>
-          <sl-breadcrumb-item>First</sl-breadcrumb-item>
-          <sl-breadcrumb-item>Second</sl-breadcrumb-item>
-          <sl-breadcrumb-item>Third</sl-breadcrumb-item>
-          <sl-breadcrumb-item>
+      el = await fixture<NuBreadcrumb>(html`
+        <nu-breadcrumb>
+          <nu-breadcrumb-item>First</nu-breadcrumb-item>
+          <nu-breadcrumb-item>Second</nu-breadcrumb-item>
+          <nu-breadcrumb-item>Third</nu-breadcrumb-item>
+          <nu-breadcrumb-item>
             <span class="prefix-example" slot="suffix">/</span>
             Security
-          </sl-breadcrumb-item>
-        </sl-breadcrumb>
+          </nu-breadcrumb-item>
+        </nu-breadcrumb>
       `);
     });
 

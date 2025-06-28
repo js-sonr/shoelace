@@ -18,9 +18,9 @@ import type { CSSResultGroup } from 'lit';
  * @event sl-start - Emitted when the animation starts or restarts.
  *
  * @slot - The element to animate. Avoid slotting in more than one element, as subsequent ones will be ignored. To
- *  animate multiple elements, either wrap them in a single container or use multiple `<sl-animation>` elements.
+ *  animate multiple elements, either wrap them in a single container or use multiple `<nu-animation>` elements.
  */
-export default class SlAnimation extends NebulaElement {
+export default class NuAnimation extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   private animation?: Animation;
@@ -101,13 +101,13 @@ export default class SlAnimation extends NebulaElement {
   private handleAnimationFinish = () => {
     this.play = false;
     this.hasStarted = false;
-    this.emit('sl-finish');
+    this.emit('nu-finish');
   };
 
   private handleAnimationCancel = () => {
     this.play = false;
     this.hasStarted = false;
-    this.emit('sl-cancel');
+    this.emit('nu-cancel');
   };
 
   private handleSlotChange() {
@@ -142,7 +142,7 @@ export default class SlAnimation extends NebulaElement {
 
     if (this.play) {
       this.hasStarted = true;
-      this.emit('sl-start');
+      this.emit('nu-start');
     } else {
       this.animation.pause();
     }
@@ -184,7 +184,7 @@ export default class SlAnimation extends NebulaElement {
     if (this.animation) {
       if (this.play && !this.hasStarted) {
         this.hasStarted = true;
-        this.emit('sl-start');
+        this.emit('nu-start');
       }
 
       if (this.play) {

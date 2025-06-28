@@ -5,7 +5,7 @@ import { property, query } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import NebulaElement from '../../internal/nebula-element.js';
-import SlIconButton from '../icon-button/icon-button.component.js';
+import NuIconButton from '../icon-button/icon-button.component.js';
 import styles from './tab.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -24,12 +24,12 @@ let id = 0;
  * @event sl-close - Emitted when the tab is closable and the close button is activated.
  *
  * @csspart base - The component's base wrapper.
- * @csspart close-button - The close button, an `<sl-icon-button>`.
+ * @csspart close-button - The close button, an `<nu-icon-button>`.
  * @csspart close-button__base - The close button's exported `base` part.
  */
-export default class SlTab extends NebulaElement {
+export default class NuTab extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
-  static dependencies = { 'sl-icon-button': SlIconButton };
+  static dependencies = { 'nu-icon-button': NuIconButton };
 
   private readonly localize = new LocalizeController(this);
 
@@ -63,7 +63,7 @@ export default class SlTab extends NebulaElement {
 
   private handleCloseClick(event: Event) {
     event.stopPropagation();
-    this.emit('sl-close');
+    this.emit('nu-close');
   }
 
   @watch('active')
@@ -99,7 +99,7 @@ export default class SlTab extends NebulaElement {
         <slot></slot>
         ${this.closable
           ? html`
-              <sl-icon-button
+              <nu-icon-button
                 part="close-button"
                 exportparts="base:close-button__base"
                 name="x-lg"
@@ -108,7 +108,7 @@ export default class SlTab extends NebulaElement {
                 class="tab__close-button"
                 @click=${this.handleCloseClick}
                 tabindex="-1"
-              ></sl-icon-button>
+              ></nu-icon-button>
             `
           : ''}
       </div>
@@ -118,6 +118,6 @@ export default class SlTab extends NebulaElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-tab': SlTab;
+    'sl-tab': NuTab;
   }
 }

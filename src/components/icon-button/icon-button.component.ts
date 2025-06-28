@@ -4,7 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import { property, query, state } from 'lit/decorators.js';
 import componentStyles from '../../styles/component.styles.js';
 import NebulaElement from '../../internal/nebula-element.js';
-import SlIcon from '../icon/icon.component.js';
+import NuIcon from '../icon/icon.component.js';
 import styles from './icon-button.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -21,9 +21,9 @@ import type { CSSResultGroup } from 'lit';
  *
  * @csspart base - The component's base wrapper.
  */
-export default class SlIconButton extends NebulaElement {
+export default class NuIconButton extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
-  static dependencies = { 'sl-icon': SlIcon };
+  static dependencies = { 'nu-icon': NuIcon };
 
   @query('.icon-button') button: HTMLButtonElement | HTMLLinkElement;
 
@@ -61,12 +61,12 @@ export default class SlIconButton extends NebulaElement {
 
   private handleBlur() {
     this.hasFocus = false;
-    this.emit('sl-blur');
+    this.emit('nu-blur');
   }
 
   private handleFocus() {
     this.hasFocus = true;
-    this.emit('sl-focus');
+    this.emit('nu-focus');
   }
 
   private handleClick(event: MouseEvent) {
@@ -118,13 +118,13 @@ export default class SlIconButton extends NebulaElement {
         @focus=${this.handleFocus}
         @click=${this.handleClick}
       >
-        <sl-icon
+        <nu-icon
           class="icon-button__icon"
           name=${ifDefined(this.name)}
           library=${ifDefined(this.library)}
           src=${ifDefined(this.src)}
           aria-hidden="true"
-        ></sl-icon>
+        ></nu-icon>
       </${tag}>
     `;
   }

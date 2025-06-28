@@ -1,7 +1,7 @@
 import '../../../dist/shoelace.js';
 import { aTimeout, expect, fixture, html, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
-import type SlInclude from './include.js';
+import type NuInclude from './include.js';
 
 const stubbedFetchResponse: Response = {
   headers: new Headers(),
@@ -27,7 +27,7 @@ async function delayResolve(resolveValue: string) {
   return resolveValue;
 }
 
-describe('<sl-include>', () => {
+describe('<nu-include>', () => {
   afterEach(() => {
     sinon.verifyAndRestore();
   });
@@ -39,7 +39,7 @@ describe('<sl-include>', () => {
       status: 200,
       text: () => delayResolve('"id": 1')
     });
-    const el = await fixture<SlInclude>(html` <sl-include src="/found"></sl-include> `);
+    const el = await fixture<NuInclude>(html` <nu-include src="/found"></nu-include> `);
     const loadHandler = sinon.spy();
 
     el.addEventListener('sl-load', loadHandler);
@@ -56,7 +56,7 @@ describe('<sl-include>', () => {
       status: 404,
       text: () => delayResolve('{}')
     });
-    const el = await fixture<SlInclude>(html` <sl-include src="/not-found"></sl-include> `);
+    const el = await fixture<NuInclude>(html` <nu-include src="/not-found"></nu-include> `);
     const loadHandler = sinon.spy();
 
     el.addEventListener('sl-error', loadHandler);

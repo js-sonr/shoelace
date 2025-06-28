@@ -1,12 +1,12 @@
-import SlDetails from './details.component.js';
+import NuDetails from './details.component.js';
 
 export * from './details.component.js';
-export default SlDetails;
+export default NuDetails;
 
-SlDetails.define('sl-details');
+NuDetails.define('nu-details');
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-details': SlDetails;
+    'nu-details': NuDetails;
   }
 }

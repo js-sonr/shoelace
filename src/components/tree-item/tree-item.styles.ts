@@ -12,7 +12,7 @@ export default css`
   }
 
   slot:not([name])::slotted(sl-icon) {
-    margin-inline-end: var(--sl-spacing-x-small);
+    margin-inline-end: var(--nu-spacing-x-small);
   }
 
   .tree-item {
@@ -20,7 +20,7 @@ export default css`
     display: flex;
     align-items: stretch;
     flex-direction: column;
-    color: var(--sl-color-neutral-700);
+    color: var(--nu-color-neutral-700);
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
@@ -33,11 +33,11 @@ export default css`
   .tree-item__expand-button,
   .tree-item__checkbox,
   .tree-item__label {
-    font-family: var(--sl-font-sans);
-    font-size: var(--sl-font-size-medium);
-    font-weight: var(--sl-font-weight-normal);
-    line-height: var(--sl-line-height-dense);
-    letter-spacing: var(--sl-letter-spacing-normal);
+    font-family: var(--nu-font-sans);
+    font-size: var(--nu-font-size-medium);
+    font-weight: var(--nu-font-weight-normal);
+    line-height: var(--nu-line-height-dense);
+    letter-spacing: var(--nu-letter-spacing-normal);
   }
 
   .tree-item__checkbox::part(base) {
@@ -56,8 +56,8 @@ export default css`
     align-items: center;
     justify-content: center;
     box-sizing: content-box;
-    color: var(--sl-color-neutral-500);
-    padding: var(--sl-spacing-x-small);
+    color: var(--nu-color-neutral-500);
+    padding: var(--nu-spacing-x-small);
     width: 1rem;
     height: 1rem;
     flex-shrink: 0;
@@ -65,7 +65,7 @@ export default css`
   }
 
   .tree-item__expand-button {
-    transition: var(--sl-transition-medium) rotate ease;
+    transition: var(--nu-transition-medium) rotate ease;
   }
 
   .tree-item--expanded .tree-item__expand-button {
@@ -102,29 +102,29 @@ export default css`
   }
 
   :host(:focus-visible) .tree-item__item {
-    outline: var(--sl-focus-ring);
-    outline-offset: var(--sl-focus-ring-offset);
+    outline: var(--nu-focus-ring);
+    outline-offset: var(--nu-focus-ring-offset);
     z-index: 2;
   }
 
   :host(:not([aria-disabled='true'])) .tree-item--selected .tree-item__item {
-    background-color: var(--sl-color-neutral-100);
-    border-inline-start-color: var(--sl-color-primary-600);
+    background-color: var(--nu-color-neutral-100);
+    border-inline-start-color: var(--nu-color-primary-600);
   }
 
   :host(:not([aria-disabled='true'])) .tree-item__expand-button {
-    color: var(--sl-color-neutral-600);
+    color: var(--nu-color-neutral-600);
   }
 
   .tree-item__label {
     display: flex;
     align-items: center;
-    transition: var(--sl-transition-fast) color;
+    transition: var(--nu-transition-fast) color;
   }
 
   .tree-item__children {
     display: block;
-    font-size: calc(1em + var(--indent-size, var(--sl-spacing-medium)));
+    font-size: calc(1em + var(--indent-size, var(--nu-spacing-medium)));
   }
 
   /* Indentation lines */

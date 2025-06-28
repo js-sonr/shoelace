@@ -8,8 +8,8 @@ import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import NebulaElement from '../../internal/nebula-element.js';
-import SlIcon from '../icon/icon.component.js';
-import SlSpinner from '../spinner/spinner.component.js';
+import NuIcon from '../icon/icon.component.js';
+import NuSpinner from '../spinner/spinner.component.js';
 import styles from './button.styles.js';
 import type { CSSResultGroup } from 'lit';
 import type { NebulaFormControl } from '../../internal/nebula-element.js';
@@ -35,14 +35,14 @@ import type { NebulaFormControl } from '../../internal/nebula-element.js';
  * @csspart prefix - The container that wraps the prefix.
  * @csspart label - The button's label.
  * @csspart suffix - The container that wraps the suffix.
- * @csspart caret - The button's caret icon, an `<sl-icon>` element.
+ * @csspart caret - The button's caret icon, an `<nu-icon>` element.
  * @csspart spinner - The spinner that shows when the button is in the loading state.
  */
-export default class SlButton extends NebulaElement implements NebulaFormControl {
+export default class NuButton extends NebulaElement implements NebulaFormControl {
   static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = {
-    'sl-icon': SlIcon,
-    'sl-spinner': SlSpinner
+    'nu-icon': NuIcon,
+    'nu-spinner': NuSpinner
   };
 
   private readonly formControlController = new FormControlController(this, {
@@ -81,7 +81,7 @@ export default class SlButton extends NebulaElement implements NebulaFormControl
   @property({ type: Boolean, reflect: true }) pill = false;
 
   /**
-   * Draws a circular icon button. When this attribute is present, the button expects a single `<sl-icon>` in the
+   * Draws a circular icon button. When this attribute is present, the button expects a single `<nu-icon>` in the
    * default slot.
    */
   @property({ type: Boolean, reflect: true }) circle = false;
@@ -169,12 +169,12 @@ export default class SlButton extends NebulaElement implements NebulaFormControl
 
   private handleBlur() {
     this.hasFocus = false;
-    this.emit('sl-blur');
+    this.emit('nu-blur');
   }
 
   private handleFocus() {
     this.hasFocus = true;
-    this.emit('sl-focus');
+    this.emit('nu-focus');
   }
 
   private handleClick() {
@@ -309,9 +309,9 @@ export default class SlButton extends NebulaElement implements NebulaFormControl
         <slot part="label" class="button__label"></slot>
         <slot name="suffix" part="suffix" class="button__suffix"></slot>
         ${
-          this.caret ? html` <sl-icon part="caret" class="button__caret" library="system" name="caret"></sl-icon> ` : ''
+          this.caret ? html` <nu-icon part="caret" class="button__caret" library="system" name="caret"></nu-icon> ` : ''
         }
-        ${this.loading ? html`<sl-spinner part="spinner"></sl-spinner>` : ''}
+        ${this.loading ? html`<nu-spinner part="spinner"></nu-spinner>` : ''}
       </${tag}>
     `;
     /* eslint-enable lit/no-invalid-html */

@@ -1,12 +1,12 @@
-import SlDropdown from './dropdown.component.js';
+import NuDropdown from './dropdown.component.js';
 
 export * from './dropdown.component.js';
-export default SlDropdown;
+export default NuDropdown;
 
-SlDropdown.define('sl-dropdown');
+NuDropdown.define('nu-dropdown');
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-dropdown': SlDropdown;
+    'nu-dropdown': NuDropdown;
   }
 }

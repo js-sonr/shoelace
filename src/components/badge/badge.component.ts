@@ -16,7 +16,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @csspart base - The component's base wrapper.
  */
-export default class SlBadge extends NebulaElement {
+export default class NuBadge extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   /** The badge's theme variant. */

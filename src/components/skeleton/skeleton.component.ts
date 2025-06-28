@@ -19,7 +19,7 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --color - The color of the skeleton.
  * @cssproperty --sheen-color - The sheen color when the skeleton is in its loading state.
  */
-export default class SlSkeleton extends NebulaElement {
+export default class NuSkeleton extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   /** Determines which effect the skeleton will use. */

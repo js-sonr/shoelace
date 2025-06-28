@@ -24,7 +24,7 @@ const availableUnits: UnitConfig[] = [
  * @status stable
  * @since 2.0
  */
-export default class SlRelativeTime extends NebulaElement {
+export default class NuRelativeTime extends NebulaElement {
   private readonly localize = new LocalizeController(this);
   private updateTimeout: number;
 

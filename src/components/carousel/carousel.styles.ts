@@ -2,7 +2,7 @@ import { css } from 'lit';
 
 export default css`
   :host {
-    --slide-gap: var(--sl-spacing-medium, 1rem);
+    --slide-gap: var(--nu-spacing-medium, 1rem);
     --aspect-ratio: 16 / 9;
     --scroll-hint: 0px;
 
@@ -16,7 +16,7 @@ export default css`
     grid-template-areas:
       '. slides .'
       '. pagination .';
-    gap: var(--sl-spacing-medium);
+    gap: var(--nu-spacing-medium);
     align-items: center;
     min-height: 100%;
     min-width: 100%;
@@ -28,7 +28,7 @@ export default css`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--sl-spacing-small);
+    gap: var(--nu-spacing-small);
   }
 
   .carousel__slides {
@@ -43,7 +43,7 @@ export default css`
     overscroll-behavior-x: contain;
     scrollbar-width: none;
     aspect-ratio: calc(var(--aspect-ratio) * var(--slides-per-page));
-    border-radius: var(--sl-border-radius-small);
+    border-radius: var(--nu-border-radius-small);
 
     --slide-size: calc((100% - (var(--slides-per-page) - 1) * var(--slide-gap)) / var(--slides-per-page));
   }
@@ -90,7 +90,7 @@ export default css`
   .carousel__navigation {
     grid-area: navigation;
     display: contents;
-    font-size: var(--sl-font-size-x-large);
+    font-size: var(--nu-font-size-x-large);
   }
 
   .carousel__navigation-button {
@@ -99,12 +99,12 @@ export default css`
     align-items: center;
     background: none;
     border: none;
-    border-radius: var(--sl-border-radius-small);
+    border-radius: var(--nu-border-radius-small);
     font-size: inherit;
-    color: var(--sl-color-neutral-600);
-    padding: var(--sl-spacing-x-small);
+    color: var(--nu-color-neutral-600);
+    padding: var(--nu-spacing-x-small);
     cursor: pointer;
-    transition: var(--sl-transition-medium) color;
+    transition: var(--nu-transition-medium) color;
     appearance: none;
   }
 
@@ -132,16 +132,16 @@ export default css`
     cursor: pointer;
     background: none;
     border: 0;
-    border-radius: var(--sl-border-radius-circle);
-    width: var(--sl-spacing-small);
-    height: var(--sl-spacing-small);
-    background-color: var(--sl-color-neutral-300);
+    border-radius: var(--nu-border-radius-circle);
+    width: var(--nu-spacing-small);
+    height: var(--nu-spacing-small);
+    background-color: var(--nu-color-neutral-300);
     padding: 0;
     margin: 0;
   }
 
   .carousel__pagination-item--active {
-    background-color: var(--sl-color-neutral-700);
+    background-color: var(--nu-color-neutral-700);
     transform: scale(1.2);
   }
 
@@ -149,7 +149,7 @@ export default css`
   .carousel__slides:focus-visible,
   .carousel__navigation-button:focus-visible,
   .carousel__pagination-item:focus-visible {
-    outline: var(--sl-focus-ring);
-    outline-offset: var(--sl-focus-ring-offset);
+    outline: var(--nu-focus-ring);
+    outline-offset: var(--nu-focus-ring-offset);
   }
 `;

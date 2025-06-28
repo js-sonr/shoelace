@@ -13,7 +13,7 @@ import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import Modal from '../../internal/modal.js';
 import NebulaElement from '../../internal/nebula-element.js';
-import SlIconButton from '../icon-button/icon-button.component.js';
+import NuIconButton from '../icon-button/icon-button.component.js';
 import styles from './drawer.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -27,7 +27,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @slot - The drawer's main content.
  * @slot label - The drawer's label. Alternatively, you can use the `label` attribute.
- * @slot header-actions - Optional actions to add to the header. Works best with `<sl-icon-button>`.
+ * @slot header-actions - Optional actions to add to the header. Works best with `<nu-icon-button>`.
  * @slot footer - The drawer's footer, usually one or more buttons representing various options.
  *
  * @event sl-show - Emitted when the drawer opens.
@@ -45,9 +45,9 @@ import type { CSSResultGroup } from 'lit';
  * @csspart overlay - The overlay that covers the screen behind the drawer.
  * @csspart panel - The drawer's panel (where the drawer and its content are rendered).
  * @csspart header - The drawer's header. This element wraps the title and header actions.
- * @csspart header-actions - Optional actions to add to the header. Works best with `<sl-icon-button>`.
+ * @csspart header-actions - Optional actions to add to the header. Works best with `<nu-icon-button>`.
  * @csspart title - The drawer's title.
- * @csspart close-button - The close button, an `<sl-icon-button>`.
+ * @csspart close-button - The close button, an `<nu-icon-button>`.
  * @csspart close-button__base - The close button's exported `base` part.
  * @csspart body - The drawer's body.
  * @csspart footer - The drawer's footer.
@@ -74,9 +74,9 @@ import type { CSSResultGroup } from 'lit';
  *   trapping and allow third-party modals spawned from an active Shoelace modal, call `modal.activateExternal()` when
  *   the third-party modal opens. Upon closing, call `modal.deactivateExternal()` to restore Shoelace's focus trapping.
  */
-export default class SlDrawer extends NebulaElement {
+export default class NuDrawer extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
-  static dependencies = { 'sl-icon-button': SlIconButton };
+  static dependencies = { 'nu-icon-button': NuIconButton };
 
   private readonly hasSlotController = new HasSlotController(this, 'footer');
   private readonly localize = new LocalizeController(this);
@@ -135,7 +135,7 @@ export default class SlDrawer extends NebulaElement {
   }
 
   private requestClose(source: 'close-button' | 'keyboard' | 'overlay') {
-    const slRequestClose = this.emit('sl-request-close', {
+    const slRequestClose = this.emit('nu-request-close', {
       cancelable: true,
       detail: { source }
     });
@@ -182,7 +182,7 @@ export default class SlDrawer extends NebulaElement {
   async handleOpenChange() {
     if (this.open) {
       // Show
-      this.emit('sl-show');
+      this.emit('nu-show');
       this.addOpenListeners();
       this.originalTrigger = document.activeElement as HTMLElement;
 
@@ -208,7 +208,7 @@ export default class SlDrawer extends NebulaElement {
 
       // Set initial focus
       requestAnimationFrame(() => {
-        const slInitialFocus = this.emit('sl-initial-focus', { cancelable: true });
+        const slInitialFocus = this.emit('nu-initial-focus', { cancelable: true });
 
         if (!slInitialFocus.defaultPrevented) {
           // Set focus to the autofocus target and restore the attribute
@@ -234,10 +234,10 @@ export default class SlDrawer extends NebulaElement {
         animateTo(this.overlay, overlayAnimation.keyframes, overlayAnimation.options)
       ]);
 
-      this.emit('sl-after-show');
+      this.emit('nu-after-show');
     } else {
       // Hide
-      this.emit('sl-hide');
+      this.emit('nu-hide');
       this.removeOpenListeners();
 
       if (!this.contained) {
@@ -275,7 +275,7 @@ export default class SlDrawer extends NebulaElement {
         setTimeout(() => trigger.focus());
       }
 
-      this.emit('sl-after-hide');
+      this.emit('nu-after-hide');
     }
   }
 
@@ -350,7 +350,7 @@ export default class SlDrawer extends NebulaElement {
                   </h2>
                   <div part="header-actions" class="drawer__header-actions">
                     <slot name="header-actions"></slot>
-                    <sl-icon-button
+                    <nu-icon-button
                       part="close-button"
                       exportparts="base:close-button__base"
                       class="drawer__close"
@@ -358,7 +358,7 @@ export default class SlDrawer extends NebulaElement {
                       label=${this.localize.term('close')}
                       library="system"
                       @click=${() => this.requestClose('close-button')}
-                    ></sl-icon-button>
+                    ></nu-icon-button>
                   </div>
                 </header>
               `

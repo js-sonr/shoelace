@@ -8,7 +8,7 @@ import NebulaElement from '../../internal/nebula-element.js';
  * @status stable
  * @since 2.0
  */
-export default class SlFormatNumber extends NebulaElement {
+export default class NuFormatNumber extends NebulaElement {
   private readonly localize = new LocalizeController(this);
 
   /** The number to format. */

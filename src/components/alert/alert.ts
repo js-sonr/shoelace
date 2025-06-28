@@ -1,12 +1,12 @@
-import SlAlert from './alert.component.js';
+import NuAlert from './alert.component.js';
 
 export * from './alert.component.js';
-export default SlAlert;
+export default NuAlert;
 
-SlAlert.define('sl-alert');
+NuAlert.define('nu-alert');
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-alert': SlAlert;
+    'nu-alert': NuAlert;
   }
 }

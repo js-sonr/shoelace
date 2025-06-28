@@ -15,7 +15,7 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --width - The width of the divider.
  * @cssproperty --spacing - The spacing of the divider.
  */
-export default class SlDivider extends NebulaElement {
+export default class NuDivider extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   /** Draws the divider in a vertical orientation. */

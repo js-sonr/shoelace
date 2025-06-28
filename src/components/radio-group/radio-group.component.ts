@@ -12,12 +12,12 @@ import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import formControlStyles from '../../styles/form-control.styles.js';
 import NebulaElement from '../../internal/nebula-element.js';
-import SlButtonGroup from '../button-group/button-group.component.js';
+import NuButtonGroup from '../button-group/button-group.component.js';
 import styles from './radio-group.styles.js';
 import type { CSSResultGroup } from 'lit';
 import type { NebulaFormControl } from '../../internal/nebula-element.js';
-import type SlRadio from '../radio/radio.js';
-import type SlRadioButton from '../radio-button/radio-button.js';
+import type NuRadio from '../radio/radio.js';
+import type NuRadioButton from '../radio-button/radio-button.js';
 
 /**
  * @summary Radio groups are used to group multiple [radios](/components/radio) or [radio buttons](/components/radio-button) so they function as a single form control.
@@ -27,7 +27,7 @@ import type SlRadioButton from '../radio-button/radio-button.js';
  *
  * @dependency sl-button-group
  *
- * @slot - The default slot where `<sl-radio>` or `<sl-radio-button>` elements are placed.
+ * @slot - The default slot where `<nu-radio>` or `<nu-radio-button>` elements are placed.
  * @slot label - The radio group's label. Required for proper accessibility. Alternatively, you can use the `label`
  *  attribute.
  * @slot help-text - Text that describes how to use the radio group. Alternatively, you can use the `help-text` attribute.
@@ -43,9 +43,9 @@ import type SlRadioButton from '../radio-button/radio-button.js';
  * @csspart button-group - The button group that wraps radio buttons.
  * @csspart button-group__base - The button group's `base` part.
  */
-export default class SlRadioGroup extends NebulaElement implements NebulaFormControl {
+export default class NuRadioGroup extends NebulaElement implements NebulaFormControl {
   static styles: CSSResultGroup = [componentStyles, formControlStyles, styles];
-  static dependencies = { 'sl-button-group': SlButtonGroup };
+  static dependencies = { 'nu-button-group': NuButtonGroup };
 
   protected readonly formControlController = new FormControlController(this);
   private readonly hasSlotController = new HasSlotController(this, 'help-text', 'label');
@@ -125,11 +125,11 @@ export default class SlRadioGroup extends NebulaElement implements NebulaFormCon
   }
 
   private getAllRadios() {
-    return [...this.querySelectorAll<SlRadio | SlRadioButton>('sl-radio, sl-radio-button')];
+    return [...this.querySelectorAll<NuRadio | NuRadioButton>('nu-radio, nu-radio-button')];
   }
 
   private handleRadioClick(event: MouseEvent) {
-    const target = (event.target as HTMLElement).closest<SlRadio | SlRadioButton>('sl-radio, sl-radio-button')!;
+    const target = (event.target as HTMLElement).closest<NuRadio | NuRadioButton>('nu-radio, nu-radio-button')!;
     const radios = this.getAllRadios();
     const oldValue = this.value;
 
@@ -141,8 +141,8 @@ export default class SlRadioGroup extends NebulaElement implements NebulaFormCon
     radios.forEach(radio => (radio.checked = radio === target));
 
     if (this.value !== oldValue) {
-      this.emit('sl-change');
-      this.emit('sl-input');
+      this.emit('nu-change');
+      this.emit('nu-input');
     }
   }
 
@@ -184,8 +184,8 @@ export default class SlRadioGroup extends NebulaElement implements NebulaFormCon
     }
 
     if (this.value !== oldValue) {
-      this.emit('sl-change');
-      this.emit('sl-input');
+      this.emit('nu-change');
+      this.emit('nu-input');
     }
 
     event.preventDefault();
@@ -234,7 +234,7 @@ export default class SlRadioGroup extends NebulaElement implements NebulaFormCon
     }
 
     if (this.hasButtonGroup) {
-      const buttonGroup = this.shadowRoot?.querySelector('sl-button-group');
+      const buttonGroup = this.shadowRoot?.querySelector('nu-button-group');
 
       if (buttonGroup) {
         buttonGroup.disableRole = true;
@@ -257,7 +257,7 @@ export default class SlRadioGroup extends NebulaElement implements NebulaFormCon
     if (customElements.get('sl-radio-button')) {
       this.syncRadioElements();
     } else {
-      // Rerun this handler when <sl-radio> or <sl-radio-button> is registered
+      // Rerun this handler when <nu-radio> or <nu-radio-button> is registered
       customElements.whenDefined('sl-radio-button').then(() => this.syncRadios());
     }
   }
@@ -378,9 +378,9 @@ export default class SlRadioGroup extends NebulaElement implements NebulaFormCon
 
           ${this.hasButtonGroup
             ? html`
-                <sl-button-group part="button-group" exportparts="base:button-group__base" role="presentation">
+                <nu-button-group part="button-group" exportparts="base:button-group__base" role="presentation">
                   ${defaultSlot}
-                </sl-button-group>
+                </nu-button-group>
               `
             : defaultSlot}
         </div>

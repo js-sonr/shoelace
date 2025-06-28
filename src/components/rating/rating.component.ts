@@ -7,7 +7,7 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import NebulaElement from '../../internal/nebula-element.js';
-import SlIcon from '../icon/icon.component.js';
+import NuIcon from '../icon/icon.component.js';
 import styles from './rating.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -31,9 +31,9 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --symbol-size - The size of symbols.
  * @cssproperty --symbol-spacing - The spacing to use around symbols.
  */
-export default class SlRating extends NebulaElement {
+export default class NuRating extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
-  static dependencies = { 'sl-icon': SlIcon };
+  static dependencies = { 'nu-icon': NuIcon };
 
   @query('.rating') rating: HTMLElement;
 
@@ -64,9 +64,9 @@ export default class SlRating extends NebulaElement {
   /**
    * A function that customizes the symbol to be rendered. The first and only argument is the rating's current value.
    * The function should return a string containing trusted HTML of the symbol to render at the specified value. Works
-   * well with `<sl-icon>` elements.
+   * well with `<nu-icon>` elements.
    */
-  @property() getSymbol: (value: number) => string = () => '<sl-icon name="star-fill" library="system"></sl-icon>';
+  @property() getSymbol: (value: number) => string = () => '<nu-icon name="star-fill" library="system"></nu-icon>';
 
   private getValueFromMousePosition(event: MouseEvent) {
     return this.getValueFromXCoordinate(event.clientX);
@@ -92,7 +92,7 @@ export default class SlRating extends NebulaElement {
     }
 
     this.setValue(this.getValueFromMousePosition(event));
-    this.emit('sl-change');
+    this.emit('nu-change');
   }
 
   private setValue(newValue: number) {
@@ -136,7 +136,7 @@ export default class SlRating extends NebulaElement {
     }
 
     if (this.value !== oldValue) {
-      this.emit('sl-change');
+      this.emit('nu-change');
     }
   }
 
@@ -169,7 +169,7 @@ export default class SlRating extends NebulaElement {
   private handleTouchEnd(event: TouchEvent) {
     this.isHovering = false;
     this.setValue(this.hoverValue);
-    this.emit('sl-change');
+    this.emit('nu-change');
 
     // Prevent click on mobile devices
     event.preventDefault();
@@ -182,7 +182,7 @@ export default class SlRating extends NebulaElement {
 
   @watch('hoverValue')
   handleHoverValueChange() {
-    this.emit('sl-hover', {
+    this.emit('nu-hover', {
       detail: {
         phase: 'move',
         value: this.hoverValue
@@ -192,7 +192,7 @@ export default class SlRating extends NebulaElement {
 
   @watch('isHovering')
   handleIsHoveringChange() {
-    this.emit('sl-hover', {
+    this.emit('nu-hover', {
       detail: {
         phase: this.isHovering ? 'start' : 'end',
         value: this.hoverValue
