@@ -7,7 +7,7 @@ layout: component
 
 ```html:preview
 <nu-animated-image
-  src="https://shoelace.style/assets/images/walk.gif"
+  src="https://nebulaui.org/assets/images/walk.gif"
   alt="Animation of untied shoes walking on pavement"
 ></nu-animated-image>
 ```
@@ -17,7 +17,7 @@ import SlAnimatedImage from '@onsonr/nebula/dist/react/animated-image';
 
 const App = () => (
   <SlAnimatedImage
-    src="https://shoelace.style/assets/images/walk.gif"
+    src="https://nebulaui.org/assets/images/walk.gif"
     alt="Animation of untied shoes walking on pavement"
   />
 );
@@ -35,7 +35,7 @@ Both GIF and WEBP images are supported.
 
 ```html:preview
 <nu-animated-image
-  src="https://shoelace.style/assets/images/tie.webp"
+  src="https://nebulaui.org/assets/images/tie.webp"
   alt="Animation of a shoe being tied"
 ></nu-animated-image>
 ```
@@ -44,7 +44,7 @@ Both GIF and WEBP images are supported.
 import SlAnimatedImage from '@onsonr/nebula/dist/react/animated-image';
 
 const App = () => (
-  <SlAnimatedImage src="https://shoelace.style/assets/images/tie.webp" alt="Animation of a shoe being tied" />
+  <SlAnimatedImage src="https://nebulaui.org/assets/images/tie.webp" alt="Animation of a shoe being tied" />
 );
 ```
 
@@ -54,7 +54,7 @@ To set a custom size, apply a width and/or height to the host element.
 
 ```html:preview
 <nu-animated-image
-  src="https://shoelace.style/assets/images/walk.gif"
+  src="https://nebulaui.org/assets/images/walk.gif"
   alt="Animation of untied shoes walking on pavement"
   style="width: 150px; height: 200px;"
 >
@@ -68,7 +68,7 @@ import SlAnimatedImage from '@onsonr/nebula/dist/react/animated-image';
 
 const App = () => (
   <SlAnimatedImage
-    src="https://shoelace.style/assets/images/walk.gif"
+    src="https://nebulaui.org/assets/images/walk.gif"
     alt="Animation of untied shoes walking on pavement"
     style={{ width: '150px', height: '200px' }}
   />
@@ -83,7 +83,7 @@ You can change the appearance and location of the control box by targeting the `
 
 ```html:preview
 <nu-animated-image
-  src="https://shoelace.style/assets/images/walk.gif"
+  src="https://nebulaui.org/assets/images/walk.gif"
   alt="Animation of untied shoes walking on pavement"
   class="animated-image-custom-control-box"
 ></nu-animated-image>
@@ -120,7 +120,7 @@ const App = () => (
   <>
     <SlAnimatedImage
       className="animated-image-custom-control-box"
-      src="https://shoelace.style/assets/images/walk.gif"
+      src="https://nebulaui.org/assets/images/walk.gif"
       alt="Animation of untied shoes walking on pavement"
     />
 

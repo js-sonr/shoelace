@@ -2,4 +2,4 @@
 
 Before contributing, please review the contributions guidelines at:
 
-[shoelace.style/resources/contributing](https://shoelace.style/resources/contributing)
+[shoelace.style/resources/contributing](https://nebulaui.org/resources/contributing)

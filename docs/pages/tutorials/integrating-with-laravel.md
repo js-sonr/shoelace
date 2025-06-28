@@ -40,7 +40,7 @@ Import the Nebula default theme (stylesheet) in `/resources/css/app.css`:
 
 ### Import Your Nebula Components
 
-Import each Nebula component you plan to use in `/resources/js/bootstrap.js`. Use the full path to each component (as outlined in the [Cherry Picking instructions](https://shoelace.style/getting-started/installation#cherry-picking)). You can find the full import statement for a component in the _Importing_ section of the component's documentation (use the _Bundler_ import). Your imports should look similar to:
+Import each Nebula component you plan to use in `/resources/js/bootstrap.js`. Use the full path to each component (as outlined in the [Cherry Picking instructions](https://nebulaui.org/getting-started/installation#cherry-picking)). You can find the full import statement for a component in the _Importing_ section of the component's documentation (use the _Bundler_ import). Your imports should look similar to:
 
 ```js
 import '@onsonr/nebula/dist/components/button/button.js';

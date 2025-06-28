@@ -16,7 +16,7 @@ import type { NebulaFormControl } from '../../internal/nebula-element.js';
 
 /**
  * @summary Switches allow the user to toggle an option on or off.
- * @documentation https://shoelace.style/components/switch
+ * @documentation https://nebulaui.org/components/switch
  * @status stable
  * @since 2.0
  *

@@ -21,7 +21,7 @@ import type NuRadioButton from '../radio-button/radio-button.js';
 
 /**
  * @summary Radio groups are used to group multiple [radios](/components/radio) or [radio buttons](/components/radio-button) so they function as a single form control.
- * @documentation https://shoelace.style/components/radio-group
+ * @documentation https://nebulaui.org/components/radio-group
  * @status stable
  * @since 2.0
  *

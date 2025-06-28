@@ -9,7 +9,7 @@ QR codes are useful for providing small pieces of information to users who can q
 
 ```html:preview
 <div class="qr-overview">
-  <nu-qr-code value="https://shoelace.style/" label="Scan this code to visit Nebula on the web!"></nu-qr-code>
+  <nu-qr-code value="https://nebulaui.org/" label="Scan this code to visit Nebula on the web!"></nu-qr-code>
   <br />
 
   <nu-input maxlength="255" clearable label="Value"></nu-input>
@@ -53,7 +53,7 @@ const css = `
 `;
 
 const App = () => {
-  const [value, setValue] = useState('https://shoelace.style/');
+  const [value, setValue] = useState('https://nebulaui.org/');
 
   return (
     <>
@@ -77,13 +77,13 @@ const App = () => {
 Use the `fill` and `background` attributes to modify the QR code's colors. You should always ensure good contrast for optimal compatibility with QR code scanners.
 
 ```html:preview
-<nu-qr-code value="https://shoelace.style/" fill="deeppink" background="white"></nu-qr-code>
+<nu-qr-code value="https://nebulaui.org/" fill="deeppink" background="white"></nu-qr-code>
 ```
 
 ```jsx:react
 import SlQrCode from '@onsonr/nebula/dist/react/qr-code';
 
-const App = () => <SlQrCode value="https://shoelace.style/" fill="deeppink" background="white" />;
+const App = () => <SlQrCode value="https://nebulaui.org/" fill="deeppink" background="white" />;
 ```
 
 ### Size
@@ -91,13 +91,13 @@ const App = () => <SlQrCode value="https://shoelace.style/" fill="deeppink" back
 Use the `size` attribute to change the size of the QR code.
 
 ```html:preview
-<nu-qr-code value="https://shoelace.style/" size="64"></nu-qr-code>
+<nu-qr-code value="https://nebulaui.org/" size="64"></nu-qr-code>
 ```
 
 ```jsx:react
 import SlQrCode from '@onsonr/nebula/dist/react/qr-code';
 
-const App = () => <SlQrCode value="https://shoelace.style/" size="64" />;
+const App = () => <SlQrCode value="https://nebulaui.org/" size="64" />;
 ```
 
 ### Radius
@@ -105,13 +105,13 @@ const App = () => <SlQrCode value="https://shoelace.style/" size="64" />;
 Create a rounded effect with the `radius` attribute.
 
 ```html:preview
-<nu-qr-code value="https://shoelace.style/" radius="0.5"></nu-qr-code>
+<nu-qr-code value="https://nebulaui.org/" radius="0.5"></nu-qr-code>
 ```
 
 ```jsx:react
 import SlQrCode from '@onsonr/nebula/dist/react/qr-code';
 
-const App = () => <SlQrCode value="https://shoelace.style/" radius="0.5" />;
+const App = () => <SlQrCode value="https://nebulaui.org/" radius="0.5" />;
 ```
 
 ### Error Correction
@@ -120,10 +120,10 @@ QR codes can be rendered with various levels of [error correction](https://www.q
 
 ```html:preview
 <div class="qr-error-correction">
-  <nu-qr-code value="https://shoelace.style/" error-correction="L"></nu-qr-code>
-  <nu-qr-code value="https://shoelace.style/" error-correction="M"></nu-qr-code>
-  <nu-qr-code value="https://shoelace.style/" error-correction="Q"></nu-qr-code>
-  <nu-qr-code value="https://shoelace.style/" error-correction="H"></nu-qr-code>
+  <nu-qr-code value="https://nebulaui.org/" error-correction="L"></nu-qr-code>
+  <nu-qr-code value="https://nebulaui.org/" error-correction="M"></nu-qr-code>
+  <nu-qr-code value="https://nebulaui.org/" error-correction="Q"></nu-qr-code>
+  <nu-qr-code value="https://nebulaui.org/" error-correction="H"></nu-qr-code>
 </div>
 
 <style>
@@ -150,10 +150,10 @@ const App = () => {
   return (
     <>
       <div className="qr-error-correction">
-        <SlQrCode value="https://shoelace.style/" error-correction="L" />
-        <SlQrCode value="https://shoelace.style/" error-correction="M" />
-        <SlQrCode value="https://shoelace.style/" error-correction="Q" />
-        <SlQrCode value="https://shoelace.style/" error-correction="H" />
+        <SlQrCode value="https://nebulaui.org/" error-correction="L" />
+        <SlQrCode value="https://nebulaui.org/" error-correction="M" />
+        <SlQrCode value="https://nebulaui.org/" error-correction="Q" />
+        <SlQrCode value="https://nebulaui.org/" error-correction="H" />
       </div>
 
       <style>{css}</style>

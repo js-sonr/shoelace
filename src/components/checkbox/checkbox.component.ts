@@ -17,7 +17,7 @@ import type { NebulaFormControl } from '../../internal/nebula-element.js';
 
 /**
  * @summary Checkboxes allow the user to toggle an option on or off.
- * @documentation https://shoelace.style/components/checkbox
+ * @documentation https://nebulaui.org/components/checkbox
  * @status stable
  * @since 2.0
  *

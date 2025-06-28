@@ -20,7 +20,7 @@ import type NuMenu from '../menu/menu.js';
 
 /**
  * @summary Dropdowns expose additional content that "drops down" in a panel.
- * @documentation https://shoelace.style/components/dropdown
+ * @documentation https://nebulaui.org/components/dropdown
  * @status stable
  * @since 2.0
  *

@@ -10,7 +10,7 @@ import type NuBreadcrumbItem from '../breadcrumb-item/breadcrumb-item.js';
 
 /**
  * @summary Breadcrumbs provide a group of links so users can easily navigate a website's hierarchy.
- * @documentation https://shoelace.style/components/breadcrumb
+ * @documentation https://nebulaui.org/components/breadcrumb
  * @status stable
  * @since 2.0
  *

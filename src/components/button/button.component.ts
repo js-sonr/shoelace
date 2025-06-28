@@ -16,7 +16,7 @@ import type { NebulaFormControl } from '../../internal/nebula-element.js';
 
 /**
  * @summary Buttons represent actions that are available to the user.
- * @documentation https://shoelace.style/components/button
+ * @documentation https://nebulaui.org/components/button
  * @status stable
  * @since 2.0
  *

@@ -94,7 +94,7 @@ To copy data from an attribute, use `from="id[attr]"` where `id` is the id of th
 <br><br>
 
 <!-- Copies the link's "href" attribute -->
-<a id="my-link" href="https://shoelace.style/">Nebula Website</a>
+<a id="my-link" href="https://nebulaui.org/">Nebula Website</a>
 <nu-copy-button from="my-link[href]"></nu-copy-button>
 ```
 
@@ -117,7 +117,7 @@ const App = () => (
     <br /><br />
 
     {/* Copies the link's "href" attribute */}
-    <a id="my-link" href="https://shoelace.style/">Nebula Website</a>
+    <a id="my-link" href="https://nebulaui.org/">Nebula Website</a>
     <SlCopyButton from="my-link[href]" />
   </>
 );

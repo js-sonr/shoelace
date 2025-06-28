@@ -18,7 +18,7 @@ import type { NebulaFormControl } from '../../internal/nebula-element.js';
 
 /**
  * @summary Inputs collect data from the user.
- * @documentation https://shoelace.style/components/input
+ * @documentation https://nebulaui.org/components/input
  * @status stable
  * @since 2.0
  *

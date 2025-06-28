@@ -9,7 +9,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Includes give you the power to embed external HTML files into the page.
- * @documentation https://shoelace.style/components/include
+ * @documentation https://nebulaui.org/components/include
  * @status stable
  * @since 2.0
  *
