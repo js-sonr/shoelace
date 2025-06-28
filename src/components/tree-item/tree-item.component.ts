@@ -8,7 +8,7 @@ import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import { when } from 'lit/directives/when.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlCheckbox from '../checkbox/checkbox.component.js';
 import SlIcon from '../icon/icon.component.js';
 import SlSpinner from '../spinner/spinner.component.js';
@@ -59,7 +59,7 @@ import type { CSSResultGroup, PropertyValueMap } from 'lit';
  * @csspart checkbox__indeterminate-icon - The checkbox's exported `indeterminate-icon` part.
  * @csspart checkbox__label - The checkbox's exported `label` part.
  */
-export default class SlTreeItem extends ShoelaceElement {
+export default class SlTreeItem extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = {
     'sl-checkbox': SlCheckbox,

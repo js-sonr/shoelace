@@ -4,7 +4,7 @@ import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query, state } from 'lit/decorators.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlIcon from '../icon/icon.component.js';
 import SlTooltip from '../tooltip/tooltip.component.js';
 import styles from './copy-button.styles.js';
@@ -41,7 +41,7 @@ import type { CSSResultGroup } from 'lit';
  * @animation copy.in - The animation to use when feedback icons animate in.
  * @animation copy.out - The animation to use when feedback icons animate out.
  */
-export default class SlCopyButton extends ShoelaceElement {
+export default class SlCopyButton extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = {
     'sl-icon': SlIcon,

@@ -8,7 +8,7 @@ import { property, query } from 'lit/decorators.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlIconButton from '../icon-button/icon-button.component.js';
 import styles from './alert.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -40,7 +40,7 @@ const toastStack = Object.assign(document.createElement('div'), { className: 'sl
  * @animation alert.show - The animation to use when showing the alert.
  * @animation alert.hide - The animation to use when hiding the alert.
  */
-export default class SlAlert extends ShoelaceElement {
+export default class SlAlert extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'sl-icon-button': SlIconButton };
 

@@ -3,7 +3,7 @@ import { html } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlIcon from '../icon/icon.component.js';
 import styles from './radio.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -27,7 +27,7 @@ import type { CSSResultGroup } from 'lit';
  * @csspart checked-icon - The checked icon, an `<sl-icon>` element.
  * @csspart label - The container that wraps the radio's label.
  */
-export default class SlRadio extends ShoelaceElement {
+export default class SlRadio extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'sl-icon': SlIcon };
 

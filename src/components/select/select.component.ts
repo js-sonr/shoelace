@@ -13,13 +13,13 @@ import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import formControlStyles from '../../styles/form-control.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlIcon from '../icon/icon.component.js';
 import SlPopup from '../popup/popup.component.js';
 import SlTag from '../tag/tag.component.js';
 import styles from './select.styles.js';
 import type { CSSResultGroup, TemplateResult } from 'lit';
-import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
+import type { NebulaFormControl } from '../../internal/nebula-element.js';
 import type { SlRemoveEvent } from '../../events/sl-remove.js';
 import type SlOption from '../option/option.component.js';
 
@@ -68,7 +68,7 @@ import type SlOption from '../option/option.component.js';
  * @csspart clear-button - The clear button.
  * @csspart expand-icon - The container that wraps the expand icon.
  */
-export default class SlSelect extends ShoelaceElement implements ShoelaceFormControl {
+export default class SlSelect extends NebulaElement implements NebulaFormControl {
   static styles: CSSResultGroup = [componentStyles, formControlStyles, styles];
   static dependencies = {
     'sl-icon': SlIcon,

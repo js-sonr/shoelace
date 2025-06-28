@@ -15,13 +15,13 @@ const observer = new MutationObserver(mutations => {
  */
 export async function discover(root: Element | ShadowRoot) {
   const rootTagName = root instanceof Element ? root.tagName.toLowerCase() : '';
-  const rootIsShoelaceElement = rootTagName?.startsWith('sl-');
+  const rootIsNebulaElement = rootTagName?.startsWith('nu-');
   const tags = [...root.querySelectorAll(':not(:defined)')]
     .map(el => el.tagName.toLowerCase())
-    .filter(tag => tag.startsWith('sl-'));
+    .filter(tag => tag.startsWith('nu-'));
 
-  // If the root element is an undefined Shoelace component, add it to the list
-  if (rootIsShoelaceElement && !customElements.get(rootTagName)) {
+  // If the root element is an undefined Nebula component, add it to the list
+  if (rootIsNebulaElement && !customElements.get(rootTagName)) {
     tags.push(rootTagName);
   }
 
@@ -40,7 +40,7 @@ function register(tagName: string): Promise<void> {
     return Promise.resolve();
   }
 
-  const tagWithoutPrefix = tagName.replace(/^sl-/i, '');
+  const tagWithoutPrefix = tagName.replace(/^nu-/i, '');
   const path = getBasePath(`components/${tagWithoutPrefix}/${tagWithoutPrefix}.js`);
 
   // Register it

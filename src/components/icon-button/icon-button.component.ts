@@ -3,7 +3,7 @@ import { html, literal } from 'lit/static-html.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { property, query, state } from 'lit/decorators.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlIcon from '../icon/icon.component.js';
 import styles from './icon-button.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -21,7 +21,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @csspart base - The component's base wrapper.
  */
-export default class SlIconButton extends ShoelaceElement {
+export default class SlIconButton extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'sl-icon': SlIcon };
 

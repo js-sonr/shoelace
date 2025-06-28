@@ -4,7 +4,7 @@ import { styleMap } from 'lit/directives/style-map.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import QrCreator from 'qr-creator';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import styles from './qr-code.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -16,7 +16,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @csspart base - The component's base wrapper.
  */
-export default class SlQrCode extends ShoelaceElement {
+export default class SlQrCode extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   @query('canvas') canvas: HTMLElement;

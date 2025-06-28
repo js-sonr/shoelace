@@ -9,11 +9,11 @@ import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import formControlStyles from '../../styles/form-control.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlIcon from '../icon/icon.component.js';
 import styles from './checkbox.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
+import type { NebulaFormControl } from '../../internal/nebula-element.js';
 
 /**
  * @summary Checkboxes allow the user to toggle an option on or off.
@@ -41,7 +41,7 @@ import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
  * @csspart label - The container that wraps the checkbox's label.
  * @csspart form-control-help-text - The help text's wrapper.
  */
-export default class SlCheckbox extends ShoelaceElement implements ShoelaceFormControl {
+export default class SlCheckbox extends NebulaElement implements NebulaFormControl {
   static styles: CSSResultGroup = [componentStyles, formControlStyles, styles];
   static dependencies = { 'sl-icon': SlIcon };
 

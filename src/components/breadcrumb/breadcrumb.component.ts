@@ -2,7 +2,7 @@ import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query } from 'lit/decorators.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlIcon from '../icon/icon.component.js';
 import styles from './breadcrumb.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -21,7 +21,7 @@ import type SlBreadcrumbItem from '../breadcrumb-item/breadcrumb-item.js';
  *
  * @csspart base - The component's base wrapper.
  */
-export default class SlBreadcrumb extends ShoelaceElement {
+export default class SlBreadcrumb extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'sl-icon': SlIcon };
 

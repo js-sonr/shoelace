@@ -5,7 +5,7 @@ import { property, query, state } from 'lit/decorators.js';
 import { scrollIntoView } from '../../internal/scroll.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlIconButton from '../icon-button/icon-button.component.js';
 import styles from './tab-group.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -40,7 +40,7 @@ import type SlTabPanel from '../tab-panel/tab-panel.js';
  * @cssproperty --track-color - The color of the indicator's track (the line that separates tabs from panels).
  * @cssproperty --track-width - The width of the indicator's track (the line that separates tabs from panels).
  */
-export default class SlTabGroup extends ShoelaceElement {
+export default class SlTabGroup extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'sl-icon-button': SlIconButton };
 

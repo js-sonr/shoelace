@@ -9,7 +9,7 @@ import { property, query } from 'lit/decorators.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlPopup from '../popup/popup.component.js';
 import styles from './dropdown.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -42,7 +42,7 @@ import type SlMenu from '../menu/menu.js';
  * @animation dropdown.show - The animation to use when showing the dropdown.
  * @animation dropdown.hide - The animation to use when hiding the dropdown.
  */
-export default class SlDropdown extends ShoelaceElement {
+export default class SlDropdown extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'sl-popup': SlPopup };
 

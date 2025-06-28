@@ -3,7 +3,7 @@ import { html } from 'lit';
 import { property } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import styles from './tab-panel.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -21,7 +21,7 @@ let id = 0;
  *
  * @cssproperty --padding - The tab panel's padding.
  */
-export default class SlTabPanel extends ShoelaceElement {
+export default class SlTabPanel extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   private readonly attrId = ++id;

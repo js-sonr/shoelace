@@ -4,7 +4,7 @@ import { isTemplateResult } from 'lit/directive-helpers.js';
 import { property, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import styles from './icon.styles.js';
 import type { CSSResultGroup, HTMLTemplateResult } from 'lit';
 
@@ -32,7 +32,7 @@ interface IconSource {
  * @csspart svg - The internal SVG element.
  * @csspart use - The <use> element generated when using `spriteSheet: true`
  */
-export default class SlIcon extends ShoelaceElement {
+export default class SlIcon extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   private initialRender = false;

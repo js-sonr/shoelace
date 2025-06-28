@@ -3,7 +3,7 @@ import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property } from 'lit/decorators.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlIconButton from '../icon-button/icon-button.component.js';
 import styles from './tag.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -25,7 +25,7 @@ import type { CSSResultGroup } from 'lit';
  * @csspart remove-button - The tag's remove button, an `<sl-icon-button>`.
  * @csspart remove-button__base - The remove button's exported `base` part.
  */
-export default class SlTag extends ShoelaceElement {
+export default class SlTag extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'sl-icon-button': SlIconButton };
 

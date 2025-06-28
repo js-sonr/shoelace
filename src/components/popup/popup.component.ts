@@ -4,7 +4,7 @@ import { html } from 'lit';
 import { offsetParent } from 'composed-offset-position';
 import { property, query } from 'lit/decorators.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import styles from './popup.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -51,7 +51,7 @@ function isVirtualElement(e: unknown): e is VirtualElement {
  *  popup can be before overflowing. Useful for positioning child elements that need to overflow. This property is only
  *  available when using `auto-size`.
  */
-export default class SlPopup extends ShoelaceElement {
+export default class SlPopup extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   private anchorEl: Element | VirtualElement | null;

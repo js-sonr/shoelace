@@ -4,7 +4,7 @@ import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { property } from 'lit/decorators.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import styles from './breadcrumb-item.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -26,7 +26,7 @@ import type { CSSResultGroup } from 'lit';
  * @csspart suffix - The container that wraps the suffix.
  * @csspart separator - The container that wraps the separator.
  */
-export default class SlBreadcrumbItem extends ShoelaceElement {
+export default class SlBreadcrumbItem extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   private readonly hasSlotController = new HasSlotController(this, 'prefix', 'suffix');

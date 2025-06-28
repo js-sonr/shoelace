@@ -6,7 +6,7 @@ import { property, query } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlIcon from '../icon/icon.component.js';
 import styles from './image-comparer.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -34,7 +34,7 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --divider-width - The width of the dividing line.
  * @cssproperty --handle-size - The size of the compare handle.
  */
-export default class SlImageComparer extends ShoelaceElement {
+export default class SlImageComparer extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
   static scopedElement = { 'sl-icon': SlIcon };
 

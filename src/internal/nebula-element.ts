@@ -62,7 +62,7 @@ type GetCustomEventType<T> = T extends keyof GlobalEventHandlersEventMap
 // `keyof ValidEventTypeMap` is equivalent to `keyof GlobalEventHandlersEventMap` but gives a nicer error message
 type ValidEventTypeMap = EventTypesWithRequiredDetail | EventTypesWithoutRequiredDetail;
 
-export default class ShoelaceElement extends LitElement {
+export default class NebulaElement extends LitElement {
   // Make localization attributes reactive
   @property() dir: string;
   @property() lang: string;
@@ -95,13 +95,11 @@ export default class ShoelaceElement extends LitElement {
 
   /* eslint-disable */
   // @ts-expect-error This is auto-injected at build time.
-  static version = __SHOELACE_VERSION__;
+  static version = __NEBULA_VERSION__;
   /* eslint-enable */
 
   static define(name: string, elementConstructor = this, options: ElementDefinitionOptions = {}) {
-    const currentlyRegisteredConstructor = customElements.get(name) as
-      | CustomElementConstructor
-      | typeof ShoelaceElement;
+    const currentlyRegisteredConstructor = customElements.get(name) as CustomElementConstructor | typeof NebulaElement;
 
     if (!currentlyRegisteredConstructor) {
       // We try to register as the actual class first. If for some reason that fails, we fall back to anonymous classes.
@@ -138,17 +136,17 @@ export default class ShoelaceElement extends LitElement {
     );
   }
 
-  static dependencies: Record<string, typeof ShoelaceElement> = {};
+  static dependencies: Record<string, typeof NebulaElement> = {};
 
   constructor() {
     super();
-    Object.entries((this.constructor as typeof ShoelaceElement).dependencies).forEach(([name, component]) => {
-      (this.constructor as typeof ShoelaceElement).define(name, component);
+    Object.entries((this.constructor as typeof NebulaElement).dependencies).forEach(([name, component]) => {
+      (this.constructor as typeof NebulaElement).define(name, component);
     });
   }
 }
 
-export interface ShoelaceFormControl extends ShoelaceElement {
+export interface NebulaFormControl extends NebulaElement {
   // Form attributes
   name: string;
   value: unknown;

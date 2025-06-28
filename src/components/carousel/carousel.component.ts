@@ -12,7 +12,7 @@ import { range } from 'lit/directives/range.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlIcon from '../icon/icon.component.js';
 import styles from './carousel.styles.js';
 import type { CSSResultGroup, PropertyValueMap } from 'lit';
@@ -47,7 +47,7 @@ import type SlCarouselItem from '../carousel-item/carousel-item.component.js';
  * @cssproperty --scroll-hint - The amount of padding to apply to the scroll area, allowing adjacent slides to become
  *  partially visible as a scroll hint.
  */
-export default class SlCarousel extends ShoelaceElement {
+export default class SlCarousel extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'sl-icon': SlIcon };
 

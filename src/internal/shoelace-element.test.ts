@@ -91,7 +91,7 @@ it('Should not provide a console warning if versions match', () => {
 
 it('Should register dependencies when the element is constructed the first time', () => {
   /* eslint-disable */
-  class MyElement extends ShoelaceElement {
+  class MyElement extends NebulaElement {
     static dependencies = { 'sl-button': SlButton };
     static version = 'random-version';
   }

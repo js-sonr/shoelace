@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import styles from './menu-label.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -14,7 +14,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @csspart base - The component's base wrapper.
  */
-export default class SlMenuLabel extends ShoelaceElement {
+export default class SlMenuLabel extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   render() {

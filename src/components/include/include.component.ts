@@ -3,7 +3,7 @@ import { property } from 'lit/decorators.js';
 import { requestInclude } from './request.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import styles from './include.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -16,7 +16,7 @@ import type { CSSResultGroup } from 'lit';
  * @event sl-load - Emitted when the included file is loaded.
  * @event {{ status: number }} sl-error - Emitted when the included file fails to load due to an error.
  */
-export default class SlInclude extends ShoelaceElement {
+export default class SlInclude extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   /**

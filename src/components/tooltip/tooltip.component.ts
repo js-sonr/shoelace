@@ -7,7 +7,7 @@ import { property, query } from 'lit/decorators.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlPopup from '../popup/popup.component.js';
 import styles from './tooltip.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -40,7 +40,7 @@ import type { CSSResultGroup } from 'lit';
  * @animation tooltip.show - The animation to use when showing the tooltip.
  * @animation tooltip.hide - The animation to use when hiding the tooltip.
  */
-export default class SlTooltip extends ShoelaceElement {
+export default class SlTooltip extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'sl-popup': SlPopup };
 

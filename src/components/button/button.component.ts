@@ -7,12 +7,12 @@ import { LocalizeController } from '../../utilities/localize.js';
 import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlIcon from '../icon/icon.component.js';
 import SlSpinner from '../spinner/spinner.component.js';
 import styles from './button.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
+import type { NebulaFormControl } from '../../internal/nebula-element.js';
 
 /**
  * @summary Buttons represent actions that are available to the user.
@@ -38,7 +38,7 @@ import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
  * @csspart caret - The button's caret icon, an `<sl-icon>` element.
  * @csspart spinner - The spinner that shows when the button is in the loading state.
  */
-export default class SlButton extends ShoelaceElement implements ShoelaceFormControl {
+export default class SlButton extends NebulaElement implements NebulaFormControl {
   static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = {
     'sl-icon': SlIcon,

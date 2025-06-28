@@ -4,7 +4,7 @@ import { LocalizeController } from '../../utilities/localize.js';
 import { property, query } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlIconButton from '../icon-button/icon-button.component.js';
 import styles from './tab.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -27,7 +27,7 @@ let id = 0;
  * @csspart close-button - The close button, an `<sl-icon-button>`.
  * @csspart close-button__base - The close button's exported `base` part.
  */
-export default class SlTab extends ShoelaceElement {
+export default class SlTab extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'sl-icon-button': SlIconButton };
 

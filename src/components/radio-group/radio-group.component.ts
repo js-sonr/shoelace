@@ -11,11 +11,11 @@ import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import formControlStyles from '../../styles/form-control.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlButtonGroup from '../button-group/button-group.component.js';
 import styles from './radio-group.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
+import type { NebulaFormControl } from '../../internal/nebula-element.js';
 import type SlRadio from '../radio/radio.js';
 import type SlRadioButton from '../radio-button/radio-button.js';
 
@@ -43,7 +43,7 @@ import type SlRadioButton from '../radio-button/radio-button.js';
  * @csspart button-group - The button group that wraps radio buttons.
  * @csspart button-group__base - The button group's `base` part.
  */
-export default class SlRadioGroup extends ShoelaceElement implements ShoelaceFormControl {
+export default class SlRadioGroup extends NebulaElement implements NebulaFormControl {
   static styles: CSSResultGroup = [componentStyles, formControlStyles, styles];
   static dependencies = { 'sl-button-group': SlButtonGroup };
 

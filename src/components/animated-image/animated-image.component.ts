@@ -2,7 +2,7 @@ import { html } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlIcon from '../icon/icon.component.js';
 import styles from './animated-image.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -26,7 +26,7 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --control-box-size - The size of the icon box.
  * @cssproperty --icon-size - The size of the play/pause icons.
  */
-export default class SlAnimatedImage extends ShoelaceElement {
+export default class SlAnimatedImage extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = { 'sl-icon': SlIcon };
 

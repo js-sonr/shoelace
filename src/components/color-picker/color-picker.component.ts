@@ -11,7 +11,7 @@ import { styleMap } from 'lit/directives/style-map.js';
 import { TinyColor } from '@ctrl/tinycolor';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import SlButton from '../button/button.component.js';
 import SlButtonGroup from '../button-group/button-group.component.js';
 import SlDropdown from '../dropdown/dropdown.component.js';
@@ -20,7 +20,7 @@ import SlInput from '../input/input.component.js';
 import SlVisuallyHidden from '../visually-hidden/visually-hidden.component.js';
 import styles from './color-picker.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
+import type { NebulaFormControl } from '../../internal/nebula-element.js';
 import type { SlChangeEvent } from '../../events/sl-change.js';
 import type { SlInputEvent } from '../../events/sl-input.js';
 
@@ -90,7 +90,7 @@ declare const EyeDropper: EyeDropperConstructor;
  * @cssproperty --slider-handle-size - The diameter of the slider's handle.
  * @cssproperty --swatch-size - The size of each predefined color swatch.
  */
-export default class SlColorPicker extends ShoelaceElement implements ShoelaceFormControl {
+export default class SlColorPicker extends NebulaElement implements NebulaFormControl {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   static dependencies = {
