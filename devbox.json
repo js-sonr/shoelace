@@ -4,10 +4,11 @@
     "pnpm@latest"
   ],
   "shell": {
-    "init_hook": [
-      "pnpm install"
-    ],
+    "init_hook": [],
     "scripts": {
+      "install": [
+        "pnpm install"
+      ],
       "build": [
         "pnpm run build"
       ],

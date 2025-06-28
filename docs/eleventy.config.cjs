@@ -74,7 +74,7 @@ module.exports = function (eleventyConfig) {
     if (!component) {
       throw new Error(
         `Unable to find a component called "${tagName}". Make sure the file name is the same as the component's tag ` +
-        `name (minus the sl- prefix).`
+          `name (minus the sl- prefix).`
       );
     }
     return component;
