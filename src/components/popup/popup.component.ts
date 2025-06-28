@@ -4,7 +4,7 @@ import { html } from 'lit';
 import { offsetParent } from 'composed-offset-position';
 import { property, query } from 'lit/decorators.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import styles from './popup.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -28,7 +28,7 @@ function isVirtualElement(e: unknown): e is VirtualElement {
  * @status stable
  * @since 2.0
  *
- * @event sl-reposition - Emitted when the popup is repositioned. This event can fire a lot, so avoid putting expensive
+ * @event nu-reposition - Emitted when the popup is repositioned. This event can fire a lot, so avoid putting expensive
  *  operations in your listener or consider debouncing it.
  *
  * @slot - The popup's content.
@@ -51,7 +51,7 @@ function isVirtualElement(e: unknown): e is VirtualElement {
  *  popup can be before overflowing. Useful for positioning child elements that need to overflow. This property is only
  *  available when using `auto-size`.
  */
-export default class SlPopup extends ShoelaceElement {
+export default class NuPopup extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   private anchorEl: Element | VirtualElement | null;
@@ -466,7 +466,7 @@ export default class SlPopup extends ShoelaceElement {
     // Wait until the new position is drawn before updating the hover bridge, otherwise it can get out of sync
     requestAnimationFrame(() => this.updateHoverBridge());
 
-    this.emit('sl-reposition');
+    this.emit('nu-reposition');
   }
 
   private updateHoverBridge = () => {

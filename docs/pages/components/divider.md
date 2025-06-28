@@ -6,7 +6,7 @@ layout: component
 ---
 
 ```html:preview
-<sl-divider></sl-divider>
+<nu-divider></nu-divider>
 ```
 
 ```jsx:react
@@ -22,7 +22,7 @@ const App = () => <SlDivider />;
 Use the `--width` custom property to change the width of the divider.
 
 ```html:preview
-<sl-divider style="--width: 4px;"></sl-divider>
+<nu-divider style="--width: 4px;"></nu-divider>
 ```
 
 {% raw %}
@@ -40,7 +40,7 @@ const App = () => <SlDivider style={{ '--width': '4px' }} />;
 Use the `--color` custom property to change the color of the divider.
 
 ```html:preview
-<sl-divider style="--color: tomato;"></sl-divider>
+<nu-divider style="--color: tomato;"></nu-divider>
 ```
 
 {% raw %}
@@ -60,7 +60,7 @@ Use the `--spacing` custom property to change the amount of space between the di
 ```html:preview
 <div style="text-align: center;">
   Above
-  <sl-divider style="--spacing: 2rem;"></sl-divider>
+  <nu-divider style="--spacing: 2rem;"></nu-divider>
   Below
 </div>
 ```
@@ -88,9 +88,9 @@ Add the `vertical` attribute to draw the divider in a vertical orientation. The 
 ```html:preview
 <div style="display: flex; align-items: center; height: 2rem;">
   First
-  <sl-divider vertical></sl-divider>
+  <nu-divider vertical></nu-divider>
   Middle
-  <sl-divider vertical></sl-divider>
+  <nu-divider vertical></nu-divider>
   Last
 </div>
 ```
@@ -124,15 +124,15 @@ const App = () => (
 Use dividers in [menus](/components/menu) to visually group menu items.
 
 ```html:preview
-<sl-menu style="max-width: 200px;">
-  <sl-menu-item value="1">Option 1</sl-menu-item>
-  <sl-menu-item value="2">Option 2</sl-menu-item>
-  <sl-menu-item value="3">Option 3</sl-menu-item>
-  <sl-divider></sl-divider>
-  <sl-menu-item value="4">Option 4</sl-menu-item>
-  <sl-menu-item value="5">Option 5</sl-menu-item>
-  <sl-menu-item value="6">Option 6</sl-menu-item>
-</sl-menu>
+<nu-menu style="max-width: 200px;">
+  <nu-menu-item value="1">Option 1</nu-menu-item>
+  <nu-menu-item value="2">Option 2</nu-menu-item>
+  <nu-menu-item value="3">Option 3</nu-menu-item>
+  <nu-divider></nu-divider>
+  <nu-menu-item value="4">Option 4</nu-menu-item>
+  <nu-menu-item value="5">Option 5</nu-menu-item>
+  <nu-menu-item value="6">Option 6</nu-menu-item>
+</nu-menu>
 ```
 
 {% raw %}
@@ -147,7 +147,7 @@ const App = () => (
     <SlMenuItem value="1">Option 1</SlMenuItem>
     <SlMenuItem value="2">Option 2</SlMenuItem>
     <SlMenuItem value="3">Option 3</SlMenuItem>
-    <sl-divider />
+    <nu-divider />
     <SlMenuItem value="4">Option 4</SlMenuItem>
     <SlMenuItem value="5">Option 5</SlMenuItem>
     <SlMenuItem value="6">Option 6</SlMenuItem>

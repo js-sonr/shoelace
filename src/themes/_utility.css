@@ -5,24 +5,24 @@
  */
 
 @supports (scrollbar-gutter: stable) {
-  .sl-scroll-lock {
+  .nu-scroll-lock {
     scrollbar-gutter: var(--sl-scroll-lock-gutter) !important;
   }
 
-  .sl-scroll-lock body {
+  .nu-scroll-lock body {
     overflow: hidden !important;
   }
 }
 
 /** This can go away once Safari has scrollbar-gutter support. */
 @supports not (scrollbar-gutter: stable) {
-  .sl-scroll-lock body {
+  .nu-scroll-lock body {
     padding-right: var(--sl-scroll-lock-size) !important;
     overflow: hidden !important;
   }
 }
 
-.sl-toast-stack {
+.nu-toast-stack {
   position: fixed;
   top: 0;
   inset-inline-end: 0;
@@ -33,10 +33,10 @@
   overflow: auto;
 }
 
-.sl-toast-stack sl-alert {
+.nu-toast-stack sl-alert {
   margin: var(--sl-spacing-medium);
 }
 
-.sl-toast-stack sl-alert::part(base) {
+.nu-toast-stack sl-alert::part(base) {
   box-shadow: var(--sl-shadow-large);
 }

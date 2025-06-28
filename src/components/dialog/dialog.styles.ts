@@ -3,9 +3,9 @@ import { css } from 'lit';
 export default css`
   :host {
     --width: 31rem;
-    --header-spacing: var(--sl-spacing-large);
-    --body-spacing: var(--sl-spacing-large);
-    --footer-spacing: var(--sl-spacing-large);
+    --header-spacing: var(--nu-spacing-large);
+    --body-spacing: var(--nu-spacing-large);
+    --footer-spacing: var(--nu-spacing-large);
 
     display: contents;
   }
@@ -19,7 +19,7 @@ export default css`
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: var(--sl-z-index-dialog);
+    z-index: var(--nu-z-index-dialog);
   }
 
   .dialog__panel {
@@ -27,11 +27,11 @@ export default css`
     flex-direction: column;
     z-index: 2;
     width: var(--width);
-    max-width: calc(100% - var(--sl-spacing-2x-large));
-    max-height: calc(100% - var(--sl-spacing-2x-large));
-    background-color: var(--sl-panel-background-color);
-    border-radius: var(--sl-border-radius-medium);
-    box-shadow: var(--sl-shadow-x-large);
+    max-width: calc(100% - var(--nu-spacing-2x-large));
+    max-height: calc(100% - var(--nu-spacing-2x-large));
+    background-color: var(--nu-panel-background-color);
+    border-radius: var(--nu-border-radius-medium);
+    box-shadow: var(--nu-shadow-x-large);
   }
 
   .dialog__panel:focus {
@@ -58,8 +58,8 @@ export default css`
   .dialog__title {
     flex: 1 1 auto;
     font: inherit;
-    font-size: var(--sl-font-size-large);
-    line-height: var(--sl-line-height-dense);
+    font-size: var(--nu-font-size-large);
+    line-height: var(--nu-line-height-dense);
     padding: var(--header-spacing);
     margin: 0;
   }
@@ -69,7 +69,7 @@ export default css`
     display: flex;
     flex-wrap: wrap;
     justify-content: end;
-    gap: var(--sl-spacing-2x-small);
+    gap: var(--nu-spacing-2x-small);
     padding: 0 var(--header-spacing);
   }
 
@@ -78,7 +78,7 @@ export default css`
     flex: 0 0 auto;
     display: flex;
     align-items: center;
-    font-size: var(--sl-font-size-medium);
+    font-size: var(--nu-font-size-medium);
   }
 
   .dialog__body {
@@ -96,7 +96,7 @@ export default css`
   }
 
   .dialog__footer ::slotted(sl-button:not(:first-of-type)) {
-    margin-inline-start: var(--sl-spacing-x-small);
+    margin-inline-start: var(--nu-spacing-x-small);
   }
 
   .dialog:not(.dialog--has-footer) .dialog__footer {
@@ -109,12 +109,12 @@ export default css`
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: var(--sl-overlay-background-color);
+    background-color: var(--nu-overlay-background-color);
   }
 
   @media (forced-colors: active) {
     .dialog__panel {
-      border: solid 1px var(--sl-color-neutral-0);
+      border: solid 1px var(--nu-color-neutral-0);
     }
   }
 `;

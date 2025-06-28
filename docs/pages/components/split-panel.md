@@ -6,7 +6,7 @@ layout: component
 ---
 
 ```html:preview
-<sl-split-panel>
+<nu-split-panel>
   <div
     slot="start"
     style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
@@ -19,7 +19,7 @@ layout: component
   >
     End
   </div>
-</sl-split-panel>
+</nu-split-panel>
 ```
 
 {% raw %}
@@ -66,7 +66,7 @@ const App = () => (
 To set the initial position, use the `position` attribute. If no position is provided, it will default to 50% of the available space.
 
 ```html:preview
-<sl-split-panel position="75">
+<nu-split-panel position="75">
   <div
     slot="start"
     style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
@@ -79,7 +79,7 @@ To set the initial position, use the `position` attribute. If no position is pro
   >
     End
   </div>
-</sl-split-panel>
+</nu-split-panel>
 ```
 
 ### Initial Position in Pixels
@@ -87,7 +87,7 @@ To set the initial position, use the `position` attribute. If no position is pro
 To set the initial position in pixels instead of a percentage, use the `position-in-pixels` attribute.
 
 ```html:preview
-<sl-split-panel position-in-pixels="150">
+<nu-split-panel position-in-pixels="150">
   <div
     slot="start"
     style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
@@ -100,7 +100,7 @@ To set the initial position in pixels instead of a percentage, use the `position
   >
     End
   </div>
-</sl-split-panel>
+</nu-split-panel>
 ```
 
 {% raw %}
@@ -145,7 +145,7 @@ const App = () => (
 Add the `vertical` attribute to render the split panel in a vertical orientation where the start and end panels are stacked. You also need to set a height when using the vertical orientation.
 
 ```html:preview
-<sl-split-panel vertical style="height: 400px;">
+<nu-split-panel vertical style="height: 400px;">
   <div
     slot="start"
     style="height: 100%; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
@@ -158,7 +158,7 @@ Add the `vertical` attribute to render the split panel in a vertical orientation
   >
     End
   </div>
-</sl-split-panel>
+</nu-split-panel>
 ```
 
 {% raw %}
@@ -204,7 +204,7 @@ To snap panels at specific positions while dragging, add the `snap` attribute wi
 
 ```html:preview
 <div class="split-panel-snapping">
-  <sl-split-panel snap="100px 50%">
+  <nu-split-panel snap="100px 50%">
     <div
       slot="start"
       style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
@@ -217,7 +217,7 @@ To snap panels at specific positions while dragging, add the `snap` attribute wi
     >
       End
     </div>
-  </sl-split-panel>
+  </nu-split-panel>
 
   <div class="split-panel-snapping-dots"></div>
 </div>
@@ -325,7 +325,7 @@ const App = () => (
 Add the `disabled` attribute to prevent the divider from being repositioned.
 
 ```html:preview
-<sl-split-panel disabled>
+<nu-split-panel disabled>
   <div
     slot="start"
     style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
@@ -338,7 +338,7 @@ Add the `disabled` attribute to prevent the divider from being repositioned.
   >
     End
   </div>
-</sl-split-panel>
+</nu-split-panel>
 ```
 
 {% raw %}
@@ -386,7 +386,7 @@ Try resizing the example below with each option and notice how the panels respon
 
 ```html:preview
 <div class="split-panel-primary">
-  <sl-split-panel>
+  <nu-split-panel>
     <div
       slot="start"
       style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
@@ -399,13 +399,13 @@ Try resizing the example below with each option and notice how the panels respon
     >
       End
     </div>
-  </sl-split-panel>
+  </nu-split-panel>
 
-  <sl-select label="Primary Panel" value="" style="max-width: 200px; margin-top: 1rem;">
-    <sl-option value="">None</sl-option>
-    <sl-option value="start">Start</sl-option>
-    <sl-option value="end">End</sl-option>
-  </sl-select>
+  <nu-select label="Primary Panel" value="" style="max-width: 200px; margin-top: 1rem;">
+    <nu-option value="">None</nu-option>
+    <nu-option value="start">Start</nu-option>
+    <nu-option value="end">End</nu-option>
+  </nu-select>
 </div>
 
 <script>
@@ -481,7 +481,7 @@ To set a minimum or maximum size of the primary panel, use the `--min` and `--ma
 This examples demonstrates how you can ensure both panels are at least 150px using `--min`, `--max`, and the `calc()` function.
 
 ```html:preview
-<sl-split-panel style="--min: 150px; --max: calc(100% - 150px);">
+<nu-split-panel style="--min: 150px; --max: calc(100% - 150px);">
   <div
     slot="start"
     style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
@@ -494,7 +494,7 @@ This examples demonstrates how you can ensure both panels are at least 150px usi
   >
     End
   </div>
-</sl-split-panel>
+</nu-split-panel>
 ```
 
 {% raw %}
@@ -539,7 +539,7 @@ const App = () => (
 Create complex layouts that can be repositioned independently by nesting split panels.
 
 ```html:preview
-<sl-split-panel>
+<nu-split-panel>
   <div
     slot="start"
     style="height: 400px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden"
@@ -547,7 +547,7 @@ Create complex layouts that can be repositioned independently by nesting split p
     Start
   </div>
   <div slot="end">
-    <sl-split-panel vertical style="height: 400px;">
+    <nu-split-panel vertical style="height: 400px;">
       <div
         slot="start"
         style="height: 100%; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden"
@@ -560,9 +560,9 @@ Create complex layouts that can be repositioned independently by nesting split p
       >
         Bottom
       </div>
-    </sl-split-panel>
+    </nu-split-panel>
   </div>
-</sl-split-panel>
+</nu-split-panel>
 ```
 
 {% raw %}
@@ -623,8 +623,8 @@ const App = () => (
 You can target the `divider` part to apply CSS properties to the divider. To add a custom handle, slot an icon into the `divider` slot. When customizing the divider, make sure to think about focus styles for keyboard users.
 
 ```html:preview
-<sl-split-panel style="--divider-width: 20px;">
-  <sl-icon slot="divider" name="grip-vertical"></sl-icon>
+<nu-split-panel style="--divider-width: 20px;">
+  <nu-icon slot="divider" name="grip-vertical"></nu-icon>
   <div
     slot="start"
     style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
@@ -637,7 +637,7 @@ You can target the `divider` part to apply CSS properties to the divider. To add
   >
     End
   </div>
-</sl-split-panel>
+</nu-split-panel>
 ```
 
 {% raw %}
@@ -683,8 +683,8 @@ Here's a more elaborate example that changes the divider's color and width and a
 
 ```html:preview
 <div class="split-panel-divider">
-  <sl-split-panel>
-    <sl-icon slot="divider" name="grip-vertical"></sl-icon>
+  <nu-split-panel>
+    <nu-icon slot="divider" name="grip-vertical"></nu-icon>
     <div
       slot="start"
       style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
@@ -697,7 +697,7 @@ Here's a more elaborate example that changes the divider's color and width and a
     >
       End
     </div>
-  </sl-split-panel>
+  </nu-split-panel>
 </div>
 
 <style>

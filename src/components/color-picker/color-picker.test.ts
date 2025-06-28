@@ -5,12 +5,12 @@ import { runFormControlBaseTests } from '../../internal/test/form-control-base-t
 import { sendKeys } from '@web/test-runner-commands';
 import { serialize } from '../../utilities/form.js';
 import sinon from 'sinon';
-import type SlColorPicker from './color-picker.js';
+import type NuColorPicker from './color-picker.js';
 
-describe('<sl-color-picker>', () => {
+describe('<nu-color-picker>', () => {
   describe('when the value changes', () => {
     it('should not emit sl-change or sl-input when the value is changed programmatically', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker></nu-color-picker> `);
       const color = 'rgb(255, 204, 0)';
 
       el.addEventListener('sl-change', () => expect.fail('sl-change should not be emitted'));
@@ -20,7 +20,7 @@ describe('<sl-color-picker>', () => {
     });
 
     it('should emit sl-change and sl-input when the color grid selector is moved', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker></nu-color-picker> `);
       const trigger = el.shadowRoot!.querySelector<HTMLButtonElement>('[part~="trigger"]')!;
       const grid = el.shadowRoot!.querySelector<HTMLElement>('[part~="grid"]')!;
       const changeHandler = sinon.spy();
@@ -50,7 +50,7 @@ describe('<sl-color-picker>', () => {
     });
 
     it('should emit sl-change and sl-input when the hue slider is moved', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker></nu-color-picker> `);
       const trigger = el.shadowRoot!.querySelector<HTMLButtonElement>('[part~="trigger"]')!;
       const slider = el.shadowRoot!.querySelector<HTMLElement>('[part~="hue-slider"]')!;
       const changeHandler = sinon.spy();
@@ -81,7 +81,7 @@ describe('<sl-color-picker>', () => {
     });
 
     it('should emit sl-change and sl-input when the opacity slider is moved', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker opacity></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker opacity></nu-color-picker> `);
       const trigger = el.shadowRoot!.querySelector<HTMLButtonElement>('[part~="trigger"]')!;
       const slider = el.shadowRoot!.querySelector<HTMLElement>('[part~="opacity-slider"]')!;
       const changeHandler = sinon.spy();
@@ -111,7 +111,7 @@ describe('<sl-color-picker>', () => {
     });
 
     it('should emit sl-change and sl-input when toggling the format', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker value="#fff"></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker value="#fff"></nu-color-picker> `);
       const trigger = el.shadowRoot!.querySelector<HTMLButtonElement>('[part~="trigger"]')!;
       const formatButton = el.shadowRoot!.querySelector<HTMLElement>('[part~="format-button"]')!;
       const changeHandler = sinon.spy();
@@ -131,8 +131,8 @@ describe('<sl-color-picker>', () => {
     });
 
     it('should render the correct swatches when passing a string of color values', async () => {
-      const el = await fixture<SlColorPicker>(html`
-        <sl-color-picker swatches="red; #008000; rgb(0,0,255);"></sl-color-picker>
+      const el = await fixture<NuColorPicker>(html`
+        <nu-color-picker swatches="red; #008000; rgb(0,0,255);"></nu-color-picker>
       `);
       const swatches = [...el.shadowRoot!.querySelectorAll('[part~="swatch"] > div')];
 
@@ -143,7 +143,7 @@ describe('<sl-color-picker>', () => {
     });
 
     it('should render the correct swatches when passing an array of color values', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker></nu-color-picker> `);
       el.swatches = ['red', '#008000', 'rgb(0,0,255)'];
       await el.updateComplete;
 
@@ -156,7 +156,7 @@ describe('<sl-color-picker>', () => {
     });
 
     it('should emit sl-change and sl-input when clicking on a swatch', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker swatches="red; green; blue;"></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker swatches="red; green; blue;"></nu-color-picker> `);
       const trigger = el.shadowRoot!.querySelector<HTMLButtonElement>('[part~="trigger"]')!;
       const swatch = el.shadowRoot!.querySelector<HTMLElement>('[part~="swatch"]')!;
       const changeHandler = sinon.spy();
@@ -175,7 +175,7 @@ describe('<sl-color-picker>', () => {
     });
 
     it('should emit sl-change and sl-input when selecting a color with the keyboard', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker></nu-color-picker> `);
       const trigger = el.shadowRoot!.querySelector<HTMLButtonElement>('[part~="trigger"]')!;
       const gridHandle = el.shadowRoot!.querySelector<HTMLElement>('[part~="grid-handle"]')!;
       const changeHandler = sinon.spy();
@@ -195,7 +195,7 @@ describe('<sl-color-picker>', () => {
     });
 
     it('should emit sl-change and sl-input when selecting a color with the keyboard', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker></nu-color-picker> `);
       const trigger = el.shadowRoot!.querySelector<HTMLButtonElement>('[part~="trigger"]')!;
       const handle = el.shadowRoot!.querySelector<HTMLElement>('[part~="grid-handle"]')!;
       const changeHandler = sinon.spy();
@@ -215,7 +215,7 @@ describe('<sl-color-picker>', () => {
     });
 
     it('should emit sl-change and sl-input when selecting hue with the keyboard', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker></nu-color-picker> `);
       const trigger = el.shadowRoot!.querySelector<HTMLButtonElement>('[part~="trigger"]')!;
       const handle = el.shadowRoot!.querySelector<HTMLElement>('[part~="hue-slider"] > span')!;
       const changeHandler = sinon.spy();
@@ -235,7 +235,7 @@ describe('<sl-color-picker>', () => {
     });
 
     it('should emit sl-change and sl-input when selecting opacity with the keyboard', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker opacity></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker opacity></nu-color-picker> `);
       const trigger = el.shadowRoot!.querySelector<HTMLButtonElement>('[part~="trigger"]')!;
       const handle = el.shadowRoot!.querySelector<HTMLElement>('[part~="opacity-slider"] > span')!;
       const changeHandler = sinon.spy();
@@ -255,7 +255,7 @@ describe('<sl-color-picker>', () => {
     });
 
     it('should emit sl-change and sl-input when entering a value in the color input and pressing enter', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker opacity></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker opacity></nu-color-picker> `);
       const trigger = el.shadowRoot!.querySelector<HTMLButtonElement>('[part~="trigger"]')!;
       const input = el.shadowRoot!.querySelector<HTMLElement>('[part~="input"]')!;
       const changeHandler = sinon.spy();
@@ -277,7 +277,7 @@ describe('<sl-color-picker>', () => {
     });
 
     it('should emit sl-change and sl-input when entering a value in the color input and blurring the field', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker opacity></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker opacity></nu-color-picker> `);
       const trigger = el.shadowRoot!.querySelector<HTMLButtonElement>('[part~="trigger"]')!;
       const input = el.shadowRoot!.querySelector<HTMLElement>('[part~="input"]')!;
       const changeHandler = sinon.spy();
@@ -299,7 +299,7 @@ describe('<sl-color-picker>', () => {
     });
 
     it('should render the correct format when selecting a swatch of a different format', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker format="rgb"></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker format="rgb"></nu-color-picker> `);
       const trigger = el.shadowRoot!.querySelector<HTMLButtonElement>('[part~="trigger"]')!;
       const changeHandler = sinon.spy();
       const inputHandler = sinon.spy();
@@ -323,35 +323,35 @@ describe('<sl-color-picker>', () => {
   });
 
   it('should render in a dropdown', async () => {
-    const el = await fixture<SlColorPicker>(html` <sl-color-picker></sl-color-picker> `);
-    const dropdown = el.shadowRoot!.querySelector('sl-dropdown');
+    const el = await fixture<NuColorPicker>(html` <nu-color-picker></nu-color-picker> `);
+    const dropdown = el.shadowRoot!.querySelector('nu-dropdown');
 
     expect(dropdown).to.exist;
   });
 
   it('should not render in a dropdown when inline is enabled', async () => {
-    const el = await fixture<SlColorPicker>(html` <sl-color-picker inline></sl-color-picker> `);
-    const dropdown = el.shadowRoot!.querySelector('sl-dropdown');
+    const el = await fixture<NuColorPicker>(html` <nu-color-picker inline></nu-color-picker> `);
+    const dropdown = el.shadowRoot!.querySelector('nu-dropdown');
 
     expect(dropdown).to.not.exist;
   });
 
   it('should show opacity slider when opacity is enabled', async () => {
-    const el = await fixture<SlColorPicker>(html` <sl-color-picker opacity></sl-color-picker> `);
+    const el = await fixture<NuColorPicker>(html` <nu-color-picker opacity></nu-color-picker> `);
     const opacitySlider = el.shadowRoot!.querySelector('[part*="opacity-slider"]')!;
 
     expect(opacitySlider).to.exist;
   });
 
   it('should display a color when an initial value is provided', async () => {
-    const el = await fixture<SlColorPicker>(html` <sl-color-picker value="#000"></sl-color-picker> `);
+    const el = await fixture<NuColorPicker>(html` <nu-color-picker value="#000"></nu-color-picker> `);
     const trigger = el.shadowRoot!.querySelector<HTMLButtonElement>('[part~="trigger"]');
 
     expect(trigger?.style.color).to.equal('rgb(0, 0, 0)');
   });
 
   it('should display a color with opacity when an initial value with opacity is provided', async () => {
-    const el = await fixture<SlColorPicker>(html` <sl-color-picker opacity value="#ff000050"></sl-color-picker> `);
+    const el = await fixture<NuColorPicker>(html` <nu-color-picker opacity value="#ff000050"></nu-color-picker> `);
     const trigger = el.shadowRoot!.querySelector<HTMLButtonElement>('[part~="trigger"]')!;
     const previewButton = el.shadowRoot!.querySelector<HTMLButtonElement>('[part~="preview"]');
     const previewColor = getComputedStyle(previewButton!).getPropertyValue('--preview-color');
@@ -361,13 +361,13 @@ describe('<sl-color-picker>', () => {
   });
 
   it.skip('should emit sl-focus when rendered as a dropdown and focused', async () => {
-    const el = await fixture<SlColorPicker>(html`
+    const el = await fixture<NuColorPicker>(html`
       <div>
-        <sl-color-picker></sl-color-picker>
+        <nu-color-picker></nu-color-picker>
         <button type="button">Click me</button>
       </div>
     `);
-    const colorPicker = el.querySelector('sl-color-picker')!;
+    const colorPicker = el.querySelector('nu-color-picker')!;
     const trigger = colorPicker.shadowRoot!.querySelector<HTMLButtonElement>('[part~="trigger"]')!;
     const button = el.querySelector('button')!;
     const focusHandler = sinon.spy();
@@ -386,13 +386,13 @@ describe('<sl-color-picker>', () => {
   });
 
   it('should emit sl-focus when rendered inline and focused', async () => {
-    const el = await fixture<SlColorPicker>(html`
+    const el = await fixture<NuColorPicker>(html`
       <div>
-        <sl-color-picker inline></sl-color-picker>
+        <nu-color-picker inline></nu-color-picker>
         <button type="button">Click me</button>
       </div>
     `);
-    const colorPicker = el.querySelector('sl-color-picker')!;
+    const colorPicker = el.querySelector('nu-color-picker')!;
     const button = el.querySelector('button')!;
     const focusHandler = sinon.spy();
     const blurHandler = sinon.spy();
@@ -410,7 +410,7 @@ describe('<sl-color-picker>', () => {
   });
 
   it('should focus and blur when calling focus() and blur() and rendered as a dropdown', async () => {
-    const colorPicker = await fixture<SlColorPicker>(html` <sl-color-picker></sl-color-picker> `);
+    const colorPicker = await fixture<NuColorPicker>(html` <nu-color-picker></nu-color-picker> `);
     const focusHandler = sinon.spy();
     const blurHandler = sinon.spy();
 
@@ -433,7 +433,7 @@ describe('<sl-color-picker>', () => {
   });
 
   it('should focus and blur when calling focus() and blur() and rendered inline', async () => {
-    const colorPicker = await fixture<SlColorPicker>(html` <sl-color-picker inline></sl-color-picker> `);
+    const colorPicker = await fixture<NuColorPicker>(html` <nu-color-picker inline></nu-color-picker> `);
     const focusHandler = sinon.spy();
     const blurHandler = sinon.spy();
 
@@ -459,7 +459,7 @@ describe('<sl-color-picker>', () => {
     it('should serialize its name and value with FormData', async () => {
       const form = await fixture<HTMLFormElement>(html`
         <form>
-          <sl-color-picker name="a" value="#ffcc00"></sl-color-picker>
+          <nu-color-picker name="a" value="#ffcc00"></nu-color-picker>
         </form>
       `);
       const formData = new FormData(form);
@@ -469,7 +469,7 @@ describe('<sl-color-picker>', () => {
     it('should serialize its name and value with JSON', async () => {
       const form = await fixture<HTMLFormElement>(html`
         <form>
-          <sl-color-picker name="a" value="#ffcc00"></sl-color-picker>
+          <nu-color-picker name="a" value="#ffcc00"></nu-color-picker>
         </form>
       `);
       const json = serialize(form);
@@ -480,9 +480,9 @@ describe('<sl-color-picker>', () => {
       const el = await fixture<HTMLFormElement>(html`
         <div>
           <form id="f">
-            <sl-button type="submit">Submit</sl-button>
+            <nu-button type="submit">Submit</nu-button>
           </form>
-          <sl-color-picker form="f" name="a" value="#ffcc00"></sl-color-picker>
+          <nu-color-picker form="f" name="a" value="#ffcc00"></nu-color-picker>
         </div>
       `);
       const form = el.querySelector('form')!;
@@ -496,12 +496,12 @@ describe('<sl-color-picker>', () => {
     it('should reset the element to its initial value', async () => {
       const form = await fixture<HTMLFormElement>(html`
         <form>
-          <sl-color-picker name="a" value="#ffffff"></sl-color-picker>
-          <sl-button type="reset">Reset</sl-button>
+          <nu-color-picker name="a" value="#ffffff"></nu-color-picker>
+          <nu-button type="reset">Reset</nu-button>
         </form>
       `);
-      const button = form.querySelector('sl-button')!;
-      const colorPicker = form.querySelector('sl-color-picker')!;
+      const button = form.querySelector('nu-button')!;
+      const colorPicker = form.querySelector('nu-color-picker')!;
       colorPicker.value = '#000000';
 
       await colorPicker.updateComplete;
@@ -524,24 +524,24 @@ describe('<sl-color-picker>', () => {
 
   describe('when using constraint validation', () => {
     it('should be valid by default', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker></nu-color-picker> `);
       expect(el.checkValidity()).to.be.true;
     });
 
     it('should be invalid when required and empty', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker required></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker required></nu-color-picker> `);
       expect(el.checkValidity()).to.be.false;
     });
 
     it('should be invalid when required and disabled is removed', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker disabled required></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker disabled required></nu-color-picker> `);
       el.disabled = false;
       await el.updateComplete;
       expect(el.checkValidity()).to.be.false;
     });
 
     it('should receive the correct validation attributes ("states") when valid', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker required value="#fff"></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker required value="#fff"></nu-color-picker> `);
       const trigger = el.shadowRoot!.querySelector('[part~="trigger"]')!;
       const grid = el.shadowRoot!.querySelector('[part~="grid"]')!;
 
@@ -564,7 +564,7 @@ describe('<sl-color-picker>', () => {
     });
 
     it('should receive the correct validation attributes ("states") when invalid', async () => {
-      const el = await fixture<SlColorPicker>(html` <sl-color-picker required></sl-color-picker> `);
+      const el = await fixture<NuColorPicker>(html` <nu-color-picker required></nu-color-picker> `);
       const trigger = el.shadowRoot!.querySelector('[part~="trigger"]')!;
       const grid = el.shadowRoot!.querySelector('[part~="grid"]')!;
 

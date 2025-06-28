@@ -2,11 +2,11 @@ import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { property, query } from 'lit/decorators.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIcon from '../icon/icon.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIcon from '../icon/icon.component.js';
 import styles from './breadcrumb.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type SlBreadcrumbItem from '../breadcrumb-item/breadcrumb-item.js';
+import type NuBreadcrumbItem from '../breadcrumb-item/breadcrumb-item.js';
 
 /**
  * @summary Breadcrumbs provide a group of links so users can easily navigate a website's hierarchy.
@@ -15,15 +15,15 @@ import type SlBreadcrumbItem from '../breadcrumb-item/breadcrumb-item.js';
  * @since 2.0
  *
  * @slot - One or more breadcrumb items to display.
- * @slot separator - The separator to use between breadcrumb items. Works best with `<sl-icon>`.
+ * @slot separator - The separator to use between breadcrumb items. Works best with `<nu-icon>`.
  *
  * @dependency sl-icon
  *
  * @csspart base - The component's base wrapper.
  */
-export default class SlBreadcrumb extends ShoelaceElement {
+export default class NuBreadcrumb extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
-  static dependencies = { 'sl-icon': SlIcon };
+  static dependencies = { 'nu-icon': NuIcon };
 
   private readonly localize = new LocalizeController(this);
   private separatorDir = this.localize.dir();
@@ -53,7 +53,7 @@ export default class SlBreadcrumb extends ShoelaceElement {
   private handleSlotChange() {
     const items = [...this.defaultSlot.assignedElements({ flatten: true })].filter(
       item => item.tagName.toLowerCase() === 'sl-breadcrumb-item'
-    ) as SlBreadcrumbItem[];
+    ) as NuBreadcrumbItem[];
 
     items.forEach((item, index) => {
       // Append separators to each item if they don't already have one
@@ -93,7 +93,7 @@ export default class SlBreadcrumb extends ShoelaceElement {
 
       <span hidden aria-hidden="true">
         <slot name="separator">
-          <sl-icon name=${this.localize.dir() === 'rtl' ? 'chevron-left' : 'chevron-right'} library="system"></sl-icon>
+          <nu-icon name=${this.localize.dir() === 'rtl' ? 'chevron-left' : 'chevron-right'} library="system"></nu-icon>
         </slot>
       </span>
     `;

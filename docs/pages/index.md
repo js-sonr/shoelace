@@ -9,7 +9,7 @@ toc: false
 <div class="splash-start">
 <img class="splash-logo" src="/assets/images/wordmark.svg" alt="Nebula">
 
-# <sl-visually-hidden>Nebula:</sl-visually-hidden> A forward-thinking library of web components, specifically designed for Blockchain Clients.
+# <nu-visually-hidden>Nebula:</nu-visually-hidden> A forward-thinking library of web components, specifically designed for Blockchain Clients.
 
 - Works with all frameworks 🧩
 - Works with CDNs 🚛
@@ -47,7 +47,7 @@ Add the following code to your page.
 Now you have access to all of Nebula's components! Try adding a button:
 
 ```html:preview:expanded:no-codepen
-<sl-button>Click me</sl-button>
+<nu-button>Click me</nu-button>
 ```
 
 :::tip

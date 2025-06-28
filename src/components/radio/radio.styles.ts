@@ -12,27 +12,27 @@ export default css`
   .radio {
     display: inline-flex;
     align-items: top;
-    font-family: var(--sl-input-font-family);
-    font-size: var(--sl-input-font-size-medium);
-    font-weight: var(--sl-input-font-weight);
-    color: var(--sl-input-label-color);
+    font-family: var(--nu-input-font-family);
+    font-size: var(--nu-input-font-size-medium);
+    font-weight: var(--nu-input-font-weight);
+    color: var(--nu-input-label-color);
     vertical-align: middle;
     cursor: pointer;
   }
 
   .radio--small {
-    --toggle-size: var(--sl-toggle-size-small);
-    font-size: var(--sl-input-font-size-small);
+    --toggle-size: var(--nu-toggle-size-small);
+    font-size: var(--nu-input-font-size-small);
   }
 
   .radio--medium {
-    --toggle-size: var(--sl-toggle-size-medium);
-    font-size: var(--sl-input-font-size-medium);
+    --toggle-size: var(--nu-toggle-size-medium);
+    font-size: var(--nu-input-font-size-medium);
   }
 
   .radio--large {
-    --toggle-size: var(--sl-toggle-size-large);
-    font-size: var(--sl-input-font-size-large);
+    --toggle-size: var(--nu-toggle-size-large);
+    font-size: var(--nu-input-font-size-large);
   }
 
   .radio__checked-icon {
@@ -49,15 +49,15 @@ export default css`
     justify-content: center;
     width: var(--toggle-size);
     height: var(--toggle-size);
-    border: solid var(--sl-input-border-width) var(--sl-input-border-color);
+    border: solid var(--nu-input-border-width) var(--nu-input-border-color);
     border-radius: 50%;
-    background-color: var(--sl-input-background-color);
+    background-color: var(--nu-input-background-color);
     color: transparent;
     transition:
-      var(--sl-transition-fast) border-color,
-      var(--sl-transition-fast) background-color,
-      var(--sl-transition-fast) color,
-      var(--sl-transition-fast) box-shadow;
+      var(--nu-transition-fast) border-color,
+      var(--nu-transition-fast) background-color,
+      var(--nu-transition-fast) color,
+      var(--nu-transition-fast) box-shadow;
   }
 
   .radio__input {
@@ -70,27 +70,27 @@ export default css`
 
   /* Hover */
   .radio:not(.radio--checked):not(.radio--disabled) .radio__control:hover {
-    border-color: var(--sl-input-border-color-hover);
-    background-color: var(--sl-input-background-color-hover);
+    border-color: var(--nu-input-border-color-hover);
+    background-color: var(--nu-input-background-color-hover);
   }
 
   /* Checked */
   .radio--checked .radio__control {
-    color: var(--sl-color-neutral-0);
-    border-color: var(--sl-color-primary-600);
-    background-color: var(--sl-color-primary-600);
+    color: var(--nu-color-neutral-0);
+    border-color: var(--nu-color-primary-600);
+    background-color: var(--nu-color-primary-600);
   }
 
   /* Checked + hover */
   .radio.radio--checked:not(.radio--disabled) .radio__control:hover {
-    border-color: var(--sl-color-primary-500);
-    background-color: var(--sl-color-primary-500);
+    border-color: var(--nu-color-primary-500);
+    background-color: var(--nu-color-primary-500);
   }
 
   /* Checked + focus */
   :host(:focus-visible) .radio__control {
-    outline: var(--sl-focus-ring);
-    outline-offset: var(--sl-focus-ring-offset);
+    outline: var(--nu-focus-ring);
+    outline-offset: var(--nu-focus-ring-offset);
   }
 
   /* Disabled */
@@ -106,7 +106,7 @@ export default css`
 
   .radio__label {
     display: inline-block;
-    color: var(--sl-input-label-color);
+    color: var(--nu-input-label-color);
     line-height: var(--toggle-size);
     margin-inline-start: 0.5em;
     user-select: none;

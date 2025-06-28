@@ -6,7 +6,7 @@ export default css`
   }
 
   .dropdown::part(popup) {
-    z-index: var(--sl-z-index-dropdown);
+    z-index: var(--nu-z-index-dropdown);
   }
 
   .dropdown[data-current-placement^='top']::part(popup) {
@@ -30,11 +30,11 @@ export default css`
   }
 
   .dropdown__panel {
-    font-family: var(--sl-font-sans);
-    font-size: var(--sl-font-size-medium);
-    font-weight: var(--sl-font-weight-normal);
-    box-shadow: var(--sl-shadow-large);
-    border-radius: var(--sl-border-radius-medium);
+    font-family: var(--nu-font-sans);
+    font-size: var(--nu-font-size-medium);
+    font-weight: var(--nu-font-weight-normal);
+    box-shadow: var(--nu-shadow-large);
+    border-radius: var(--nu-border-radius-medium);
     pointer-events: none;
   }
 

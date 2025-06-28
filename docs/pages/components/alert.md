@@ -6,10 +6,10 @@ layout: component
 ---
 
 ```html:preview
-<sl-alert open>
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
+<nu-alert open>
+  <nu-icon slot="icon" name="info-circle"></nu-icon>
   This is a standard alert. You can customize its content and even the icon.
-</sl-alert>
+</nu-alert>
 ```
 
 ```jsx:react
@@ -35,43 +35,43 @@ Alerts will not be visible if the `open` attribute is not present.
 Set the `variant` attribute to change the alert's variant.
 
 ```html:preview
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
+<nu-alert variant="primary" open>
+  <nu-icon slot="icon" name="info-circle"></nu-icon>
   <strong>This is super informative</strong><br />
   You can tell by how pretty the alert is.
-</sl-alert>
+</nu-alert>
 
 <br />
 
-<sl-alert variant="success" open>
-  <sl-icon slot="icon" name="check2-circle"></sl-icon>
+<nu-alert variant="success" open>
+  <nu-icon slot="icon" name="check2-circle"></nu-icon>
   <strong>Your changes have been saved</strong><br />
   You can safely exit the app now.
-</sl-alert>
+</nu-alert>
 
 <br />
 
-<sl-alert variant="neutral" open>
-  <sl-icon slot="icon" name="gear"></sl-icon>
+<nu-alert variant="neutral" open>
+  <nu-icon slot="icon" name="gear"></nu-icon>
   <strong>Your settings have been updated</strong><br />
   Settings will take effect on next login.
-</sl-alert>
+</nu-alert>
 
 <br />
 
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+<nu-alert variant="warning" open>
+  <nu-icon slot="icon" name="exclamation-triangle"></nu-icon>
   <strong>Your session has ended</strong><br />
   Please login again to continue.
-</sl-alert>
+</nu-alert>
 
 <br />
 
-<sl-alert variant="danger" open>
-  <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
+<nu-alert variant="danger" open>
+  <nu-icon slot="icon" name="exclamation-octagon"></nu-icon>
   <strong>Your account has been deleted</strong><br />
   We're very sorry to see you go!
-</sl-alert>
+</nu-alert>
 ```
 
 ```jsx:react
@@ -131,10 +131,10 @@ const App = () => (
 Add the `closable` attribute to show a close button that will hide the alert.
 
 ```html:preview
-<sl-alert variant="primary" open closable class="alert-closable">
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
+<nu-alert variant="primary" open closable class="alert-closable">
+  <nu-icon slot="icon" name="info-circle"></nu-icon>
   You can close this alert any time!
-</sl-alert>
+</nu-alert>
 
 <script>
   const alert = document.querySelector('.alert-closable');
@@ -171,7 +171,7 @@ const App = () => {
 Icons are optional. Simply omit the `icon` slot if you don't want them.
 
 ```html:preview
-<sl-alert variant="primary" open> Nothing fancy here, just a simple alert. </sl-alert>
+<nu-alert variant="primary" open> Nothing fancy here, just a simple alert. </nu-alert>
 ```
 
 ```jsx:react
@@ -190,12 +190,12 @@ Set the `duration` attribute to automatically hide an alert after a period of ti
 
 ```html:preview
 <div class="alert-duration">
-  <sl-button variant="primary">Show Alert</sl-button>
+  <nu-button variant="primary">Show Alert</nu-button>
 
-  <sl-alert variant="primary" duration="3000" closable>
-    <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <nu-alert variant="primary" duration="3000" closable>
+    <nu-icon slot="icon" name="info-circle"></nu-icon>
     This alert will automatically hide itself after three seconds, unless you interact with it.
-  </sl-alert>
+  </nu-alert>
 </div>
 
 <script>
@@ -255,41 +255,41 @@ You should always use the `closable` attribute so users can dismiss the notifica
 
 ```html:preview
 <div class="alert-toast">
-  <sl-button variant="primary">Primary</sl-button>
-  <sl-button variant="success">Success</sl-button>
-  <sl-button variant="neutral">Neutral</sl-button>
-  <sl-button variant="warning">Warning</sl-button>
-  <sl-button variant="danger">Danger</sl-button>
+  <nu-button variant="primary">Primary</nu-button>
+  <nu-button variant="success">Success</nu-button>
+  <nu-button variant="neutral">Neutral</nu-button>
+  <nu-button variant="warning">Warning</nu-button>
+  <nu-button variant="danger">Danger</nu-button>
 
-  <sl-alert variant="primary" duration="3000" closable>
-    <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <nu-alert variant="primary" duration="3000" closable>
+    <nu-icon slot="icon" name="info-circle"></nu-icon>
     <strong>This is super informative</strong><br />
     You can tell by how pretty the alert is.
-  </sl-alert>
+  </nu-alert>
 
-  <sl-alert variant="success" duration="3000" closable>
-    <sl-icon slot="icon" name="check2-circle"></sl-icon>
+  <nu-alert variant="success" duration="3000" closable>
+    <nu-icon slot="icon" name="check2-circle"></nu-icon>
     <strong>Your changes have been saved</strong><br />
     You can safely exit the app now.
-  </sl-alert>
+  </nu-alert>
 
-  <sl-alert variant="neutral" duration="3000" closable>
-    <sl-icon slot="icon" name="gear"></sl-icon>
+  <nu-alert variant="neutral" duration="3000" closable>
+    <nu-icon slot="icon" name="gear"></nu-icon>
     <strong>Your settings have been updated</strong><br />
     Settings will take effect on next login.
-  </sl-alert>
+  </nu-alert>
 
-  <sl-alert variant="warning" duration="3000" closable>
-    <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <nu-alert variant="warning" duration="3000" closable>
+    <nu-icon slot="icon" name="exclamation-triangle"></nu-icon>
     <strong>Your session has ended</strong><br />
     Please login again to continue.
-  </sl-alert>
+  </nu-alert>
 
-  <sl-alert variant="danger" duration="3000" closable>
-    <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
+  <nu-alert variant="danger" duration="3000" closable>
+    <nu-icon slot="icon" name="exclamation-octagon"></nu-icon>
     <strong>Your account has been deleted</strong><br />
     We're very sorry to see you go!
-  </sl-alert>
+  </nu-alert>
 </div>
 
 <script>
@@ -388,7 +388,7 @@ For convenience, you can create a utility that emits toast notifications with a 
 
 ```html:preview
 <div class="alert-toast-wrapper">
-  <sl-button variant="primary">Create Toast</sl-button>
+  <nu-button variant="primary">Create Toast</nu-button>
 </div>
 
 <script>
@@ -410,7 +410,7 @@ For convenience, you can create a utility that emits toast notifications with a 
       closable: true,
       duration: duration,
       innerHTML: `
-        <sl-icon name="${icon}" slot="icon"></sl-icon>
+        <nu-icon name="${icon}" slot="icon"></nu-icon>
         ${escapeHtml(message)}
       `
     });

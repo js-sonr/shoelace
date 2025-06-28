@@ -2,9 +2,9 @@ import { css } from 'lit';
 
 export default css`
   :host {
-    --border-radius: var(--sl-border-radius-pill);
-    --color: var(--sl-color-neutral-200);
-    --sheen-color: var(--sl-color-neutral-300);
+    --border-radius: var(--nu-border-radius-pill);
+    --color: var(--nu-color-neutral-200);
+    --sheen-color: var(--nu-color-neutral-300);
 
     display: block;
     position: relative;

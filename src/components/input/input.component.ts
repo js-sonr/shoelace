@@ -10,11 +10,11 @@ import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import formControlStyles from '../../styles/form-control.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIcon from '../icon/icon.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIcon from '../icon/icon.component.js';
 import styles from './input.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
+import type { NebulaFormControl } from '../../internal/nebula-element.js';
 
 /**
  * @summary Inputs collect data from the user.
@@ -32,12 +32,12 @@ import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
  * @slot hide-password-icon - An icon to use in lieu of the default hide password icon.
  * @slot help-text - Text that describes how to use the input. Alternatively, you can use the `help-text` attribute.
  *
- * @event sl-blur - Emitted when the control loses focus.
- * @event sl-change - Emitted when an alteration to the control's value is committed by the user.
- * @event sl-clear - Emitted when the clear button is activated.
- * @event sl-focus - Emitted when the control gains focus.
- * @event sl-input - Emitted when the control receives input.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-blur - Emitted when the control loses focus.
+ * @event nu-change - Emitted when an alteration to the control's value is committed by the user.
+ * @event nu-clear - Emitted when the clear button is activated.
+ * @event nu-focus - Emitted when the control gains focus.
+ * @event nu-input - Emitted when the control receives input.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart form-control - The form control that wraps the label, input, and help text.
  * @csspart form-control-label - The label's wrapper.
@@ -50,9 +50,9 @@ import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
  * @csspart password-toggle-button - The password toggle button.
  * @csspart suffix - The container that wraps the suffix.
  */
-export default class SlInput extends ShoelaceElement implements ShoelaceFormControl {
+export default class NuInput extends NebulaElement implements NebulaFormControl {
   static styles: CSSResultGroup = [componentStyles, formControlStyles, styles];
-  static dependencies = { 'sl-icon': SlIcon };
+  static dependencies = { 'nu-icon': NuIcon };
 
   private readonly formControlController = new FormControlController(this, {
     assumeInteractionOn: ['sl-blur', 'sl-input']
@@ -242,12 +242,12 @@ export default class SlInput extends ShoelaceElement implements ShoelaceFormCont
 
   private handleBlur() {
     this.hasFocus = false;
-    this.emit('sl-blur');
+    this.emit('nu-blur');
   }
 
   private handleChange() {
     this.value = this.input.value;
-    this.emit('sl-change');
+    this.emit('nu-change');
   }
 
   private handleClearClick(event: MouseEvent) {
@@ -255,9 +255,9 @@ export default class SlInput extends ShoelaceElement implements ShoelaceFormCont
 
     if (this.value !== '') {
       this.value = '';
-      this.emit('sl-clear');
-      this.emit('sl-input');
-      this.emit('sl-change');
+      this.emit('nu-clear');
+      this.emit('nu-input');
+      this.emit('nu-change');
     }
 
     this.input.focus();
@@ -265,13 +265,13 @@ export default class SlInput extends ShoelaceElement implements ShoelaceFormCont
 
   private handleFocus() {
     this.hasFocus = true;
-    this.emit('sl-focus');
+    this.emit('nu-focus');
   }
 
   private handleInput() {
     this.value = this.input.value;
     this.formControlController.updateValidity();
-    this.emit('sl-input');
+    this.emit('nu-input');
   }
 
   private handleInvalid(event: Event) {
@@ -507,7 +507,7 @@ export default class SlInput extends ShoelaceElement implements ShoelaceFormCont
                     tabindex="-1"
                   >
                     <slot name="clear-icon">
-                      <sl-icon name="x-circle-fill" library="system"></sl-icon>
+                      <nu-icon name="x-circle-fill" library="system"></nu-icon>
                     </slot>
                   </button>
                 `
@@ -525,12 +525,12 @@ export default class SlInput extends ShoelaceElement implements ShoelaceFormCont
                     ${this.passwordVisible
                       ? html`
                           <slot name="show-password-icon">
-                            <sl-icon name="eye-slash" library="system"></sl-icon>
+                            <nu-icon name="eye-slash" library="system"></nu-icon>
                           </slot>
                         `
                       : html`
                           <slot name="hide-password-icon">
-                            <sl-icon name="eye" library="system"></sl-icon>
+                            <nu-icon name="eye" library="system"></nu-icon>
                           </slot>
                         `}
                   </button>

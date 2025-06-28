@@ -6,14 +6,14 @@ layout: component
 ---
 
 ```html:preview
-<sl-breadcrumb>
-  <sl-breadcrumb-item>
-    <sl-icon slot="prefix" name="house"></sl-icon>
+<nu-breadcrumb>
+  <nu-breadcrumb-item>
+    <nu-icon slot="prefix" name="house"></nu-icon>
     Home
-  </sl-breadcrumb-item>
-  <sl-breadcrumb-item>Clothing</sl-breadcrumb-item>
-  <sl-breadcrumb-item>Shirts</sl-breadcrumb-item>
-</sl-breadcrumb>
+  </nu-breadcrumb-item>
+  <nu-breadcrumb-item>Clothing</nu-breadcrumb-item>
+  <nu-breadcrumb-item>Shirts</nu-breadcrumb-item>
+</nu-breadcrumb>
 ```
 
 ```jsx:react

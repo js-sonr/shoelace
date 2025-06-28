@@ -3,7 +3,7 @@ import { html } from 'lit';
 import { property, queryAsync } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import styles from './animation.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -13,14 +13,14 @@ import type { CSSResultGroup } from 'lit';
  * @status stable
  * @since 2.0
  *
- * @event sl-cancel - Emitted when the animation is canceled.
- * @event sl-finish - Emitted when the animation finishes.
- * @event sl-start - Emitted when the animation starts or restarts.
+ * @event nu-cancel - Emitted when the animation is canceled.
+ * @event nu-finish - Emitted when the animation finishes.
+ * @event nu-start - Emitted when the animation starts or restarts.
  *
  * @slot - The element to animate. Avoid slotting in more than one element, as subsequent ones will be ignored. To
- *  animate multiple elements, either wrap them in a single container or use multiple `<sl-animation>` elements.
+ *  animate multiple elements, either wrap them in a single container or use multiple `<nu-animation>` elements.
  */
-export default class SlAnimation extends ShoelaceElement {
+export default class NuAnimation extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   private animation?: Animation;
@@ -101,13 +101,13 @@ export default class SlAnimation extends ShoelaceElement {
   private handleAnimationFinish = () => {
     this.play = false;
     this.hasStarted = false;
-    this.emit('sl-finish');
+    this.emit('nu-finish');
   };
 
   private handleAnimationCancel = () => {
     this.play = false;
     this.hasStarted = false;
-    this.emit('sl-cancel');
+    this.emit('nu-cancel');
   };
 
   private handleSlotChange() {
@@ -142,7 +142,7 @@ export default class SlAnimation extends ShoelaceElement {
 
     if (this.play) {
       this.hasStarted = true;
-      this.emit('sl-start');
+      this.emit('nu-start');
     } else {
       this.animation.pause();
     }
@@ -184,7 +184,7 @@ export default class SlAnimation extends ShoelaceElement {
     if (this.animation) {
       if (this.play && !this.hasStarted) {
         this.hasStarted = true;
-        this.emit('sl-start');
+        this.emit('nu-start');
       }
 
       if (this.play) {

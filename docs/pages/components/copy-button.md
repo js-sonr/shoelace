@@ -6,7 +6,7 @@ layout: component
 ---
 
 ```html:preview
-<sl-copy-button value="Nebula rocks!"></sl-copy-button>
+<nu-copy-button value="Nebula rocks!"></nu-copy-button>
 ```
 
 ```jsx:react
@@ -24,12 +24,12 @@ const App = () => (
 Copy Buttons display feedback in a tooltip. You can customize the labels using the `copy-label`, `success-label`, and `error-label` attributes.
 
 ```html:preview
-<sl-copy-button
+<nu-copy-button
   value="Custom labels are easy"
   copy-label="Click to copy"
   success-label="You did it!"
   error-label="Whoops, your browser doesn't support this!"
-></sl-copy-button>
+></nu-copy-button>
 ```
 
 ```jsx:react
@@ -47,14 +47,14 @@ const App = () => (
 
 ### Custom Icons
 
-Use the `copy-icon`, `success-icon`, and `error-icon` slots to customize the icons that get displayed for each state. You can use [`<sl-icon>`](/components/icon) or your own images.
+Use the `copy-icon`, `success-icon`, and `error-icon` slots to customize the icons that get displayed for each state. You can use [`<nu-icon>`](/components/icon) or your own images.
 
 ```html:preview
-<sl-copy-button value="Copied from a custom button">
-  <sl-icon slot="copy-icon" name="clipboard"></sl-icon>
-  <sl-icon slot="success-icon" name="clipboard-check"></sl-icon>
-  <sl-icon slot="error-icon" name="clipboard-x"></sl-icon>
-</sl-copy-button>
+<nu-copy-button value="Copied from a custom button">
+  <nu-icon slot="copy-icon" name="clipboard"></nu-icon>
+  <nu-icon slot="success-icon" name="clipboard-check"></nu-icon>
+  <nu-icon slot="error-icon" name="clipboard-x"></nu-icon>
+</nu-copy-button>
 ```
 
 ```jsx:react
@@ -83,19 +83,19 @@ To copy data from an attribute, use `from="id[attr]"` where `id` is the id of th
 ```html:preview
 <!-- Copies the span's textContent -->
 <span id="my-phone">+1 (234) 456-7890</span>
-<sl-copy-button from="my-phone"></sl-copy-button>
+<nu-copy-button from="my-phone"></nu-copy-button>
 
 <br><br>
 
 <!-- Copies the input's "value" property -->
-<sl-input id="my-input" type="text" value="User input" style="display: inline-block; max-width: 300px;"></sl-input>
-<sl-copy-button from="my-input.value"></sl-copy-button>
+<nu-input id="my-input" type="text" value="User input" style="display: inline-block; max-width: 300px;"></nu-input>
+<nu-copy-button from="my-input.value"></nu-copy-button>
 
 <br><br>
 
 <!-- Copies the link's "href" attribute -->
 <a id="my-link" href="https://shoelace.style/">Nebula Website</a>
-<sl-copy-button from="my-link[href]"></sl-copy-button>
+<nu-copy-button from="my-link[href]"></nu-copy-button>
 ```
 
 ```jsx:react
@@ -130,7 +130,7 @@ A copy error will occur if the value is an empty string, if the `from` attribute
 This example demonstrates what happens when a copy error occurs. You can customize the error label and icon using the `error-label` attribute and the `error-icon` slot, respectively.
 
 ```html:preview
-<sl-copy-button from="i-do-not-exist"></sl-copy-button>
+<nu-copy-button from="i-do-not-exist"></nu-copy-button>
 ```
 
 ```jsx:react
@@ -146,7 +146,7 @@ const App = () => (
 Copy buttons can be disabled by adding the `disabled` attribute.
 
 ```html:preview
-<sl-copy-button value="You can't copy me" disabled></sl-copy-button>
+<nu-copy-button value="You can't copy me" disabled></nu-copy-button>
 ```
 
 ```jsx:react
@@ -162,7 +162,7 @@ const App = () => (
 A success indicator is briefly shown after copying. You can customize the length of time the indicator is shown using the `feedback-duration` attribute.
 
 ```html:preview
-<sl-copy-button value="Nebula rocks!" feedback-duration="250"></sl-copy-button>
+<nu-copy-button value="Nebula rocks!" feedback-duration="250"></nu-copy-button>
 ```
 
 ```jsx:react
@@ -178,11 +178,11 @@ const App = () => (
 You can customize the button to your liking with CSS.
 
 ```html:preview
-<sl-copy-button value="I'm so stylish" class="custom-styles">
-  <sl-icon slot="copy-icon" name="asterisk"></sl-icon>
-  <sl-icon slot="success-icon" name="check-lg"></sl-icon>
-  <sl-icon slot="error-icon" name="x-lg"></sl-icon>
-</sl-copy-button>
+<nu-copy-button value="I'm so stylish" class="custom-styles">
+  <nu-icon slot="copy-icon" name="asterisk"></nu-icon>
+  <nu-icon slot="success-icon" name="check-lg"></nu-icon>
+  <nu-icon slot="error-icon" name="x-lg"></nu-icon>
+</nu-copy-button>
 
 <style>
   .custom-styles {

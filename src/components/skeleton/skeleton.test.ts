@@ -1,10 +1,10 @@
 import '../../../dist/shoelace.js';
 import { expect, fixture, html } from '@open-wc/testing';
-import type SlSkeleton from './skeleton.js';
+import type NuSkeleton from './skeleton.js';
 
-describe('<sl-skeleton>', () => {
+describe('<nu-skeleton>', () => {
   it('should render default skeleton', async () => {
-    const el = await fixture<SlSkeleton>(html` <sl-skeleton></sl-skeleton> `);
+    const el = await fixture<NuSkeleton>(html` <nu-skeleton></nu-skeleton> `);
 
     await expect(el).to.be.accessible();
 
@@ -16,7 +16,7 @@ describe('<sl-skeleton>', () => {
   });
 
   it('should set pulse effect by attribute', async () => {
-    const el = await fixture<SlSkeleton>(html` <sl-skeleton effect="pulse"></sl-skeleton> `);
+    const el = await fixture<NuSkeleton>(html` <nu-skeleton effect="pulse"></nu-skeleton> `);
 
     const base = el.shadowRoot!.querySelector<HTMLElement>('[part~="base"]')!;
 
@@ -24,7 +24,7 @@ describe('<sl-skeleton>', () => {
   });
 
   it('should set sheen effect by attribute', async () => {
-    const el = await fixture<SlSkeleton>(html` <sl-skeleton effect="sheen"></sl-skeleton> `);
+    const el = await fixture<NuSkeleton>(html` <nu-skeleton effect="sheen"></nu-skeleton> `);
 
     const base = el.shadowRoot!.querySelector<HTMLElement>('[part~="base"]')!;
 

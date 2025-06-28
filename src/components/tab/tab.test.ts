@@ -1,23 +1,23 @@
 import '../../../dist/shoelace.js';
 import { expect, fixture, html } from '@open-wc/testing';
 import sinon from 'sinon';
-import type SlIconButton from '../icon-button/icon-button.js';
-import type SlTab from './tab.js';
-import type SlTabGroup from '../tab-group/tab-group.js';
+import type NuIconButton from '../icon-button/icon-button.js';
+import type NuTab from './tab.js';
+import type NuTabGroup from '../tab-group/tab-group.js';
 
-describe('<sl-tab>', () => {
+describe('<nu-tab>', () => {
   it('passes accessibility test', async () => {
-    const el = await fixture<SlTab>(html`
-      <sl-tab-group>
-        <sl-tab slot="nav">Test</sl-tab>
-      </sl-tab-group>
+    const el = await fixture<NuTab>(html`
+      <nu-tab-group>
+        <nu-tab slot="nav">Test</nu-tab>
+      </nu-tab-group>
     `);
 
     await expect(el).to.be.accessible();
   });
 
   it('should render default tab', async () => {
-    const el = await fixture<SlTab>(html` <sl-tab>Test</sl-tab> `);
+    const el = await fixture<NuTab>(html` <nu-tab>Test</nu-tab> `);
 
     const base = el.shadowRoot!.querySelector<HTMLElement>('[part~="base"]')!;
 
@@ -32,7 +32,7 @@ describe('<sl-tab>', () => {
   });
 
   it('should disable tab by attribute', async () => {
-    const el = await fixture<SlTab>(html` <sl-tab disabled>Test</sl-tab> `);
+    const el = await fixture<NuTab>(html` <nu-tab disabled>Test</nu-tab> `);
 
     const base = el.shadowRoot!.querySelector<HTMLElement>('[part~="base"]')!;
 
@@ -43,7 +43,7 @@ describe('<sl-tab>', () => {
   });
 
   it('should set active tab by attribute', async () => {
-    const el = await fixture<SlTab>(html` <sl-tab active>Test</sl-tab> `);
+    const el = await fixture<NuTab>(html` <nu-tab active>Test</nu-tab> `);
 
     const base = el.shadowRoot!.querySelector<HTMLElement>('[part~="base"]')!;
 
@@ -54,7 +54,7 @@ describe('<sl-tab>', () => {
   });
 
   it('should set closable by attribute', async () => {
-    const el = await fixture<SlTab>(html` <sl-tab closable>Test</sl-tab> `);
+    const el = await fixture<NuTab>(html` <nu-tab closable>Test</nu-tab> `);
 
     const base = el.shadowRoot!.querySelector<HTMLElement>('[part~="base"]')!;
     const closeButton = el.shadowRoot!.querySelector('[part~="close-button"]');
@@ -66,7 +66,7 @@ describe('<sl-tab>', () => {
 
   describe('focus', () => {
     it('should focus itself', async () => {
-      const el = await fixture<SlTab>(html` <sl-tab>Test</sl-tab> `);
+      const el = await fixture<NuTab>(html` <nu-tab>Test</nu-tab> `);
 
       el.focus();
       await el.updateComplete;
@@ -77,7 +77,7 @@ describe('<sl-tab>', () => {
 
   describe('blur', () => {
     it('should blur itself', async () => {
-      const el = await fixture<SlTab>(html` <sl-tab>Test</sl-tab> `);
+      const el = await fixture<NuTab>(html` <nu-tab>Test</nu-tab> `);
 
       el.focus();
       await el.updateComplete;
@@ -93,17 +93,17 @@ describe('<sl-tab>', () => {
 
   describe('closable', () => {
     it('should emit close event when the close button is clicked', async () => {
-      const tabGroup = await fixture<SlTabGroup>(html`
-        <sl-tab-group>
-          <sl-tab slot="nav" panel="general" closable>General</sl-tab>
-          <sl-tab slot="nav" panel="custom" closable>Custom</sl-tab>
-          <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
-          <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
-        </sl-tab-group>
+      const tabGroup = await fixture<NuTabGroup>(html`
+        <nu-tab-group>
+          <nu-tab slot="nav" panel="general" closable>General</nu-tab>
+          <nu-tab slot="nav" panel="custom" closable>Custom</nu-tab>
+          <nu-tab-panel name="general">This is the general tab panel.</nu-tab-panel>
+          <nu-tab-panel name="custom">This is the custom tab panel.</nu-tab-panel>
+        </nu-tab-group>
       `);
       const closeButton = tabGroup
-        .querySelectorAll('sl-tab')[0]!
-        .shadowRoot!.querySelector<SlIconButton>('[part~="close-button"]')!;
+        .querySelectorAll('nu-tab')[0]!
+        .shadowRoot!.querySelector<NuIconButton>('[part~="close-button"]')!;
 
       const handleClose = sinon.spy();
       const handleTabShow = sinon.spy();

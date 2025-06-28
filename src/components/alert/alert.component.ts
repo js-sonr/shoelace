@@ -8,8 +8,8 @@ import { property, query } from 'lit/decorators.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIconButton from '../icon-button/icon-button.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIconButton from '../icon-button/icon-button.component.js';
 import styles from './alert.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -24,25 +24,25 @@ const toastStack = Object.assign(document.createElement('div'), { className: 'sl
  * @dependency sl-icon-button
  *
  * @slot - The alert's main content.
- * @slot icon - An icon to show in the alert. Works best with `<sl-icon>`.
+ * @slot icon - An icon to show in the alert. Works best with `<nu-icon>`.
  *
- * @event sl-show - Emitted when the alert opens.
- * @event sl-after-show - Emitted after the alert opens and all animations are complete.
- * @event sl-hide - Emitted when the alert closes.
- * @event sl-after-hide - Emitted after the alert closes and all animations are complete.
+ * @event nu-show - Emitted when the alert opens.
+ * @event nu-after-show - Emitted after the alert opens and all animations are complete.
+ * @event nu-hide - Emitted when the alert closes.
+ * @event nu-after-hide - Emitted after the alert closes and all animations are complete.
  *
  * @csspart base - The component's base wrapper.
  * @csspart icon - The container that wraps the optional icon.
  * @csspart message - The container that wraps the alert's main content.
- * @csspart close-button - The close button, an `<sl-icon-button>`.
+ * @csspart close-button - The close button, an `<nu-icon-button>`.
  * @csspart close-button__base - The close button's exported `base` part.
  *
  * @animation alert.show - The animation to use when showing the alert.
  * @animation alert.hide - The animation to use when hiding the alert.
  */
-export default class SlAlert extends ShoelaceElement {
+export default class NuAlert extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
-  static dependencies = { 'sl-icon-button': SlIconButton };
+  static dependencies = { 'nu-icon-button': NuIconButton };
 
   private autoHideTimeout: number;
   private readonly hasSlotController = new HasSlotController(this, 'icon', 'suffix');
@@ -92,7 +92,7 @@ export default class SlAlert extends ShoelaceElement {
   async handleOpenChange() {
     if (this.open) {
       // Show
-      this.emit('sl-show');
+      this.emit('nu-show');
 
       if (this.duration < Infinity) {
         this.restartAutoHide();
@@ -103,10 +103,10 @@ export default class SlAlert extends ShoelaceElement {
       const { keyframes, options } = getAnimation(this, 'alert.show', { dir: this.localize.dir() });
       await animateTo(this.base, keyframes, options);
 
-      this.emit('sl-after-show');
+      this.emit('nu-after-show');
     } else {
       // Hide
-      this.emit('sl-hide');
+      this.emit('nu-hide');
 
       clearTimeout(this.autoHideTimeout);
 
@@ -115,7 +115,7 @@ export default class SlAlert extends ShoelaceElement {
       await animateTo(this.base, keyframes, options);
       this.base.hidden = true;
 
-      this.emit('sl-after-hide');
+      this.emit('nu-after-hide');
     }
   }
 
@@ -171,7 +171,7 @@ export default class SlAlert extends ShoelaceElement {
           resolve();
 
           // Remove the toast stack from the DOM when there are no more alerts
-          if (toastStack.querySelector('sl-alert') === null) {
+          if (toastStack.querySelector('nu-alert') === null) {
             toastStack.remove();
           }
         },
@@ -209,7 +209,7 @@ export default class SlAlert extends ShoelaceElement {
 
         ${this.closable
           ? html`
-              <sl-icon-button
+              <nu-icon-button
                 part="close-button"
                 exportparts="base:close-button__base"
                 class="alert__close-button"
@@ -217,7 +217,7 @@ export default class SlAlert extends ShoelaceElement {
                 library="system"
                 label=${this.localize.term('close')}
                 @click=${this.handleCloseClick}
-              ></sl-icon-button>
+              ></nu-icon-button>
             `
           : ''}
       </div>

@@ -5,29 +5,29 @@ import { runFormControlBaseTests } from '../../internal/test/form-control-base-t
 import { sendKeys } from '@web/test-runner-commands';
 import { serialize } from '../../utilities/form.js';
 import sinon from 'sinon';
-import type SlOption from '../option/option.js';
-import type SlSelect from './select.js';
+import type NuOption from '../option/option.js';
+import type NuSelect from './select.js';
 
-describe('<sl-select>', () => {
+describe('<nu-select>', () => {
   describe('accessibility', () => {
     it('should pass accessibility tests when closed', async () => {
-      const select = await fixture<SlSelect>(html`
-        <sl-select label="Select one">
-          <sl-option value="option-1">Option 1</sl-option>
-          <sl-option value="option-2">Option 2</sl-option>
-          <sl-option value="option-3">Option 3</sl-option>
-        </sl-select>
+      const select = await fixture<NuSelect>(html`
+        <nu-select label="Select one">
+          <nu-option value="option-1">Option 1</nu-option>
+          <nu-option value="option-2">Option 2</nu-option>
+          <nu-option value="option-3">Option 3</nu-option>
+        </nu-select>
       `);
       await expect(select).to.be.accessible();
     });
 
     it('should pass accessibility tests when open', async () => {
-      const select = await fixture<SlSelect>(html`
-        <sl-select label="Select one">
-          <sl-option value="option-1">Option 1</sl-option>
-          <sl-option value="option-2">Option 2</sl-option>
-          <sl-option value="option-3">Option 3</sl-option>
-        </sl-select>
+      const select = await fixture<NuSelect>(html`
+        <nu-select label="Select one">
+          <nu-option value="option-1">Option 1</nu-option>
+          <nu-option value="option-2">Option 2</nu-option>
+          <nu-option value="option-3">Option 3</nu-option>
+        </nu-select>
       `);
 
       await select.show();
@@ -37,23 +37,23 @@ describe('<sl-select>', () => {
   });
 
   it('should be disabled with the disabled attribute', async () => {
-    const el = await fixture<SlSelect>(html`
-      <sl-select disabled>
-        <sl-option value="option-1">Option 1</sl-option>
-        <sl-option value="option-2">Option 2</sl-option>
-        <sl-option value="option-3">Option 3</sl-option>
-      </sl-select>
+    const el = await fixture<NuSelect>(html`
+      <nu-select disabled>
+        <nu-option value="option-1">Option 1</nu-option>
+        <nu-option value="option-2">Option 2</nu-option>
+        <nu-option value="option-3">Option 3</nu-option>
+      </nu-select>
     `);
     expect(el.displayInput.disabled).to.be.true;
   });
 
   it('should show a placeholder when no options are selected', async () => {
-    const el = await fixture<SlSelect>(html`
-      <sl-select placeholder="Select one">
-        <sl-option value="option-1">Option 1</sl-option>
-        <sl-option value="option-2">Option 2</sl-option>
-        <sl-option value="option-3">Option 3</sl-option>
-      </sl-select>
+    const el = await fixture<NuSelect>(html`
+      <nu-select placeholder="Select one">
+        <nu-option value="option-1">Option 1</nu-option>
+        <nu-option value="option-2">Option 2</nu-option>
+        <nu-option value="option-3">Option 3</nu-option>
+      </nu-select>
     `);
     const displayInput = el.shadowRoot!.querySelector<HTMLInputElement>('[part~="display-input"]')!;
 
@@ -62,12 +62,12 @@ describe('<sl-select>', () => {
   });
 
   it('should show a placeholder when no options are selected and multiple is set', async () => {
-    const el = await fixture<SlSelect>(html`
-      <sl-select placeholder="Select a few" multiple>
-        <sl-option value="option-1">Option 1</sl-option>
-        <sl-option value="option-2">Option 2</sl-option>
-        <sl-option value="option-3">Option 3</sl-option>
-      </sl-select>
+    const el = await fixture<NuSelect>(html`
+      <nu-select placeholder="Select a few" multiple>
+        <nu-option value="option-1">Option 1</nu-option>
+        <nu-option value="option-2">Option 2</nu-option>
+        <nu-option value="option-3">Option 3</nu-option>
+      </nu-select>
     `);
     const displayInput = el.shadowRoot!.querySelector<HTMLInputElement>('[part~="display-input"]')!;
 
@@ -76,13 +76,13 @@ describe('<sl-select>', () => {
   });
 
   it('should not allow selection when the option is disabled', async () => {
-    const el = await fixture<SlSelect>(html`
-      <sl-select value="option-1">
-        <sl-option value="option-1">Option 1</sl-option>
-        <sl-option value="option-2" disabled>Option 2</sl-option>
-      </sl-select>
+    const el = await fixture<NuSelect>(html`
+      <nu-select value="option-1">
+        <nu-option value="option-1">Option 1</nu-option>
+        <nu-option value="option-2" disabled>Option 2</nu-option>
+      </nu-select>
     `);
-    const disabledOption = el.querySelector('sl-option[disabled]')!;
+    const disabledOption = el.querySelector('nu-option[disabled]')!;
 
     await el.show();
     await clickOnElement(disabledOption);
@@ -92,12 +92,12 @@ describe('<sl-select>', () => {
   });
 
   it('should focus the select when clicking on the label', async () => {
-    const el = await fixture<SlSelect>(html`
-      <sl-select label="Select One">
-        <sl-option value="option-1">Option 1</sl-option>
-        <sl-option value="option-2">Option 2</sl-option>
-        <sl-option value="option-3">Option 3</sl-option>
-      </sl-select>
+    const el = await fixture<NuSelect>(html`
+      <nu-select label="Select One">
+        <nu-option value="option-1">Option 1</nu-option>
+        <nu-option value="option-2">Option 2</nu-option>
+        <nu-option value="option-3">Option 3</nu-option>
+      </nu-select>
     `);
     const label = el.shadowRoot!.querySelector('[part~="form-control-label"]')!;
     const submitHandler = sinon.spy();
@@ -111,14 +111,14 @@ describe('<sl-select>', () => {
 
   describe('when the value changes', () => {
     it('should emit sl-change when the value is changed with the mouse', async () => {
-      const el = await fixture<SlSelect>(html`
-        <sl-select value="option-1">
-          <sl-option value="option-1">Option 1</sl-option>
-          <sl-option value="option-2">Option 2</sl-option>
-          <sl-option value="option-3">Option 3</sl-option>
-        </sl-select>
+      const el = await fixture<NuSelect>(html`
+        <nu-select value="option-1">
+          <nu-option value="option-1">Option 1</nu-option>
+          <nu-option value="option-2">Option 2</nu-option>
+          <nu-option value="option-3">Option 3</nu-option>
+        </nu-select>
       `);
-      const secondOption = el.querySelectorAll<SlOption>('sl-option')[1];
+      const secondOption = el.querySelectorAll<NuOption>('nu-option')[1];
       const changeHandler = sinon.spy();
       const inputHandler = sinon.spy();
 
@@ -135,12 +135,12 @@ describe('<sl-select>', () => {
     });
 
     it('should emit sl-change and sl-input when the value is changed with the keyboard', async () => {
-      const el = await fixture<SlSelect>(html`
-        <sl-select value="option-1">
-          <sl-option value="option-1">Option 1</sl-option>
-          <sl-option value="option-2">Option 2</sl-option>
-          <sl-option value="option-3">Option 3</sl-option>
-        </sl-select>
+      const el = await fixture<NuSelect>(html`
+        <nu-select value="option-1">
+          <nu-option value="option-1">Option 1</nu-option>
+          <nu-option value="option-2">Option 2</nu-option>
+          <nu-option value="option-3">Option 3</nu-option>
+        </nu-select>
       `);
       const changeHandler = sinon.spy();
       const inputHandler = sinon.spy();
@@ -166,12 +166,12 @@ describe('<sl-select>', () => {
     });
 
     it('should not emit sl-change or sl-input when the value is changed programmatically', async () => {
-      const el = await fixture<SlSelect>(html`
-        <sl-select value="option-1">
-          <sl-option value="option-1">Option 1</sl-option>
-          <sl-option value="option-2">Option 2</sl-option>
-          <sl-option value="option-3">Option 3</sl-option>
-        </sl-select>
+      const el = await fixture<NuSelect>(html`
+        <nu-select value="option-1">
+          <nu-option value="option-1">Option 1</nu-option>
+          <nu-option value="option-2">Option 2</nu-option>
+          <nu-option value="option-3">Option 3</nu-option>
+        </nu-select>
       `);
 
       el.addEventListener('sl-change', () => expect.fail('sl-change should not be emitted'));
@@ -182,14 +182,14 @@ describe('<sl-select>', () => {
     });
 
     it('should emit sl-change and sl-input with the correct validation message when the value changes', async () => {
-      const el = await fixture<SlSelect>(html`
-        <sl-select required>
-          <sl-option value="option-1">Option 1</sl-option>
-          <sl-option value="option-2">Option 2</sl-option>
-          <sl-option value="option-3">Option 3</sl-option>
-        </sl-select>
+      const el = await fixture<NuSelect>(html`
+        <nu-select required>
+          <nu-option value="option-1">Option 1</nu-option>
+          <nu-option value="option-2">Option 2</nu-option>
+          <nu-option value="option-3">Option 3</nu-option>
+        </nu-select>
       `);
-      const option2 = el.querySelectorAll('sl-option')[1];
+      const option2 = el.querySelectorAll('nu-option')[1];
       const handler = sinon.spy((event: CustomEvent) => {
         if (el.validationMessage) {
           expect.fail(`Validation message should be empty when ${event.type} is emitted and a value is set`);
@@ -209,12 +209,12 @@ describe('<sl-select>', () => {
   });
 
   it('should open the listbox when any letter key is pressed with sl-select is on focus', async () => {
-    const el = await fixture<SlSelect>(html`
-      <sl-select>
-        <sl-option value="option-1">Option 1</sl-option>
-        <sl-option value="option-2">Option 2</sl-option>
-        <sl-option value="option-3">Option 3</sl-option>
-      </sl-select>
+    const el = await fixture<NuSelect>(html`
+      <nu-select>
+        <nu-option value="option-1">Option 1</nu-option>
+        <nu-option value="option-2">Option 2</nu-option>
+        <nu-option value="option-3">Option 3</nu-option>
+      </nu-select>
     `);
     const displayInput = el.shadowRoot!.querySelector<HTMLSelectElement>('.select__display-input')!;
 
@@ -226,12 +226,12 @@ describe('<sl-select>', () => {
   });
 
   it('should not open the listbox when ctrl + R is pressed with sl-select is on focus', async () => {
-    const el = await fixture<SlSelect>(html`
-      <sl-select>
-        <sl-option value="option-1">Option 1</sl-option>
-        <sl-option value="option-2">Option 2</sl-option>
-        <sl-option value="option-3">Option 3</sl-option>
-      </sl-select>
+    const el = await fixture<NuSelect>(html`
+      <nu-select>
+        <nu-option value="option-1">Option 1</nu-option>
+        <nu-option value="option-2">Option 2</nu-option>
+        <nu-option value="option-3">Option 3</nu-option>
+      </nu-select>
     `);
     const displayInput = el.shadowRoot!.querySelector<HTMLSelectElement>('.select__display-input')!;
 
@@ -247,55 +247,55 @@ describe('<sl-select>', () => {
     it('should be valid by default', async () => {
       const el = await fixture<HTMLFormElement>(html`
         <form>
-          <sl-select>
-            <sl-option value="option-1">Option 1</sl-option>
-            <sl-option value="option-2">Option 2</sl-option>
-            <sl-option value="option-3">Option 3</sl-option>
-          </sl-select>
+          <nu-select>
+            <nu-option value="option-1">Option 1</nu-option>
+            <nu-option value="option-2">Option 2</nu-option>
+            <nu-option value="option-3">Option 3</nu-option>
+          </nu-select>
         </form>
       `);
-      const select = el.querySelector<SlSelect>('sl-select')!;
+      const select = el.querySelector<NuSelect>('nu-select')!;
       expect(select.checkValidity()).to.be.true;
     });
 
     it('should be invalid when required and empty', async () => {
       const el = await fixture<HTMLFormElement>(html`
         <form>
-          <sl-select required>
-            <sl-option value="option-1">Option 1</sl-option>
-            <sl-option value="option-2">Option 2</sl-option>
-            <sl-option value="option-3">Option 3</sl-option>
-          </sl-select>
+          <nu-select required>
+            <nu-option value="option-1">Option 1</nu-option>
+            <nu-option value="option-2">Option 2</nu-option>
+            <nu-option value="option-3">Option 3</nu-option>
+          </nu-select>
         </form>
       `);
-      const select = el.querySelector<SlSelect>('sl-select')!;
+      const select = el.querySelector<NuSelect>('nu-select')!;
       expect(select.checkValidity()).to.be.false;
     });
 
     it('should focus on the displayInput when constraint validation occurs', async () => {
       const el = await fixture<HTMLFormElement>(html`
         <form>
-          <sl-select required>
-            <sl-option value="option-1">Option 1</sl-option>
-            <sl-option value="option-2">Option 2</sl-option>
-            <sl-option value="option-3">Option 3</sl-option>
-          </sl-select>
+          <nu-select required>
+            <nu-option value="option-1">Option 1</nu-option>
+            <nu-option value="option-2">Option 2</nu-option>
+            <nu-option value="option-3">Option 3</nu-option>
+          </nu-select>
         </form>
       `);
-      const select = el.querySelector<SlSelect>('sl-select')!;
+      const select = el.querySelector<NuSelect>('nu-select')!;
       el.requestSubmit();
       expect(select.shadowRoot!.activeElement).to.equal(select.displayInput);
     });
 
     it('should receive the correct validation attributes ("states") when valid', async () => {
-      const el = await fixture<SlSelect>(html`
-        <sl-select label="Select one" required value="option-1">
-          <sl-option value="option-1">Option 1</sl-option>
-          <sl-option value="option-2">Option 2</sl-option>
-          <sl-option value="option-3">Option 3</sl-option>
-        </sl-select>
+      const el = await fixture<NuSelect>(html`
+        <nu-select label="Select one" required value="option-1">
+          <nu-option value="option-1">Option 1</nu-option>
+          <nu-option value="option-2">Option 2</nu-option>
+          <nu-option value="option-3">Option 3</nu-option>
+        </nu-select>
       `);
-      const secondOption = el.querySelectorAll('sl-option')[1]!;
+      const secondOption = el.querySelectorAll('nu-option')[1]!;
 
       expect(el.checkValidity()).to.be.true;
       expect(el.hasAttribute('data-required')).to.be.true;
@@ -317,14 +317,14 @@ describe('<sl-select>', () => {
     });
 
     it('should receive the correct validation attributes ("states") when invalid', async () => {
-      const el = await fixture<SlSelect>(html`
-        <sl-select label="Select one" required>
-          <sl-option value="option-1">Option 1</sl-option>
-          <sl-option value="option-2">Option 2</sl-option>
-          <sl-option value="option-3">Option 3</sl-option>
-        </sl-select>
+      const el = await fixture<NuSelect>(html`
+        <nu-select label="Select one" required>
+          <nu-option value="option-1">Option 1</nu-option>
+          <nu-option value="option-2">Option 2</nu-option>
+          <nu-option value="option-3">Option 3</nu-option>
+        </nu-select>
       `);
-      const secondOption = el.querySelectorAll('sl-option')[1]!;
+      const secondOption = el.querySelectorAll('nu-option')[1]!;
 
       expect(el.hasAttribute('data-required')).to.be.true;
       expect(el.hasAttribute('data-optional')).to.be.false;
@@ -347,14 +347,14 @@ describe('<sl-select>', () => {
     it('should receive validation attributes ("states") even when novalidate is used on the parent form', async () => {
       const el = await fixture<HTMLFormElement>(html`
         <form novalidate>
-          <sl-select required>
-            <sl-option value="option-1">Option 1</sl-option>
-            <sl-option value="option-2">Option 2</sl-option>
-            <sl-option value="option-3">Option 3</sl-option>
-          </sl-select>
+          <nu-select required>
+            <nu-option value="option-1">Option 1</nu-option>
+            <nu-option value="option-2">Option 2</nu-option>
+            <nu-option value="option-3">Option 3</nu-option>
+          </nu-select>
         </form>
       `);
-      const select = el.querySelector<SlSelect>('sl-select')!;
+      const select = el.querySelector<NuSelect>('nu-select')!;
 
       expect(select.hasAttribute('data-required')).to.be.true;
       expect(select.hasAttribute('data-optional')).to.be.false;
@@ -369,11 +369,11 @@ describe('<sl-select>', () => {
     it('should serialize its name and value with FormData', async () => {
       const form = await fixture<HTMLFormElement>(html`
         <form>
-          <sl-select name="a" value="option-1">
-            <sl-option value="option-1">Option 1</sl-option>
-            <sl-option value="option-2">Option 2</sl-option>
-            <sl-option value="option-3">Option 3</sl-option>
-          </sl-select>
+          <nu-select name="a" value="option-1">
+            <nu-option value="option-1">Option 1</nu-option>
+            <nu-option value="option-2">Option 2</nu-option>
+            <nu-option value="option-3">Option 3</nu-option>
+          </nu-select>
         </form>
       `);
       const formData = new FormData(form);
@@ -383,11 +383,11 @@ describe('<sl-select>', () => {
     it('should serialize its name and value in FormData when multiple options are selected', async () => {
       const form = await fixture<HTMLFormElement>(html`
         <form>
-          <sl-select name="a" value="option-2 option-3" multiple>
-            <sl-option value="option-1">Option 1</sl-option>
-            <sl-option value="option-2">Option 2</sl-option>
-            <sl-option value="option-3">Option 3</sl-option>
-          </sl-select>
+          <nu-select name="a" value="option-2 option-3" multiple>
+            <nu-option value="option-1">Option 1</nu-option>
+            <nu-option value="option-2">Option 2</nu-option>
+            <nu-option value="option-3">Option 3</nu-option>
+          </nu-select>
         </form>
       `);
       const formData = new FormData(form);
@@ -398,11 +398,11 @@ describe('<sl-select>', () => {
     it('should serialize its name and value in JSON', async () => {
       const form = await fixture<HTMLFormElement>(html`
         <form>
-          <sl-select name="a" value="option-1">
-            <sl-option value="option-1">Option 1</sl-option>
-            <sl-option value="option-2">Option 2</sl-option>
-            <sl-option value="option-3">Option 3</sl-option>
-          </sl-select>
+          <nu-select name="a" value="option-1">
+            <nu-option value="option-1">Option 1</nu-option>
+            <nu-option value="option-2">Option 2</nu-option>
+            <nu-option value="option-3">Option 3</nu-option>
+          </nu-select>
         </form>
       `);
       const json = serialize(form);
@@ -412,11 +412,11 @@ describe('<sl-select>', () => {
     it('should serialize its name and value in JSON when multiple options are selected', async () => {
       const form = await fixture<HTMLFormElement>(html`
         <form>
-          <sl-select name="a" value="option-2 option-3" multiple>
-            <sl-option value="option-1">Option 1</sl-option>
-            <sl-option value="option-2">Option 2</sl-option>
-            <sl-option value="option-3">Option 3</sl-option>
-          </sl-select>
+          <nu-select name="a" value="option-2 option-3" multiple>
+            <nu-option value="option-1">Option 1</nu-option>
+            <nu-option value="option-2">Option 2</nu-option>
+            <nu-option value="option-3">Option 3</nu-option>
+          </nu-select>
         </form>
       `);
       const json = serialize(form);
@@ -427,13 +427,13 @@ describe('<sl-select>', () => {
       const el = await fixture<HTMLFormElement>(html`
         <div>
           <form id="f">
-            <sl-button type="submit">Submit</sl-button>
+            <nu-button type="submit">Submit</nu-button>
           </form>
-          <sl-select form="f" name="a" value="option-1">
-            <sl-option value="option-1">Option 1</sl-option>
-            <sl-option value="option-2">Option 2</sl-option>
-            <sl-option value="option-3">Option 3</sl-option>
-          </sl-select>
+          <nu-select form="f" name="a" value="option-1">
+            <nu-option value="option-1">Option 1</nu-option>
+            <nu-option value="option-2">Option 2</nu-option>
+            <nu-option value="option-3">Option 3</nu-option>
+          </nu-select>
         </div>
       `);
       const form = el.querySelector('form')!;
@@ -447,16 +447,16 @@ describe('<sl-select>', () => {
     it('should reset the element to its initial value', async () => {
       const form = await fixture<HTMLFormElement>(html`
         <form>
-          <sl-select value="option-1">
-            <sl-option value="option-1">Option 1</sl-option>
-            <sl-option value="option-2">Option 2</sl-option>
-            <sl-option value="option-3">Option 3</sl-option>
-          </sl-select>
-          <sl-button type="reset">Reset</sl-button>
+          <nu-select value="option-1">
+            <nu-option value="option-1">Option 1</nu-option>
+            <nu-option value="option-2">Option 2</nu-option>
+            <nu-option value="option-3">Option 3</nu-option>
+          </nu-select>
+          <nu-button type="reset">Reset</nu-button>
         </form>
       `);
-      const resetButton = form.querySelector('sl-button')!;
-      const select = form.querySelector('sl-select')!;
+      const resetButton = form.querySelector('nu-button')!;
+      const select = form.querySelector('nu-select')!;
 
       select.value = 'option-3';
       await select.updateComplete;
@@ -470,15 +470,15 @@ describe('<sl-select>', () => {
   });
 
   it('should update the display label when an option changes', async () => {
-    const el = await fixture<SlSelect>(html`
-      <sl-select value="option-1">
-        <sl-option value="option-1">Option 1</sl-option>
-        <sl-option value="option-2">Option 2</sl-option>
-        <sl-option value="option-3">Option 3</sl-option>
-      </sl-select>
+    const el = await fixture<NuSelect>(html`
+      <nu-select value="option-1">
+        <nu-option value="option-1">Option 1</nu-option>
+        <nu-option value="option-2">Option 2</nu-option>
+        <nu-option value="option-3">Option 3</nu-option>
+      </nu-select>
     `);
     const displayInput = el.shadowRoot!.querySelector<HTMLSelectElement>('.select__display-input')!;
-    const option = el.querySelector('sl-option')!;
+    const option = el.querySelector('nu-option')!;
 
     expect(displayInput.value).to.equal('Option 1');
 
@@ -490,12 +490,12 @@ describe('<sl-select>', () => {
   });
 
   it('should emit sl-focus and sl-blur when receiving and losing focus', async () => {
-    const el = await fixture<SlSelect>(html`
-      <sl-select value="option-1">
-        <sl-option value="option-1">Option 1</sl-option>
-        <sl-option value="option-2">Option 2</sl-option>
-        <sl-option value="option-3">Option 3</sl-option>
-      </sl-select>
+    const el = await fixture<NuSelect>(html`
+      <nu-select value="option-1">
+        <nu-option value="option-1">Option 1</nu-option>
+        <nu-option value="option-2">Option 2</nu-option>
+        <nu-option value="option-3">Option 3</nu-option>
+      </nu-select>
     `);
     const focusHandler = sinon.spy();
     const blurHandler = sinon.spy();
@@ -513,12 +513,12 @@ describe('<sl-select>', () => {
   });
 
   it('should emit sl-clear when the clear button is clicked', async () => {
-    const el = await fixture<SlSelect>(html`
-      <sl-select value="option-1" clearable>
-        <sl-option value="option-1">Option 1</sl-option>
-        <sl-option value="option-2">Option 2</sl-option>
-        <sl-option value="option-3">Option 3</sl-option>
-      </sl-select>
+    const el = await fixture<NuSelect>(html`
+      <nu-select value="option-1" clearable>
+        <nu-option value="option-1">Option 1</nu-option>
+        <nu-option value="option-2">Option 2</nu-option>
+        <nu-option value="option-3">Option 3</nu-option>
+      </nu-select>
     `);
     const clearHandler = sinon.spy();
     const clearButton = el.shadowRoot!.querySelector('[part~="clear-button"]')!;
@@ -532,12 +532,12 @@ describe('<sl-select>', () => {
   });
 
   it('should emit sl-change and sl-input when a tag is removed', async () => {
-    const el = await fixture<SlSelect>(html`
-      <sl-select value="option-1 option-2 option-3" multiple>
-        <sl-option value="option-1">Option 1</sl-option>
-        <sl-option value="option-2">Option 2</sl-option>
-        <sl-option value="option-3">Option 3</sl-option>
-      </sl-select>
+    const el = await fixture<NuSelect>(html`
+      <nu-select value="option-1 option-2 option-3" multiple>
+        <nu-option value="option-1">Option 1</nu-option>
+        <nu-option value="option-2">Option 2</nu-option>
+        <nu-option value="option-3">Option 3</nu-option>
+      </nu-select>
     `);
     const changeHandler = sinon.spy();
     const inputHandler = sinon.spy();
@@ -555,12 +555,12 @@ describe('<sl-select>', () => {
   });
 
   it('should emit sl-show, sl-after-show, sl-hide, and sl-after-hide events when the listbox opens and closes', async () => {
-    const el = await fixture<SlSelect>(html`
-      <sl-select value="option-1">
-        <sl-option value="option-1">Option 1</sl-option>
-        <sl-option value="option-2">Option 2</sl-option>
-        <sl-option value="option-3">Option 3</sl-option>
-      </sl-select>
+    const el = await fixture<NuSelect>(html`
+      <nu-select value="option-1">
+        <nu-option value="option-1">Option 1</nu-option>
+        <nu-option value="option-2">Option 2</nu-option>
+        <nu-option value="option-3">Option 3</nu-option>
+      </nu-select>
     `);
     const showHandler = sinon.spy();
     const afterShowHandler = sinon.spy();
@@ -582,12 +582,12 @@ describe('<sl-select>', () => {
   });
 
   it('should have rounded tags when using the pill attribute', async () => {
-    const el = await fixture<SlSelect>(html`
-      <sl-select value="option-1 option-2" multiple pill>
-        <sl-option value="option-1">Option 1</sl-option>
-        <sl-option value="option-2">Option 2</sl-option>
-        <sl-option value="option-3">Option 3</sl-option>
-      </sl-select>
+    const el = await fixture<NuSelect>(html`
+      <nu-select value="option-1 option-2" multiple pill>
+        <nu-option value="option-1">Option 1</nu-option>
+        <nu-option value="option-2">Option 2</nu-option>
+        <nu-option value="option-3">Option 3</nu-option>
+      </nu-select>
     `);
     const tag = el.shadowRoot!.querySelector('[part~="tag"]')!;
 

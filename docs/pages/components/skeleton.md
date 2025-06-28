@@ -12,13 +12,13 @@ Skeletons try not to be opinionated, as there are endless possibilities for desi
 ```html:preview
 <div class="skeleton-overview">
   <header>
-    <sl-skeleton></sl-skeleton>
-    <sl-skeleton></sl-skeleton>
+    <nu-skeleton></nu-skeleton>
+    <nu-skeleton></nu-skeleton>
   </header>
 
-  <sl-skeleton></sl-skeleton>
-  <sl-skeleton></sl-skeleton>
-  <sl-skeleton></sl-skeleton>
+  <nu-skeleton></nu-skeleton>
+  <nu-skeleton></nu-skeleton>
+  <nu-skeleton></nu-skeleton>
 </div>
 
 <style>
@@ -117,13 +117,13 @@ There are two built-in effects, `sheen` and `pulse`. Effects are intentionally s
 
 ```html:preview
 <div class="skeleton-effects">
-  <sl-skeleton effect="none"></sl-skeleton>
+  <nu-skeleton effect="none"></nu-skeleton>
   None
 
-  <sl-skeleton effect="sheen"></sl-skeleton>
+  <nu-skeleton effect="sheen"></nu-skeleton>
   Sheen
 
-  <sl-skeleton effect="pulse"></sl-skeleton>
+  <nu-skeleton effect="pulse"></nu-skeleton>
   Pulse
 </div>
 
@@ -173,11 +173,11 @@ Use multiple skeletons and some clever styles to simulate paragraphs.
 
 ```html:preview
 <div class="skeleton-paragraphs">
-  <sl-skeleton></sl-skeleton>
-  <sl-skeleton></sl-skeleton>
-  <sl-skeleton></sl-skeleton>
-  <sl-skeleton></sl-skeleton>
-  <sl-skeleton></sl-skeleton>
+  <nu-skeleton></nu-skeleton>
+  <nu-skeleton></nu-skeleton>
+  <nu-skeleton></nu-skeleton>
+  <nu-skeleton></nu-skeleton>
+  <nu-skeleton></nu-skeleton>
 </div>
 
 <style>
@@ -241,9 +241,9 @@ Set a matching width and height to make a circle, square, or rounded avatar skel
 
 ```html:preview
 <div class="skeleton-avatars">
-  <sl-skeleton></sl-skeleton>
-  <sl-skeleton></sl-skeleton>
-  <sl-skeleton></sl-skeleton>
+  <nu-skeleton></nu-skeleton>
+  <nu-skeleton></nu-skeleton>
+  <nu-skeleton></nu-skeleton>
 </div>
 
 <style>
@@ -303,11 +303,11 @@ Use the `--border-radius` custom property to make circles, squares, and rectangl
 
 ```html:preview
 <div class="skeleton-shapes">
-  <sl-skeleton class="square"></sl-skeleton>
-  <sl-skeleton class="circle"></sl-skeleton>
-  <sl-skeleton class="triangle"></sl-skeleton>
-  <sl-skeleton class="cross"></sl-skeleton>
-  <sl-skeleton class="comment"></sl-skeleton>
+  <nu-skeleton class="square"></nu-skeleton>
+  <nu-skeleton class="circle"></nu-skeleton>
+  <nu-skeleton class="triangle"></nu-skeleton>
+  <nu-skeleton class="cross"></nu-skeleton>
+  <nu-skeleton class="comment"></nu-skeleton>
 </div>
 
 <style>
@@ -417,7 +417,7 @@ const App = () => (
 Set the `--color` and `--sheen-color` custom properties to adjust the skeleton's color.
 
 ```html:preview
-<sl-skeleton effect="sheen" style="--color: tomato; --sheen-color: #ffb094;"></sl-skeleton>
+<nu-skeleton effect="sheen" style="--color: tomato; --sheen-color: #ffb094;"></nu-skeleton>
 ```
 
 {% raw %}

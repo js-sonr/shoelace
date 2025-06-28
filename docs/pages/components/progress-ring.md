@@ -6,7 +6,7 @@ layout: component
 ---
 
 ```html:preview
-<sl-progress-ring value="25"></sl-progress-ring>
+<nu-progress-ring value="25"></nu-progress-ring>
 ```
 
 ```jsx:react
@@ -22,7 +22,7 @@ const App = () => <SlProgressRing value="25" />;
 Use the `--size` custom property to set the diameter of the progress ring.
 
 ```html:preview
-<sl-progress-ring value="50" style="--size: 200px;"></sl-progress-ring>
+<nu-progress-ring value="50" style="--size: 200px;"></nu-progress-ring>
 ```
 
 {% raw %}
@@ -40,7 +40,7 @@ const App = () => <SlProgressRing value="50" style={{ '--size': '200px' }} />;
 Use the `--track-width` and `--indicator-width` custom properties to set the width of the progress ring's track and indicator.
 
 ```html:preview
-<sl-progress-ring value="50" style="--track-width: 6px; --indicator-width: 12px;"></sl-progress-ring>
+<nu-progress-ring value="50" style="--track-width: 6px; --indicator-width: 12px;"></nu-progress-ring>
 ```
 
 {% raw %}
@@ -58,13 +58,13 @@ const App = () => <SlProgressRing value="50" style={{ '--track-width': '6px', '-
 To change the color, use the `--track-color` and `--indicator-color` custom properties.
 
 ```html:preview
-<sl-progress-ring
+<nu-progress-ring
   value="50"
   style="
     --track-color: pink;
     --indicator-color: deeppink;
   "
-></sl-progress-ring>
+></nu-progress-ring>
 ```
 
 {% raw %}
@@ -90,7 +90,7 @@ const App = () => (
 Use the `label` attribute to label the progress ring and tell assistive devices how to announce it.
 
 ```html:preview
-<sl-progress-ring value="50" label="Upload progress"></sl-progress-ring>
+<nu-progress-ring value="50" label="Upload progress"></nu-progress-ring>
 ```
 
 ```jsx:react
@@ -104,12 +104,12 @@ const App = () => <SlProgressRing value="50" label="Upload progress" />;
 Use the default slot to show a label inside the progress ring.
 
 ```html:preview
-<sl-progress-ring value="50" class="progress-ring-values" style="margin-bottom: .5rem;">50%</sl-progress-ring>
+<nu-progress-ring value="50" class="progress-ring-values" style="margin-bottom: .5rem;">50%</nu-progress-ring>
 
 <br />
 
-<sl-button circle><sl-icon name="dash" label="Decrease"></sl-icon></sl-button>
-<sl-button circle><sl-icon name="plus" label="Increase"></sl-icon></sl-button>
+<nu-button circle><nu-icon name="dash" label="Decrease"></nu-icon></nu-button>
+<nu-button circle><nu-icon name="plus" label="Increase"></nu-icon></nu-button>
 
 <script>
   const progressRing = document.querySelector('.progress-ring-values');

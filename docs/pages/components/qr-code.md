@@ -9,10 +9,10 @@ QR codes are useful for providing small pieces of information to users who can q
 
 ```html:preview
 <div class="qr-overview">
-  <sl-qr-code value="https://shoelace.style/" label="Scan this code to visit Nebula on the web!"></sl-qr-code>
+  <nu-qr-code value="https://shoelace.style/" label="Scan this code to visit Nebula on the web!"></nu-qr-code>
   <br />
 
-  <sl-input maxlength="255" clearable label="Value"></sl-input>
+  <nu-input maxlength="255" clearable label="Value"></nu-input>
 </div>
 
 <script>
@@ -77,7 +77,7 @@ const App = () => {
 Use the `fill` and `background` attributes to modify the QR code's colors. You should always ensure good contrast for optimal compatibility with QR code scanners.
 
 ```html:preview
-<sl-qr-code value="https://shoelace.style/" fill="deeppink" background="white"></sl-qr-code>
+<nu-qr-code value="https://shoelace.style/" fill="deeppink" background="white"></nu-qr-code>
 ```
 
 ```jsx:react
@@ -91,7 +91,7 @@ const App = () => <SlQrCode value="https://shoelace.style/" fill="deeppink" back
 Use the `size` attribute to change the size of the QR code.
 
 ```html:preview
-<sl-qr-code value="https://shoelace.style/" size="64"></sl-qr-code>
+<nu-qr-code value="https://shoelace.style/" size="64"></nu-qr-code>
 ```
 
 ```jsx:react
@@ -105,7 +105,7 @@ const App = () => <SlQrCode value="https://shoelace.style/" size="64" />;
 Create a rounded effect with the `radius` attribute.
 
 ```html:preview
-<sl-qr-code value="https://shoelace.style/" radius="0.5"></sl-qr-code>
+<nu-qr-code value="https://shoelace.style/" radius="0.5"></nu-qr-code>
 ```
 
 ```jsx:react
@@ -120,10 +120,10 @@ QR codes can be rendered with various levels of [error correction](https://www.q
 
 ```html:preview
 <div class="qr-error-correction">
-  <sl-qr-code value="https://shoelace.style/" error-correction="L"></sl-qr-code>
-  <sl-qr-code value="https://shoelace.style/" error-correction="M"></sl-qr-code>
-  <sl-qr-code value="https://shoelace.style/" error-correction="Q"></sl-qr-code>
-  <sl-qr-code value="https://shoelace.style/" error-correction="H"></sl-qr-code>
+  <nu-qr-code value="https://shoelace.style/" error-correction="L"></nu-qr-code>
+  <nu-qr-code value="https://shoelace.style/" error-correction="M"></nu-qr-code>
+  <nu-qr-code value="https://shoelace.style/" error-correction="Q"></nu-qr-code>
+  <nu-qr-code value="https://shoelace.style/" error-correction="H"></nu-qr-code>
 </div>
 
 <style>

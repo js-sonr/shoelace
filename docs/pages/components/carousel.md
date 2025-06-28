@@ -6,38 +6,38 @@ layout: component
 ---
 
 ```html:preview
-<sl-carousel pagination navigation mouse-dragging loop>
-  <sl-carousel-item>
+<nu-carousel pagination navigation mouse-dragging loop>
+  <nu-carousel-item>
     <img
       alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </nu-carousel-item>
+</nu-carousel>
 ```
 
 ```jsx:react
@@ -89,38 +89,38 @@ const App = () => (
 Use the `pagination` attribute to show the total number of slides and the current slide as a set of interactive dots.
 
 ```html:preview
-<sl-carousel pagination>
-  <sl-carousel-item>
+<nu-carousel pagination>
+  <nu-carousel-item>
     <img
       alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </nu-carousel-item>
+</nu-carousel>
 ```
 
 ```jsx:react
@@ -168,38 +168,38 @@ const App = () => (
 Use the `navigation` attribute to show previous and next buttons.
 
 ```html:preview
-<sl-carousel navigation>
-  <sl-carousel-item>
+<nu-carousel navigation>
+  <nu-carousel-item>
     <img
       alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </nu-carousel-item>
+</nu-carousel>
 ```
 
 ```jsx:react
@@ -247,38 +247,38 @@ const App = () => (
 By default, the carousel will not advanced beyond the first and last slides. You can change this behavior and force the carousel to "wrap" with the `loop` attribute.
 
 ```html:preview
-<sl-carousel loop navigation pagination>
-  <sl-carousel-item>
+<nu-carousel loop navigation pagination>
+  <nu-carousel-item>
     <img
       alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </nu-carousel-item>
+</nu-carousel>
 ```
 
 ```jsx:react
@@ -326,38 +326,38 @@ const App = () => (
 The carousel will automatically advance when the `autoplay` attribute is used. To change how long a slide is shown before advancing, set `autoplay-interval` to the desired number of milliseconds. For best results, use the `loop` attribute when autoplay is enabled. Note that autoplay will pause while the user interacts with the carousel.
 
 ```html:preview
-<sl-carousel autoplay loop pagination>
-  <sl-carousel-item>
+<nu-carousel autoplay loop pagination>
+  <nu-carousel-item>
     <img
       alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </nu-carousel-item>
+</nu-carousel>
 ```
 
 ```jsx:react
@@ -408,42 +408,42 @@ This example is best demonstrated using a mouse. Try clicking and dragging the s
 
 ```html:preview
 <div class="mouse-dragging">
-  <sl-carousel pagination>
-    <sl-carousel-item>
+  <nu-carousel pagination>
+    <nu-carousel-item>
       <img
         alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
         src="/assets/examples/carousel/mountains.jpg"
       />
-    </sl-carousel-item>
-    <sl-carousel-item>
+    </nu-carousel-item>
+    <nu-carousel-item>
       <img
         alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
         src="/assets/examples/carousel/waterfall.jpg"
       />
-    </sl-carousel-item>
-    <sl-carousel-item>
+    </nu-carousel-item>
+    <nu-carousel-item>
       <img
         alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
         src="/assets/examples/carousel/sunset.jpg"
       />
-    </sl-carousel-item>
-    <sl-carousel-item>
+    </nu-carousel-item>
+    <nu-carousel-item>
       <img
         alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
         src="/assets/examples/carousel/field.jpg"
       />
-    </sl-carousel-item>
-    <sl-carousel-item>
+    </nu-carousel-item>
+    <nu-carousel-item>
       <img
         alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
         src="/assets/examples/carousel/valley.jpg"
       />
-    </sl-carousel-item>
-  </sl-carousel>
+    </nu-carousel-item>
+  </nu-carousel>
 
-  <sl-divider></sl-divider>
+  <nu-divider></nu-divider>
 
-  <sl-switch>Enable mouse dragging</sl-switch>
+  <nu-switch>Enable mouse dragging</nu-switch>
 </div>
 
 <script>
@@ -517,14 +517,14 @@ const App = () => {
 The `slides-per-page` attribute makes it possible to display multiple slides at a time. You can also use the `slides-per-move` attribute to advance more than once slide at a time, if desired.
 
 ```html:preview
-<sl-carousel navigation pagination slides-per-page="2" slides-per-move="2">
-  <sl-carousel-item style="background: var(--sl-color-red-200);">Slide 1</sl-carousel-item>
-  <sl-carousel-item style="background: var(--sl-color-orange-200);">Slide 2</sl-carousel-item>
-  <sl-carousel-item style="background: var(--sl-color-yellow-200);">Slide 3</sl-carousel-item>
-  <sl-carousel-item style="background: var(--sl-color-green-200);">Slide 4</sl-carousel-item>
-  <sl-carousel-item style="background: var(--sl-color-blue-200);">Slide 5</sl-carousel-item>
-  <sl-carousel-item style="background: var(--sl-color-violet-200);">Slide 6</sl-carousel-item>
-</sl-carousel>
+<nu-carousel navigation pagination slides-per-page="2" slides-per-move="2">
+  <nu-carousel-item style="background: var(--sl-color-red-200);">Slide 1</nu-carousel-item>
+  <nu-carousel-item style="background: var(--sl-color-orange-200);">Slide 2</nu-carousel-item>
+  <nu-carousel-item style="background: var(--sl-color-yellow-200);">Slide 3</nu-carousel-item>
+  <nu-carousel-item style="background: var(--sl-color-green-200);">Slide 4</nu-carousel-item>
+  <nu-carousel-item style="background: var(--sl-color-blue-200);">Slide 5</nu-carousel-item>
+  <nu-carousel-item style="background: var(--sl-color-violet-200);">Slide 6</nu-carousel-item>
+</nu-carousel>
 ```
 
 {% raw %}
@@ -552,15 +552,15 @@ const App = () => (
 The content of the carousel can be changed by adding or removing carousel items. The carousel will update itself automatically.
 
 ```html:preview
-<sl-carousel class="dynamic-carousel" pagination navigation>
-  <sl-carousel-item style="background: var(--sl-color-red-200)">Slide 1</sl-carousel-item>
-  <sl-carousel-item style="background: var(--sl-color-orange-200)">Slide 2</sl-carousel-item>
-  <sl-carousel-item style="background: var(--sl-color-yellow-200)">Slide 3</sl-carousel-item>
-</sl-carousel>
+<nu-carousel class="dynamic-carousel" pagination navigation>
+  <nu-carousel-item style="background: var(--sl-color-red-200)">Slide 1</nu-carousel-item>
+  <nu-carousel-item style="background: var(--sl-color-orange-200)">Slide 2</nu-carousel-item>
+  <nu-carousel-item style="background: var(--sl-color-yellow-200)">Slide 3</nu-carousel-item>
+</nu-carousel>
 
 <div class="carousel-options">
-  <sl-button id="dynamic-add">Add slide</sl-button>
-  <sl-button id="dynamic-remove">Remove slide</sl-button>
+  <nu-button id="dynamic-add">Add slide</nu-button>
+  <nu-button id="dynamic-remove">Remove slide</nu-button>
 </div>
 
 <style>
@@ -687,38 +687,38 @@ const App = () => {
 Setting the `orientation` attribute to `vertical` will render the carousel in a vertical layout. If the content of your slides vary in height, you will need to set amn explicit `height` or `max-height` on the carousel using CSS.
 
 ```html:preview
-<sl-carousel class="vertical" pagination orientation="vertical">
-  <sl-carousel-item>
+<nu-carousel class="vertical" pagination orientation="vertical">
+  <nu-carousel-item>
     <img
       alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </nu-carousel-item>
+</nu-carousel>
 <style>
   .vertical {
     max-height: 400px;
@@ -806,46 +806,46 @@ const App = () => (
 Use the `--aspect-ratio` custom property to customize the size of the carousel's viewport from the default value of 16/9.
 
 ```html:preview
-<sl-carousel class="aspect-ratio" navigation pagination style="--aspect-ratio: 3/2;">
-  <sl-carousel-item>
+<nu-carousel class="aspect-ratio" navigation pagination style="--aspect-ratio: 3/2;">
+  <nu-carousel-item>
     <img
       alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </nu-carousel-item>
+</nu-carousel>
 
-<sl-divider></sl-divider>
+<nu-divider></nu-divider>
 
-<sl-select label="Aspect ratio" name="aspect" value="3/2">
-  <sl-option value="1/1">1/1</sl-option>
-  <sl-option value="3/2">3/2</sl-option>
-  <sl-option value="16/9">16/9</sl-option>
-</sl-select>
+<nu-select label="Aspect ratio" name="aspect" value="3/2">
+  <nu-option value="1/1">1/1</nu-option>
+  <nu-option value="3/2">3/2</nu-option>
+  <nu-option value="16/9">16/9</nu-option>
+</nu-select>
 
 <script>
   (() => {
@@ -933,38 +933,38 @@ const App = () => {
 Use the `--scroll-hint` custom property to add inline padding in horizontal carousels and block padding in vertical carousels. This will make the closest slides slightly visible, hinting that there are more items in the carousel.
 
 ```html:preview
-<sl-carousel class="scroll-hint" pagination style="--scroll-hint: 10%;">
-  <sl-carousel-item>
+<nu-carousel class="scroll-hint" pagination style="--scroll-hint: 10%;">
+  <nu-carousel-item>
     <img
       alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </nu-carousel-item>
+</nu-carousel>
 ```
 
 {% raw %}
@@ -1021,38 +1021,38 @@ const App = () => (
 The carousel has a robust API that makes it possible to extend and customize. This example syncs the active slide with a set of thumbnails, effectively creating a gallery-style carousel.
 
 ```html:preview
-<sl-carousel class="carousel-thumbnails" navigation loop>
-  <sl-carousel-item>
+<nu-carousel class="carousel-thumbnails" navigation loop>
+  <nu-carousel-item>
     <img
       alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
       src="/assets/examples/carousel/mountains.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
       src="/assets/examples/carousel/waterfall.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
       src="/assets/examples/carousel/sunset.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
       src="/assets/examples/carousel/field.jpg"
     />
-  </sl-carousel-item>
-  <sl-carousel-item>
+  </nu-carousel-item>
+  <nu-carousel-item>
     <img
       alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
       src="/assets/examples/carousel/valley.jpg"
     />
-  </sl-carousel-item>
-</sl-carousel>
+  </nu-carousel-item>
+</nu-carousel>
 
 <div class="thumbnails">
   <div class="thumbnails__scroller">

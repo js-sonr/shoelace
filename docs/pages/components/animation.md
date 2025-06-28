@@ -5,14 +5,14 @@ meta:
 layout: component
 ---
 
-To animate an element, wrap it in `<sl-animation>` and set an animation `name`. The animation will not start until you add the `play` attribute. Refer to the [properties table](#properties) for a list of all animation options.
+To animate an element, wrap it in `<nu-animation>` and set an animation `name`. The animation will not start until you add the `play` attribute. Refer to the [properties table](#properties) for a list of all animation options.
 
 ```html:preview
 <div class="animation-overview">
-  <sl-animation name="bounce" duration="2000" play><div class="box"></div></sl-animation>
-  <sl-animation name="jello" duration="2000" play><div class="box"></div></sl-animation>
-  <sl-animation name="heartBeat" duration="2000" play><div class="box"></div></sl-animation>
-  <sl-animation name="flip" duration="2000" play><div class="box"></div></sl-animation>
+  <nu-animation name="bounce" duration="2000" play><div class="box"></div></nu-animation>
+  <nu-animation name="jello" duration="2000" play><div class="box"></div></nu-animation>
+  <nu-animation name="heartBeat" duration="2000" play><div class="box"></div></nu-animation>
+  <nu-animation name="flip" duration="2000" play><div class="box"></div></nu-animation>
 </div>
 
 <style>
@@ -62,7 +62,7 @@ const App = () => (
 ```
 
 :::tip
-The animation will only be applied to the first child element found in `<sl-animation>`.
+The animation will only be applied to the first child element found in `<nu-animation>`.
 :::
 
 ## Examples
@@ -73,14 +73,14 @@ This example demonstrates all of the baked-in animations and easings. Animations
 
 ```html:preview
 <div class="animation-sandbox">
-  <sl-animation name="bounce" easing="ease-in-out" duration="2000" play>
+  <nu-animation name="bounce" easing="ease-in-out" duration="2000" play>
     <div class="box"></div>
-  </sl-animation>
+  </nu-animation>
 
   <div class="controls">
-    <sl-select label="Animation" value="bounce"></sl-select>
-    <sl-select label="Easing" value="linear"></sl-select>
-    <sl-input label="Playback Rate" type="number" min="0" max="2" step=".25" value="1"></sl-input>
+    <nu-select label="Animation" value="bounce"></nu-select>
+    <nu-select label="Easing" value="linear"></nu-select>
+    <nu-input label="Playback Rate" type="number" min="0" max="2" step=".25" value="1"></nu-input>
   </div>
 </div>
 
@@ -140,7 +140,7 @@ Use an [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/
 
 ```html:preview
 <div class="animation-scroll">
-  <sl-animation name="jackInTheBox" duration="2000" iterations="1"><div class="box"></div></sl-animation>
+  <nu-animation name="jackInTheBox" duration="2000" iterations="1"><div class="box"></div></nu-animation>
 </div>
 
 <script>
@@ -227,9 +227,9 @@ Supply your own [keyframe formats](https://developer.mozilla.org/en-US/docs/Web/
 
 ```html:preview
 <div class="animation-keyframes">
-  <sl-animation easing="ease-in-out" duration="2000" play>
+  <nu-animation easing="ease-in-out" duration="2000" play>
     <div class="box"></div>
-  </sl-animation>
+  </nu-animation>
 </div>
 
 <script>
@@ -311,9 +311,9 @@ Animations won't play until you apply the `play` attribute. You can omit it init
 
 ```html:preview
 <div class="animation-form">
-  <sl-animation name="rubberBand" duration="1000" iterations="1">
-    <sl-button variant="primary">Click me</sl-button>
-  </sl-animation>
+  <nu-animation name="rubberBand" duration="1000" iterations="1">
+    <nu-button variant="primary">Click me</nu-button>
+  </nu-animation>
 </div>
 
 <script>

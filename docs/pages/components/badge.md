@@ -6,7 +6,7 @@ layout: component
 ---
 
 ```html:preview
-<sl-badge>Badge</sl-badge>
+<nu-badge>Badge</nu-badge>
 ```
 
 ```jsx:react
@@ -22,11 +22,11 @@ const App = () => <SlBadge>Badge</SlBadge>;
 Set the `variant` attribute to change the badge's variant.
 
 ```html:preview
-<sl-badge variant="primary">Primary</sl-badge>
-<sl-badge variant="success">Success</sl-badge>
-<sl-badge variant="neutral">Neutral</sl-badge>
-<sl-badge variant="warning">Warning</sl-badge>
-<sl-badge variant="danger">Danger</sl-badge>
+<nu-badge variant="primary">Primary</nu-badge>
+<nu-badge variant="success">Success</nu-badge>
+<nu-badge variant="neutral">Neutral</nu-badge>
+<nu-badge variant="warning">Warning</nu-badge>
+<nu-badge variant="danger">Danger</nu-badge>
 ```
 
 ```jsx:react
@@ -48,11 +48,11 @@ const App = () => (
 Use the `pill` attribute to give badges rounded edges.
 
 ```html:preview
-<sl-badge variant="primary" pill>Primary</sl-badge>
-<sl-badge variant="success" pill>Success</sl-badge>
-<sl-badge variant="neutral" pill>Neutral</sl-badge>
-<sl-badge variant="warning" pill>Warning</sl-badge>
-<sl-badge variant="danger" pill>Danger</sl-badge>
+<nu-badge variant="primary" pill>Primary</nu-badge>
+<nu-badge variant="success" pill>Success</nu-badge>
+<nu-badge variant="neutral" pill>Neutral</nu-badge>
+<nu-badge variant="warning" pill>Warning</nu-badge>
+<nu-badge variant="danger" pill>Danger</nu-badge>
 ```
 
 ```jsx:react
@@ -85,11 +85,11 @@ Use the `pulse` attribute to draw attention to the badge with a subtle animation
 
 ```html:preview
 <div class="badge-pulse">
-  <sl-badge variant="primary" pill pulse>1</sl-badge>
-  <sl-badge variant="success" pill pulse>1</sl-badge>
-  <sl-badge variant="neutral" pill pulse>1</sl-badge>
-  <sl-badge variant="warning" pill pulse>1</sl-badge>
-  <sl-badge variant="danger" pill pulse>1</sl-badge>
+  <nu-badge variant="primary" pill pulse>1</nu-badge>
+  <nu-badge variant="success" pill pulse>1</nu-badge>
+  <nu-badge variant="neutral" pill pulse>1</nu-badge>
+  <nu-badge variant="warning" pill pulse>1</nu-badge>
+  <nu-badge variant="danger" pill pulse>1</nu-badge>
 </div>
 
 <style>
@@ -138,20 +138,20 @@ const App = () => (
 One of the most common use cases for badges is attaching them to buttons. To make this easier, badges will be automatically positioned at the top-right when they're a child of a button.
 
 ```html:preview
-<sl-button>
+<nu-button>
   Requests
-  <sl-badge pill>30</sl-badge>
-</sl-button>
+  <nu-badge pill>30</nu-badge>
+</nu-button>
 
-<sl-button style="margin-inline-start: 1rem;">
+<nu-button style="margin-inline-start: 1rem;">
   Warnings
-  <sl-badge variant="warning" pill>8</sl-badge>
-</sl-button>
+  <nu-badge variant="warning" pill>8</nu-badge>
+</nu-button>
 
-<sl-button style="margin-inline-start: 1rem;">
+<nu-button style="margin-inline-start: 1rem;">
   Errors
-  <sl-badge variant="danger" pill>6</sl-badge>
-</sl-button>
+  <nu-badge variant="danger" pill>6</nu-badge>
+</nu-button>
 ```
 
 {% raw %}
@@ -191,11 +191,11 @@ const App = () => (
 When including badges in menu items, use the `suffix` slot to make sure they're aligned correctly.
 
 ```html:preview
-<sl-menu style="max-width: 240px;">
-  <sl-menu-label>Messages</sl-menu-label>
-  <sl-menu-item>Comments <sl-badge slot="suffix" variant="neutral" pill>4</sl-badge></sl-menu-item>
-  <sl-menu-item>Replies <sl-badge slot="suffix" variant="neutral" pill>12</sl-badge></sl-menu-item>
-</sl-menu>
+<nu-menu style="max-width: 240px;">
+  <nu-menu-label>Messages</nu-menu-label>
+  <nu-menu-item>Comments <nu-badge slot="suffix" variant="neutral" pill>4</nu-badge></nu-menu-item>
+  <nu-menu-item>Replies <nu-badge slot="suffix" variant="neutral" pill>12</nu-badge></nu-menu-item>
+</nu-menu>
 ```
 
 {% raw %}

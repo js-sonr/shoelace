@@ -6,7 +6,7 @@ layout: component
 ---
 
 ```html:preview
-<sl-button>Button</sl-button>
+<nu-button>Button</nu-button>
 ```
 
 ```jsx:react
@@ -22,12 +22,12 @@ const App = () => <SlButton>Button</SlButton>;
 Use the `variant` attribute to set the button's variant.
 
 ```html:preview
-<sl-button variant="default">Default</sl-button>
-<sl-button variant="primary">Primary</sl-button>
-<sl-button variant="success">Success</sl-button>
-<sl-button variant="neutral">Neutral</sl-button>
-<sl-button variant="warning">Warning</sl-button>
-<sl-button variant="danger">Danger</sl-button>
+<nu-button variant="default">Default</nu-button>
+<nu-button variant="primary">Primary</nu-button>
+<nu-button variant="success">Success</nu-button>
+<nu-button variant="neutral">Neutral</nu-button>
+<nu-button variant="warning">Warning</nu-button>
+<nu-button variant="danger">Danger</nu-button>
 ```
 
 ```jsx:react
@@ -50,9 +50,9 @@ const App = () => (
 Use the `size` attribute to change a button's size.
 
 ```html:preview
-<sl-button size="small">Small</sl-button>
-<sl-button size="medium">Medium</sl-button>
-<sl-button size="large">Large</sl-button>
+<nu-button size="small">Small</nu-button>
+<nu-button size="medium">Medium</nu-button>
+<nu-button size="large">Large</nu-button>
 ```
 
 ```jsx:react
@@ -72,12 +72,12 @@ const App = () => (
 Use the `outline` attribute to draw outlined buttons with transparent backgrounds.
 
 ```html:preview
-<sl-button variant="default" outline>Default</sl-button>
-<sl-button variant="primary" outline>Primary</sl-button>
-<sl-button variant="success" outline>Success</sl-button>
-<sl-button variant="neutral" outline>Neutral</sl-button>
-<sl-button variant="warning" outline>Warning</sl-button>
-<sl-button variant="danger" outline>Danger</sl-button>
+<nu-button variant="default" outline>Default</nu-button>
+<nu-button variant="primary" outline>Primary</nu-button>
+<nu-button variant="success" outline>Success</nu-button>
+<nu-button variant="neutral" outline>Neutral</nu-button>
+<nu-button variant="warning" outline>Warning</nu-button>
+<nu-button variant="danger" outline>Danger</nu-button>
 ```
 
 ```jsx:react
@@ -112,9 +112,9 @@ const App = () => (
 Use the `pill` attribute to give buttons rounded edges.
 
 ```html:preview
-<sl-button size="small" pill>Small</sl-button>
-<sl-button size="medium" pill>Medium</sl-button>
-<sl-button size="large" pill>Large</sl-button>
+<nu-button size="small" pill>Small</nu-button>
+<nu-button size="medium" pill>Medium</nu-button>
+<nu-button size="large" pill>Large</nu-button>
 ```
 
 ```jsx:react
@@ -137,20 +137,20 @@ const App = () => (
 
 ### Circle Buttons
 
-Use the `circle` attribute to create circular icon buttons. When this attribute is set, the button expects a single `<sl-icon>` in the default slot.
+Use the `circle` attribute to create circular icon buttons. When this attribute is set, the button expects a single `<nu-icon>` in the default slot.
 
 ```html:preview
-<sl-button variant="default" size="small" circle>
-  <sl-icon name="gear" label="Settings"></sl-icon>
-</sl-button>
+<nu-button variant="default" size="small" circle>
+  <nu-icon name="gear" label="Settings"></nu-icon>
+</nu-button>
 
-<sl-button variant="default" size="medium" circle>
-  <sl-icon name="gear" label="Settings"></sl-icon>
-</sl-button>
+<nu-button variant="default" size="medium" circle>
+  <nu-icon name="gear" label="Settings"></nu-icon>
+</nu-button>
 
-<sl-button variant="default" size="large" circle>
-  <sl-icon name="gear" label="Settings"></sl-icon>
-</sl-button>
+<nu-button variant="default" size="large" circle>
+  <nu-icon name="gear" label="Settings"></nu-icon>
+</nu-button>
 ```
 
 ```jsx:react
@@ -177,9 +177,9 @@ const App = () => (
 Use the `text` variant to create text buttons that share the same size as regular buttons but don't have backgrounds or borders.
 
 ```html:preview
-<sl-button variant="text" size="small">Text</sl-button>
-<sl-button variant="text" size="medium">Text</sl-button>
-<sl-button variant="text" size="large">Text</sl-button>
+<nu-button variant="text" size="small">Text</nu-button>
+<nu-button variant="text" size="medium">Text</nu-button>
+<nu-button variant="text" size="large">Text</nu-button>
 ```
 
 ```jsx:react
@@ -205,10 +205,10 @@ const App = () => (
 It's often helpful to have a button that works like a link. This is possible by setting the `href` attribute, which will make the component render an `<a>` under the hood. This gives you all the default link behavior the browser provides (e.g. [[CMD/CTRL/SHIFT]] + [[CLICK]]) and exposes the `target` and `download` attributes.
 
 ```html:preview
-<sl-button href="https://example.com/">Link</sl-button>
-<sl-button href="https://example.com/" target="_blank">New Window</sl-button>
-<sl-button href="/assets/images/wordmark.svg" download="shoelace.svg">Download</sl-button>
-<sl-button href="https://example.com/" disabled>Disabled</sl-button>
+<nu-button href="https://example.com/">Link</nu-button>
+<nu-button href="https://example.com/" target="_blank">New Window</nu-button>
+<nu-button href="/assets/images/wordmark.svg" download="shoelace.svg">Download</nu-button>
+<nu-button href="https://example.com/" disabled>Disabled</nu-button>
 ```
 
 ```jsx:react
@@ -239,9 +239,9 @@ When a `target` is set, the link will receive `rel="noreferrer noopener"` for [s
 As expected, buttons can be given a custom width by passing inline styles to the component (or using a class). This is useful for making buttons span the full width of their container on smaller screens.
 
 ```html:preview
-<sl-button variant="default" size="small" style="width: 100%; margin-bottom: 1rem;">Small</sl-button>
-<sl-button variant="default" size="medium" style="width: 100%; margin-bottom: 1rem;">Medium</sl-button>
-<sl-button variant="default" size="large" style="width: 100%;">Large</sl-button>
+<nu-button variant="default" size="small" style="width: 100%; margin-bottom: 1rem;">Small</nu-button>
+<nu-button variant="default" size="medium" style="width: 100%; margin-bottom: 1rem;">Medium</nu-button>
+<nu-button variant="default" size="large" style="width: 100%;">Large</nu-button>
 ```
 
 {% raw %}
@@ -271,57 +271,57 @@ const App = () => (
 Use the `prefix` and `suffix` slots to add icons.
 
 ```html:preview
-<sl-button variant="default" size="small">
-  <sl-icon slot="prefix" name="gear"></sl-icon>
+<nu-button variant="default" size="small">
+  <nu-icon slot="prefix" name="gear"></nu-icon>
   Settings
-</sl-button>
+</nu-button>
 
-<sl-button variant="default" size="small">
-  <sl-icon slot="suffix" name="arrow-counterclockwise"></sl-icon>
+<nu-button variant="default" size="small">
+  <nu-icon slot="suffix" name="arrow-counterclockwise"></nu-icon>
   Refresh
-</sl-button>
+</nu-button>
 
-<sl-button variant="default" size="small">
-  <sl-icon slot="prefix" name="link-45deg"></sl-icon>
-  <sl-icon slot="suffix" name="box-arrow-up-right"></sl-icon>
+<nu-button variant="default" size="small">
+  <nu-icon slot="prefix" name="link-45deg"></nu-icon>
+  <nu-icon slot="suffix" name="box-arrow-up-right"></nu-icon>
   Open
-</sl-button>
+</nu-button>
 
 <br /><br />
 
-<sl-button variant="default">
-  <sl-icon slot="prefix" name="gear"></sl-icon>
+<nu-button variant="default">
+  <nu-icon slot="prefix" name="gear"></nu-icon>
   Settings
-</sl-button>
+</nu-button>
 
-<sl-button variant="default">
-  <sl-icon slot="suffix" name="arrow-counterclockwise"></sl-icon>
+<nu-button variant="default">
+  <nu-icon slot="suffix" name="arrow-counterclockwise"></nu-icon>
   Refresh
-</sl-button>
+</nu-button>
 
-<sl-button variant="default">
-  <sl-icon slot="prefix" name="link-45deg"></sl-icon>
-  <sl-icon slot="suffix" name="box-arrow-up-right"></sl-icon>
+<nu-button variant="default">
+  <nu-icon slot="prefix" name="link-45deg"></nu-icon>
+  <nu-icon slot="suffix" name="box-arrow-up-right"></nu-icon>
   Open
-</sl-button>
+</nu-button>
 
 <br /><br />
 
-<sl-button variant="default" size="large">
-  <sl-icon slot="prefix" name="gear"></sl-icon>
+<nu-button variant="default" size="large">
+  <nu-icon slot="prefix" name="gear"></nu-icon>
   Settings
-</sl-button>
+</nu-button>
 
-<sl-button variant="default" size="large">
-  <sl-icon slot="suffix" name="arrow-counterclockwise"></sl-icon>
+<nu-button variant="default" size="large">
+  <nu-icon slot="suffix" name="arrow-counterclockwise"></nu-icon>
   Refresh
-</sl-button>
+</nu-button>
 
-<sl-button variant="default" size="large">
-  <sl-icon slot="prefix" name="link-45deg"></sl-icon>
-  <sl-icon slot="suffix" name="box-arrow-up-right"></sl-icon>
+<nu-button variant="default" size="large">
+  <nu-icon slot="prefix" name="link-45deg"></nu-icon>
+  <nu-icon slot="suffix" name="box-arrow-up-right"></nu-icon>
   Open
-</sl-button>
+</nu-button>
 ```
 
 ```jsx:react
@@ -392,9 +392,9 @@ const App = () => (
 Use the `caret` attribute to add a dropdown indicator when a button will trigger a dropdown, menu, or popover.
 
 ```html:preview
-<sl-button size="small" caret>Small</sl-button>
-<sl-button size="medium" caret>Medium</sl-button>
-<sl-button size="large" caret>Large</sl-button>
+<nu-button size="small" caret>Small</nu-button>
+<nu-button size="medium" caret>Medium</nu-button>
+<nu-button size="large" caret>Large</nu-button>
 ```
 
 ```jsx:react
@@ -420,12 +420,12 @@ const App = () => (
 Use the `loading` attribute to make a button busy. The width will remain the same as before, preventing adjacent elements from moving around.
 
 ```html:preview
-<sl-button variant="default" loading>Default</sl-button>
-<sl-button variant="primary" loading>Primary</sl-button>
-<sl-button variant="success" loading>Success</sl-button>
-<sl-button variant="neutral" loading>Neutral</sl-button>
-<sl-button variant="warning" loading>Warning</sl-button>
-<sl-button variant="danger" loading>Danger</sl-button>
+<nu-button variant="default" loading>Default</nu-button>
+<nu-button variant="primary" loading>Primary</nu-button>
+<nu-button variant="success" loading>Success</nu-button>
+<nu-button variant="neutral" loading>Neutral</nu-button>
+<nu-button variant="warning" loading>Warning</nu-button>
+<nu-button variant="danger" loading>Danger</nu-button>
 ```
 
 ```jsx:react
@@ -460,12 +460,12 @@ const App = () => (
 Use the `disabled` attribute to disable a button.
 
 ```html:preview
-<sl-button variant="default" disabled>Default</sl-button>
-<sl-button variant="primary" disabled>Primary</sl-button>
-<sl-button variant="success" disabled>Success</sl-button>
-<sl-button variant="neutral" disabled>Neutral</sl-button>
-<sl-button variant="warning" disabled>Warning</sl-button>
-<sl-button variant="danger" disabled>Danger</sl-button>
+<nu-button variant="default" disabled>Default</nu-button>
+<nu-button variant="primary" disabled>Primary</nu-button>
+<nu-button variant="success" disabled>Success</nu-button>
+<nu-button variant="neutral" disabled>Neutral</nu-button>
+<nu-button variant="warning" disabled>Warning</nu-button>
+<nu-button variant="danger" disabled>Danger</nu-button>
 ```
 
 ```jsx:react
@@ -505,7 +505,7 @@ const App = () => (
 This example demonstrates how to style buttons using a custom class. This is the recommended approach if you need to add additional variations. To customize an existing variation, modify the selector to target the button's `variant` attribute instead of a class (e.g. `sl-button[variant="primary"]`).
 
 ```html:preview
-<sl-button class="pink">Pink Button</sl-button>
+<nu-button class="pink">Pink Button</nu-button>
 
 <style>
   sl-button.pink::part(base) {

@@ -6,23 +6,23 @@ layout: component
 ---
 
 ```html:preview
-<sl-menu style="max-width: 200px;">
-  <sl-menu-item>Option 1</sl-menu-item>
-  <sl-menu-item>Option 2</sl-menu-item>
-  <sl-menu-item>Option 3</sl-menu-item>
-  <sl-divider></sl-divider>
-  <sl-menu-item type="checkbox" checked>Checkbox</sl-menu-item>
-  <sl-menu-item disabled>Disabled</sl-menu-item>
-  <sl-divider></sl-divider>
-  <sl-menu-item>
+<nu-menu style="max-width: 200px;">
+  <nu-menu-item>Option 1</nu-menu-item>
+  <nu-menu-item>Option 2</nu-menu-item>
+  <nu-menu-item>Option 3</nu-menu-item>
+  <nu-divider></nu-divider>
+  <nu-menu-item type="checkbox" checked>Checkbox</nu-menu-item>
+  <nu-menu-item disabled>Disabled</nu-menu-item>
+  <nu-divider></nu-divider>
+  <nu-menu-item>
     Prefix Icon
-    <sl-icon slot="prefix" name="gift"></sl-icon>
-  </sl-menu-item>
-  <sl-menu-item>
+    <nu-icon slot="prefix" name="gift"></nu-icon>
+  </nu-menu-item>
+  <nu-menu-item>
     Suffix Icon
-    <sl-icon slot="suffix" name="heart"></sl-icon>
-  </sl-menu-item>
-</sl-menu>
+    <nu-icon slot="suffix" name="heart"></nu-icon>
+  </nu-menu-item>
+</nu-menu>
 ```
 
 {% raw %}
@@ -65,25 +65,25 @@ const App = () => (
 Add content to the start and end of menu items using the `prefix` and `suffix` slots.
 
 ```html:preview
-<sl-menu style="max-width: 200px;">
-  <sl-menu-item>
-    <sl-icon slot="prefix" name="house"></sl-icon>
+<nu-menu style="max-width: 200px;">
+  <nu-menu-item>
+    <nu-icon slot="prefix" name="house"></nu-icon>
     Home
-  </sl-menu-item>
+  </nu-menu-item>
 
-  <sl-menu-item>
-    <sl-icon slot="prefix" name="envelope"></sl-icon>
+  <nu-menu-item>
+    <nu-icon slot="prefix" name="envelope"></nu-icon>
     Messages
-    <sl-badge slot="suffix" variant="primary" pill>12</sl-badge>
-  </sl-menu-item>
+    <nu-badge slot="suffix" variant="primary" pill>12</nu-badge>
+  </nu-menu-item>
 
-  <sl-divider></sl-divider>
+  <nu-divider></nu-divider>
 
-  <sl-menu-item>
-    <sl-icon slot="prefix" name="gear"></sl-icon>
+  <nu-menu-item>
+    <nu-icon slot="prefix" name="gear"></nu-icon>
     Settings
-  </sl-menu-item>
-</sl-menu>
+  </nu-menu-item>
+</nu-menu>
 ```
 
 {% raw %}
@@ -127,11 +127,11 @@ const App = () => (
 Add the `disabled` attribute to disable the menu item so it cannot be selected.
 
 ```html:preview
-<sl-menu style="max-width: 200px;">
-  <sl-menu-item>Option 1</sl-menu-item>
-  <sl-menu-item disabled>Option 2</sl-menu-item>
-  <sl-menu-item>Option 3</sl-menu-item>
-</sl-menu>
+<nu-menu style="max-width: 200px;">
+  <nu-menu-item>Option 1</nu-menu-item>
+  <nu-menu-item disabled>Option 2</nu-menu-item>
+  <nu-menu-item>Option 3</nu-menu-item>
+</nu-menu>
 ```
 
 {% raw %}
@@ -156,11 +156,11 @@ const App = () => (
 Use the `loading` attribute to indicate that a menu item is busy. Like a disabled menu item, clicks will be suppressed until the loading state is removed.
 
 ```html:preview
-<sl-menu style="max-width: 200px;">
-  <sl-menu-item>Option 1</sl-menu-item>
-  <sl-menu-item loading>Option 2</sl-menu-item>
-  <sl-menu-item>Option 3</sl-menu-item>
-</sl-menu>
+<nu-menu style="max-width: 200px;">
+  <nu-menu-item>Option 1</nu-menu-item>
+  <nu-menu-item loading>Option 2</nu-menu-item>
+  <nu-menu-item>Option 3</nu-menu-item>
+</nu-menu>
 ```
 
 {% raw %}
@@ -187,11 +187,11 @@ Set the `type` attribute to `checkbox` to create a menu item that will toggle on
 Checkbox menu items are visually indistinguishable from regular menu items. Their ability to be toggled is primarily inferred from context, much like you'd find in the menu of a native app.
 
 ```html:preview
-<sl-menu style="max-width: 200px;">
-  <sl-menu-item type="checkbox">Autosave</sl-menu-item>
-  <sl-menu-item type="checkbox" checked>Check Spelling</sl-menu-item>
-  <sl-menu-item type="checkbox">Word Wrap</sl-menu-item>
-</sl-menu>
+<nu-menu style="max-width: 200px;">
+  <nu-menu-item type="checkbox">Autosave</nu-menu-item>
+  <nu-menu-item type="checkbox" checked>Check Spelling</nu-menu-item>
+  <nu-menu-item type="checkbox">Word Wrap</nu-menu-item>
+</nu-menu>
 ```
 
 {% raw %}
@@ -218,15 +218,15 @@ const App = () => (
 The `value` attribute can be used to assign a hidden value, such as a unique identifier, to a menu item. When an item is selected, the `sl-select` event will be emitted and a reference to the item will be available at `event.detail.item`. You can use this reference to access the selected item's value, its checked state, and more.
 
 ```html:preview
-<sl-menu class="menu-value" style="max-width: 200px;">
-  <sl-menu-item value="opt-1">Option 1</sl-menu-item>
-  <sl-menu-item value="opt-2">Option 2</sl-menu-item>
-  <sl-menu-item value="opt-3">Option 3</sl-menu-item>
-  <sl-divider></sl-divider>
-  <sl-menu-item type="checkbox" value="opt-4">Checkbox 4</sl-menu-item>
-  <sl-menu-item type="checkbox" value="opt-5">Checkbox 5</sl-menu-item>
-  <sl-menu-item type="checkbox" value="opt-6">Checkbox 6</sl-menu-item>
-</sl-menu>
+<nu-menu class="menu-value" style="max-width: 200px;">
+  <nu-menu-item value="opt-1">Option 1</nu-menu-item>
+  <nu-menu-item value="opt-2">Option 2</nu-menu-item>
+  <nu-menu-item value="opt-3">Option 3</nu-menu-item>
+  <nu-divider></nu-divider>
+  <nu-menu-item type="checkbox" value="opt-4">Checkbox 4</nu-menu-item>
+  <nu-menu-item type="checkbox" value="opt-5">Checkbox 5</nu-menu-item>
+  <nu-menu-item type="checkbox" value="opt-6">Checkbox 6</nu-menu-item>
+</nu-menu>
 
 <script>
   const menu = document.querySelector('.menu-value');

@@ -1,20 +1,20 @@
 import '../../../dist/shoelace.js';
 import { expect, fixture, html, oneEvent, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
-import type SlTreeItem from './tree-item.js';
+import type NuTreeItem from './tree-item.js';
 
-describe('<sl-tree-item>', () => {
-  let leafItem: SlTreeItem;
-  let parentItem: SlTreeItem;
+describe('<nu-tree-item>', () => {
+  let leafItem: NuTreeItem;
+  let parentItem: NuTreeItem;
 
   beforeEach(async () => {
-    leafItem = await fixture(html` <sl-tree-item>Node 1</sl-tree-item> `);
+    leafItem = await fixture(html` <nu-tree-item>Node 1</nu-tree-item> `);
     parentItem = await fixture(html`
-      <sl-tree-item>
+      <nu-tree-item>
         Parent Node
-        <sl-tree-item>Node 1</sl-tree-item>
-        <sl-tree-item>Node 1</sl-tree-item>
-      </sl-tree-item>
+        <nu-tree-item>Node 1</nu-tree-item>
+        <nu-tree-item>Node 1</nu-tree-item>
+      </nu-tree-item>
     `);
   });
 

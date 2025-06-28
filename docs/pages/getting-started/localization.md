@@ -72,8 +72,8 @@ You can use a different locale for an individual component by setting its `lang`
   ...
 
   <body>
-    <sl-button><!-- Spanish --></sl-button>
-    <sl-button lang="ru"><!-- Russian --></sl-button>
+    <nu-button><!-- Spanish --></nu-button>
+    <nu-button lang="ru"><!-- Russian --></nu-button>
   </body>
 </html>
 ```
@@ -86,7 +86,7 @@ For performance reasons, the `lang` and `dir` attributes must be on the componen
 
   <body>
     <div lang="ru">
-      <sl-button><!-- still in Spanish --></sl-button>
+      <nu-button><!-- still in Spanish --></nu-button>
     </div>
   </body>
 </html>

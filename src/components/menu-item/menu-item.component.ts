@@ -5,10 +5,10 @@ import { property, query } from 'lit/decorators.js';
 import { SubmenuController } from './submenu-controller.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIcon from '../icon/icon.component.js';
-import SlPopup from '../popup/popup.component.js';
-import SlSpinner from '../spinner/spinner.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIcon from '../icon/icon.component.js';
+import NuPopup from '../popup/popup.component.js';
+import NuSpinner from '../spinner/spinner.component.js';
 import styles from './menu-item.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -38,12 +38,12 @@ import type { CSSResultGroup } from 'lit';
  *
  * @cssproperty [--submenu-offset=-2px] - The distance submenus shift to overlap the parent menu.
  */
-export default class SlMenuItem extends ShoelaceElement {
+export default class NuMenuItem extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
   static dependencies = {
-    'sl-icon': SlIcon,
-    'sl-popup': SlPopup,
-    'sl-spinner': SlSpinner
+    'nu-icon': NuIcon,
+    'nu-popup': NuPopup,
+    'nu-spinner': NuSpinner
   };
 
   private cachedTextLabel: string;
@@ -173,7 +173,7 @@ export default class SlMenuItem extends ShoelaceElement {
         ?aria-expanded="${isSubmenuExpanded ? true : false}"
       >
         <span part="checked-icon" class="menu-item__check">
-          <sl-icon name="check" library="system" aria-hidden="true"></sl-icon>
+          <nu-icon name="check" library="system" aria-hidden="true"></nu-icon>
         </span>
 
         <slot name="prefix" part="prefix" class="menu-item__prefix"></slot>
@@ -183,11 +183,11 @@ export default class SlMenuItem extends ShoelaceElement {
         <slot name="suffix" part="suffix" class="menu-item__suffix"></slot>
 
         <span part="submenu-icon" class="menu-item__chevron">
-          <sl-icon name=${isRtl ? 'chevron-left' : 'chevron-right'} library="system" aria-hidden="true"></sl-icon>
+          <nu-icon name=${isRtl ? 'chevron-left' : 'chevron-right'} library="system" aria-hidden="true"></nu-icon>
         </span>
 
         ${this.submenuController.renderSubmenu()}
-        ${this.loading ? html` <sl-spinner part="spinner" exportparts="base:spinner__base"></sl-spinner> ` : ''}
+        ${this.loading ? html` <nu-spinner part="spinner" exportparts="base:spinner__base"></nu-spinner> ` : ''}
       </div>
     `;
   }

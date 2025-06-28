@@ -8,11 +8,11 @@ layout: component
 Radio buttons are designed to be used with [radio groups](/components/radio-group). When a radio button has focus, the arrow keys can be used to change the selected option just like standard radio controls.
 
 ```html:preview
-<sl-radio-group label="Select an option" name="a" value="1">
-  <sl-radio-button value="1">Option 1</sl-radio-button>
-  <sl-radio-button value="2">Option 2</sl-radio-button>
-  <sl-radio-button value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<nu-radio-group label="Select an option" name="a" value="1">
+  <nu-radio-button value="1">Option 1</nu-radio-button>
+  <nu-radio-button value="2">Option 2</nu-radio-button>
+  <nu-radio-button value="3">Option 3</nu-radio-button>
+</nu-radio-group>
 ```
 
 ```jsx:react
@@ -35,11 +35,11 @@ const App = () => (
 To set the initial value and checked state, use the `value` attribute on the containing radio group.
 
 ```html:preview
-<sl-radio-group label="Select an option" name="a" value="1">
-  <sl-radio-button value="1">Option 1</sl-radio-button>
-  <sl-radio-button value="2">Option 2</sl-radio-button>
-  <sl-radio-button value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<nu-radio-group label="Select an option" name="a" value="1">
+  <nu-radio-button value="1">Option 1</nu-radio-button>
+  <nu-radio-button value="2">Option 2</nu-radio-button>
+  <nu-radio-button value="3">Option 3</nu-radio-button>
+</nu-radio-group>
 ```
 
 ```jsx:react
@@ -60,11 +60,11 @@ const App = () => (
 Use the `disabled` attribute to disable a radio button.
 
 ```html:preview
-<sl-radio-group label="Select an option" name="a" value="1">
-  <sl-radio-button value="1">Option 1</sl-radio-button>
-  <sl-radio-button value="2" disabled>Option 2</sl-radio-button>
-  <sl-radio-button value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<nu-radio-group label="Select an option" name="a" value="1">
+  <nu-radio-button value="1">Option 1</nu-radio-button>
+  <nu-radio-button value="2" disabled>Option 2</nu-radio-button>
+  <nu-radio-button value="3">Option 3</nu-radio-button>
+</nu-radio-group>
 ```
 
 ```jsx:react
@@ -87,27 +87,27 @@ const App = () => (
 Use the `size` attribute to change a radio button's size.
 
 ```html:preview
-<sl-radio-group size="small" label="Select an option" name="a" value="1">
-  <sl-radio-button value="1">Option 1</sl-radio-button>
-  <sl-radio-button value="2">Option 2</sl-radio-button>
-  <sl-radio-button value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<nu-radio-group size="small" label="Select an option" name="a" value="1">
+  <nu-radio-button value="1">Option 1</nu-radio-button>
+  <nu-radio-button value="2">Option 2</nu-radio-button>
+  <nu-radio-button value="3">Option 3</nu-radio-button>
+</nu-radio-group>
 
 <br />
 
-<sl-radio-group size="medium" label="Select an option" name="a" value="1">
-  <sl-radio-button value="1">Option 1</sl-radio-button>
-  <sl-radio-button value="2">Option 2</sl-radio-button>
-  <sl-radio-button value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<nu-radio-group size="medium" label="Select an option" name="a" value="1">
+  <nu-radio-button value="1">Option 1</nu-radio-button>
+  <nu-radio-button value="2">Option 2</nu-radio-button>
+  <nu-radio-button value="3">Option 3</nu-radio-button>
+</nu-radio-group>
 
 <br />
 
-<sl-radio-group size="large" label="Select an option" name="a" value="1">
-  <sl-radio-button value="1">Option 1</sl-radio-button>
-  <sl-radio-button value="2">Option 2</sl-radio-button>
-  <sl-radio-button value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<nu-radio-group size="large" label="Select an option" name="a" value="1">
+  <nu-radio-button value="1">Option 1</nu-radio-button>
+  <nu-radio-button value="2">Option 2</nu-radio-button>
+  <nu-radio-button value="3">Option 3</nu-radio-button>
+</nu-radio-group>
 ```
 
 ```jsx:react
@@ -144,27 +144,27 @@ const App = () => (
 Use the `pill` attribute to give radio buttons rounded edges.
 
 ```html:preview
-<sl-radio-group size="small" label="Select an option" name="a" value="1">
-  <sl-radio-button pill value="1">Option 1</sl-radio-button>
-  <sl-radio-button pill value="2">Option 2</sl-radio-button>
-  <sl-radio-button pill value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<nu-radio-group size="small" label="Select an option" name="a" value="1">
+  <nu-radio-button pill value="1">Option 1</nu-radio-button>
+  <nu-radio-button pill value="2">Option 2</nu-radio-button>
+  <nu-radio-button pill value="3">Option 3</nu-radio-button>
+</nu-radio-group>
 
 <br />
 
-<sl-radio-group size="medium" label="Select an option" name="a" value="1">
-  <sl-radio-button pill value="1">Option 1</sl-radio-button>
-  <sl-radio-button pill value="2">Option 2</sl-radio-button>
-  <sl-radio-button pill value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<nu-radio-group size="medium" label="Select an option" name="a" value="1">
+  <nu-radio-button pill value="1">Option 1</nu-radio-button>
+  <nu-radio-button pill value="2">Option 2</nu-radio-button>
+  <nu-radio-button pill value="3">Option 3</nu-radio-button>
+</nu-radio-group>
 
 <br />
 
-<sl-radio-group size="large" label="Select an option" name="a" value="1">
-  <sl-radio-button pill value="1">Option 1</sl-radio-button>
-  <sl-radio-button pill value="2">Option 2</sl-radio-button>
-  <sl-radio-button pill value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<nu-radio-group size="large" label="Select an option" name="a" value="1">
+  <nu-radio-button pill value="1">Option 1</nu-radio-button>
+  <nu-radio-button pill value="2">Option 2</nu-radio-button>
+  <nu-radio-button pill value="3">Option 3</nu-radio-button>
+</nu-radio-group>
 ```
 
 ```jsx:react
@@ -201,23 +201,23 @@ const App = () => (
 Use the `prefix` and `suffix` slots to add icons.
 
 ```html:preview
-<sl-radio-group label="Select an option" name="a" value="1">
-  <sl-radio-button value="1">
-    <sl-icon slot="prefix" name="archive"></sl-icon>
+<nu-radio-group label="Select an option" name="a" value="1">
+  <nu-radio-button value="1">
+    <nu-icon slot="prefix" name="archive"></nu-icon>
     Option 1
-  </sl-radio-button>
+  </nu-radio-button>
 
-  <sl-radio-button value="2">
-    <sl-icon slot="suffix" name="bag"></sl-icon>
+  <nu-radio-button value="2">
+    <nu-icon slot="suffix" name="bag"></nu-icon>
     Option 2
-  </sl-radio-button>
+  </nu-radio-button>
 
-  <sl-radio-button value="3">
-    <sl-icon slot="prefix" name="gift"></sl-icon>
-    <sl-icon slot="suffix" name="cart"></sl-icon>
+  <nu-radio-button value="3">
+    <nu-icon slot="prefix" name="gift"></nu-icon>
+    <nu-icon slot="suffix" name="cart"></nu-icon>
     Option 3
-  </sl-radio-button>
-</sl-radio-group>
+  </nu-radio-button>
+</nu-radio-group>
 ```
 
 ```jsx:react
@@ -251,27 +251,27 @@ const App = () => (
 You can omit button labels and use icons instead. Make sure to set a `label` attribute on each icon so screen readers will announce each option correctly.
 
 ```html:preview
-<sl-radio-group label="Select an option" name="a" value="neutral">
-  <sl-radio-button value="angry">
-    <sl-icon name="emoji-angry" label="Angry"></sl-icon>
-  </sl-radio-button>
+<nu-radio-group label="Select an option" name="a" value="neutral">
+  <nu-radio-button value="angry">
+    <nu-icon name="emoji-angry" label="Angry"></nu-icon>
+  </nu-radio-button>
 
-  <sl-radio-button value="sad">
-    <sl-icon name="emoji-frown" label="Sad"></sl-icon>
-  </sl-radio-button>
+  <nu-radio-button value="sad">
+    <nu-icon name="emoji-frown" label="Sad"></nu-icon>
+  </nu-radio-button>
 
-  <sl-radio-button value="neutral">
-    <sl-icon name="emoji-neutral" label="Neutral"></sl-icon>
-  </sl-radio-button>
+  <nu-radio-button value="neutral">
+    <nu-icon name="emoji-neutral" label="Neutral"></nu-icon>
+  </nu-radio-button>
 
-  <sl-radio-button value="happy">
-    <sl-icon name="emoji-smile" label="Happy"></sl-icon>
-  </sl-radio-button>
+  <nu-radio-button value="happy">
+    <nu-icon name="emoji-smile" label="Happy"></nu-icon>
+  </nu-radio-button>
 
-  <sl-radio-button value="laughing">
-    <sl-icon name="emoji-laughing" label="Laughing"></sl-icon>
-  </sl-radio-button>
-</sl-radio-group>
+  <nu-radio-button value="laughing">
+    <nu-icon name="emoji-laughing" label="Laughing"></nu-icon>
+  </nu-radio-button>
+</nu-radio-group>
 ```
 
 ```jsx:react

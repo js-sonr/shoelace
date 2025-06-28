@@ -6,16 +6,16 @@ layout: component
 ---
 
 ```html:preview
-<sl-tree>
-  <sl-tree-item>
+<nu-tree>
+  <nu-tree-item>
     Item 1
-    <sl-tree-item>Item A</sl-tree-item>
-    <sl-tree-item>Item B</sl-tree-item>
-    <sl-tree-item>Item C</sl-tree-item>
-  </sl-tree-item>
-  <sl-tree-item>Item 2</sl-tree-item>
-  <sl-tree-item>Item 3</sl-tree-item>
-</sl-tree>
+    <nu-tree-item>Item A</nu-tree-item>
+    <nu-tree-item>Item B</nu-tree-item>
+    <nu-tree-item>Item C</nu-tree-item>
+  </nu-tree-item>
+  <nu-tree-item>Item 2</nu-tree-item>
+  <nu-tree-item>Item 3</nu-tree-item>
+</nu-tree>
 ```
 
 <!-- prettier-ignore -->
@@ -44,21 +44,21 @@ const App = () => (
 A tree item can contain other tree items. This allows the node to be expanded or collapsed by the user.
 
 ```html:preview
-<sl-tree>
-  <sl-tree-item>
+<nu-tree>
+  <nu-tree-item>
     Item 1
-    <sl-tree-item>
+    <nu-tree-item>
       Item A
-      <sl-tree-item>Item Z</sl-tree-item>
-      <sl-tree-item>Item Y</sl-tree-item>
-      <sl-tree-item>Item X</sl-tree-item>
-    </sl-tree-item>
-    <sl-tree-item>Item B</sl-tree-item>
-    <sl-tree-item>Item C</sl-tree-item>
-  </sl-tree-item>
-  <sl-tree-item>Item 2</sl-tree-item>
-  <sl-tree-item>Item 3</sl-tree-item>
-</sl-tree>
+      <nu-tree-item>Item Z</nu-tree-item>
+      <nu-tree-item>Item Y</nu-tree-item>
+      <nu-tree-item>Item X</nu-tree-item>
+    </nu-tree-item>
+    <nu-tree-item>Item B</nu-tree-item>
+    <nu-tree-item>Item C</nu-tree-item>
+  </nu-tree-item>
+  <nu-tree-item>Item 2</nu-tree-item>
+  <nu-tree-item>Item 3</nu-tree-item>
+</nu-tree>
 ```
 
 <!-- prettier-ignore -->
@@ -90,16 +90,16 @@ const App = () => (
 Use the `selected` attribute to select a tree item initially.
 
 ```html:preview
-<sl-tree>
-  <sl-tree-item selected>
+<nu-tree>
+  <nu-tree-item selected>
     Item 1
-    <sl-tree-item>Item A</sl-tree-item>
-    <sl-tree-item>Item B</sl-tree-item>
-    <sl-tree-item>Item C</sl-tree-item>
-  </sl-tree-item>
-  <sl-tree-item>Item 2</sl-tree-item>
-  <sl-tree-item>Item 3</sl-tree-item>
-</sl-tree>
+    <nu-tree-item>Item A</nu-tree-item>
+    <nu-tree-item>Item B</nu-tree-item>
+    <nu-tree-item>Item C</nu-tree-item>
+  </nu-tree-item>
+  <nu-tree-item>Item 2</nu-tree-item>
+  <nu-tree-item>Item 3</nu-tree-item>
+</nu-tree>
 ```
 
 <!-- prettier-ignore -->
@@ -126,21 +126,21 @@ const App = () => (
 Use the `expanded` attribute to expand a tree item initially.
 
 ```html:preview
-<sl-tree>
-  <sl-tree-item expanded>
+<nu-tree>
+  <nu-tree-item expanded>
     Item 1
-    <sl-tree-item expanded>
+    <nu-tree-item expanded>
       Item A
-      <sl-tree-item>Item Z</sl-tree-item>
-      <sl-tree-item>Item Y</sl-tree-item>
-      <sl-tree-item>Item X</sl-tree-item>
-    </sl-tree-item>
-    <sl-tree-item>Item B</sl-tree-item>
-    <sl-tree-item>Item C</sl-tree-item>
-  </sl-tree-item>
-  <sl-tree-item>Item 2</sl-tree-item>
-  <sl-tree-item>Item 3</sl-tree-item>
-</sl-tree>
+      <nu-tree-item>Item Z</nu-tree-item>
+      <nu-tree-item>Item Y</nu-tree-item>
+      <nu-tree-item>Item X</nu-tree-item>
+    </nu-tree-item>
+    <nu-tree-item>Item B</nu-tree-item>
+    <nu-tree-item>Item C</nu-tree-item>
+  </nu-tree-item>
+  <nu-tree-item>Item 2</nu-tree-item>
+  <nu-tree-item>Item 3</nu-tree-item>
+</nu-tree>
 ```
 
 <!-- prettier-ignore -->

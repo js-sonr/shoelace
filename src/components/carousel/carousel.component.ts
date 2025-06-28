@@ -12,11 +12,11 @@ import { range } from 'lit/directives/range.js';
 import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIcon from '../icon/icon.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIcon from '../icon/icon.component.js';
 import styles from './carousel.styles.js';
 import type { CSSResultGroup, PropertyValueMap } from 'lit';
-import type SlCarouselItem from '../carousel-item/carousel-item.component.js';
+import type NuCarouselItem from '../carousel-item/carousel-item.component.js';
 
 /**
  * @summary Carousels display an arbitrary number of content slides along a horizontal or vertical axis.
@@ -26,11 +26,11 @@ import type SlCarouselItem from '../carousel-item/carousel-item.component.js';
  *
  * @dependency sl-icon
  *
- * @event {{ index: number, slide: SlCarouselItem }} sl-slide-change - Emitted when the active slide changes.
+ * @event nu-slide-change - Emitted when the active slide changes.
  *
- * @slot - The carousel's main content, one or more `<sl-carousel-item>` elements.
- * @slot next-icon - Optional next icon to use instead of the default. Works best with `<sl-icon>`.
- * @slot previous-icon - Optional previous icon to use instead of the default. Works best with `<sl-icon>`.
+ * @slot - The carousel's main content, one or more `<nu-carousel-item>` elements.
+ * @slot next-icon - Optional next icon to use instead of the default. Works best with `<nu-icon>`.
+ * @slot previous-icon - Optional previous icon to use instead of the default. Works best with `<nu-icon>`.
  *
  * @csspart base - The carousel's internal wrapper.
  * @csspart scroll-container - The scroll container that wraps the slides.
@@ -47,9 +47,9 @@ import type SlCarouselItem from '../carousel-item/carousel-item.component.js';
  * @cssproperty --scroll-hint - The amount of padding to apply to the scroll area, allowing adjacent slides to become
  *  partially visible as a scroll hint.
  */
-export default class SlCarousel extends ShoelaceElement {
+export default class NuCarousel extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
-  static dependencies = { 'sl-icon': SlIcon };
+  static dependencies = { 'nu-icon': NuIcon };
 
   /** When set, allows the user to navigate the carousel in the same direction indefinitely. */
   @property({ type: Boolean, reflect: true }) loop = false;
@@ -115,7 +115,7 @@ export default class SlCarousel extends ShoelaceElement {
     });
   }
 
-  protected willUpdate(changedProperties: PropertyValueMap<SlCarousel> | Map<PropertyKey, unknown>): void {
+  protected willUpdate(changedProperties: PropertyValueMap<NuCarousel> | Map<PropertyKey, unknown>): void {
     // Ensure the slidesPerMove is never higher than the slidesPerPage
     if (changedProperties.has('slidesPerMove') || changedProperties.has('slidesPerPage')) {
       this.slidesPerMove = Math.min(this.slidesPerMove, this.slidesPerPage);
@@ -147,7 +147,7 @@ export default class SlCarousel extends ShoelaceElement {
   private getSlides({ excludeClones = true }: { excludeClones?: boolean } = {}) {
     return [...this.children].filter(
       (el: HTMLElement) => this.isCarouselItem(el) && (!excludeClones || !el.hasAttribute('data-clone'))
-    ) as SlCarouselItem[];
+    ) as NuCarouselItem[];
   }
 
   private handleKeyDown(event: KeyboardEvent) {
@@ -288,7 +288,7 @@ export default class SlCarousel extends ShoelaceElement {
             const slides = this.getSlides();
 
             // Update the current index based on the first visible slide
-            const slideIndex = slides.indexOf(firstIntersecting.target as SlCarouselItem);
+            const slideIndex = slides.indexOf(firstIntersecting.target as NuCarouselItem);
             // Set the index to the first "snappable" slide
             this.activeSlide = Math.ceil(slideIndex / this.slidesPerMove) * this.slidesPerMove;
           }
@@ -313,7 +313,7 @@ export default class SlCarousel extends ShoelaceElement {
     this.scrolling = false;
   }
 
-  private isCarouselItem(node: Node): node is SlCarouselItem {
+  private isCarouselItem(node: Node): node is NuCarouselItem {
     return node instanceof Element && node.tagName.toLowerCase() === 'sl-carousel-item';
   }
 
@@ -388,7 +388,7 @@ export default class SlCarousel extends ShoelaceElement {
 
     // Do not emit an event on first render
     if (this.hasUpdated) {
-      this.emit('sl-slide-change', {
+      this.emit('nu-slide-change', {
         detail: {
           index: this.activeSlide,
           slide: slides[this.activeSlide]
@@ -529,7 +529,7 @@ export default class SlCarousel extends ShoelaceElement {
                   @click=${prevEnabled ? () => this.previous() : null}
                 >
                   <slot name="previous-icon">
-                    <sl-icon library="system" name="${isLtr ? 'chevron-left' : 'chevron-right'}"></sl-icon>
+                    <nu-icon library="system" name="${isLtr ? 'chevron-left' : 'chevron-right'}"></nu-icon>
                   </slot>
                 </button>
 
@@ -546,7 +546,7 @@ export default class SlCarousel extends ShoelaceElement {
                   @click=${nextEnabled ? () => this.next() : null}
                 >
                   <slot name="next-icon">
-                    <sl-icon library="system" name="${isLtr ? 'chevron-right' : 'chevron-left'}"></sl-icon>
+                    <nu-icon library="system" name="${isLtr ? 'chevron-right' : 'chevron-left'}"></nu-icon>
                   </slot>
                 </button>
               </div>

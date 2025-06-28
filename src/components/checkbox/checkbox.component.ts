@@ -9,11 +9,11 @@ import { property, query, state } from 'lit/decorators.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import formControlStyles from '../../styles/form-control.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIcon from '../icon/icon.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIcon from '../icon/icon.component.js';
 import styles from './checkbox.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
+import type { NebulaFormControl } from '../../internal/nebula-element.js';
 
 /**
  * @summary Checkboxes allow the user to toggle an option on or off.
@@ -26,29 +26,29 @@ import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
  * @slot - The checkbox's label.
  * @slot help-text - Text that describes how to use the checkbox. Alternatively, you can use the `help-text` attribute.
  *
- * @event sl-blur - Emitted when the checkbox loses focus.
- * @event sl-change - Emitted when the checked state changes.
- * @event sl-focus - Emitted when the checkbox gains focus.
- * @event sl-input - Emitted when the checkbox receives input.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-blur - Emitted when the checkbox loses focus.
+ * @event nu-change - Emitted when the checked state changes.
+ * @event nu-focus - Emitted when the checkbox gains focus.
+ * @event nu-input - Emitted when the checkbox receives input.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart base - The component's base wrapper.
  * @csspart control - The square container that wraps the checkbox's checked state.
  * @csspart control--checked - Matches the control part when the checkbox is checked.
  * @csspart control--indeterminate - Matches the control part when the checkbox is indeterminate.
- * @csspart checked-icon - The checked icon, an `<sl-icon>` element.
- * @csspart indeterminate-icon - The indeterminate icon, an `<sl-icon>` element.
+ * @csspart checked-icon - The checked icon, an `<nu-icon>` element.
+ * @csspart indeterminate-icon - The indeterminate icon, an `<nu-icon>` element.
  * @csspart label - The container that wraps the checkbox's label.
  * @csspart form-control-help-text - The help text's wrapper.
  */
-export default class SlCheckbox extends ShoelaceElement implements ShoelaceFormControl {
+export default class NuCheckbox extends NebulaElement implements NebulaFormControl {
   static styles: CSSResultGroup = [componentStyles, formControlStyles, styles];
-  static dependencies = { 'sl-icon': SlIcon };
+  static dependencies = { 'nu-icon': NuIcon };
 
   private readonly formControlController = new FormControlController(this, {
-    value: (control: SlCheckbox) => (control.checked ? control.value || 'on' : undefined),
-    defaultValue: (control: SlCheckbox) => control.defaultChecked,
-    setValue: (control: SlCheckbox, checked: boolean) => (control.checked = checked)
+    value: (control: NuCheckbox) => (control.checked ? control.value || 'on' : undefined),
+    defaultValue: (control: NuCheckbox) => control.defaultChecked,
+    setValue: (control: NuCheckbox, checked: boolean) => (control.checked = checked)
   });
   private readonly hasSlotController = new HasSlotController(this, 'help-text');
 
@@ -112,16 +112,16 @@ export default class SlCheckbox extends ShoelaceElement implements ShoelaceFormC
   private handleClick() {
     this.checked = !this.checked;
     this.indeterminate = false;
-    this.emit('sl-change');
+    this.emit('nu-change');
   }
 
   private handleBlur() {
     this.hasFocus = false;
-    this.emit('sl-blur');
+    this.emit('nu-blur');
   }
 
   private handleInput() {
-    this.emit('sl-input');
+    this.emit('nu-input');
   }
 
   private handleInvalid(event: Event) {
@@ -131,7 +131,7 @@ export default class SlCheckbox extends ShoelaceElement implements ShoelaceFormC
 
   private handleFocus() {
     this.hasFocus = true;
-    this.emit('sl-focus');
+    this.emit('nu-focus');
   }
 
   @watch('disabled', { waitUntilFirstUpdate: true })
@@ -245,17 +245,17 @@ export default class SlCheckbox extends ShoelaceElement implements ShoelaceFormC
           >
             ${this.checked
               ? html`
-                  <sl-icon part="checked-icon" class="checkbox__checked-icon" library="system" name="check"></sl-icon>
+                  <nu-icon part="checked-icon" class="checkbox__checked-icon" library="system" name="check"></nu-icon>
                 `
               : ''}
             ${!this.checked && this.indeterminate
               ? html`
-                  <sl-icon
+                  <nu-icon
                     part="indeterminate-icon"
                     class="checkbox__indeterminate-icon"
                     library="system"
                     name="indeterminate"
-                  ></sl-icon>
+                  ></nu-icon>
                 `
               : ''}
           </span>

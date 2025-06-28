@@ -6,33 +6,33 @@ layout: component
 ---
 
 ```html:preview
-<sl-tree>
-  <sl-tree-item>
+<nu-tree>
+  <nu-tree-item>
     Deciduous
-    <sl-tree-item>Birch</sl-tree-item>
-    <sl-tree-item>
+    <nu-tree-item>Birch</nu-tree-item>
+    <nu-tree-item>
       Maple
-      <sl-tree-item>Field maple</sl-tree-item>
-      <sl-tree-item>Red maple</sl-tree-item>
-      <sl-tree-item>Sugar maple</sl-tree-item>
-    </sl-tree-item>
-    <sl-tree-item>Oak</sl-tree-item>
-  </sl-tree-item>
+      <nu-tree-item>Field maple</nu-tree-item>
+      <nu-tree-item>Red maple</nu-tree-item>
+      <nu-tree-item>Sugar maple</nu-tree-item>
+    </nu-tree-item>
+    <nu-tree-item>Oak</nu-tree-item>
+  </nu-tree-item>
 
-  <sl-tree-item>
+  <nu-tree-item>
     Coniferous
-    <sl-tree-item>Cedar</sl-tree-item>
-    <sl-tree-item>Pine</sl-tree-item>
-    <sl-tree-item>Spruce</sl-tree-item>
-  </sl-tree-item>
+    <nu-tree-item>Cedar</nu-tree-item>
+    <nu-tree-item>Pine</nu-tree-item>
+    <nu-tree-item>Spruce</nu-tree-item>
+  </nu-tree-item>
 
-  <sl-tree-item>
+  <nu-tree-item>
     Non-trees
-    <sl-tree-item>Bamboo</sl-tree-item>
-    <sl-tree-item>Cactus</sl-tree-item>
-    <sl-tree-item>Fern</sl-tree-item>
-  </sl-tree-item>
-</sl-tree>
+    <nu-tree-item>Bamboo</nu-tree-item>
+    <nu-tree-item>Cactus</nu-tree-item>
+    <nu-tree-item>Fern</nu-tree-item>
+  </nu-tree-item>
+</nu-tree>
 ```
 
 <!-- prettier-ignore -->
@@ -82,29 +82,29 @@ The `selection` attribute lets you change the selection behavior of the tree.
 - Use `leaf` to only allow leaf nodes to be selected.
 
 ```html:preview
-<sl-select id="selection-mode" value="single" label="Selection">
-  <sl-option value="single">Single</sl-option>
-  <sl-option value="multiple">Multiple</sl-option>
-  <sl-option value="leaf">Leaf</sl-option>
-</sl-select>
+<nu-select id="selection-mode" value="single" label="Selection">
+  <nu-option value="single">Single</nu-option>
+  <nu-option value="multiple">Multiple</nu-option>
+  <nu-option value="leaf">Leaf</nu-option>
+</nu-select>
 
 <br />
 
-<sl-tree class="tree-selectable">
-  <sl-tree-item>
+<nu-tree class="tree-selectable">
+  <nu-tree-item>
     Item 1
-    <sl-tree-item>
+    <nu-tree-item>
       Item A
-      <sl-tree-item>Item Z</sl-tree-item>
-      <sl-tree-item>Item Y</sl-tree-item>
-      <sl-tree-item>Item X</sl-tree-item>
-    </sl-tree-item>
-    <sl-tree-item>Item B</sl-tree-item>
-    <sl-tree-item>Item C</sl-tree-item>
-  </sl-tree-item>
-  <sl-tree-item>Item 2</sl-tree-item>
-  <sl-tree-item>Item 3</sl-tree-item>
-</sl-tree>
+      <nu-tree-item>Item Z</nu-tree-item>
+      <nu-tree-item>Item Y</nu-tree-item>
+      <nu-tree-item>Item X</nu-tree-item>
+    </nu-tree-item>
+    <nu-tree-item>Item B</nu-tree-item>
+    <nu-tree-item>Item C</nu-tree-item>
+  </nu-tree-item>
+  <nu-tree-item>Item 2</nu-tree-item>
+  <nu-tree-item>Item 3</nu-tree-item>
+</nu-tree>
 
 <script>
   const selectionMode = document.querySelector('#selection-mode');
@@ -160,33 +160,33 @@ const App = () => {
 Indent guides can be drawn by setting `--indent-guide-width`. You can also change the color, offset, and style, using `--indent-guide-color`, `--indent-guide-style`, and `--indent-guide-offset`, respectively.
 
 ```html:preview
-<sl-tree class="tree-with-lines">
-  <sl-tree-item expanded>
+<nu-tree class="tree-with-lines">
+  <nu-tree-item expanded>
     Deciduous
-    <sl-tree-item>Birch</sl-tree-item>
-    <sl-tree-item expanded>
+    <nu-tree-item>Birch</nu-tree-item>
+    <nu-tree-item expanded>
       Maple
-      <sl-tree-item>Field maple</sl-tree-item>
-      <sl-tree-item>Red maple</sl-tree-item>
-      <sl-tree-item>Sugar maple</sl-tree-item>
-    </sl-tree-item>
-    <sl-tree-item>Oak</sl-tree-item>
-  </sl-tree-item>
+      <nu-tree-item>Field maple</nu-tree-item>
+      <nu-tree-item>Red maple</nu-tree-item>
+      <nu-tree-item>Sugar maple</nu-tree-item>
+    </nu-tree-item>
+    <nu-tree-item>Oak</nu-tree-item>
+  </nu-tree-item>
 
-  <sl-tree-item>
+  <nu-tree-item>
     Coniferous
-    <sl-tree-item>Cedar</sl-tree-item>
-    <sl-tree-item>Pine</sl-tree-item>
-    <sl-tree-item>Spruce</sl-tree-item>
-  </sl-tree-item>
+    <nu-tree-item>Cedar</nu-tree-item>
+    <nu-tree-item>Pine</nu-tree-item>
+    <nu-tree-item>Spruce</nu-tree-item>
+  </nu-tree-item>
 
-  <sl-tree-item>
+  <nu-tree-item>
     Non-trees
-    <sl-tree-item>Bamboo</sl-tree-item>
-    <sl-tree-item>Cactus</sl-tree-item>
-    <sl-tree-item>Fern</sl-tree-item>
-  </sl-tree-item>
-</sl-tree>
+    <nu-tree-item>Bamboo</nu-tree-item>
+    <nu-tree-item>Cactus</nu-tree-item>
+    <nu-tree-item>Fern</nu-tree-item>
+  </nu-tree-item>
+</nu-tree>
 
 <style>
   .tree-with-lines {
@@ -242,9 +242,9 @@ Use the `lazy` attribute on a tree item to indicate that the content is not yet 
 If you want to disable this behavior after the first load, simply remove the `lazy` attribute and, on the next expand, the existing content will be shown instead.
 
 ```html:preview
-<sl-tree>
-  <sl-tree-item lazy>Available Trees</sl-tree-item>
-</sl-tree>
+<nu-tree>
+  <nu-tree-item lazy>Available Trees</nu-tree-item>
+</nu-tree>
 
 <script type="module">
   const lazyItem = document.querySelector('sl-tree-item[lazy]');
@@ -303,36 +303,36 @@ const App = () => {
 Use the `expand-icon` and `collapse-icon` slots to change the expand and collapse icons, respectively. To disable the animation, override the `rotate` property on the `expand-button` part as shown below.
 
 ```html:preview
-<sl-tree class="custom-icons">
-  <sl-icon name="plus-square" slot="expand-icon"></sl-icon>
-  <sl-icon name="dash-square" slot="collapse-icon"></sl-icon>
+<nu-tree class="custom-icons">
+  <nu-icon name="plus-square" slot="expand-icon"></nu-icon>
+  <nu-icon name="dash-square" slot="collapse-icon"></nu-icon>
 
-  <sl-tree-item>
+  <nu-tree-item>
     Deciduous
-    <sl-tree-item>Birch</sl-tree-item>
-    <sl-tree-item>
+    <nu-tree-item>Birch</nu-tree-item>
+    <nu-tree-item>
       Maple
-      <sl-tree-item>Field maple</sl-tree-item>
-      <sl-tree-item>Red maple</sl-tree-item>
-      <sl-tree-item>Sugar maple</sl-tree-item>
-    </sl-tree-item>
-    <sl-tree-item>Oak</sl-tree-item>
-  </sl-tree-item>
+      <nu-tree-item>Field maple</nu-tree-item>
+      <nu-tree-item>Red maple</nu-tree-item>
+      <nu-tree-item>Sugar maple</nu-tree-item>
+    </nu-tree-item>
+    <nu-tree-item>Oak</nu-tree-item>
+  </nu-tree-item>
 
-  <sl-tree-item>
+  <nu-tree-item>
     Coniferous
-    <sl-tree-item>Cedar</sl-tree-item>
-    <sl-tree-item>Pine</sl-tree-item>
-    <sl-tree-item>Spruce</sl-tree-item>
-  </sl-tree-item>
+    <nu-tree-item>Cedar</nu-tree-item>
+    <nu-tree-item>Pine</nu-tree-item>
+    <nu-tree-item>Spruce</nu-tree-item>
+  </nu-tree-item>
 
-  <sl-tree-item>
+  <nu-tree-item>
     Non-trees
-    <sl-tree-item>Bamboo</sl-tree-item>
-    <sl-tree-item>Cactus</sl-tree-item>
-    <sl-tree-item>Fern</sl-tree-item>
-  </sl-tree-item>
-</sl-tree>
+    <nu-tree-item>Bamboo</nu-tree-item>
+    <nu-tree-item>Cactus</nu-tree-item>
+    <nu-tree-item>Fern</nu-tree-item>
+  </nu-tree-item>
+</nu-tree>
 
 <style>
   .custom-icons sl-tree-item::part(expand-button) {
@@ -386,46 +386,46 @@ const App = () => (
 Decorative icons can be used before labels to provide hints for each node.
 
 ```html:preview
-<sl-tree class="tree-with-icons">
-  <sl-tree-item expanded>
-    <sl-icon name="folder"></sl-icon>
+<nu-tree class="tree-with-icons">
+  <nu-tree-item expanded>
+    <nu-icon name="folder"></nu-icon>
     Documents
 
-    <sl-tree-item>
-      <sl-icon name="folder"> </sl-icon>
+    <nu-tree-item>
+      <nu-icon name="folder"> </nu-icon>
       Photos
-      <sl-tree-item>
-        <sl-icon name="image"></sl-icon>
+      <nu-tree-item>
+        <nu-icon name="image"></nu-icon>
         birds.jpg
-      </sl-tree-item>
-      <sl-tree-item>
-        <sl-icon name="image"></sl-icon>
+      </nu-tree-item>
+      <nu-tree-item>
+        <nu-icon name="image"></nu-icon>
         kitten.jpg
-      </sl-tree-item>
-      <sl-tree-item>
-        <sl-icon name="image"></sl-icon>
+      </nu-tree-item>
+      <nu-tree-item>
+        <nu-icon name="image"></nu-icon>
         puppy.jpg
-      </sl-tree-item>
-    </sl-tree-item>
+      </nu-tree-item>
+    </nu-tree-item>
 
-    <sl-tree-item>
-      <sl-icon name="folder"></sl-icon>
+    <nu-tree-item>
+      <nu-icon name="folder"></nu-icon>
       Writing
-      <sl-tree-item>
-        <sl-icon name="file"></sl-icon>
+      <nu-tree-item>
+        <nu-icon name="file"></nu-icon>
         draft.txt
-      </sl-tree-item>
-      <sl-tree-item>
-        <sl-icon name="file-pdf"></sl-icon>
+      </nu-tree-item>
+      <nu-tree-item>
+        <nu-icon name="file-pdf"></nu-icon>
         final.pdf
-      </sl-tree-item>
-      <sl-tree-item>
-        <sl-icon name="file-bar-graph"></sl-icon>
+      </nu-tree-item>
+      <nu-tree-item>
+        <nu-icon name="file-bar-graph"></nu-icon>
         sales.xls
-      </sl-tree-item>
-    </sl-tree-item>
-  </sl-tree-item>
-</sl-tree>
+      </nu-tree-item>
+    </nu-tree-item>
+  </nu-tree-item>
+</nu-tree>
 ```
 
 ```jsx:react

@@ -6,7 +6,7 @@ layout: component
 ---
 
 ```html:preview
-<sl-textarea></sl-textarea>
+<nu-textarea></nu-textarea>
 ```
 
 ```jsx:react
@@ -26,7 +26,7 @@ This component works with standard `<form>` elements. Please refer to the sectio
 Use the `label` attribute to give the textarea an accessible label. For labels that contain HTML, use the `label` slot instead.
 
 ```html:preview
-<sl-textarea label="Comments"></sl-textarea>
+<nu-textarea label="Comments"></nu-textarea>
 ```
 
 ```jsx:react
@@ -40,7 +40,7 @@ const App = () => <SlTextarea label="Comments" />;
 Add descriptive help text to a textarea with the `help-text` attribute. For help texts that contain HTML, use the `help-text` slot instead.
 
 ```html:preview
-<sl-textarea label="Feedback" help-text="Please tell us what you think."> </sl-textarea>
+<nu-textarea label="Feedback" help-text="Please tell us what you think."> </nu-textarea>
 ```
 
 ```jsx:react
@@ -54,7 +54,7 @@ const App = () => <SlTextarea label="Feedback" help-text="Please tell us what yo
 Use the `rows` attribute to change the number of text rows that get shown.
 
 ```html:preview
-<sl-textarea rows="2"></sl-textarea>
+<nu-textarea rows="2"></nu-textarea>
 ```
 
 ```jsx:react
@@ -68,7 +68,7 @@ const App = () => <SlTextarea rows={2} />;
 Use the `placeholder` attribute to add a placeholder.
 
 ```html:preview
-<sl-textarea placeholder="Type something"></sl-textarea>
+<nu-textarea placeholder="Type something"></nu-textarea>
 ```
 
 ```jsx:react
@@ -82,7 +82,7 @@ const App = () => <SlTextarea placeholder="Type something" />;
 Add the `filled` attribute to draw a filled textarea.
 
 ```html:preview
-<sl-textarea placeholder="Type something" filled></sl-textarea>
+<nu-textarea placeholder="Type something" filled></nu-textarea>
 ```
 
 ```jsx:react
@@ -96,7 +96,7 @@ const App = () => <SlTextarea placeholder="Type something" filled />;
 Use the `disabled` attribute to disable a textarea.
 
 ```html:preview
-<sl-textarea placeholder="Textarea" disabled></sl-textarea>
+<nu-textarea placeholder="Textarea" disabled></nu-textarea>
 ```
 
 ```jsx:react
@@ -110,11 +110,11 @@ const App = () => <SlTextarea placeholder="Textarea" disabled />;
 Use the `size` attribute to change a textarea's size.
 
 ```html:preview
-<sl-textarea placeholder="Small" size="small"></sl-textarea>
+<nu-textarea placeholder="Small" size="small"></nu-textarea>
 <br />
-<sl-textarea placeholder="Medium" size="medium"></sl-textarea>
+<nu-textarea placeholder="Medium" size="medium"></nu-textarea>
 <br />
-<sl-textarea placeholder="Large" size="large"></sl-textarea>
+<nu-textarea placeholder="Large" size="large"></nu-textarea>
 ```
 
 ```jsx:react
@@ -136,7 +136,7 @@ const App = () => (
 By default, textareas can be resized vertically by the user. To prevent resizing, set the `resize` attribute to `none`.
 
 ```html:preview
-<sl-textarea resize="none"></sl-textarea>
+<nu-textarea resize="none"></nu-textarea>
 ```
 
 ```jsx:react
@@ -150,7 +150,7 @@ const App = () => <SlTextarea resize="none" />;
 Textareas will automatically resize to expand to fit their content when `resize` is set to `auto`.
 
 ```html:preview
-<sl-textarea resize="auto"></sl-textarea>
+<nu-textarea resize="auto"></nu-textarea>
 ```
 
 ```jsx:react

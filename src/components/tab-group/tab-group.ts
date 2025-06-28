@@ -1,12 +1,12 @@
-import SlTabGroup from './tab-group.component.js';
+import NuTabGroup from './tab-group.component.js';
 
 export * from './tab-group.component.js';
-export default SlTabGroup;
+export default NuTabGroup;
 
-SlTabGroup.define('sl-tab-group');
+NuTabGroup.define('nu-tab-group');
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-tab-group': SlTabGroup;
+    'nu-tab-group': NuTabGroup;
   }
 }

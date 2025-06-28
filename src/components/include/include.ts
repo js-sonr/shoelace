@@ -1,12 +1,12 @@
-import SlInclude from './include.component.js';
+import NuInclude from './include.component.js';
 
 export * from './include.component.js';
-export default SlInclude;
+export default NuInclude;
 
-SlInclude.define('sl-include');
+NuInclude.define('nu-include');
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-include': SlInclude;
+    'nu-include': NuInclude;
   }
 }

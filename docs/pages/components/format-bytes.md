@@ -7,8 +7,8 @@ layout: component
 
 ```html:preview
 <div class="format-bytes-overview">
-  The file is <sl-format-bytes value="1000"></sl-format-bytes> in size. <br /><br />
-  <sl-input type="number" value="1000" label="Number to Format" style="max-width: 180px;"></sl-input>
+  The file is <nu-format-bytes value="1000"></nu-format-bytes> in size. <br /><br />
+  <nu-input type="number" value="1000" label="Number to Format" style="max-width: 180px;"></nu-input>
 </div>
 
 <script>
@@ -57,10 +57,10 @@ const App = () => {
 Set the `value` attribute to a number to get the value in bytes.
 
 ```html:preview
-<sl-format-bytes value="12"></sl-format-bytes><br />
-<sl-format-bytes value="1200"></sl-format-bytes><br />
-<sl-format-bytes value="1200000"></sl-format-bytes><br />
-<sl-format-bytes value="1200000000"></sl-format-bytes>
+<nu-format-bytes value="12"></nu-format-bytes><br />
+<nu-format-bytes value="1200"></nu-format-bytes><br />
+<nu-format-bytes value="1200000"></nu-format-bytes><br />
+<nu-format-bytes value="1200000000"></nu-format-bytes>
 ```
 
 ```jsx:react
@@ -84,10 +84,10 @@ const App = () => (
 To get the value in bits, set the `unit` attribute to `bit`.
 
 ```html:preview
-<sl-format-bytes value="12" unit="bit"></sl-format-bytes><br />
-<sl-format-bytes value="1200" unit="bit"></sl-format-bytes><br />
-<sl-format-bytes value="1200000" unit="bit"></sl-format-bytes><br />
-<sl-format-bytes value="1200000000" unit="bit"></sl-format-bytes>
+<nu-format-bytes value="12" unit="bit"></nu-format-bytes><br />
+<nu-format-bytes value="1200" unit="bit"></nu-format-bytes><br />
+<nu-format-bytes value="1200000" unit="bit"></nu-format-bytes><br />
+<nu-format-bytes value="1200000000" unit="bit"></nu-format-bytes>
 ```
 
 ```jsx:react
@@ -111,10 +111,10 @@ const App = () => (
 Use the `lang` attribute to set the number formatting locale.
 
 ```html:preview
-<sl-format-bytes value="12" lang="de"></sl-format-bytes><br />
-<sl-format-bytes value="1200" lang="de"></sl-format-bytes><br />
-<sl-format-bytes value="1200000" lang="de"></sl-format-bytes><br />
-<sl-format-bytes value="1200000000" lang="de"></sl-format-bytes>
+<nu-format-bytes value="12" lang="de"></nu-format-bytes><br />
+<nu-format-bytes value="1200" lang="de"></nu-format-bytes><br />
+<nu-format-bytes value="1200000" lang="de"></nu-format-bytes><br />
+<nu-format-bytes value="1200000000" lang="de"></nu-format-bytes>
 ```
 
 ```jsx:react

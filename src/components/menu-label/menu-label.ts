@@ -1,12 +1,12 @@
-import SlMenuLabel from './menu-label.component.js';
+import NuMenuLabel from './menu-label.component.js';
 
 export * from './menu-label.component.js';
-export default SlMenuLabel;
+export default NuMenuLabel;
 
-SlMenuLabel.define('sl-menu-label');
+NuMenuLabel.define('nu-menu-label');
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-menu-label': SlMenuLabel;
+    'nu-menu-label': NuMenuLabel;
   }
 }

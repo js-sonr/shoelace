@@ -1,12 +1,12 @@
-import SlRelativeTime from './relative-time.component.js';
+import NuRelativeTime from './relative-time.component.js';
 
 export * from './relative-time.component.js';
-export default SlRelativeTime;
+export default NuRelativeTime;
 
-SlRelativeTime.define('sl-relative-time');
+NuRelativeTime.define('nu-relative-time');
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-relative-time': SlRelativeTime;
+    'nu-relative-time': NuRelativeTime;
   }
 }

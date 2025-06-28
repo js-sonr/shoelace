@@ -62,20 +62,20 @@ The form will not be submitted if a required field is incomplete.
 
 ```html:preview
 <form class="input-validation-required">
-  <sl-input name="name" label="Name" required></sl-input>
+  <nu-input name="name" label="Name" required></nu-input>
   <br />
-  <sl-select label="Favorite Animal" clearable required>
-    <sl-option value="birds">Birds</sl-option>
-    <sl-option value="cats">Cats</sl-option>
-    <sl-option value="dogs">Dogs</sl-option>
-    <sl-option value="other">Other</sl-option>
-  </sl-select>
+  <nu-select label="Favorite Animal" clearable required>
+    <nu-option value="birds">Birds</nu-option>
+    <nu-option value="cats">Cats</nu-option>
+    <nu-option value="dogs">Dogs</nu-option>
+    <nu-option value="other">Other</nu-option>
+  </nu-select>
   <br />
-  <sl-textarea name="comment" label="Comment" required></sl-textarea>
+  <nu-textarea name="comment" label="Comment" required></nu-textarea>
   <br />
-  <sl-checkbox required>Check me before submitting</sl-checkbox>
+  <nu-checkbox required>Check me before submitting</nu-checkbox>
   <br /><br />
-  <sl-button type="submit" variant="primary">Submit</sl-button>
+  <nu-button type="submit" variant="primary">Submit</nu-button>
 </form>
 
 <script type="module">
@@ -138,14 +138,14 @@ const App = () => {
 
 ### Input Patterns
 
-To restrict a value to a specific [pattern](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern), use the `pattern` attribute. This example only allows the letters A-Z, so the form will not submit if a number or symbol is entered. This only works with `<sl-input>` elements.
+To restrict a value to a specific [pattern](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern), use the `pattern` attribute. This example only allows the letters A-Z, so the form will not submit if a number or symbol is entered. This only works with `<nu-input>` elements.
 
 ```html:preview
 <form class="input-validation-pattern">
-  <sl-input name="letters" required label="Letters" pattern="[A-Za-z]+"></sl-input>
+  <nu-input name="letters" required label="Letters" pattern="[A-Za-z]+"></nu-input>
   <br />
-  <sl-button type="submit" variant="primary">Submit</sl-button>
-  <sl-button type="reset" variant="default">Reset</sl-button>
+  <nu-button type="submit" variant="primary">Submit</nu-button>
+  <nu-button type="reset" variant="default">Reset</nu-button>
 </form>
 
 <script type="module">
@@ -192,12 +192,12 @@ Some input types will automatically trigger constraints, such as `email` and `ur
 
 ```html:preview
 <form class="input-validation-type">
-  <sl-input type="email" label="Email" placeholder="you@example.com" required></sl-input>
+  <nu-input type="email" label="Email" placeholder="you@example.com" required></nu-input>
   <br />
-  <sl-input type="url" label="URL" placeholder="https://example.com/" required></sl-input>
+  <nu-input type="url" label="URL" placeholder="https://example.com/" required></nu-input>
   <br />
-  <sl-button type="submit" variant="primary">Submit</sl-button>
-  <sl-button type="reset" variant="default">Reset</sl-button>
+  <nu-button type="submit" variant="primary">Submit</nu-button>
+  <nu-button type="reset" variant="default">Reset</nu-button>
 </form>
 
 <script type="module">
@@ -246,10 +246,10 @@ To create a custom validation error, pass a non-empty string to the `setCustomVa
 
 ```html:preview
 <form class="input-validation-custom">
-  <sl-input label="Type “shoelace”" required></sl-input>
+  <nu-input label="Type “shoelace”" required></nu-input>
   <br />
-  <sl-button type="submit" variant="primary">Submit</sl-button>
-  <sl-button type="reset" variant="default">Reset</sl-button>
+  <nu-button type="submit" variant="primary">Submit</nu-button>
+  <nu-button type="reset" variant="default">Reset</nu-button>
 </form>
 
 <script type="module">
@@ -342,25 +342,25 @@ This example demonstrates custom validation styles using `data-user-invalid` and
 
 ```html:preview
 <form class="validity-styles">
-  <sl-input
+  <nu-input
     name="name"
     label="Name"
     help-text="What would you like people to call you?"
     autocomplete="off"
     required
-  ></sl-input>
+  ></nu-input>
 
-  <sl-select name="animal" label="Favorite Animal" help-text="Select the best option." clearable required>
-    <sl-option value="birds">Birds</sl-option>
-    <sl-option value="cats">Cats</sl-option>
-    <sl-option value="dogs">Dogs</sl-option>
-    <sl-option value="other">Other</sl-option>
-  </sl-select>
+  <nu-select name="animal" label="Favorite Animal" help-text="Select the best option." clearable required>
+    <nu-option value="birds">Birds</nu-option>
+    <nu-option value="cats">Cats</nu-option>
+    <nu-option value="dogs">Dogs</nu-option>
+    <nu-option value="other">Other</nu-option>
+  </nu-select>
 
-  <sl-checkbox value="accept" required>Accept terms and conditions</sl-checkbox>
+  <nu-checkbox value="accept" required>Accept terms and conditions</nu-checkbox>
 
-  <sl-button type="submit" variant="primary">Submit</sl-button>
-  <sl-button type="reset" variant="default">Reset</sl-button>
+  <nu-button type="submit" variant="primary">Submit</nu-button>
+  <nu-button type="reset" variant="default">Reset</nu-button>
 </form>
 
 <script type="module">
@@ -448,18 +448,18 @@ To disable the browser's error messages, you need to cancel the `sl-invalid` eve
 
 ```html:preview
 <form class="inline-validation">
-  <sl-input
+  <nu-input
     name="name"
     label="Name"
     help-text="What would you like people to call you?"
     autocomplete="off"
     required
-  ></sl-input>
+  ></nu-input>
 
   <div id="name-error" aria-live="polite" hidden></div>
 
-  <sl-button type="submit" variant="primary">Submit</sl-button>
-  <sl-button type="reset" variant="default">Reset</sl-button>
+  <nu-button type="submit" variant="primary">Submit</nu-button>
+  <nu-button type="reset" variant="default">Reset</nu-button>
 </form>
 
 <script type="module">

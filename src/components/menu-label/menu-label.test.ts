@@ -1,10 +1,10 @@
 import '../../../dist/shoelace.js';
 import { expect, fixture, html } from '@open-wc/testing';
-import type SlMenuLabel from './menu-label.js';
+import type NuMenuLabel from './menu-label.js';
 
-describe('<sl-menu-label>', () => {
+describe('<nu-menu-label>', () => {
   it('passes accessibility test', async () => {
-    const el = await fixture<SlMenuLabel>(html` <sl-menu-label>Test</sl-menu-label> `);
+    const el = await fixture<NuMenuLabel>(html` <nu-menu-label>Test</nu-menu-label> `);
     await expect(el).to.be.accessible();
   });
 });

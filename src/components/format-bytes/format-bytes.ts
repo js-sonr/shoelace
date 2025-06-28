@@ -1,12 +1,12 @@
-import SlFormatBytes from './format-bytes.component.js';
+import NuFormatBytes from './format-bytes.component.js';
 
 export * from './format-bytes.component.js';
-export default SlFormatBytes;
+export default NuFormatBytes;
 
-SlFormatBytes.define('sl-format-bytes');
+NuFormatBytes.define('nu-format-bytes');
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-format-bytes': SlFormatBytes;
+    'nu-format-bytes': NuFormatBytes;
   }
 }

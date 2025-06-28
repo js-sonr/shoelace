@@ -13,15 +13,15 @@ import { waitForEvent } from '../../internal/event.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import formControlStyles from '../../styles/form-control.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIcon from '../icon/icon.component.js';
-import SlPopup from '../popup/popup.component.js';
-import SlTag from '../tag/tag.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIcon from '../icon/icon.component.js';
+import NuPopup from '../popup/popup.component.js';
+import NuTag from '../tag/tag.component.js';
 import styles from './select.styles.js';
 import type { CSSResultGroup, TemplateResult } from 'lit';
-import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
-import type { SlRemoveEvent } from '../../events/sl-remove.js';
-import type SlOption from '../option/option.component.js';
+import type { NebulaFormControl } from '../../internal/nebula-element.js';
+import type { NuRemoveEvent } from '../../events/events.js';
+import type NuOption from '../option/option.component.js';
 
 /**
  * @summary Selects allow you to choose items from a menu of predefined options.
@@ -33,23 +33,23 @@ import type SlOption from '../option/option.component.js';
  * @dependency sl-popup
  * @dependency sl-tag
  *
- * @slot - The listbox options. Must be `<sl-option>` elements. You can use `<sl-divider>` to group items visually.
+ * @slot - The listbox options. Must be `<nu-option>` elements. You can use `<nu-divider>` to group items visually.
  * @slot label - The input's label. Alternatively, you can use the `label` attribute.
  * @slot prefix - Used to prepend a presentational icon or similar element to the combobox.
  * @slot clear-icon - An icon to use in lieu of the default clear icon.
  * @slot expand-icon - The icon to show when the control is expanded and collapsed. Rotates on open and close.
  * @slot help-text - Text that describes how to use the input. Alternatively, you can use the `help-text` attribute.
  *
- * @event sl-change - Emitted when the control's value changes.
- * @event sl-clear - Emitted when the control's value is cleared.
- * @event sl-input - Emitted when the control receives input.
- * @event sl-focus - Emitted when the control gains focus.
- * @event sl-blur - Emitted when the control loses focus.
- * @event sl-show - Emitted when the select's menu opens.
- * @event sl-after-show - Emitted after the select's menu opens and all animations are complete.
- * @event sl-hide - Emitted when the select's menu closes.
- * @event sl-after-hide - Emitted after the select's menu closes and all animations are complete.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-change - Emitted when the control's value changes.
+ * @event nu-clear - Emitted when the control's value is cleared.
+ * @event nu-input - Emitted when the control receives input.
+ * @event nu-focus - Emitted when the control gains focus.
+ * @event nu-blur - Emitted when the control loses focus.
+ * @event nu-show - Emitted when the select's menu opens.
+ * @event nu-after-show - Emitted after the select's menu opens and all animations are complete.
+ * @event nu-hide - Emitted when the select's menu closes.
+ * @event nu-after-hide - Emitted after the select's menu closes and all animations are complete.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart form-control - The form control that wraps the label, input, and help text.
  * @csspart form-control-label - The label's wrapper.
@@ -68,12 +68,12 @@ import type SlOption from '../option/option.component.js';
  * @csspart clear-button - The clear button.
  * @csspart expand-icon - The container that wraps the expand icon.
  */
-export default class SlSelect extends ShoelaceElement implements ShoelaceFormControl {
+export default class NuSelect extends NebulaElement implements NebulaFormControl {
   static styles: CSSResultGroup = [componentStyles, formControlStyles, styles];
   static dependencies = {
-    'sl-icon': SlIcon,
-    'sl-popup': SlPopup,
-    'sl-tag': SlTag
+    'nu-icon': NuIcon,
+    'nu-popup': NuPopup,
+    'nu-tag': NuTag
   };
 
   private readonly formControlController = new FormControlController(this, {
@@ -85,7 +85,7 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
   private typeToSelectTimeout: number;
   private closeWatcher: CloseWatcher | null;
 
-  @query('.select') popup: SlPopup;
+  @query('.select') popup: NuPopup;
   @query('.select__combobox') combobox: HTMLSlotElement;
   @query('.select__display-input') displayInput: HTMLInputElement;
   @query('.select__value-input') valueInput: HTMLInputElement;
@@ -93,8 +93,8 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
 
   @state() private hasFocus = false;
   @state() displayLabel = '';
-  @state() currentOption: SlOption;
-  @state() selectedOptions: SlOption[] = [];
+  @state() currentOption: NuOption;
+  @state() selectedOptions: NuOption[] = [];
 
   /** The name of the select, submitted as a name/value pair with form data. */
   @property() name = '';
@@ -181,9 +181,9 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
    * is the current tag's index.  The function should return either a Lit TemplateResult or a string containing trusted HTML of the symbol to render at
    * the specified value.
    */
-  @property() getTag: (option: SlOption, index: number) => TemplateResult | string | HTMLElement = option => {
+  @property() getTag: (option: NuOption, index: number) => TemplateResult | string | HTMLElement = option => {
     return html`
-      <sl-tag
+      <nu-tag
         part="tag"
         exportparts="
               base:tag__base,
@@ -194,10 +194,10 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
         ?pill=${this.pill}
         size=${this.size}
         removable
-        @sl-remove=${(event: SlRemoveEvent) => this.handleTagRemove(event, option)}
+        @sl-remove=${(event: NuRemoveEvent) => this.handleTagRemove(event, option)}
       >
         ${option.getTextLabel()}
-      </sl-tag>
+      </nu-tag>
     `;
   };
 
@@ -260,12 +260,12 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
   private handleFocus() {
     this.hasFocus = true;
     this.displayInput.setSelectionRange(0, 0);
-    this.emit('sl-focus');
+    this.emit('nu-focus');
   }
 
   private handleBlur() {
     this.hasFocus = false;
-    this.emit('sl-blur');
+    this.emit('nu-blur');
   }
 
   private handleDocumentFocusIn = (event: KeyboardEvent) => {
@@ -279,9 +279,9 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
   private handleDocumentKeyDown = (event: KeyboardEvent) => {
     const target = event.target as HTMLElement;
     const isClearButton = target.closest('.select__clear') !== null;
-    const isIconButton = target.closest('sl-icon-button') !== null;
+    const isIconButton = target.closest('nu-icon-button') !== null;
 
-    // Ignore presses when the target is an icon button (e.g. the remove button in <sl-tag>)
+    // Ignore presses when the target is an icon button (e.g. the remove button in <nu-tag>)
     if (isClearButton || isIconButton) {
       return;
     }
@@ -316,8 +316,8 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
 
         // Emit after updating
         this.updateComplete.then(() => {
-          this.emit('sl-input');
-          this.emit('sl-change');
+          this.emit('nu-input');
+          this.emit('nu-change');
         });
 
         if (!this.multiple) {
@@ -449,9 +449,9 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
 
       // Emit after update
       this.updateComplete.then(() => {
-        this.emit('sl-clear');
-        this.emit('sl-input');
-        this.emit('sl-change');
+        this.emit('nu-clear');
+        this.emit('nu-input');
+        this.emit('nu-change');
       });
     }
   }
@@ -464,7 +464,7 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
 
   private handleOptionClick(event: MouseEvent) {
     const target = event.target as HTMLElement;
-    const option = target.closest('sl-option');
+    const option = target.closest('nu-option');
     const oldValue = this.value;
 
     if (option && !option.disabled) {
@@ -480,8 +480,8 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
       if (this.value !== oldValue) {
         // Emit after updating
         this.updateComplete.then(() => {
-          this.emit('sl-input');
-          this.emit('sl-change');
+          this.emit('nu-input');
+          this.emit('nu-change');
         });
       }
 
@@ -504,12 +504,12 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
       // Select only the options that match the new value
       this.setSelectedOptions(allOptions.filter(el => value.includes(el.value)));
     } else {
-      // Rerun this handler when <sl-option> is registered
+      // Rerun this handler when <nu-option> is registered
       customElements.whenDefined('sl-option').then(() => this.handleDefaultSlotChange());
     }
   }
 
-  private handleTagRemove(event: SlRemoveEvent, option: SlOption) {
+  private handleTagRemove(event: NuRemoveEvent, option: NuOption) {
     event.stopPropagation();
 
     if (!this.disabled) {
@@ -517,25 +517,25 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
 
       // Emit after updating
       this.updateComplete.then(() => {
-        this.emit('sl-input');
-        this.emit('sl-change');
+        this.emit('nu-input');
+        this.emit('nu-change');
       });
     }
   }
 
-  // Gets an array of all <sl-option> elements
+  // Gets an array of all <nu-option> elements
   private getAllOptions() {
-    return [...this.querySelectorAll<SlOption>('sl-option')];
+    return [...this.querySelectorAll<NuOption>('nu-option')];
   }
 
-  // Gets the first <sl-option> element
+  // Gets the first <nu-option> element
   private getFirstOption() {
-    return this.querySelector<SlOption>('sl-option');
+    return this.querySelector<NuOption>('nu-option');
   }
 
   // Sets the current option, which is the option the user is currently interacting with (e.g. via keyboard). Only one
   // option may be "current" at a time.
-  private setCurrentOption(option: SlOption | null) {
+  private setCurrentOption(option: NuOption | null) {
     const allOptions = this.getAllOptions();
 
     // Clear selection
@@ -554,7 +554,7 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
   }
 
   // Sets the selected option(s)
-  private setSelectedOptions(option: SlOption | SlOption[]) {
+  private setSelectedOptions(option: NuOption | NuOption[]) {
     const allOptions = this.getAllOptions();
     const newSelectedOptions = Array.isArray(option) ? option : [option];
 
@@ -571,7 +571,7 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
   }
 
   // Toggles an option's selected state
-  private toggleOptionSelection(option: SlOption, force?: boolean) {
+  private toggleOptionSelection(option: NuOption, force?: boolean) {
     if (force === true || force === false) {
       option.selected = force;
     } else {
@@ -612,12 +612,12 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
       if (index < this.maxOptionsVisible || this.maxOptionsVisible <= 0) {
         const tag = this.getTag(option, index);
         // Wrap so we can handle the remove
-        return html`<div @sl-remove=${(e: SlRemoveEvent) => this.handleTagRemove(e, option)}>
+        return html`<div @sl-remove=${(e: NuRemoveEvent) => this.handleTagRemove(e, option)}>
           ${typeof tag === 'string' ? unsafeHTML(tag) : tag}
         </div>`;
       } else if (index === this.maxOptionsVisible) {
         // Hit tag limit
-        return html`<sl-tag size=${this.size}>+${this.selectedOptions.length - index}</sl-tag>`;
+        return html`<nu-tag size=${this.size}>+${this.selectedOptions.length - index}</nu-tag>`;
       }
       return html``;
     });
@@ -653,7 +653,7 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
       this.setCurrentOption(this.selectedOptions[0] || this.getFirstOption());
 
       // Show
-      this.emit('sl-show');
+      this.emit('nu-show');
       this.addOpenListeners();
 
       await stopAnimations(this);
@@ -673,10 +673,10 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
         scrollIntoView(this.currentOption, this.listbox, 'vertical', 'auto');
       }
 
-      this.emit('sl-after-show');
+      this.emit('nu-after-show');
     } else {
       // Hide
-      this.emit('sl-hide');
+      this.emit('nu-hide');
       this.removeOpenListeners();
 
       await stopAnimations(this);
@@ -685,7 +685,7 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
       this.listbox.hidden = true;
       this.popup.active = false;
 
-      this.emit('sl-after-hide');
+      this.emit('nu-after-hide');
     }
   }
 
@@ -773,7 +773,7 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
         </label>
 
         <div part="form-control-input" class="form-control-input">
-          <sl-popup
+          <nu-popup
             class=${classMap({
               select: true,
               'select--standard': true,
@@ -856,14 +856,14 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
                       tabindex="-1"
                     >
                       <slot name="clear-icon">
-                        <sl-icon name="x-circle-fill" library="system"></sl-icon>
+                        <nu-icon name="x-circle-fill" library="system"></nu-icon>
                       </slot>
                     </button>
                   `
                 : ''}
 
               <slot name="expand-icon" part="expand-icon" class="select__expand-icon">
-                <sl-icon library="system" name="chevron-down"></sl-icon>
+                <nu-icon library="system" name="chevron-down"></nu-icon>
               </slot>
             </div>
 
@@ -881,7 +881,7 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
             >
               <slot></slot>
             </div>
-          </sl-popup>
+          </nu-popup>
         </div>
 
         <div

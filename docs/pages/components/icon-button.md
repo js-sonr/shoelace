@@ -8,7 +8,7 @@ layout: component
 For a full list of icons that come bundled with Nebula, refer to the [icon component](/components/icon).
 
 ```html:preview
-<sl-icon-button name="gear" label="Settings"></sl-icon-button>
+<nu-icon-button name="gear" label="Settings"></nu-icon-button>
 ```
 
 ```jsx:react
@@ -24,9 +24,9 @@ const App = () => <SlIconButton name="gear" label="Settings" />;
 Icon buttons inherit their parent element's `font-size`.
 
 ```html:preview
-<sl-icon-button name="pencil" label="Edit" style="font-size: 1.5rem;"></sl-icon-button>
-<sl-icon-button name="pencil" label="Edit" style="font-size: 2rem;"></sl-icon-button>
-<sl-icon-button name="pencil" label="Edit" style="font-size: 2.5rem;"></sl-icon-button>
+<nu-icon-button name="pencil" label="Edit" style="font-size: 1.5rem;"></nu-icon-button>
+<nu-icon-button name="pencil" label="Edit" style="font-size: 2rem;"></nu-icon-button>
+<nu-icon-button name="pencil" label="Edit" style="font-size: 2.5rem;"></nu-icon-button>
 ```
 
 {% raw %}
@@ -51,9 +51,9 @@ Icon buttons are designed to have a uniform appearance, so their color is not in
 
 ```html:preview
 <div class="icon-button-color">
-  <sl-icon-button name="type-bold" label="Bold"></sl-icon-button>
-  <sl-icon-button name="type-italic" label="Italic"></sl-icon-button>
-  <sl-icon-button name="type-underline" label="Underline"></sl-icon-button>
+  <nu-icon-button name="type-bold" label="Bold"></nu-icon-button>
+  <nu-icon-button name="type-italic" label="Italic"></nu-icon-button>
+  <nu-icon-button name="type-underline" label="Underline"></nu-icon-button>
 </div>
 
 <style>
@@ -108,7 +108,7 @@ const App = () => (
 Use the `href` attribute to convert the button to a link.
 
 ```html:preview
-<sl-icon-button name="gear" label="Settings" href="https://example.com" target="_blank"></sl-icon-button>
+<nu-icon-button name="gear" label="Settings" href="https://example.com" target="_blank"></nu-icon-button>
 ```
 
 ```jsx:react
@@ -122,9 +122,9 @@ const App = () => <SlIconButton name="gear" label="Settings" href="https://examp
 Wrap a tooltip around an icon button to provide contextual information to the user.
 
 ```html:preview
-<sl-tooltip content="Settings">
-  <sl-icon-button name="gear" label="Settings"></sl-icon-button>
-</sl-tooltip>
+<nu-tooltip content="Settings">
+  <nu-icon-button name="gear" label="Settings"></nu-icon-button>
+</nu-tooltip>
 ```
 
 ```jsx:react
@@ -143,7 +143,7 @@ const App = () => (
 Use the `disabled` attribute to disable the icon button.
 
 ```html:preview
-<sl-icon-button name="gear" label="Settings" disabled></sl-icon-button>
+<nu-icon-button name="gear" label="Settings" disabled></nu-icon-button>
 ```
 
 ```jsx:react

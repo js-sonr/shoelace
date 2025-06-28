@@ -1,12 +1,12 @@
-import SlRange from './range.component.js';
+import NuRange from './range.component.js';
 
 export * from './range.component.js';
-export default SlRange;
+export default NuRange;
 
-SlRange.define('sl-range');
+NuRange.define('nu-range');
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-range': SlRange;
+    'nu-range': NuRange;
   }
 }

@@ -6,7 +6,7 @@ layout: component
 ---
 
 ```html:preview
-<sl-card class="card-overview">
+<nu-card class="card-overview">
   <img
     slot="image"
     src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
@@ -18,10 +18,10 @@ layout: component
   <small>6 weeks old</small>
 
   <div slot="footer">
-    <sl-button variant="primary" pill>More Info</sl-button>
-    <sl-rating></sl-rating>
+    <nu-button variant="primary" pill>More Info</nu-button>
+    <nu-rating></nu-rating>
   </div>
-</sl-card>
+</nu-card>
 
 <style>
   .card-overview {
@@ -94,9 +94,9 @@ const App = () => (
 Basic cards aren't very exciting, but they can display any content you want them to.
 
 ```html:preview
-<sl-card class="card-basic">
+<nu-card class="card-basic">
   This is just a basic card. No image, no header, and no footer. Just your content.
-</sl-card>
+</nu-card>
 
 <style>
   .card-basic {
@@ -130,14 +130,14 @@ const App = () => (
 Headers can be used to display titles and more.
 
 ```html:preview
-<sl-card class="card-header">
+<nu-card class="card-header">
   <div slot="header">
     Header Title
-    <sl-icon-button name="gear" label="Settings"></sl-icon-button>
+    <nu-icon-button name="gear" label="Settings"></nu-icon-button>
   </div>
 
   This card has a header. You can put all sorts of things in it!
-</sl-card>
+</nu-card>
 
 <style>
   .card-header {
@@ -204,14 +204,14 @@ const App = () => (
 Footers can be used to display actions, summaries, or other relevant content.
 
 ```html:preview
-<sl-card class="card-footer">
+<nu-card class="card-footer">
   This card has a footer. You can put all sorts of things in it!
 
   <div slot="footer">
-    <sl-rating></sl-rating>
-    <sl-button variant="primary">Preview</sl-button>
+    <nu-rating></nu-rating>
+    <nu-button variant="primary">Preview</nu-button>
   </div>
-</sl-card>
+</nu-card>
 
 <style>
   .card-footer {
@@ -265,14 +265,14 @@ const App = () => (
 Cards accept an `image` slot. The image is displayed atop the card and stretches to fit.
 
 ```html:preview
-<sl-card class="card-image">
+<nu-card class="card-image">
   <img
     slot="image"
     src="https://images.unsplash.com/photo-1547191783-94d5f8f6d8b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80"
     alt="A kitten walks towards camera on top of pallet."
   />
   This is a kitten, but not just any kitten. This kitten likes walking along pallets.
-</sl-card>
+</nu-card>
 
 <style>
   .card-image {

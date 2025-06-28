@@ -1,12 +1,12 @@
-import SlPopup from './popup.component.js';
+import NuPopup from './popup.component.js';
 
 export * from './popup.component.js';
-export default SlPopup;
+export default NuPopup;
 
-SlPopup.define('sl-popup');
+NuPopup.define('nu-popup');
 
 declare global {
   interface HTMLElementTagNameMap {
-    'sl-popup': SlPopup;
+    'nu-popup': NuPopup;
   }
 }

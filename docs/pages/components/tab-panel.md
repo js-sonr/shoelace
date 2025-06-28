@@ -6,17 +6,17 @@ layout: component
 ---
 
 ```html:preview
-<sl-tab-group>
-  <sl-tab slot="nav" panel="general">General</sl-tab>
-  <sl-tab slot="nav" panel="custom">Custom</sl-tab>
-  <sl-tab slot="nav" panel="advanced">Advanced</sl-tab>
-  <sl-tab slot="nav" panel="disabled" disabled>Disabled</sl-tab>
+<nu-tab-group>
+  <nu-tab slot="nav" panel="general">General</nu-tab>
+  <nu-tab slot="nav" panel="custom">Custom</nu-tab>
+  <nu-tab slot="nav" panel="advanced">Advanced</nu-tab>
+  <nu-tab slot="nav" panel="disabled" disabled>Disabled</nu-tab>
 
-  <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
-  <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
-  <sl-tab-panel name="advanced">This is the advanced tab panel.</sl-tab-panel>
-  <sl-tab-panel name="disabled">This is a disabled tab panel.</sl-tab-panel>
-</sl-tab-group>
+  <nu-tab-panel name="general">This is the general tab panel.</nu-tab-panel>
+  <nu-tab-panel name="custom">This is the custom tab panel.</nu-tab-panel>
+  <nu-tab-panel name="advanced">This is the advanced tab panel.</nu-tab-panel>
+  <nu-tab-panel name="disabled">This is a disabled tab panel.</nu-tab-panel>
+</nu-tab-group>
 ```
 
 ```jsx:react

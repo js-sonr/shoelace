@@ -1,13 +1,13 @@
 import type { ReactiveController, ReactiveControllerHost } from 'lit';
-import type { ShoelaceFormControl } from '../internal/shoelace-element.js';
-import type SlButton from '../components/button/button.js';
+import type { NebulaFormControl } from '../internal/nebula-element.js';
+import type NuButton from '../components/button/button.js';
 
 //
 // We store a WeakMap of forms + controls so we can keep references to all Shoelace controls within a given form. As
 // elements connect and disconnect to/from the DOM, their containing form is used as the key and the form control is
 // added and removed from the form's set, respectively.
 //
-export const formCollections: WeakMap<HTMLFormElement, Set<ShoelaceFormControl>> = new WeakMap();
+export const formCollections: WeakMap<HTMLFormElement, Set<NebulaFormControl>> = new WeakMap();
 
 //
 // We store a WeakMap of reportValidity() overloads so we can override it when form controls connect to the DOM and
@@ -20,37 +20,37 @@ const checkValidityOverloads: WeakMap<HTMLFormElement, () => boolean> = new Weak
 // We store a Set of controls that users have interacted with. This allows us to determine the interaction state
 // without littering the DOM with additional data attributes.
 //
-const userInteractedControls: WeakSet<ShoelaceFormControl> = new WeakSet();
+const userInteractedControls: WeakSet<NebulaFormControl> = new WeakSet();
 
 //
 // We store a WeakMap of interactions for each form control so we can track when all conditions are met for validation.
 //
-const interactions = new WeakMap<ShoelaceFormControl, string[]>();
+const interactions = new WeakMap<NebulaFormControl, string[]>();
 
 export interface FormControlControllerOptions {
   /** A function that returns the form containing the form control. */
-  form: (input: ShoelaceFormControl) => HTMLFormElement | null;
+  form: (input: NebulaFormControl) => HTMLFormElement | null;
   /** A function that returns the form control's name, which will be submitted with the form data. */
-  name: (input: ShoelaceFormControl) => string;
+  name: (input: NebulaFormControl) => string;
   /** A function that returns the form control's current value. */
-  value: (input: ShoelaceFormControl) => unknown | unknown[];
+  value: (input: NebulaFormControl) => unknown | unknown[];
   /** A function that returns the form control's default value. */
-  defaultValue: (input: ShoelaceFormControl) => unknown | unknown[];
+  defaultValue: (input: NebulaFormControl) => unknown | unknown[];
   /** A function that returns the form control's current disabled state. If disabled, the value won't be submitted. */
-  disabled: (input: ShoelaceFormControl) => boolean;
+  disabled: (input: NebulaFormControl) => boolean;
   /**
    * A function that maps to the form control's reportValidity() function. When the control is invalid, this will
    * prevent submission and trigger the browser's constraint violation warning.
    */
-  reportValidity: (input: ShoelaceFormControl) => boolean;
+  reportValidity: (input: NebulaFormControl) => boolean;
 
   /**
    * A function that maps to the form control's `checkValidity()` function. When the control is invalid, this will return false.
    *   this is helpful is you want to check validation without triggering the native browser constraint violation warning.
    */
-  checkValidity: (input: ShoelaceFormControl) => boolean;
+  checkValidity: (input: NebulaFormControl) => boolean;
   /** A function that sets the form control's value */
-  setValue: (input: ShoelaceFormControl, value: unknown) => void;
+  setValue: (input: NebulaFormControl, value: unknown) => void;
   /**
    * An array of event names to listen to. When all events in the list are emitted, the control will receive validity
    * states such as user-valid and user-invalid.user interacted validity states. */
@@ -59,16 +59,16 @@ export interface FormControlControllerOptions {
 
 /** A reactive controller to allow form controls to participate in form submission, validation, etc. */
 export class FormControlController implements ReactiveController {
-  host: ShoelaceFormControl & ReactiveControllerHost;
+  host: NebulaFormControl & ReactiveControllerHost;
   form?: HTMLFormElement | null;
   options: FormControlControllerOptions;
 
-  constructor(host: ReactiveControllerHost & ShoelaceFormControl, options?: Partial<FormControlControllerOptions>) {
+  constructor(host: ReactiveControllerHost & NebulaFormControl, options?: Partial<FormControlControllerOptions>) {
     (this.host = host).addController(this);
     this.options = {
       form: input => {
         // If there's a form attribute, use it to find the target form by id
-        // Controls may not always reflect the 'form' property. For example, `<sl-button>` doesn't reflect.
+        // Controls may not always reflect the 'form' property. For example, `<nu-button>` doesn't reflect.
         const formId = input.form;
 
         if (formId) {
@@ -145,7 +145,7 @@ export class FormControlController implements ReactiveController {
       if (formCollections.has(this.form)) {
         formCollections.get(this.form)!.add(this.host);
       } else {
-        formCollections.set(this.form, new Set<ShoelaceFormControl>([this.host]));
+        formCollections.set(this.form, new Set<NebulaFormControl>([this.host]));
       }
 
       this.form.addEventListener('formdata', this.handleFormData);
@@ -328,7 +328,7 @@ export class FormControlController implements ReactiveController {
     return true;
   };
 
-  private setUserInteracted(el: ShoelaceFormControl, hasInteracted: boolean) {
+  private setUserInteracted(el: NebulaFormControl, hasInteracted: boolean) {
     if (hasInteracted) {
       userInteractedControls.add(el);
     } else {
@@ -338,7 +338,7 @@ export class FormControlController implements ReactiveController {
     el.requestUpdate();
   }
 
-  private doAction(type: 'submit' | 'reset', submitter?: HTMLInputElement | SlButton) {
+  private doAction(type: 'submit' | 'reset', submitter?: HTMLInputElement | NuButton) {
     if (this.form) {
       const button = document.createElement('button');
       button.type = type;
@@ -373,12 +373,12 @@ export class FormControlController implements ReactiveController {
   }
 
   /** Resets the form, restoring all the control to their default value */
-  reset(submitter?: HTMLInputElement | SlButton) {
+  reset(submitter?: HTMLInputElement | NuButton) {
     this.doAction('reset', submitter);
   }
 
   /** Submits the form, triggering validation and form data injection. */
-  submit(submitter?: HTMLInputElement | SlButton) {
+  submit(submitter?: HTMLInputElement | NuButton) {
     // Calling form.submit() bypasses the submit event and constraint validation. To prevent this, we can inject a
     // native submit button into the form, "click" it, then remove it to simulate a standard form submission.
     this.doAction('submit', submitter);

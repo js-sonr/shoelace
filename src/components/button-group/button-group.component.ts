@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import styles from './button-group.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -11,11 +11,11 @@ import type { CSSResultGroup } from 'lit';
  * @status stable
  * @since 2.0
  *
- * @slot - One or more `<sl-button>` elements to display in the button group.
+ * @slot - One or more `<nu-button>` elements to display in the button group.
  *
  * @csspart base - The component's base wrapper.
  */
-export default class SlButtonGroup extends ShoelaceElement {
+export default class NuButtonGroup extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
   @query('slot') defaultSlot: HTMLSlotElement;

@@ -10,38 +10,38 @@ This component's name is inspired by [`<popup>`](https://github.com/MicrosoftEdg
 Popup doesn't provide any styles — just positioning! The popup's preferred placement, distance, and skidding (offset) can be configured using attributes. An arrow that points to the anchor can be shown and customized to your liking. Additional positioning options are available and described in more detail below.
 
 :::warning
-Popup is a low-level utility built specifically for positioning elements. Do not mistake it for a [tooltip](/components/tooltip) or similar because _it does not facilitate an accessible experience!_ Almost every correct usage of `<sl-popup>` will involve building other components. It should rarely, if ever, occur directly in your HTML.
+Popup is a low-level utility built specifically for positioning elements. Do not mistake it for a [tooltip](/components/tooltip) or similar because _it does not facilitate an accessible experience!_ Almost every correct usage of `<nu-popup>` will involve building other components. It should rarely, if ever, occur directly in your HTML.
 :::
 
 ```html:preview
 <div class="popup-overview">
-  <sl-popup placement="top" active>
+  <nu-popup placement="top" active>
     <span slot="anchor"></span>
     <div class="box"></div>
-  </sl-popup>
+  </nu-popup>
 
   <div class="popup-overview-options">
-    <sl-select label="Placement" name="placement" value="top" class="popup-overview-select">
-      <sl-option value="top">top</sl-option>
-      <sl-option value="top-start">top-start</sl-option>
-      <sl-option value="top-end">top-end</sl-option>
-      <sl-option value="bottom">bottom</sl-option>
-      <sl-option value="bottom-start">bottom-start</sl-option>
-      <sl-option value="bottom-end">bottom-end</sl-option>
-      <sl-option value="right">right</sl-option>
-      <sl-option value="right-start">right-start</sl-option>
-      <sl-option value="right-end">right-end</sl-option>
-      <sl-option value="left">left</sl-option>
-      <sl-option value="left-start">left-start</sl-option>
-      <sl-option value="left-end">left-end</sl-option>
-    </sl-select>
-    <sl-input type="number" name="distance" label="distance" value="0"></sl-input>
-    <sl-input type="number" name="skidding" label="Skidding" value="0"></sl-input>
+    <nu-select label="Placement" name="placement" value="top" class="popup-overview-select">
+      <nu-option value="top">top</nu-option>
+      <nu-option value="top-start">top-start</nu-option>
+      <nu-option value="top-end">top-end</nu-option>
+      <nu-option value="bottom">bottom</nu-option>
+      <nu-option value="bottom-start">bottom-start</nu-option>
+      <nu-option value="bottom-end">bottom-end</nu-option>
+      <nu-option value="right">right</nu-option>
+      <nu-option value="right-start">right-start</nu-option>
+      <nu-option value="right-end">right-end</nu-option>
+      <nu-option value="left">left</nu-option>
+      <nu-option value="left-start">left-start</nu-option>
+      <nu-option value="left-end">left-end</nu-option>
+    </nu-select>
+    <nu-input type="number" name="distance" label="distance" value="0"></nu-input>
+    <nu-input type="number" name="skidding" label="Skidding" value="0"></nu-input>
   </div>
 
   <div class="popup-overview-options">
-    <sl-switch name="active" checked>Active</sl-switch>
-    <sl-switch name="arrow">Arrow</sl-switch>
+    <nu-switch name="active" checked>Active</nu-switch>
+    <nu-switch name="arrow">Arrow</nu-switch>
   </div>
 </div>
 
@@ -236,13 +236,13 @@ Popups are inactive and hidden until the `active` attribute is applied. Removing
 
 ```html:preview
 <div class="popup-active">
-  <sl-popup placement="top" active>
+  <nu-popup placement="top" active>
     <span slot="anchor"></span>
     <div class="box"></div>
-  </sl-popup>
+  </nu-popup>
 
   <br />
-  <sl-switch checked>Active</sl-switch>
+  <nu-switch checked>Active</nu-switch>
 </div>
 
 <style>
@@ -323,9 +323,9 @@ By default, anchors are slotted into the popup using the `anchor` slot. If your 
 ```html:preview
 <span id="external-anchor"></span>
 
-<sl-popup anchor="external-anchor" placement="top" active>
+<nu-popup anchor="external-anchor" placement="top" active>
   <div class="box"></div>
-</sl-popup>
+</nu-popup>
 
 <style>
   #external-anchor {
@@ -388,25 +388,25 @@ Since placement is preferred when using `flip`, you can observe the popup's curr
 
 ```html:preview
 <div class="popup-placement">
-  <sl-popup placement="top" active>
+  <nu-popup placement="top" active>
     <span slot="anchor"></span>
     <div class="box"></div>
-  </sl-popup>
+  </nu-popup>
 
-  <sl-select label="Placement" value="top">
-    <sl-option value="top">top</sl-option>
-    <sl-option value="top-start">top-start</sl-option>
-    <sl-option value="top-end">top-end</sl-option>
-    <sl-option value="bottom">bottom</sl-option>
-    <sl-option value="bottom-start">bottom-start</sl-option>
-    <sl-option value="bottom-end">bottom-end</sl-option>
-    <sl-option value="right">right</sl-option>
-    <sl-option value="right-start">right-start</sl-option>
-    <sl-option value="right-end">right-end</sl-option>
-    <sl-option value="left">left</sl-option>
-    <sl-option value="left-start">left-start</sl-option>
-    <sl-option value="left-end">left-end</sl-option>
-  </sl-select>
+  <nu-select label="Placement" value="top">
+    <nu-option value="top">top</nu-option>
+    <nu-option value="top-start">top-start</nu-option>
+    <nu-option value="top-end">top-end</nu-option>
+    <nu-option value="bottom">bottom</nu-option>
+    <nu-option value="bottom-start">bottom-start</nu-option>
+    <nu-option value="bottom-end">bottom-end</nu-option>
+    <nu-option value="right">right</nu-option>
+    <nu-option value="right-start">right-start</nu-option>
+    <nu-option value="right-end">right-end</nu-option>
+    <nu-option value="left">left</nu-option>
+    <nu-option value="left-start">left-start</nu-option>
+    <nu-option value="left-end">left-end</nu-option>
+  </nu-select>
 </div>
 
 <style>
@@ -505,12 +505,12 @@ Use the `distance` attribute to change the distance between the popup and its an
 
 ```html:preview
 <div class="popup-distance">
-  <sl-popup placement="top" distance="0" active>
+  <nu-popup placement="top" distance="0" active>
     <span slot="anchor"></span>
     <div class="box"></div>
-  </sl-popup>
+  </nu-popup>
 
-  <sl-range min="-50" max="50" step="1" value="0" label="Distance"></sl-range>
+  <nu-range min="-50" max="50" step="1" value="0" label="Distance"></nu-range>
 </div>
 
 <style>
@@ -602,12 +602,12 @@ The `skidding` attribute is similar to `distance`, but instead allows you to off
 
 ```html:preview
 <div class="popup-skidding">
-  <sl-popup placement="top" skidding="0" active>
+  <nu-popup placement="top" skidding="0" active>
     <span slot="anchor"></span>
     <div class="box"></div>
-  </sl-popup>
+  </nu-popup>
 
-  <sl-range min="-50" max="50" step="1" value="0" label="Skidding"></sl-range>
+  <nu-range min="-50" max="50" step="1" value="0" label="Skidding"></nu-range>
 </div>
 
 <style>
@@ -701,37 +701,37 @@ By default, the arrow will be aligned as close to the center of the _anchor_ as 
 
 ```html:preview
 <div class="popup-arrow">
-  <sl-popup placement="top" arrow arrow-placement="anchor" distance="8" active>
+  <nu-popup placement="top" arrow arrow-placement="anchor" distance="8" active>
     <span slot="anchor"></span>
     <div class="box"></div>
-  </sl-popup>
+  </nu-popup>
 
   <div class="popup-arrow-options">
-    <sl-select label="Placement" name="placement" value="top" class="popup-overview-select">
-      <sl-option value="top">top</sl-option>
-      <sl-option value="top-start">top-start</sl-option>
-      <sl-option value="top-end">top-end</sl-option>
-      <sl-option value="bottom">bottom</sl-option>
-      <sl-option value="bottom-start">bottom-start</sl-option>
-      <sl-option value="bottom-end">bottom-end</sl-option>
-      <sl-option value="right">right</sl-option>
-      <sl-option value="right-start">right-start</sl-option>
-      <sl-option value="right-end">right-end</sl-option>
-      <sl-option value="left">left</sl-option>
-      <sl-option value="left-start">left-start</sl-option>
-      <sl-option value="left-end">left-end</sl-option>
-    </sl-select>
+    <nu-select label="Placement" name="placement" value="top" class="popup-overview-select">
+      <nu-option value="top">top</nu-option>
+      <nu-option value="top-start">top-start</nu-option>
+      <nu-option value="top-end">top-end</nu-option>
+      <nu-option value="bottom">bottom</nu-option>
+      <nu-option value="bottom-start">bottom-start</nu-option>
+      <nu-option value="bottom-end">bottom-end</nu-option>
+      <nu-option value="right">right</nu-option>
+      <nu-option value="right-start">right-start</nu-option>
+      <nu-option value="right-end">right-end</nu-option>
+      <nu-option value="left">left</nu-option>
+      <nu-option value="left-start">left-start</nu-option>
+      <nu-option value="left-end">left-end</nu-option>
+    </nu-select>
 
-    <sl-select label="Arrow Placement" name="arrow-placement" value="anchor">
-      <sl-option value="anchor">anchor</sl-option>
-      <sl-option value="start">start</sl-option>
-      <sl-option value="end">end</sl-option>
-      <sl-option value="center">center</sl-option>
-    </sl-select>
+    <nu-select label="Arrow Placement" name="arrow-placement" value="anchor">
+      <nu-option value="anchor">anchor</nu-option>
+      <nu-option value="start">start</nu-option>
+      <nu-option value="end">end</nu-option>
+      <nu-option value="center">center</nu-option>
+    </nu-select>
   </div>
 
   <div class="popup-arrow-options">
-    <sl-switch name="arrow" checked>Arrow</sl-switch>
+    <nu-switch name="arrow" checked>Arrow</nu-switch>
   </div>
 
   <style>
@@ -894,17 +894,17 @@ Use the `sync` attribute to make the popup the same width or height as the ancho
 
 ```html:preview
 <div class="popup-sync">
-  <sl-popup placement="top" sync="width" active>
+  <nu-popup placement="top" sync="width" active>
     <span slot="anchor"></span>
     <div class="box"></div>
-  </sl-popup>
+  </nu-popup>
 
-  <sl-select value="width" label="Sync">
-    <sl-option value="width">Width</sl-option>
-    <sl-option value="height">Height</sl-option>
-    <sl-option value="both">Both</sl-option>
-    <sl-option value="">None</sl-option>
-  </sl-select>
+  <nu-select value="width" label="Sync">
+    <nu-option value="width">Width</nu-option>
+    <nu-option value="height">Height</nu-option>
+    <nu-option value="both">Both</nu-option>
+    <nu-option value="">None</nu-option>
+  </nu-select>
 </div>
 
 <style>
@@ -1007,13 +1007,13 @@ Toggle the switch and scroll the container to see the difference.
 ```html:preview
 <div class="popup-strategy">
   <div class="overflow">
-    <sl-popup placement="top" strategy="fixed" active>
+    <nu-popup placement="top" strategy="fixed" active>
       <span slot="anchor"></span>
       <div class="box"></div>
-    </sl-popup>
+    </nu-popup>
   </div>
 
-  <sl-switch checked>Fixed</sl-switch>
+  <nu-switch checked>Fixed</nu-switch>
 </div>
 
 <style>
@@ -1119,14 +1119,14 @@ Scroll the container to see how the popup flips to prevent clipping.
 ```html:preview
 <div class="popup-flip">
   <div class="overflow">
-    <sl-popup placement="top" flip active>
+    <nu-popup placement="top" flip active>
       <span slot="anchor"></span>
       <div class="box"></div>
-    </sl-popup>
+    </nu-popup>
   </div>
 
   <br />
-  <sl-switch checked>Flip</sl-switch>
+  <nu-switch checked>Flip</nu-switch>
 </div>
 
 <style>
@@ -1229,10 +1229,10 @@ Scroll the container to see how the popup changes it's fallback placement to pre
 ```html:preview
 <div class="popup-flip-fallbacks">
   <div class="overflow">
-    <sl-popup placement="top" flip flip-fallback-placements="right bottom" flip-fallback-strategy="initial" active>
+    <nu-popup placement="top" flip flip-fallback-placements="right bottom" flip-fallback-strategy="initial" active>
       <span slot="anchor"></span>
       <div class="box"></div>
-    </sl-popup>
+    </nu-popup>
   </div>
 </div>
 
@@ -1315,13 +1315,13 @@ Toggle the switch to see the difference.
 ```html:preview
 <div class="popup-shift">
   <div class="overflow">
-    <sl-popup placement="top" shift shift-padding="10" active>
+    <nu-popup placement="top" shift shift-padding="10" active>
       <span slot="anchor"></span>
       <div class="box"></div>
-    </sl-popup>
+    </nu-popup>
   </div>
 
-  <sl-switch checked>Shift</sl-switch>
+  <nu-switch checked>Shift</nu-switch>
 </div>
 
 <style>
@@ -1419,14 +1419,14 @@ Scroll the container to see the popup resize as its available space changes.
 ```html:preview
 <div class="popup-auto-size">
   <div class="overflow">
-    <sl-popup placement="top" auto-size="both" auto-size-padding="10" active>
+    <nu-popup placement="top" auto-size="both" auto-size-padding="10" active>
       <span slot="anchor"></span>
       <div class="box"></div>
-    </sl-popup>
+    </nu-popup>
   </div>
 
   <br />
-  <sl-switch checked>Auto-size</sl-switch>
+  <nu-switch checked>Auto-size</nu-switch>
 </div>
 
 <style>
@@ -1536,15 +1536,15 @@ When a gap exists between the anchor and the popup element, this option will add
 
 ```html:preview
 <div class="popup-hover-bridge">
-  <sl-popup placement="top" hover-bridge distance="10" skidding="0" active>
+  <nu-popup placement="top" hover-bridge distance="10" skidding="0" active>
     <span slot="anchor"></span>
     <div class="box"></div>
-  </sl-popup>
+  </nu-popup>
 
   <br>
-  <sl-switch checked>Hover Bridge</sl-switch><br>
-  <sl-range min="0" max="50" step="1" value="10" label="Distance"></sl-range>
-  <sl-range min="-50" max="50" step="1" value="0" label="Skidding"></sl-range>
+  <nu-switch checked>Hover Bridge</nu-switch><br>
+  <nu-range min="0" max="50" step="1" value="10" label="Distance"></nu-range>
+  <nu-range min="-50" max="50" step="1" value="0" label="Skidding"></nu-range>
 </div>
 
 <style>
@@ -1681,11 +1681,11 @@ This example anchors a popup to the mouse cursor using a virtual element. As suc
 
 ```html:preview
 <div class="popup-virtual-element">
-  <sl-popup placement="right-start">
+  <nu-popup placement="right-start">
     <div class="circle"></div>
-  </sl-popup>
+  </nu-popup>
 
-  <sl-switch>Highlight mouse cursor</sl-switch>
+  <nu-switch>Highlight mouse cursor</nu-switch>
 </div>
 
 <script>

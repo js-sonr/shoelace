@@ -6,8 +6,8 @@ import { property, query } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIcon from '../icon/icon.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIcon from '../icon/icon.component.js';
 import styles from './image-comparer.styles.js';
 import type { CSSResultGroup } from 'lit';
 
@@ -23,7 +23,7 @@ import type { CSSResultGroup } from 'lit';
  * @slot after - The after image, an `<img>` or `<svg>` element.
  * @slot handle - The icon used inside the handle.
  *
- * @event sl-change - Emitted when the position changes.
+ * @event nu-change - Emitted when the position changes.
  *
  * @csspart base - The component's base wrapper.
  * @csspart before - The container that wraps the before image.
@@ -34,9 +34,9 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --divider-width - The width of the dividing line.
  * @cssproperty --handle-size - The size of the compare handle.
  */
-export default class SlImageComparer extends ShoelaceElement {
+export default class NuImageComparer extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
-  static scopedElement = { 'sl-icon': SlIcon };
+  static scopedElement = { 'sl-icon': NuIcon };
 
   @query('.image-comparer') base: HTMLElement;
   @query('.image-comparer__handle') handle: HTMLElement;
@@ -89,7 +89,7 @@ export default class SlImageComparer extends ShoelaceElement {
 
   @watch('position', { waitUntilFirstUpdate: true })
   handlePositionChange() {
-    this.emit('sl-change');
+    this.emit('nu-change');
   }
 
   render() {
@@ -141,7 +141,7 @@ export default class SlImageComparer extends ShoelaceElement {
             tabindex="0"
           >
             <slot name="handle">
-              <sl-icon library="system" name="grip-vertical"></sl-icon>
+              <nu-icon library="system" name="grip-vertical"></nu-icon>
             </slot>
           </div>
         </div>
