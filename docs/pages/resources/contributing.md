@@ -267,7 +267,7 @@ Components should be composable, meaning you can easily reuse them with and with
 
 ### Component Structure
 
-All components have a host element, which is a reference to the `<sl-*>` element itself. Make sure to always set the host element's `display` property to the appropriate value depending on your needs, as the default is `inline` per the custom element spec.
+All components have a host element, which is a reference to the `<nu-*>` element itself. Make sure to always set the host element's `display` property to the appropriate value depending on your needs, as the default is `inline` per the custom element spec.
 
 ```css
 :host {
@@ -320,9 +320,9 @@ See the source of card, dialog, or drawer for examples.
 
 ### Dynamic Slot Names and Expand/Collapse Icons
 
-A pattern has been established in `<sl-details>` and `<sl-tree-item>` for expand/collapse icons that animate on open/close. In short, create two slots called `expand-icon` and `collapse-icon` and render them both in the DOM, using CSS to show/hide only one based on the current open state. Avoid conditionally rendering them. Also avoid using dynamic slot names, such as `<slot name=${open ? 'open' : 'closed'}>`, because Firefox will not animate them.
+A pattern has been established in `<nu-details>` and `<nu-tree-item>` for expand/collapse icons that animate on open/close. In short, create two slots called `expand-icon` and `collapse-icon` and render them both in the DOM, using CSS to show/hide only one based on the current open state. Avoid conditionally rendering them. Also avoid using dynamic slot names, such as `<slot name=${open ? 'open' : 'closed'}>`, because Firefox will not animate them.
 
-There should be a container element immediately surrounding both slots. The container should be animated with CSS by default and it should have a part so the user can override the animation or disable it. Please refer to the source and documentation for `<sl-details>` and/or `<sl-tree-item>` for details.
+There should be a container element immediately surrounding both slots. The container should be animated with CSS by default and it should have a part so the user can override the animation or disable it. Please refer to the source and documentation for `<nu-details>` and/or `<nu-tree-item>` for details.
 
 ### Fallback Content in Slots
 
@@ -330,7 +330,7 @@ When providing fallback content inside of `<slot>` elements, avoid adding parts,
 
 ```html
 <slot name="icon">
-  <sl-icon part="close-icon"></sl-icon>
+  <nu-icon part="close-icon"></nu-icon>
 </slot>
 ```
 
@@ -399,7 +399,7 @@ When composing elements, use `part` to export the host element and `exportparts`
 render() {
   return html`
     <div part="base">
-      <sl-icon part="icon" exportparts="base:icon__base" ...></sl-icon>
+      <nu-icon part="icon" exportparts="base:icon__base" ...></nu-icon>
     </div>
   `;
 }
@@ -411,13 +411,13 @@ This results in a consistent, easy to understand structure for parts. In this ex
 
 TL;DR – a component is a dependency if and only if it's rendered inside another component's shadow root.
 
-Many Nebula components use other Nebula components internally. For example, `<sl-button>` uses both `<sl-icon>` and `<sl-spinner>` for its caret icon and loading state, respectively. Since these components appear in the button's shadow root, they are considered dependencies of Button. Since dependencies are automatically loaded, users only need to import the button and everything will work as expected.
+Many Nebula components use other Nebula components internally. For example, `<nu-button>` uses both `<nu-icon>` and `<nu-spinner>` for its caret icon and loading state, respectively. Since these components appear in the button's shadow root, they are considered dependencies of Button. Since dependencies are automatically loaded, users only need to import the button and everything will work as expected.
 
-Contrast this to `<sl-select>` and `<sl-option>`. At first, one might assume that Option is a dependency of Select. After all, you can't really use Select without slotting in at least one Option. However, Option _is not_ a dependency of Select! The reason is because no Option is rendered in the Select's shadow root. Since the options are provided by the user, it's up to them to import both components independently.
+Contrast this to `<nu-select>` and `<nu-option>`. At first, one might assume that Option is a dependency of Select. After all, you can't really use Select without slotting in at least one Option. However, Option _is not_ a dependency of Select! The reason is because no Option is rendered in the Select's shadow root. Since the options are provided by the user, it's up to them to import both components independently.
 
 People often suggest that Nebula should auto-load Select + Option, Menu + Menu Item, Breadcrumb + Breadcrumb Item, etc. Although some components are designed to work together, they're technically not dependencies so eagerly loading them may not be desirable. What if someone wants to roll their own component with a superset of features? They wouldn't be able to if Nebula automatically imported it!
 
-Similarly, in the case of `<sl-radio-group>` there was originally only `<sl-radio>`, but now you can use either `<sl-radio>` or `<sl-radio-button>` as child elements. Which component(s) should be auto-loaded dependencies in this case? Had Radio been a dependency of Radio Group, users that only wanted Radio Buttons would be forced to register both with no way to opt out and no way to provide their own customized version.
+Similarly, in the case of `<nu-radio-group>` there was originally only `<nu-radio>`, but now you can use either `<nu-radio>` or `<nu-radio-button>` as child elements. Which component(s) should be auto-loaded dependencies in this case? Had Radio been a dependency of Radio Group, users that only wanted Radio Buttons would be forced to register both with no way to opt out and no way to provide their own customized version.
 
 For non-dependencies, _the user_ should decide what gets registered, even if it comes with a minor inconvenience.
 
@@ -434,10 +434,10 @@ Form controls should support submission and validation through the following con
 
 ### System Icons
 
-Avoid inlining SVG icons inside of templates. If a component requires an icon, make sure `<sl-icon>` is a dependency of the component and use the [system library](/components/icon#customizing-the-system-library):
+Avoid inlining SVG icons inside of templates. If a component requires an icon, make sure `<nu-icon>` is a dependency of the component and use the [system library](/components/icon#customizing-the-system-library):
 
 ```html
-<sl-icon library="system" name="..."></sl-icon>
+<nu-icon library="system" name="..."></nu-icon>
 ```
 
 This will render the icons instantly whereas the default library will fetch them from a remote source. If an icon isn't available in the system library, you will need to add it to `library.system.ts`. Using the system library ensures that all icons load instantly and are customizable by users who wish to provide a custom resolver for the system library.
@@ -450,7 +450,7 @@ What to test for a given component:
 - Add at least one accessibility test (The accessibility check only covers the parts of the DOM which are currently visible and rendered. Depending on the component, more than one accessibility test is required to cover all scenarios.):
 
 ```ts
-const myComponent = await fixture<SlAlert>(html`<sl-my-component>SomeContent</sl-my-component>`);
+const myComponent = await fixture<SlAlert>(html`<nu-my-component>SomeContent</nu-my-component>`);
 
 await expect(myComponent).to.be.accessible();
 ```

@@ -6,10 +6,10 @@ layout: component
 ---
 
 ```html:preview
-<sl-animated-image
+<nu-animated-image
   src="https://shoelace.style/assets/images/walk.gif"
   alt="Animation of untied shoes walking on pavement"
-></sl-animated-image>
+></nu-animated-image>
 ```
 
 ```jsx:react
@@ -34,10 +34,10 @@ This component uses `<canvas>` to draw freeze frames, so images are subject to [
 Both GIF and WEBP images are supported.
 
 ```html:preview
-<sl-animated-image
+<nu-animated-image
   src="https://shoelace.style/assets/images/tie.webp"
   alt="Animation of a shoe being tied"
-></sl-animated-image>
+></nu-animated-image>
 ```
 
 ```jsx:react
@@ -53,12 +53,12 @@ const App = () => (
 To set a custom size, apply a width and/or height to the host element.
 
 ```html:preview
-<sl-animated-image
+<nu-animated-image
   src="https://shoelace.style/assets/images/walk.gif"
   alt="Animation of untied shoes walking on pavement"
   style="width: 150px; height: 200px;"
 >
-</sl-animated-image>
+</nu-animated-image>
 ```
 
 {% raw %}
@@ -82,11 +82,11 @@ const App = () => (
 You can change the appearance and location of the control box by targeting the `control-box` part in your styles.
 
 ```html:preview
-<sl-animated-image
+<nu-animated-image
   src="https://shoelace.style/assets/images/walk.gif"
   alt="Animation of untied shoes walking on pavement"
   class="animated-image-custom-control-box"
-></sl-animated-image>
+></nu-animated-image>
 
 <style>
   .animated-image-custom-control-box::part(control-box) {

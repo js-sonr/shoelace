@@ -16,7 +16,7 @@ import type { CSSResultGroup } from 'lit';
  * @status stable
  * @since 2.0
  *
- * @event sl-reposition - Emitted when the divider's position changes.
+ * @event nu-reposition - Emitted when the divider's position changes.
  *
  * @slot start - Content to place in the start panel.
  * @slot end - Content to place in the end panel.

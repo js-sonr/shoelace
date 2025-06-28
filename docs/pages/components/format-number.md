@@ -9,9 +9,9 @@ Localization is handled by the browser's [`Intl.NumberFormat` API](https://devel
 
 ```html:preview
 <div class="format-number-overview">
-  <sl-format-number value="1000"></sl-format-number>
+  <nu-format-number value="1000"></nu-format-number>
   <br /><br />
-  <sl-input type="number" value="1000" label="Number to Format" style="max-width: 180px;"></sl-input>
+  <nu-input type="number" value="1000" label="Number to Format" style="max-width: 180px;"></nu-input>
 </div>
 
 <script>
@@ -59,11 +59,11 @@ const App = () => {
 To get the value as a percent, set the `type` attribute to `percent`.
 
 ```html:preview
-<sl-format-number type="percent" value="0"></sl-format-number><br />
-<sl-format-number type="percent" value="0.25"></sl-format-number><br />
-<sl-format-number type="percent" value="0.50"></sl-format-number><br />
-<sl-format-number type="percent" value="0.75"></sl-format-number><br />
-<sl-format-number type="percent" value="1"></sl-format-number>
+<nu-format-number type="percent" value="0"></nu-format-number><br />
+<nu-format-number type="percent" value="0.25"></nu-format-number><br />
+<nu-format-number type="percent" value="0.50"></nu-format-number><br />
+<nu-format-number type="percent" value="0.75"></nu-format-number><br />
+<nu-format-number type="percent" value="1"></nu-format-number>
 ```
 
 ```jsx:react
@@ -89,9 +89,9 @@ const App = () => (
 Use the `lang` attribute to set the number formatting locale.
 
 ```html:preview
-English: <sl-format-number value="2000" lang="en" minimum-fraction-digits="2"></sl-format-number><br />
-German: <sl-format-number value="2000" lang="de" minimum-fraction-digits="2"></sl-format-number><br />
-Russian: <sl-format-number value="2000" lang="ru" minimum-fraction-digits="2"></sl-format-number>
+English: <nu-format-number value="2000" lang="en" minimum-fraction-digits="2"></nu-format-number><br />
+German: <nu-format-number value="2000" lang="de" minimum-fraction-digits="2"></nu-format-number><br />
+Russian: <nu-format-number value="2000" lang="ru" minimum-fraction-digits="2"></nu-format-number>
 ```
 
 ```jsx:react
@@ -113,11 +113,11 @@ const App = () => (
 To format a number as a monetary value, set the `type` attribute to `currency` and set the `currency` attribute to the desired ISO 4217 currency code. You should also specify `lang` to ensure the the number is formatted correctly for the target locale.
 
 ```html:preview
-<sl-format-number type="currency" currency="USD" value="2000" lang="en-US"></sl-format-number><br />
-<sl-format-number type="currency" currency="GBP" value="2000" lang="en-GB"></sl-format-number><br />
-<sl-format-number type="currency" currency="EUR" value="2000" lang="de"></sl-format-number><br />
-<sl-format-number type="currency" currency="RUB" value="2000" lang="ru"></sl-format-number><br />
-<sl-format-number type="currency" currency="CNY" value="2000" lang="zh-cn"></sl-format-number>
+<nu-format-number type="currency" currency="USD" value="2000" lang="en-US"></nu-format-number><br />
+<nu-format-number type="currency" currency="GBP" value="2000" lang="en-GB"></nu-format-number><br />
+<nu-format-number type="currency" currency="EUR" value="2000" lang="de"></nu-format-number><br />
+<nu-format-number type="currency" currency="RUB" value="2000" lang="ru"></nu-format-number><br />
+<nu-format-number type="currency" currency="CNY" value="2000" lang="zh-cn"></nu-format-number>
 ```
 
 ```jsx:react

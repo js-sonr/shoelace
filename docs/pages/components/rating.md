@@ -6,7 +6,7 @@ layout: component
 ---
 
 ```html:preview
-<sl-rating label="Rating"></sl-rating>
+<nu-rating label="Rating"></nu-rating>
 ```
 
 ```jsx:react
@@ -22,7 +22,7 @@ const App = () => <SlRating label="Rating" />;
 Ratings are commonly identified contextually, so labels aren't displayed. However, you should always provide one for assistive devices using the `label` attribute.
 
 ```html:preview
-<sl-rating label="Rate this component"></sl-rating>
+<nu-rating label="Rate this component"></nu-rating>
 ```
 
 ```jsx:react
@@ -36,7 +36,7 @@ const App = () => <SlRating label="Rate this component" />;
 Ratings are 0-5 by default. To change the maximum possible value, use the `max` attribute.
 
 ```html:preview
-<sl-rating label="Rating" max="3"></sl-rating>
+<nu-rating label="Rating" max="3"></nu-rating>
 ```
 
 ```jsx:react
@@ -50,7 +50,7 @@ const App = () => <SlRating label="Rating" max={3} />;
 Use the `precision` attribute to let users select fractional ratings.
 
 ```html:preview
-<sl-rating label="Rating" precision="0.5" value="2.5"></sl-rating>
+<nu-rating label="Rating" precision="0.5" value="2.5"></nu-rating>
 ```
 
 ```jsx:react
@@ -64,7 +64,7 @@ const App = () => <SlRating label="Rating" precision={0.5} value={2.5} />;
 Set the `--symbol-size` custom property to adjust the size.
 
 ```html:preview
-<sl-rating label="Rating" style="--symbol-size: 2rem;"></sl-rating>
+<nu-rating label="Rating" style="--symbol-size: 2rem;"></nu-rating>
 ```
 
 {% raw %}
@@ -82,7 +82,7 @@ const App = () => <SlRating label="Rating" style={{ '--symbol-size': '2rem' }} /
 Use the `readonly` attribute to display a rating that users can't change.
 
 ```html:preview
-<sl-rating label="Rating" readonly value="3"></sl-rating>
+<nu-rating label="Rating" readonly value="3"></nu-rating>
 ```
 
 ```jsx:react
@@ -96,7 +96,7 @@ const App = () => <SlRating label="Rating" readonly value={3} />;
 Use the `disable` attribute to disable the rating.
 
 ```html:preview
-<sl-rating label="Rating" disabled value="3"></sl-rating>
+<nu-rating label="Rating" disabled value="3"></nu-rating>
 ```
 
 ```jsx:react
@@ -113,7 +113,7 @@ The event has a payload with `phase` and `value` properties. The `phase` propert
 
 ```html:preview
 <div class="detect-hover">
-  <sl-rating label="Rating"></sl-rating>
+  <nu-rating label="Rating"></nu-rating>
   <span></span>
 </div>
 
@@ -203,11 +203,11 @@ const App = () => {
 You can provide custom icons by passing a function to the `getSymbol` property.
 
 ```html:preview
-<sl-rating label="Rating" class="rating-hearts" style="--symbol-color-active: #ff4136;"></sl-rating>
+<nu-rating label="Rating" class="rating-hearts" style="--symbol-color-active: #ff4136;"></nu-rating>
 
 <script>
   const rating = document.querySelector('.rating-hearts');
-  rating.getSymbol = () => '<sl-icon name="heart-fill"></sl-icon>';
+  rating.getSymbol = () => '<nu-icon name="heart-fill"></nu-icon>';
 </script>
 ```
 
@@ -219,7 +219,7 @@ import SlRating from '@onsonr/nebula/dist/react/rating';
 const App = () => (
   <SlRating
     label="Rating"
-    getSymbol={() => '<sl-icon name="heart-fill"></sl-icon>'}
+    getSymbol={() => '<nu-icon name="heart-fill"></nu-icon>'}
     style={{ '--symbol-color-active': '#ff4136' }}
   />
 );
@@ -232,14 +232,14 @@ const App = () => (
 You can also use the `getSymbol` property to render different icons based on value.
 
 ```html:preview
-<sl-rating label="Rating" class="rating-emojis"></sl-rating>
+<nu-rating label="Rating" class="rating-emojis"></nu-rating>
 
 <script>
   const rating = document.querySelector('.rating-emojis');
 
   rating.getSymbol = value => {
     const icons = ['emoji-angry', 'emoji-frown', 'emoji-expressionless', 'emoji-smile', 'emoji-laughing'];
-    return `<sl-icon name="${icons[value - 1]}"></sl-icon>`;
+    return `<nu-icon name="${icons[value - 1]}"></nu-icon>`;
   };
 </script>
 ```
@@ -249,7 +249,7 @@ import SlRating from '@onsonr/nebula/dist/react/rating';
 
 function getSymbol(value) {
   const icons = ['emoji-angry', 'emoji-frown', 'emoji-expressionless', 'emoji-smile', 'emoji-laughing'];
-  return `<sl-icon name="${icons[value - 1]}"></sl-icon>`;
+  return `<nu-icon name="${icons[value - 1]}"></nu-icon>`;
 }
 
 const App = () => <SlRating label="Rating" getSymbol={getSymbol} />;

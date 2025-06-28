@@ -12,7 +12,7 @@ import type { CSSResultGroup } from 'lit';
  * @status stable
  * @since 2.0
  *
- * @event {{ mutationList: MutationRecord[] }} sl-mutation - Emitted when a mutation occurs.
+ * @event nu-mutation - Emitted when a mutation occurs.
  *
  * @slot - The content to watch for mutations.
  */

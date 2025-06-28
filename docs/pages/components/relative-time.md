@@ -9,7 +9,7 @@ Localization is handled by the browser's [`Intl.RelativeTimeFormat` API](https:/
 
 ```html:preview
 <!-- Nebula 2 release date 🎉 -->
-<sl-relative-time date="2020-07-15T09:17:00-04:00"></sl-relative-time>
+<nu-relative-time date="2020-07-15T09:17:00-04:00"></nu-relative-time>
 ```
 
 ```jsx:react
@@ -32,7 +32,7 @@ Use the `sync` attribute to update the displayed value automatically as time pas
 
 ```html:preview
 <div class="relative-time-sync">
-  <sl-relative-time sync></sl-relative-time>
+  <nu-relative-time sync></nu-relative-time>
 </div>
 
 <script>
@@ -56,9 +56,9 @@ const App = () => <SlRelativeTime date={date} sync />;
 You can change how the time is displayed using the `format` attribute. Note that some locales may display the same values for `narrow` and `short` formats.
 
 ```html:preview
-<sl-relative-time date="2020-07-15T09:17:00-04:00" format="narrow"></sl-relative-time><br />
-<sl-relative-time date="2020-07-15T09:17:00-04:00" format="short"></sl-relative-time><br />
-<sl-relative-time date="2020-07-15T09:17:00-04:00" format="long"></sl-relative-time>
+<nu-relative-time date="2020-07-15T09:17:00-04:00" format="narrow"></nu-relative-time><br />
+<nu-relative-time date="2020-07-15T09:17:00-04:00" format="short"></nu-relative-time><br />
+<nu-relative-time date="2020-07-15T09:17:00-04:00" format="long"></nu-relative-time>
 ```
 
 ```jsx:react
@@ -80,11 +80,11 @@ const App = () => (
 Use the `lang` attribute to set the desired locale.
 
 ```html:preview
-English: <sl-relative-time date="2020-07-15T09:17:00-04:00" lang="en-US"></sl-relative-time><br />
-Chinese: <sl-relative-time date="2020-07-15T09:17:00-04:00" lang="zh-CN"></sl-relative-time><br />
-German: <sl-relative-time date="2020-07-15T09:17:00-04:00" lang="de"></sl-relative-time><br />
-Greek: <sl-relative-time date="2020-07-15T09:17:00-04:00" lang="el"></sl-relative-time><br />
-Russian: <sl-relative-time date="2020-07-15T09:17:00-04:00" lang="ru"></sl-relative-time>
+English: <nu-relative-time date="2020-07-15T09:17:00-04:00" lang="en-US"></nu-relative-time><br />
+Chinese: <nu-relative-time date="2020-07-15T09:17:00-04:00" lang="zh-CN"></nu-relative-time><br />
+German: <nu-relative-time date="2020-07-15T09:17:00-04:00" lang="de"></nu-relative-time><br />
+Greek: <nu-relative-time date="2020-07-15T09:17:00-04:00" lang="el"></nu-relative-time><br />
+Russian: <nu-relative-time date="2020-07-15T09:17:00-04:00" lang="ru"></nu-relative-time>
 ```
 
 ```jsx:react

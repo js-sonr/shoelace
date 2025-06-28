@@ -18,7 +18,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @slot - The tag's content.
  *
- * @event sl-remove - Emitted when the remove button is activated.
+ * @event nu-remove - Emitted when the remove button is activated.
  *
  * @csspart base - The component's base wrapper.
  * @csspart content - The tag's content.

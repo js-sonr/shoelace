@@ -10,7 +10,7 @@
       <div class="search__content">
         <div class="search__header">
           <div id="search-combobox" class="search__input-wrapper">
-            <sl-icon name="search"></sl-icon>
+            <nu-icon name="search"></nu-icon>
             <input
               id="search-input"
               class="search__input"
@@ -30,7 +30,7 @@
               aria-activedescendant
             >
             <button type="button" class="search__clear-button" aria-label="Clear entry" tabindex="-1" hidden>
-              <sl-icon name="x-circle-fill"></sl-icon>
+              <nu-icon name="x-circle-fill"></nu-icon>
             </button>
           </div>
         </div>
@@ -317,7 +317,7 @@
         a.href = page.url;
         a.innerHTML = `
           <div class="search__result-icon" aria-hidden="true">
-            <sl-icon name="${icon}"></sl-icon>
+            <nu-icon name="${icon}"></nu-icon>
           </div>
           <div class="search__result__details">
             <div class="search__result-title"></div>

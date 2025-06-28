@@ -25,12 +25,12 @@ import type { CSSResultGroup, PropertyValueMap } from 'lit';
  * @dependency sl-icon
  * @dependency sl-spinner
  *
- * @event sl-expand - Emitted when the tree item expands.
- * @event sl-after-expand - Emitted after the tree item expands and all animations are complete.
- * @event sl-collapse - Emitted when the tree item collapses.
- * @event sl-after-collapse - Emitted after the tree item collapses and all animations are complete.
- * @event sl-lazy-change - Emitted when the tree item's lazy state changes.
- * @event sl-lazy-load - Emitted when a lazy item is selected. Use this event to asynchronously load data and append
+ * @event nu-expand - Emitted when the tree item expands.
+ * @event nu-after-expand - Emitted after the tree item expands and all animations are complete.
+ * @event nu-collapse - Emitted when the tree item collapses.
+ * @event nu-after-collapse - Emitted after the tree item collapses and all animations are complete.
+ * @event nu-lazy-change - Emitted when the tree item's lazy state changes.
+ * @event nu-lazy-load - Emitted when a lazy item is selected. Use this event to asynchronously load data and append
  *  items to the tree before expanding. After appending new items, remove the `lazy` attribute to remove the loading
  *  state and update the tree.
  *

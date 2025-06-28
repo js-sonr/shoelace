@@ -40,7 +40,7 @@ Preact users facing type errors using components may benefit from setting "paths
 
 ### Importing Components
 
-Every Nebula component is available to import as a React component. Note that we're importing the `<SlButton>` _React component_ instead of the `<sl-button>` _custom element_ in the example below.
+Every Nebula component is available to import as a React component. Note that we're importing the `<SlButton>` _React component_ instead of the `<nu-button>` _custom element_ in the example below.
 
 ```jsx
 import SlButton from '@onsonr/nebula/%NPMDIR%/react/button';

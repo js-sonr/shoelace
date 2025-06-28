@@ -6,7 +6,7 @@ layout: component
 ---
 
 ```html:preview
-<sl-switch>Switch</sl-switch>
+<nu-switch>Switch</nu-switch>
 ```
 
 ```jsx:react
@@ -26,7 +26,7 @@ This component works with standard `<form>` elements. Please refer to the sectio
 Use the `checked` attribute to activate the switch.
 
 ```html:preview
-<sl-switch checked>Checked</sl-switch>
+<nu-switch checked>Checked</nu-switch>
 ```
 
 ```jsx:react
@@ -40,7 +40,7 @@ const App = () => <SlSwitch checked>Checked</SlSwitch>;
 Use the `disabled` attribute to disable the switch.
 
 ```html:preview
-<sl-switch disabled>Disabled</sl-switch>
+<nu-switch disabled>Disabled</nu-switch>
 ```
 
 ```jsx:react
@@ -54,11 +54,11 @@ const App = () => <SlSwitch disabled>Disabled</SlSwitch>;
 Use the `size` attribute to change a switch's size.
 
 ```html:preview
-<sl-switch size="small">Small</sl-switch>
+<nu-switch size="small">Small</nu-switch>
 <br />
-<sl-switch size="medium">Medium</sl-switch>
+<nu-switch size="medium">Medium</nu-switch>
 <br />
-<sl-switch size="large">Large</sl-switch>
+<nu-switch size="large">Large</nu-switch>
 ```
 
 ```jsx:react
@@ -80,7 +80,7 @@ const App = () => (
 Add descriptive help text to a switch with the `help-text` attribute. For help texts that contain HTML, use the `help-text` slot instead.
 
 ```html:preview
-<sl-switch help-text="What should the user know about the switch?">Label</sl-switch>
+<nu-switch help-text="What should the user know about the switch?">Label</nu-switch>
 ```
 
 ```jsx:react
@@ -94,7 +94,7 @@ const App = () => <SlSwitch help-text="What should the user know about the switc
 Use the available custom properties to change how the switch is styled.
 
 ```html:preview
-<sl-switch style="--width: 80px; --height: 40px; --thumb-size: 36px;">Really big</sl-switch>
+<nu-switch style="--width: 80px; --height: 40px; --thumb-size: 36px;">Really big</nu-switch>
 ```
 
 {% raw %}

@@ -4,7 +4,7 @@ import { expect, fixture } from '@open-wc/testing';
 import { html } from 'lit';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
-import type { NuSelectEvent } from ../../events/nu-select.js';
+import type { NuSelectEvent } from '../../events/events.js';
 import type NuMenu from './menu.js';
 
 describe('<nu-menu>', () => {

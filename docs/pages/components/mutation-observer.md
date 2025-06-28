@@ -9,9 +9,9 @@ The mutation observer will report changes to the content it wraps through the `s
 
 ```html:preview
 <div class="mutation-overview">
-  <sl-mutation-observer attr="variant">
-    <sl-button variant="primary">Click to mutate</sl-button>
-  </sl-mutation-observer>
+  <nu-mutation-observer attr="variant">
+    <nu-button variant="primary">Click to mutate</nu-button>
+  </nu-mutation-observer>
 
   <br />
   👆 Click the button and watch the console
@@ -96,11 +96,11 @@ Use the `child-list` attribute to watch for new child elements that are added or
 
 ```html:preview
 <div class="mutation-child-list">
-  <sl-mutation-observer child-list>
+  <nu-mutation-observer child-list>
     <div class="buttons">
-      <sl-button variant="primary">Add button</sl-button>
+      <nu-button variant="primary">Add button</nu-button>
     </div>
-  </sl-mutation-observer>
+  </nu-mutation-observer>
 
   👆 Add and remove buttons and watch the console
 

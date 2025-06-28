@@ -9,7 +9,7 @@ Localization is handled by the browser's [`Intl.DateTimeFormat` API](https://dev
 
 ```html:preview
 <!-- Nebula 2 release date 🎉 -->
-<sl-format-date date="2020-07-15T09:17:00-04:00"></sl-format-date>
+<nu-format-date date="2020-07-15T09:17:00-04:00"></nu-format-date>
 ```
 
 ```jsx:react
@@ -32,22 +32,22 @@ Formatting options are based on those found in the [`Intl.DateTimeFormat` API](h
 
 ```html:preview
 <!-- Human-readable date -->
-<sl-format-date month="long" day="numeric" year="numeric"></sl-format-date><br />
+<nu-format-date month="long" day="numeric" year="numeric"></nu-format-date><br />
 
 <!-- Time -->
-<sl-format-date hour="numeric" minute="numeric"></sl-format-date><br />
+<nu-format-date hour="numeric" minute="numeric"></nu-format-date><br />
 
 <!-- Weekday -->
-<sl-format-date weekday="long"></sl-format-date><br />
+<nu-format-date weekday="long"></nu-format-date><br />
 
 <!-- Month -->
-<sl-format-date month="long"></sl-format-date><br />
+<nu-format-date month="long"></nu-format-date><br />
 
 <!-- Year -->
-<sl-format-date year="numeric"></sl-format-date><br />
+<nu-format-date year="numeric"></nu-format-date><br />
 
 <!-- No formatting options -->
-<sl-format-date></sl-format-date>
+<nu-format-date></nu-format-date>
 ```
 
 ```jsx:react
@@ -86,8 +86,8 @@ const App = () => (
 By default, the browser will determine whether to use 12-hour or 24-hour time. To force one or the other, set the `hour-format` attribute to `12` or `24`.
 
 ```html:preview
-<sl-format-date hour="numeric" minute="numeric" hour-format="12"></sl-format-date><br />
-<sl-format-date hour="numeric" minute="numeric" hour-format="24"></sl-format-date>
+<nu-format-date hour="numeric" minute="numeric" hour-format="12"></nu-format-date><br />
+<nu-format-date hour="numeric" minute="numeric" hour-format="24"></nu-format-date>
 ```
 
 ```jsx:react
@@ -107,9 +107,9 @@ const App = () => (
 Use the `lang` attribute to set the date/time formatting locale.
 
 ```html:preview
-English: <sl-format-date lang="en"></sl-format-date><br />
-French: <sl-format-date lang="fr"></sl-format-date><br />
-Russian: <sl-format-date lang="ru"></sl-format-date>
+English: <nu-format-date lang="en"></nu-format-date><br />
+French: <nu-format-date lang="fr"></nu-format-date><br />
+Russian: <nu-format-date lang="ru"></nu-format-date>
 ```
 
 ```jsx:react

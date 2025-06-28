@@ -19,10 +19,10 @@ The [discussion forum](https://github.com/onsonr/nebula/discussions) is open to 
 - Show the community what you're working on
 - Learn more about the project, its values, and its roadmap
 
-<sl-button variant="primary" href="https://github.com/onsonr/nebula/discussions" target="_blank">
-  <sl-icon name="github" slot="prefix"></sl-icon>
+<nu-button variant="primary" href="https://github.com/onsonr/nebula/discussions" target="_blank">
+  <nu-icon name="github" slot="prefix"></nu-icon>
   Join the Discussion
-</sl-button>
+</nu-button>
 
 ## Community Chat
 
@@ -33,19 +33,19 @@ The [community chat](https://discord.gg/mg8f26C) is open to the public and power
 - Show the community what you're working on
 - Chat live with other designers, developers, and Nebula fans
 
-<sl-button variant="primary" href="https://discord.gg/mg8f26C" target="_blank">
-  <sl-icon name="discord" slot="prefix"></sl-icon>
+<nu-button variant="primary" href="https://discord.gg/mg8f26C" target="_blank">
+  <nu-icon name="discord" slot="prefix"></nu-icon>
   Join the Chat
-</sl-button>
+</nu-button>
 
 ## Stack Overflow
 
 You can post questions on Stack Overflow using [the "shoelace" tag](https://stackoverflow.com/questions/tagged/shoelace). This is a public forum where talented developers answer questions. It's a great way to get help, but it is not maintained by the Nebula author.
 
-<sl-button variant="primary" href="https://stackoverflow.com/questions/ask?tags=shoelace" target="_blank">
-  <sl-icon name="stack-overflow" slot="prefix"></sl-icon>
+<nu-button variant="primary" href="https://stackoverflow.com/questions/ask?tags=shoelace" target="_blank">
+  <nu-icon name="stack-overflow" slot="prefix"></nu-icon>
   Ask for Help
-</sl-button>
+</nu-button>
 
 ## Twitter
 
@@ -53,7 +53,7 @@ Follow [@shoelace_style](https://twitter.com/shoelace_style) on Twitter for gene
 
 **Please avoid using Twitter for support questions.** The [discussion forum](https://github.com/onsonr/nebula/discussions) is a much better place to share code snippets, screenshots, and other troubleshooting info. You'll have much better luck there, as more users will have a chance to help you.
 
-<sl-button variant="primary" href="https://twitter.com/shoelace_style" target="_blank">
-  <sl-icon name="twitter" slot="prefix"></sl-icon>
+<nu-button variant="primary" href="https://twitter.com/shoelace_style" target="_blank">
+  <nu-icon name="twitter" slot="prefix"></nu-icon>
   Follow on Twitter
-</sl-button>
+</nu-button>

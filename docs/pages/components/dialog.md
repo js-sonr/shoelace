@@ -8,12 +8,12 @@ layout: component
 <!-- cspell:dictionaries lorem-ipsum -->
 
 ```html:preview
-<sl-dialog label="Dialog" class="dialog-overview">
+<nu-dialog label="Dialog" class="dialog-overview">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  <sl-button slot="footer" variant="primary">Close</sl-button>
-</sl-dialog>
+  <nu-button slot="footer" variant="primary">Close</nu-button>
+</nu-dialog>
 
-<sl-button>Open Dialog</sl-button>
+<nu-button>Open Dialog</nu-button>
 
 <script>
   const dialog = document.querySelector('.dialog-overview');
@@ -55,12 +55,12 @@ const App = () => {
 Use the `--width` custom property to set the dialog's width.
 
 ```html:preview
-<sl-dialog label="Dialog" class="dialog-width" style="--width: 50vw;">
+<nu-dialog label="Dialog" class="dialog-width" style="--width: 50vw;">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  <sl-button slot="footer" variant="primary">Close</sl-button>
-</sl-dialog>
+  <nu-button slot="footer" variant="primary">Close</nu-button>
+</nu-dialog>
 
-<sl-button>Open Dialog</sl-button>
+<nu-button>Open Dialog</nu-button>
 
 <script>
   const dialog = document.querySelector('.dialog-width');
@@ -104,14 +104,14 @@ const App = () => {
 By design, a dialog's height will never exceed that of the viewport. As such, dialogs will not scroll with the page ensuring the header and footer are always accessible to the user.
 
 ```html:preview
-<sl-dialog label="Dialog" class="dialog-scrolling">
+<nu-dialog label="Dialog" class="dialog-scrolling">
   <div style="height: 150vh; border: dashed 2px var(--sl-color-neutral-200); padding: 0 1rem;">
     <p>Scroll down and give it a try! 👇</p>
   </div>
-  <sl-button slot="footer" variant="primary">Close</sl-button>
-</sl-dialog>
+  <nu-button slot="footer" variant="primary">Close</nu-button>
+</nu-dialog>
 
-<sl-button>Open Dialog</sl-button>
+<nu-button>Open Dialog</nu-button>
 
 <script>
   const dialog = document.querySelector('.dialog-scrolling');
@@ -164,13 +164,13 @@ const App = () => {
 The header shows a functional close button by default. You can use the `header-actions` slot to add additional [icon buttons](/components/icon-button) if needed.
 
 ```html:preview
-<sl-dialog label="Dialog" class="dialog-header-actions">
-  <sl-icon-button class="new-window" slot="header-actions" name="box-arrow-up-right"></sl-icon-button>
+<nu-dialog label="Dialog" class="dialog-header-actions">
+  <nu-icon-button class="new-window" slot="header-actions" name="box-arrow-up-right"></nu-icon-button>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  <sl-button slot="footer" variant="primary">Close</sl-button>
-</sl-dialog>
+  <nu-button slot="footer" variant="primary">Close</nu-button>
+</nu-dialog>
 
-<sl-button>Open Dialog</sl-button>
+<nu-button>Open Dialog</nu-button>
 
 <script>
   const dialog = document.querySelector('.dialog-header-actions');
@@ -223,12 +223,12 @@ To keep the dialog open in such cases, you can cancel the `sl-request-close` eve
 You can use `event.detail.source` to determine what triggered the request to close. This example prevents the dialog from closing when the overlay is clicked, but allows the close button or [[Escape]] to dismiss it.
 
 ```html:preview
-<sl-dialog label="Dialog" class="dialog-deny-close">
+<nu-dialog label="Dialog" class="dialog-deny-close">
   This dialog will not close when you click on the overlay.
-  <sl-button slot="footer" variant="primary">Close</sl-button>
-</sl-dialog>
+  <nu-button slot="footer" variant="primary">Close</nu-button>
+</nu-dialog>
 
-<sl-button>Open Dialog</sl-button>
+<nu-button>Open Dialog</nu-button>
 
 <script>
   const dialog = document.querySelector('.dialog-deny-close');
@@ -282,12 +282,12 @@ const App = () => {
 By default, the dialog's panel will gain focus when opened. This allows a subsequent tab press to focus on the first tabbable element in the dialog. If you want a different element to have focus, add the `autofocus` attribute to it as shown below.
 
 ```html:preview
-<sl-dialog label="Dialog" class="dialog-focus">
-  <sl-input autofocus placeholder="I will have focus when the dialog is opened"></sl-input>
-  <sl-button slot="footer" variant="primary">Close</sl-button>
-</sl-dialog>
+<nu-dialog label="Dialog" class="dialog-focus">
+  <nu-input autofocus placeholder="I will have focus when the dialog is opened"></nu-input>
+  <nu-button slot="footer" variant="primary">Close</nu-button>
+</nu-dialog>
 
-<sl-button>Open Dialog</sl-button>
+<nu-button>Open Dialog</nu-button>
 
 <script>
   const dialog = document.querySelector('.dialog-focus');

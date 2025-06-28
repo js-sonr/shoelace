@@ -15,8 +15,8 @@ import type { CSSResultGroup } from 'lit';
  *
  * @dependency sl-icon
  *
- * @event sl-load - Emitted when the image loads successfully.
- * @event sl-error - Emitted when the image fails to load.
+ * @event nu-load - Emitted when the image loads successfully.
+ * @event nu-error - Emitted when the image fails to load.
  *
  * @slot play-icon - Optional play icon to use instead of the default. Works best with `<nu-icon>`.
  * @slot pause-icon - Optional pause icon to use instead of the default. Works best with `<nu-icon>`.

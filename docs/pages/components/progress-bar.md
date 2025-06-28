@@ -6,7 +6,7 @@ layout: component
 ---
 
 ```html:preview
-<sl-progress-bar value="50"></sl-progress-bar>
+<nu-progress-bar value="50"></nu-progress-bar>
 ```
 
 ```jsx:react
@@ -22,7 +22,7 @@ const App = () => <SlProgressBar value={50} />;
 Use the `label` attribute to label the progress bar and tell assistive devices how to announce it.
 
 ```html:preview
-<sl-progress-bar value="50" label="Upload progress"></sl-progress-bar>
+<nu-progress-bar value="50" label="Upload progress"></nu-progress-bar>
 ```
 
 ```jsx:react
@@ -36,7 +36,7 @@ const App = () => <SlProgressBar value="50" label="Upload progress" />;
 Use the `--height` custom property to set the progress bar's height.
 
 ```html:preview
-<sl-progress-bar value="50" style="--height: 6px;"></sl-progress-bar>
+<nu-progress-bar value="50" style="--height: 6px;"></nu-progress-bar>
 ```
 
 {% raw %}
@@ -54,12 +54,12 @@ const App = () => <SlProgressBar value={50} style={{ '--height': '6px' }} />;
 Use the default slot to show a value.
 
 ```html:preview
-<sl-progress-bar value="50" class="progress-bar-values">50%</sl-progress-bar>
+<nu-progress-bar value="50" class="progress-bar-values">50%</nu-progress-bar>
 
 <br />
 
-<sl-button circle><sl-icon name="dash" label="Decrease"></sl-icon></sl-button>
-<sl-button circle><sl-icon name="plus" label="Increase"></sl-icon></sl-button>
+<nu-button circle><nu-icon name="dash" label="Decrease"></nu-icon></nu-button>
+<nu-button circle><nu-icon name="plus" label="Increase"></nu-icon></nu-button>
 
 <script>
   const progressBar = document.querySelector('.progress-bar-values');
@@ -119,7 +119,7 @@ const App = () => {
 The `indeterminate` attribute can be used to inform the user that the operation is pending, but its status cannot currently be determined. In this state, `value` is ignored and the label, if present, will not be shown.
 
 ```html:preview
-<sl-progress-bar indeterminate></sl-progress-bar>
+<nu-progress-bar indeterminate></nu-progress-bar>
 ```
 
 ```jsx:react

@@ -6,11 +6,11 @@ layout: component
 ---
 
 ```html:preview
-<sl-tag variant="primary">Primary</sl-tag>
-<sl-tag variant="success">Success</sl-tag>
-<sl-tag variant="neutral">Neutral</sl-tag>
-<sl-tag variant="warning">Warning</sl-tag>
-<sl-tag variant="danger">Danger</sl-tag>
+<nu-tag variant="primary">Primary</nu-tag>
+<nu-tag variant="success">Success</nu-tag>
+<nu-tag variant="neutral">Neutral</nu-tag>
+<nu-tag variant="warning">Warning</nu-tag>
+<nu-tag variant="danger">Danger</nu-tag>
 ```
 
 ```jsx:react
@@ -34,9 +34,9 @@ const App = () => (
 Use the `size` attribute to change a tab's size.
 
 ```html:preview
-<sl-tag size="small">Small</sl-tag>
-<sl-tag size="medium">Medium</sl-tag>
-<sl-tag size="large">Large</sl-tag>
+<nu-tag size="small">Small</nu-tag>
+<nu-tag size="medium">Medium</nu-tag>
+<nu-tag size="large">Large</nu-tag>
 ```
 
 ```jsx:react
@@ -56,9 +56,9 @@ const App = () => (
 Use the `pill` attribute to give tabs rounded edges.
 
 ```html:preview
-<sl-tag size="small" pill>Small</sl-tag>
-<sl-tag size="medium" pill>Medium</sl-tag>
-<sl-tag size="large" pill>Large</sl-tag>
+<nu-tag size="small" pill>Small</nu-tag>
+<nu-tag size="medium" pill>Medium</nu-tag>
+<nu-tag size="large" pill>Large</nu-tag>
 ```
 
 ```jsx:react
@@ -85,9 +85,9 @@ Use the `removable` attribute to add a remove button to the tag.
 
 ```html:preview
 <div class="tags-removable">
-  <sl-tag size="small" removable>Small</sl-tag>
-  <sl-tag size="medium" removable>Medium</sl-tag>
-  <sl-tag size="large" removable>Large</sl-tag>
+  <nu-tag size="small" removable>Small</nu-tag>
+  <nu-tag size="medium" removable>Medium</nu-tag>
+  <nu-tag size="large" removable>Large</nu-tag>
 </div>
 
 <script>

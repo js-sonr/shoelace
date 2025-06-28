@@ -21,7 +21,7 @@ let id = 0;
  *
  * @slot - The tab's label.
  *
- * @event sl-close - Emitted when the tab is closable and the close button is activated.
+ * @event nu-close - Emitted when the tab is closable and the close button is activated.
  *
  * @csspart base - The component's base wrapper.
  * @csspart close-button - The close button, an `<nu-icon-button>`.

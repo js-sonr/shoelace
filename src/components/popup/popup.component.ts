@@ -28,7 +28,7 @@ function isVirtualElement(e: unknown): e is VirtualElement {
  * @status stable
  * @since 2.0
  *
- * @event sl-reposition - Emitted when the popup is repositioned. This event can fire a lot, so avoid putting expensive
+ * @event nu-reposition - Emitted when the popup is repositioned. This event can fire a lot, so avoid putting expensive
  *  operations in your listener or consider debouncing it.
  *
  * @slot - The popup's content.

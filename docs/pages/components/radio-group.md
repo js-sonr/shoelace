@@ -6,11 +6,11 @@ layout: component
 ---
 
 ```html:preview
-<sl-radio-group label="Select an option" name="a" value="1">
-  <sl-radio value="1">Option 1</sl-radio>
-  <sl-radio value="2">Option 2</sl-radio>
-  <sl-radio value="3">Option 3</sl-radio>
-</sl-radio-group>
+<nu-radio-group label="Select an option" name="a" value="1">
+  <nu-radio value="1">Option 1</nu-radio>
+  <nu-radio value="2">Option 2</nu-radio>
+  <nu-radio value="3">Option 3</nu-radio>
+</nu-radio-group>
 ```
 
 ```jsx:react
@@ -33,11 +33,11 @@ const App = () => (
 Add descriptive help text to a radio group with the `help-text` attribute. For help texts that contain HTML, use the `help-text` slot instead.
 
 ```html:preview
-<sl-radio-group label="Select an option" help-text="Choose the most appropriate option." name="a" value="1">
-  <sl-radio value="1">Option 1</sl-radio>
-  <sl-radio value="2">Option 2</sl-radio>
-  <sl-radio value="3">Option 3</sl-radio>
-</sl-radio-group>
+<nu-radio-group label="Select an option" help-text="Choose the most appropriate option." name="a" value="1">
+  <nu-radio value="1">Option 1</nu-radio>
+  <nu-radio value="2">Option 2</nu-radio>
+  <nu-radio value="3">Option 3</nu-radio>
+</nu-radio-group>
 ```
 
 ```jsx:react
@@ -58,11 +58,11 @@ const App = () => (
 [Radio buttons](/components/radio-button) offer an alternate way to display radio controls. In this case, an internal [button group](/components/button-group) is used to group the buttons into a single, cohesive control.
 
 ```html:preview
-<sl-radio-group label="Select an option" help-text="Select an option that makes you proud." name="a" value="1">
-  <sl-radio-button value="1">Option 1</sl-radio-button>
-  <sl-radio-button value="2">Option 2</sl-radio-button>
-  <sl-radio-button value="3">Option 3</sl-radio-button>
-</sl-radio-group>
+<nu-radio-group label="Select an option" help-text="Select an option that makes you proud." name="a" value="1">
+  <nu-radio-button value="1">Option 1</nu-radio-button>
+  <nu-radio-button value="2">Option 2</nu-radio-button>
+  <nu-radio-button value="3">Option 3</nu-radio-button>
+</nu-radio-group>
 ```
 
 ```jsx:react
@@ -83,11 +83,11 @@ const App = () => (
 Radios and radio buttons can be disabled by adding the `disabled` attribute to the respective options inside the radio group.
 
 ```html:preview
-<sl-radio-group label="Select an option" name="a" value="1">
-  <sl-radio value="1">Option 1</sl-radio>
-  <sl-radio value="2" disabled>Option 2</sl-radio>
-  <sl-radio value="3">Option 3</sl-radio>
-</sl-radio-group>
+<nu-radio-group label="Select an option" name="a" value="1">
+  <nu-radio value="1">Option 1</nu-radio>
+  <nu-radio value="2" disabled>Option 2</nu-radio>
+  <nu-radio value="3">Option 3</nu-radio>
+</nu-radio-group>
 ```
 
 ```jsx:react
@@ -110,11 +110,11 @@ const App = () => (
 The size of [Radios](/components/radio) and [Radio Buttons](/components/radio-buttons) will be determined by the Radio Group's `size` attribute.
 
 ```html preview
-<sl-radio-group label="Select an option" size="medium" value="medium" class="radio-group-size">
-  <sl-radio value="small">Small</sl-radio>
-  <sl-radio value="medium">Medium</sl-radio>
-  <sl-radio value="large">Large</sl-radio>
-</sl-radio-group>
+<nu-radio-group label="Select an option" size="medium" value="medium" class="radio-group-size">
+  <nu-radio value="small">Small</nu-radio>
+  <nu-radio value="medium">Medium</nu-radio>
+  <nu-radio value="large">Large</nu-radio>
+</nu-radio-group>
 
 <script>
   const radioGroup = document.querySelector('.radio-group-size');
@@ -161,13 +161,13 @@ Setting the `required` attribute to make selecting an option mandatory. If a val
 
 ```html:preview
 <form class="validation">
-  <sl-radio-group label="Select an option" name="a" required>
-    <sl-radio value="1">Option 1</sl-radio>
-    <sl-radio value="2">Option 2</sl-radio>
-    <sl-radio value="3">Option 3</sl-radio>
-  </sl-radio-group>
+  <nu-radio-group label="Select an option" name="a" required>
+    <nu-radio value="1">Option 1</nu-radio>
+    <nu-radio value="2">Option 2</nu-radio>
+    <nu-radio value="3">Option 3</nu-radio>
+  </nu-radio-group>
   <br />
-  <sl-button type="submit" variant="primary">Submit</sl-button>
+  <nu-button type="submit" variant="primary">Submit</nu-button>
 </form>
 
 <script>
@@ -220,13 +220,13 @@ Use the `setCustomValidity()` method to set a custom validation message. This wi
 
 ```html:preview
 <form class="custom-validity">
-  <sl-radio-group label="Select an option" name="a" value="1">
-    <sl-radio value="1">Not me</sl-radio>
-    <sl-radio value="2">Me neither</sl-radio>
-    <sl-radio value="3">Choose me</sl-radio>
-  </sl-radio-group>
+  <nu-radio-group label="Select an option" name="a" value="1">
+    <nu-radio value="1">Not me</nu-radio>
+    <nu-radio value="2">Me neither</nu-radio>
+    <nu-radio value="3">Choose me</nu-radio>
+  </nu-radio-group>
   <br />
-  <sl-button type="submit" variant="primary">Submit</sl-button>
+  <nu-button type="submit" variant="primary">Submit</nu-button>
 </form>
 
 <script>

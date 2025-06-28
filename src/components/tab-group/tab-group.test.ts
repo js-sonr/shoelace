@@ -7,7 +7,7 @@ import { queryByTestId } from '../../internal/test/data-testid-helpers.js';
 import { sendKeys } from '@web/test-runner-commands';
 import { waitForScrollingToEnd } from '../../internal/test/wait-for-scrolling.js';
 import type { HTMLTemplateResult } from 'lit';
-import type { NuTabShowEvent } from ../../events/nu-tab-show.js';
+import type { NuTabShowEvent } from '../../events/events.js';
 import type NuTab from '../tab/tab.js';
 import type NuTabGroup from './tab-group.js';
 import type NuTabPanel from '../tab-panel/tab-panel.js';

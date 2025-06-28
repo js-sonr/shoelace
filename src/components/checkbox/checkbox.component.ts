@@ -26,11 +26,11 @@ import type { NebulaFormControl } from '../../internal/nebula-element.js';
  * @slot - The checkbox's label.
  * @slot help-text - Text that describes how to use the checkbox. Alternatively, you can use the `help-text` attribute.
  *
- * @event sl-blur - Emitted when the checkbox loses focus.
- * @event sl-change - Emitted when the checked state changes.
- * @event sl-focus - Emitted when the checkbox gains focus.
- * @event sl-input - Emitted when the checkbox receives input.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-blur - Emitted when the checkbox loses focus.
+ * @event nu-change - Emitted when the checked state changes.
+ * @event nu-focus - Emitted when the checkbox gains focus.
+ * @event nu-input - Emitted when the checkbox receives input.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart base - The component's base wrapper.
  * @csspart control - The square container that wraps the checkbox's checked state.

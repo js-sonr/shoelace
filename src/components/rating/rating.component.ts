@@ -19,8 +19,8 @@ import type { CSSResultGroup } from 'lit';
  *
  * @dependency sl-icon
  *
- * @event sl-change - Emitted when the rating's value changes.
- * @event {{ phase: 'start' | 'move' | 'end', value: number }} sl-hover - Emitted when the user hovers over a value. The
+ * @event nu-change - Emitted when the rating's value changes.
+ * @event nu-hover - Emitted when the user hovers over a value. The
  *  `phase` property indicates when hovering starts, moves to a new value, or ends. The `value` property tells what the
  *  rating's value would be if the user were to commit to the hovered value.
  *

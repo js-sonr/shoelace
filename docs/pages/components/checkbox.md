@@ -6,7 +6,7 @@ layout: component
 ---
 
 ```html:preview
-<sl-checkbox>Checkbox</sl-checkbox>
+<nu-checkbox>Checkbox</nu-checkbox>
 ```
 
 ```jsx:react
@@ -26,7 +26,7 @@ This component works with standard `<form>` elements. Please refer to the sectio
 Use the `checked` attribute to activate the checkbox.
 
 ```html:preview
-<sl-checkbox checked>Checked</sl-checkbox>
+<nu-checkbox checked>Checked</nu-checkbox>
 ```
 
 ```jsx:react
@@ -40,7 +40,7 @@ const App = () => <SlCheckbox checked>Checked</SlCheckbox>;
 Use the `indeterminate` attribute to make the checkbox indeterminate.
 
 ```html:preview
-<sl-checkbox indeterminate>Indeterminate</sl-checkbox>
+<nu-checkbox indeterminate>Indeterminate</nu-checkbox>
 ```
 
 ```jsx:react
@@ -54,7 +54,7 @@ const App = () => <SlCheckbox indeterminate>Indeterminate</SlCheckbox>;
 Use the `disabled` attribute to disable the checkbox.
 
 ```html:preview
-<sl-checkbox disabled>Disabled</sl-checkbox>
+<nu-checkbox disabled>Disabled</nu-checkbox>
 ```
 
 ```jsx:react
@@ -68,11 +68,11 @@ const App = () => <SlCheckbox disabled>Disabled</SlCheckbox>;
 Use the `size` attribute to change a checkbox's size.
 
 ```html:preview
-<sl-checkbox size="small">Small</sl-checkbox>
+<nu-checkbox size="small">Small</nu-checkbox>
 <br />
-<sl-checkbox size="medium">Medium</sl-checkbox>
+<nu-checkbox size="medium">Medium</nu-checkbox>
 <br />
-<sl-checkbox size="large">Large</sl-checkbox>
+<nu-checkbox size="large">Large</nu-checkbox>
 ```
 
 ```jsx:react
@@ -94,7 +94,7 @@ const App = () => (
 Add descriptive help text to a switch with the `help-text` attribute. For help texts that contain HTML, use the `help-text` slot instead.
 
 ```html:preview
-<sl-checkbox help-text="What should the user know about the checkbox?">Label</sl-checkbox>
+<nu-checkbox help-text="What should the user know about the checkbox?">Label</nu-checkbox>
 ```
 
 ```jsx:react
@@ -109,9 +109,9 @@ Use the `setCustomValidity()` method to set a custom validation message. This wi
 
 ```html:preview
 <form class="custom-validity">
-  <sl-checkbox>Check me</sl-checkbox>
+  <nu-checkbox>Check me</nu-checkbox>
   <br />
-  <sl-button type="submit" variant="primary" style="margin-top: 1rem;">Submit</sl-button>
+  <nu-button type="submit" variant="primary" style="margin-top: 1rem;">Submit</nu-button>
 </form>
 <script>
   const form = document.querySelector('.custom-validity');

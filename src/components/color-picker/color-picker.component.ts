@@ -21,8 +21,8 @@ import NuVisuallyHidden from '../visually-hidden/visually-hidden.component.js';
 import styles from './color-picker.styles.js';
 import type { CSSResultGroup } from 'lit';
 import type { NebulaFormControl } from '../../internal/nebula-element.js';
-import type { NuChangeEvent } from ../../events/nu-change.js';
-import type { NuInputEvent } from ../../events/nu-input.js';
+import type { NuChangeEvent } from '../../events/events.js';
+import type { NuInputEvent } from '../../events/events.js';
 
 const hasEyeDropper = 'EyeDropper' in window;
 
@@ -50,11 +50,11 @@ declare const EyeDropper: EyeDropperConstructor;
  *
  * @slot label - The color picker's form label. Alternatively, you can use the `label` attribute.
  *
- * @event sl-blur - Emitted when the color picker loses focus.
- * @event sl-change - Emitted when the color picker's value changes.
- * @event sl-focus - Emitted when the color picker receives focus.
- * @event sl-input - Emitted when the color picker receives input.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-blur - Emitted when the color picker loses focus.
+ * @event nu-change - Emitted when the color picker's value changes.
+ * @event nu-focus - Emitted when the color picker receives focus.
+ * @event nu-input - Emitted when the color picker receives input.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart base - The component's base wrapper.
  * @csspart trigger - The color picker's dropdown trigger.
@@ -792,7 +792,7 @@ export default class NuColorPicker extends NebulaElement implements NebulaFormCo
     if (!this.inline && !this.validity.valid) {
       // If the input is inline and invalid, show the dropdown so the browser can focus on it
       this.dropdown.show();
-      this.addEventListener('sl-after-show', () => this.input.reportValidity(), { once: true });
+      this.addEventListener('nu-after-show', () => this.input.reportValidity(), { once: true });
 
       if (!this.disabled) {
         // By standards we have to emit a `sl-invalid` event here synchronously.

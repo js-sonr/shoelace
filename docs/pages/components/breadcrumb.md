@@ -8,12 +8,12 @@ layout: component
 Breadcrumbs are usually placed before a page's main content with the current page shown last to indicate the user's position in the navigation.
 
 ```html:preview
-<sl-breadcrumb>
-  <sl-breadcrumb-item>Catalog</sl-breadcrumb-item>
-  <sl-breadcrumb-item>Clothing</sl-breadcrumb-item>
-  <sl-breadcrumb-item>Women's</sl-breadcrumb-item>
-  <sl-breadcrumb-item>Shirts &amp; Tops</sl-breadcrumb-item>
-</sl-breadcrumb>
+<nu-breadcrumb>
+  <nu-breadcrumb-item>Catalog</nu-breadcrumb-item>
+  <nu-breadcrumb-item>Clothing</nu-breadcrumb-item>
+  <nu-breadcrumb-item>Women's</nu-breadcrumb-item>
+  <nu-breadcrumb-item>Shirts &amp; Tops</nu-breadcrumb-item>
+</nu-breadcrumb>
 ```
 
 ```jsx:react
@@ -39,15 +39,15 @@ By default, breadcrumb items are rendered as buttons so you can use them to navi
 For websites, you'll probably want to use links instead. You can make any breadcrumb item a link by applying an `href` attribute to it. Now, when the user activates it, they'll be taken to the corresponding page — no event listeners required.
 
 ```html:preview
-<sl-breadcrumb>
-  <sl-breadcrumb-item href="https://example.com/home">Homepage</sl-breadcrumb-item>
+<nu-breadcrumb>
+  <nu-breadcrumb-item href="https://example.com/home">Homepage</nu-breadcrumb-item>
 
-  <sl-breadcrumb-item href="https://example.com/home/services">Our Services</sl-breadcrumb-item>
+  <nu-breadcrumb-item href="https://example.com/home/services">Our Services</nu-breadcrumb-item>
 
-  <sl-breadcrumb-item href="https://example.com/home/services/digital">Digital Media</sl-breadcrumb-item>
+  <nu-breadcrumb-item href="https://example.com/home/services/digital">Digital Media</nu-breadcrumb-item>
 
-  <sl-breadcrumb-item href="https://example.com/home/services/digital/web-design">Web Design</sl-breadcrumb-item>
-</sl-breadcrumb>
+  <nu-breadcrumb-item href="https://example.com/home/services/digital/web-design">Web Design</nu-breadcrumb-item>
+</nu-breadcrumb>
 ```
 
 ```jsx:react
@@ -72,30 +72,30 @@ const App = () => (
 Use the `separator` slot to change the separator that goes between breadcrumb items. Icons work well, but you can also use text or an image.
 
 ```html:preview
-<sl-breadcrumb>
-  <sl-icon name="dot" slot="separator"></sl-icon>
-  <sl-breadcrumb-item>First</sl-breadcrumb-item>
-  <sl-breadcrumb-item>Second</sl-breadcrumb-item>
-  <sl-breadcrumb-item>Third</sl-breadcrumb-item>
-</sl-breadcrumb>
+<nu-breadcrumb>
+  <nu-icon name="dot" slot="separator"></nu-icon>
+  <nu-breadcrumb-item>First</nu-breadcrumb-item>
+  <nu-breadcrumb-item>Second</nu-breadcrumb-item>
+  <nu-breadcrumb-item>Third</nu-breadcrumb-item>
+</nu-breadcrumb>
 
 <br />
 
-<sl-breadcrumb>
-  <sl-icon name="arrow-right" slot="separator"></sl-icon>
-  <sl-breadcrumb-item>First</sl-breadcrumb-item>
-  <sl-breadcrumb-item>Second</sl-breadcrumb-item>
-  <sl-breadcrumb-item>Third</sl-breadcrumb-item>
-</sl-breadcrumb>
+<nu-breadcrumb>
+  <nu-icon name="arrow-right" slot="separator"></nu-icon>
+  <nu-breadcrumb-item>First</nu-breadcrumb-item>
+  <nu-breadcrumb-item>Second</nu-breadcrumb-item>
+  <nu-breadcrumb-item>Third</nu-breadcrumb-item>
+</nu-breadcrumb>
 
 <br />
 
-<sl-breadcrumb>
+<nu-breadcrumb>
   <span slot="separator">/</span>
-  <sl-breadcrumb-item>First</sl-breadcrumb-item>
-  <sl-breadcrumb-item>Second</sl-breadcrumb-item>
-  <sl-breadcrumb-item>Third</sl-breadcrumb-item>
-</sl-breadcrumb>
+  <nu-breadcrumb-item>First</nu-breadcrumb-item>
+  <nu-breadcrumb-item>Second</nu-breadcrumb-item>
+  <nu-breadcrumb-item>Third</nu-breadcrumb-item>
+</nu-breadcrumb>
 ```
 
 ```jsx:react
@@ -106,7 +106,7 @@ import SlBreadcrumbItem from '@onsonr/nebula/dist/react/breadcrumb-item';
 const App = () => (
   <>
     <SlBreadcrumb>
-      <sl-icon name="dot" slot="separator" />
+      <nu-icon name="dot" slot="separator" />
       <SlBreadcrumbItem>First</SlBreadcrumbItem>
       <SlBreadcrumbItem>Second</SlBreadcrumbItem>
       <SlBreadcrumbItem>Third</SlBreadcrumbItem>
@@ -115,7 +115,7 @@ const App = () => (
     <br />
 
     <SlBreadcrumb>
-      <sl-icon name="arrow-right" slot="separator" />
+      <nu-icon name="arrow-right" slot="separator" />
       <SlBreadcrumbItem>First</SlBreadcrumbItem>
       <SlBreadcrumbItem>Second</SlBreadcrumbItem>
       <SlBreadcrumbItem>Third</SlBreadcrumbItem>
@@ -138,14 +138,14 @@ const App = () => (
 Use the `prefix` slot to add content before any breadcrumb item.
 
 ```html:preview
-<sl-breadcrumb>
-  <sl-breadcrumb-item>
-    <sl-icon slot="prefix" name="house"></sl-icon>
+<nu-breadcrumb>
+  <nu-breadcrumb-item>
+    <nu-icon slot="prefix" name="house"></nu-icon>
     Home
-  </sl-breadcrumb-item>
-  <sl-breadcrumb-item>Articles</sl-breadcrumb-item>
-  <sl-breadcrumb-item>Traveling</sl-breadcrumb-item>
-</sl-breadcrumb>
+  </nu-breadcrumb-item>
+  <nu-breadcrumb-item>Articles</nu-breadcrumb-item>
+  <nu-breadcrumb-item>Traveling</nu-breadcrumb-item>
+</nu-breadcrumb>
 ```
 
 ```jsx:react
@@ -170,14 +170,14 @@ const App = () => (
 Use the `suffix` slot to add content after any breadcrumb item.
 
 ```html:preview
-<sl-breadcrumb>
-  <sl-breadcrumb-item>Documents</sl-breadcrumb-item>
-  <sl-breadcrumb-item>Policies</sl-breadcrumb-item>
-  <sl-breadcrumb-item>
+<nu-breadcrumb>
+  <nu-breadcrumb-item>Documents</nu-breadcrumb-item>
+  <nu-breadcrumb-item>Policies</nu-breadcrumb-item>
+  <nu-breadcrumb-item>
     Security
-    <sl-icon slot="suffix" name="shield-lock"></sl-icon>
-  </sl-breadcrumb-item>
-</sl-breadcrumb>
+    <nu-icon slot="suffix" name="shield-lock"></nu-icon>
+  </nu-breadcrumb-item>
+</nu-breadcrumb>
 ```
 
 ```jsx:react
@@ -202,24 +202,24 @@ const App = () => (
 Dropdown menus can be placed in a prefix or suffix slot to provide additional options.
 
 ```html:preview
-<sl-breadcrumb>
-  <sl-breadcrumb-item>Homepage</sl-breadcrumb-item>
-  <sl-breadcrumb-item>Our Services</sl-breadcrumb-item>
-  <sl-breadcrumb-item>Digital Media</sl-breadcrumb-item>
-  <sl-breadcrumb-item>
+<nu-breadcrumb>
+  <nu-breadcrumb-item>Homepage</nu-breadcrumb-item>
+  <nu-breadcrumb-item>Our Services</nu-breadcrumb-item>
+  <nu-breadcrumb-item>Digital Media</nu-breadcrumb-item>
+  <nu-breadcrumb-item>
     Web Design
-    <sl-dropdown slot="suffix">
-      <sl-button slot="trigger" size="small" circle>
-        <sl-icon label="More options" name="three-dots"></sl-icon>
-      </sl-button>
-      <sl-menu>
-        <sl-menu-item type="checkbox" checked>Web Design</sl-menu-item>
-        <sl-menu-item type="checkbox">Web Development</sl-menu-item>
-        <sl-menu-item type="checkbox">Marketing</sl-menu-item>
-      </sl-menu>
-    </sl-dropdown>
-  </sl-breadcrumb-item>
-</sl-breadcrumb>
+    <nu-dropdown slot="suffix">
+      <nu-button slot="trigger" size="small" circle>
+        <nu-icon label="More options" name="three-dots"></nu-icon>
+      </nu-button>
+      <nu-menu>
+        <nu-menu-item type="checkbox" checked>Web Design</nu-menu-item>
+        <nu-menu-item type="checkbox">Web Development</nu-menu-item>
+        <nu-menu-item type="checkbox">Marketing</nu-menu-item>
+      </nu-menu>
+    </nu-dropdown>
+  </nu-breadcrumb-item>
+</nu-breadcrumb>
 ```
 
 ```jsx:react

@@ -25,10 +25,10 @@ import type { CSSResultGroup } from 'lit';
  * @slot expand-icon - Optional expand icon to use instead of the default. Works best with `<nu-icon>`.
  * @slot collapse-icon - Optional collapse icon to use instead of the default. Works best with `<nu-icon>`.
  *
- * @event sl-show - Emitted when the details opens.
- * @event sl-after-show - Emitted after the details opens and all animations are complete.
- * @event sl-hide - Emitted when the details closes.
- * @event sl-after-hide - Emitted after the details closes and all animations are complete.
+ * @event nu-show - Emitted when the details opens.
+ * @event nu-after-show - Emitted after the details opens and all animations are complete.
+ * @event nu-hide - Emitted when the details closes.
+ * @event nu-after-hide - Emitted after the details closes and all animations are complete.
  *
  * @csspart base - The component's base wrapper.
  * @csspart header - The header that wraps both the summary and the expand/collapse icon.

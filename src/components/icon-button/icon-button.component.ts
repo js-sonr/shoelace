@@ -16,8 +16,8 @@ import type { CSSResultGroup } from 'lit';
  *
  * @dependency sl-icon
  *
- * @event sl-blur - Emitted when the icon button loses focus.
- * @event sl-focus - Emitted when the icon button gains focus.
+ * @event nu-blur - Emitted when the icon button loses focus.
+ * @event nu-focus - Emitted when the icon button gains focus.
  *
  * @csspart base - The component's base wrapper.
  */

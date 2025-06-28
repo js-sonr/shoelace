@@ -4,7 +4,7 @@ import { clickOnElement } from '../../internal/test.js';
 import { runFormControlBaseTests } from '../../internal/test/form-control-base-tests.js';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
-import type { NuChangeEvent } from ../../events/nu-change.js';
+import type { NuChangeEvent } from '../../events/events.js';
 import type NuRadio from '../radio/radio.js';
 import type NuRadioGroup from './radio-group.js';
 

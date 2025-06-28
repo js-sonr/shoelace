@@ -57,7 +57,7 @@ export default {
             }
 
             const tagNameWithoutPrefix = path.basename(importPath, '.component.ts');
-            const tagName = 'sl-' + tagNameWithoutPrefix;
+            const tagName = 'nu-' + tagNameWithoutPrefix;
 
             classDoc.tagNameWithoutPrefix = tagNameWithoutPrefix;
             classDoc.tagName = tagName;
@@ -151,8 +151,8 @@ export default {
 
             if (classDoc?.events) {
               classDoc.events.forEach(event => {
-                event.reactName = `on${pascalCase(event.name)}`;
-                event.eventName = `${pascalCase(event.name)}Event`;
+                event.reactName = `onNu${pascalCase(event.name.replace('nu-', ''))}`;
+                event.eventName = `Nu${pascalCase(event.name.replace('nu-', ''))}Event`;
               });
             }
           }
@@ -204,7 +204,7 @@ export default {
       referencesTemplate: (_, tag) => [
         {
           name: 'Documentation',
-          url: `https://shoelace.style/components/${tag.replace('sl-', '')}`
+          url: `https://nebulaui.org/components/${tag.replace('nu-', '')}`
         }
       ]
     }),
@@ -216,7 +216,7 @@ export default {
       referencesTemplate: (_, tag) => {
         return {
           name: 'Documentation',
-          url: `https://shoelace.style/components/${tag.replace('sl-', '')}`
+          url: `https://nebulaui.org/components/${tag.replace('nu-', '')}`
         };
       }
     }),
@@ -224,7 +224,7 @@ export default {
     customElementVuejsPlugin({
       outdir: './dist/types/vue',
       fileName: 'index.d.ts',
-      componentTypePath: (_, tag) => `../../components/${tag.replace('sl-', '')}/${tag.replace('sl-', '')}.component.js`
+      componentTypePath: (_, tag) => `../../components/${tag.replace('nu-', '')}/${tag.replace('nu-', '')}.component.js`
     })
   ]
 };

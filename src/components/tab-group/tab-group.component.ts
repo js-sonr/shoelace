@@ -23,8 +23,8 @@ import type NuTabPanel from '../tab-panel/tab-panel.js';
  * @slot - Used for grouping tab panels in the tab group. Must be `<nu-tab-panel>` elements.
  * @slot nav - Used for grouping tabs in the tab group. Must be `<nu-tab>` elements.
  *
- * @event {{ name: String }} sl-tab-show - Emitted when a tab is shown.
- * @event {{ name: String }} sl-tab-hide - Emitted when a tab is hidden.
+ * @event nu-tab-show - Emitted when a tab is shown.
+ * @event nu-tab-hide - Emitted when a tab is hidden.
  *
  * @csspart base - The component's base wrapper.
  * @csspart nav - The tab group's navigation container where tabs are slotted in.
@@ -140,8 +140,8 @@ export default class NuTabGroup extends NebulaElement {
 
   private handleClick(event: MouseEvent) {
     const target = event.target as HTMLElement;
-    const tab = target.closest('sl-tab');
-    const tabGroup = tab?.closest('sl-tab-group');
+    const tab = target.closest('nu-tab');
+    const tabGroup = tab?.closest('nu-tab-group');
 
     // Ensure the target tab is in this tab group
     if (tabGroup !== this) {
@@ -155,8 +155,8 @@ export default class NuTabGroup extends NebulaElement {
 
   private handleKeyDown(event: KeyboardEvent) {
     const target = event.target as HTMLElement;
-    const tab = target.closest('sl-tab');
-    const tabGroup = tab?.closest('sl-tab-group');
+    const tab = target.closest('nu-tab');
+    const tabGroup = tab?.closest('nu-tab-group');
 
     // Ensure the target tab is in this tab group
     if (tabGroup !== this) {

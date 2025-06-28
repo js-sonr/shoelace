@@ -3,19 +3,19 @@ import { html } from 'lit';
 import { LocalizeController } from '../../utilities/localize.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import styles from './{{ tagWithoutPrefix tag }}.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Short summary of the component's intended use.
- * @documentation https://shoelace.style/components/{{ tagWithoutPrefix tag }}
+ * @documentation https://nebulaui.org/components/{{ tagWithoutPrefix tag }}
  * @status experimental
  * @since 2.0
  *
- * @dependency sl-example
+ * @dependency nu-example
  *
- * @event sl-event-name - Emitted as an example.
+ * @event nu-event-name - Emitted as an example.
  *
  * @slot - The default slot.
  * @slot example - An example slot.
@@ -24,7 +24,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @cssproperty --example - An example CSS custom property.
  */
-export default class {{ properCase tag }} extends ShoelaceElement {
+export default class {{ properCase tag }} extends NebulaElement {
     static styles: CSSResultGroup = [componentStyles, styles];
 
   private readonly localize = new LocalizeController(this);

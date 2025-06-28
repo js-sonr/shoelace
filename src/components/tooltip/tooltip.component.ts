@@ -23,10 +23,10 @@ import type { CSSResultGroup } from 'lit';
  * @slot - The tooltip's target element. Avoid slotting in more than one element, as subsequent ones will be ignored.
  * @slot content - The content to render in the tooltip. Alternatively, you can use the `content` attribute.
  *
- * @event sl-show - Emitted when the tooltip begins to show.
- * @event sl-after-show - Emitted after the tooltip has shown and all animations are complete.
- * @event sl-hide - Emitted when the tooltip begins to hide.
- * @event sl-after-hide - Emitted after the tooltip has hidden and all animations are complete.
+ * @event nu-show - Emitted when the tooltip begins to show.
+ * @event nu-after-show - Emitted after the tooltip has shown and all animations are complete.
+ * @event nu-hide - Emitted when the tooltip begins to hide.
+ * @event nu-after-hide - Emitted after the tooltip has hidden and all animations are complete.
  *
  * @csspart base - The component's base wrapper, an `<nu-popup>` element.
  * @csspart base__popup - The popup's exported `popup` part. Use this to target the tooltip's popup container.

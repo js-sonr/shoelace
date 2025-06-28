@@ -26,8 +26,8 @@ interface IconSource {
  * @status stable
  * @since 2.0
  *
- * @event sl-load - Emitted when the icon has loaded. When using `spriteSheet: true` this will not emit.
- * @event sl-error - Emitted when the icon fails to load due to an error. When using `spriteSheet: true` this will not emit.
+ * @event nu-load - Emitted when the icon has loaded. When using `spriteSheet: true` this will not emit.
+ * @event nu-error - Emitted when the icon fails to load due to an error. When using `spriteSheet: true` this will not emit.
  *
  * @csspart svg - The internal SVG element.
  * @csspart use - The <use> element generated when using `spriteSheet: true`

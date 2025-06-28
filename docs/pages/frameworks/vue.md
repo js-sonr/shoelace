@@ -61,9 +61,9 @@ Once you have configured your application for custom elements, you should be abl
   <div class="container">
     <h1>QR code generator</h1>
 
-    <sl-input maxlength="255" clearable label="Value" v-model="qrCode"></sl-input>
+    <nu-input maxlength="255" clearable label="Value" v-model="qrCode"></nu-input>
 
-    <sl-qr-code :value="qrCode"></sl-qr-code>
+    <nu-qr-code :value="qrCode"></nu-qr-code>
   </div>
 </template>
 
@@ -92,7 +92,7 @@ Once you have configured your application for custom elements, you should be abl
 When binding complex data such as objects and arrays, use the `.prop` modifier to make Vue bind them as a property instead of an attribute.
 
 ```html
-<sl-color-picker :swatches.prop="mySwatches" />
+<nu-color-picker :swatches.prop="mySwatches" />
 ```
 
 ### Two-way Binding
@@ -101,9 +101,9 @@ One caveat is there's currently [no support for v-model on custom elements](http
 
 ```html
 <!-- This doesn't work -->
-<sl-input v-model="name"></sl-input>
+<nu-input v-model="name"></nu-input>
 <!-- This works, but it's a bit longer -->
-<sl-input :value="name" @input="name = $event.target.value"></sl-input>
+<nu-input :value="name" @input="name = $event.target.value"></nu-input>
 ```
 
 If that's too verbose for your liking, you can use a custom directive instead. [This utility](https://www.npmjs.com/package/@shoelace-style/vue-sl-model) adds a custom directive that will work just like `v-model` but for Nebula components.
@@ -119,10 +119,10 @@ Slots in Nebula/web components are functionally the same as basic slots in Vue. 
 Here is an example:
 
 ```html
-<sl-drawer label="Drawer" placement="start" class="drawer-placement-start" :open="drawerIsOpen">
+<nu-drawer label="Drawer" placement="start" class="drawer-placement-start" :open="drawerIsOpen">
   This drawer slides in from the start.
   <div slot="footer">
-    <sl-button variant="primary" @click=" drawerIsOpen = false">Close</sl-button>
+    <nu-button variant="primary" @click=" drawerIsOpen = false">Close</nu-button>
   </div>
-</sl-drawer>
+</nu-drawer>
 ```

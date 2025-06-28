@@ -30,13 +30,13 @@ import type { CSSResultGroup } from 'lit';
  * @slot header-actions - Optional actions to add to the header. Works best with `<nu-icon-button>`.
  * @slot footer - The drawer's footer, usually one or more buttons representing various options.
  *
- * @event sl-show - Emitted when the drawer opens.
- * @event sl-after-show - Emitted after the drawer opens and all animations are complete.
- * @event sl-hide - Emitted when the drawer closes.
- * @event sl-after-hide - Emitted after the drawer closes and all animations are complete.
- * @event sl-initial-focus - Emitted when the drawer opens and is ready to receive focus. Calling
+ * @event nu-show - Emitted when the drawer opens.
+ * @event nu-after-show - Emitted after the drawer opens and all animations are complete.
+ * @event nu-hide - Emitted when the drawer closes.
+ * @event nu-after-hide - Emitted after the drawer closes and all animations are complete.
+ * @event nu-initial-focus - Emitted when the drawer opens and is ready to receive focus. Calling
  *   `event.preventDefault()` will prevent focusing and allow you to set it on a different element, such as an input.
- * @event {{ source: 'close-button' | 'keyboard' | 'overlay' }} sl-request-close - Emitted when the user attempts to
+ * @event nu-request-close - Emitted when the user attempts to
  *   close the drawer by clicking the close button, clicking the overlay, or pressing escape. Calling
  *   `event.preventDefault()` will keep the drawer open. Avoid using this unless closing the drawer will result in
  *   destructive behavior such as data loss.

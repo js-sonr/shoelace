@@ -54,7 +54,7 @@ function syncCheckboxes(changedTreeItem: NuTreeItem, initialSync = false) {
  * @status stable
  * @since 2.0
  *
- * @event {{ selection: NuTreeItem[] }} sl-selection-change - Emitted when a tree item is selected or deselected.
+ * @event nu-selection-change - Emitted when a tree item is selected or deselected.
  *
  * @slot - The default slot.
  * @slot expand-icon - The icon to show when the tree item is expanded. Works best with `<nu-icon>`.
@@ -94,7 +94,7 @@ export default class NuTree extends NebulaElement {
     super();
     this.addEventListener('focusin', this.handleFocusIn);
     this.addEventListener('focusout', this.handleFocusOut);
-    this.addEventListener('sl-lazy-change', this.handleSlotChange);
+    this.addEventListener('nu-lazy-change', this.handleSlotChange);
   }
 
   async connectedCallback() {
@@ -284,7 +284,7 @@ export default class NuTree extends NebulaElement {
 
   private handleClick(event: Event) {
     const target = event.target as NuTreeItem;
-    const treeItem = target.closest('sl-tree-item')!;
+    const treeItem = target.closest('nu-tree-item')! as NuTreeItem;
     const isExpandButton = event
       .composedPath()
       .some((el: HTMLElement) => el?.classList?.contains('tree-item__expand-button'));

@@ -1,7 +1,7 @@
 import { aTimeout, elementUpdated, expect, fixture, html, oneEvent } from '@open-wc/testing';
 import { registerIconLibrary } from '../../../dist/shoelace.js';
-import type { NuErrorEvent } from ../../events/nu-error.js';
-import type { NuLoadEvent } from ../../events/nu-load.js';
+import type { NuErrorEvent } from '../../events/events.js';
+import type { NuLoadEvent } from '../../events/events.js';
 import type NuIcon from './icon.js';
 
 const testLibraryIcons = {

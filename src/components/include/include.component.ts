@@ -13,8 +13,8 @@ import type { CSSResultGroup } from 'lit';
  * @status stable
  * @since 2.0
  *
- * @event sl-load - Emitted when the included file is loaded.
- * @event {{ status: number }} sl-error - Emitted when the included file fails to load due to an error.
+ * @event nu-load - Emitted when the included file is loaded.
+ * @event nu-error - Emitted when the included file fails to load due to an error.
  */
 export default class NuInclude extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];

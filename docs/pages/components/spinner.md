@@ -6,7 +6,7 @@ layout: component
 ---
 
 ```html:preview
-<sl-spinner></sl-spinner>
+<nu-spinner></nu-spinner>
 ```
 
 ```jsx:react
@@ -22,9 +22,9 @@ const App = () => <SlSpinner />;
 Spinners are sized based on the current font size. To change their size, set the `font-size` property on the spinner itself or on a parent element as shown below.
 
 ```html:preview
-<sl-spinner></sl-spinner>
-<sl-spinner style="font-size: 2rem;"></sl-spinner>
-<sl-spinner style="font-size: 3rem;"></sl-spinner>
+<nu-spinner></nu-spinner>
+<nu-spinner style="font-size: 2rem;"></nu-spinner>
+<nu-spinner style="font-size: 3rem;"></nu-spinner>
 ```
 
 {% raw %}
@@ -48,7 +48,7 @@ const App = () => (
 The width of the spinner's track can be changed by setting the `--track-width` custom property.
 
 ```html:preview
-<sl-spinner style="font-size: 50px; --track-width: 10px;"></sl-spinner>
+<nu-spinner style="font-size: 50px; --track-width: 10px;"></nu-spinner>
 ```
 
 {% raw %}
@@ -73,7 +73,7 @@ const App = () => (
 The spinner's colors can be changed by setting the `--indicator-color` and `--track-color` custom properties.
 
 ```html:preview
-<sl-spinner style="font-size: 3rem; --indicator-color: deeppink; --track-color: pink;"></sl-spinner>
+<nu-spinner style="font-size: 3rem; --indicator-color: deeppink; --track-color: pink;"></nu-spinner>
 ```
 
 {% raw %}

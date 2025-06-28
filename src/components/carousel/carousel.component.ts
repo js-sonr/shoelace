@@ -26,7 +26,7 @@ import type NuCarouselItem from '../carousel-item/carousel-item.component.js';
  *
  * @dependency sl-icon
  *
- * @event {{ index: number, slide: NuCarouselItem }} sl-slide-change - Emitted when the active slide changes.
+ * @event nu-slide-change - Emitted when the active slide changes.
  *
  * @slot - The carousel's main content, one or more `<nu-carousel-item>` elements.
  * @slot next-icon - Optional next icon to use instead of the default. Works best with `<nu-icon>`.

@@ -8,16 +8,16 @@
   "customElements": "dist/custom-elements.json",
   "web-types": "./dist/web-types.json",
   "type": "module",
-  "types": "dist/shoelace.d.ts",
-  "jsdelivr": "./cdn/shoelace-autoloader.js",
+  "types": "dist/nebula.d.ts",
+  "jsdelivr": "./cdn/nebula-autoloader.js",
   "exports": {
     ".": {
-      "types": "./dist/shoelace.d.ts",
-      "import": "./dist/shoelace.js"
+      "types": "./dist/nebula.d.ts",
+      "import": "./dist/nebula.js"
     },
     "./dist/custom-elements.json": "./dist/custom-elements.json",
-    "./dist/shoelace.js": "./dist/shoelace.js",
-    "./dist/shoelace-autoloader.js": "./dist/shoelace-autoloader.js",
+    "./dist/nebula.js": "./dist/nebula.js",
+    "./dist/nebula-autoloader.js": "./dist/nebula-autoloader.js",
     "./dist/themes/*": "./dist/themes/*",
     "./dist/components/*": "./dist/components/*",
     "./dist/utilities/*": "./dist/utilities/*",

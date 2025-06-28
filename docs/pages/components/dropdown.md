@@ -10,26 +10,26 @@ Dropdowns consist of a trigger and a panel. By default, activating the trigger w
 Dropdowns are designed to work well with [menus](/components/menu) to provide a list of options the user can select from. However, dropdowns can also be used in lower-level applications (e.g. [color picker](/components/color-picker)). The API gives you complete control over showing, hiding, and positioning the panel.
 
 ```html:preview
-<sl-dropdown>
-  <sl-button slot="trigger" caret>Dropdown</sl-button>
-  <sl-menu>
-    <sl-menu-item>Dropdown Item 1</sl-menu-item>
-    <sl-menu-item>Dropdown Item 2</sl-menu-item>
-    <sl-menu-item>Dropdown Item 3</sl-menu-item>
-    <sl-divider></sl-divider>
-    <sl-menu-item type="checkbox" checked>Checkbox</sl-menu-item>
-    <sl-menu-item disabled>Disabled</sl-menu-item>
-    <sl-divider></sl-divider>
-    <sl-menu-item>
+<nu-dropdown>
+  <nu-button slot="trigger" caret>Dropdown</nu-button>
+  <nu-menu>
+    <nu-menu-item>Dropdown Item 1</nu-menu-item>
+    <nu-menu-item>Dropdown Item 2</nu-menu-item>
+    <nu-menu-item>Dropdown Item 3</nu-menu-item>
+    <nu-divider></nu-divider>
+    <nu-menu-item type="checkbox" checked>Checkbox</nu-menu-item>
+    <nu-menu-item disabled>Disabled</nu-menu-item>
+    <nu-divider></nu-divider>
+    <nu-menu-item>
       Prefix
-      <sl-icon slot="prefix" name="gift"></sl-icon>
-    </sl-menu-item>
-    <sl-menu-item>
+      <nu-icon slot="prefix" name="gift"></nu-icon>
+    </nu-menu-item>
+    <nu-menu-item>
       Suffix Icon
-      <sl-icon slot="suffix" name="heart"></sl-icon>
-    </sl-menu-item>
-  </sl-menu>
-</sl-dropdown>
+      <nu-icon slot="suffix" name="heart"></nu-icon>
+    </nu-menu-item>
+  </nu-menu>
+</nu-dropdown>
 ```
 
 ```jsx:react
@@ -76,14 +76,14 @@ When dropdowns are used with [menus](/components/menu), you can listen for the [
 
 ```html:preview
 <div class="dropdown-selection">
-  <sl-dropdown>
-    <sl-button slot="trigger" caret>Edit</sl-button>
-    <sl-menu>
-      <sl-menu-item value="cut">Cut</sl-menu-item>
-      <sl-menu-item value="copy">Copy</sl-menu-item>
-      <sl-menu-item value="paste">Paste</sl-menu-item>
-    </sl-menu>
-  </sl-dropdown>
+  <nu-dropdown>
+    <nu-button slot="trigger" caret>Edit</nu-button>
+    <nu-menu>
+      <nu-menu-item value="cut">Cut</nu-menu-item>
+      <nu-menu-item value="copy">Copy</nu-menu-item>
+      <nu-menu-item value="paste">Paste</nu-menu-item>
+    </nu-menu>
+  </nu-dropdown>
 </div>
 
 <script>
@@ -128,14 +128,14 @@ Alternatively, you can listen for the `click` event on individual menu items. No
 
 ```html:preview
 <div class="dropdown-selection-alt">
-  <sl-dropdown>
-    <sl-button slot="trigger" caret>Edit</sl-button>
-    <sl-menu>
-      <sl-menu-item value="cut">Cut</sl-menu-item>
-      <sl-menu-item value="copy">Copy</sl-menu-item>
-      <sl-menu-item value="paste">Paste</sl-menu-item>
-    </sl-menu>
-  </sl-dropdown>
+  <nu-dropdown>
+    <nu-button slot="trigger" caret>Edit</nu-button>
+    <nu-menu>
+      <nu-menu-item value="cut">Cut</nu-menu-item>
+      <nu-menu-item value="copy">Copy</nu-menu-item>
+      <nu-menu-item value="paste">Paste</nu-menu-item>
+    </nu-menu>
+  </nu-dropdown>
 </div>
 
 <script>
@@ -189,17 +189,17 @@ const App = () => {
 The preferred placement of the dropdown can be set with the `placement` attribute. Note that the actual position may vary to ensure the panel remains in the viewport.
 
 ```html:preview
-<sl-dropdown placement="top-start">
-  <sl-button slot="trigger" caret>Edit</sl-button>
-  <sl-menu>
-    <sl-menu-item>Cut</sl-menu-item>
-    <sl-menu-item>Copy</sl-menu-item>
-    <sl-menu-item>Paste</sl-menu-item>
-    <sl-divider></sl-divider>
-    <sl-menu-item>Find</sl-menu-item>
-    <sl-menu-item>Replace</sl-menu-item>
-  </sl-menu>
-</sl-dropdown>
+<nu-dropdown placement="top-start">
+  <nu-button slot="trigger" caret>Edit</nu-button>
+  <nu-menu>
+    <nu-menu-item>Cut</nu-menu-item>
+    <nu-menu-item>Copy</nu-menu-item>
+    <nu-menu-item>Paste</nu-menu-item>
+    <nu-divider></nu-divider>
+    <nu-menu-item>Find</nu-menu-item>
+    <nu-menu-item>Replace</nu-menu-item>
+  </nu-menu>
+</nu-dropdown>
 ```
 
 ```jsx:react
@@ -231,17 +231,17 @@ const App = () => (
 The distance from the panel to the trigger can be customized using the `distance` attribute. This value is specified in pixels.
 
 ```html:preview
-<sl-dropdown distance="30">
-  <sl-button slot="trigger" caret>Edit</sl-button>
-  <sl-menu>
-    <sl-menu-item>Cut</sl-menu-item>
-    <sl-menu-item>Copy</sl-menu-item>
-    <sl-menu-item>Paste</sl-menu-item>
-    <sl-divider></sl-divider>
-    <sl-menu-item>Find</sl-menu-item>
-    <sl-menu-item>Replace</sl-menu-item>
-  </sl-menu>
-</sl-dropdown>
+<nu-dropdown distance="30">
+  <nu-button slot="trigger" caret>Edit</nu-button>
+  <nu-menu>
+    <nu-menu-item>Cut</nu-menu-item>
+    <nu-menu-item>Copy</nu-menu-item>
+    <nu-menu-item>Paste</nu-menu-item>
+    <nu-divider></nu-divider>
+    <nu-menu-item>Find</nu-menu-item>
+    <nu-menu-item>Replace</nu-menu-item>
+  </nu-menu>
+</nu-dropdown>
 ```
 
 ```jsx:react
@@ -273,17 +273,17 @@ const App = () => (
 The offset of the panel along the trigger can be customized using the `skidding` attribute. This value is specified in pixels.
 
 ```html:preview
-<sl-dropdown skidding="30">
-  <sl-button slot="trigger" caret>Edit</sl-button>
-  <sl-menu>
-    <sl-menu-item>Cut</sl-menu-item>
-    <sl-menu-item>Copy</sl-menu-item>
-    <sl-menu-item>Paste</sl-menu-item>
-    <sl-divider></sl-divider>
-    <sl-menu-item>Find</sl-menu-item>
-    <sl-menu-item>Replace</sl-menu-item>
-  </sl-menu>
-</sl-dropdown>
+<nu-dropdown skidding="30">
+  <nu-button slot="trigger" caret>Edit</nu-button>
+  <nu-menu>
+    <nu-menu-item>Cut</nu-menu-item>
+    <nu-menu-item>Copy</nu-menu-item>
+    <nu-menu-item>Paste</nu-menu-item>
+    <nu-divider></nu-divider>
+    <nu-menu-item>Find</nu-menu-item>
+    <nu-menu-item>Replace</nu-menu-item>
+  </nu-menu>
+</nu-dropdown>
 ```
 
 ```jsx:react
@@ -312,38 +312,38 @@ const App = () => (
 
 ### Submenus
 
-To create a submenu, nest an `<sl-menu slot="submenu">` element in a [menu item](/components/menu-item).
+To create a submenu, nest an `<nu-menu slot="submenu">` element in a [menu item](/components/menu-item).
 
 ```html:preview
-<sl-dropdown>
-  <sl-button slot="trigger" caret>Edit</sl-button>
+<nu-dropdown>
+  <nu-button slot="trigger" caret>Edit</nu-button>
 
-  <sl-menu style="max-width: 200px;">
-    <sl-menu-item value="undo">Undo</sl-menu-item>
-    <sl-menu-item value="redo">Redo</sl-menu-item>
-    <sl-divider></sl-divider>
-    <sl-menu-item value="cut">Cut</sl-menu-item>
-    <sl-menu-item value="copy">Copy</sl-menu-item>
-    <sl-menu-item value="paste">Paste</sl-menu-item>
-    <sl-divider></sl-divider>
-    <sl-menu-item>
+  <nu-menu style="max-width: 200px;">
+    <nu-menu-item value="undo">Undo</nu-menu-item>
+    <nu-menu-item value="redo">Redo</nu-menu-item>
+    <nu-divider></nu-divider>
+    <nu-menu-item value="cut">Cut</nu-menu-item>
+    <nu-menu-item value="copy">Copy</nu-menu-item>
+    <nu-menu-item value="paste">Paste</nu-menu-item>
+    <nu-divider></nu-divider>
+    <nu-menu-item>
       Find
-      <sl-menu slot="submenu">
-        <sl-menu-item value="find">Find…</sl-menu-item>
-        <sl-menu-item value="find-previous">Find Next</sl-menu-item>
-        <sl-menu-item value="find-next">Find Previous</sl-menu-item>
-      </sl-menu>
-    </sl-menu-item>
-    <sl-menu-item>
+      <nu-menu slot="submenu">
+        <nu-menu-item value="find">Find…</nu-menu-item>
+        <nu-menu-item value="find-previous">Find Next</nu-menu-item>
+        <nu-menu-item value="find-next">Find Previous</nu-menu-item>
+      </nu-menu>
+    </nu-menu-item>
+    <nu-menu-item>
       Transformations
-      <sl-menu slot="submenu">
-        <sl-menu-item value="uppercase">Make uppercase</sl-menu-item>
-        <sl-menu-item value="lowercase">Make lowercase</sl-menu-item>
-        <sl-menu-item value="capitalize">Capitalize</sl-menu-item>
-      </sl-menu>
-    </sl-menu-item>
-  </sl-menu>
-</sl-dropdown>
+      <nu-menu slot="submenu">
+        <nu-menu-item value="uppercase">Make uppercase</nu-menu-item>
+        <nu-menu-item value="lowercase">Make lowercase</nu-menu-item>
+        <nu-menu-item value="capitalize">Capitalize</nu-menu-item>
+      </nu-menu>
+    </nu-menu-item>
+  </nu-menu>
+</nu-dropdown>
 ```
 
 ```jsx:react
@@ -406,23 +406,23 @@ Dropdown panels will be clipped if they're inside a container that has `overflow
 
 ```html:preview
 <div class="dropdown-hoist">
-  <sl-dropdown>
-    <sl-button slot="trigger" caret>No Hoist</sl-button>
-    <sl-menu>
-      <sl-menu-item>Item 1</sl-menu-item>
-      <sl-menu-item>Item 2</sl-menu-item>
-      <sl-menu-item>Item 3</sl-menu-item>
-    </sl-menu>
-  </sl-dropdown>
+  <nu-dropdown>
+    <nu-button slot="trigger" caret>No Hoist</nu-button>
+    <nu-menu>
+      <nu-menu-item>Item 1</nu-menu-item>
+      <nu-menu-item>Item 2</nu-menu-item>
+      <nu-menu-item>Item 3</nu-menu-item>
+    </nu-menu>
+  </nu-dropdown>
 
-  <sl-dropdown hoist>
-    <sl-button slot="trigger" caret>Hoist</sl-button>
-    <sl-menu>
-      <sl-menu-item>Item 1</sl-menu-item>
-      <sl-menu-item>Item 2</sl-menu-item>
-      <sl-menu-item>Item 3</sl-menu-item>
-    </sl-menu>
-  </sl-dropdown>
+  <nu-dropdown hoist>
+    <nu-button slot="trigger" caret>Hoist</nu-button>
+    <nu-menu>
+      <nu-menu-item>Item 1</nu-menu-item>
+      <nu-menu-item>Item 2</nu-menu-item>
+      <nu-menu-item>Item 3</nu-menu-item>
+    </nu-menu>
+  </nu-dropdown>
 </div>
 
 <style>

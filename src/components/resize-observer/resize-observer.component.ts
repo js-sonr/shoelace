@@ -14,7 +14,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @slot - One or more elements to watch for resizing.
  *
- * @event {{ entries: ResizeObserverEntry[] }} sl-resize - Emitted when the element is resized.
+ * @event nu-resize - Emitted when the element is resized.
  */
 export default class NuResizeObserver extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];

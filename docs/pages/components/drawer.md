@@ -8,12 +8,12 @@ layout: component
 <!-- cspell:dictionaries lorem-ipsum -->
 
 ```html:preview
-<sl-drawer label="Drawer" class="drawer-overview">
+<nu-drawer label="Drawer" class="drawer-overview">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  <sl-button slot="footer" variant="primary">Close</sl-button>
-</sl-drawer>
+  <nu-button slot="footer" variant="primary">Close</nu-button>
+</nu-drawer>
 
-<sl-button>Open Drawer</sl-button>
+<nu-button>Open Drawer</nu-button>
 
 <script>
   const drawer = document.querySelector('.drawer-overview');
@@ -55,12 +55,12 @@ const App = () => {
 By default, drawers slide in from the end. To make the drawer slide in from the start, set the `placement` attribute to `start`.
 
 ```html:preview
-<sl-drawer label="Drawer" placement="start" class="drawer-placement-start">
+<nu-drawer label="Drawer" placement="start" class="drawer-placement-start">
   This drawer slides in from the start.
-  <sl-button slot="footer" variant="primary">Close</sl-button>
-</sl-drawer>
+  <nu-button slot="footer" variant="primary">Close</nu-button>
+</nu-drawer>
 
-<sl-button>Open Drawer</sl-button>
+<nu-button>Open Drawer</nu-button>
 
 <script>
   const drawer = document.querySelector('.drawer-placement-start');
@@ -100,12 +100,12 @@ const App = () => {
 To make the drawer slide in from the top, set the `placement` attribute to `top`.
 
 ```html:preview
-<sl-drawer label="Drawer" placement="top" class="drawer-placement-top">
+<nu-drawer label="Drawer" placement="top" class="drawer-placement-top">
   This drawer slides in from the top.
-  <sl-button slot="footer" variant="primary">Close</sl-button>
-</sl-drawer>
+  <nu-button slot="footer" variant="primary">Close</nu-button>
+</nu-drawer>
 
-<sl-button>Open Drawer</sl-button>
+<nu-button>Open Drawer</nu-button>
 
 <script>
   const drawer = document.querySelector('.drawer-placement-top');
@@ -145,12 +145,12 @@ const App = () => {
 To make the drawer slide in from the bottom, set the `placement` attribute to `bottom`.
 
 ```html:preview
-<sl-drawer label="Drawer" placement="bottom" class="drawer-placement-bottom">
+<nu-drawer label="Drawer" placement="bottom" class="drawer-placement-bottom">
   This drawer slides in from the bottom.
-  <sl-button slot="footer" variant="primary">Close</sl-button>
-</sl-drawer>
+  <nu-button slot="footer" variant="primary">Close</nu-button>
+</nu-drawer>
 
-<sl-button>Open Drawer</sl-button>
+<nu-button>Open Drawer</nu-button>
 
 <script>
   const drawer = document.querySelector('.drawer-placement-bottom');
@@ -197,13 +197,13 @@ Unlike normal drawers, contained drawers are not modal. This means they do not s
 >
   The drawer will be contained to this box. This content won't shift or be affected in any way when the drawer opens.
 
-  <sl-drawer label="Drawer" contained class="drawer-contained" style="--size: 50%;">
+  <nu-drawer label="Drawer" contained class="drawer-contained" style="--size: 50%;">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <sl-button slot="footer" variant="primary">Close</sl-button>
-  </sl-drawer>
+    <nu-button slot="footer" variant="primary">Close</nu-button>
+  </nu-drawer>
 </div>
 
-<sl-button>Toggle Drawer</sl-button>
+<nu-button>Toggle Drawer</nu-button>
 
 <script>
   const drawer = document.querySelector('.drawer-contained');
@@ -266,12 +266,12 @@ const App = () => {
 Use the `--size` custom property to set the drawer's size. This will be applied to the drawer's width or height depending on its `placement`.
 
 ```html:preview
-<sl-drawer label="Drawer" class="drawer-custom-size" style="--size: 50vw;">
+<nu-drawer label="Drawer" class="drawer-custom-size" style="--size: 50vw;">
   This drawer is always 50% of the viewport.
-  <sl-button slot="footer" variant="primary">Close</sl-button>
-</sl-drawer>
+  <nu-button slot="footer" variant="primary">Close</nu-button>
+</nu-drawer>
 
-<sl-button>Open Drawer</sl-button>
+<nu-button>Open Drawer</nu-button>
 
 <script>
   const drawer = document.querySelector('.drawer-custom-size');
@@ -315,14 +315,14 @@ const App = () => {
 By design, a drawer's height will never exceed 100% of its container. As such, drawers will not scroll with the page to ensure the header and footer are always accessible to the user.
 
 ```html:preview
-<sl-drawer label="Drawer" class="drawer-scrolling">
+<nu-drawer label="Drawer" class="drawer-scrolling">
   <div style="height: 150vh; border: dashed 2px var(--sl-color-neutral-200); padding: 0 1rem;">
     <p>Scroll down and give it a try! 👇</p>
   </div>
-  <sl-button slot="footer" variant="primary">Close</sl-button>
-</sl-drawer>
+  <nu-button slot="footer" variant="primary">Close</nu-button>
+</nu-drawer>
 
-<sl-button>Open Drawer</sl-button>
+<nu-button>Open Drawer</nu-button>
 
 <script>
   const drawer = document.querySelector('.drawer-scrolling');
@@ -374,13 +374,13 @@ const App = () => {
 The header shows a functional close button by default. You can use the `header-actions` slot to add additional [icon buttons](/components/icon-button) if needed.
 
 ```html:preview
-<sl-drawer label="Drawer" class="drawer-header-actions">
-  <sl-icon-button class="new-window" slot="header-actions" name="box-arrow-up-right"></sl-icon-button>
+<nu-drawer label="Drawer" class="drawer-header-actions">
+  <nu-icon-button class="new-window" slot="header-actions" name="box-arrow-up-right"></nu-icon-button>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  <sl-button slot="footer" variant="primary">Close</sl-button>
-</sl-drawer>
+  <nu-button slot="footer" variant="primary">Close</nu-button>
+</nu-drawer>
 
-<sl-button>Open Drawer</sl-button>
+<nu-button>Open Drawer</nu-button>
 
 <script>
   const drawer = document.querySelector('.drawer-header-actions');
@@ -428,12 +428,12 @@ To keep the drawer open in such cases, you can cancel the `sl-request-close` eve
 You can use `event.detail.source` to determine what triggered the request to close. This example prevents the drawer from closing when the overlay is clicked, but allows the close button or [[Escape]] to dismiss it.
 
 ```html:preview
-<sl-drawer label="Drawer" class="drawer-deny-close">
+<nu-drawer label="Drawer" class="drawer-deny-close">
   This drawer will not close when you click on the overlay.
-  <sl-button slot="footer" variant="primary">Close</sl-button>
-</sl-drawer>
+  <nu-button slot="footer" variant="primary">Close</nu-button>
+</nu-drawer>
 
-<sl-button>Open Drawer</sl-button>
+<nu-button>Open Drawer</nu-button>
 
 <script>
   const drawer = document.querySelector('.drawer-deny-close');
@@ -487,12 +487,12 @@ const App = () => {
 By default, the drawer's panel will gain focus when opened. This allows a subsequent tab press to focus on the first tabbable element in the drawer. If you want a different element to have focus, add the `autofocus` attribute to it as shown below.
 
 ```html:preview
-<sl-drawer label="Drawer" class="drawer-focus">
-  <sl-input autofocus placeholder="I will have focus when the drawer is opened"></sl-input>
-  <sl-button slot="footer" variant="primary">Close</sl-button>
-</sl-drawer>
+<nu-drawer label="Drawer" class="drawer-focus">
+  <nu-input autofocus placeholder="I will have focus when the drawer is opened"></nu-input>
+  <nu-button slot="footer" variant="primary">Close</nu-button>
+</nu-drawer>
 
-<sl-button>Open Drawer</sl-button>
+<nu-button>Open Drawer</nu-button>
 
 <script>
   const drawer = document.querySelector('.drawer-focus');

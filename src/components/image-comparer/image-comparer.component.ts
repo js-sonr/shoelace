@@ -23,7 +23,7 @@ import type { CSSResultGroup } from 'lit';
  * @slot after - The after image, an `<img>` or `<svg>` element.
  * @slot handle - The icon used inside the handle.
  *
- * @event sl-change - Emitted when the position changes.
+ * @event nu-change - Emitted when the position changes.
  *
  * @csspart base - The component's base wrapper.
  * @csspart before - The container that wraps the before image.

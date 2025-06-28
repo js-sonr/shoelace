@@ -42,7 +42,7 @@ import "@onsonr/nebula/dist/themes/light.css";
 
 <html>
   <body>
-    <sl-button>Button</sl-button>
+    <nu-button>Button</nu-button>
   </body>
 </html>
 
@@ -74,9 +74,9 @@ setBasePath("dist/assets");
 
 <html>
   <body>
-    <sl-tooltip content="This is a tooltip">
-      <sl-button>Hover Me</sl-button>
-    </sl-tooltip>
+    <nu-tooltip content="This is a tooltip">
+      <nu-button>Hover Me</nu-button>
+    </nu-tooltip>
   </body>
 </html>
 

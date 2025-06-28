@@ -18,8 +18,8 @@ import type { CSSResultGroup } from 'lit';
  *
  * @slot - The radio's label.
  *
- * @event sl-blur - Emitted when the control loses focus.
- * @event sl-focus - Emitted when the control gains focus.
+ * @event nu-blur - Emitted when the control loses focus.
+ * @event nu-focus - Emitted when the control gains focus.
  *
  * @csspart base - The component's base wrapper.
  * @csspart control - The circular container that wraps the radio's checked state.

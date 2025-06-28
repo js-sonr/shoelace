@@ -46,7 +46,7 @@ Nebula components use a [shadow DOM](https://developer.mozilla.org/en-US/docs/We
 Here's an example that modifies buttons with the `tomato-button` class.
 
 ```html:preview
-<sl-button class="tomato-button"> Tomato Button </sl-button>
+<nu-button class="tomato-button"> Tomato Button </nu-button>
 
 <style>
   .tomato-button::part(base) {
@@ -105,7 +105,7 @@ sl-avatar.your-class {
 Alternatively, you can set them inline directly on the element.
 
 ```html
-<sl-avatar style="--size: 6rem;"></sl-avatar>
+<nu-avatar style="--size: 6rem;"></nu-avatar>
 ```
 
 Not all components expose CSS custom properties. For those that do, they can be found in the component's API documentation.

@@ -18,7 +18,7 @@ export interface MenuSelectEventDetail {
  *
  * @slot - The menu's content, including menu items, menu labels, and dividers.
  *
- * @event {{ item: NuMenuItem }} sl-select - Emitted when a menu item is selected.
+ * @event nu-select - Emitted when a menu item is selected.
  */
 export default class NuMenu extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];

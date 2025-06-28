@@ -2,7 +2,7 @@ import '../../../dist/shoelace.js';
 import { expect, fixture, html, waitUntil } from '@open-wc/testing';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
-import type { NuSelectEvent } from ../../events/nu-select.js';
+import type { NuSelectEvent } from '../../events/events.js';
 import type NuMenuItem from './menu-item.js';
 
 describe('<nu-menu-item>', () => {

@@ -15,19 +15,19 @@ If you're new to custom elements, often referred to as "web components," this se
 Many components have properties that can be set using attributes. For example, buttons accept a `size` attribute that maps to the `size` property which dictates the button's size.
 
 ```html
-<sl-button size="small">Click me</sl-button>
+<nu-button size="small">Click me</nu-button>
 ```
 
 Some properties are boolean, so they only have true/false values. To activate a boolean property, add the corresponding attribute without a value.
 
 ```html
-<sl-button disabled>Click me</sl-button>
+<nu-button disabled>Click me</nu-button>
 ```
 
 In rare cases, a property may require an array, an object, or a function. For example, to customize the color picker's list of preset swatches, you set the `swatches` property to an array of colors. This must be done with JavaScript.
 
 ```html
-<sl-color-picker></sl-color-picker>
+<nu-color-picker></nu-color-picker>
 
 <script>
   const colorPicker = document.querySelector('sl-color-picker');
@@ -41,10 +41,10 @@ Refer to a component's documentation for a complete list of its properties.
 
 You can listen for standard events such as `click`, `mouseover`, etc. as you normally would. However, it's important to note that many events emitted within a component's shadow root will be [retargeted](https://dom.spec.whatwg.org/#retarget) to the host element. This may result in, for example, multiple `click` handlers executing even if the user clicks just once. Furthermore, `event.target` will point to the host element, making things even more confusing.
 
-As a result, you should almost always listen for custom events instead. For example, instead of listening to `click` to determine when an `<sl-checkbox>` gets toggled, listen to `sl-change`.
+As a result, you should almost always listen for custom events instead. For example, instead of listening to `click` to determine when an `<nu-checkbox>` gets toggled, listen to `sl-change`.
 
 ```html
-<sl-checkbox>Check me</sl-checkbox>
+<nu-checkbox>Check me</nu-checkbox>
 
 <script>
   const checkbox = document.querySelector('sl-checkbox');
@@ -61,7 +61,7 @@ All custom events are prefixed with `sl-` to prevent collisions with standard ev
 Some components have methods you can call to trigger various behaviors. For example, you can set focus on a Nebula input using the `focus()` method.
 
 ```html
-<sl-input></sl-input>
+<nu-input></nu-input>
 
 <script>
   const input = document.querySelector('sl-input');
@@ -78,16 +78,16 @@ Many components use slots to accept content inside of them. The most common slot
 For example, a button's default slot is used to populate its label.
 
 ```html
-<sl-button>Click me</sl-button>
+<nu-button>Click me</nu-button>
 ```
 
 Some components also have _named_ slots. A named slot can be populated by adding a child element with the appropriate `slot` attribute. Notice how the icon below has the `slot="prefix"` attribute? This tells the component to place the icon into its `prefix` slot.
 
 ```html
-<sl-button>
-  <sl-icon slot="prefix" name="gear"></sl-icon>
+<nu-button>
+  <nu-icon slot="prefix" name="gear"></nu-icon>
   Settings
-</sl-button>
+</nu-button>
 ```
 
 The location of a named slot doesn't matter. You can put it anywhere inside the component and the browser will move it to the right place automatically!
@@ -100,17 +100,17 @@ Custom elements cannot have self-closing tags. Similar to `<script>` and `<texta
 
 ```html
 <!-- Don't do this -->
-<sl-input />
+<nu-input />
 
 <!-- Always do this -->
-<sl-input></sl-input>
+<nu-input></nu-input>
 ```
 
 ## Differences from Native Elements
 
 You might expect similarly named elements to share the same API as native HTML elements, but this is not always the case. Nebula components **are not** designed to be one-to-one replacements for their HTML counterparts. While they usually share the same API, there may be subtle differences.
 
-For example, `<button>` and `<sl-button>` both have a `type` attribute, but the native one defaults to `submit` while the Nebula one defaults to `button` since this is a better default for most users.
+For example, `<button>` and `<nu-button>` both have a `type` attribute, but the native one defaults to `submit` while the Nebula one defaults to `button` since this is a better default for most users.
 
 :::tip
 **Don't make assumptions about a component's API!** To prevent unexpected behaviors, please take the time to review the documentation and make sure you understand what each attribute, property, method, and event is intended to do.

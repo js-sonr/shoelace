@@ -8,15 +8,15 @@ layout: component
 You can use [menu items](/components/menu-item), [menu labels](/components/menu-label), and [dividers](/components/divider) to compose a menu. Menus support keyboard interactions, including type-to-select an option.
 
 ```html:preview
-<sl-menu style="max-width: 200px;">
-  <sl-menu-item value="undo">Undo</sl-menu-item>
-  <sl-menu-item value="redo">Redo</sl-menu-item>
-  <sl-divider></sl-divider>
-  <sl-menu-item value="cut">Cut</sl-menu-item>
-  <sl-menu-item value="copy">Copy</sl-menu-item>
-  <sl-menu-item value="paste">Paste</sl-menu-item>
-  <sl-menu-item value="delete">Delete</sl-menu-item>
-</sl-menu>
+<nu-menu style="max-width: 200px;">
+  <nu-menu-item value="undo">Undo</nu-menu-item>
+  <nu-menu-item value="redo">Redo</nu-menu-item>
+  <nu-divider></nu-divider>
+  <nu-menu-item value="cut">Cut</nu-menu-item>
+  <nu-menu-item value="copy">Copy</nu-menu-item>
+  <nu-menu-item value="paste">Paste</nu-menu-item>
+  <nu-menu-item value="delete">Delete</nu-menu-item>
+</nu-menu>
 ```
 
 {% raw %}
@@ -52,14 +52,14 @@ Menus are intended for system menus (dropdown menus, select menus, context menus
 Menus work really well when used inside [dropdowns](/components/dropdown).
 
 ```html:preview
-<sl-dropdown>
-  <sl-button slot="trigger" caret>Edit</sl-button>
-  <sl-menu>
-    <sl-menu-item value="cut">Cut</sl-menu-item>
-    <sl-menu-item value="copy">Copy</sl-menu-item>
-    <sl-menu-item value="paste">Paste</sl-menu-item>
-  </sl-menu>
-</sl-dropdown>
+<nu-dropdown>
+  <nu-button slot="trigger" caret>Edit</nu-button>
+  <nu-menu>
+    <nu-menu-item value="cut">Cut</nu-menu-item>
+    <nu-menu-item value="copy">Copy</nu-menu-item>
+    <nu-menu-item value="paste">Paste</nu-menu-item>
+  </nu-menu>
+</nu-dropdown>
 ```
 
 ```jsx:react
@@ -82,34 +82,34 @@ const App = () => (
 
 ### Submenus
 
-To create a submenu, nest an `<sl-menu slot="submenu">` in any [menu item](/components/menu-item).
+To create a submenu, nest an `<nu-menu slot="submenu">` in any [menu item](/components/menu-item).
 
 ```html:preview
-<sl-menu style="max-width: 200px;">
-  <sl-menu-item value="undo">Undo</sl-menu-item>
-  <sl-menu-item value="redo">Redo</sl-menu-item>
-  <sl-divider></sl-divider>
-  <sl-menu-item value="cut">Cut</sl-menu-item>
-  <sl-menu-item value="copy">Copy</sl-menu-item>
-  <sl-menu-item value="paste">Paste</sl-menu-item>
-  <sl-divider></sl-divider>
-  <sl-menu-item>
+<nu-menu style="max-width: 200px;">
+  <nu-menu-item value="undo">Undo</nu-menu-item>
+  <nu-menu-item value="redo">Redo</nu-menu-item>
+  <nu-divider></nu-divider>
+  <nu-menu-item value="cut">Cut</nu-menu-item>
+  <nu-menu-item value="copy">Copy</nu-menu-item>
+  <nu-menu-item value="paste">Paste</nu-menu-item>
+  <nu-divider></nu-divider>
+  <nu-menu-item>
     Find
-    <sl-menu slot="submenu">
-      <sl-menu-item value="find">Find…</sl-menu-item>
-      <sl-menu-item value="find-previous">Find Next</sl-menu-item>
-      <sl-menu-item value="find-next">Find Previous</sl-menu-item>
-    </sl-menu>
-  </sl-menu-item>
-  <sl-menu-item>
+    <nu-menu slot="submenu">
+      <nu-menu-item value="find">Find…</nu-menu-item>
+      <nu-menu-item value="find-previous">Find Next</nu-menu-item>
+      <nu-menu-item value="find-next">Find Previous</nu-menu-item>
+    </nu-menu>
+  </nu-menu-item>
+  <nu-menu-item>
     Transformations
-    <sl-menu slot="submenu">
-      <sl-menu-item value="uppercase">Make uppercase</sl-menu-item>
-      <sl-menu-item value="lowercase">Make lowercase</sl-menu-item>
-      <sl-menu-item value="capitalize">Capitalize</sl-menu-item>
-    </sl-menu>
-  </sl-menu-item>
-</sl-menu>
+    <nu-menu slot="submenu">
+      <nu-menu-item value="uppercase">Make uppercase</nu-menu-item>
+      <nu-menu-item value="lowercase">Make lowercase</nu-menu-item>
+      <nu-menu-item value="capitalize">Capitalize</nu-menu-item>
+    </nu-menu>
+  </nu-menu-item>
+</nu-menu>
 ```
 
 {% raw %}

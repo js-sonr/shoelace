@@ -19,8 +19,8 @@ import type { CSSResultGroup } from 'lit';
  * @slot prefix - A presentational prefix icon or similar element.
  * @slot suffix - A presentational suffix icon or similar element.
  *
- * @event sl-blur - Emitted when the button loses focus.
- * @event sl-focus - Emitted when the button gains focus.
+ * @event nu-blur - Emitted when the button loses focus.
+ * @event nu-focus - Emitted when the button gains focus.
  *
  * @csspart base - The component's base wrapper.
  * @csspart button - The internal `<button>` element.

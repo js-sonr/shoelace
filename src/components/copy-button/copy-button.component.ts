@@ -19,8 +19,8 @@ import type { CSSResultGroup } from 'lit';
  * @dependency sl-icon
  * @dependency sl-tooltip
  *
- * @event sl-copy - Emitted when the data has been copied.
- * @event sl-error - Emitted when the data could not be copied.
+ * @event nu-copy - Emitted when the data has been copied.
+ * @event nu-error - Emitted when the data could not be copied.
  *
  * @slot copy-icon - The icon to show in the default copy state. Works best with `<nu-icon>`.
  * @slot success-icon - The icon to show when the content is copied. Works best with `<nu-icon>`.

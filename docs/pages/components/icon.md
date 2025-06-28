@@ -16,19 +16,19 @@ Depending on how you're loading Nebula, you may need to copy icon assets and/or 
 All available icons in the `default` icon library are shown below. Click or tap on any icon to copy its name, then you can use it in your HTML like this.
 
 ```html
-<sl-icon name="icon-name-here"></sl-icon>
+<nu-icon name="icon-name-here"></nu-icon>
 ```
 
 <div class="icon-search">
   <div class="icon-search-controls">
-    <sl-input placeholder="Search Icons" clearable>
-      <sl-icon slot="prefix" name="search"></sl-icon>
-    </sl-input>
-    <sl-select value="outline">
-      <sl-option value="outline">Outlined</sl-option>
-      <sl-option value="fill">Filled</sl-option>
-      <sl-option value="all">All icons</sl-option>
-    </sl-select>
+    <nu-input placeholder="Search Icons" clearable>
+      <nu-icon slot="prefix" name="search"></nu-icon>
+    </nu-input>
+    <nu-select value="outline">
+      <nu-option value="outline">Outlined</nu-option>
+      <nu-option value="fill">Filled</nu-option>
+      <nu-option value="all">All icons</nu-option>
+    </nu-select>
   </div>
   <div class="icon-list"></div>
   <input type="text" class="icon-copy-input" aria-hidden="true" tabindex="-1">
@@ -38,32 +38,32 @@ All available icons in the `default` icon library are shown below. Click or tap 
 
 ### Colors
 
-Icons inherit their color from the current text color. Thus, you can set the `color` property on the `<sl-icon>` element or an ancestor to change the color.
+Icons inherit their color from the current text color. Thus, you can set the `color` property on the `<nu-icon>` element or an ancestor to change the color.
 
 ```html:preview
 <div style="color: #4a90e2;">
-  <sl-icon name="exclamation-triangle"></sl-icon>
-  <sl-icon name="archive"></sl-icon>
-  <sl-icon name="battery-charging"></sl-icon>
-  <sl-icon name="bell"></sl-icon>
+  <nu-icon name="exclamation-triangle"></nu-icon>
+  <nu-icon name="archive"></nu-icon>
+  <nu-icon name="battery-charging"></nu-icon>
+  <nu-icon name="bell"></nu-icon>
 </div>
 <div style="color: #9013fe;">
-  <sl-icon name="clock"></sl-icon>
-  <sl-icon name="cloud"></sl-icon>
-  <sl-icon name="download"></sl-icon>
-  <sl-icon name="file-earmark"></sl-icon>
+  <nu-icon name="clock"></nu-icon>
+  <nu-icon name="cloud"></nu-icon>
+  <nu-icon name="download"></nu-icon>
+  <nu-icon name="file-earmark"></nu-icon>
 </div>
 <div style="color: #417505;">
-  <sl-icon name="flag"></sl-icon>
-  <sl-icon name="heart"></sl-icon>
-  <sl-icon name="image"></sl-icon>
-  <sl-icon name="lightning"></sl-icon>
+  <nu-icon name="flag"></nu-icon>
+  <nu-icon name="heart"></nu-icon>
+  <nu-icon name="image"></nu-icon>
+  <nu-icon name="lightning"></nu-icon>
 </div>
 <div style="color: #f5a623;">
-  <sl-icon name="mic"></sl-icon>
-  <sl-icon name="search"></sl-icon>
-  <sl-icon name="star"></sl-icon>
-  <sl-icon name="trash"></sl-icon>
+  <nu-icon name="mic"></nu-icon>
+  <nu-icon name="search"></nu-icon>
+  <nu-icon name="star"></nu-icon>
+  <nu-icon name="trash"></nu-icon>
 </div>
 ```
 
@@ -110,22 +110,22 @@ Icons are sized relative to the current font size. To change their size, set the
 
 ```html:preview
 <div style="font-size: 32px;">
-  <sl-icon name="exclamation-triangle"></sl-icon>
-  <sl-icon name="archive"></sl-icon>
-  <sl-icon name="battery-charging"></sl-icon>
-  <sl-icon name="bell"></sl-icon>
-  <sl-icon name="clock"></sl-icon>
-  <sl-icon name="cloud"></sl-icon>
-  <sl-icon name="download"></sl-icon>
-  <sl-icon name="file-earmark"></sl-icon>
-  <sl-icon name="flag"></sl-icon>
-  <sl-icon name="heart"></sl-icon>
-  <sl-icon name="image"></sl-icon>
-  <sl-icon name="lightning"></sl-icon>
-  <sl-icon name="mic"></sl-icon>
-  <sl-icon name="search"></sl-icon>
-  <sl-icon name="star"></sl-icon>
-  <sl-icon name="trash"></sl-icon>
+  <nu-icon name="exclamation-triangle"></nu-icon>
+  <nu-icon name="archive"></nu-icon>
+  <nu-icon name="battery-charging"></nu-icon>
+  <nu-icon name="bell"></nu-icon>
+  <nu-icon name="clock"></nu-icon>
+  <nu-icon name="cloud"></nu-icon>
+  <nu-icon name="download"></nu-icon>
+  <nu-icon name="file-earmark"></nu-icon>
+  <nu-icon name="flag"></nu-icon>
+  <nu-icon name="heart"></nu-icon>
+  <nu-icon name="image"></nu-icon>
+  <nu-icon name="lightning"></nu-icon>
+  <nu-icon name="mic"></nu-icon>
+  <nu-icon name="search"></nu-icon>
+  <nu-icon name="star"></nu-icon>
+  <nu-icon name="trash"></nu-icon>
 </div>
 ```
 
@@ -134,7 +134,7 @@ Icons are sized relative to the current font size. To change their size, set the
 For non-decorative icons, use the `label` attribute to announce it to assistive devices.
 
 ```html:preview
-<sl-icon name="star-fill" label="Add to favorites"></sl-icon>
+<nu-icon name="star-fill" label="Add to favorites"></nu-icon>
 ```
 
 {% raw %}
@@ -149,7 +149,7 @@ const App = () => <SlIcon name="star-fill" label="Add to favorites" />;
 
 ## Icon Libraries
 
-You can register additional icons to use with the `<sl-icon>` component through icon libraries. Icon files can exist locally or on a CORS-enabled endpoint (e.g. a CDN). There is no limit to how many icon libraries you can register and there is no cost associated with registering them, as individual icons are only requested when they're used.
+You can register additional icons to use with the `<nu-icon>` component through icon libraries. Icon files can exist locally or on a CORS-enabled endpoint (e.g. a CDN). There is no limit to how many icon libraries you can register and there is no cost associated with registering them, as individual icons are only requested when they're used.
 
 Nebula ships with two built-in icon libraries, `default` and `system`. The [default icon library](#customizing-the-default-library) contains all of the icons in the Bootstrap Icons project. The [system icon library](#customizing-the-system-library) contains only a small subset of icons that are used internally by Nebula components.
 
@@ -167,34 +167,34 @@ Icons sourced from our internal style guide.
 
 ```html:preview
 <div style="font-size: 24px;">
-  <sl-icon library="sonr" name="passkey"></sl-icon>
-  <sl-icon library="sonr" name="docs"></sl-icon>
-  <sl-icon library="sonr" name="social-github"></sl-icon>
-  <sl-icon library="sonr" name="social-twitter"></sl-icon>
-  <sl-icon library="sonr" name="social-youtube"></sl-icon>
-  <sl-icon library="sonr" name="error-blockchain"></sl-icon>
-  <sl-icon library="sonr" name="error-network"></sl-icon>
-  <sl-icon library="sonr" name="swap-coins"></sl-icon>
-  <sl-icon library="sonr" name="scanner-qr"></sl-icon>
-  <sl-icon library="sonr" name="external-link"></sl-icon>
-  <sl-icon library="sonr" name="face-id"></sl-icon>
-  <sl-icon library="sonr" name="lock-access"></sl-icon>
-  <sl-icon library="sonr" name="check-shield"></sl-icon>
-  <sl-icon library="sonr" name="vault"></sl-icon>
-  <sl-icon library="sonr" name="coin-assets"></sl-icon>
-  <sl-icon library="sonr" name="coins-hand"></sl-icon>
-  <sl-icon library="sonr" name="coins-stack"></sl-icon>
-  <sl-icon library="sonr" name="currency-dollar"></sl-icon>
-  <sl-icon library="sonr" name="currency-euro"></sl-icon>
-  <sl-icon library="sonr" name="currency-pound"></sl-icon>
-  <sl-icon library="sonr" name="currency-rupee"></sl-icon>
-  <sl-icon library="sonr" name="currency-yen"></sl-icon>
-  <sl-icon library="sonr" name="sonr"></sl-icon>
-  <sl-icon library="sonr" name="sonr-fill"></sl-icon>
-  <sl-icon library="sonr" name="osmo"></sl-icon>
-  <sl-icon library="sonr" name="btc"></sl-icon>
-  <sl-icon library="sonr" name="sol"></sl-icon>
-  <sl-icon library="sonr" name="usdc"></sl-icon>
+  <nu-icon library="sonr" name="passkey"></nu-icon>
+  <nu-icon library="sonr" name="docs"></nu-icon>
+  <nu-icon library="sonr" name="social-github"></nu-icon>
+  <nu-icon library="sonr" name="social-twitter"></nu-icon>
+  <nu-icon library="sonr" name="social-youtube"></nu-icon>
+  <nu-icon library="sonr" name="error-blockchain"></nu-icon>
+  <nu-icon library="sonr" name="error-network"></nu-icon>
+  <nu-icon library="sonr" name="swap-coins"></nu-icon>
+  <nu-icon library="sonr" name="scanner-qr"></nu-icon>
+  <nu-icon library="sonr" name="external-link"></nu-icon>
+  <nu-icon library="sonr" name="face-id"></nu-icon>
+  <nu-icon library="sonr" name="lock-access"></nu-icon>
+  <nu-icon library="sonr" name="check-shield"></nu-icon>
+  <nu-icon library="sonr" name="vault"></nu-icon>
+  <nu-icon library="sonr" name="coin-assets"></nu-icon>
+  <nu-icon library="sonr" name="coins-hand"></nu-icon>
+  <nu-icon library="sonr" name="coins-stack"></nu-icon>
+  <nu-icon library="sonr" name="currency-dollar"></nu-icon>
+  <nu-icon library="sonr" name="currency-euro"></nu-icon>
+  <nu-icon library="sonr" name="currency-pound"></nu-icon>
+  <nu-icon library="sonr" name="currency-rupee"></nu-icon>
+  <nu-icon library="sonr" name="currency-yen"></nu-icon>
+  <nu-icon library="sonr" name="sonr"></nu-icon>
+  <nu-icon library="sonr" name="sonr-fill"></nu-icon>
+  <nu-icon library="sonr" name="osmo"></nu-icon>
+  <nu-icon library="sonr" name="btc"></nu-icon>
+  <nu-icon library="sonr" name="sol"></nu-icon>
+  <nu-icon library="sonr" name="usdc"></nu-icon>
  </div>
 ```
 
@@ -207,27 +207,27 @@ All Caps ticker symbol for the icon.
 
 ```html:preview
 <div style="font-size: 24px;">
-  <sl-icon library="crypto" name="SNR"></sl-icon>
-  <sl-icon library="crypto" name="BTC"></sl-icon>
-  <sl-icon library="crypto" name="ETH"></sl-icon>
-  <sl-icon library="crypto" name="LTC"></sl-icon>
-  <sl-icon library="crypto" name="XRP"></sl-icon>
-  <sl-icon library="crypto" name="BCH"></sl-icon>
-  <sl-icon library="crypto" name="BNB"></sl-icon>
-  <sl-icon library="crypto" name="LINK"></sl-icon>
-  <sl-icon library="crypto" name="DOT"></sl-icon>
-  <sl-icon library="crypto" name="SOL"></sl-icon>
-  <sl-icon library="crypto" name="USDT"></sl-icon>
-  <sl-icon library="crypto" name="USDC"></sl-icon>
-  <sl-icon library="crypto" name="EVMOS"></sl-icon>
-  <sl-icon library="crypto" name="FIL"></sl-icon>
-  <sl-icon library="crypto" name="ATOM"></sl-icon>
-  <sl-icon library="crypto" name="AXL"></sl-icon>
-  <sl-icon library="crypto" name="HNS"></sl-icon>
-  <sl-icon library="crypto" name="AKT"></sl-icon>
-  <sl-icon library="crypto" name="DOGE"></sl-icon>
-  <sl-icon library="crypto" name="SOL"></sl-icon>
-  <sl-icon library="crypto" name="STARZ"></sl-icon>
+  <nu-icon library="crypto" name="SNR"></nu-icon>
+  <nu-icon library="crypto" name="BTC"></nu-icon>
+  <nu-icon library="crypto" name="ETH"></nu-icon>
+  <nu-icon library="crypto" name="LTC"></nu-icon>
+  <nu-icon library="crypto" name="XRP"></nu-icon>
+  <nu-icon library="crypto" name="BCH"></nu-icon>
+  <nu-icon library="crypto" name="BNB"></nu-icon>
+  <nu-icon library="crypto" name="LINK"></nu-icon>
+  <nu-icon library="crypto" name="DOT"></nu-icon>
+  <nu-icon library="crypto" name="SOL"></nu-icon>
+  <nu-icon library="crypto" name="USDT"></nu-icon>
+  <nu-icon library="crypto" name="USDC"></nu-icon>
+  <nu-icon library="crypto" name="EVMOS"></nu-icon>
+  <nu-icon library="crypto" name="FIL"></nu-icon>
+  <nu-icon library="crypto" name="ATOM"></nu-icon>
+  <nu-icon library="crypto" name="AXL"></nu-icon>
+  <nu-icon library="crypto" name="HNS"></nu-icon>
+  <nu-icon library="crypto" name="AKT"></nu-icon>
+  <nu-icon library="crypto" name="DOGE"></nu-icon>
+  <nu-icon library="crypto" name="SOL"></nu-icon>
+  <nu-icon library="crypto" name="STARZ"></nu-icon>
 </div>
 ```
 
@@ -254,26 +254,26 @@ Icons in this library are licensed under the [Font Awesome Free License](https:/
 </script>
 
 <div style="font-size: 24px;">
-  <sl-icon library="fa" name="far-bell"></sl-icon>
-  <sl-icon library="fa" name="far-comment"></sl-icon>
-  <sl-icon library="fa" name="far-hand-point-right"></sl-icon>
-  <sl-icon library="fa" name="far-hdd"></sl-icon>
-  <sl-icon library="fa" name="far-heart"></sl-icon>
-  <sl-icon library="fa" name="far-star"></sl-icon>
+  <nu-icon library="fa" name="far-bell"></nu-icon>
+  <nu-icon library="fa" name="far-comment"></nu-icon>
+  <nu-icon library="fa" name="far-hand-point-right"></nu-icon>
+  <nu-icon library="fa" name="far-hdd"></nu-icon>
+  <nu-icon library="fa" name="far-heart"></nu-icon>
+  <nu-icon library="fa" name="far-star"></nu-icon>
   <br />
-  <sl-icon library="fa" name="fas-archive"></sl-icon>
-  <sl-icon library="fa" name="fas-book"></sl-icon>
-  <sl-icon library="fa" name="fas-chess-knight"></sl-icon>
-  <sl-icon library="fa" name="fas-dice"></sl-icon>
-  <sl-icon library="fa" name="fas-pizza-slice"></sl-icon>
-  <sl-icon library="fa" name="fas-scroll"></sl-icon>
+  <nu-icon library="fa" name="fas-archive"></nu-icon>
+  <nu-icon library="fa" name="fas-book"></nu-icon>
+  <nu-icon library="fa" name="fas-chess-knight"></nu-icon>
+  <nu-icon library="fa" name="fas-dice"></nu-icon>
+  <nu-icon library="fa" name="fas-pizza-slice"></nu-icon>
+  <nu-icon library="fa" name="fas-scroll"></nu-icon>
   <br />
-  <sl-icon library="fa" name="fab-apple"></sl-icon>
-  <sl-icon library="fa" name="fab-chrome"></sl-icon>
-  <sl-icon library="fa" name="fab-edge"></sl-icon>
-  <sl-icon library="fa" name="fab-firefox"></sl-icon>
-  <sl-icon library="fa" name="fab-opera"></sl-icon>
-  <sl-icon library="fa" name="fab-microsoft"></sl-icon>
+  <nu-icon library="fa" name="fab-apple"></nu-icon>
+  <nu-icon library="fa" name="fab-chrome"></nu-icon>
+  <nu-icon library="fa" name="fab-edge"></nu-icon>
+  <nu-icon library="fa" name="fab-firefox"></nu-icon>
+  <nu-icon library="fa" name="fab-opera"></nu-icon>
+  <nu-icon library="fa" name="fab-microsoft"></nu-icon>
 </div>
 ```
 

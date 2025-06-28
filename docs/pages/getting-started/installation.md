@@ -10,11 +10,11 @@ You can load Nebula via CDN or by installing it locally. If you're using a frame
 
 ## CDN Installation (Easiest)
 
-<sl-tab-group>
-<sl-tab slot="nav" panel="autoloader" active>Autoloader</sl-tab>
-<sl-tab slot="nav" panel="traditional">Traditional Loader</sl-tab>
+<nu-tab-group>
+<nu-tab slot="nav" panel="autoloader" active>Autoloader</nu-tab>
+<nu-tab slot="nav" panel="traditional">Traditional Loader</nu-tab>
 
-<sl-tab-panel name="autoloader">
+<nu-tab-panel name="autoloader">
 
 The experimental autoloader is the easiest and most efficient way to use Nebula. A lightweight script watches the DOM for unregistered Nebula elements and lazy loads them for you — even if they're added dynamically.
 
@@ -26,9 +26,9 @@ While convenient, autoloading may lead to a [Flash of Undefined Custom Elements]
 <script type="module" src="https://cdn.jsdelivr.net/npm/@onsonr/nebula@%VERSION%/%CDNDIR%/shoelace-autoloader.js"></script>
 ```
 
-</sl-tab-panel>
+</nu-tab-panel>
 
-<sl-tab-panel name="traditional">
+<nu-tab-panel name="traditional">
 
 The traditional CDN loader registers all Nebula elements up front. Note that, if you're only using a handful of components, it will be much more efficient to stick with the autoloader. However, you can also [cherry pick](#cherry-picking) components if you want to load specific ones up front.
 
@@ -38,8 +38,8 @@ The traditional CDN loader registers all Nebula elements up front. Note that, if
 <script type="module" src="https://cdn.jsdelivr.net/npm/@onsonr/nebula@%VERSION%/%CDNDIR%/shoelace.js" ></script>
 ```
 
-</sl-tab-panel>
-</sl-tab-group>
+</nu-tab-panel>
+</nu-tab-group>
 
 ### Dark Theme
 
@@ -147,7 +147,7 @@ Here's an example that loads only the button component. Again, if you're not usi
 <script type="module" data-shoelace="/path/to/shoelace/%NPMDIR%">
   import '@onsonr/nebula/%NPMDIR%/components/button/button.js';
 
-  // <sl-button> is ready to use!
+  // <nu-button> is ready to use!
 </script>
 ```
 
@@ -189,7 +189,7 @@ import { setBasePath } from '@onsonr/nebula/%NPMDIR%/utilities/base-path.js';
 // Set the base path to the folder you copied Nebula's assets to
 setBasePath('/path/to/shoelace/%NPMDIR%');
 
-// <sl-button>, <sl-icon>, <sl-input>, and <sl-rating> are ready to use!
+// <nu-button>, <nu-icon>, <nu-input>, and <nu-rating> are ready to use!
 ```
 
 :::warning

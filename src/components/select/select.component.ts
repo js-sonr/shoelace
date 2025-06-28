@@ -20,7 +20,7 @@ import NuTag from '../tag/tag.component.js';
 import styles from './select.styles.js';
 import type { CSSResultGroup, TemplateResult } from 'lit';
 import type { NebulaFormControl } from '../../internal/nebula-element.js';
-import type { NuRemoveEvent } from ../../events/nu-remove.js';
+import type { NuRemoveEvent } from '../../events/events.js';
 import type NuOption from '../option/option.component.js';
 
 /**
@@ -40,16 +40,16 @@ import type NuOption from '../option/option.component.js';
  * @slot expand-icon - The icon to show when the control is expanded and collapsed. Rotates on open and close.
  * @slot help-text - Text that describes how to use the input. Alternatively, you can use the `help-text` attribute.
  *
- * @event sl-change - Emitted when the control's value changes.
- * @event sl-clear - Emitted when the control's value is cleared.
- * @event sl-input - Emitted when the control receives input.
- * @event sl-focus - Emitted when the control gains focus.
- * @event sl-blur - Emitted when the control loses focus.
- * @event sl-show - Emitted when the select's menu opens.
- * @event sl-after-show - Emitted after the select's menu opens and all animations are complete.
- * @event sl-hide - Emitted when the select's menu closes.
- * @event sl-after-hide - Emitted after the select's menu closes and all animations are complete.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-change - Emitted when the control's value changes.
+ * @event nu-clear - Emitted when the control's value is cleared.
+ * @event nu-input - Emitted when the control receives input.
+ * @event nu-focus - Emitted when the control gains focus.
+ * @event nu-blur - Emitted when the control loses focus.
+ * @event nu-show - Emitted when the select's menu opens.
+ * @event nu-after-show - Emitted after the select's menu opens and all animations are complete.
+ * @event nu-hide - Emitted when the select's menu closes.
+ * @event nu-after-hide - Emitted after the select's menu closes and all animations are complete.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart form-control - The form control that wraps the label, input, and help text.
  * @csspart form-control-label - The label's wrapper.
@@ -279,7 +279,7 @@ export default class NuSelect extends NebulaElement implements NebulaFormControl
   private handleDocumentKeyDown = (event: KeyboardEvent) => {
     const target = event.target as HTMLElement;
     const isClearButton = target.closest('.select__clear') !== null;
-    const isIconButton = target.closest('sl-icon-button') !== null;
+    const isIconButton = target.closest('nu-icon-button') !== null;
 
     // Ignore presses when the target is an icon button (e.g. the remove button in <nu-tag>)
     if (isClearButton || isIconButton) {
@@ -464,7 +464,7 @@ export default class NuSelect extends NebulaElement implements NebulaFormControl
 
   private handleOptionClick(event: MouseEvent) {
     const target = event.target as HTMLElement;
-    const option = target.closest('sl-option');
+    const option = target.closest('nu-option');
     const oldValue = this.value;
 
     if (option && !option.disabled) {

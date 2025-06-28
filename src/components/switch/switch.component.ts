@@ -23,11 +23,11 @@ import type { NebulaFormControl } from '../../internal/nebula-element.js';
  * @slot - The switch's label.
  * @slot help-text - Text that describes how to use the switch. Alternatively, you can use the `help-text` attribute.
  *
- * @event sl-blur - Emitted when the control loses focus.
- * @event sl-change - Emitted when the control's checked state changes.
- * @event sl-input - Emitted when the control receives input.
- * @event sl-focus - Emitted when the control gains focus.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-blur - Emitted when the control loses focus.
+ * @event nu-change - Emitted when the control's checked state changes.
+ * @event nu-input - Emitted when the control receives input.
+ * @event nu-focus - Emitted when the control gains focus.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart base - The component's base wrapper.
  * @csspart control - The control that houses the switch's thumb.

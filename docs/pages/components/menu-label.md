@@ -6,17 +6,17 @@ layout: component
 ---
 
 ```html:preview
-<sl-menu style="max-width: 200px;">
-  <sl-menu-label>Fruits</sl-menu-label>
-  <sl-menu-item value="apple">Apple</sl-menu-item>
-  <sl-menu-item value="banana">Banana</sl-menu-item>
-  <sl-menu-item value="orange">Orange</sl-menu-item>
-  <sl-divider></sl-divider>
-  <sl-menu-label>Vegetables</sl-menu-label>
-  <sl-menu-item value="broccoli">Broccoli</sl-menu-item>
-  <sl-menu-item value="carrot">Carrot</sl-menu-item>
-  <sl-menu-item value="zucchini">Zucchini</sl-menu-item>
-</sl-menu>
+<nu-menu style="max-width: 200px;">
+  <nu-menu-label>Fruits</nu-menu-label>
+  <nu-menu-item value="apple">Apple</nu-menu-item>
+  <nu-menu-item value="banana">Banana</nu-menu-item>
+  <nu-menu-item value="orange">Orange</nu-menu-item>
+  <nu-divider></nu-divider>
+  <nu-menu-label>Vegetables</nu-menu-label>
+  <nu-menu-item value="broccoli">Broccoli</nu-menu-item>
+  <nu-menu-item value="carrot">Carrot</nu-menu-item>
+  <nu-menu-item value="zucchini">Zucchini</nu-menu-item>
+</nu-menu>
 ```
 
 {% raw %}

@@ -13,7 +13,7 @@ import NebulaElement from '../../internal/nebula-element.js';
 import NuPopup from '../popup/popup.component.js';
 import styles from './dropdown.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type { NuSelectEvent } from ../../events/nu-select.js';
+import type { NuSelectEvent } from '../../events/events.js';
 import type NuButton from '../button/button.js';
 import type NuIconButton from '../icon-button/icon-button.js';
 import type NuMenu from '../menu/menu.js';
@@ -29,10 +29,10 @@ import type NuMenu from '../menu/menu.js';
  * @slot - The dropdown's main content.
  * @slot trigger - The dropdown's trigger, usually a `<nu-button>` element.
  *
- * @event sl-show - Emitted when the dropdown opens.
- * @event sl-after-show - Emitted after the dropdown opens and all animations are complete.
- * @event sl-hide - Emitted when the dropdown closes.
- * @event sl-after-hide - Emitted after the dropdown closes and all animations are complete.
+ * @event nu-show - Emitted when the dropdown opens.
+ * @event nu-after-show - Emitted after the dropdown opens and all animations are complete.
+ * @event nu-hide - Emitted when the dropdown closes.
+ * @event nu-after-hide - Emitted after the dropdown closes and all animations are complete.
  *
  * @csspart base - The component's base wrapper, an `<nu-popup>` element.
  * @csspart base__popup - The popup's exported `popup` part. Use this to target the tooltip's popup container.
@@ -342,7 +342,7 @@ export default class NuDropdown extends NebulaElement {
   }
 
   addOpenListeners() {
-    this.panel.addEventListener('sl-select', this.handlePanelSelect);
+    this.panel.addEventListener('nu-select', this.handlePanelSelect);
     if ('CloseWatcher' in window) {
       this.closeWatcher?.destroy();
       this.closeWatcher = new CloseWatcher();

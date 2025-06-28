@@ -32,9 +32,9 @@ import type NuRadioButton from '../radio-button/radio-button.js';
  *  attribute.
  * @slot help-text - Text that describes how to use the radio group. Alternatively, you can use the `help-text` attribute.
  *
- * @event sl-change - Emitted when the radio group's selected value changes.
- * @event sl-input - Emitted when the radio group receives user input.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-change - Emitted when the radio group's selected value changes.
+ * @event nu-input - Emitted when the radio group receives user input.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart form-control - The form control that wraps the label, input, and help text.
  * @csspart form-control-label - The label's wrapper.

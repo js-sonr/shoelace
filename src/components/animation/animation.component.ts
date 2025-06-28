@@ -13,9 +13,9 @@ import type { CSSResultGroup } from 'lit';
  * @status stable
  * @since 2.0
  *
- * @event sl-cancel - Emitted when the animation is canceled.
- * @event sl-finish - Emitted when the animation finishes.
- * @event sl-start - Emitted when the animation starts or restarts.
+ * @event nu-cancel - Emitted when the animation is canceled.
+ * @event nu-finish - Emitted when the animation finishes.
+ * @event nu-start - Emitted when the animation starts or restarts.
  *
  * @slot - The element to animate. Avoid slotting in more than one element, as subsequent ones will be ignored. To
  *  animate multiple elements, either wrap them in a single container or use multiple `<nu-animation>` elements.

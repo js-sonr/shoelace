@@ -9,9 +9,9 @@ The resize observer will report changes to the dimensions of the elements it wra
 
 ```html:preview
 <div class="resize-observer-overview">
-  <sl-resize-observer>
+  <nu-resize-observer>
     <div>Resize this box and watch the console 👉</div>
-  </sl-resize-observer>
+  </nu-resize-observer>
 </div>
 
 <script>

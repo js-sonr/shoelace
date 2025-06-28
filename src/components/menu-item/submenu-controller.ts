@@ -55,7 +55,7 @@ export class SubmenuController implements ReactiveController {
     if (!this.isPopupConnected) {
       if (this.popupRef.value) {
         this.popupRef.value.addEventListener('mouseover', this.handlePopupMouseover);
-        this.popupRef.value.addEventListener('sl-reposition', this.handlePopupReposition);
+        this.popupRef.value.addEventListener('nu-reposition', this.handlePopupReposition);
         this.isPopupConnected = true;
       }
     }

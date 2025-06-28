@@ -26,10 +26,10 @@ const toastStack = Object.assign(document.createElement('div'), { className: 'sl
  * @slot - The alert's main content.
  * @slot icon - An icon to show in the alert. Works best with `<nu-icon>`.
  *
- * @event sl-show - Emitted when the alert opens.
- * @event sl-after-show - Emitted after the alert opens and all animations are complete.
- * @event sl-hide - Emitted when the alert closes.
- * @event sl-after-hide - Emitted after the alert closes and all animations are complete.
+ * @event nu-show - Emitted when the alert opens.
+ * @event nu-after-show - Emitted after the alert opens and all animations are complete.
+ * @event nu-hide - Emitted when the alert closes.
+ * @event nu-after-hide - Emitted after the alert closes and all animations are complete.
  *
  * @csspart base - The component's base wrapper.
  * @csspart icon - The container that wraps the optional icon.
