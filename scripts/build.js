@@ -294,7 +294,8 @@ if (serve) {
       const rebuildResults = buildResults.map(result => result.rebuild());
       await Promise.all(rebuildResults);
 
-      // Rebuild stylesheets when a theme file changes
+      /
+      / Rebuild stylesheets when a theme file changes
       if (isTheme) {
         await Promise.all(
           bundleDirectories.map(dir => {

@@ -127,7 +127,7 @@ Enable infinite scrolling for large datasets with the `infinite-scroll` attribut
 
 <script>
   const infiniteView = document.getElementById('infinite-example');
-  
+
   // Generate many items to demonstrate pagination
   const manyItems = Array.from({ length: 20 }, (_, i) => ({
     id: `item-${i + 1}`,
@@ -139,9 +139,9 @@ Enable infinite scrolling for large datasets with the `infinite-scroll` attribut
     currency: ['USDC', 'ETH', 'BTC'][i % 3],
     status: ['completed', 'pending', 'failed'][i % 3]
   }));
-  
+
   infiniteView.items = manyItems;
-  
+
   infiniteView.addEventListener('nu-load-more', (event) => {
     console.log('Load more requested:', event.detail);
   });
@@ -154,9 +154,9 @@ Filter items using the `filter-text` attribute to search through titles, descrip
 
 ```html:preview
 <div>
-  <nu-input 
-    id="filter-input" 
-    placeholder="Search transactions..." 
+  <nu-input
+    id="filter-input"
+    placeholder="Search transactions..."
     style="margin-bottom: 1rem;"
   ></nu-input>
   <nu-list-view id="filter-example"></nu-list-view>
@@ -165,7 +165,7 @@ Filter items using the `filter-text` attribute to search through titles, descrip
 <script>
   const filterInput = document.getElementById('filter-input');
   const filterView = document.getElementById('filter-example');
-  
+
   const searchItems = [
     {
       id: '1',
@@ -197,9 +197,9 @@ Filter items using the `filter-text` attribute to search through titles, descrip
       status: 'completed'
     }
   ];
-  
+
   filterView.items = searchItems;
-  
+
   filterInput.addEventListener('nu-input', (event) => {
     filterView.filterText = event.target.value;
   });
@@ -240,7 +240,7 @@ Listen for events to handle user interactions.
 <script>
   const eventsView = document.getElementById('events-example');
   const eventLog = document.getElementById('event-log');
-  
+
   const eventItems = [
     {
       id: '1',
@@ -261,19 +261,19 @@ Listen for events to handle user interactions.
       status: 'completed'
     }
   ];
-  
+
   eventsView.items = eventItems;
-  
+
   function logEvent(eventName, detail) {
     const timestamp = new Date().toLocaleTimeString();
     const message = `[${timestamp}] ${eventName}: ${JSON.stringify(detail)}`;
     eventLog.innerHTML = message + '<br>' + eventLog.innerHTML;
   }
-  
+
   eventsView.addEventListener('nu-item-select', (event) => {
     logEvent('nu-item-select', event.detail);
   });
-  
+
   eventsView.addEventListener('nu-sort-change', (event) => {
     logEvent('nu-sort-change', event.detail);
   });
@@ -304,7 +304,7 @@ interface ActivityItem {
 ### When to Use List Views
 
 - **Transaction History**: Display chronological lists of blockchain transactions
-- **Account Activities**: Show balance changes, transfers, and account events  
+- **Account Activities**: Show balance changes, transfers, and account events
 - **Portfolio Updates**: Present investment activities and portfolio changes
 - **Activity Feeds**: General purpose activity streams with mixed content types
 

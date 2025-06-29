@@ -61,6 +61,10 @@ export { default as NuTreeItem } from './components/tree-item/tree-item.js';
 export { default as NuVisuallyHidden } from './components/visually-hidden/visually-hidden.js';
 export { default as NuListView } from './components/list-view/list-view.js';
 export { default as NuListItem } from './components/list-item/list-item.js';
+export { default as NuAreaChart } from './components/area-chart/area-chart.js';
+export { default as NuPieChart } from './components/pie-chart/pie-chart.js';
+export { default as NuLineChart } from './components/line-chart/line-chart.js';
+export { default as NuCandleChart } from './components/candle-chart/candle-chart.js';
 /* plop:component */
 
 // Utilities
