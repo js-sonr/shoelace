@@ -1,4 +1,4 @@
-import '../../../dist/shoelace.js';
+import '../../../dist/nebula.js';
 import { aTimeout, expect, fixture, html, waitUntil } from '@open-wc/testing';
 import type NuAvatar from './avatar.js';
 

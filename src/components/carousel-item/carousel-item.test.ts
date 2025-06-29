@@ -1,4 +1,4 @@
-import '../../../dist/shoelace.js';
+import '../../../dist/nebula.js';
 import { expect, fixture, html } from '@open-wc/testing';
 
 describe('<nu-carousel-item>', () => {

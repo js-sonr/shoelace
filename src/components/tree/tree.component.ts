@@ -284,7 +284,7 @@ export default class NuTree extends NebulaElement {
 
   private handleClick(event: Event) {
     const target = event.target as NuTreeItem;
-    const treeItem = target.closest('nu-tree-item')! as NuTreeItem;
+    const treeItem = target.closest('nu-tree-item')! ;
     const isExpandButton = event
       .composedPath()
       .some((el: HTMLElement) => el?.classList?.contains('tree-item__expand-button'));

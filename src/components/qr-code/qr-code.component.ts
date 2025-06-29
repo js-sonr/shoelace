@@ -3,8 +3,8 @@ import { property, query } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
-import QrCreator from 'qr-creator';
 import NebulaElement from '../../internal/nebula-element.js';
+import QrCreator from 'qr-creator';
 import styles from './qr-code.styles.js';
 import type { CSSResultGroup } from 'lit';
 

@@ -59,6 +59,8 @@ export { default as NuTooltip } from './components/tooltip/tooltip.js';
 export { default as NuTree } from './components/tree/tree.js';
 export { default as NuTreeItem } from './components/tree-item/tree-item.js';
 export { default as NuVisuallyHidden } from './components/visually-hidden/visually-hidden.js';
+export { default as NuListView } from './components/list-view/list-view.js';
+export { default as NuListItem } from './components/list-item/list-item.js';
 /* plop:component */
 
 // Utilities

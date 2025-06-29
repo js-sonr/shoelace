@@ -1,4 +1,4 @@
-import '../../../dist/shoelace.js';
+import '../../../dist/nebula.js';
 import sinon from 'sinon';
 
 import { expect, fixture, html, waitUntil } from '@open-wc/testing';

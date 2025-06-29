@@ -1,4 +1,4 @@
-import '../../../dist/shoelace.js';
+import '../../../dist/nebula.js';
 import { expect, fixture, html } from '@open-wc/testing';
 import type NuRadioButton from './radio-button.js';
 import type NuRadioGroup from '../radio-group/radio-group.js';
