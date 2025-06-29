@@ -73,10 +73,6 @@ npm run create nu-tag-name
 
 This will generate a source file, a stylesheet, and a docs page for you. When you start the dev server, you'll find the new component in the "Components" section of the sidebar.
 
-### Contributing
-
-Nebula is an open source project and contributions are encouraged! If you're interested in contributing, please review the [contribution guidelines](CONTRIBUTING.md) first.
-
 ## License
 
 Nebula is available under the terms of the MIT license.
