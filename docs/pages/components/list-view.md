@@ -1,22 +1,326 @@
 ---
 meta:
   title: List View
-  description:
+  description: List views display activity feeds and account balance lists in blockchain applications with sorting, filtering, and pagination capabilities.
 layout: component
 ---
 
+List views are designed to display collections of activities such as transactions, balance updates, and events. They provide powerful features like sorting, grouping, filtering, and pagination to handle large datasets efficiently.
+
 ```html:preview
-<nu-list-view></nu-list-view>
+<nu-list-view id="basic-example"></nu-list-view>
+
+<script>
+  const listView = document.getElementById('basic-example');
+  const mockItems = [
+    {
+      id: '1',
+      type: 'transaction',
+      timestamp: new Date('2024-06-29T10:30:00Z'),
+      title: 'Sent USDC',
+      description: 'Payment to merchant',
+      amount: '-250.00',
+      currency: 'USDC',
+      status: 'completed'
+    },
+    {
+      id: '2',
+      type: 'balance',
+      timestamp: new Date('2024-06-29T09:15:00Z'),
+      title: 'Account Balance Updated',
+      amount: '+1,000.00',
+      currency: 'USDC',
+      status: 'completed'
+    },
+    {
+      id: '3',
+      type: 'event',
+      timestamp: new Date('2024-06-29T08:45:00Z'),
+      title: 'Wallet Connected',
+      description: 'MetaMask wallet connected',
+      status: 'completed'
+    }
+  ];
+  listView.items = mockItems;
+</script>
+```
+
+```jsx:react
+import { NuListView } from '@onsonr/nebula/dist/react/list-view';
+
+const App = () => {
+  const items = [
+    {
+      id: '1',
+      type: 'transaction',
+      timestamp: new Date('2024-06-29T10:30:00Z'),
+      title: 'Sent USDC',
+      description: 'Payment to merchant',
+      amount: '-250.00',
+      currency: 'USDC',
+      status: 'completed'
+    }
+  ];
+
+  return <NuListView items={items} />;
+};
 ```
 
 ## Examples
 
-### First Example
+### Sorting and Grouping
 
-TODO
+Control how items are sorted and grouped using the `sort-by` and `group-by` attributes.
 
-### Second Example
+```html:preview
+<nu-list-view id="sort-group-example" sort-by="date" group-by="type"></nu-list-view>
 
-TODO
+<script>
+  const sortGroupView = document.getElementById('sort-group-example');
+  const mixedItems = [
+    {
+      id: '1',
+      type: 'transaction',
+      timestamp: new Date('2024-06-29T10:30:00Z'),
+      title: 'Received ETH',
+      amount: '+2.5',
+      currency: 'ETH',
+      status: 'completed'
+    },
+    {
+      id: '2',
+      type: 'balance',
+      timestamp: new Date('2024-06-29T09:00:00Z'),
+      title: 'Portfolio Value Updated',
+      amount: '+15,280.45',
+      currency: 'USD',
+      status: 'completed'
+    },
+    {
+      id: '3',
+      type: 'transaction',
+      timestamp: new Date('2024-06-29T08:15:00Z'),
+      title: 'Sent BTC',
+      amount: '-0.15',
+      currency: 'BTC',
+      status: 'pending'
+    },
+    {
+      id: '4',
+      type: 'event',
+      timestamp: new Date('2024-06-29T07:30:00Z'),
+      title: 'Security Alert',
+      description: 'New device login detected',
+      status: 'completed'
+    }
+  ];
+  sortGroupView.items = mixedItems;
+</script>
+```
+
+### Infinite Scroll with Pagination
+
+Enable infinite scrolling for large datasets with the `infinite-scroll` attribute.
+
+```html:preview
+<nu-list-view id="infinite-example" infinite-scroll page-size="5"></nu-list-view>
+
+<script>
+  const infiniteView = document.getElementById('infinite-example');
+  
+  // Generate many items to demonstrate pagination
+  const manyItems = Array.from({ length: 20 }, (_, i) => ({
+    id: `item-${i + 1}`,
+    type: i % 3 === 0 ? 'transaction' : i % 3 === 1 ? 'balance' : 'event',
+    timestamp: new Date(Date.now() - i * 60 * 60 * 1000),
+    title: `Activity Item ${i + 1}`,
+    description: `Description for item ${i + 1}`,
+    amount: i % 2 === 0 ? `+${(Math.random() * 1000).toFixed(2)}` : `-${(Math.random() * 500).toFixed(2)}`,
+    currency: ['USDC', 'ETH', 'BTC'][i % 3],
+    status: ['completed', 'pending', 'failed'][i % 3]
+  }));
+  
+  infiniteView.items = manyItems;
+  
+  infiniteView.addEventListener('nu-load-more', (event) => {
+    console.log('Load more requested:', event.detail);
+  });
+</script>
+```
+
+### Filtering
+
+Filter items using the `filter-text` attribute to search through titles, descriptions, and currencies.
+
+```html:preview
+<div>
+  <nu-input 
+    id="filter-input" 
+    placeholder="Search transactions..." 
+    style="margin-bottom: 1rem;"
+  ></nu-input>
+  <nu-list-view id="filter-example"></nu-list-view>
+</div>
+
+<script>
+  const filterInput = document.getElementById('filter-input');
+  const filterView = document.getElementById('filter-example');
+  
+  const searchItems = [
+    {
+      id: '1',
+      type: 'transaction',
+      timestamp: new Date('2024-06-29T10:30:00Z'),
+      title: 'Sent USDC to Alice',
+      description: 'Payment for services',
+      amount: '-500.00',
+      currency: 'USDC',
+      status: 'completed'
+    },
+    {
+      id: '2',
+      type: 'transaction',
+      timestamp: new Date('2024-06-29T09:15:00Z'),
+      title: 'Received Bitcoin',
+      description: 'Mining rewards',
+      amount: '+0.025',
+      currency: 'BTC',
+      status: 'completed'
+    },
+    {
+      id: '3',
+      type: 'balance',
+      timestamp: new Date('2024-06-29T08:45:00Z'),
+      title: 'Ethereum Balance Updated',
+      amount: '+3.2',
+      currency: 'ETH',
+      status: 'completed'
+    }
+  ];
+  
+  filterView.items = searchItems;
+  
+  filterInput.addEventListener('nu-input', (event) => {
+    filterView.filterText = event.target.value;
+  });
+</script>
+```
+
+### Loading and Empty States
+
+Display loading and empty states when appropriate.
+
+```html:preview
+<div style="display: flex; gap: 2rem;">
+  <div>
+    <h4>Loading State</h4>
+    <nu-list-view loading style="height: 200px;"></nu-list-view>
+  </div>
+  <div>
+    <h4>Empty State</h4>
+    <nu-list-view>
+      <div slot="empty">
+        <nu-icon name="inbox" style="font-size: 3rem; color: var(--nu-color-neutral-400);"></nu-icon>
+        <p>No transactions found</p>
+        <nu-button variant="primary" size="small">Add Transaction</nu-button>
+      </div>
+    </nu-list-view>
+  </div>
+</div>
+```
+
+### Custom Events
+
+Listen for events to handle user interactions.
+
+```html:preview
+<nu-list-view id="events-example" multi-select></nu-list-view>
+<div id="event-log" style="margin-top: 1rem; padding: 1rem; background: var(--nu-color-neutral-50); border-radius: 4px; font-family: monospace; font-size: 0.875rem; max-height: 150px; overflow-y: auto;"></div>
+
+<script>
+  const eventsView = document.getElementById('events-example');
+  const eventLog = document.getElementById('event-log');
+  
+  const eventItems = [
+    {
+      id: '1',
+      type: 'transaction',
+      timestamp: new Date('2024-06-29T10:30:00Z'),
+      title: 'Click me!',
+      amount: '-100.00',
+      currency: 'USDC',
+      status: 'completed'
+    },
+    {
+      id: '2',
+      type: 'balance',
+      timestamp: new Date('2024-06-29T09:15:00Z'),
+      title: 'Or click me!',
+      amount: '+500.00',
+      currency: 'USDC',
+      status: 'completed'
+    }
+  ];
+  
+  eventsView.items = eventItems;
+  
+  function logEvent(eventName, detail) {
+    const timestamp = new Date().toLocaleTimeString();
+    const message = `[${timestamp}] ${eventName}: ${JSON.stringify(detail)}`;
+    eventLog.innerHTML = message + '<br>' + eventLog.innerHTML;
+  }
+  
+  eventsView.addEventListener('nu-item-select', (event) => {
+    logEvent('nu-item-select', event.detail);
+  });
+  
+  eventsView.addEventListener('nu-sort-change', (event) => {
+    logEvent('nu-sort-change', event.detail);
+  });
+</script>
+```
+
+## Data Structure
+
+List views work with `ActivityItem` objects that represent blockchain activities:
+
+```typescript
+interface ActivityItem {
+  id: string;
+  type: 'transaction' | 'balance' | 'event';
+  timestamp: Date;
+  title: string;
+  description?: string;
+  amount?: string;
+  currency?: string;
+  icon?: string;
+  status?: 'pending' | 'completed' | 'failed';
+  metadata?: Record<string, unknown>;
+}
+```
+
+## Usage Guidelines
+
+### When to Use List Views
+
+- **Transaction History**: Display chronological lists of blockchain transactions
+- **Account Activities**: Show balance changes, transfers, and account events  
+- **Portfolio Updates**: Present investment activities and portfolio changes
+- **Activity Feeds**: General purpose activity streams with mixed content types
+
+### Best Practices
+
+1. **Performance**: Use pagination or infinite scroll for large datasets (>100 items)
+2. **Grouping**: Group related items by date or type for better organization
+3. **Filtering**: Provide search functionality for lists with many items
+4. **Loading States**: Always show loading states during data fetching
+5. **Empty States**: Provide helpful empty states with clear calls to action
+
+### Accessibility
+
+- List items are properly marked with `role="listitem"`
+- Keyboard navigation is supported for interactive elements
+- Screen readers can navigate through the list structure
+- Focus management follows accessibility best practices
 
 [component-metadata:nu-list-view]
