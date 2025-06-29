@@ -63,7 +63,7 @@ const css = `
 
 const App = () => (
   <>
-    <SlCard className="card-overview">
+    <NuCard className="card-overview">
       <img
         slot="image"
         src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
@@ -75,12 +75,12 @@ const App = () => (
       <br />
       <small>6 weeks old</small>
       <div slot="footer">
-        <SlButton variant="primary" pill>
+        <NuButton variant="primary" pill>
           More Info
-        </SlButton>
-        <SlRating></SlRating>
+        </NuButton>
+        <NuRating></NuRating>
       </div>
-    </SlCard>
+    </NuCard>
 
     <style>{css}</style>
   </>
@@ -116,9 +116,9 @@ const css = `
 
 const App = () => (
   <>
-    <SlCard className="card-basic">
+    <NuCard className="card-basic">
       This is just a basic card. No image, no header, and no footer. Just your content.
-    </SlCard>
+    </NuCard>
 
     <style>{css}</style>
   </>
@@ -186,13 +186,13 @@ const css = `
 
 const App = () => (
   <>
-    <SlCard className="card-header">
+    <NuCard className="card-header">
       <div slot="header">
         Header Title
-        <SlIconButton name="gear"></SlIconButton>
+        <NuIconButton name="gear"></NuIconButton>
       </div>
       This card has a header. You can put all sorts of things in it!
-    </SlCard>
+    </NuCard>
 
     <style>{css}</style>
   </>
@@ -245,15 +245,15 @@ const css = `
 
 const App = () => (
   <>
-    <SlCard className="card-footer">
+    <NuCard className="card-footer">
       This card has a footer. You can put all sorts of things in it!
       <div slot="footer">
-        <SlRating></SlRating>
-        <SlButton slot="footer" variant="primary">
+        <NuRating></NuRating>
+        <NuButton slot="footer" variant="primary">
           Preview
-        </SlButton>
+        </NuButton>
       </div>
-    </SlCard>
+    </NuCard>
 
     <style>{css}</style>
   </>
@@ -292,14 +292,14 @@ const css = `
 
 const App = () => (
   <>
-    <SlCard className="card-image">
+    <NuCard className="card-image">
       <img
         slot="image"
         src="https://images.unsplash.com/photo-1547191783-94d5f8f6d8b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80"
         alt="A kitten walks towards camera on top of pallet."
       />
       This is a kitten, but not just any kitten. This kitten likes walking along pallets.
-    </SlCard>
+    </NuCard>
 
     <style>{css}</style>
   </>

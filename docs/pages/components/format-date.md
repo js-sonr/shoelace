@@ -15,7 +15,7 @@ Localization is handled by the browser's [`Intl.DateTimeFormat` API](https://dev
 ```jsx:react
 import SlFormatDate from '@onsonr/nebula/dist/react/format-date';
 
-const App = () => <SlFormatDate date="2020-07-15T09:17:00-04:00" />;
+const App = () => <NuFormatDate date="2020-07-15T09:17:00-04:00" />;
 ```
 
 The `date` attribute determines the date/time to use when formatting. It must be a string that [`Date.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse) can interpret or a [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object set via JavaScript. If omitted, the current date/time will be assumed.
@@ -56,27 +56,27 @@ import SlFormatDate from '@onsonr/nebula/dist/react/format-date';
 const App = () => (
   <>
     {/* Human-readable date */}
-    <SlFormatDate month="long" day="numeric" year="numeric" />
+    <NuFormatDate month="long" day="numeric" year="numeric" />
     <br />
 
     {/* Time */}
-    <SlFormatDate hour="numeric" minute="numeric" />
+    <NuFormatDate hour="numeric" minute="numeric" />
     <br />
 
     {/* Weekday */}
-    <SlFormatDate weekday="long" />
+    <NuFormatDate weekday="long" />
     <br />
 
     {/* Month */}
-    <SlFormatDate month="long" />
+    <NuFormatDate month="long" />
     <br />
 
     {/* Year */}
-    <SlFormatDate year="numeric" />
+    <NuFormatDate year="numeric" />
     <br />
 
     {/* No formatting options */}
-    <SlFormatDate />
+    <NuFormatDate />
   </>
 );
 ```
@@ -95,9 +95,9 @@ import SlFormatDate from '@onsonr/nebula/dist/react/format-date';
 
 const App = () => (
   <>
-    <SlFormatDate hour="numeric" minute="numeric" hour-format="12" />
+    <NuFormatDate hour="numeric" minute="numeric" hour-format="12" />
     <br />
-    <SlFormatDate hour="numeric" minute="numeric" hour-format="24" />
+    <NuFormatDate hour="numeric" minute="numeric" hour-format="24" />
   </>
 );
 ```
@@ -117,11 +117,11 @@ import SlFormatDate from '@onsonr/nebula/dist/react/format-date';
 
 const App = () => (
   <>
-    English: <SlFormatDate lang="en" />
+    English: <NuFormatDate lang="en" />
     <br />
-    French: <SlFormatDate lang="fr" />
+    French: <NuFormatDate lang="fr" />
     <br />
-    Russian: <SlFormatDate lang="ru" />
+    Russian: <NuFormatDate lang="ru" />
   </>
 );
 ```

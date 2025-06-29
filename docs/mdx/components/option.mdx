@@ -1,0 +1,154 @@
+---
+title: Option
+description: Options define the selectable items within various form controls such as select.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-select label="Select one">
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-select label="Select one">
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlOption from '@onsonr/nebula/dist/react/option'
+    ;
+    import SlSelect from '@onsonr/nebula/dist/react/select'
+    ;
+    
+    const App = () => (
+      
+      <NuSelect>
+        <NuOption value="option-1">Option 1</NuOption>
+        <NuOption value="option-2">Option 2</NuOption>
+        <NuOption value="option-3">Option 3</NuOption>
+      </NuSelect>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+## Examples
+
+### Disabled
+
+Use the `disabled` attribute to disable an option and prevent it from being selected.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-select label="Select one">
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2" disabled>Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-select label="Select one">
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2" disabled>Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlOption from '@onsonr/nebula/dist/react/option'
+    ;
+    import SlSelect from '@onsonr/nebula/dist/react/select'
+    ;
+    
+    const App = () => (
+      
+      <NuSelect>
+        <NuOption value="option-1">Option 1</NuOption>
+        <NuOption value="option-2" disabled>
+          Option 2
+        </NuOption>
+        <NuOption value="option-3">Option 3</NuOption>
+      </NuSelect>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Prefix & Suffix
+
+Add icons to the start and end of menu items using the `prefix` and `suffix` slots.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-select label="Select one">
+      <nu-option value="option-1">
+        <nu-icon slot="prefix" name="envelope"></nu-icon>
+        Email
+        <nu-icon slot="suffix" name="patch-check"></nu-icon>
+      </nu-option>
+    
+      <nu-option value="option-2">
+        <nu-icon slot="prefix" name="telephone"></nu-icon>
+        Phone
+        <nu-icon slot="suffix" name="patch-check"></nu-icon>
+      </nu-option>
+    
+      <nu-option value="option-3">
+        <nu-icon slot="prefix" name="chat-dots"></nu-icon>
+        Chat
+        <nu-icon slot="suffix" name="patch-check"></nu-icon>
+      </nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-select label="Select one">
+      <nu-option value="option-1">
+        <nu-icon slot="prefix" name="envelope"></nu-icon>
+        Email
+        <nu-icon slot="suffix" name="patch-check"></nu-icon>
+      </nu-option>
+    
+      <nu-option value="option-2">
+        <nu-icon slot="prefix" name="telephone"></nu-icon>
+        Phone
+        <nu-icon slot="suffix" name="patch-check"></nu-icon>
+      </nu-option>
+    
+      <nu-option value="option-3">
+        <nu-icon slot="prefix" name="chat-dots"></nu-icon>
+        Chat
+        <nu-icon slot="suffix" name="patch-check"></nu-icon>
+      </nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+## Properties
+
+<AutoTypeTable path="./src/components/option/option.component.ts" name="NuOption" />
+

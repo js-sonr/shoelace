@@ -12,7 +12,7 @@ layout: component
 ```jsx:react
 import SlDivider from '@onsonr/nebula/dist/react/divider';
 
-const App = () => <SlDivider />;
+const App = () => <NuDivider />;
 ```
 
 ## Examples
@@ -30,7 +30,7 @@ Use the `--width` custom property to change the width of the divider.
 ```jsx:react
 import SlDivider from '@onsonr/nebula/dist/react/divider';
 
-const App = () => <SlDivider style={{ '--width': '4px' }} />;
+const App = () => <NuDivider style={{ '--width': '4px' }} />;
 ```
 
 {% endraw %}
@@ -48,7 +48,7 @@ Use the `--color` custom property to change the color of the divider.
 ```jsx:react
 import SlDivider from '@onsonr/nebula/dist/react/divider';
 
-const App = () => <SlDivider style={{ '--color': 'tomato' }} />;
+const App = () => <NuDivider style={{ '--color': 'tomato' }} />;
 ```
 
 {% endraw %}
@@ -73,7 +73,7 @@ import SlDivider from '@onsonr/nebula/dist/react/divider';
 const App = () => (
   <>
     Above
-    <SlDivider style={{ '--spacing': '2rem' }} />
+    <NuDivider style={{ '--spacing': '2rem' }} />
     Below
   </>
 );
@@ -109,9 +109,9 @@ const App = () => (
     }}
   >
     First
-    <SlDivider vertical />
+    <NuDivider vertical />
     Middle
-    <SlDivider vertical />
+    <NuDivider vertical />
     Last
   </div>
 );
@@ -143,15 +143,15 @@ import SlMenu from '@onsonr/nebula/dist/react/menu';
 import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 
 const App = () => (
-  <SlMenu style={{ maxWidth: '200px' }}>
-    <SlMenuItem value="1">Option 1</SlMenuItem>
-    <SlMenuItem value="2">Option 2</SlMenuItem>
-    <SlMenuItem value="3">Option 3</SlMenuItem>
+  <NuMenu style={{ maxWidth: '200px' }}>
+    <NuMenuItem value="1">Option 1</NuMenuItem>
+    <NuMenuItem value="2">Option 2</NuMenuItem>
+    <NuMenuItem value="3">Option 3</NuMenuItem>
     <nu-divider />
-    <SlMenuItem value="4">Option 4</SlMenuItem>
-    <SlMenuItem value="5">Option 5</SlMenuItem>
-    <SlMenuItem value="6">Option 6</SlMenuItem>
-  </SlMenu>
+    <NuMenuItem value="4">Option 4</NuMenuItem>
+    <NuMenuItem value="5">Option 5</NuMenuItem>
+    <NuMenuItem value="6">Option 6</NuMenuItem>
+  </NuMenu>
 );
 ```
 

@@ -12,7 +12,7 @@ layout: component
 ```jsx:react
 import SlBadge from '@onsonr/nebula/dist/react/badge';
 
-const App = () => <SlBadge>Badge</SlBadge>;
+const App = () => <NuBadge>Badge</NuBadge>;
 ```
 
 ## Examples
@@ -34,11 +34,11 @@ import SlBadge from '@onsonr/nebula/dist/react/badge';
 
 const App = () => (
   <>
-    <SlBadge variant="primary">Primary</SlBadge>
-    <SlBadge variant="success">Success</SlBadge>
-    <SlBadge variant="neutral">Neutral</SlBadge>
-    <SlBadge variant="warning">Warning</SlBadge>
-    <SlBadge variant="danger">Danger</SlBadge>
+    <NuBadge variant="primary">Primary</NuBadge>
+    <NuBadge variant="success">Success</NuBadge>
+    <NuBadge variant="neutral">Neutral</NuBadge>
+    <NuBadge variant="warning">Warning</NuBadge>
+    <NuBadge variant="danger">Danger</NuBadge>
   </>
 );
 ```
@@ -60,21 +60,21 @@ import SlBadge from '@onsonr/nebula/dist/react/badge';
 
 const App = () => (
   <>
-    <SlBadge variant="primary" pill>
+    <NuBadge variant="primary" pill>
       Primary
-    </SlBadge>
-    <SlBadge variant="success" pill>
+    </NuBadge>
+    <NuBadge variant="success" pill>
       Success
-    </SlBadge>
-    <SlBadge variant="neutral" pill>
+    </NuBadge>
+    <NuBadge variant="neutral" pill>
       Neutral
-    </SlBadge>
-    <SlBadge variant="warning" pill>
+    </NuBadge>
+    <NuBadge variant="warning" pill>
       Warning
-    </SlBadge>
-    <SlBadge variant="danger" pill>
+    </NuBadge>
+    <NuBadge variant="danger" pill>
       Danger
-    </SlBadge>
+    </NuBadge>
   </>
 );
 ```
@@ -111,21 +111,21 @@ const css = `
 const App = () => (
   <>
     <div className="badge-pulse">
-      <SlBadge variant="primary" pill pulse>
+      <NuBadge variant="primary" pill pulse>
         1
-      </SlBadge>
-      <SlBadge variant="success" pill pulse>
+      </NuBadge>
+      <NuBadge variant="success" pill pulse>
         1
-      </SlBadge>
-      <SlBadge variant="neutral" pill pulse>
+      </NuBadge>
+      <NuBadge variant="neutral" pill pulse>
         1
-      </SlBadge>
-      <SlBadge variant="warning" pill pulse>
+      </NuBadge>
+      <NuBadge variant="warning" pill pulse>
         1
-      </SlBadge>
-      <SlBadge variant="danger" pill pulse>
+      </NuBadge>
+      <NuBadge variant="danger" pill pulse>
         1
-      </SlBadge>
+      </NuBadge>
     </div>
 
     <style>{css}</style>
@@ -162,24 +162,24 @@ import SlButton from '@onsonr/nebula/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton>
+    <NuButton>
       Requests
-      <SlBadge pill>30</SlBadge>
-    </SlButton>
+      <NuBadge pill>30</NuBadge>
+    </NuButton>
 
-    <SlButton style={{ marginInlineStart: '1rem' }}>
+    <NuButton style={{ marginInlineStart: '1rem' }}>
       Warnings
-      <SlBadge variant="warning" pill>
+      <NuBadge variant="warning" pill>
         8
-      </SlBadge>
-    </SlButton>
+      </NuBadge>
+    </NuButton>
 
-    <SlButton style={{ marginInlineStart: '1rem' }}>
+    <NuButton style={{ marginInlineStart: '1rem' }}>
       Errors
-      <SlBadge variant="danger" pill>
+      <NuBadge variant="danger" pill>
         6
-      </SlBadge>
-    </SlButton>
+      </NuBadge>
+    </NuButton>
   </>
 );
 ```
@@ -208,27 +208,27 @@ import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 import SlMenuLabel from '@onsonr/nebula/dist/react/menu-label';
 
 const App = () => (
-  <SlMenu
+  <NuMenu
     style={{
       maxWidth: '240px',
       border: 'solid 1px var(--nu-panel-border-color)',
       borderRadius: 'var(--nu-border-radius-medium)'
     }}
   >
-    <SlMenuLabel>Messages</SlMenuLabel>
-    <SlMenuItem>
+    <NuMenuLabel>Messages</NuMenuLabel>
+    <NuMenuItem>
       Comments
-      <SlBadge slot="suffix" variant="neutral" pill>
+      <NuBadge slot="suffix" variant="neutral" pill>
         4
-      </SlBadge>
-    </SlMenuItem>
-    <SlMenuItem>
+      </NuBadge>
+    </NuMenuItem>
+    <NuMenuItem>
       Replies
-      <SlBadge slot="suffix" variant="neutral" pill>
+      <NuBadge slot="suffix" variant="neutral" pill>
         12
-      </SlBadge>
-    </SlMenuItem>
-  </SlMenu>
+      </NuBadge>
+    </NuMenuItem>
+  </NuMenu>
 );
 ```
 

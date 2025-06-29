@@ -12,7 +12,7 @@ layout: component
 ```jsx:react
 import SlProgressBar from '@onsonr/nebula/dist/react/progress-bar';
 
-const App = () => <SlProgressBar value={50} />;
+const App = () => <NuProgressBar value={50} />;
 ```
 
 ## Examples
@@ -28,7 +28,7 @@ Use the `label` attribute to label the progress bar and tell assistive devices h
 ```jsx:react
 import SlProgressBar from '@onsonr/nebula/dist/react/progress-bar';
 
-const App = () => <SlProgressBar value="50" label="Upload progress" />;
+const App = () => <NuProgressBar value="50" label="Upload progress" />;
 ```
 
 ### Custom Height
@@ -44,7 +44,7 @@ Use the `--height` custom property to set the progress bar's height.
 ```jsx:react
 import SlProgressBar from '@onsonr/nebula/dist/react/progress-bar';
 
-const App = () => <SlProgressBar value={50} style={{ '--height': '6px' }} />;
+const App = () => <NuProgressBar value={50} style={{ '--height': '6px' }} />;
 ```
 
 {% endraw %}
@@ -98,17 +98,17 @@ const App = () => {
 
   return (
     <>
-      <SlProgressBar value={value}>{value}%</SlProgressBar>
+      <NuProgressBar value={value}>{value}%</NuProgressBar>
 
       <br />
 
-      <SlButton circle onClick={() => adjustValue(-10)}>
-        <SlIcon name="dash" label="Decrease" />
-      </SlButton>
+      <NuButton circle onClick={() => adjustValue(-10)}>
+        <NuIcon name="dash" label="Decrease" />
+      </NuButton>
 
-      <SlButton circle onClick={() => adjustValue(10)}>
-        <SlIcon name="plus" label="Increase" />
-      </SlButton>
+      <NuButton circle onClick={() => adjustValue(10)}>
+        <NuIcon name="plus" label="Increase" />
+      </NuButton>
     </>
   );
 };
@@ -125,5 +125,5 @@ The `indeterminate` attribute can be used to inform the user that the operation 
 ```jsx:react
 import SlProgressBar from '@onsonr/nebula/dist/react/progress-bar';
 
-const App = () => <SlProgressBar indeterminate />;
+const App = () => <NuProgressBar indeterminate />;
 ```

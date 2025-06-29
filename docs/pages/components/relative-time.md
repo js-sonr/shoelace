@@ -15,7 +15,7 @@ Localization is handled by the browser's [`Intl.RelativeTimeFormat` API](https:/
 ```jsx:react
 import SlRelativeTime from '@onsonr/nebula/dist/react/relative-time';
 
-const App = () => <SlRelativeTime date="2020-07-15T09:17:00-04:00" />;
+const App = () => <NuRelativeTime date="2020-07-15T09:17:00-04:00" />;
 ```
 
 The `date` attribute determines when the date/time is calculated from. It must be a string that [`Date.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse) can interpret or a [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object set via JavaScript.
@@ -48,7 +48,7 @@ import SlRelativeTime from '@onsonr/nebula/dist/react/relative-time';
 
 const date = new Date(new Date().getTime() - 60000);
 
-const App = () => <SlRelativeTime date={date} sync />;
+const App = () => <NuRelativeTime date={date} sync />;
 ```
 
 ### Formatting Styles
@@ -66,11 +66,11 @@ import SlRelativeTime from '@onsonr/nebula/dist/react/relative-time';
 
 const App = () => (
   <>
-    <SlRelativeTime date="2020-07-15T09:17:00-04:00" format="narrow" />
+    <NuRelativeTime date="2020-07-15T09:17:00-04:00" format="narrow" />
     <br />
-    <SlRelativeTime date="2020-07-15T09:17:00-04:00" format="short" />
+    <NuRelativeTime date="2020-07-15T09:17:00-04:00" format="short" />
     <br />
-    <SlRelativeTime date="2020-07-15T09:17:00-04:00" format="long" />
+    <NuRelativeTime date="2020-07-15T09:17:00-04:00" format="long" />
   </>
 );
 ```
@@ -92,15 +92,15 @@ import SlRelativeTime from '@onsonr/nebula/dist/react/relative-time';
 
 const App = () => (
   <>
-    English: <SlRelativeTime date="2020-07-15T09:17:00-04:00" lang="en-US" />
+    English: <NuRelativeTime date="2020-07-15T09:17:00-04:00" lang="en-US" />
     <br />
-    Chinese: <SlRelativeTime date="2020-07-15T09:17:00-04:00" lang="zh-CN" />
+    Chinese: <NuRelativeTime date="2020-07-15T09:17:00-04:00" lang="zh-CN" />
     <br />
-    German: <SlRelativeTime date="2020-07-15T09:17:00-04:00" lang="de" />
+    German: <NuRelativeTime date="2020-07-15T09:17:00-04:00" lang="de" />
     <br />
-    Greek: <SlRelativeTime date="2020-07-15T09:17:00-04:00" lang="el" />
+    Greek: <NuRelativeTime date="2020-07-15T09:17:00-04:00" lang="el" />
     <br />
-    Russian: <SlRelativeTime date="2020-07-15T09:17:00-04:00" lang="ru" />
+    Russian: <NuRelativeTime date="2020-07-15T09:17:00-04:00" lang="ru" />
   </>
 );
 ```

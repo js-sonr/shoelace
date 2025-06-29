@@ -12,7 +12,7 @@ layout: component
 ```jsx:react
 import SlButton from '@onsonr/nebula/dist/react/button';
 
-const App = () => <SlButton>Button</SlButton>;
+const App = () => <NuButton>Button</NuButton>;
 ```
 
 ## Examples
@@ -35,12 +35,12 @@ import SlButton from '@onsonr/nebula/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton variant="default">Default</SlButton>
-    <SlButton variant="primary">Primary</SlButton>
-    <SlButton variant="success">Success</SlButton>
-    <SlButton variant="neutral">Neutral</SlButton>
-    <SlButton variant="warning">Warning</SlButton>
-    <SlButton variant="danger">Danger</SlButton>
+    <NuButton variant="default">Default</NuButton>
+    <NuButton variant="primary">Primary</NuButton>
+    <NuButton variant="success">Success</NuButton>
+    <NuButton variant="neutral">Neutral</NuButton>
+    <NuButton variant="warning">Warning</NuButton>
+    <NuButton variant="danger">Danger</NuButton>
   </>
 );
 ```
@@ -60,9 +60,9 @@ import SlButton from '@onsonr/nebula/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton size="small">Small</SlButton>
-    <SlButton size="medium">Medium</SlButton>
-    <SlButton size="large">Large</SlButton>
+    <NuButton size="small">Small</NuButton>
+    <NuButton size="medium">Medium</NuButton>
+    <NuButton size="large">Large</NuButton>
   </>
 );
 ```
@@ -85,24 +85,24 @@ import SlButton from '@onsonr/nebula/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton variant="default" outline>
+    <NuButton variant="default" outline>
       Default
-    </SlButton>
-    <SlButton variant="primary" outline>
+    </NuButton>
+    <NuButton variant="primary" outline>
       Primary
-    </SlButton>
-    <SlButton variant="success" outline>
+    </NuButton>
+    <NuButton variant="success" outline>
       Success
-    </SlButton>
-    <SlButton variant="neutral" outline>
+    </NuButton>
+    <NuButton variant="neutral" outline>
       Neutral
-    </SlButton>
-    <SlButton variant="warning" outline>
+    </NuButton>
+    <NuButton variant="warning" outline>
       Warning
-    </SlButton>
-    <SlButton variant="danger" outline>
+    </NuButton>
+    <NuButton variant="danger" outline>
       Danger
-    </SlButton>
+    </NuButton>
   </>
 );
 ```
@@ -122,15 +122,15 @@ import SlButton from '@onsonr/nebula/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton size="small" pill>
+    <NuButton size="small" pill>
       Small
-    </SlButton>
-    <SlButton size="medium" pill>
+    </NuButton>
+    <NuButton size="medium" pill>
       Medium
-    </SlButton>
-    <SlButton size="large" pill>
+    </NuButton>
+    <NuButton size="large" pill>
       Large
-    </SlButton>
+    </NuButton>
   </>
 );
 ```
@@ -159,15 +159,15 @@ import SlIcon from '@onsonr/nebula/dist/react/icon';
 
 const App = () => (
   <>
-    <SlButton variant="default" size="small" circle>
-      <SlIcon name="gear" />
-    </SlButton>
-    <SlButton variant="default" size="medium" circle>
-      <SlIcon name="gear" />
-    </SlButton>
-    <SlButton variant="default" size="large" circle>
-      <SlIcon name="gear" />
-    </SlButton>
+    <NuButton variant="default" size="small" circle>
+      <NuIcon name="gear" />
+    </NuButton>
+    <NuButton variant="default" size="medium" circle>
+      <NuIcon name="gear" />
+    </NuButton>
+    <NuButton variant="default" size="large" circle>
+      <NuIcon name="gear" />
+    </NuButton>
   </>
 );
 ```
@@ -187,15 +187,15 @@ import SlButton from '@onsonr/nebula/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton variant="text" size="small">
+    <NuButton variant="text" size="small">
       Text
-    </SlButton>
-    <SlButton variant="text" size="medium">
+    </NuButton>
+    <NuButton variant="text" size="medium">
       Text
-    </SlButton>
-    <SlButton variant="text" size="large">
+    </NuButton>
+    <NuButton variant="text" size="large">
       Text
-    </SlButton>
+    </NuButton>
   </>
 );
 ```
@@ -216,16 +216,16 @@ import SlButton from '@onsonr/nebula/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton href="https://example.com/">Link</SlButton>
-    <SlButton href="https://example.com/" target="_blank">
+    <NuButton href="https://example.com/">Link</NuButton>
+    <NuButton href="https://example.com/" target="_blank">
       New Window
-    </SlButton>
-    <SlButton href="/assets/images/wordmark.svg" download="shoelace.svg">
+    </NuButton>
+    <NuButton href="/assets/images/wordmark.svg" download="shoelace.svg">
       Download
-    </SlButton>
-    <SlButton href="https://example.com/" disabled>
+    </NuButton>
+    <NuButton href="https://example.com/" disabled>
       Disabled
-    </SlButton>
+    </NuButton>
   </>
 );
 ```
@@ -251,15 +251,15 @@ import SlButton from '@onsonr/nebula/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton variant="default" size="small" style={{ width: '100%', marginBottom: '1rem' }}>
+    <NuButton variant="default" size="small" style={{ width: '100%', marginBottom: '1rem' }}>
       Small
-    </SlButton>
-    <SlButton variant="default" size="medium" style={{ width: '100%', marginBottom: '1rem' }}>
+    </NuButton>
+    <NuButton variant="default" size="medium" style={{ width: '100%', marginBottom: '1rem' }}>
       Medium
-    </SlButton>
-    <SlButton variant="default" size="large" style={{ width: '100%' }}>
+    </NuButton>
+    <NuButton variant="default" size="large" style={{ width: '100%' }}>
       Large
-    </SlButton>
+    </NuButton>
   </>
 );
 ```
@@ -330,59 +330,59 @@ import SlIcon from '@onsonr/nebula/dist/react/icon';
 
 const App = () => (
   <>
-    <SlButton variant="default" size="small">
-      <SlIcon slot="prefix" name="gear"></SlIcon>
+    <NuButton variant="default" size="small">
+      <NuIcon slot="prefix" name="gear"></NuIcon>
       Settings
-    </SlButton>
+    </NuButton>
 
-    <SlButton variant="default" size="small">
-      <SlIcon slot="suffix" name="arrow-counterclockwise"></SlIcon>
+    <NuButton variant="default" size="small">
+      <NuIcon slot="suffix" name="arrow-counterclockwise"></NuIcon>
       Refresh
-    </SlButton>
+    </NuButton>
 
-    <SlButton variant="default" size="small">
-      <SlIcon slot="prefix" name="link-45deg"></SlIcon>
-      <SlIcon slot="suffix" name="box-arrow-up-right"></SlIcon>
+    <NuButton variant="default" size="small">
+      <NuIcon slot="prefix" name="link-45deg"></NuIcon>
+      <NuIcon slot="suffix" name="box-arrow-up-right"></NuIcon>
       Open
-    </SlButton>
+    </NuButton>
 
     <br />
     <br />
 
-    <SlButton variant="default">
-      <SlIcon slot="prefix" name="gear"></SlIcon>
+    <NuButton variant="default">
+      <NuIcon slot="prefix" name="gear"></NuIcon>
       Settings
-    </SlButton>
+    </NuButton>
 
-    <SlButton variant="default">
-      <SlIcon slot="suffix" name="arrow-counterclockwise"></SlIcon>
+    <NuButton variant="default">
+      <NuIcon slot="suffix" name="arrow-counterclockwise"></NuIcon>
       Refresh
-    </SlButton>
+    </NuButton>
 
-    <SlButton variant="default">
-      <SlIcon slot="prefix" name="link-45deg"></SlIcon>
-      <SlIcon slot="suffix" name="box-arrow-up-right"></SlIcon>
+    <NuButton variant="default">
+      <NuIcon slot="prefix" name="link-45deg"></NuIcon>
+      <NuIcon slot="suffix" name="box-arrow-up-right"></NuIcon>
       Open
-    </SlButton>
+    </NuButton>
 
     <br />
     <br />
 
-    <SlButton variant="default" size="large">
-      <SlIcon slot="prefix" name="gear"></SlIcon>
+    <NuButton variant="default" size="large">
+      <NuIcon slot="prefix" name="gear"></NuIcon>
       Settings
-    </SlButton>
+    </NuButton>
 
-    <SlButton variant="default" size="large">
-      <SlIcon slot="suffix" name="arrow-counterclockwise"></SlIcon>
+    <NuButton variant="default" size="large">
+      <NuIcon slot="suffix" name="arrow-counterclockwise"></NuIcon>
       Refresh
-    </SlButton>
+    </NuButton>
 
-    <SlButton variant="default" size="large">
-      <SlIcon slot="prefix" name="link-45deg"></SlIcon>
-      <SlIcon slot="suffix" name="box-arrow-up-right"></SlIcon>
+    <NuButton variant="default" size="large">
+      <NuIcon slot="prefix" name="link-45deg"></NuIcon>
+      <NuIcon slot="suffix" name="box-arrow-up-right"></NuIcon>
       Open
-    </SlButton>
+    </NuButton>
   </>
 );
 ```
@@ -402,15 +402,15 @@ import SlButton from '@onsonr/nebula/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton size="small" caret>
+    <NuButton size="small" caret>
       Small
-    </SlButton>
-    <SlButton size="medium" caret>
+    </NuButton>
+    <NuButton size="medium" caret>
       Medium
-    </SlButton>
-    <SlButton size="large" caret>
+    </NuButton>
+    <NuButton size="large" caret>
       Large
-    </SlButton>
+    </NuButton>
   </>
 );
 ```
@@ -433,24 +433,24 @@ import SlButton from '@onsonr/nebula/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton variant="default" loading>
+    <NuButton variant="default" loading>
       Default
-    </SlButton>
-    <SlButton variant="primary" loading>
+    </NuButton>
+    <NuButton variant="primary" loading>
       Primary
-    </SlButton>
-    <SlButton variant="success" loading>
+    </NuButton>
+    <NuButton variant="success" loading>
       Success
-    </SlButton>
-    <SlButton variant="neutral" loading>
+    </NuButton>
+    <NuButton variant="neutral" loading>
       Neutral
-    </SlButton>
-    <SlButton variant="warning" loading>
+    </NuButton>
+    <NuButton variant="warning" loading>
       Warning
-    </SlButton>
-    <SlButton variant="danger" loading>
+    </NuButton>
+    <NuButton variant="danger" loading>
       Danger
-    </SlButton>
+    </NuButton>
   </>
 );
 ```
@@ -473,29 +473,29 @@ import SlButton from '@onsonr/nebula/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton variant="default" disabled>
+    <NuButton variant="default" disabled>
       Default
-    </SlButton>
+    </NuButton>
 
-    <SlButton variant="primary" disabled>
+    <NuButton variant="primary" disabled>
       Primary
-    </SlButton>
+    </NuButton>
 
-    <SlButton variant="success" disabled>
+    <NuButton variant="success" disabled>
       Success
-    </SlButton>
+    </NuButton>
 
-    <SlButton variant="neutral" disabled>
+    <NuButton variant="neutral" disabled>
       Neutral
-    </SlButton>
+    </NuButton>
 
-    <SlButton variant="warning" disabled>
+    <NuButton variant="warning" disabled>
       Warning
-    </SlButton>
+    </NuButton>
 
-    <SlButton variant="danger" disabled>
+    <NuButton variant="danger" disabled>
       Danger
-    </SlButton>
+    </NuButton>
   </>
 );
 ```

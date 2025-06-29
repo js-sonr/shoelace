@@ -75,28 +75,28 @@ import SlIcon from '@onsonr/nebula/dist/react/icon';
 const App = () => (
   <>
     <div style={{ color: '#4a90e2' }}>
-      <SlIcon name="exclamation-triangle"></SlIcon>
-      <SlIcon name="archive"></SlIcon>
-      <SlIcon name="battery-charging"></SlIcon>
-      <SlIcon name="bell"></SlIcon>
+      <NuIcon name="exclamation-triangle"></NuIcon>
+      <NuIcon name="archive"></NuIcon>
+      <NuIcon name="battery-charging"></NuIcon>
+      <NuIcon name="bell"></NuIcon>
     </div>
     <div style={{ color: '#9013fe' }}>
-      <SlIcon name="clock"></SlIcon>
-      <SlIcon name="cloud"></SlIcon>
-      <SlIcon name="download"></SlIcon>
-      <SlIcon name="file-earmark"></SlIcon>
+      <NuIcon name="clock"></NuIcon>
+      <NuIcon name="cloud"></NuIcon>
+      <NuIcon name="download"></NuIcon>
+      <NuIcon name="file-earmark"></NuIcon>
     </div>
     <div style={{ color: '#417505' }}>
-      <SlIcon name="flag"></SlIcon>
-      <SlIcon name="heart"></SlIcon>
-      <SlIcon name="image"></SlIcon>
-      <SlIcon name="lightning"></SlIcon>
+      <NuIcon name="flag"></NuIcon>
+      <NuIcon name="heart"></NuIcon>
+      <NuIcon name="image"></NuIcon>
+      <NuIcon name="lightning"></NuIcon>
     </div>
     <div style={{ color: '#f5a623' }}>
-      <SlIcon name="mic"></SlIcon>
-      <SlIcon name="search"></SlIcon>
-      <SlIcon name="star"></SlIcon>
-      <SlIcon name="trash"></SlIcon>
+      <NuIcon name="mic"></NuIcon>
+      <NuIcon name="search"></NuIcon>
+      <NuIcon name="star"></NuIcon>
+      <NuIcon name="trash"></NuIcon>
     </div>
   </>
 );
@@ -142,7 +142,7 @@ For non-decorative icons, use the `label` attribute to announce it to assistive 
 ```jsx:react
 import SlIcon from '@onsonr/nebula/dist/react/icon';
 
-const App = () => <SlIcon name="star-fill" label="Add to favorites" />;
+const App = () => <NuIcon name="star-fill" label="Add to favorites" />;
 ```
 
 {% endraw %}

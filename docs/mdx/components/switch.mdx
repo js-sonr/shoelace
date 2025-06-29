@@ -1,0 +1,206 @@
+---
+title: Switch
+description: Switches allow the user to toggle an option on or off.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-switch>Switch</nu-switch>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-switch>Switch</nu-switch>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlSwitch from '@onsonr/nebula/dist/react/switch'
+    ;
+    
+    const App = () => <NuSwitch>Switch</NuSwitch>;
+    ```
+  </Tab>
+</Tabs>
+
+<Callout type="info">
+This component works with standard `<form>` elements. Please refer to the section on [form controls](/getting-started/form-controls) to learn more about form submission and client-side validation.
+</Callout>
+
+## Examples
+
+### Checked
+
+Use the `checked` attribute to activate the switch.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-switch checked>Checked</nu-switch>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-switch checked>Checked</nu-switch>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlSwitch from '@onsonr/nebula/dist/react/switch'
+    ;
+    
+    const App = () => <NuSwitch checked>Checked</NuSwitch>;
+    ```
+  </Tab>
+</Tabs>
+
+### Disabled
+
+Use the `disabled` attribute to disable the switch.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-switch disabled>Disabled</nu-switch>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-switch disabled>Disabled</nu-switch>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlSwitch from '@onsonr/nebula/dist/react/switch'
+    ;
+    
+    const App = () => <NuSwitch disabled>Disabled</NuSwitch>;
+    ```
+  </Tab>
+</Tabs>
+
+### Sizes
+
+Use the `size` attribute to change a switch's size.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-switch size="small">Small</nu-switch>
+    <br />
+    <nu-switch size="medium">Medium</nu-switch>
+    <br />
+    <nu-switch size="large">Large</nu-switch>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-switch size="small">Small</nu-switch>
+    <br />
+    <nu-switch size="medium">Medium</nu-switch>
+    <br />
+    <nu-switch size="large">Large</nu-switch>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlSwitch from '@onsonr/nebula/dist/react/switch'
+    ;
+    
+    const App = () => (
+      
+      <>
+        <NuSwitch size="small">Small</NuSwitch>
+        <br />
+        <NuSwitch size="medium">Medium</NuSwitch>
+        <br />
+        <NuSwitch size="large">Large</NuSwitch>
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Help Text
+
+Add descriptive help text to a switch with the `help-text` attribute. For help texts that contain HTML, use the `help-text` slot instead.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-switch help-text="What should the user know about the switch?">Label</nu-switch>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-switch help-text="What should the user know about the switch?">Label</nu-switch>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlSwitch from '@onsonr/nebula/dist/react/checkbox'
+    ;
+    
+    const App = () => <NuSwitch help-text="What should the user know about the switch?">Label</NuSwitch>;
+    ```
+  </Tab>
+</Tabs>
+
+### Custom Styles
+
+Use the available custom properties to change how the switch is styled.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-switch style="--width: 80px; --height: 40px; --thumb-size: 36px;">Really big</nu-switch>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-switch style="--width: 80px; --height: 40px; --thumb-size: 36px;">Really big</nu-switch>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlSwitch from '@onsonr/nebula/dist/react/switch'
+    ;
+    
+    const App = () => (
+      
+      <NuSwitch
+        style={{
+          '--width': '80px',
+          '--height': '32px',
+          '--thumb-size': '26px'
+        }}
+      />
+    );
+    ```
+  </Tab>
+</Tabs>
+
+## Properties
+
+<AutoTypeTable path="./src/components/switch/switch.component.ts" name="NuSwitch" />
+

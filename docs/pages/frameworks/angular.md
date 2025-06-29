@@ -87,7 +87,7 @@ export class DrawerExampleComponent implements OnInit {
 
   // use @ViewChild to get a reference to the #drawer element within component template
   @ViewChild('drawer')
-  drawer?: ElementRef<SlDrawer>;
+  drawer?: ElementRef<NuDrawer>;
 
   ...
 

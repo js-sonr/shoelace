@@ -197,8 +197,8 @@ const SlIcon = dynamic(
 export default function Home() {
   return (
     <main>
-      <SlButton>Test</SlButton>
-      <SlIcon name="gear" />
+      <NuButton>Test</NuButton>
+      <NuIcon name="gear" />
     </main>
   );
 }

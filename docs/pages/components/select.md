@@ -21,14 +21,14 @@ import SlOption from '@onsonr/nebula/dist/react/option';
 import SlSelect from '@onsonr/nebula/dist/react/select';
 
 const App = () => (
-  <SlSelect>
-    <SlOption value="option-1">Option 1</SlOption>
-    <SlOption value="option-2">Option 2</SlOption>
-    <SlOption value="option-3">Option 3</SlOption>
-    <SlOption value="option-4">Option 4</SlOption>
-    <SlOption value="option-5">Option 5</SlOption>
-    <SlOption value="option-6">Option 6</SlOption>
-  </SlSelect>
+  <NuSelect>
+    <NuOption value="option-1">Option 1</NuOption>
+    <NuOption value="option-2">Option 2</NuOption>
+    <NuOption value="option-3">Option 3</NuOption>
+    <NuOption value="option-4">Option 4</NuOption>
+    <NuOption value="option-5">Option 5</NuOption>
+    <NuOption value="option-6">Option 6</NuOption>
+  </NuSelect>
 );
 ```
 
@@ -55,11 +55,11 @@ import SlOption from '@onsonr/nebula/dist/react/option';
 import SlSelect from '@onsonr/nebula/dist/react/select';
 
 const App = () => (
-  <SlSelect label="Select one">
-    <SlOption value="option-1">Option 1</SlOption>
-    <SlOption value="option-2">Option 2</SlOption>
-    <SlOption value="option-3">Option 3</SlOption>
-  </SlSelect>
+  <NuSelect label="Select one">
+    <NuOption value="option-1">Option 1</NuOption>
+    <NuOption value="option-2">Option 2</NuOption>
+    <NuOption value="option-3">Option 3</NuOption>
+  </NuSelect>
 );
 ```
 
@@ -80,11 +80,11 @@ import SlOption from '@onsonr/nebula/dist/react/option';
 import SlSelect from '@onsonr/nebula/dist/react/select';
 
 const App = () => (
-  <SlSelect label="Experience" help-text="Please tell us your skill level.">
-    <SlOption value="1">Novice</SlOption>
-    <SlOption value="2">Intermediate</SlOption>
-    <SlOption value="3">Advanced</SlOption>
-  </SlSelect>
+  <NuSelect label="Experience" help-text="Please tell us your skill level.">
+    <NuOption value="1">Novice</NuOption>
+    <NuOption value="2">Intermediate</NuOption>
+    <NuOption value="3">Advanced</NuOption>
+  </NuSelect>
 );
 ```
 
@@ -105,11 +105,11 @@ import SlOption from '@onsonr/nebula/dist/react/option';
 import SlSelect from '@onsonr/nebula/dist/react/select';
 
 const App = () => (
-  <SlSelect placeholder="Select one">
-    <SlOption value="option-1">Option 1</SlOption>
-    <SlOption value="option-2">Option 2</SlOption>
-    <SlOption value="option-3">Option 3</SlOption>
-  </SlSelect>
+  <NuSelect placeholder="Select one">
+    <NuOption value="option-1">Option 1</NuOption>
+    <NuOption value="option-2">Option 2</NuOption>
+    <NuOption value="option-3">Option 3</NuOption>
+  </NuSelect>
 );
 ```
 
@@ -130,11 +130,11 @@ import SlOption from '@onsonr/nebula/dist/react/option';
 import SlSelect from '@onsonr/nebula/dist/react/select';
 
 const App = () => (
-  <SlSelect placeholder="Clearable" clearable>
-    <SlOption value="option-1">Option 1</SlOption>
-    <SlOption value="option-2">Option 2</SlOption>
-    <SlOption value="option-3">Option 3</SlOption>
-  </SlSelect>
+  <NuSelect placeholder="Clearable" clearable>
+    <NuOption value="option-1">Option 1</NuOption>
+    <NuOption value="option-2">Option 2</NuOption>
+    <NuOption value="option-3">Option 3</NuOption>
+  </NuSelect>
 );
 ```
 
@@ -155,11 +155,11 @@ import SlOption from '@onsonr/nebula/dist/react/option';
 import SlSelect from '@onsonr/nebula/dist/react/select';
 
 const App = () => (
-  <SlSelect filled>
-    <SlOption value="option-1">Option 1</SlOption>
-    <SlOption value="option-2">Option 2</SlOption>
-    <SlOption value="option-3">Option 3</SlOption>
-  </SlSelect>
+  <NuSelect filled>
+    <NuOption value="option-1">Option 1</NuOption>
+    <NuOption value="option-2">Option 2</NuOption>
+    <NuOption value="option-3">Option 3</NuOption>
+  </NuSelect>
 );
 ```
 
@@ -180,11 +180,11 @@ import SlOption from '@onsonr/nebula/dist/react/option';
 import SlSelect from '@onsonr/nebula/dist/react/select';
 
 const App = () => (
-  <SlSelect pill>
-    <SlOption value="option-1">Option 1</SlOption>
-    <SlOption value="option-2">Option 2</SlOption>
-    <SlOption value="option-3">Option 3</SlOption>
-  </SlSelect>
+  <NuSelect pill>
+    <NuOption value="option-1">Option 1</NuOption>
+    <NuOption value="option-2">Option 2</NuOption>
+    <NuOption value="option-3">Option 3</NuOption>
+  </NuSelect>
 );
 ```
 
@@ -205,11 +205,11 @@ import SlOption from '@onsonr/nebula/dist/react/option';
 import SlSelect from '@onsonr/nebula/dist/react/select';
 
 const App = () => (
-  <SlSelect placeholder="Disabled" disabled>
-    <SlOption value="option-1">Option 1</SlOption>
-    <SlOption value="option-2">Option 2</SlOption>
-    <SlOption value="option-3">Option 3</SlOption>
-  </SlSelect>
+  <NuSelect placeholder="Disabled" disabled>
+    <NuOption value="option-1">Option 1</NuOption>
+    <NuOption value="option-2">Option 2</NuOption>
+    <NuOption value="option-3">Option 3</NuOption>
+  </NuSelect>
 );
 ```
 
@@ -233,14 +233,14 @@ import SlOption from '@onsonr/nebula/dist/react/option';
 import SlSelect from '@onsonr/nebula/dist/react/select';
 
 const App = () => (
-  <SlSelect label="Select a Few" value={["option-1", "option-2", "option-3"]} multiple clearable>
-    <SlOption value="option-1">Option 1</SlOption>
-    <SlOption value="option-2">Option 2</SlOption>
-    <SlOption value="option-3">Option 3</SlOption>
-    <SlOption value="option-4">Option 4</SlOption>
-    <SlOption value="option-5">Option 5</SlOption>
-    <SlOption value="option-6">Option 6</SlOption>
-  </SlSelect>
+  <NuSelect label="Select a Few" value={["option-1", "option-2", "option-3"]} multiple clearable>
+    <NuOption value="option-1">Option 1</NuOption>
+    <NuOption value="option-2">Option 2</NuOption>
+    <NuOption value="option-3">Option 3</NuOption>
+    <NuOption value="option-4">Option 4</NuOption>
+    <NuOption value="option-5">Option 5</NuOption>
+    <NuOption value="option-6">Option 6</NuOption>
+  </NuSelect>
 );
 ```
 
@@ -269,11 +269,11 @@ import SlOption from '@onsonr/nebula/dist/react/option';
 import SlSelect from '@onsonr/nebula/dist/react/select';
 
 const App = () => (
-  <SlSelect value={["option-1", "option-2"]} multiple clearable>
-    <SlOption value="option-1">Option 1</SlOption>
-    <SlOption value="option-2">Option 2</SlOption>
-    <SlOption value="option-3">Option 3</SlOption>
-  </SlSelect>
+  <NuSelect value={["option-1", "option-2"]} multiple clearable>
+    <NuOption value="option-1">Option 1</NuOption>
+    <NuOption value="option-2">Option 2</NuOption>
+    <NuOption value="option-3">Option 3</NuOption>
+  </NuSelect>
 );
 ```
 
@@ -300,14 +300,14 @@ import SlOption from '@onsonr/nebula/dist/react/option';
 import SlSelect from '@onsonr/nebula/dist/react/select';
 
 const App = () => (
-  <SlSelect>
-    <SlOption value="option-1">Option 1</SlOption>
-    <SlOption value="option-2">Option 2</SlOption>
-    <SlOption value="option-3">Option 3</SlOption>
-    <SlOption value="option-4">Option 4</SlOption>
-    <SlOption value="option-5">Option 5</SlOption>
-    <SlOption value="option-6">Option 6</SlOption>
-  </SlSelect>
+  <NuSelect>
+    <NuOption value="option-1">Option 1</NuOption>
+    <NuOption value="option-2">Option 2</NuOption>
+    <NuOption value="option-3">Option 3</NuOption>
+    <NuOption value="option-4">Option 4</NuOption>
+    <NuOption value="option-5">Option 5</NuOption>
+    <NuOption value="option-6">Option 6</NuOption>
+  </NuSelect>
 );
 ```
 
@@ -345,27 +345,27 @@ import SlSelect from '@onsonr/nebula/dist/react/select';
 
 const App = () => (
   <>
-    <SlSelect placeholder="Small" size="small">
-      <SlOption value="option-1">Option 1</SlOption>
-      <SlOption value="option-2">Option 2</SlOption>
-      <SlOption value="option-3">Option 3</SlOption>
-    </SlSelect>
+    <NuSelect placeholder="Small" size="small">
+      <NuOption value="option-1">Option 1</NuOption>
+      <NuOption value="option-2">Option 2</NuOption>
+      <NuOption value="option-3">Option 3</NuOption>
+    </NuSelect>
 
     <br />
 
-    <SlSelect placeholder="Medium" size="medium">
-      <SlOption value="option-1">Option 1</SlOption>
-      <SlOption value="option-2">Option 2</SlOption>
-      <SlOption value="option-3">Option 3</SlOption>
-    </SlSelect>
+    <NuSelect placeholder="Medium" size="medium">
+      <NuOption value="option-1">Option 1</NuOption>
+      <NuOption value="option-2">Option 2</NuOption>
+      <NuOption value="option-3">Option 3</NuOption>
+    </NuSelect>
 
     <br />
 
-    <SlSelect placeholder="Large" size="large">
-      <SlOption value="option-1">Option 1</SlOption>
-      <SlOption value="option-2">Option 2</SlOption>
-      <SlOption value="option-3">Option 3</SlOption>
-    </SlSelect>
+    <NuSelect placeholder="Large" size="large">
+      <NuOption value="option-1">Option 1</NuOption>
+      <NuOption value="option-2">Option 2</NuOption>
+      <NuOption value="option-3">Option 3</NuOption>
+    </NuSelect>
   </>
 );
 ```
@@ -387,11 +387,11 @@ import SlOption from '@onsonr/nebula/dist/react/option';
 import SlSelect from '@onsonr/nebula/dist/react/select';
 
 const App = () => (
-  <SlSelect placement="top">
-    <SlOption value="option-1">Option 1</SlOption>
-    <SlOption value="option-2">Option 2</SlOption>
-    <SlOption value="option-3">Option 3</SlOption>
-  </SlDropdown>
+  <NuSelect placement="top">
+    <NuOption value="option-1">Option 1</NuOption>
+    <NuOption value="option-2">Option 2</NuOption>
+    <NuOption value="option-3">Option 3</NuOption>
+  </NuDropdown>
 );
 ```
 
@@ -429,26 +429,26 @@ import SlSelect from '@onsonr/nebula/dist/react/select';
 
 const App = () => (
   <>
-    <SlSelect placeholder="Small" size="small">
-      <SlIcon name="house" slot="prefix"></SlIcon>
-      <SlOption value="option-1">Option 1</SlOption>
-      <SlOption value="option-2">Option 2</SlOption>
-      <SlOption value="option-3">Option 3</SlOption>
-    </SlSelect>
+    <NuSelect placeholder="Small" size="small">
+      <NuIcon name="house" slot="prefix"></NuIcon>
+      <NuOption value="option-1">Option 1</NuOption>
+      <NuOption value="option-2">Option 2</NuOption>
+      <NuOption value="option-3">Option 3</NuOption>
+    </NuSelect>
     <br />
-    <SlSelect placeholder="Medium" size="medium">
-      <SlIcon name="house" slot="prefix"></SlIcon>
-      <SlOption value="option-1">Option 1</SlOption>
-      <SlOption value="option-2">Option 2</SlOption>
-      <SlOption value="option-3">Option 3</SlOption>
-    </SlSelect>
+    <NuSelect placeholder="Medium" size="medium">
+      <NuIcon name="house" slot="prefix"></NuIcon>
+      <NuOption value="option-1">Option 1</NuOption>
+      <NuOption value="option-2">Option 2</NuOption>
+      <NuOption value="option-3">Option 3</NuOption>
+    </NuSelect>
     <br />
-    <SlSelect placeholder="Large" size="large">
-      <SlIcon name="house" slot="prefix"></SlIcon>
-      <SlOption value="option-1">Option 1</SlOption>
-      <SlOption value="option-2">Option 2</SlOption>
-      <SlOption value="option-3">Option 3</SlOption>
-    </SlSelect>
+    <NuSelect placeholder="Large" size="large">
+      <NuIcon name="house" slot="prefix"></NuIcon>
+      <NuOption value="option-1">Option 1</NuOption>
+      <NuOption value="option-2">Option 2</NuOption>
+      <NuOption value="option-3">Option 3</NuOption>
+    </NuSelect>
   </>
 );
 ```

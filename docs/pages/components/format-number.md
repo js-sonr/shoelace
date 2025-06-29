@@ -35,10 +35,10 @@ const App = () => {
 
   return (
     <>
-      <SlFormatNumber value={value} />
+      <NuFormatNumber value={value} />
       <br />
       <br />
-      <SlInput
+      <NuInput
         type="number"
         value={value}
         label="Number to Format"
@@ -71,15 +71,15 @@ import SlFormatNumber from '@onsonr/nebula/dist/react/format-number';
 
 const App = () => (
   <>
-    <SlFormatNumber type="percent" value={0} />
+    <NuFormatNumber type="percent" value={0} />
     <br />
-    <SlFormatNumber type="percent" value={0.25} />
+    <NuFormatNumber type="percent" value={0.25} />
     <br />
-    <SlFormatNumber type="percent" value={0.5} />
+    <NuFormatNumber type="percent" value={0.5} />
     <br />
-    <SlFormatNumber type="percent" value={0.75} />
+    <NuFormatNumber type="percent" value={0.75} />
     <br />
-    <SlFormatNumber type="percent" value={1} />
+    <NuFormatNumber type="percent" value={1} />
   </>
 );
 ```
@@ -99,11 +99,11 @@ import SlFormatNumber from '@onsonr/nebula/dist/react/format-number';
 
 const App = () => (
   <>
-    English: <SlFormatNumber value="2000" lang="en" minimum-fraction-digits="2" />
+    English: <NuFormatNumber value="2000" lang="en" minimum-fraction-digits="2" />
     <br />
-    German: <SlFormatNumber value="2000" lang="de" minimum-fraction-digits="2" />
+    German: <NuFormatNumber value="2000" lang="de" minimum-fraction-digits="2" />
     <br />
-    Russian: <SlFormatNumber value="2000" lang="ru" minimum-fraction-digits="2" />
+    Russian: <NuFormatNumber value="2000" lang="ru" minimum-fraction-digits="2" />
   </>
 );
 ```
@@ -125,15 +125,15 @@ import SlFormatNumber from '@onsonr/nebula/dist/react/format-number';
 
 const App = () => (
   <>
-    <SlFormatNumber type="currency" currency="USD" value="2000" lang="en-US" />
+    <NuFormatNumber type="currency" currency="USD" value="2000" lang="en-US" />
     <br />
-    <SlFormatNumber type="currency" currency="GBP" value="2000" lang="en-GB" />
+    <NuFormatNumber type="currency" currency="GBP" value="2000" lang="en-GB" />
     <br />
-    <SlFormatNumber type="currency" currency="EUR" value="2000" lang="de" />
+    <NuFormatNumber type="currency" currency="EUR" value="2000" lang="de" />
     <br />
-    <SlFormatNumber type="currency" currency="RUB" value="2000" lang="ru" />
+    <NuFormatNumber type="currency" currency="RUB" value="2000" lang="ru" />
     <br />
-    <SlFormatNumber type="currency" currency="CNY" value="2000" lang="zh-cn" />
+    <NuFormatNumber type="currency" currency="CNY" value="2000" lang="zh-cn" />
   </>
 );
 ```

@@ -17,10 +17,10 @@ import SlAlert from '@onsonr/nebula/dist/react/alert';
 import SlIcon from '@onsonr/nebula/dist/react/icon';
 
 const App = () => (
-  <SlAlert open>
-    <SlIcon slot="icon" name="info-circle" />
+  <NuAlert open>
+    <NuIcon slot="icon" name="info-circle" />
     This is a standard alert. You can customize its content and even the icon.
-  </SlAlert>
+  </NuAlert>
 );
 ```
 
@@ -80,48 +80,48 @@ import SlIcon from '@onsonr/nebula/dist/react/icon';
 
 const App = () => (
   <>
-    <SlAlert variant="primary" open>
-      <SlIcon slot="icon" name="info-circle" />
+    <NuAlert variant="primary" open>
+      <NuIcon slot="icon" name="info-circle" />
       <strong>This is super informative</strong>
       <br />
       You can tell by how pretty the alert is.
-    </SlAlert>
+    </NuAlert>
 
     <br />
 
-    <SlAlert variant="success" open>
-      <SlIcon slot="icon" name="check2-circle" />
+    <NuAlert variant="success" open>
+      <NuIcon slot="icon" name="check2-circle" />
       <strong>Your changes have been saved</strong>
       <br />
       You can safely exit the app now.
-    </SlAlert>
+    </NuAlert>
 
     <br />
 
-    <SlAlert variant="neutral" open>
-      <SlIcon slot="icon" name="gear" />
+    <NuAlert variant="neutral" open>
+      <NuIcon slot="icon" name="gear" />
       <strong>Your settings have been updated</strong>
       <br />
       Settings will take effect on next login.
-    </SlAlert>
+    </NuAlert>
 
     <br />
 
-    <SlAlert variant="warning" open>
-      <SlIcon slot="icon" name="exclamation-triangle" />
+    <NuAlert variant="warning" open>
+      <NuIcon slot="icon" name="exclamation-triangle" />
       <strong>Your session has ended</strong>
       <br />
       Please login again to continue.
-    </SlAlert>
+    </NuAlert>
 
     <br />
 
-    <SlAlert variant="danger" open>
-      <SlIcon slot="icon" name="exclamation-octagon" />
+    <NuAlert variant="danger" open>
+      <NuIcon slot="icon" name="exclamation-octagon" />
       <strong>Your account has been deleted</strong>
       <br />
       We're very sorry to see you go!
-    </SlAlert>
+    </NuAlert>
   </>
 );
 ```
@@ -158,10 +158,10 @@ const App = () => {
   }
 
   return (
-    <SlAlert open={open} closable onSlAfterHide={handleHide}>
-      <SlIcon slot="icon" name="info-circle" />
+    <NuAlert open={open} closable onSlAfterHide={handleHide}>
+      <NuIcon slot="icon" name="info-circle" />
       You can close this alert any time!
-    </SlAlert>
+    </NuAlert>
   );
 };
 ```
@@ -178,9 +178,9 @@ Icons are optional. Simply omit the `icon` slot if you don't want them.
 import SlAlert from '@onsonr/nebula/dist/react/alert';
 
 const App = () => (
-  <SlAlert variant="primary" open>
+  <NuAlert variant="primary" open>
     Nothing fancy here, just a simple alert.
-  </SlAlert>
+  </NuAlert>
 );
 ```
 
@@ -231,14 +231,14 @@ const App = () => {
   return (
     <>
       <div className="alert-duration">
-        <SlButton variant="primary" onClick={() => setOpen(true)}>
+        <NuButton variant="primary" onClick={() => setOpen(true)}>
           Show Alert
-        </SlButton>
+        </NuButton>
 
-        <SlAlert variant="primary" duration="3000" open={open} closable onSlAfterHide={() => setOpen(false)}>
-          <SlIcon slot="icon" name="info-circle" />
+        <NuAlert variant="primary" duration="3000" open={open} closable onSlAfterHide={() => setOpen(false)}>
+          <NuIcon slot="icon" name="info-circle" />
           This alert will automatically hide itself after three seconds, unless you interact with it.
-        </SlAlert>
+        </NuAlert>
       </div>
 
       <style>{css}</style>
@@ -323,60 +323,60 @@ const App = () => {
 
   return (
     <>
-      <SlButton variant="primary" onClick={() => primary.current.toast()}>
+      <NuButton variant="primary" onClick={() => primary.current.toast()}>
         Primary
-      </SlButton>
+      </NuButton>
 
-      <SlButton variant="success" onClick={() => success.current.toast()}>
+      <NuButton variant="success" onClick={() => success.current.toast()}>
         Success
-      </SlButton>
+      </NuButton>
 
-      <SlButton variant="neutral" onClick={() => neutral.current.toast()}>
+      <NuButton variant="neutral" onClick={() => neutral.current.toast()}>
         Neutral
-      </SlButton>
+      </NuButton>
 
-      <SlButton variant="warning" onClick={() => warning.current.toast()}>
+      <NuButton variant="warning" onClick={() => warning.current.toast()}>
         Warning
-      </SlButton>
+      </NuButton>
 
-      <SlButton variant="danger" onClick={() => danger.current.toast()}>
+      <NuButton variant="danger" onClick={() => danger.current.toast()}>
         Danger
-      </SlButton>
+      </NuButton>
 
-      <SlAlert ref={primary} variant="primary" duration="3000" closable>
-        <SlIcon slot="icon" name="info-circle" />
+      <NuAlert ref={primary} variant="primary" duration="3000" closable>
+        <NuIcon slot="icon" name="info-circle" />
         <strong>This is super informative</strong>
         <br />
         You can tell by how pretty the alert is.
-      </SlAlert>
+      </NuAlert>
 
-      <SlAlert ref={success} variant="success" duration="3000" closable>
-        <SlIcon slot="icon" name="check2-circle" />
+      <NuAlert ref={success} variant="success" duration="3000" closable>
+        <NuIcon slot="icon" name="check2-circle" />
         <strong>Your changes have been saved</strong>
         <br />
         You can safely exit the app now.
-      </SlAlert>
+      </NuAlert>
 
-      <SlAlert ref={neutral} variant="neutral" duration="3000" closable>
-        <SlIcon slot="icon" name="gear" />
+      <NuAlert ref={neutral} variant="neutral" duration="3000" closable>
+        <NuIcon slot="icon" name="gear" />
         <strong>Your settings have been updated</strong>
         <br />
         Settings will take effect on next login.
-      </SlAlert>
+      </NuAlert>
 
-      <SlAlert ref={warning} variant="warning" duration="3000" closable>
-        <SlIcon slot="icon" name="exclamation-triangle" />
+      <NuAlert ref={warning} variant="warning" duration="3000" closable>
+        <NuIcon slot="icon" name="exclamation-triangle" />
         <strong>Your session has ended</strong>
         <br />
         Please login again to continue.
-      </SlAlert>
+      </NuAlert>
 
-      <SlAlert ref={danger} variant="danger" duration="3000" closable>
-        <SlIcon slot="icon" name="exclamation-octagon" />
+      <NuAlert ref={danger} variant="danger" duration="3000" closable>
+        <NuIcon slot="icon" name="exclamation-octagon" />
         <strong>Your account has been deleted</strong>
         <br />
         We're very sorry to see you go!
-      </SlAlert>
+      </NuAlert>
     </>
   );
 };

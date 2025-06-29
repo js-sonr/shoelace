@@ -14,7 +14,7 @@ For a full list of icons that come bundled with Nebula, refer to the [icon compo
 ```jsx:react
 import SlIconButton from '@onsonr/nebula/dist/react/icon-button';
 
-const App = () => <SlIconButton name="gear" label="Settings" />;
+const App = () => <NuIconButton name="gear" label="Settings" />;
 ```
 
 ## Examples
@@ -36,9 +36,9 @@ import SlIconButton from '@onsonr/nebula/dist/react/icon-button';
 
 const App = () => (
   <>
-    <SlIconButton name="pencil" label="Edit" style={{ fontSize: '1.5rem' }} />
-    <SlIconButton name="pencil" label="Edit" style={{ fontSize: '2rem' }} />
-    <SlIconButton name="pencil" label="Edit" style={{ fontSize: '2.5rem' }} />
+    <NuIconButton name="pencil" label="Edit" style={{ fontSize: '1.5rem' }} />
+    <NuIconButton name="pencil" label="Edit" style={{ fontSize: '2rem' }} />
+    <NuIconButton name="pencil" label="Edit" style={{ fontSize: '2.5rem' }} />
   </>
 );
 ```
@@ -93,9 +93,9 @@ const css = `
 const App = () => (
   <>
     <div className="icon-button-color">
-      <SlIconButton name="type-bold" label="Bold" />
-      <SlIconButton name="type-italic" label="Italic" />
-      <SlIconButton name="type-underline" label="Underline" />
+      <NuIconButton name="type-bold" label="Bold" />
+      <NuIconButton name="type-italic" label="Italic" />
+      <NuIconButton name="type-underline" label="Underline" />
     </div>
 
     <style>{css}</style>
@@ -114,7 +114,7 @@ Use the `href` attribute to convert the button to a link.
 ```jsx:react
 import SlIconButton from '@onsonr/nebula/dist/react/icon-button';
 
-const App = () => <SlIconButton name="gear" label="Settings" href="https://example.com" target="_blank" />;
+const App = () => <NuIconButton name="gear" label="Settings" href="https://example.com" target="_blank" />;
 ```
 
 ### Icon Button with Tooltip
@@ -132,9 +132,9 @@ import SlIconButton from '@onsonr/nebula/dist/react/icon-button';
 import SlTooltip from '@onsonr/nebula/dist/react/tooltip';
 
 const App = () => (
-  <SlTooltip content="Settings">
-    <SlIconButton name="gear" label="Settings" />
-  </SlTooltip>
+  <NuTooltip content="Settings">
+    <NuIconButton name="gear" label="Settings" />
+  </NuTooltip>
 );
 ```
 
@@ -149,5 +149,5 @@ Use the `disabled` attribute to disable the icon button.
 ```jsx:react
 import SlIconButton from '@onsonr/nebula/dist/react/icon-button';
 
-const App = () => <SlIconButton name="gear" label="Settings" disabled />;
+const App = () => <NuIconButton name="gear" label="Settings" disabled />;
 ```

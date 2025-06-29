@@ -12,7 +12,7 @@ layout: component
 ```jsx:react
 import SlCheckbox from '@onsonr/nebula/dist/react/checkbox';
 
-const App = () => <SlCheckbox>Checkbox</SlCheckbox>;
+const App = () => <NuCheckbox>Checkbox</NuCheckbox>;
 ```
 
 :::tip
@@ -32,7 +32,7 @@ Use the `checked` attribute to activate the checkbox.
 ```jsx:react
 import SlCheckbox from '@onsonr/nebula/dist/react/checkbox';
 
-const App = () => <SlCheckbox checked>Checked</SlCheckbox>;
+const App = () => <NuCheckbox checked>Checked</NuCheckbox>;
 ```
 
 ### Indeterminate
@@ -46,7 +46,7 @@ Use the `indeterminate` attribute to make the checkbox indeterminate.
 ```jsx:react
 import SlCheckbox from '@onsonr/nebula/dist/react/checkbox';
 
-const App = () => <SlCheckbox indeterminate>Indeterminate</SlCheckbox>;
+const App = () => <NuCheckbox indeterminate>Indeterminate</NuCheckbox>;
 ```
 
 ### Disabled
@@ -60,7 +60,7 @@ Use the `disabled` attribute to disable the checkbox.
 ```jsx:react
 import SlCheckbox from '@onsonr/nebula/dist/react/checkbox';
 
-const App = () => <SlCheckbox disabled>Disabled</SlCheckbox>;
+const App = () => <NuCheckbox disabled>Disabled</NuCheckbox>;
 ```
 
 ### Sizes
@@ -80,11 +80,11 @@ import SlCheckbox from '@onsonr/nebula/dist/react/checkbox';
 
 const App = () => (
   <>
-    <SlCheckbox size="small">Small</SlCheckbox>
+    <NuCheckbox size="small">Small</NuCheckbox>
     <br />
-    <SlCheckbox size="medium">Medium</SlCheckbox>
+    <NuCheckbox size="medium">Medium</NuCheckbox>
     <br />
-    <SlCheckbox size="large">Large</SlCheckbox>
+    <NuCheckbox size="large">Large</NuCheckbox>
   </>
 );
 ```
@@ -100,7 +100,7 @@ Add descriptive help text to a switch with the `help-text` attribute. For help t
 ```jsx:react
 import SlCheckbox from '@onsonr/nebula/dist/react/checkbox';
 
-const App = () => <SlCheckbox help-text="What should the user know about the switch?">Label</SlCheckbox>;
+const App = () => <NuCheckbox help-text="What should the user know about the switch?">Label</NuCheckbox>;
 ```
 
 ### Custom Validity
@@ -163,13 +163,13 @@ const App = () => {
 
   return (
     <form class="custom-validity" onSubmit={handleSubmit}>
-      <SlCheckbox ref={checkbox} onSlChange={handleChange}>
+      <NuCheckbox ref={checkbox} onSlChange={handleChange}>
         Check me
-      </SlCheckbox>
+      </NuCheckbox>
       <br />
-      <SlButton type="submit" variant="primary" style={{ marginTop: '1rem' }}>
+      <NuButton type="submit" variant="primary" style={{ marginTop: '1rem' }}>
         Submit
-      </SlButton>
+      </NuButton>
     </form>
   );
 };

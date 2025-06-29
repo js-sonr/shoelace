@@ -21,12 +21,12 @@ import SlBreadcrumb from '@onsonr/nebula/dist/react/breadcrumb';
 import SlBreadcrumbItem from '@onsonr/nebula/dist/react/breadcrumb-item';
 
 const App = () => (
-  <SlBreadcrumb>
-    <SlBreadcrumbItem>Catalog</SlBreadcrumbItem>
-    <SlBreadcrumbItem>Clothing</SlBreadcrumbItem>
-    <SlBreadcrumbItem>Women's</SlBreadcrumbItem>
-    <SlBreadcrumbItem>Shirts &amp; Tops</SlBreadcrumbItem>
-  </SlBreadcrumb>
+  <NuBreadcrumb>
+    <NuBreadcrumbItem>Catalog</NuBreadcrumbItem>
+    <NuBreadcrumbItem>Clothing</NuBreadcrumbItem>
+    <NuBreadcrumbItem>Women's</NuBreadcrumbItem>
+    <NuBreadcrumbItem>Shirts &amp; Tops</NuBreadcrumbItem>
+  </NuBreadcrumb>
 );
 ```
 
@@ -55,15 +55,15 @@ import SlBreadcrumb from '@onsonr/nebula/dist/react/breadcrumb';
 import SlBreadcrumbItem from '@onsonr/nebula/dist/react/breadcrumb-item';
 
 const App = () => (
-  <SlBreadcrumb>
-    <SlBreadcrumbItem href="https://example.com/home">Homepage</SlBreadcrumbItem>
+  <NuBreadcrumb>
+    <NuBreadcrumbItem href="https://example.com/home">Homepage</NuBreadcrumbItem>
 
-    <SlBreadcrumbItem href="https://example.com/home/services">Our Services</SlBreadcrumbItem>
+    <NuBreadcrumbItem href="https://example.com/home/services">Our Services</NuBreadcrumbItem>
 
-    <SlBreadcrumbItem href="https://example.com/home/services/digital">Digital Media</SlBreadcrumbItem>
+    <NuBreadcrumbItem href="https://example.com/home/services/digital">Digital Media</NuBreadcrumbItem>
 
-    <SlBreadcrumbItem href="https://example.com/home/services/digital/web-design">Web Design</SlBreadcrumbItem>
-  </SlBreadcrumb>
+    <NuBreadcrumbItem href="https://example.com/home/services/digital/web-design">Web Design</NuBreadcrumbItem>
+  </NuBreadcrumb>
 );
 ```
 
@@ -105,30 +105,30 @@ import SlBreadcrumbItem from '@onsonr/nebula/dist/react/breadcrumb-item';
 
 const App = () => (
   <>
-    <SlBreadcrumb>
+    <NuBreadcrumb>
       <nu-icon name="dot" slot="separator" />
-      <SlBreadcrumbItem>First</SlBreadcrumbItem>
-      <SlBreadcrumbItem>Second</SlBreadcrumbItem>
-      <SlBreadcrumbItem>Third</SlBreadcrumbItem>
-    </SlBreadcrumb>
+      <NuBreadcrumbItem>First</NuBreadcrumbItem>
+      <NuBreadcrumbItem>Second</NuBreadcrumbItem>
+      <NuBreadcrumbItem>Third</NuBreadcrumbItem>
+    </NuBreadcrumb>
 
     <br />
 
-    <SlBreadcrumb>
+    <NuBreadcrumb>
       <nu-icon name="arrow-right" slot="separator" />
-      <SlBreadcrumbItem>First</SlBreadcrumbItem>
-      <SlBreadcrumbItem>Second</SlBreadcrumbItem>
-      <SlBreadcrumbItem>Third</SlBreadcrumbItem>
-    </SlBreadcrumb>
+      <NuBreadcrumbItem>First</NuBreadcrumbItem>
+      <NuBreadcrumbItem>Second</NuBreadcrumbItem>
+      <NuBreadcrumbItem>Third</NuBreadcrumbItem>
+    </NuBreadcrumb>
 
     <br />
 
-    <SlBreadcrumb>
+    <NuBreadcrumb>
       <span slot="separator">/</span>
-      <SlBreadcrumbItem>First</SlBreadcrumbItem>
-      <SlBreadcrumbItem>Second</SlBreadcrumbItem>
-      <SlBreadcrumbItem>Third</SlBreadcrumbItem>
-    </SlBreadcrumb>
+      <NuBreadcrumbItem>First</NuBreadcrumbItem>
+      <NuBreadcrumbItem>Second</NuBreadcrumbItem>
+      <NuBreadcrumbItem>Third</NuBreadcrumbItem>
+    </NuBreadcrumb>
   </>
 );
 ```
@@ -154,14 +154,14 @@ import SlBreadcrumbItem from '@onsonr/nebula/dist/react/breadcrumb-item';
 import SlIcon from '@onsonr/nebula/dist/react/icon';
 
 const App = () => (
-  <SlBreadcrumb>
-    <SlBreadcrumbItem>
-      <SlIcon slot="prefix" name="house" />
+  <NuBreadcrumb>
+    <NuBreadcrumbItem>
+      <NuIcon slot="prefix" name="house" />
       Home
-    </SlBreadcrumbItem>
-    <SlBreadcrumbItem>Articles</SlBreadcrumbItem>
-    <SlBreadcrumbItem>Traveling</SlBreadcrumbItem>
-  </SlBreadcrumb>
+    </NuBreadcrumbItem>
+    <NuBreadcrumbItem>Articles</NuBreadcrumbItem>
+    <NuBreadcrumbItem>Traveling</NuBreadcrumbItem>
+  </NuBreadcrumb>
 );
 ```
 
@@ -186,14 +186,14 @@ import SlBreadcrumbItem from '@onsonr/nebula/dist/react/breadcrumb-item';
 import SlIcon from '@onsonr/nebula/dist/react/icon';
 
 const App = () => (
-  <SlBreadcrumb>
-    <SlBreadcrumbItem>Documents</SlBreadcrumbItem>
-    <SlBreadcrumbItem>Policies</SlBreadcrumbItem>
-    <SlBreadcrumbItem>
+  <NuBreadcrumb>
+    <NuBreadcrumbItem>Documents</NuBreadcrumbItem>
+    <NuBreadcrumbItem>Policies</NuBreadcrumbItem>
+    <NuBreadcrumbItem>
       Security
-      <SlIcon slot="suffix" name="shield-lock"></SlIcon>
-    </SlBreadcrumbItem>
-  </SlBreadcrumb>
+      <NuIcon slot="suffix" name="shield-lock"></NuIcon>
+    </NuBreadcrumbItem>
+  </NuBreadcrumb>
 );
 ```
 
@@ -234,25 +234,25 @@ import {
 } from '@onsonr/nebula/dist/react';
 
 const App = () => (
-  <SlBreadcrumb>
-    <SlBreadcrumbItem>Homepage</SlBreadcrumbItem>
-    <SlBreadcrumbItem>Our Services</SlBreadcrumbItem>
-    <SlBreadcrumbItem>Digital Media</SlBreadcrumbItem>
-    <SlBreadcrumbItem>
+  <NuBreadcrumb>
+    <NuBreadcrumbItem>Homepage</NuBreadcrumbItem>
+    <NuBreadcrumbItem>Our Services</NuBreadcrumbItem>
+    <NuBreadcrumbItem>Digital Media</NuBreadcrumbItem>
+    <NuBreadcrumbItem>
       Web Design
-      <SlDropdown slot="suffix">
-        <SlButton slot="trigger" size="small" circle>
-          <SlIcon label="More options" name="three-dots"></SlIcon>
-        </SlButton>
-        <SlMenu>
-          <SlMenuItem type="checkbox" checked>
+      <NuDropdown slot="suffix">
+        <NuButton slot="trigger" size="small" circle>
+          <NuIcon label="More options" name="three-dots"></NuIcon>
+        </NuButton>
+        <NuMenu>
+          <NuMenuItem type="checkbox" checked>
             Web Design
-          </SlMenuItem>
-          <SlMenuItem type="checkbox">Web Development</SlMenuItem>
-          <SlMenuItem type="checkbox">Marketing</SlMenuItem>
-        </SlMenu>
-      </SlDropdown>
-    </SlBreadcrumbItem>
-  </SlBreadcrumb>
+          </NuMenuItem>
+          <NuMenuItem type="checkbox">Web Development</NuMenuItem>
+          <NuMenuItem type="checkbox">Marketing</NuMenuItem>
+        </NuMenu>
+      </NuDropdown>
+    </NuBreadcrumbItem>
+  </NuBreadcrumb>
 );
 ```

@@ -1,0 +1,282 @@
+---
+title: Textarea
+description: Textareas collect data from the user and allow multiple lines of text.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-textarea></nu-textarea>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-textarea></nu-textarea>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlTextarea from '@onsonr/nebula/dist/react/textarea'
+    ;
+    
+    const App = () => <NuTextarea />;
+    ```
+  </Tab>
+</Tabs>
+
+<Callout type="info">
+This component works with standard `<form>` elements. Please refer to the section on [form controls](/getting-started/form-controls) to learn more about form submission and client-side validation.
+</Callout>
+
+## Examples
+
+### Labels
+
+Use the `label` attribute to give the textarea an accessible label. For labels that contain HTML, use the `label` slot instead.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-textarea label="Comments"></nu-textarea>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-textarea label="Comments"></nu-textarea>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlTextarea from '@onsonr/nebula/dist/react/textarea'
+    ;
+    
+    const App = () => <NuTextarea label="Comments" />;
+    ```
+  </Tab>
+</Tabs>
+
+### Help Text
+
+Add descriptive help text to a textarea with the `help-text` attribute. For help texts that contain HTML, use the `help-text` slot instead.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-textarea label="Feedback" help-text="Please tell us what you think."> </nu-textarea>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-textarea label="Feedback" help-text="Please tell us what you think."> </nu-textarea>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlTextarea from '@onsonr/nebula/dist/react/textarea'
+    ;
+    
+    const App = () => <NuTextarea label="Feedback" help-text="Please tell us what you think." />;
+    ```
+  </Tab>
+</Tabs>
+
+### Rows
+
+Use the `rows` attribute to change the number of text rows that get shown.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-textarea rows="2"></nu-textarea>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-textarea rows="2"></nu-textarea>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlTextarea from '@onsonr/nebula/dist/react/textarea'
+    ;
+    
+    const App = () => <NuTextarea rows={2} />;
+    ```
+  </Tab>
+</Tabs>
+
+### Placeholders
+
+Use the `placeholder` attribute to add a placeholder.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-textarea placeholder="Type something"></nu-textarea>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-textarea placeholder="Type something"></nu-textarea>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlTextarea from '@onsonr/nebula/dist/react/textarea'
+    ;
+    
+    const App = () => <NuTextarea placeholder="Type something" />;
+    ```
+  </Tab>
+</Tabs>
+
+### Filled Textareas
+
+Add the `filled` attribute to draw a filled textarea.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-textarea placeholder="Type something" filled></nu-textarea>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-textarea placeholder="Type something" filled></nu-textarea>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlTextarea from '@onsonr/nebula/dist/react/textarea'
+    ;
+    
+    const App = () => <NuTextarea placeholder="Type something" filled />;
+    ```
+  </Tab>
+</Tabs>
+
+### Disabled
+
+Use the `disabled` attribute to disable a textarea.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-textarea placeholder="Textarea" disabled></nu-textarea>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-textarea placeholder="Textarea" disabled></nu-textarea>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlTextarea from '@onsonr/nebula/dist/react/textarea'
+    ;
+    
+    const App = () => <NuTextarea placeholder="Textarea" disabled />;
+    ```
+  </Tab>
+</Tabs>
+
+### Sizes
+
+Use the `size` attribute to change a textarea's size.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-textarea placeholder="Small" size="small"></nu-textarea>
+    <br />
+    <nu-textarea placeholder="Medium" size="medium"></nu-textarea>
+    <br />
+    <nu-textarea placeholder="Large" size="large"></nu-textarea>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-textarea placeholder="Small" size="small"></nu-textarea>
+    <br />
+    <nu-textarea placeholder="Medium" size="medium"></nu-textarea>
+    <br />
+    <nu-textarea placeholder="Large" size="large"></nu-textarea>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlTextarea from '@onsonr/nebula/dist/react/textarea'
+    ;
+    
+    const App = () => (
+      
+      <>
+        <NuTextarea placeholder="Small" size="small"></NuTextarea>
+        <br />
+        <NuTextarea placeholder="Medium" size="medium"></NuTextarea>
+        <br />
+        <NuTextarea placeholder="Large" size="large"></NuTextarea>
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Prevent Resizing
+
+By default, textareas can be resized vertically by the user. To prevent resizing, set the `resize` attribute to `none`.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-textarea resize="none"></nu-textarea>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-textarea resize="none"></nu-textarea>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlTextarea from '@onsonr/nebula/dist/react/textarea'
+    ;
+    
+    const App = () => <NuTextarea resize="none" />;
+    ```
+  </Tab>
+</Tabs>
+
+### Expand with Content
+
+Textareas will automatically resize to expand to fit their content when `resize` is set to `auto`.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-textarea resize="auto"></nu-textarea>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-textarea resize="auto"></nu-textarea>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlTextarea from '@onsonr/nebula/dist/react/textarea'
+    ;
+    
+    const App = () => <NuTextarea resize="auto" />;
+    ```
+  </Tab>
+</Tabs>
+
+## Properties
+
+<AutoTypeTable path="./src/components/textarea/textarea.component.ts" name="NuTextarea" />
+

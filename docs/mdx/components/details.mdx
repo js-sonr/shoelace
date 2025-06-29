@@ -1,0 +1,245 @@
+---
+title: Details
+description: Details show a brief summary and expand to show additional content.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+<!-- cspell:dictionaries lorem-ipsum -->
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-details summary="Toggle Me">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </nu-details>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-details summary="Toggle Me">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </nu-details>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlDetails from '@onsonr/nebula/dist/react/details'
+    ;
+    
+    const App = () => (
+      
+      <NuDetails summary="Toggle Me">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </NuDetails>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+## Examples
+
+### Disabled
+
+Use the `disable` attribute to prevent the details from expanding.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-details summary="Disabled" disabled>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </nu-details>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-details summary="Disabled" disabled>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </nu-details>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlDetails from '@onsonr/nebula/dist/react/details'
+    ;
+    
+    const App = () => (
+      
+      <NuDetails summary="Disabled" disabled>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </NuDetails>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Customizing the Summary Icon
+
+Use the `expand-icon` and `collapse-icon` slots to change the expand and collapse icons, respectively. To disable the animation, override the `rotate` property on the `summary-icon` part as shown below.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-details summary="Toggle Me" class="custom-icons">
+      <nu-icon name="plus-square" slot="expand-icon"></nu-icon>
+      <nu-icon name="dash-square" slot="collapse-icon"></nu-icon>
+    
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </nu-details>
+    
+    <style>
+      sl-details.custom-icons::part(summary-icon) {
+        /* Disable the expand/collapse animation */
+        rotate: none;
+      }
+    </style>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-details summary="Toggle Me" class="custom-icons">
+      <nu-icon name="plus-square" slot="expand-icon"></nu-icon>
+      <nu-icon name="dash-square" slot="collapse-icon"></nu-icon>
+    
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </nu-details>
+    
+    <style>
+      sl-details.custom-icons::part(summary-icon) {
+        /* Disable the expand/collapse animation */
+        rotate: none;
+      }
+    </style>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlDetails from '@onsonr/nebula/dist/react/details'
+    ;
+    import SlIcon from '@onsonr/nebula/dist/react/icon'
+    ;
+    
+    const css = `
+      sl-details.custom-icon::part(summary-icon) {
+        /* Disable the expand/collapse animation */
+        rotate: none;
+      }
+    `;
+    
+    const App = () => (
+      
+      <>
+        <NuDetails summary="Toggle Me" class="custom-icon">
+          <NuIcon name="plus-square" slot="expand-icon" />
+          <NuIcon name="dash-square" slot="collapse-icon" />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.
+        </NuDetails>
+    
+        <style>{css}</style>
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Grouping Details
+
+Details are designed to function independently, but you can simulate a group or "accordion" where only one is shown at a time by listening for the `sl-show` event.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <div class="details-group-example">
+      <nu-details summary="First" open>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </nu-details>
+    
+      <nu-details summary="Second">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </nu-details>
+    
+      <nu-details summary="Third">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </nu-details>
+    </div>
+    
+    <script>
+      const container = document.querySelector('.details-group-example');
+    
+      // Close all other details when one is shown
+      container.addEventListener('sl-show', event => {
+        if (event.target.localName === 'sl-details') {
+          [...container.querySelectorAll('sl-details')].map(details => (details.open = event.target === details));
+        }
+      });
+    </script>
+    
+    <style>
+      .details-group-example sl-details:not(:last-of-type) {
+        margin-bottom: var(--nu-spacing-2x-small);
+      }
+    </style>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <div class="details-group-example">
+      <nu-details summary="First" open>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </nu-details>
+    
+      <nu-details summary="Second">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </nu-details>
+    
+      <nu-details summary="Third">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </nu-details>
+    </div>
+    
+    <script>
+      const container = document.querySelector('.details-group-example');
+    
+      // Close all other details when one is shown
+      container.addEventListener('sl-show', event => {
+        if (event.target.localName === 'sl-details') {
+          [...container.querySelectorAll('sl-details')].map(details => (details.open = event.target === details));
+        }
+      });
+    </script>
+    
+    <style>
+      .details-group-example sl-details:not(:last-of-type) {
+        margin-bottom: var(--nu-spacing-2x-small);
+      }
+    </style>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+## Properties
+
+<AutoTypeTable path="./src/components/details/details.component.ts" name="NuDetails" />
+

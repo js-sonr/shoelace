@@ -1,0 +1,385 @@
+---
+title: Quickstart Guide
+description: Get up and running with Nebula in minutes
+---
+
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { FileIcon, CodeIcon, ComponentIcon, PaletteIcon } from 'lucide-react';
+
+Welcome to Nebula! This guide will help you get started with our comprehensive web components library designed specifically for blockchain and cryptocurrency interfaces.
+
+## Getting Started
+
+<Steps>
+<Step>
+
+### Choose Your Installation Method
+
+Nebula can be loaded via CDN or installed locally through npm. The CDN approach is the easiest way to get started.
+
+<Tabs items={['CDN (Recommended)', 'npm', 'Bundler']}>
+  <Tab value="CDN (Recommended)">
+    ```html
+    <!-- Autoloader (Recommended) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@onsonr/nebula@latest/dist/themes/light.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@onsonr/nebula@latest/dist/shoelace-autoloader.js"></script>
+    ```
+    
+    The autoloader watches for unregistered Nebula elements and loads them on demand.
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npm install @onsonr/nebula
+    ```
+    
+    Then include the files in your HTML:
+    ```html
+    <link rel="stylesheet" href="/node_modules/@onsonr/nebula/dist/themes/light.css" />
+    <script type="module" src="/node_modules/@onsonr/nebula/dist/shoelace.js"></script>
+    ```
+  </Tab>
+  <Tab value="Bundler">
+    ```javascript
+    import '@onsonr/nebula/dist/themes/light.css';
+    import '@onsonr/nebula/dist/components/button/button.js';
+    import '@onsonr/nebula/dist/components/icon/icon.js';
+    import { setBasePath } from '@onsonr/nebula/dist/utilities/base-path.js';
+    
+    // Set the base path for assets
+    setBasePath('/node_modules/@onsonr/nebula/dist');
+    ```
+  </Tab>
+</Tabs>
+
+</Step>
+
+<Step>
+
+### Add Your First Component
+
+Once Nebula is loaded, you can start using components immediately. Here's a simple button example:
+
+<Tabs items={['Web Component', 'React']}>
+  <Tab value="Web Component">
+    ```html
+    <nu-button variant="primary">
+      Connect Wallet
+    </nu-button>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlButton from '@onsonr/nebula/dist/react/button';
+    
+    function App() {
+      return (
+        <SlButton variant="primary">
+          Connect Wallet
+        </NuButton>
+      );
+    }
+    ```
+  </Tab>
+</Tabs>
+
+</Step>
+
+<Step>
+
+### Configure Your Theme
+
+Nebula supports both light and dark themes. You can set the theme by adding a class to your HTML element:
+
+```html
+<!-- Light theme (default) -->
+<html>
+
+<!-- Dark theme -->
+<html class="sl-theme-dark">
+
+<!-- Auto theme based on system preference -->
+<link
+  rel="stylesheet"
+  media="(prefers-color-scheme:light)"
+  href="https://cdn.jsdelivr.net/npm/@onsonr/nebula@latest/dist/themes/light.css"
+/>
+<link
+  rel="stylesheet"
+  media="(prefers-color-scheme:dark)"
+  href="https://cdn.jsdelivr.net/npm/@onsonr/nebula@latest/dist/themes/dark.css"
+  onload="document.documentElement.classList.add('sl-theme-dark');"
+/>
+```
+
+</Step>
+
+<Step>
+
+### Add Blockchain-Specific Icons
+
+Nebula includes a comprehensive set of cryptocurrency icons. Enable them by registering the crypto icon library:
+
+```javascript
+import { registerIconLibrary } from '@onsonr/nebula/dist/utilities/icon-library.js';
+
+// Register cryptocurrency icons
+registerIconLibrary('crypto', {
+  resolver: name => `https://cdn.jsdelivr.net/npm/@onsonr/nebula@latest/dist/assets/crypto-icons/${name}.svg`
+});
+```
+
+Then use them in your components:
+
+```html
+<nu-icon library="crypto" name="btc"></nu-icon>
+<nu-icon library="crypto" name="eth"></nu-icon>
+<nu-icon library="crypto" name="usdc"></nu-icon>
+```
+
+</Step>
+</Steps>
+
+## Popular Components
+
+Explore our most commonly used components designed for blockchain applications:
+
+<Cards>
+  <Card 
+    icon={<ComponentIcon />} 
+    href="/components/button" 
+    title="Buttons"
+  >
+    Interactive buttons with multiple variants for actions like wallet connections and transactions
+  </Card>
+  
+  <Card 
+    icon={<CodeIcon />}
+    href="/components/login-button" 
+    title="Auth Components"
+  >
+    Specialized login and register buttons for Web3 authentication flows
+  </Card>
+  
+  <Card 
+    icon={<FileIcon />}
+    href="/components/card" 
+    title="Cards"
+  >
+    Content containers perfect for displaying token information and NFT galleries
+  </Card>
+  
+  <Card 
+    icon={<PaletteIcon />}
+    href="/components/area-chart" 
+    title="Charts"
+  >
+    Trading charts including line, area, candle, and pie charts for market data
+  </Card>
+</Cards>
+
+## Framework Integration
+
+<Tabs items={['React', 'Vue', 'Angular']}>
+  <Tab value="React">
+    Nebula provides React wrappers for all components:
+    
+    ```tsx
+    import { SlButton, SlIcon, SlCard } from '@onsonr/nebula/dist/react';
+    
+    function WalletCard() {
+      return (
+        <SlCard>
+          <SlIcon library="crypto" name="metamask" slot="image"></NuIcon>
+          <strong>MetaMask Wallet</strong>
+          <SlButton variant="primary">Connect</NuButton>
+        </NuCard>
+      );
+    }
+    ```
+  </Tab>
+  
+  <Tab value="Vue">
+    Use Nebula components directly in Vue templates:
+    
+    ```vue
+    <template>
+      <nu-card>
+        <nu-icon library="crypto" name="metamask" slot="image"></nu-icon>
+        <strong>MetaMask Wallet</strong>
+        <nu-button variant="primary" @click="connectWallet">
+          Connect
+        </nu-button>
+      </nu-card>
+    </template>
+    
+    <script>
+    export default {
+      methods: {
+        connectWallet() {
+          // Connection logic
+        }
+      }
+    }
+    </script>
+    ```
+  </Tab>
+  
+  <Tab value="Angular">
+    Add CUSTOM_ELEMENTS_SCHEMA to your module:
+    
+    ```typescript
+    import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+    
+    @NgModule({
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    })
+    export class AppModule { }
+    ```
+    
+    Then use in templates:
+    
+    ```html
+    <nu-card>
+      <nu-icon library="crypto" name="metamask" slot="image"></nu-icon>
+      <strong>MetaMask Wallet</strong>
+      <nu-button variant="primary" (click)="connectWallet()">
+        Connect
+      </nu-button>
+    </nu-card>
+    ```
+  </Tab>
+</Tabs>
+
+## Common Patterns
+
+### Wallet Connection Button
+
+```html
+<nu-button variant="primary" size="medium">
+  <nu-icon library="crypto" name="wallet" slot="prefix"></nu-icon>
+  Connect Wallet
+</nu-button>
+```
+
+### Transaction Status Alert
+
+```html
+<nu-alert variant="success" open closable>
+  <nu-icon slot="icon" name="check2-circle"></nu-icon>
+  <strong>Transaction Confirmed!</strong><br />
+  Your transaction has been successfully processed on the blockchain.
+</nu-alert>
+```
+
+### Token Balance Card
+
+```html
+<nu-card class="token-balance">
+  <div slot="header">
+    <nu-icon library="crypto" name="eth"></nu-icon>
+    Ethereum
+  </div>
+  <nu-format-number value="1234.5678" type="currency" currency="USD"></nu-format-number>
+  <small><nu-format-number value="0.5423" minimumFractionDigits="4"></nu-format-number> ETH</small>
+</nu-card>
+```
+
+## Frequently Asked Questions
+
+<Accordions type="single" collapsible>
+  <Accordion title="How do I customize component styles?" id="custom-styles">
+    Nebula components can be customized using CSS custom properties (design tokens) and CSS parts:
+    
+    ```css
+    nu-button {
+      --nu-input-height-medium: 48px;
+      --nu-input-font-size-medium: 18px;
+    }
+    
+    nu-button::part(base) {
+      border-radius: 9999px;
+    }
+    ```
+  </Accordion>
+  
+  <Accordion title="Can I use Nebula with TypeScript?" id="typescript">
+    Yes! Nebula is written in TypeScript and provides full type definitions. When using npm/bundler installation, types are automatically included:
+    
+    ```typescript
+    import type { SlButton } from '@onsonr/nebula';
+    
+    const button = document.querySelector<SlButton>('nu-button');
+    button?.click();
+    ```
+  </Accordion>
+  
+  <Accordion title="How do I lazy load components?" id="lazy-loading">
+    When using the autoloader (CDN), components are automatically lazy loaded. For bundler setups, you can use dynamic imports:
+    
+    ```javascript
+    // Lazy load when needed
+    import('@onsonr/nebula/dist/components/dialog/dialog.js').then(() => {
+      // nu-dialog is now available
+      const dialog = document.querySelector('nu-dialog');
+      dialog.show();
+    });
+    ```
+  </Accordion>
+  
+  <Accordion title="Are components accessible?" id="accessibility">
+    Yes! All Nebula components are built with accessibility in mind:
+    - Proper ARIA attributes
+    - Keyboard navigation support
+    - Screen reader compatibility
+    - Focus management
+    - High contrast mode support
+  </Accordion>
+  
+  <Accordion title="How do I handle Web3 integration?" id="web3">
+    Nebula components are designed to work seamlessly with Web3 libraries. Here's an example with ethers.js:
+    
+    ```javascript
+    import { ethers } from 'ethers';
+    
+    const connectButton = document.querySelector('nu-button.connect-wallet');
+    connectButton.addEventListener('click', async () => {
+      connectButton.loading = true;
+      
+      try {
+        const provider = new ethers.BrowserProvider(window.ethereum);
+        await provider.send("eth_requestAccounts", []);
+        connectButton.loading = false;
+        connectButton.variant = 'success';
+        connectButton.textContent = 'Connected';
+      } catch (error) {
+        connectButton.loading = false;
+        // Handle error
+      }
+    });
+    ```
+  </Accordion>
+</Accordions>
+
+## Next Steps
+
+<Cards>
+  <Card href="/components" title="Explore Components">
+    Browse our full component library
+  </Card>
+  
+  <Card href="/tokens" title="Design Tokens">
+    Customize the look and feel
+  </Card>
+  
+  <Card href="https://github.com/sonr-io/nebula" title="GitHub">
+    View source code and contribute
+  </Card>
+</Cards>
+
+<Callout type="info">
+Need help? Join our [Discord community](https://discord.gg/sonr) or check out our [GitHub discussions](https://github.com/sonr-io/nebula/discussions).
+</Callout>

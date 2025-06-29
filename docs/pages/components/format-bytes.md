@@ -33,10 +33,10 @@ const App = () => {
 
   return (
     <>
-      The file is <SlFormatBytes value={value} /> in size.
+      The file is <NuFormatBytes value={value} /> in size.
       <br />
       <br />
-      <SlInput
+      <NuInput
         type="number"
         value={value}
         label="Number to Format"
@@ -68,13 +68,13 @@ import SlFormatBytes from '@onsonr/nebula/dist/react/format-bytes';
 
 const App = () => (
   <>
-    <SlFormatBytes value="12" />
+    <NuFormatBytes value="12" />
     <br />
-    <SlFormatBytes value="1200" />
+    <NuFormatBytes value="1200" />
     <br />
-    <SlFormatBytes value="1200000" />
+    <NuFormatBytes value="1200000" />
     <br />
-    <SlFormatBytes value="1200000000" />
+    <NuFormatBytes value="1200000000" />
   </>
 );
 ```
@@ -95,13 +95,13 @@ import SlFormatBytes from '@onsonr/nebula/dist/react/format-bytes';
 
 const App = () => (
   <>
-    <SlFormatBytes value="12" unit="bit" />
+    <NuFormatBytes value="12" unit="bit" />
     <br />
-    <SlFormatBytes value="1200" unit="bit" />
+    <NuFormatBytes value="1200" unit="bit" />
     <br />
-    <SlFormatBytes value="1200000" unit="bit" />
+    <NuFormatBytes value="1200000" unit="bit" />
     <br />
-    <SlFormatBytes value="1200000000" unit="bit" />
+    <NuFormatBytes value="1200000000" unit="bit" />
   </>
 );
 ```
@@ -122,13 +122,13 @@ import SlFormatBytes from '@onsonr/nebula/dist/react/format-bytes';
 
 const App = () => (
   <>
-    <SlFormatBytes value="12" lang="de" />
+    <NuFormatBytes value="12" lang="de" />
     <br />
-    <SlFormatBytes value="1200" lang="de" />
+    <NuFormatBytes value="1200" lang="de" />
     <br />
-    <SlFormatBytes value="1200000" lang="de" />
+    <NuFormatBytes value="1200000" lang="de" />
     <br />
-    <SlFormatBytes value="1200000000" lang="de" />
+    <NuFormatBytes value="1200000000" lang="de" />
   </>
 );
 ```

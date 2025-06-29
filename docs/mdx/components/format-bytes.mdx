@@ -1,0 +1,222 @@
+---
+title: Format Bytes
+description: Formats a number as a human readable bytes value.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <div class="format-bytes-overview">
+      The file is <nu-format-bytes value="1000"></nu-format-bytes> in size. <br /><br />
+      <nu-input type="number" value="1000" label="Number to Format" style="max-width: 180px;"></nu-input>
+    </div>
+    
+    <script>
+      const container = document.querySelector('.format-bytes-overview');
+      const formatter = container.querySelector('sl-format-bytes');
+      const input = container.querySelector('sl-input');
+    
+      input.addEventListener('sl-input', () => (formatter.value = input.value || 0));
+    </script>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <div class="format-bytes-overview">
+      The file is <nu-format-bytes value="1000"></nu-format-bytes> in size. <br /><br />
+      <nu-input type="number" value="1000" label="Number to Format" style="max-width: 180px;"></nu-input>
+    </div>
+    
+    <script>
+      const container = document.querySelector('.format-bytes-overview');
+      const formatter = container.querySelector('sl-format-bytes');
+      const input = container.querySelector('sl-input');
+    
+      input.addEventListener('sl-input', () => (formatter.value = input.value || 0));
+    </script>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import { useState } from 'react'
+    ;
+    import SlButton from '@onsonr/nebula/dist/react/button'
+    ;
+    import SlFormatBytes from '@onsonr/nebula/dist/react/format-bytes'
+    ;
+    import SlInput from '@onsonr/nebula/dist/react/input'
+    ;
+    
+    const App = () => {
+      const [value, setValue] = useState(1000);
+    
+      return (
+        <>
+          The file is <NuFormatBytes value={value} /> in size.
+          <br />
+          <br />
+          <NuInput
+            type="number"
+            value={value}
+            label="Number to Format"
+            style={{ maxWidth: '180px' }}
+            onSlInput={event => setValue(event.target.value)}
+          />
+        </>
+      );
+    };
+    ```
+  </Tab>
+</Tabs>
+
+## Examples
+
+### Formatting Bytes
+
+Set the `value` attribute to a number to get the value in bytes.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-format-bytes value="12"></nu-format-bytes><br />
+    <nu-format-bytes value="1200"></nu-format-bytes><br />
+    <nu-format-bytes value="1200000"></nu-format-bytes><br />
+    <nu-format-bytes value="1200000000"></nu-format-bytes>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-format-bytes value="12"></nu-format-bytes><br />
+    <nu-format-bytes value="1200"></nu-format-bytes><br />
+    <nu-format-bytes value="1200000"></nu-format-bytes><br />
+    <nu-format-bytes value="1200000000"></nu-format-bytes>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlFormatBytes from '@onsonr/nebula/dist/react/format-bytes'
+    ;
+    
+    const App = () => (
+      
+      <>
+        <NuFormatBytes value="12" />
+        <br />
+        <NuFormatBytes value="1200" />
+        <br />
+        <NuFormatBytes value="1200000" />
+        <br />
+        <NuFormatBytes value="1200000000" />
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Formatting Bits
+
+To get the value in bits, set the `unit` attribute to `bit`.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-format-bytes value="12" unit="bit"></nu-format-bytes><br />
+    <nu-format-bytes value="1200" unit="bit"></nu-format-bytes><br />
+    <nu-format-bytes value="1200000" unit="bit"></nu-format-bytes><br />
+    <nu-format-bytes value="1200000000" unit="bit"></nu-format-bytes>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-format-bytes value="12" unit="bit"></nu-format-bytes><br />
+    <nu-format-bytes value="1200" unit="bit"></nu-format-bytes><br />
+    <nu-format-bytes value="1200000" unit="bit"></nu-format-bytes><br />
+    <nu-format-bytes value="1200000000" unit="bit"></nu-format-bytes>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlFormatBytes from '@onsonr/nebula/dist/react/format-bytes'
+    ;
+    
+    const App = () => (
+      
+      <>
+        <NuFormatBytes value="12" unit="bit" />
+        <br />
+        <NuFormatBytes value="1200" unit="bit" />
+        <br />
+        <NuFormatBytes value="1200000" unit="bit" />
+        <br />
+        <NuFormatBytes value="1200000000" unit="bit" />
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Localization
+
+Use the `lang` attribute to set the number formatting locale.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-format-bytes value="12" lang="de"></nu-format-bytes><br />
+    <nu-format-bytes value="1200" lang="de"></nu-format-bytes><br />
+    <nu-format-bytes value="1200000" lang="de"></nu-format-bytes><br />
+    <nu-format-bytes value="1200000000" lang="de"></nu-format-bytes>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-format-bytes value="12" lang="de"></nu-format-bytes><br />
+    <nu-format-bytes value="1200" lang="de"></nu-format-bytes><br />
+    <nu-format-bytes value="1200000" lang="de"></nu-format-bytes><br />
+    <nu-format-bytes value="1200000000" lang="de"></nu-format-bytes>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlFormatBytes from '@onsonr/nebula/dist/react/format-bytes'
+    ;
+    
+    const App = () => (
+      
+      <>
+        <NuFormatBytes value="12" lang="de" />
+        <br />
+        <NuFormatBytes value="1200" lang="de" />
+        <br />
+        <NuFormatBytes value="1200000" lang="de" />
+        <br />
+        <NuFormatBytes value="1200000000" lang="de" />
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+## Properties
+
+<AutoTypeTable path="./src/components/format-bytes/format-bytes.component.ts" name="NuFormatBytes" />
+

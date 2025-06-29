@@ -72,11 +72,11 @@ const App = () => {
 
   return (
     <>
-      <SlMutationObserver attr="*" onSlMutation={event => console.log(event.detail)}>
-        <SlButton variant={variant} onClick={handleClick}>
+      <NuMutationObserver attr="*" onSlMutation={event => console.log(event.detail)}>
+        <NuButton variant={variant} onClick={handleClick}>
           Click to mutate
-        </SlButton>
-      </SlMutationObserver>
+        </NuButton>
+      </NuMutationObserver>
 
       <style>{css}</style>
     </>
@@ -175,18 +175,18 @@ const App = () => {
   return (
     <>
       <div className="mutation-child-list">
-        <SlMutationObserver child-list onSlMutation={event => console.log(event.detail)}>
+        <NuMutationObserver child-list onSlMutation={event => console.log(event.detail)}>
           <div className="buttons">
-            <SlButton variant="primary" onClick={addButton}>
+            <NuButton variant="primary" onClick={addButton}>
               Add button
-            </SlButton>
+            </NuButton>
             {buttonIds.map(id => (
-              <SlButton key={id} variant="default" onClick={() => removeButton(id)}>
+              <NuButton key={id} variant="default" onClick={() => removeButton(id)}>
                 {id}
-              </SlButton>
+              </NuButton>
             ))}
           </div>
-        </SlMutationObserver>
+        </NuMutationObserver>
       </div>
       👆 Add and remove buttons and watch the console
       <style>{css}</style>

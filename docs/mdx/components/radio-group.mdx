@@ -1,0 +1,446 @@
+---
+title: Radio Group
+description: Radio groups are used to group multiple radios or radio buttons so they function as a single form control.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-radio-group label="Select an option" name="a" value="1">
+      <nu-radio value="1">Option 1</nu-radio>
+      <nu-radio value="2">Option 2</nu-radio>
+      <nu-radio value="3">Option 3</nu-radio>
+    </nu-radio-group>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-radio-group label="Select an option" name="a" value="1">
+      <nu-radio value="1">Option 1</nu-radio>
+      <nu-radio value="2">Option 2</nu-radio>
+      <nu-radio value="3">Option 3</nu-radio>
+    </nu-radio-group>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlRadio from '@onsonr/nebula/dist/react/radio'
+    ;
+    import SlRadioGroup from '@onsonr/nebula/dist/react/radio-group'
+    ;
+    
+    const App = () => (
+      
+      <NuRadioGroup label="Select an option" name="a" value="1">
+        <NuRadio value="1">Option 1</NuRadio>
+        <NuRadio value="2">Option 2</NuRadio>
+        <NuRadio value="3">Option 3</NuRadio>
+      </NuRadioGroup>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+## Examples
+
+### Help Text
+
+Add descriptive help text to a radio group with the `help-text` attribute. For help texts that contain HTML, use the `help-text` slot instead.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-radio-group label="Select an option" help-text="Choose the most appropriate option." name="a" value="1">
+      <nu-radio value="1">Option 1</nu-radio>
+      <nu-radio value="2">Option 2</nu-radio>
+      <nu-radio value="3">Option 3</nu-radio>
+    </nu-radio-group>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-radio-group label="Select an option" help-text="Choose the most appropriate option." name="a" value="1">
+      <nu-radio value="1">Option 1</nu-radio>
+      <nu-radio value="2">Option 2</nu-radio>
+      <nu-radio value="3">Option 3</nu-radio>
+    </nu-radio-group>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlRadio from '@onsonr/nebula/dist/react/radio'
+    ;
+    import SlRadioGroup from '@onsonr/nebula/dist/react/radio-group'
+    ;
+    
+    const App = () => (
+      
+      <NuRadioGroup label="Select an option" help-text="Choose the most appropriate option." name="a" value="1">
+        <NuRadio value="1">Option 1</NuRadio>
+        <NuRadio value="2">Option 2</NuRadio>
+        <NuRadio value="3">Option 3</NuRadio>
+      </NuRadioGroup>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Radio Buttons
+
+[Radio buttons](/components/radio-button) offer an alternate way to display radio controls. In this case, an internal [button group](/components/button-group) is used to group the buttons into a single, cohesive control.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-radio-group label="Select an option" help-text="Select an option that makes you proud." name="a" value="1">
+      <nu-radio-button value="1">Option 1</nu-radio-button>
+      <nu-radio-button value="2">Option 2</nu-radio-button>
+      <nu-radio-button value="3">Option 3</nu-radio-button>
+    </nu-radio-group>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-radio-group label="Select an option" help-text="Select an option that makes you proud." name="a" value="1">
+      <nu-radio-button value="1">Option 1</nu-radio-button>
+      <nu-radio-button value="2">Option 2</nu-radio-button>
+      <nu-radio-button value="3">Option 3</nu-radio-button>
+    </nu-radio-group>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlRadioButton from '@onsonr/nebula/dist/react/radio-button'
+    ;
+    import SlRadioGroup from '@onsonr/nebula/dist/react/radio-group'
+    ;
+    
+    const App = () => (
+      
+      <NuRadioGroup label="Select an option" name="a" value="1">
+        <NuRadioButton value="1">Option 1</NuRadioButton>
+        <NuRadioButton value="2">Option 2</NuRadioButton>
+        <NuRadioButton value="3">Option 3</NuRadioButton>
+      </NuRadioGroup>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Disabling Options
+
+Radios and radio buttons can be disabled by adding the `disabled` attribute to the respective options inside the radio group.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-radio-group label="Select an option" name="a" value="1">
+      <nu-radio value="1">Option 1</nu-radio>
+      <nu-radio value="2" disabled>Option 2</nu-radio>
+      <nu-radio value="3">Option 3</nu-radio>
+    </nu-radio-group>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-radio-group label="Select an option" name="a" value="1">
+      <nu-radio value="1">Option 1</nu-radio>
+      <nu-radio value="2" disabled>Option 2</nu-radio>
+      <nu-radio value="3">Option 3</nu-radio>
+    </nu-radio-group>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlRadio from '@onsonr/nebula/dist/react/radio'
+    ;
+    import SlRadioGroup from '@onsonr/nebula/dist/react/radio-group'
+    ;
+    
+    const App = () => (
+      
+      <NuRadioGroup label="Select an option" name="a" value="1">
+        <NuRadio value="1">Option 1</NuRadio>
+        <NuRadio value="2" disabled>
+          Option 2
+        </NuRadio>
+        <NuRadio value="3">Option 3</NuRadio>
+      </NuRadioGroup>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Sizing Options
+
+The size of [Radios](/components/radio) and [Radio Buttons](/components/radio-buttons) will be determined by the Radio Group's `size` attribute.
+
+```html preview
+<nu-radio-group label="Select an option" size="medium" value="medium" class="radio-group-size">
+  <nu-radio value="small">Small</nu-radio>
+  <nu-radio value="medium">Medium</nu-radio>
+  <nu-radio value="large">Large</nu-radio>
+</nu-radio-group>
+
+<script>
+  const radioGroup = document.querySelector('.radio-group-size');
+
+  radioGroup.addEventListener('sl-change', () => {
+    radioGroup.size = radioGroup.value;
+  });
+</script>
+```
+
+```jsx react
+import { useState } from 'react';
+import SlRadio from '@onsonr/nebula/dist/react/radio';
+import SlRadioGroup from '@onsonr/nebula/dist/react/radio-group';
+
+const App = () => {
+  const [size, setSize] = useState('medium');
+
+  return (
+    <>
+      <NuRadioGroup
+        label="Select an option"
+        size={size}
+        value={size}
+        class="radio-group-size"
+        onSlChange={event => setSize(event.target.value)}
+      >
+        <NuRadio value="small">Small</NuRadio>
+        <NuRadio value="medium">Medium</NuRadio>
+        <NuRadio value="large">Large</NuRadio>
+      </NuRadioGroup>
+    </>
+  );
+};
+```
+
+<Callout type="info">
+[Radios](/components/radio) and [Radio Buttons](/components/radio-button) also have a `size` attribute. This can be useful in certain compositions, but it will be ignored when used inside of a Radio Group.
+</Callout>
+
+### Validation
+
+Setting the `required` attribute to make selecting an option mandatory. If a value has not been selected, it will prevent the form from submitting and display an error message.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <form class="validation">
+      <nu-radio-group label="Select an option" name="a" required>
+        <nu-radio value="1">Option 1</nu-radio>
+        <nu-radio value="2">Option 2</nu-radio>
+        <nu-radio value="3">Option 3</nu-radio>
+      </nu-radio-group>
+      <br />
+      <nu-button type="submit" variant="primary">Submit</nu-button>
+    </form>
+    
+    <script>
+      const form = document.querySelector('.validation');
+    
+      // Handle form submit
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        alert('All fields are valid!');
+      });
+    </script>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <form class="validation">
+      <nu-radio-group label="Select an option" name="a" required>
+        <nu-radio value="1">Option 1</nu-radio>
+        <nu-radio value="2">Option 2</nu-radio>
+        <nu-radio value="3">Option 3</nu-radio>
+      </nu-radio-group>
+      <br />
+      <nu-button type="submit" variant="primary">Submit</nu-button>
+    </form>
+    
+    <script>
+      const form = document.querySelector('.validation');
+    
+      // Handle form submit
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        alert('All fields are valid!');
+      });
+    </script>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlButton from '@onsonr/nebula/dist/react/button'
+    ;
+    import SlIcon from '@onsonr/nebula/dist/react/icon'
+    ;
+    import SlRadio from '@onsonr/nebula/dist/react/radio'
+    ;
+    import SlRadioGroup from '@onsonr/nebula/dist/react/radio-group'
+    ;
+    const App = () => {
+      function handleSubmit(event) {
+        event.preventDefault();
+        alert('All fields are valid!');
+      }
+    
+      return (
+        <form class="custom-validity" onSubmit={handleSubmit}>
+          <NuRadioGroup label="Select an option" name="a" required onSlChange={handleChange}>
+            <NuRadio value="1">
+              Option 1
+            </NuRadio>
+            <NuRadiovalue="2">
+              Option 2
+            </NuRadio>
+            <NuRadio value="3">
+              Option 3
+            </NuRadio>
+          </NuRadioGroup>
+          <br />
+          <NuButton type="submit" variant="primary">
+            Submit
+          </NuButton>
+        </form>
+      );
+    };
+    ```
+  </Tab>
+</Tabs>
+
+### Custom Validity
+
+Use the `setCustomValidity()` method to set a custom validation message. This will prevent the form from submitting and make the browser display the error message you provide. To clear the error, call this function with an empty string.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <form class="custom-validity">
+      <nu-radio-group label="Select an option" name="a" value="1">
+        <nu-radio value="1">Not me</nu-radio>
+        <nu-radio value="2">Me neither</nu-radio>
+        <nu-radio value="3">Choose me</nu-radio>
+      </nu-radio-group>
+      <br />
+      <nu-button type="submit" variant="primary">Submit</nu-button>
+    </form>
+    
+    <script>
+      const form = document.querySelector('.custom-validity');
+      const radioGroup = form.querySelector('sl-radio-group');
+      const errorMessage = 'You must choose the last option';
+    
+      // Set initial validity as soon as the element is defined
+      customElements.whenDefined('sl-radio').then(() => {
+        radioGroup.setCustomValidity(errorMessage);
+      });
+    
+      // Update validity when a selection is made
+      form.addEventListener('sl-change', () => {
+        const isValid = radioGroup.value === '3';
+        radioGroup.setCustomValidity(isValid ? '' : errorMessage);
+      });
+    
+      // Handle form submit
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        alert('All fields are valid!');
+      });
+    </script>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <form class="custom-validity">
+      <nu-radio-group label="Select an option" name="a" value="1">
+        <nu-radio value="1">Not me</nu-radio>
+        <nu-radio value="2">Me neither</nu-radio>
+        <nu-radio value="3">Choose me</nu-radio>
+      </nu-radio-group>
+      <br />
+      <nu-button type="submit" variant="primary">Submit</nu-button>
+    </form>
+    
+    <script>
+      const form = document.querySelector('.custom-validity');
+      const radioGroup = form.querySelector('sl-radio-group');
+      const errorMessage = 'You must choose the last option';
+    
+      // Set initial validity as soon as the element is defined
+      customElements.whenDefined('sl-radio').then(() => {
+        radioGroup.setCustomValidity(errorMessage);
+      });
+    
+      // Update validity when a selection is made
+      form.addEventListener('sl-change', () => {
+        const isValid = radioGroup.value === '3';
+        radioGroup.setCustomValidity(isValid ? '' : errorMessage);
+      });
+    
+      // Handle form submit
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        alert('All fields are valid!');
+      });
+    </script>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import { useEffect, useRef } from 'react'
+    ;
+    import SlButton from '@onsonr/nebula/dist/react/button'
+    ;
+    import SlIcon from '@onsonr/nebula/dist/react/icon'
+    ;
+    import SlRadio from '@onsonr/nebula/dist/react/radio'
+    ;
+    import SlRadioGroup from '@onsonr/nebula/dist/react/radio-group'
+    ;
+    const App = () => {
+      const radioGroup = useRef(null);
+      const errorMessage = 'You must choose this option';
+    
+      function handleChange() {
+        radioGroup.current.setCustomValidity(radioGroup.current.value === '3' ? '' : errorMessage);
+      }
+    
+      function handleSubmit(event) {
+        event.preventDefault();
+        alert('All fields are valid!');
+      }
+    
+      useEffect(() => {
+        radio.current.setCustomValidity(errorMessage);
+      }, []);
+    
+      return (
+        <form class="custom-validity" onSubmit={handleSubmit}>
+          <NuRadioGroup ref={radioGroup} label="Select an option" name="a" value="1" onSlChange={handleChange}>
+            <NuRadio value="1">Not me</NuRadio>
+            <NuRadio value="2">Me neither</NuRadio>
+            <NuRadio value="3">Choose me</NuRadio>
+          </NuRadioGroup>
+          <br />
+          <NuButton type="submit" variant="primary">
+            Submit
+          </NuButton>
+        </form>
+      );
+    };
+    ```
+  </Tab>
+</Tabs>
+
+## Properties
+
+<AutoTypeTable path="./src/components/radio-group/radio-group.component.ts" name="NuRadioGroup" />
+

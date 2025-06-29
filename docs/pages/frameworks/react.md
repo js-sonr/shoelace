@@ -40,12 +40,12 @@ Preact users facing type errors using components may benefit from setting "paths
 
 ### Importing Components
 
-Every Nebula component is available to import as a React component. Note that we're importing the `<SlButton>` _React component_ instead of the `<nu-button>` _custom element_ in the example below.
+Every Nebula component is available to import as a React component. Note that we're importing the `<NuButton>` _React component_ instead of the `<nu-button>` _custom element_ in the example below.
 
 ```jsx
 import SlButton from '@onsonr/nebula/%NPMDIR%/react/button';
 
-const MyComponent = () => <SlButton variant="primary">Click me</SlButton>;
+const MyComponent = () => <NuButton variant="primary">Click me</NuButton>;
 
 export default MyComponent;
 ```
@@ -80,7 +80,7 @@ import SlInput from '@onsonr/nebula/%NPMDIR%/react/input';
 function MyComponent() {
   const [value, setValue] = useState('');
 
-  return <SlInput value={value} onSlInput={event => setValue(event.target.value)} />;
+  return <NuInput value={value} onSlInput={event => setValue(event.target.value)} />;
 }
 
 export default MyComponent;
@@ -96,7 +96,7 @@ import type SlInputElement from '@onsonr/nebula/%NPMDIR%/components/input/input'
 function MyComponent() {
   const [value, setValue] = useState('');
 
-  return <SlInput value={value} onSlInput={event => setValue((event.target as SlInputElement).value)} />;
+  return <NuInput value={value} onSlInput={event => setValue((event.target as SlInputElement).value)} />;
 }
 
 export default MyComponent;
@@ -115,7 +115,7 @@ function MyComponent() {
     setValue(event.detail);
   }, []);
 
-  return <SlInput value={value} onSlInput={event => setValue((event.target as SlInputElement).value)} />;
+  return <NuInput value={value} onSlInput={event => setValue((event.target as SlInputElement).value)} />;
 }
 
 export default MyComponent;

@@ -1,0 +1,189 @@
+---
+title: Color Tokens
+description: Color tokens help maintain consistent use of color throughout your app.
+---
+
+import { Callout } from "fumadocs-ui/components/callout";
+
+export function ColorPalette({ name, token, values }) {
+  return (
+    <div className="color-palette">
+      <div className="color-palette__name">
+        {name}<br />
+        <code>{token}</code>
+      </div>
+      {values.map((value) => (
+        <div key={value} className="color-palette__example">
+          <div 
+            className={`color-palette__swatch ${value === '0' ? 'color-palette__swatch--border' : ''}`}
+            style={{ backgroundColor: `var(${token.replace('{n}', value)})` }}
+          />
+          {value}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+
+# Color Tokens
+
+Color tokens help maintain consistent use of color throughout your app. Nebula provides palettes for theme colors and primitives that you can use as a foundation for your design system.
+
+Color tokens are referenced using the `--nu-color-{name}-{n}` CSS custom property, where `{name}` is the name of the palette and `{n}` is the numeric value of the desired swatch.
+
+## Theme Tokens
+
+Theme tokens give you a semantic way to reference colors in your app. The primary palette is typically based on a brand color, whereas success, neutral, warning, and danger are used to visualize actions that correspond to their respective meanings.
+
+<ColorPalette 
+  name="Primary"
+  token="--nu-color-primary-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Success"
+  token="--nu-color-success-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Warning"
+  token="--nu-color-warning-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Danger"
+  token="--nu-color-danger-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Neutral"
+  token="--nu-color-neutral-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Black & White"
+  token="--nu-color-neutral-{n}"
+  values={["0", "1000"]}
+/>
+
+<Callout type="info">
+Looking for an easy way to customize your theme? [Try the color token generator!](https://codepen.io/claviska/full/QWveRgL)
+</Callout>
+
+## Primitives
+
+Additional palettes are provided in the form of color primitives. Use these when you need arbitrary colors that don't have semantic meaning. Color primitives are derived from the fantastic [Tailwind color palette](https://tailwindcss.com/docs/customizing-colors).
+
+<ColorPalette 
+  name="Gray"
+  token="--nu-color-gray-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Red"
+  token="--nu-color-red-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Orange"
+  token="--nu-color-orange-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Amber"
+  token="--nu-color-amber-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Yellow"
+  token="--nu-color-yellow-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Lime"
+  token="--nu-color-lime-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Green"
+  token="--nu-color-green-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Emerald"
+  token="--nu-color-emerald-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Teal"
+  token="--nu-color-teal-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Cyan"
+  token="--nu-color-cyan-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Sky"
+  token="--nu-color-sky-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Blue"
+  token="--nu-color-blue-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Indigo"
+  token="--nu-color-indigo-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Violet"
+  token="--nu-color-violet-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Purple"
+  token="--nu-color-purple-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Fuchsia"
+  token="--nu-color-fuchsia-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Pink"
+  token="--nu-color-pink-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>
+
+<ColorPalette 
+  name="Rose"
+  token="--nu-color-rose-{n}"
+  values={["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]}
+/>

@@ -12,7 +12,7 @@ layout: component
 ```jsx:react
 import SlInput from '@onsonr/nebula/dist/react/input';
 
-const App = () => <SlInput />;
+const App = () => <NuInput />;
 ```
 
 :::tip
@@ -33,7 +33,7 @@ Use the `label` attribute to give the input an accessible label. For labels that
 import SlIcon from '@onsonr/nebula/dist/react/icon';
 import SlInput from '@onsonr/nebula/dist/react/input';
 
-const App = () => <SlInput label="What is your name?" />;
+const App = () => <NuInput label="What is your name?" />;
 ```
 
 ### Help Text
@@ -48,7 +48,7 @@ Add descriptive help text to an input with the `help-text` attribute. For help t
 import SlIcon from '@onsonr/nebula/dist/react/icon';
 import SlInput from '@onsonr/nebula/dist/react/input';
 
-const App = () => <SlInput label="Nickname" help-text="What would you like people to call you?" />;
+const App = () => <NuInput label="Nickname" help-text="What would you like people to call you?" />;
 ```
 
 ### Placeholders
@@ -62,7 +62,7 @@ Use the `placeholder` attribute to add a placeholder.
 ```jsx:react
 import SlInput from '@onsonr/nebula/dist/react/input';
 
-const App = () => <SlInput placeholder="Type something" />;
+const App = () => <NuInput placeholder="Type something" />;
 ```
 
 ### Clearable
@@ -76,7 +76,7 @@ Add the `clearable` attribute to add a clear button when the input has content.
 ```jsx:react
 import SlInput from '@onsonr/nebula/dist/react/input';
 
-const App = () => <SlInput placeholder="Clearable" clearable />;
+const App = () => <NuInput placeholder="Clearable" clearable />;
 ```
 
 ### Toggle Password
@@ -90,7 +90,7 @@ Add the `password-toggle` attribute to add a toggle button that will show the pa
 ```jsx:react
 import SlInput from '@onsonr/nebula/dist/react/input';
 
-const App = () => <SlInput type="password" placeholder="Password Toggle" size="medium" password-toggle />;
+const App = () => <NuInput type="password" placeholder="Password Toggle" size="medium" password-toggle />;
 ```
 
 ### Filled Inputs
@@ -104,7 +104,7 @@ Add the `filled` attribute to draw a filled input.
 ```jsx:react
 import SlInput from '@onsonr/nebula/dist/react/input';
 
-const App = () => <SlInput placeholder="Type something" filled />;
+const App = () => <NuInput placeholder="Type something" filled />;
 ```
 
 ### Disabled
@@ -118,7 +118,7 @@ Use the `disabled` attribute to disable an input.
 ```jsx:react
 import SlInput from '@onsonr/nebula/dist/react/input';
 
-const App = () => <SlInput placeholder="Disabled" disabled />;
+const App = () => <NuInput placeholder="Disabled" disabled />;
 ```
 
 ### Sizes
@@ -138,11 +138,11 @@ import SlInput from '@onsonr/nebula/dist/react/input';
 
 const App = () => (
   <>
-    <SlInput placeholder="Small" size="small" />
+    <NuInput placeholder="Small" size="small" />
     <br />
-    <SlInput placeholder="Medium" size="medium" />
+    <NuInput placeholder="Medium" size="medium" />
     <br />
-    <SlInput placeholder="Large" size="large" />
+    <NuInput placeholder="Large" size="large" />
   </>
 );
 ```
@@ -164,11 +164,11 @@ import SlInput from '@onsonr/nebula/dist/react/input';
 
 const App = () => (
   <>
-    <SlInput placeholder="Small" size="small" pill />
+    <NuInput placeholder="Small" size="small" pill />
     <br />
-    <SlInput placeholder="Medium" size="medium" pill />
+    <NuInput placeholder="Medium" size="medium" pill />
     <br />
-    <SlInput placeholder="Large" size="large" pill />
+    <NuInput placeholder="Large" size="large" pill />
   </>
 );
 ```
@@ -190,11 +190,11 @@ import SlInput from '@onsonr/nebula/dist/react/input';
 
 const App = () => (
   <>
-    <SlInput type="email" placeholder="Email" />
+    <NuInput type="email" placeholder="Email" />
     <br />
-    <SlInput type="number" placeholder="Number" />
+    <NuInput type="number" placeholder="Number" />
     <br />
-    <SlInput type="date" placeholder="Date" />
+    <NuInput type="date" placeholder="Date" />
   </>
 );
 ```
@@ -226,20 +226,20 @@ import SlInput from '@onsonr/nebula/dist/react/input';
 
 const App = () => (
   <>
-    <SlInput placeholder="Small" size="small">
-      <SlIcon name="house" slot="prefix"></SlIcon>
-      <SlIcon name="chat" slot="suffix"></SlIcon>
-    </SlInput>
+    <NuInput placeholder="Small" size="small">
+      <NuIcon name="house" slot="prefix"></NuIcon>
+      <NuIcon name="chat" slot="suffix"></NuIcon>
+    </NuInput>
     <br />
-    <SlInput placeholder="Medium" size="medium">
-      <SlIcon name="house" slot="prefix"></SlIcon>
-      <SlIcon name="chat" slot="suffix"></SlIcon>
-    </SlInput>
+    <NuInput placeholder="Medium" size="medium">
+      <NuIcon name="house" slot="prefix"></NuIcon>
+      <NuIcon name="chat" slot="suffix"></NuIcon>
+    </NuInput>
     <br />
-    <SlInput placeholder="Large" size="large">
-      <SlIcon name="house" slot="prefix"></SlIcon>
-      <SlIcon name="chat" slot="suffix"></SlIcon>
-    </SlInput>
+    <NuInput placeholder="Large" size="large">
+      <NuIcon name="house" slot="prefix"></NuIcon>
+      <NuIcon name="chat" slot="suffix"></NuIcon>
+    </NuInput>
   </>
 );
 ```

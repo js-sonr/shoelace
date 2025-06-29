@@ -12,7 +12,7 @@ layout: component
 ```jsx:react
 import SlProgressRing from '@onsonr/nebula/dist/react/progress-ring';
 
-const App = () => <SlProgressRing value="25" />;
+const App = () => <NuProgressRing value="25" />;
 ```
 
 ## Examples
@@ -30,7 +30,7 @@ Use the `--size` custom property to set the diameter of the progress ring.
 ```jsx:react
 import SlProgressRing from '@onsonr/nebula/dist/react/progress-ring';
 
-const App = () => <SlProgressRing value="50" style={{ '--size': '200px' }} />;
+const App = () => <NuProgressRing value="50" style={{ '--size': '200px' }} />;
 ```
 
 {% endraw %}
@@ -48,7 +48,7 @@ Use the `--track-width` and `--indicator-width` custom properties to set the wid
 ```jsx:react
 import SlProgressRing from '@onsonr/nebula/dist/react/progress-ring';
 
-const App = () => <SlProgressRing value="50" style={{ '--track-width': '6px', '--indicator-width': '12px' }} />;
+const App = () => <NuProgressRing value="50" style={{ '--track-width': '6px', '--indicator-width': '12px' }} />;
 ```
 
 {% endraw %}
@@ -73,7 +73,7 @@ To change the color, use the `--track-color` and `--indicator-color` custom prop
 import SlProgressRing from '@onsonr/nebula/dist/react/progress-ring';
 
 const App = () => (
-  <SlProgressRing
+  <NuProgressRing
     value="50"
     style={{
       '--track-color': 'pink',
@@ -96,7 +96,7 @@ Use the `label` attribute to label the progress ring and tell assistive devices 
 ```jsx:react
 import SlProgressRing from '@onsonr/nebula/dist/react/progress-ring';
 
-const App = () => <SlProgressRing value="50" label="Upload progress" />;
+const App = () => <NuProgressRing value="50" label="Upload progress" />;
 ```
 
 ### Showing Values
@@ -150,19 +150,19 @@ const App = () => {
 
   return (
     <>
-      <SlProgressRing value={value} style={{ marginBottom: '.5rem' }}>
+      <NuProgressRing value={value} style={{ marginBottom: '.5rem' }}>
         {value}%
-      </SlProgressRing>
+      </NuProgressRing>
 
       <br />
 
-      <SlButton circle onClick={() => adjustValue(-10)}>
-        <SlIcon name="dash" label="Decrease" />
-      </SlButton>
+      <NuButton circle onClick={() => adjustValue(-10)}>
+        <NuIcon name="dash" label="Decrease" />
+      </NuButton>
 
-      <SlButton circle onClick={() => adjustValue(10)}>
-        <SlIcon name="plus" label="Increase" />
-      </SlButton>
+      <NuButton circle onClick={() => adjustValue(10)}>
+        <NuIcon name="plus" label="Increase" />
+      </NuButton>
     </>
   );
 };

@@ -35,14 +35,14 @@ const App = () => {
 
   return (
     <>
-      <SlDrawer label="Drawer" open={open} onSlAfterHide={() => setOpen(false)}>
+      <NuDrawer label="Drawer" open={open} onSlAfterHide={() => setOpen(false)}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <SlButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
+        <NuButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
           Close
-        </SlButton>
-      </SlDrawer>
+        </NuButton>
+      </NuDrawer>
 
-      <SlButton onClick={() => setOpen(true)}>Open Drawer</SlButton>
+      <NuButton onClick={() => setOpen(true)}>Open Drawer</NuButton>
     </>
   );
 };
@@ -82,14 +82,14 @@ const App = () => {
 
   return (
     <>
-      <SlDrawer label="Drawer" placement="start" open={open} onSlAfterHide={() => setOpen(false)}>
+      <NuDrawer label="Drawer" placement="start" open={open} onSlAfterHide={() => setOpen(false)}>
         This drawer slides in from the start.
-        <SlButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
+        <NuButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
           Close
-        </SlButton>
-      </SlDrawer>
+        </NuButton>
+      </NuDrawer>
 
-      <SlButton onClick={() => setOpen(true)}>Open Drawer</SlButton>
+      <NuButton onClick={() => setOpen(true)}>Open Drawer</NuButton>
     </>
   );
 };
@@ -127,14 +127,14 @@ const App = () => {
 
   return (
     <>
-      <SlDrawer label="Drawer" placement="top" open={open} onSlAfterHide={() => setOpen(false)}>
+      <NuDrawer label="Drawer" placement="top" open={open} onSlAfterHide={() => setOpen(false)}>
         This drawer slides in from the top.
-        <SlButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
+        <NuButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
           Close
-        </SlButton>
-      </SlDrawer>
+        </NuButton>
+      </NuDrawer>
 
-      <SlButton onClick={() => setOpen(true)}>Open Drawer</SlButton>
+      <NuButton onClick={() => setOpen(true)}>Open Drawer</NuButton>
     </>
   );
 };
@@ -172,14 +172,14 @@ const App = () => {
 
   return (
     <>
-      <SlDrawer label="Drawer" placement="bottom" open={open} onSlAfterHide={() => setOpen(false)}>
+      <NuDrawer label="Drawer" placement="bottom" open={open} onSlAfterHide={() => setOpen(false)}>
         This drawer slides in from the bottom.
-        <SlButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
+        <NuButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
           Close
-        </SlButton>
-      </SlDrawer>
+        </NuButton>
+      </NuDrawer>
 
-      <SlButton onClick={() => setOpen(true)}>Open Drawer</SlButton>
+      <NuButton onClick={() => setOpen(true)}>Open Drawer</NuButton>
     </>
   );
 };
@@ -238,7 +238,7 @@ const App = () => {
       >
         The drawer will be contained to this box. This content won't shift or be affected in any way when the drawer
         opens.
-        <SlDrawer
+        <NuDrawer
           label="Drawer"
           contained
           no-modal
@@ -247,13 +247,13 @@ const App = () => {
           style={{ '--size': '50%' }}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          <SlButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
+          <NuButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
             Close
-          </SlButton>
-        </SlDrawer>
+          </NuButton>
+        </NuDrawer>
       </div>
 
-      <SlButton onClick={() => setOpen(true)}>Open Drawer</SlButton>
+      <NuButton onClick={() => setOpen(true)}>Open Drawer</NuButton>
     </>
   );
 };
@@ -295,14 +295,14 @@ const App = () => {
 
   return (
     <>
-      <SlDrawer label="Drawer" open={open} onSlAfterHide={() => setOpen(false)} style={{ '--size': '50vw' }}>
+      <NuDrawer label="Drawer" open={open} onSlAfterHide={() => setOpen(false)} style={{ '--size': '50vw' }}>
         This drawer is always 50% of the viewport.
-        <SlButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
+        <NuButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
           Close
-        </SlButton>
-      </SlDrawer>
+        </NuButton>
+      </NuDrawer>
 
-      <SlButton onClick={() => setOpen(true)}>Open Drawer</SlButton>
+      <NuButton onClick={() => setOpen(true)}>Open Drawer</NuButton>
     </>
   );
 };
@@ -346,7 +346,7 @@ const App = () => {
 
   return (
     <>
-      <SlDrawer label="Drawer" open={open} onSlAfterHide={() => setOpen(false)}>
+      <NuDrawer label="Drawer" open={open} onSlAfterHide={() => setOpen(false)}>
         <div
           style={{
             height: '150vh',
@@ -356,12 +356,12 @@ const App = () => {
         >
           <p>Scroll down and give it a try! 👇</p>
         </div>
-        <SlButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
+        <NuButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
           Close
-        </SlButton>
-      </SlDrawer>
+        </NuButton>
+      </NuDrawer>
 
-      <SlButton onClick={() => setOpen(true)}>Open Drawer</SlButton>
+      <NuButton onClick={() => setOpen(true)}>Open Drawer</NuButton>
     </>
   );
 };
@@ -405,15 +405,15 @@ const App = () => {
 
   return (
     <>
-      <SlDrawer label="Drawer" open={open} onSlAfterHide={() => setOpen(false)}>
-        <SlIconButton slot="header-actions" name="box-arrow-up-right" onClick={() => window.open(location.href)} />
+      <NuDrawer label="Drawer" open={open} onSlAfterHide={() => setOpen(false)}>
+        <NuIconButton slot="header-actions" name="box-arrow-up-right" onClick={() => window.open(location.href)} />
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <SlButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
+        <NuButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
           Close
-        </SlButton>
-      </SlDrawer>
+        </NuButton>
+      </NuDrawer>
 
-      <SlButton onClick={() => setOpen(true)}>Open Drawer</SlButton>
+      <NuButton onClick={() => setOpen(true)}>Open Drawer</NuButton>
     </>
   );
 };
@@ -469,14 +469,14 @@ const App = () => {
 
   return (
     <>
-      <SlDrawer label="Drawer" open={open} onSlRequestClose={handleRequestClose} onSlAfterHide={() => setOpen(false)}>
+      <NuDrawer label="Drawer" open={open} onSlRequestClose={handleRequestClose} onSlAfterHide={() => setOpen(false)}>
         This drawer will not close when you click on the overlay.
-        <SlButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
+        <NuButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
           Save &amp; Close
-        </SlButton>
-      </SlDrawer>
+        </NuButton>
+      </NuDrawer>
 
-      <SlButton onClick={() => setOpen(true)}>Open Drawer</SlButton>
+      <NuButton onClick={() => setOpen(true)}>Open Drawer</NuButton>
     </>
   );
 };
@@ -516,14 +516,14 @@ const App = () => {
 
   return (
     <>
-      <SlDrawer label="Drawer" open={open} onSlAfterHide={() => setOpen(false)}>
-        <SlInput autofocus placeholder="I will have focus when the drawer is opened" />
-        <SlButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
+      <NuDrawer label="Drawer" open={open} onSlAfterHide={() => setOpen(false)}>
+        <NuInput autofocus placeholder="I will have focus when the drawer is opened" />
+        <NuButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
           Close
-        </SlButton>
-      </SlDrawer>
+        </NuButton>
+      </NuDrawer>
 
-      <SlButton onClick={() => setOpen(true)}>Open Drawer</SlButton>
+      <NuButton onClick={() => setOpen(true)}>Open Drawer</NuButton>
     </>
   );
 };

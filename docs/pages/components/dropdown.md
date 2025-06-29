@@ -41,30 +41,30 @@ import SlMenu from '@onsonr/nebula/dist/react/menu';
 import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 
 const App = () => (
-  <SlDropdown>
-    <SlButton slot="trigger" caret>
+  <NuDropdown>
+    <NuButton slot="trigger" caret>
       Dropdown
-    </SlButton>
-    <SlMenu>
-      <SlMenuItem>Dropdown Item 1</SlMenuItem>
-      <SlMenuItem>Dropdown Item 2</SlMenuItem>
-      <SlMenuItem>Dropdown Item 3</SlMenuItem>
-      <SlDivider />
-      <SlMenuItem type="checkbox" checked>
+    </NuButton>
+    <NuMenu>
+      <NuMenuItem>Dropdown Item 1</NuMenuItem>
+      <NuMenuItem>Dropdown Item 2</NuMenuItem>
+      <NuMenuItem>Dropdown Item 3</NuMenuItem>
+      <NuDivider />
+      <NuMenuItem type="checkbox" checked>
         Checkbox
-      </SlMenuItem>
-      <SlMenuItem disabled>Disabled</SlMenuItem>
-      <SlDivider />
-      <SlMenuItem>
+      </NuMenuItem>
+      <NuMenuItem disabled>Disabled</NuMenuItem>
+      <NuDivider />
+      <NuMenuItem>
         Prefix
-        <SlIcon slot="prefix" name="gift" />
-      </SlMenuItem>
-      <SlMenuItem>
+        <NuIcon slot="prefix" name="gift" />
+      </NuMenuItem>
+      <NuMenuItem>
         Suffix Icon
-        <SlIcon slot="suffix" name="heart" />
-      </SlMenuItem>
-    </SlMenu>
-  </SlDropdown>
+        <NuIcon slot="suffix" name="heart" />
+      </NuMenuItem>
+    </NuMenu>
+  </NuDropdown>
 );
 ```
 
@@ -110,16 +110,16 @@ const App = () => {
   }
 
   return (
-    <SlDropdown>
-      <SlButton slot="trigger" caret>
+    <NuDropdown>
+      <NuButton slot="trigger" caret>
         Edit
-      </SlButton>
-      <SlMenu onSlSelect={handleSelect}>
-        <SlMenuItem value="cut">Cut</SlMenuItem>
-        <SlMenuItem value="copy">Copy</SlMenuItem>
-        <SlMenuItem value="paste">Paste</SlMenuItem>
-      </SlMenu>
-    </SlDropdown>
+      </NuButton>
+      <NuMenu onSlSelect={handleSelect}>
+        <NuMenuItem value="cut">Cut</NuMenuItem>
+        <NuMenuItem value="copy">Copy</NuMenuItem>
+        <NuMenuItem value="paste">Paste</NuMenuItem>
+      </NuMenu>
+    </NuDropdown>
   );
 };
 ```
@@ -170,16 +170,16 @@ const App = () => {
   }
 
   return (
-    <SlDropdown>
-      <SlButton slot="trigger" caret>
+    <NuDropdown>
+      <NuButton slot="trigger" caret>
         Edit
-      </SlButton>
-      <SlMenu>
-        <SlMenuItem onClick={handleCut}>Cut</SlMenuItem>
-        <SlMenuItem onClick={handleCopy}>Copy</SlMenuItem>
-        <SlMenuItem onClick={handlePaste}>Paste</SlMenuItem>
-      </SlMenu>
-    </SlDropdown>
+      </NuButton>
+      <NuMenu>
+        <NuMenuItem onClick={handleCut}>Cut</NuMenuItem>
+        <NuMenuItem onClick={handleCopy}>Copy</NuMenuItem>
+        <NuMenuItem onClick={handlePaste}>Paste</NuMenuItem>
+      </NuMenu>
+    </NuDropdown>
   );
 };
 ```
@@ -210,19 +210,19 @@ import SlMenu from '@onsonr/nebula/dist/react/menu';
 import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 
 const App = () => (
-  <SlDropdown placement="top-start">
-    <SlButton slot="trigger" caret>
+  <NuDropdown placement="top-start">
+    <NuButton slot="trigger" caret>
       Edit
-    </SlButton>
-    <SlMenu>
-      <SlMenuItem>Cut</SlMenuItem>
-      <SlMenuItem>Copy</SlMenuItem>
-      <SlMenuItem>Paste</SlMenuItem>
-      <SlDivider />
-      <SlMenuItem>Find</SlMenuItem>
-      <SlMenuItem>Replace</SlMenuItem>
-    </SlMenu>
-  </SlDropdown>
+    </NuButton>
+    <NuMenu>
+      <NuMenuItem>Cut</NuMenuItem>
+      <NuMenuItem>Copy</NuMenuItem>
+      <NuMenuItem>Paste</NuMenuItem>
+      <NuDivider />
+      <NuMenuItem>Find</NuMenuItem>
+      <NuMenuItem>Replace</NuMenuItem>
+    </NuMenu>
+  </NuDropdown>
 );
 ```
 
@@ -252,19 +252,19 @@ import SlMenu from '@onsonr/nebula/dist/react/menu';
 import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 
 const App = () => (
-  <SlDropdown distance={30}>
-    <SlButton slot="trigger" caret>
+  <NuDropdown distance={30}>
+    <NuButton slot="trigger" caret>
       Edit
-    </SlButton>
-    <SlMenu>
-      <SlMenuItem>Cut</SlMenuItem>
-      <SlMenuItem>Copy</SlMenuItem>
-      <SlMenuItem>Paste</SlMenuItem>
-      <SlDivider />
-      <SlMenuItem>Find</SlMenuItem>
-      <SlMenuItem>Replace</SlMenuItem>
-    </SlMenu>
-  </SlDropdown>
+    </NuButton>
+    <NuMenu>
+      <NuMenuItem>Cut</NuMenuItem>
+      <NuMenuItem>Copy</NuMenuItem>
+      <NuMenuItem>Paste</NuMenuItem>
+      <NuDivider />
+      <NuMenuItem>Find</NuMenuItem>
+      <NuMenuItem>Replace</NuMenuItem>
+    </NuMenu>
+  </NuDropdown>
 );
 ```
 
@@ -294,19 +294,19 @@ import SlMenu from '@onsonr/nebula/dist/react/menu';
 import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 
 const App = () => (
-  <SlDropdown skidding={30}>
-    <SlButton slot="trigger" caret>
+  <NuDropdown skidding={30}>
+    <NuButton slot="trigger" caret>
       Edit
-    </SlButton>
-    <SlMenu>
-      <SlMenuItem>Cut</SlMenuItem>
-      <SlMenuItem>Copy</SlMenuItem>
-      <SlMenuItem>Paste</SlMenuItem>
-      <SlDivider />
-      <SlMenuItem>Find</SlMenuItem>
-      <SlMenuItem>Replace</SlMenuItem>
-    </SlMenu>
-  </SlDropdown>
+    </NuButton>
+    <NuMenu>
+      <NuMenuItem>Cut</NuMenuItem>
+      <NuMenuItem>Copy</NuMenuItem>
+      <NuMenuItem>Paste</NuMenuItem>
+      <NuDivider />
+      <NuMenuItem>Find</NuMenuItem>
+      <NuMenuItem>Replace</NuMenuItem>
+    </NuMenu>
+  </NuDropdown>
 );
 ```
 
@@ -363,35 +363,35 @@ const css = `
 
 const App = () => (
   <>
-    <SlDropdown>
-      <SlButton slot="trigger" caret>Edit</SlButton>
+    <NuDropdown>
+      <NuButton slot="trigger" caret>Edit</NuButton>
 
-      <SlMenu style="max-width: 200px;">
-        <SlMenuItem value="undo">Undo</SlMenuItem>
-        <SlMenuItem value="redo">Redo</SlMenuItem>
-        <SlDivider />
-        <SlMenuItem value="cut">Cut</SlMenuItem>
-        <SlMenuItem value="copy">Copy</SlMenuItem>
-        <SlMenuItem value="paste">Paste</SlMenuItem>
-        <SlDivider />
-        <SlMenuItem>
+      <NuMenu style="max-width: 200px;">
+        <NuMenuItem value="undo">Undo</NuMenuItem>
+        <NuMenuItem value="redo">Redo</NuMenuItem>
+        <NuDivider />
+        <NuMenuItem value="cut">Cut</NuMenuItem>
+        <NuMenuItem value="copy">Copy</NuMenuItem>
+        <NuMenuItem value="paste">Paste</NuMenuItem>
+        <NuDivider />
+        <NuMenuItem>
           Find
-          <SlMenu slot="submenu">
-            <SlMenuItem value="find">Find…</SlMenuItem>
-            <SlMenuItem value="find-previous">Find Next</SlMenuItem>
-            <SlMenuItem value="find-next">Find Previous</SlMenuItem>
-          </SlMenu>
-        </SlMenuItem>
-        <SlMenuItem>
+          <NuMenu slot="submenu">
+            <NuMenuItem value="find">Find…</NuMenuItem>
+            <NuMenuItem value="find-previous">Find Next</NuMenuItem>
+            <NuMenuItem value="find-next">Find Previous</NuMenuItem>
+          </NuMenu>
+        </NuMenuItem>
+        <NuMenuItem>
           Transformations
-          <SlMenu slot="submenu">
-            <SlMenuItem value="uppercase">Make uppercase</SlMenuItem>
-            <SlMenuItem value="lowercase">Make lowercase</SlMenuItem>
-            <SlMenuItem value="capitalize">Capitalize</SlMenuItem>
-          </SlMenu>
-        </SlMenuItem>
-      </SlMenu>
-    </SlDropdown>
+          <NuMenu slot="submenu">
+            <NuMenuItem value="uppercase">Make uppercase</NuMenuItem>
+            <NuMenuItem value="lowercase">Make lowercase</NuMenuItem>
+            <NuMenuItem value="capitalize">Capitalize</NuMenuItem>
+          </NuMenu>
+        </NuMenuItem>
+      </NuMenu>
+    </NuDropdown>
   </>
 );
 ```
@@ -453,27 +453,27 @@ const css = `
 const App = () => (
   <>
     <div className="dropdown-hoist">
-      <SlDropdown>
-        <SlButton slot="trigger" caret>
+      <NuDropdown>
+        <NuButton slot="trigger" caret>
           No Hoist
-        </SlButton>
-        <SlMenu>
-          <SlMenuItem>Item 1</SlMenuItem>
-          <SlMenuItem>Item 2</SlMenuItem>
-          <SlMenuItem>Item 3</SlMenuItem>
-        </SlMenu>
-      </SlDropdown>
+        </NuButton>
+        <NuMenu>
+          <NuMenuItem>Item 1</NuMenuItem>
+          <NuMenuItem>Item 2</NuMenuItem>
+          <NuMenuItem>Item 3</NuMenuItem>
+        </NuMenu>
+      </NuDropdown>
 
-      <SlDropdown hoist>
-        <SlButton slot="trigger" caret>
+      <NuDropdown hoist>
+        <NuButton slot="trigger" caret>
           Hoist
-        </SlButton>
-        <SlMenu>
-          <SlMenuItem>Item 1</SlMenuItem>
-          <SlMenuItem>Item 2</SlMenuItem>
-          <SlMenuItem>Item 3</SlMenuItem>
-        </SlMenu>
-      </SlDropdown>
+        </NuButton>
+        <NuMenu>
+          <NuMenuItem>Item 1</NuMenuItem>
+          <NuMenuItem>Item 2</NuMenuItem>
+          <NuMenuItem>Item 3</NuMenuItem>
+        </NuMenu>
+      </NuDropdown>
     </div>
 
     <style>{css}</style>

@@ -12,7 +12,7 @@ layout: component
 ```jsx:react
 import SlSpinner from '@onsonr/nebula/dist/react/spinner';
 
-const App = () => <SlSpinner />;
+const App = () => <NuSpinner />;
 ```
 
 ## Examples
@@ -34,9 +34,9 @@ import SlSpinner from '@onsonr/nebula/dist/react/spinner';
 
 const App = () => (
   <>
-    <SlSpinner />
-    <SlSpinner style={{ fontSize: '2rem' }} />
-    <SlSpinner style={{ fontSize: '3rem' }} />
+    <NuSpinner />
+    <NuSpinner style={{ fontSize: '2rem' }} />
+    <NuSpinner style={{ fontSize: '3rem' }} />
   </>
 );
 ```
@@ -57,7 +57,7 @@ The width of the spinner's track can be changed by setting the `--track-width` c
 import SlSpinner from '@onsonr/nebula/dist/react/spinner';
 
 const App = () => (
-  <SlSpinner
+  <NuSpinner
     style={{
       fontSize: '3rem',
       '--track-width': '6px'
@@ -82,7 +82,7 @@ The spinner's colors can be changed by setting the `--indicator-color` and `--tr
 import SlSpinner from '@onsonr/nebula/dist/react/spinner';
 
 const App = () => (
-  <SlSpinner
+  <NuSpinner
     style={{
       fontSize: '3rem',
       '--indicator-color': 'deeppink',

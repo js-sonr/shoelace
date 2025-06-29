@@ -95,13 +95,13 @@ const App = () => (
   <>
     <div className="skeleton-overview">
       <header>
-        <SlSkeleton />
-        <SlSkeleton />
+        <NuSkeleton />
+        <NuSkeleton />
       </header>
 
-      <SlSkeleton />
-      <SlSkeleton />
-      <SlSkeleton />
+      <NuSkeleton />
+      <NuSkeleton />
+      <NuSkeleton />
     </div>
 
     <style>{css}</style>
@@ -154,11 +154,11 @@ const css = `
 const App = () => (
   <>
     <div className="skeleton-effects">
-      <SlSkeleton effect="none" />
+      <NuSkeleton effect="none" />
       None
-      <SlSkeleton effect="sheen" />
+      <NuSkeleton effect="sheen" />
       Sheen
-      <SlSkeleton effect="pulse" />
+      <NuSkeleton effect="pulse" />
       Pulse
     </div>
 
@@ -223,11 +223,11 @@ const css = `
 const App = () => (
   <>
     <div className="skeleton-paragraphs">
-      <SlSkeleton />
-      <SlSkeleton />
-      <SlSkeleton />
-      <SlSkeleton />
-      <SlSkeleton />
+      <NuSkeleton />
+      <NuSkeleton />
+      <NuSkeleton />
+      <NuSkeleton />
+      <NuSkeleton />
     </div>
 
     <style>{css}</style>
@@ -287,9 +287,9 @@ const css = `
 const App = () => (
   <>
     <div className="skeleton-avatars">
-      <SlSkeleton />
-      <SlSkeleton />
-      <SlSkeleton />
+      <NuSkeleton />
+      <NuSkeleton />
+      <NuSkeleton />
     </div>
 
     <style>{css}</style>
@@ -400,11 +400,11 @@ const css = `
 const App = () => (
   <>
     <div className="skeleton-shapes">
-      <SlSkeleton className="square" />
-      <SlSkeleton className="circle" />
-      <SlSkeleton className="triangle" />
-      <SlSkeleton className="cross" />
-      <SlSkeleton className="comment" />
+      <NuSkeleton className="square" />
+      <NuSkeleton className="circle" />
+      <NuSkeleton className="triangle" />
+      <NuSkeleton className="cross" />
+      <NuSkeleton className="comment" />
     </div>
 
     <style>{css}</style>
@@ -442,7 +442,7 @@ const css = `
   }
 `;
 
-const App = () => <SlSkeleton effect="sheen" style={{ '--color': 'tomato', '--sheen-color': '#ffb094' }} />;
+const App = () => <NuSkeleton effect="sheen" style={{ '--color': 'tomato', '--sheen-color': '#ffb094' }} />;
 ```
 
 {% endraw %}

@@ -12,7 +12,7 @@ layout: component
 ```jsx:react
 import SlRange from '@onsonr/nebula/dist/react/range';
 
-const App = () => <SlRange />;
+const App = () => <NuRange />;
 ```
 
 :::tip
@@ -32,7 +32,7 @@ Use the `label` attribute to give the range an accessible label. For labels that
 ```jsx:react
 import SlRange from '@onsonr/nebula/dist/react/range';
 
-const App = () => <SlRange label="Volume" min={0} max={100} />;
+const App = () => <NuRange label="Volume" min={0} max={100} />;
 ```
 
 ### Help Text
@@ -46,7 +46,7 @@ Add descriptive help text to a range with the `help-text` attribute. For help te
 ```jsx:react
 import SlRange from '@onsonr/nebula/dist/react/range';
 
-const App = () => <SlRange label="Volume" help-text="Controls the volume of the current song." min={0} max={100} />;
+const App = () => <NuRange label="Volume" help-text="Controls the volume of the current song." min={0} max={100} />;
 ```
 
 ### Min, Max, and Step
@@ -60,7 +60,7 @@ Use the `min` and `max` attributes to set the range's minimum and maximum values
 ```jsx:react
 import SlRange from '@onsonr/nebula/dist/react/range';
 
-const App = () => <SlRange min={0} max={10} step={1} />;
+const App = () => <NuRange min={0} max={10} step={1} />;
 ```
 
 ### Disabled
@@ -74,7 +74,7 @@ Use the `disabled` attribute to disable a slider.
 ```jsx:react
 import SlRange from '@onsonr/nebula/dist/react/range';
 
-const App = () => <SlRange disabled />;
+const App = () => <NuRange disabled />;
 ```
 
 ### Tooltip Placement
@@ -88,7 +88,7 @@ By default, the tooltip is shown on top. Set `tooltip` to `bottom` to show it be
 ```jsx:react
 import SlRange from '@onsonr/nebula/dist/react/range';
 
-const App = () => <SlRange tooltip="bottom" />;
+const App = () => <NuRange tooltip="bottom" />;
 ```
 
 ### Disable the Tooltip
@@ -102,7 +102,7 @@ To disable the tooltip, set `tooltip` to `none`.
 ```jsx:react
 import SlRange from '@onsonr/nebula/dist/react/range';
 
-const App = () => <SlRange tooltip="none" />;
+const App = () => <NuRange tooltip="none" />;
 ```
 
 ### Custom Track Colors
@@ -124,7 +124,7 @@ You can customize the active and inactive portions of the track using the `--tra
 import SlRange from '@onsonr/nebula/dist/react/range';
 
 const App = () => (
-  <SlRange
+  <NuRange
     style={{
       '--track-color-active': 'var(--nu-color-primary-600)',
       '--track-color-inactive': 'var(--nu-color-primary-200)'
@@ -157,7 +157,7 @@ You can customize the initial offset of the active track using the `--track-acti
 import SlRange from '@onsonr/nebula/dist/react/range';
 
 const App = () => (
-  <SlRange
+  <NuRange
     min={-100}
     max={100}
     style={{
@@ -187,5 +187,5 @@ You can change the tooltip's content by setting the `tooltipFormatter` property 
 ```jsx:react
 import SlRange from '@onsonr/nebula/dist/react/range';
 
-const App = () => <SlRange min={0} max={100} step={1} tooltipFormatter={value => `Total - ${value}%`} />;
+const App = () => <NuRange min={0} max={100} step={1} tooltipFormatter={value => `Total - ${value}%`} />;
 ```

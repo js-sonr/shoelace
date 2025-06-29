@@ -14,7 +14,7 @@ By default, a generic icon will be shown. You can personalize avatars by adding 
 ```jsx:react
 import SlAvatar from '@onsonr/nebula/dist/react/avatar';
 
-const App = () => <SlAvatar label="User avatar" />;
+const App = () => <NuAvatar label="User avatar" />;
 ```
 
 ## Examples
@@ -40,11 +40,11 @@ Avatar images can be lazily loaded by setting the `loading` attribute to `lazy`.
 import SlAvatar from '@onsonr/nebula/dist/react/avatar';
 
 const App = () => (
-  <SlAvatar
+  <NuAvatar
     image="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
     label="Avatar of a gray tabby kitten looking down"
   />
-  <SlAvatar
+  <NuAvatar
     image="https://images.unsplash.com/photo-1591871937573-74dbba515c4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
     label="Avatar of a white and grey kitten on grey textile"
     loading="lazy"
@@ -63,7 +63,7 @@ When you don't have an image to use, you can set the `initials` attribute to sho
 ```jsx:react
 import SlAvatar from '@onsonr/nebula/dist/react/avatar';
 
-const App = () => <SlAvatar initials="SL" label="Avatar with initials: SL" />;
+const App = () => <NuAvatar initials="SL" label="Avatar with initials: SL" />;
 ```
 
 ### Custom Icons
@@ -90,17 +90,17 @@ import SlIcon from '@onsonr/nebula/dist/react/icon';
 
 const App = () => (
   <>
-    <SlAvatar label="Avatar with an image icon">
-      <SlIcon slot="icon" name="image" />
-    </SlAvatar>
+    <NuAvatar label="Avatar with an image icon">
+      <NuIcon slot="icon" name="image" />
+    </NuAvatar>
 
-    <SlAvatar label="Avatar with an archive icon">
-      <SlIcon slot="icon" name="archive" />
-    </SlAvatar>
+    <NuAvatar label="Avatar with an archive icon">
+      <NuIcon slot="icon" name="archive" />
+    </NuAvatar>
 
-    <SlAvatar label="Avatar with a briefcase icon">
-      <SlIcon slot="icon" name="briefcase" />
-    </SlAvatar>
+    <NuAvatar label="Avatar with a briefcase icon">
+      <NuIcon slot="icon" name="briefcase" />
+    </NuAvatar>
   </>
 );
 ```
@@ -121,9 +121,9 @@ import SlIcon from '@onsonr/nebula/dist/react/icon';
 
 const App = () => (
   <>
-    <SlAvatar shape="square" label="Square avatar" />
-    <SlAvatar shape="rounded" label="Rounded avatar" />
-    <SlAvatar shape="circle" label="Circle avatar" />
+    <NuAvatar shape="square" label="Square avatar" />
+    <NuAvatar shape="rounded" label="Rounded avatar" />
+    <NuAvatar shape="circle" label="Circle avatar" />
   </>
 );
 ```
@@ -183,22 +183,22 @@ const css = `
 const App = () => (
   <>
     <div className="avatar-group">
-      <SlAvatar
+      <NuAvatar
         image="https://images.unsplash.com/photo-1490150028299-bf57d78394e0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&q=80&crop=right"
         label="Avatar 1 of 4"
       />
 
-      <SlAvatar
+      <NuAvatar
         image="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&crop=left&q=80"
         label="Avatar 2 of 4"
       />
 
-      <SlAvatar
+      <NuAvatar
         image="https://images.unsplash.com/photo-1456439663599-95b042d50252?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&crop=left&q=80"
         label="Avatar 3 of 4"
       />
 
-      <SlAvatar
+      <NuAvatar
         image="https://images.unsplash.com/flagged/photo-1554078875-e37cb8b0e27d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&crop=top&q=80"
         label="Avatar 4 of 4"
       />

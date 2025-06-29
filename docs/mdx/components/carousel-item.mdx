@@ -1,0 +1,136 @@
+---
+title: Carousel Item
+description: A carousel item represent a slide within a carousel.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-carousel pagination>
+      <nu-carousel-item>
+        <img
+          alt="The sun shines on the mountains and trees - Photo by Adam Kool on Unsplash"
+          src="/assets/examples/carousel/mountains.jpg"
+        />
+      </nu-carousel-item>
+      <nu-carousel-item>
+        <img
+          alt="A waterfall in the middle of a forest - Photo by Thomas Kelly on Unsplash"
+          src="/assets/examples/carousel/waterfall.jpg"
+        />
+      </nu-carousel-item>
+      <nu-carousel-item>
+        <img
+          alt="The sun is setting over a lavender field - Photo by Leonard Cotte on Unsplash"
+          src="/assets/examples/carousel/sunset.jpg"
+        />
+      </nu-carousel-item>
+      <nu-carousel-item>
+        <img
+          alt="A field of grass with the sun setting in the background - Photo by Sapan Patel on Unsplash"
+          src="/assets/examples/carousel/field.jpg"
+        />
+      </nu-carousel-item>
+      <nu-carousel-item>
+        <img
+          alt="A scenic view of a mountain with clouds rolling in - Photo by V2osk on Unsplash"
+          src="/assets/examples/carousel/valley.jpg"
+        />
+      </nu-carousel-item>
+    </nu-carousel>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-carousel pagination>
+      <nu-carousel-item>
+        <img
+          alt="The sun shines on the mountains and trees - Photo by Adam Kool on Unsplash"
+          src="/assets/examples/carousel/mountains.jpg"
+        />
+      </nu-carousel-item>
+      <nu-carousel-item>
+        <img
+          alt="A waterfall in the middle of a forest - Photo by Thomas Kelly on Unsplash"
+          src="/assets/examples/carousel/waterfall.jpg"
+        />
+      </nu-carousel-item>
+      <nu-carousel-item>
+        <img
+          alt="The sun is setting over a lavender field - Photo by Leonard Cotte on Unsplash"
+          src="/assets/examples/carousel/sunset.jpg"
+        />
+      </nu-carousel-item>
+      <nu-carousel-item>
+        <img
+          alt="A field of grass with the sun setting in the background - Photo by Sapan Patel on Unsplash"
+          src="/assets/examples/carousel/field.jpg"
+        />
+      </nu-carousel-item>
+      <nu-carousel-item>
+        <img
+          alt="A scenic view of a mountain with clouds rolling in - Photo by V2osk on Unsplash"
+          src="/assets/examples/carousel/valley.jpg"
+        />
+      </nu-carousel-item>
+    </nu-carousel>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlCarousel from '@onsonr/nebula/dist/react/carousel'
+    ;
+    import SlCarouselItem from '@onsonr/nebula/dist/react/carousel-item'
+    ;
+    
+    const App = () => (
+      
+      <NuCarousel pagination>
+        <NuCarouselItem>
+          <img
+            alt="The sun shines on the mountains and trees - Photo by Adam Kool on Unsplash"
+            src="/assets/examples/carousel/mountains.jpg"
+          />
+        </NuCarouselItem>
+        <NuCarouselItem>
+          <img
+            alt="A waterfall in the middle of a forest - Photo by Thomas Kelly on Unsplash"
+            src="/assets/examples/carousel/waterfall.jpg"
+          />
+        </NuCarouselItem>
+        <NuCarouselItem>
+          <img
+            alt="The sun is setting over a lavender field - Photo by Leonard Cotte on Unsplash"
+            src="/assets/examples/carousel/sunset.jpg"
+          />
+        </NuCarouselItem>
+        <NuCarouselItem>
+          <img
+            alt="A field of grass with the sun setting in the background - Photo by Sapan Patel on Unsplash"
+            src="/assets/examples/carousel/field.jpg"
+          />
+        </NuCarouselItem>
+        <NuCarouselItem>
+          <img
+            alt="A scenic view of a mountain with clouds rolling in - Photo by V2osk on Unsplash"
+            src="/assets/examples/carousel/valley.jpg"
+          />
+        </NuCarouselItem>
+      </NuCarousel>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+<Callout type="info">
+Additional demonstrations can be found in the [carousel examples](/components/carousel).
+</Callout>
+
+## Properties
+
+<AutoTypeTable path="./src/components/carousel-item/carousel-item.component.ts" name="NuCarouselItem" />
+

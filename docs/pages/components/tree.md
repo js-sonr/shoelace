@@ -41,33 +41,33 @@ import SlTree from '@onsonr/nebula/dist/react/tree';
 import SlTreeItem from '@onsonr/nebula/dist/react/tree-item';
 
 const App = () => (
-  <SlTree>
-    <SlTreeItem>
+  <NuTree>
+    <NuTreeItem>
       Deciduous
-      <SlTreeItem>Birch</SlTreeItem>
-      <SlTreeItem>
+      <NuTreeItem>Birch</NuTreeItem>
+      <NuTreeItem>
         Maple
-        <SlTreeItem>Field maple</SlTreeItem>
-        <SlTreeItem>Red maple</SlTreeItem>
-        <SlTreeItem>Sugar maple</SlTreeItem>
-      </SlTreeItem>
-      <SlTreeItem>Oak</SlTreeItem>
-    </SlTreeItem>
+        <NuTreeItem>Field maple</NuTreeItem>
+        <NuTreeItem>Red maple</NuTreeItem>
+        <NuTreeItem>Sugar maple</NuTreeItem>
+      </NuTreeItem>
+      <NuTreeItem>Oak</NuTreeItem>
+    </NuTreeItem>
 
-    <SlTreeItem>
+    <NuTreeItem>
       Coniferous
-      <SlTreeItem>Cedar</SlTreeItem>
-      <SlTreeItem>Pine</SlTreeItem>
-      <SlTreeItem>Spruce</SlTreeItem>
-    </SlTreeItem>
+      <NuTreeItem>Cedar</NuTreeItem>
+      <NuTreeItem>Pine</NuTreeItem>
+      <NuTreeItem>Spruce</NuTreeItem>
+    </NuTreeItem>
 
-    <SlTreeItem>
+    <NuTreeItem>
       Non-trees
-      <SlTreeItem>Bamboo</SlTreeItem>
-      <SlTreeItem>Cactus</SlTreeItem>
-      <SlTreeItem>Fern</SlTreeItem>
-    </SlTreeItem>
-  </SlTree>
+      <NuTreeItem>Bamboo</NuTreeItem>
+      <NuTreeItem>Cactus</NuTreeItem>
+      <NuTreeItem>Fern</NuTreeItem>
+    </NuTreeItem>
+  </NuTree>
 );
 ```
 
@@ -127,29 +127,29 @@ const App = () => {
 
   return (
     <>
-      <SlSelect label="Selection" value={selection} onSlChange={event => setSelection(event.target.value)}>
-        <SlMenuItem value="single">single</SlMenuItem>
-        <SlMenuItem value="multiple">multiple</SlMenuItem>
-        <SlMenuItem value="leaf">leaf</SlMenuItem>
-      </SlSelect>
+      <NuSelect label="Selection" value={selection} onSlChange={event => setSelection(event.target.value)}>
+        <NuMenuItem value="single">single</NuMenuItem>
+        <NuMenuItem value="multiple">multiple</NuMenuItem>
+        <NuMenuItem value="leaf">leaf</NuMenuItem>
+      </NuSelect>
 
       <br />
 
-      <SlTree selection={selection}>
-        <SlTreeItem>
+      <NuTree selection={selection}>
+        <NuTreeItem>
           Item 1
-          <SlTreeItem>
+          <NuTreeItem>
             Item A
-            <SlTreeItem>Item Z</SlTreeItem>
-            <SlTreeItem>Item Y</SlTreeItem>
-            <SlTreeItem>Item X</SlTreeItem>
-          </SlTreeItem>
-          <SlTreeItem>Item B</SlTreeItem>
-          <SlTreeItem>Item C</SlTreeItem>
-        </SlTreeItem>
-        <SlTreeItem>Item 2</SlTreeItem>
-        <SlTreeItem>Item 3</SlTreeItem>
-      </SlTree>
+            <NuTreeItem>Item Z</NuTreeItem>
+            <NuTreeItem>Item Y</NuTreeItem>
+            <NuTreeItem>Item X</NuTreeItem>
+          </NuTreeItem>
+          <NuTreeItem>Item B</NuTreeItem>
+          <NuTreeItem>Item C</NuTreeItem>
+        </NuTreeItem>
+        <NuTreeItem>Item 2</NuTreeItem>
+        <NuTreeItem>Item 3</NuTreeItem>
+      </NuTree>
     </>
   );
 };
@@ -203,33 +203,33 @@ import SlTree from '@onsonr/nebula/dist/react/tree';
 import SlTreeItem from '@onsonr/nebula/dist/react/tree-item';
 
 const App = () => (
-  <SlTree class="tree-with-lines" style={{ '--indent-guide-width': '1px' }}>
-    <SlTreeItem expanded>
+  <NuTree class="tree-with-lines" style={{ '--indent-guide-width': '1px' }}>
+    <NuTreeItem expanded>
       Deciduous
-      <SlTreeItem>Birch</SlTreeItem>
-      <SlTreeItem expanded>
+      <NuTreeItem>Birch</NuTreeItem>
+      <NuTreeItem expanded>
         Maple
-        <SlTreeItem>Field maple</SlTreeItem>
-        <SlTreeItem>Red maple</SlTreeItem>
-        <SlTreeItem>Sugar maple</SlTreeItem>
-      </SlTreeItem>
-      <SlTreeItem>Oak</SlTreeItem>
-    </SlTreeItem>
+        <NuTreeItem>Field maple</NuTreeItem>
+        <NuTreeItem>Red maple</NuTreeItem>
+        <NuTreeItem>Sugar maple</NuTreeItem>
+      </NuTreeItem>
+      <NuTreeItem>Oak</NuTreeItem>
+    </NuTreeItem>
 
-    <SlTreeItem>
+    <NuTreeItem>
       Coniferous
-      <SlTreeItem>Cedar</SlTreeItem>
-      <SlTreeItem>Pine</SlTreeItem>
-      <SlTreeItem>Spruce</SlTreeItem>
-    </SlTreeItem>
+      <NuTreeItem>Cedar</NuTreeItem>
+      <NuTreeItem>Pine</NuTreeItem>
+      <NuTreeItem>Spruce</NuTreeItem>
+    </NuTreeItem>
 
-    <SlTreeItem>
+    <NuTreeItem>
       Non-trees
-      <SlTreeItem>Bamboo</SlTreeItem>
-      <SlTreeItem>Cactus</SlTreeItem>
-      <SlTreeItem>Fern</SlTreeItem>
-    </SlTreeItem>
-  </SlTree>
+      <NuTreeItem>Bamboo</NuTreeItem>
+      <NuTreeItem>Cactus</NuTreeItem>
+      <NuTreeItem>Fern</NuTreeItem>
+    </NuTreeItem>
+  </NuTree>
 );
 ```
 
@@ -286,14 +286,14 @@ const App = () => {
   };
 
   return (
-    <SlTree>
-      <SlTreeItem lazy={lazy} onSlLazyLoad={handleLazyLoad}>
+    <NuTree>
+      <NuTreeItem lazy={lazy} onSlLazyLoad={handleLazyLoad}>
         Available Trees
         {childItems.map(item => (
-          <SlTreeItem>{item}</SlTreeItem>
+          <NuTreeItem>{item}</NuTreeItem>
         ))}
-      </SlTreeItem>
-    </SlTree>
+      </NuTreeItem>
+    </NuTree>
   );
 };
 ```
@@ -348,36 +348,36 @@ import SlTree from '@onsonr/nebula/dist/react/tree';
 import SlTreeItem from '@onsonr/nebula/dist/react/tree-item';
 
 const App = () => (
-  <SlTree>
-    <SlIcon name="plus-square" slot="expand-icon"></SlIcon>
-    <SlIcon name="dash-square" slot="collapse-icon"></SlIcon>
+  <NuTree>
+    <NuIcon name="plus-square" slot="expand-icon"></NuIcon>
+    <NuIcon name="dash-square" slot="collapse-icon"></NuIcon>
 
-    <SlTreeItem>
+    <NuTreeItem>
       Deciduous
-      <SlTreeItem>Birch</SlTreeItem>
-      <SlTreeItem>
+      <NuTreeItem>Birch</NuTreeItem>
+      <NuTreeItem>
         Maple
-        <SlTreeItem>Field maple</SlTreeItem>
-        <SlTreeItem>Red maple</SlTreeItem>
-        <SlTreeItem>Sugar maple</SlTreeItem>
-      </SlTreeItem>
-      <SlTreeItem>Oak</SlTreeItem>
-    </SlTreeItem>
+        <NuTreeItem>Field maple</NuTreeItem>
+        <NuTreeItem>Red maple</NuTreeItem>
+        <NuTreeItem>Sugar maple</NuTreeItem>
+      </NuTreeItem>
+      <NuTreeItem>Oak</NuTreeItem>
+    </NuTreeItem>
 
-    <SlTreeItem>
+    <NuTreeItem>
       Coniferous
-      <SlTreeItem>Cedar</SlTreeItem>
-      <SlTreeItem>Pine</SlTreeItem>
-      <SlTreeItem>Spruce</SlTreeItem>
-    </SlTreeItem>
+      <NuTreeItem>Cedar</NuTreeItem>
+      <NuTreeItem>Pine</NuTreeItem>
+      <NuTreeItem>Spruce</NuTreeItem>
+    </NuTreeItem>
 
-    <SlTreeItem>
+    <NuTreeItem>
       Non-trees
-      <SlTreeItem>Bamboo</SlTreeItem>
-      <SlTreeItem>Cactus</SlTreeItem>
-      <SlTreeItem>Fern</SlTreeItem>
-    </SlTreeItem>
-  </SlTree>
+      <NuTreeItem>Bamboo</NuTreeItem>
+      <NuTreeItem>Cactus</NuTreeItem>
+      <NuTreeItem>Fern</NuTreeItem>
+    </NuTreeItem>
+  </NuTree>
 );
 ```
 
@@ -435,42 +435,42 @@ import SlTreeItem from '@onsonr/nebula/dist/react/tree-item';
 
 const App = () => {
   return (
-    <SlTree class="tree-with-icons">
-      <SlTreeItem expanded>
-        <SlIcon name="folder" />
+    <NuTree class="tree-with-icons">
+      <NuTreeItem expanded>
+        <NuIcon name="folder" />
         Root
-        <SlTreeItem>
-          <SlIcon name="folder" />
-          Folder 1<SlTreeItem>
-            <SlIcon name="files" />
+        <NuTreeItem>
+          <NuIcon name="folder" />
+          Folder 1<NuTreeItem>
+            <NuIcon name="files" />
             File 1 - 1
-          </SlTreeItem>
-          <SlTreeItem disabled>
-            <SlIcon name="files" />
+          </NuTreeItem>
+          <NuTreeItem disabled>
+            <NuIcon name="files" />
             File 1 - 2
-          </SlTreeItem>
-          <SlTreeItem>
-            <SlIcon name="files" />
+          </NuTreeItem>
+          <NuTreeItem>
+            <NuIcon name="files" />
             File 1 - 3
-          </SlTreeItem>
-        </SlTreeItem>
-        <SlTreeItem>
-          <SlIcon name="files" />
-          Folder 2<SlTreeItem>
-            <SlIcon name="files" />
+          </NuTreeItem>
+        </NuTreeItem>
+        <NuTreeItem>
+          <NuIcon name="files" />
+          Folder 2<NuTreeItem>
+            <NuIcon name="files" />
             File 2 - 1
-          </SlTreeItem>
-          <SlTreeItem>
-            <SlIcon name="files" />
+          </NuTreeItem>
+          <NuTreeItem>
+            <NuIcon name="files" />
             File 2 - 2
-          </SlTreeItem>
-        </SlTreeItem>
-        <SlTreeItem>
-          <SlIcon name="files" />
+          </NuTreeItem>
+        </NuTreeItem>
+        <NuTreeItem>
+          <NuIcon name="files" />
           File 1
-        </SlTreeItem>
-      </SlTreeItem>
-    </SlTree>
+        </NuTreeItem>
+      </NuTreeItem>
+    </NuTree>
   );
 };
 ```

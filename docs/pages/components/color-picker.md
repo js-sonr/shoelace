@@ -12,7 +12,7 @@ layout: component
 ```jsx:react
 import SlColorPicker from '@onsonr/nebula/dist/react/color-picker';
 
-const App = () => <SlColorPicker label="Select a color" />;
+const App = () => <NuColorPicker label="Select a color" />;
 ```
 
 :::tip
@@ -32,7 +32,7 @@ Use the `value` attribute to set an initial value for the color picker.
 ```jsx:react
 import SlColorPicker from '@onsonr/nebula/dist/react/color-picker';
 
-const App = () => <SlColorPicker value="#4a90e2" label="Select a color" />;
+const App = () => <NuColorPicker value="#4a90e2" label="Select a color" />;
 ```
 
 ### Opacity
@@ -46,7 +46,7 @@ Use the `opacity` attribute to enable the opacity slider. When this is enabled, 
 ```jsx:react
 import SlColorPicker from '@onsonr/nebula/dist/react/color-picker';
 
-const App = () => <SlColorPicker opacity label="Select a color" />;
+const App = () => <NuColorPicker opacity label="Select a color" />;
 ```
 
 ### Formats
@@ -67,10 +67,10 @@ import SlColorPicker from '@onsonr/nebula/dist/react/color-picker';
 
 const App = () => (
   <>
-    <SlColorPicker format="hex" value="#4a90e2" />
-    <SlColorPicker format="rgb" value="rgb(80, 227, 194)" />
-    <SlColorPicker format="hsl" value="hsl(290, 87%, 47%)" />
-    <SlColorPicker format="hsv" value="hsv(55, 89%, 97%)" />
+    <NuColorPicker format="hex" value="#4a90e2" />
+    <NuColorPicker format="rgb" value="rgb(80, 227, 194)" />
+    <NuColorPicker format="hsl" value="hsl(290, 87%, 47%)" />
+    <NuColorPicker format="hsv" value="hsv(55, 89%, 97%)" />
   </>
 );
 ```
@@ -93,7 +93,7 @@ Use the `swatches` attribute to add convenient presets to the color picker. Any 
 import SlColorPicker from '@onsonr/nebula/dist/react/color-picker';
 
 const App = () => (
-  <SlColorPicker
+  <NuColorPicker
     label="Select a color"
     swatches="
       #d0021b; #f5a623; #f8e71c; #8b572a; #7ed321; #417505; #bd10e0; #9013fe;
@@ -118,9 +118,9 @@ import SlColorPicker from '@onsonr/nebula/dist/react/color-picker';
 
 const App = () => (
   <>
-    <SlColorPicker size="small" label="Select a color" />
-    <SlColorPicker size="medium" label="Select a color" />
-    <SlColorPicker size="large" label="Select a color" />
+    <NuColorPicker size="small" label="Select a color" />
+    <NuColorPicker size="medium" label="Select a color" />
+    <NuColorPicker size="large" label="Select a color" />
   </>
 );
 ```
@@ -136,5 +136,5 @@ The color picker can be rendered inline instead of in a dropdown using the `inli
 ```jsx:react
 import SlColorPicker from '@onsonr/nebula/dist/react/color-picker';
 
-const App = () => <SlColorPicker inline label="Select a color" />;
+const App = () => <NuColorPicker inline label="Select a color" />;
 ```

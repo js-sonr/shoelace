@@ -1,0 +1,613 @@
+---
+title: Register Button
+description: A WebAuthn-enabled button component for secure biometric user registration and credential creation.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+Register buttons provide WebAuthn-based user registration functionality, enabling secure credential creation with biometrics, security keys, and platform authenticators. They simplify the implementation of passwordless authentication by handling the WebAuthn registration ceremony.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-register-button
+      user-id="user-123"
+      user-name="john.doe@example.com"
+      user-display-name="John Doe">
+      Create Account with WebAuthn
+    </nu-register-button>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-register-button
+      user-id="user-123"
+      user-name="john.doe@example.com"
+      user-display-name="John Doe">
+      Create Account with WebAuthn
+    </nu-register-button>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import NuRegisterButton from '@onsonr/nebula/dist/react/register-button'
+    ;
+    
+    const App = () => (
+      
+      <NuRegisterButton
+        userId="user-123"
+        userName="john.doe@example.com"
+        userDisplayName="John Doe"
+      >
+        Create Account with WebAuthn
+      </NuRegisterButton>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+## Examples
+
+### Variants
+
+Use the `variant` attribute to set the button's variant, inheriting from the base button component.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-register-button variant="default" user-id="1" user-name="user1" user-display-name="User 1">Default Register</nu-register-button>
+    <nu-register-button variant="primary" user-id="2" user-name="user2" user-display-name="User 2">Primary Register</nu-register-button>
+    <nu-register-button variant="success" user-id="3" user-name="user3" user-display-name="User 3">Success Register</nu-register-button>
+    <nu-register-button variant="neutral" user-id="4" user-name="user4" user-display-name="User 4">Neutral Register</nu-register-button>
+    <nu-register-button variant="warning" user-id="5" user-name="user5" user-display-name="User 5">Warning Register</nu-register-button>
+    <nu-register-button variant="danger" user-id="6" user-name="user6" user-display-name="User 6">Danger Register</nu-register-button>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-register-button variant="default" user-id="1" user-name="user1" user-display-name="User 1">Default Register</nu-register-button>
+    <nu-register-button variant="primary" user-id="2" user-name="user2" user-display-name="User 2">Primary Register</nu-register-button>
+    <nu-register-button variant="success" user-id="3" user-name="user3" user-display-name="User 3">Success Register</nu-register-button>
+    <nu-register-button variant="neutral" user-id="4" user-name="user4" user-display-name="User 4">Neutral Register</nu-register-button>
+    <nu-register-button variant="warning" user-id="5" user-name="user5" user-display-name="User 5">Warning Register</nu-register-button>
+    <nu-register-button variant="danger" user-id="6" user-name="user6" user-display-name="User 6">Danger Register</nu-register-button>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import NuRegisterButton from '@onsonr/nebula/dist/react/register-button'
+    ;
+    
+    const App = () => (
+      
+      <>
+        <NuRegisterButton variant="default" userId="1" userName="user1" userDisplayName="User 1">Default Register</NuRegisterButton>
+        <NuRegisterButton variant="primary" userId="2" userName="user2" userDisplayName="User 2">Primary Register</NuRegisterButton>
+        <NuRegisterButton variant="success" userId="3" userName="user3" userDisplayName="User 3">Success Register</NuRegisterButton>
+        <NuRegisterButton variant="neutral" userId="4" userName="user4" userDisplayName="User 4">Neutral Register</NuRegisterButton>
+        <NuRegisterButton variant="warning" userId="5" userName="user5" userDisplayName="User 5">Warning Register</NuRegisterButton>
+        <NuRegisterButton variant="danger" userId="6" userName="user6" userDisplayName="User 6">Danger Register</NuRegisterButton>
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Sizes
+
+Use the `size` attribute to change the button's size.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-register-button size="small" user-id="1" user-name="user1" user-display-name="User 1">Small Register</nu-register-button>
+    <nu-register-button size="medium" user-id="2" user-name="user2" user-display-name="User 2">Medium Register</nu-register-button>
+    <nu-register-button size="large" user-id="3" user-name="user3" user-display-name="User 3">Large Register</nu-register-button>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-register-button size="small" user-id="1" user-name="user1" user-display-name="User 1">Small Register</nu-register-button>
+    <nu-register-button size="medium" user-id="2" user-name="user2" user-display-name="User 2">Medium Register</nu-register-button>
+    <nu-register-button size="large" user-id="3" user-name="user3" user-display-name="User 3">Large Register</nu-register-button>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import NuRegisterButton from '@onsonr/nebula/dist/react/register-button'
+    ;
+    
+    const App = () => (
+      
+      <>
+        <NuRegisterButton size="small" userId="1" userName="user1" userDisplayName="User 1">Small Register</NuRegisterButton>
+        <NuRegisterButton size="medium" userId="2" userName="user2" userDisplayName="User 2">Medium Register</NuRegisterButton>
+        <NuRegisterButton size="large" userId="3" userName="user3" userDisplayName="User 3">Large Register</NuRegisterButton>
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### With Icons
+
+Add icons to enhance the visual appearance and indicate the registration method.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-register-button user-id="1" user-name="user1" user-display-name="User 1">
+      <nu-icon slot="prefix" name="person-plus"></nu-icon>
+      Create Account
+    </nu-register-button>
+    
+    <nu-register-button variant="success" user-id="2" user-name="user2" user-display-name="User 2">
+      <nu-icon slot="prefix" name="fingerprint"></nu-icon>
+      Register with Biometrics
+    </nu-register-button>
+    
+    <nu-register-button variant="primary" user-id="3" user-name="user3" user-display-name="User 3">
+      <nu-icon slot="prefix" name="key"></nu-icon>
+      Register Security Key
+      <nu-icon slot="suffix" name="arrow-right"></nu-icon>
+    </nu-register-button>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-register-button user-id="1" user-name="user1" user-display-name="User 1">
+      <nu-icon slot="prefix" name="person-plus"></nu-icon>
+      Create Account
+    </nu-register-button>
+    
+    <nu-register-button variant="success" user-id="2" user-name="user2" user-display-name="User 2">
+      <nu-icon slot="prefix" name="fingerprint"></nu-icon>
+      Register with Biometrics
+    </nu-register-button>
+    
+    <nu-register-button variant="primary" user-id="3" user-name="user3" user-display-name="User 3">
+      <nu-icon slot="prefix" name="key"></nu-icon>
+      Register Security Key
+      <nu-icon slot="suffix" name="arrow-right"></nu-icon>
+    </nu-register-button>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import NuRegisterButton from '@onsonr/nebula/dist/react/register-button'
+    ;
+    import NuIcon from '@onsonr/nebula/dist/react/icon'
+    ;
+    
+    const App = () => (
+      
+      <>
+        <NuRegisterButton userId="1" userName="user1" userDisplayName="User 1">
+          <NuIcon slot="prefix" name="person-plus" />
+          Create Account
+        </NuRegisterButton>
+    
+        <NuRegisterButton variant="success" userId="2" userName="user2" userDisplayName="User 2">
+          <NuIcon slot="prefix" name="fingerprint" />
+          Register with Biometrics
+        </NuRegisterButton>
+    
+        <NuRegisterButton variant="primary" userId="3" userName="user3" userDisplayName="User 3">
+          <NuIcon slot="prefix" name="key" />
+          Register Security Key
+          <NuIcon slot="suffix" name="arrow-right" />
+        </NuRegisterButton>
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Loading State
+
+Show a loading spinner while registration is in progress.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-register-button loading user-id="1" user-name="user1" user-display-name="User 1">Creating Credential...</nu-register-button>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-register-button loading user-id="1" user-name="user1" user-display-name="User 1">Creating Credential...</nu-register-button>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+### Disabled State
+
+Disable the button to prevent interaction.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-register-button disabled user-id="1" user-name="user1" user-display-name="User 1">Registration Disabled</nu-register-button>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-register-button disabled user-id="1" user-name="user1" user-display-name="User 1">Registration Disabled</nu-register-button>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+### Custom Relying Party
+
+Configure custom relying party settings for your application.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-register-button 
+      rp-id="example.com"
+      rp-name="Example Application"
+      user-id="custom-user-123"
+      user-name="custom@example.com"
+      user-display-name="Custom User"
+      timeout="120000">
+      Register on Example.com
+    </nu-register-button>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-register-button 
+      rp-id="example.com"
+      rp-name="Example Application"
+      user-id="custom-user-123"
+      user-name="custom@example.com"
+      user-display-name="Custom User"
+      timeout="120000">
+      Register on Example.com
+    </nu-register-button>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+## WebAuthn Configuration
+
+### Basic Registration
+
+A minimal example with required user information:
+
+```html
+<nu-register-button
+  user-id="unique-user-id"
+  user-name="user@example.com"
+  user-display-name="User Name">
+  Create Account
+</nu-register-button>
+```
+
+### With User Verification
+
+Require user verification (biometrics or PIN) during registration:
+
+```html
+<nu-register-button
+  user-id="secure-user-id"
+  user-name="secure@example.com"
+  user-display-name="Secure User"
+  user-verification="true">
+  Create Secure Account
+</nu-register-button>
+```
+
+### Custom Timeout
+
+Set a custom timeout for the registration ceremony:
+
+```html
+<nu-register-button
+  user-id="patient-user-id"
+  user-name="patient@example.com"
+  user-display-name="Patient User"
+  timeout="300000">
+  Take Your Time to Register
+</nu-register-button>
+```
+
+## Event Handling
+
+The register button emits three events during the registration process:
+
+```html
+<nu-register-button
+  id="register-btn"
+  user-id="new-user-id"
+  user-name="newuser@example.com"
+  user-display-name="New User">
+  Create Account
+</nu-register-button>
+
+<script>
+  const registerBtn = document.getElementById('register-btn');
+  
+  // Fired when registration starts
+  registerBtn.addEventListener('nu-register-start', () => {
+    console.log('Registration started');
+  });
+  
+  // Fired on successful registration
+  registerBtn.addEventListener('nu-register-success', (event) => {
+    const { credentialId, publicKey, attestation } = event.detail;
+    console.log('Registration successful:', credentialId);
+    // Send to server for storage
+  });
+  
+  // Fired on registration error
+  registerBtn.addEventListener('nu-register-error', (event) => {
+    const { error } = event.detail;
+    console.error('Registration failed:', error);
+  });
+</script>
+```
+
+### React Event Handling
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import NuRegisterButton from '@onsonr/nebula/dist/react/register-button'
+    ;
+    
+    const App = () => {
+      const handleRegisterStart = () => {
+        console.log('Registration started');
+      };
+      
+      const handleRegisterSuccess = (event) => {
+        const { credentialId, publicKey, attestation } = event.detail;
+        console.log('Registration successful:', credentialId);
+        // Send to server for storage
+      };
+      
+      const handleRegisterError = (event) => {
+        const { error } = event.detail;
+        console.error('Registration failed:', error);
+      };
+    
+      return (
+        <NuRegisterButton
+          userId="new-user-id"
+          userName="newuser@example.com"
+          userDisplayName="New User"
+          onNuRegisterStart={handleRegisterStart}
+          onNuRegisterSuccess={handleRegisterSuccess}
+          onNuRegisterError={handleRegisterError}
+        >
+          Create Account
+        </NuRegisterButton>
+      );
+    };
+    ```
+  </Tab>
+</Tabs>
+
+## Server Integration
+
+After successful client-side registration, send the credential to your server for storage:
+
+```javascript
+registerBtn.addEventListener('nu-register-success', async (event) => {
+  const { credentialId, publicKey, attestation } = event.detail;
+  
+  // Send to server
+  const saveResponse = await fetch('/api/webauthn/register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      userId: registerBtn.userId,
+      credentialId,
+      publicKey,
+      attestationObject: attestation.attestationObject,
+      clientDataJSON: attestation.clientDataJSON
+    })
+  });
+  
+  if (saveResponse.ok) {
+    // Registration complete
+    alert('Account created successfully!');
+    // Redirect to login or dashboard
+  }
+});
+```
+
+## User Data Requirements
+
+The register button requires three pieces of user information:
+
+### user-id
+A unique identifier for the user in your system. This should be:
+- Unique across your application
+- Stable (doesn't change)
+- Not personally identifiable (avoid using email as ID)
+
+```html
+<!-- Good: Use a UUID or database ID -->
+<nu-register-button user-id="550e8400-e29b-41d4-a716-446655440000" ...>
+
+<!-- Avoid: Using email as ID -->
+<nu-register-button user-id="user@example.com" ...>
+```
+
+### user-name
+The user's identifier for authentication. Typically:
+- Email address
+- Username
+- Phone number
+
+```html
+<nu-register-button user-name="john.doe@example.com" ...>
+```
+
+### user-display-name
+A human-readable name shown to the user during authentication:
+- Full name
+- Nickname
+- Display name
+
+```html
+<nu-register-button user-display-name="John Doe" ...>
+```
+
+## Registration Flow Example
+
+A complete registration flow implementation:
+
+```html
+<form id="registration-form">
+  <nu-input id="email" label="Email" type="email" required></nu-input>
+  <nu-input id="name" label="Full Name" required></nu-input>
+  
+  <nu-register-button
+    id="webauthn-register"
+    variant="success"
+    style="display: none;">
+    <nu-icon slot="prefix" name="fingerprint"></nu-icon>
+    Create Secure Account
+  </nu-register-button>
+  
+  <nu-button id="traditional-register" type="submit">
+    Create Account with Password
+  </nu-button>
+</form>
+
+<script>
+  // Check WebAuthn support
+  if (window.PublicKeyCredential) {
+    document.getElementById('webauthn-register').style.display = 'block';
+    document.getElementById('traditional-register').style.display = 'none';
+  }
+  
+  // Set user data when form changes
+  const emailInput = document.getElementById('email');
+  const nameInput = document.getElementById('name');
+  const registerBtn = document.getElementById('webauthn-register');
+  
+  function updateRegisterButton() {
+    if (emailInput.value && nameInput.value) {
+      registerBtn.userId = crypto.randomUUID();
+      registerBtn.userName = emailInput.value;
+      registerBtn.userDisplayName = nameInput.value;
+      registerBtn.disabled = false;
+    } else {
+      registerBtn.disabled = true;
+    }
+  }
+  
+  emailInput.addEventListener('input', updateRegisterButton);
+  nameInput.addEventListener('input', updateRegisterButton);
+</script>
+```
+
+## Browser Support
+
+WebAuthn registration is supported in the same browsers as login:
+
+- **Chrome/Edge**: Version 67+
+- **Firefox**: Version 60+
+- **Safari**: Version 14+ (macOS and iOS)
+- **Platform Requirements**:
+  - Windows 10 version 1903+ (for Windows Hello)
+  - macOS 10.15+ (for Touch ID)
+  - Android 7.0+ (for fingerprint/face recognition)
+  - iOS 14+ (for Face ID/Touch ID)
+
+## Best Practices
+
+1. **Unique User IDs**: Use UUIDs or database IDs, not email addresses
+2. **Clear Instructions**: Explain what WebAuthn is and its benefits before registration
+3. **Fallback Options**: Always provide password-based registration as a fallback
+4. **Multiple Authenticators**: Allow users to register additional devices after initial setup
+5. **Privacy**: Don't expose user IDs or other sensitive data in client-side code
+6. **Verification**: Always verify attestation on the server side
+7. **User Choice**: Let users choose between different authenticator types
+
+## Security Considerations
+
+1. **HTTPS Required**: WebAuthn only works over secure connections
+2. **Attestation**: Verify authenticator attestation on your server
+3. **Challenge Generation**: Generate challenges server-side, not client-side
+4. **Credential Storage**: Store public keys securely in your database
+5. **User Privacy**: Don't expose internal user IDs in the UI
+
+## Accessibility
+
+The register button follows accessibility best practices:
+
+- Proper ARIA labels for screen readers
+- Keyboard navigation support
+- Clear focus indicators
+- Descriptive error messages
+- Loading state announcements
+
+## Styling
+
+Customize the appearance using CSS custom properties:
+
+```css
+nu-register-button {
+  --nu-register-button-color: var(--nu-color-success-600);
+}
+
+nu-register-button::part(button) {
+  /* Custom button styles */
+}
+
+nu-register-button[variant="success"]::part(button) {
+  /* Success variant styles */
+}
+
+/* Loading state */
+nu-register-button[loading]::part(button) {
+  opacity: 0.8;
+}
+```
+
+## Common Issues
+
+### "User verification not supported"
+Some authenticators don't support user verification. Set `user-verification="false"` for broader compatibility.
+
+### "Authenticator not allowed"
+The platform authenticator might be restricted. Ensure your relying party ID matches your domain.
+
+### "Timeout exceeded"
+Increase the timeout value for users who need more time to complete biometric authentication.
+
+[component-metadata:nu-register-button]
+
+## Properties
+
+<AutoTypeTable path="./src/components/register-button/register-button.component.ts" name="NuRegisterButton" />
+

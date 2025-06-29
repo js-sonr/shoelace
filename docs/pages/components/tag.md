@@ -18,11 +18,11 @@ import SlTag from '@onsonr/nebula/dist/react/tag';
 
 const App = () => (
   <>
-    <SlTag variant="primary">Primary</SlTag>
-    <SlTag variant="success">Success</SlTag>
-    <SlTag variant="neutral">Neutral</SlTag>
-    <SlTag variant="warning">Warning</SlTag>
-    <SlTag variant="danger">Danger</SlTag>
+    <NuTag variant="primary">Primary</NuTag>
+    <NuTag variant="success">Success</NuTag>
+    <NuTag variant="neutral">Neutral</NuTag>
+    <NuTag variant="warning">Warning</NuTag>
+    <NuTag variant="danger">Danger</NuTag>
   </>
 );
 ```
@@ -44,9 +44,9 @@ import SlTag from '@onsonr/nebula/dist/react/tag';
 
 const App = () => (
   <>
-    <SlTag size="small">Small</SlTag>
-    <SlTag size="medium">Medium</SlTag>
-    <SlTag size="large">Large</SlTag>
+    <NuTag size="small">Small</NuTag>
+    <NuTag size="medium">Medium</NuTag>
+    <NuTag size="large">Large</NuTag>
   </>
 );
 ```
@@ -66,15 +66,15 @@ import SlTag from '@onsonr/nebula/dist/react/tag';
 
 const App = () => (
   <>
-    <SlTag size="small" pill>
+    <NuTag size="small" pill>
       Small
-    </SlTag>
-    <SlTag size="medium" pill>
+    </NuTag>
+    <NuTag size="medium" pill>
       Medium
-    </SlTag>
-    <SlTag size="large" pill>
+    </NuTag>
+    <NuTag size="large" pill>
       Large
-    </SlTag>
+    </NuTag>
   </>
 );
 ```
@@ -126,17 +126,17 @@ const App = () => {
   return (
     <>
       <div className="tags-removable">
-        <SlTag size="small" removable onSlRemove={handleRemove}>
+        <NuTag size="small" removable onSlRemove={handleRemove}>
           Small
-        </SlTag>
+        </NuTag>
 
-        <SlTag size="medium" removable onSlRemove={handleRemove}>
+        <NuTag size="medium" removable onSlRemove={handleRemove}>
           Medium
-        </SlTag>
+        </NuTag>
 
-        <SlTag size="large" removable onSlRemove={handleRemove}>
+        <NuTag size="large" removable onSlRemove={handleRemove}>
           Large
-        </SlTag>
+        </NuTag>
       </div>
 
       <style>{css}</style>

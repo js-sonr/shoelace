@@ -1,0 +1,714 @@
+---
+title: Tooltip
+description: Tooltips display additional information based on a specific action.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+A tooltip's target is its _first child element_, so you should only wrap one element inside of the tooltip. If you need the tooltip to show up for multiple elements, nest them inside a container first.
+
+Tooltips use `display: contents` so they won't interfere with how elements are positioned in a flex or grid layout.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-tooltip content="This is a tooltip">
+      <nu-button>Hover Me</nu-button>
+    </nu-tooltip>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-tooltip content="This is a tooltip">
+      <nu-button>Hover Me</nu-button>
+    </nu-tooltip>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlButton from '@onsonr/nebula/dist/react/button'
+    ;
+    import SlTooltip from '@onsonr/nebula/dist/react/tooltip'
+    ;
+    
+    const App = () => (
+      
+      <NuTooltip content="This is a tooltip">
+        <NuButton>Hover Me</NuButton>
+      </NuTooltip>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+## Examples
+
+### Placement
+
+Use the `placement` attribute to set the preferred placement of the tooltip.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <div class="tooltip-placement-example">
+      <div class="tooltip-placement-example-row">
+        <nu-tooltip content="top-start" placement="top-start">
+          <nu-button></nu-button>
+        </nu-tooltip>
+    
+        <nu-tooltip content="top" placement="top">
+          <nu-button></nu-button>
+        </nu-tooltip>
+    
+        <nu-tooltip content="top-end" placement="top-end">
+          <nu-button></nu-button>
+        </nu-tooltip>
+      </div>
+    
+      <div class="tooltip-placement-example-row">
+        <nu-tooltip content="left-start" placement="left-start">
+          <nu-button></nu-button>
+        </nu-tooltip>
+    
+        <nu-tooltip content="right-start" placement="right-start">
+          <nu-button></nu-button>
+        </nu-tooltip>
+      </div>
+    
+      <div class="tooltip-placement-example-row">
+        <nu-tooltip content="left" placement="left">
+          <nu-button></nu-button>
+        </nu-tooltip>
+    
+        <nu-tooltip content="right" placement="right">
+          <nu-button></nu-button>
+        </nu-tooltip>
+      </div>
+    
+      <div class="tooltip-placement-example-row">
+        <nu-tooltip content="left-end" placement="left-end">
+          <nu-button></nu-button>
+        </nu-tooltip>
+    
+        <nu-tooltip content="right-end" placement="right-end">
+          <nu-button></nu-button>
+        </nu-tooltip>
+      </div>
+    
+      <div class="tooltip-placement-example-row">
+        <nu-tooltip content="bottom-start" placement="bottom-start">
+          <nu-button></nu-button>
+        </nu-tooltip>
+    
+        <nu-tooltip content="bottom" placement="bottom">
+          <nu-button></nu-button>
+        </nu-tooltip>
+    
+        <nu-tooltip content="bottom-end" placement="bottom-end">
+          <nu-button></nu-button>
+        </nu-tooltip>
+      </div>
+    </div>
+    
+    <style>
+      .tooltip-placement-example {
+        width: 250px;
+        margin: 1rem;
+      }
+    
+      .tooltip-placement-example-row:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+    
+      .tooltip-placement-example sl-button {
+        float: left;
+        width: 2.5rem;
+        margin-right: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+    
+      .tooltip-placement-example-row:nth-child(1) sl-tooltip:first-child sl-button,
+      .tooltip-placement-example-row:nth-child(5) sl-tooltip:first-child sl-button {
+        margin-left: calc(40px + 0.25rem);
+      }
+    
+      .tooltip-placement-example-row:nth-child(2) sl-tooltip:nth-child(2) sl-button,
+      .tooltip-placement-example-row:nth-child(3) sl-tooltip:nth-child(2) sl-button,
+      .tooltip-placement-example-row:nth-child(4) sl-tooltip:nth-child(2) sl-button {
+        margin-left: calc((40px * 3) + (0.25rem * 3));
+      }
+    </style>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <div class="tooltip-placement-example">
+      <div class="tooltip-placement-example-row">
+        <nu-tooltip content="top-start" placement="top-start">
+          <nu-button></nu-button>
+        </nu-tooltip>
+    
+        <nu-tooltip content="top" placement="top">
+          <nu-button></nu-button>
+        </nu-tooltip>
+    
+        <nu-tooltip content="top-end" placement="top-end">
+          <nu-button></nu-button>
+        </nu-tooltip>
+      </div>
+    
+      <div class="tooltip-placement-example-row">
+        <nu-tooltip content="left-start" placement="left-start">
+          <nu-button></nu-button>
+        </nu-tooltip>
+    
+        <nu-tooltip content="right-start" placement="right-start">
+          <nu-button></nu-button>
+        </nu-tooltip>
+      </div>
+    
+      <div class="tooltip-placement-example-row">
+        <nu-tooltip content="left" placement="left">
+          <nu-button></nu-button>
+        </nu-tooltip>
+    
+        <nu-tooltip content="right" placement="right">
+          <nu-button></nu-button>
+        </nu-tooltip>
+      </div>
+    
+      <div class="tooltip-placement-example-row">
+        <nu-tooltip content="left-end" placement="left-end">
+          <nu-button></nu-button>
+        </nu-tooltip>
+    
+        <nu-tooltip content="right-end" placement="right-end">
+          <nu-button></nu-button>
+        </nu-tooltip>
+      </div>
+    
+      <div class="tooltip-placement-example-row">
+        <nu-tooltip content="bottom-start" placement="bottom-start">
+          <nu-button></nu-button>
+        </nu-tooltip>
+    
+        <nu-tooltip content="bottom" placement="bottom">
+          <nu-button></nu-button>
+        </nu-tooltip>
+    
+        <nu-tooltip content="bottom-end" placement="bottom-end">
+          <nu-button></nu-button>
+        </nu-tooltip>
+      </div>
+    </div>
+    
+    <style>
+      .tooltip-placement-example {
+        width: 250px;
+        margin: 1rem;
+      }
+    
+      .tooltip-placement-example-row:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+    
+      .tooltip-placement-example sl-button {
+        float: left;
+        width: 2.5rem;
+        margin-right: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+    
+      .tooltip-placement-example-row:nth-child(1) sl-tooltip:first-child sl-button,
+      .tooltip-placement-example-row:nth-child(5) sl-tooltip:first-child sl-button {
+        margin-left: calc(40px + 0.25rem);
+      }
+    
+      .tooltip-placement-example-row:nth-child(2) sl-tooltip:nth-child(2) sl-button,
+      .tooltip-placement-example-row:nth-child(3) sl-tooltip:nth-child(2) sl-button,
+      .tooltip-placement-example-row:nth-child(4) sl-tooltip:nth-child(2) sl-button {
+        margin-left: calc((40px * 3) + (0.25rem * 3));
+      }
+    </style>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlButton from '@onsonr/nebula/dist/react/button'
+    ;
+    import SlTooltip from '@onsonr/nebula/dist/react/tooltip'
+    ;
+    
+    const css = `
+      .tooltip-placement-example {
+        width: 250px;
+      }
+    
+      .tooltip-placement-example-row:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+    
+      .tooltip-placement-example sl-button {
+        float: left;
+        width: 2.5rem;
+        margin-right: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+    
+      .tooltip-placement-example-row:nth-child(1) sl-tooltip:first-child sl-button,
+      .tooltip-placement-example-row:nth-child(5) sl-tooltip:first-child sl-button {
+        margin-left: calc(40px + 0.25rem);
+      }
+    
+      .tooltip-placement-example-row:nth-child(2) sl-tooltip:nth-child(2) sl-button,
+      .tooltip-placement-example-row:nth-child(3) sl-tooltip:nth-child(2) sl-button,
+      .tooltip-placement-example-row:nth-child(4) sl-tooltip:nth-child(2) sl-button {
+        margin-left: calc((40px * 3) + (0.25rem * 3));
+      }
+    `;
+    
+    const App = () => (
+      
+      <>
+        <div className="tooltip-placement-example">
+          <div className="tooltip-placement-example-row">
+            <NuTooltip content="top-start" placement="top-start">
+              <NuButton />
+            </NuTooltip>
+    
+            <NuTooltip content="top" placement="top">
+              <NuButton />
+            </NuTooltip>
+    
+            <NuTooltip content="top-end" placement="top-end">
+              <NuButton />
+            </NuTooltip>
+          </div>
+    
+          <div className="tooltip-placement-example-row">
+            <NuTooltip content="left-start" placement="left-start">
+              <NuButton />
+            </NuTooltip>
+    
+            <NuTooltip content="right-start" placement="right-start">
+              <NuButton />
+            </NuTooltip>
+          </div>
+    
+          <div className="tooltip-placement-example-row">
+            <NuTooltip content="left" placement="left">
+              <NuButton />
+            </NuTooltip>
+    
+            <NuTooltip content="right" placement="right">
+              <NuButton />
+            </NuTooltip>
+          </div>
+    
+          <div className="tooltip-placement-example-row">
+            <NuTooltip content="left-end" placement="left-end">
+              <NuButton />
+            </NuTooltip>
+    
+            <NuTooltip content="right-end" placement="right-end">
+              <NuButton />
+            </NuTooltip>
+          </div>
+    
+          <div className="tooltip-placement-example-row">
+            <NuTooltip content="bottom-start" placement="bottom-start">
+              <NuButton />
+            </NuTooltip>
+    
+            <NuTooltip content="bottom" placement="bottom">
+              <NuButton />
+            </NuTooltip>
+    
+            <NuTooltip content="bottom-end" placement="bottom-end">
+              <NuButton />
+            </NuTooltip>
+          </div>
+        </div>
+    
+        <style>{css}</style>
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Click Trigger
+
+Set the `trigger` attribute to `click` to toggle the tooltip on click instead of hover.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-tooltip content="Click again to dismiss" trigger="click">
+      <nu-button>Click to Toggle</nu-button>
+    </nu-tooltip>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-tooltip content="Click again to dismiss" trigger="click">
+      <nu-button>Click to Toggle</nu-button>
+    </nu-tooltip>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlButton from '@onsonr/nebula/dist/react/button'
+    ;
+    import SlTooltip from '@onsonr/nebula/dist/react/tooltip'
+    ;
+    
+    const App = () => (
+      
+      <NuTooltip content="Click again to dismiss" trigger="click">
+        <NuButton>Click to Toggle</NuButton>
+      </NuTooltip>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Manual Trigger
+
+Tooltips can be controlled programmatically by setting the `trigger` attribute to `manual`. Use the `open` attribute to control when the tooltip is shown.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-button style="margin-right: 4rem;">Toggle Manually</nu-button>
+    
+    <nu-tooltip content="This is an avatar" trigger="manual" class="manual-tooltip">
+      <nu-avatar label="User"></nu-avatar>
+    </nu-tooltip>
+    
+    <script>
+      const tooltip = document.querySelector('.manual-tooltip');
+      const toggle = tooltip.previousElementSibling;
+    
+      toggle.addEventListener('click', () => (tooltip.open = !tooltip.open));
+    </script>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-button style="margin-right: 4rem;">Toggle Manually</nu-button>
+    
+    <nu-tooltip content="This is an avatar" trigger="manual" class="manual-tooltip">
+      <nu-avatar label="User"></nu-avatar>
+    </nu-tooltip>
+    
+    <script>
+      const tooltip = document.querySelector('.manual-tooltip');
+      const toggle = tooltip.previousElementSibling;
+    
+      toggle.addEventListener('click', () => (tooltip.open = !tooltip.open));
+    </script>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import { useState } from 'react'
+    ;
+    import SlAvatar from '@onsonr/nebula/dist/react/avatar'
+    ;
+    import SlButton from '@onsonr/nebula/dist/react/button'
+    ;
+    import SlTooltip from '@onsonr/nebula/dist/react/tooltip'
+    ;
+    
+    const App = () => {
+      const [open, setOpen] = useState(false);
+    
+      return (
+        <>
+          <NuButton style={{ marginRight: '4rem' }} onClick={() => setOpen(!open)}>
+            Toggle Manually
+          </NuButton>
+    
+          <NuTooltip open={open} content="This is an avatar" trigger="manual">
+            <NuAvatar />
+          </NuTooltip>
+        </>
+      );
+    };
+    ```
+  </Tab>
+</Tabs>
+
+### Removing Arrows
+
+You can control the size of tooltip arrows by overriding the `--nu-tooltip-arrow-size` design token. To remove them, set the value to `0` as shown below.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-tooltip content="This is a tooltip" style="--nu-tooltip-arrow-size: 0;">
+      <nu-button>No Arrow</nu-button>
+    </nu-tooltip>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-tooltip content="This is a tooltip" style="--nu-tooltip-arrow-size: 0;">
+      <nu-button>No Arrow</nu-button>
+    </nu-tooltip>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlButton from '@onsonr/nebula/dist/react/button'
+    ;
+    import SlTooltip from '@onsonr/nebula/dist/react/tooltip'
+    ;
+    
+    const App = () => (
+      
+      <div style={{ '--nu-tooltip-arrow-size': '0' }}>
+        <NuTooltip content="This is a tooltip">
+          <NuButton>Above</NuButton>
+        </NuTooltip>
+    
+        <NuTooltip content="This is a tooltip" placement="bottom">
+          <NuButton>Below</NuButton>
+        </NuTooltip>
+      </div>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+To override it globally, set it in a root block in your stylesheet after the Nebula stylesheet is loaded.
+
+```css
+:root {
+  --nu-tooltip-arrow-size: 0;
+}
+```
+
+### HTML in Tooltips
+
+Use the `content` slot to create tooltips with HTML content. Tooltips are designed only for text and presentational elements. Avoid placing interactive content, such as buttons, links, and form controls, in a tooltip.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-tooltip>
+      <div slot="content">I'm not <strong>just</strong> a tooltip, I'm a <em>tooltip</em> with HTML!</div>
+    
+      <nu-button>Hover me</nu-button>
+    </nu-tooltip>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-tooltip>
+      <div slot="content">I'm not <strong>just</strong> a tooltip, I'm a <em>tooltip</em> with HTML!</div>
+    
+      <nu-button>Hover me</nu-button>
+    </nu-tooltip>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlButton from '@onsonr/nebula/dist/react/button'
+    ;
+    import SlTooltip from '@onsonr/nebula/dist/react/tooltip'
+    ;
+    
+    const App = () => (
+      
+      <NuTooltip>
+        <div slot="content">
+          I'm not <strong>just</strong> a tooltip, I'm a <em>tooltip</em> with HTML!
+        </div>
+    
+        <NuButton>Hover Me</NuButton>
+      </NuTooltip>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Setting a Maximum Width
+
+Use the `--max-width` custom property to change the width the tooltip can grow to before wrapping occurs.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-tooltip style="--max-width: 80px;" content="This tooltip will wrap after only 80 pixels.">
+      <nu-button>Hover me</nu-button>
+    </nu-tooltip>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-tooltip style="--max-width: 80px;" content="This tooltip will wrap after only 80 pixels.">
+      <nu-button>Hover me</nu-button>
+    </nu-tooltip>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlButton from '@onsonr/nebula/dist/react/button'
+    ;
+    import SlTooltip from '@onsonr/nebula/dist/react/tooltip'
+    ;
+    
+    const App = () => (
+      
+      <NuTooltip style={{ '--max-width': '80px' }} content="This tooltip will wrap after only 80 pixels.">
+        <NuButton>Hover Me</NuButton>
+      </NuTooltip>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Hoisting
+
+Tooltips will be clipped if they're inside a container that has `overflow: auto|hidden|scroll`. The `hoist` attribute forces the tooltip to use a fixed positioning strategy, allowing it to break out of the container. In this case, the tooltip will be positioned relative to its [containing block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block#Identifying_the_containing_block), which is usually the viewport unless an ancestor uses a `transform`, `perspective`, or `filter`. [Refer to this page](https://developer.mozilla.org/en-US/docs/Web/CSS/position#fixed) for more details.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <div class="tooltip-hoist">
+      <nu-tooltip content="This is a tooltip">
+        <nu-button>No Hoist</nu-button>
+      </nu-tooltip>
+    
+      <nu-tooltip content="This is a tooltip" hoist>
+        <nu-button>Hoist</nu-button>
+      </nu-tooltip>
+    </div>
+    
+    <style>
+      .tooltip-hoist {
+        position: relative;
+        border: solid 2px var(--nu-panel-border-color);
+        overflow: hidden;
+        padding: var(--nu-spacing-medium);
+      }
+    </style>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <div class="tooltip-hoist">
+      <nu-tooltip content="This is a tooltip">
+        <nu-button>No Hoist</nu-button>
+      </nu-tooltip>
+    
+      <nu-tooltip content="This is a tooltip" hoist>
+        <nu-button>Hoist</nu-button>
+      </nu-tooltip>
+    </div>
+    
+    <style>
+      .tooltip-hoist {
+        position: relative;
+        border: solid 2px var(--nu-panel-border-color);
+        overflow: hidden;
+        padding: var(--nu-spacing-medium);
+      }
+    </style>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlButton from '@onsonr/nebula/dist/react/button'
+    ;
+    import SlTooltip from '@onsonr/nebula/dist/react/tooltip'
+    ;
+    
+    const css = `
+      .tooltip-hoist {
+        border: solid 2px var(--nu-panel-border-color);
+        overflow: hidden;
+        padding: var(--nu-spacing-medium);
+        position: relative;
+      }
+    `;
+    
+    const App = () => (
+      
+      <>
+        <div class="tooltip-hoist">
+          <NuTooltip content="This is a tooltip">
+            <NuButton>No Hoist</NuButton>
+          </NuTooltip>
+    
+          <NuTooltip content="This is a tooltip" hoist>
+            <NuButton>Hoist</NuButton>
+          </NuTooltip>
+        </div>
+    
+        <style>{css}</style>
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+## Properties
+
+<AutoTypeTable path="./src/components/tooltip/tooltip.component.ts" name="NuTooltip" />
+

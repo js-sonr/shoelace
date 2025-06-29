@@ -1,0 +1,844 @@
+---
+title: Select
+description: Selects allow you to choose items from a menu of predefined options.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-select>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+      <nu-option value="option-4">Option 4</nu-option>
+      <nu-option value="option-5">Option 5</nu-option>
+      <nu-option value="option-6">Option 6</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-select>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+      <nu-option value="option-4">Option 4</nu-option>
+      <nu-option value="option-5">Option 5</nu-option>
+      <nu-option value="option-6">Option 6</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlOption from '@onsonr/nebula/dist/react/option'
+    ;
+    import SlSelect from '@onsonr/nebula/dist/react/select'
+    ;
+    
+    const App = () => (
+      
+      <NuSelect>
+        <NuOption value="option-1">Option 1</NuOption>
+        <NuOption value="option-2">Option 2</NuOption>
+        <NuOption value="option-3">Option 3</NuOption>
+        <NuOption value="option-4">Option 4</NuOption>
+        <NuOption value="option-5">Option 5</NuOption>
+        <NuOption value="option-6">Option 6</NuOption>
+      </NuSelect>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+<Callout type="info">
+This component works with standard `<form>` elements. Please refer to the section on [form controls](/getting-started/form-controls) to learn more about form submission and client-side validation.
+</Callout>
+
+## Examples
+
+### Labels
+
+Use the `label` attribute to give the select an accessible label. For labels that contain HTML, use the `label` slot instead.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-select label="Select one">
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-select label="Select one">
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlOption from '@onsonr/nebula/dist/react/option'
+    ;
+    import SlSelect from '@onsonr/nebula/dist/react/select'
+    ;
+    
+    const App = () => (
+      
+      <NuSelect label="Select one">
+        <NuOption value="option-1">Option 1</NuOption>
+        <NuOption value="option-2">Option 2</NuOption>
+        <NuOption value="option-3">Option 3</NuOption>
+      </NuSelect>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Help Text
+
+Add descriptive help text to a select with the `help-text` attribute. For help texts that contain HTML, use the `help-text` slot instead.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-select label="Experience" help-text="Please tell us your skill level.">
+      <nu-option value="1">Novice</nu-option>
+      <nu-option value="2">Intermediate</nu-option>
+      <nu-option value="3">Advanced</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-select label="Experience" help-text="Please tell us your skill level.">
+      <nu-option value="1">Novice</nu-option>
+      <nu-option value="2">Intermediate</nu-option>
+      <nu-option value="3">Advanced</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlOption from '@onsonr/nebula/dist/react/option'
+    ;
+    import SlSelect from '@onsonr/nebula/dist/react/select'
+    ;
+    
+    const App = () => (
+      
+      <NuSelect label="Experience" help-text="Please tell us your skill level.">
+        <NuOption value="1">Novice</NuOption>
+        <NuOption value="2">Intermediate</NuOption>
+        <NuOption value="3">Advanced</NuOption>
+      </NuSelect>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Placeholders
+
+Use the `placeholder` attribute to add a placeholder.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-select placeholder="Select one">
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-select placeholder="Select one">
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlOption from '@onsonr/nebula/dist/react/option'
+    ;
+    import SlSelect from '@onsonr/nebula/dist/react/select'
+    ;
+    
+    const App = () => (
+      
+      <NuSelect placeholder="Select one">
+        <NuOption value="option-1">Option 1</NuOption>
+        <NuOption value="option-2">Option 2</NuOption>
+        <NuOption value="option-3">Option 3</NuOption>
+      </NuSelect>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Clearable
+
+Use the `clearable` attribute to make the control clearable. The clear button only appears when an option is selected.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-select clearable value="option-1">
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-select clearable value="option-1">
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlOption from '@onsonr/nebula/dist/react/option'
+    ;
+    import SlSelect from '@onsonr/nebula/dist/react/select'
+    ;
+    
+    const App = () => (
+      
+      <NuSelect placeholder="Clearable" clearable>
+        <NuOption value="option-1">Option 1</NuOption>
+        <NuOption value="option-2">Option 2</NuOption>
+        <NuOption value="option-3">Option 3</NuOption>
+      </NuSelect>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Filled Selects
+
+Add the `filled` attribute to draw a filled select.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-select filled>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-select filled>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlOption from '@onsonr/nebula/dist/react/option'
+    ;
+    import SlSelect from '@onsonr/nebula/dist/react/select'
+    ;
+    
+    const App = () => (
+      
+      <NuSelect filled>
+        <NuOption value="option-1">Option 1</NuOption>
+        <NuOption value="option-2">Option 2</NuOption>
+        <NuOption value="option-3">Option 3</NuOption>
+      </NuSelect>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Pill
+
+Use the `pill` attribute to give selects rounded edges.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-select pill>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-select pill>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlOption from '@onsonr/nebula/dist/react/option'
+    ;
+    import SlSelect from '@onsonr/nebula/dist/react/select'
+    ;
+    
+    const App = () => (
+      
+      <NuSelect pill>
+        <NuOption value="option-1">Option 1</NuOption>
+        <NuOption value="option-2">Option 2</NuOption>
+        <NuOption value="option-3">Option 3</NuOption>
+      </NuSelect>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Disabled
+
+Use the `disabled` attribute to disable a select.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-select placeholder="Disabled" disabled>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-select placeholder="Disabled" disabled>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlOption from '@onsonr/nebula/dist/react/option'
+    ;
+    import SlSelect from '@onsonr/nebula/dist/react/select'
+    ;
+    
+    const App = () => (
+      
+      <NuSelect placeholder="Disabled" disabled>
+        <NuOption value="option-1">Option 1</NuOption>
+        <NuOption value="option-2">Option 2</NuOption>
+        <NuOption value="option-3">Option 3</NuOption>
+      </NuSelect>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Multiple
+
+To allow multiple options to be selected, use the `multiple` attribute. It's a good practice to use `clearable` when this option is enabled. To set multiple values at once, set `value` to a space-delimited list of values.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-select label="Select a Few" value="option-1 option-2 option-3" multiple clearable>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+      <nu-option value="option-4">Option 4</nu-option>
+      <nu-option value="option-5">Option 5</nu-option>
+      <nu-option value="option-6">Option 6</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-select label="Select a Few" value="option-1 option-2 option-3" multiple clearable>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+      <nu-option value="option-4">Option 4</nu-option>
+      <nu-option value="option-5">Option 5</nu-option>
+      <nu-option value="option-6">Option 6</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlOption from '@onsonr/nebula/dist/react/option'
+    ;
+    import SlSelect from '@onsonr/nebula/dist/react/select'
+    ;
+    
+    const App = () => (
+      
+      <NuSelect label="Select a Few" value={["option-1", "option-2", "option-3"]} multiple clearable>
+        <NuOption value="option-1">Option 1</NuOption>
+        <NuOption value="option-2">Option 2</NuOption>
+        <NuOption value="option-3">Option 3</NuOption>
+        <NuOption value="option-4">Option 4</NuOption>
+        <NuOption value="option-5">Option 5</NuOption>
+        <NuOption value="option-6">Option 6</NuOption>
+      </NuSelect>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+<Callout type="info">
+Note that multi-select options may wrap, causing the control to expand vertically. You can use the `max-options-visible` attribute to control the maximum number of selected options to show at once.
+</Callout>
+
+### Setting Initial Values
+
+Use the `value` attribute to set the initial selection.
+
+When using `multiple`, the `value` _attribute_ uses space-delimited values to select more than one option. Because of this, `<nu-option>` values cannot contain spaces. If you're accessing the `value` _property_ through Javascript, it will be an array.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-select value="option-1 option-2" multiple clearable>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+      <nu-option value="option-4">Option 4</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-select value="option-1 option-2" multiple clearable>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+      <nu-option value="option-4">Option 4</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlDivider from '@onsonr/nebula/dist/react/divider'
+    ;
+    import SlOption from '@onsonr/nebula/dist/react/option'
+    ;
+    import SlSelect from '@onsonr/nebula/dist/react/select'
+    ;
+    
+    const App = () => (
+      
+      <NuSelect value={["option-1", "option-2"]} multiple clearable>
+        <NuOption value="option-1">Option 1</NuOption>
+        <NuOption value="option-2">Option 2</NuOption>
+        <NuOption value="option-3">Option 3</NuOption>
+      </NuSelect>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Grouping Options
+
+Use `<nu-divider>` to group listbox items visually. You can also use `<small>` to provide labels, but they won't be announced by most assistive devices.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-select>
+      <small>Section 1</small>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+      <nu-divider></nu-divider>
+      <small>Section 2</small>
+      <nu-option value="option-4">Option 4</nu-option>
+      <nu-option value="option-5">Option 5</nu-option>
+      <nu-option value="option-6">Option 6</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-select>
+      <small>Section 1</small>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+      <nu-divider></nu-divider>
+      <small>Section 2</small>
+      <nu-option value="option-4">Option 4</nu-option>
+      <nu-option value="option-5">Option 5</nu-option>
+      <nu-option value="option-6">Option 6</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlOption from '@onsonr/nebula/dist/react/option'
+    ;
+    import SlSelect from '@onsonr/nebula/dist/react/select'
+    ;
+    
+    const App = () => (
+      
+      <NuSelect>
+        <NuOption value="option-1">Option 1</NuOption>
+        <NuOption value="option-2">Option 2</NuOption>
+        <NuOption value="option-3">Option 3</NuOption>
+        <NuOption value="option-4">Option 4</NuOption>
+        <NuOption value="option-5">Option 5</NuOption>
+        <NuOption value="option-6">Option 6</NuOption>
+      </NuSelect>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Sizes
+
+Use the `size` attribute to change a select's size. Note that size does not apply to listbox options.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-select placeholder="Small" size="small">
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    
+    <br />
+    
+    <nu-select placeholder="Medium" size="medium">
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    
+    <br />
+    
+    <nu-select placeholder="Large" size="large">
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-select placeholder="Small" size="small">
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    
+    <br />
+    
+    <nu-select placeholder="Medium" size="medium">
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    
+    <br />
+    
+    <nu-select placeholder="Large" size="large">
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlOption from '@onsonr/nebula/dist/react/option'
+    ;
+    import SlSelect from '@onsonr/nebula/dist/react/select'
+    ;
+    
+    const App = () => (
+      
+      <>
+        <NuSelect placeholder="Small" size="small">
+          <NuOption value="option-1">Option 1</NuOption>
+          <NuOption value="option-2">Option 2</NuOption>
+          <NuOption value="option-3">Option 3</NuOption>
+        </NuSelect>
+    
+        <br />
+    
+        <NuSelect placeholder="Medium" size="medium">
+          <NuOption value="option-1">Option 1</NuOption>
+          <NuOption value="option-2">Option 2</NuOption>
+          <NuOption value="option-3">Option 3</NuOption>
+        </NuSelect>
+    
+        <br />
+    
+        <NuSelect placeholder="Large" size="large">
+          <NuOption value="option-1">Option 1</NuOption>
+          <NuOption value="option-2">Option 2</NuOption>
+          <NuOption value="option-3">Option 3</NuOption>
+        </NuSelect>
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Placement
+
+The preferred placement of the select's listbox can be set with the `placement` attribute. Note that the actual position may vary to ensure the panel remains in the viewport. Valid placements are `top` and `bottom`.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-select placement="top">
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-select placement="top">
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlOption from '@onsonr/nebula/dist/react/option'
+    ;
+    import SlSelect from '@onsonr/nebula/dist/react/select'
+    ;
+    
+    const App = () => (
+      
+      <NuSelect placement="top">
+        <NuOption value="option-1">Option 1</NuOption>
+        <NuOption value="option-2">Option 2</NuOption>
+        <NuOption value="option-3">Option 3</NuOption>
+      </NuDropdown>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Prefix Icons
+
+Use the `prefix` slot to prepend an icon to the control.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-select placeholder="Small" size="small" clearable>
+      <nu-icon name="house" slot="prefix"></nu-icon>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    <br />
+    <nu-select placeholder="Medium" size="medium" clearable>
+      <nu-icon name="house" slot="prefix"></nu-icon>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    <br />
+    <nu-select placeholder="Large" size="large" clearable>
+      <nu-icon name="house" slot="prefix"></nu-icon>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-select placeholder="Small" size="small" clearable>
+      <nu-icon name="house" slot="prefix"></nu-icon>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    <br />
+    <nu-select placeholder="Medium" size="medium" clearable>
+      <nu-icon name="house" slot="prefix"></nu-icon>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    <br />
+    <nu-select placeholder="Large" size="large" clearable>
+      <nu-icon name="house" slot="prefix"></nu-icon>
+      <nu-option value="option-1">Option 1</nu-option>
+      <nu-option value="option-2">Option 2</nu-option>
+      <nu-option value="option-3">Option 3</nu-option>
+    </nu-select>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlIcon from '@onsonr/nebula/dist/react/icon'
+    ;
+    import SlOption from '@onsonr/nebula/dist/react/option'
+    ;
+    import SlSelect from '@onsonr/nebula/dist/react/select'
+    ;
+    
+    const App = () => (
+      
+      <>
+        <NuSelect placeholder="Small" size="small">
+          <NuIcon name="house" slot="prefix"></NuIcon>
+          <NuOption value="option-1">Option 1</NuOption>
+          <NuOption value="option-2">Option 2</NuOption>
+          <NuOption value="option-3">Option 3</NuOption>
+        </NuSelect>
+        <br />
+        <NuSelect placeholder="Medium" size="medium">
+          <NuIcon name="house" slot="prefix"></NuIcon>
+          <NuOption value="option-1">Option 1</NuOption>
+          <NuOption value="option-2">Option 2</NuOption>
+          <NuOption value="option-3">Option 3</NuOption>
+        </NuSelect>
+        <br />
+        <NuSelect placeholder="Large" size="large">
+          <NuIcon name="house" slot="prefix"></NuIcon>
+          <NuOption value="option-1">Option 1</NuOption>
+          <NuOption value="option-2">Option 2</NuOption>
+          <NuOption value="option-3">Option 3</NuOption>
+        </NuSelect>
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Custom Tags
+
+When multiple options can be selected, you can provide custom tags by passing a function to the `getTag` property. Your function can return a string of HTML, a <a href="https://lit.dev/docs/templates/overview/">Lit Template</a>, or an [`HTMLElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement). The `getTag()` function will be called for each option. The first argument is an `<nu-option>` element and the second argument is the tag's index (its position in the tag list).
+
+Remember that custom tags are rendered in a shadow root. To style them, you can use the `style` attribute in your template or you can add your own [parts](/getting-started/customizing/#css-parts) and target them with the [`::part()`](https://developer.mozilla.org/en-US/docs/Web/CSS/::part) selector.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-select
+      placeholder="Select one"
+      value="email phone"
+      multiple
+      clearable
+      class="custom-tag"
+    >
+      <nu-option value="email">
+        <nu-icon slot="prefix" name="envelope"></nu-icon>
+        Email
+      </nu-option>
+      <nu-option value="phone">
+        <nu-icon slot="prefix" name="telephone"></nu-icon>
+        Phone
+      </nu-option>
+      <nu-option value="chat">
+        <nu-icon slot="prefix" name="chat-dots"></nu-icon>
+        Chat
+      </nu-option>
+    </nu-select>
+    
+    <script type="module">
+      const select = document.querySelector('.custom-tag');
+    
+      select.getTag = (option, index) => {
+        // Use the same icon used in the <nu-option>
+        const name = option.querySelector('sl-icon[slot="prefix"]').name;
+    
+        // You can return a string, a Lit Template, or an HTMLElement here
+        return `
+          <nu-tag removable>
+            <nu-icon name="${name}" style="padding-inline-end: .5rem;"></nu-icon>
+            ${option.getTextLabel()}
+          </nu-tag>
+        `;
+      };
+    </script>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-select
+      placeholder="Select one"
+      value="email phone"
+      multiple
+      clearable
+      class="custom-tag"
+    >
+      <nu-option value="email">
+        <nu-icon slot="prefix" name="envelope"></nu-icon>
+        Email
+      </nu-option>
+      <nu-option value="phone">
+        <nu-icon slot="prefix" name="telephone"></nu-icon>
+        Phone
+      </nu-option>
+      <nu-option value="chat">
+        <nu-icon slot="prefix" name="chat-dots"></nu-icon>
+        Chat
+      </nu-option>
+    </nu-select>
+    
+    <script type="module">
+      const select = document.querySelector('.custom-tag');
+    
+      select.getTag = (option, index) => {
+        // Use the same icon used in the <nu-option>
+        const name = option.querySelector('sl-icon[slot="prefix"]').name;
+    
+        // You can return a string, a Lit Template, or an HTMLElement here
+        return `
+          <nu-tag removable>
+            <nu-icon name="${name}" style="padding-inline-end: .5rem;"></nu-icon>
+            ${option.getTextLabel()}
+          </nu-tag>
+        `;
+      };
+    </script>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+<Callout type="warning">
+Be sure you trust the content you are outputting! Passing unsanitized user input to `getTag()` can result in XSS vulnerabilities.
+</Callout>
+
+## Properties
+
+<AutoTypeTable path="./src/components/select/select.component.ts" name="NuSelect" />
+

@@ -1,0 +1,66 @@
+---
+title: Breadcrumb Item
+description: Breadcrumb Items are used inside breadcrumbs to represent different links.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-breadcrumb>
+      <nu-breadcrumb-item>
+        <nu-icon slot="prefix" name="house"></nu-icon>
+        Home
+      </nu-breadcrumb-item>
+      <nu-breadcrumb-item>Clothing</nu-breadcrumb-item>
+      <nu-breadcrumb-item>Shirts</nu-breadcrumb-item>
+    </nu-breadcrumb>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-breadcrumb>
+      <nu-breadcrumb-item>
+        <nu-icon slot="prefix" name="house"></nu-icon>
+        Home
+      </nu-breadcrumb-item>
+      <nu-breadcrumb-item>Clothing</nu-breadcrumb-item>
+      <nu-breadcrumb-item>Shirts</nu-breadcrumb-item>
+    </nu-breadcrumb>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlBreadcrumb from '@onsonr/nebula/dist/react/breadcrumb'
+    ;
+    import SlBreadcrumbItem from '@onsonr/nebula/dist/react/breadcrumb-item'
+    ;
+    import SlIcon from '@onsonr/nebula/dist/react/icon'
+    ;
+    
+    const App = () => (
+      
+      <NuBreadcrumb>
+        <NuBreadcrumbItem>
+          <NuIcon slot="prefix" name="house"></NuIcon>
+          Home
+        </NuBreadcrumbItem>
+        <NuBreadcrumbItem>Clothing</NuBreadcrumbItem>
+        <NuBreadcrumbItem>Shirts</NuBreadcrumbItem>
+      </NuBreadcrumb>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+<Callout type="info">
+Additional demonstrations can be found in the [breadcrumb examples](/components/breadcrumb).
+</Callout>
+
+## Properties
+
+<AutoTypeTable path="./src/components/breadcrumb-item/breadcrumb-item.component.ts" name="NuBreadcrumbItem" />
+
