@@ -41,33 +41,6 @@
       ]
     },
     {
-      "name": "nu-animated-image",
-      "description": "A component for displaying animated GIFs and WEBPs that play and pause on interaction.\n---\n\n\n### **Events:**\n - **nu-load** - Emitted when the image loads successfully.\n- **nu-error** - Emitted when the image fails to load.\n\n### **Slots:**\n - **play-icon** - Optional play icon to use instead of the default. Works best with `<nu-icon>`.\n- **pause-icon** - Optional pause icon to use instead of the default. Works best with `<nu-icon>`.\n\n### **CSS Properties:**\n - **--control-box-size** - The size of the icon box. _(default: undefined)_\n- **--icon-size** - The size of the play/pause icons. _(default: undefined)_\n\n### **CSS Parts:**\n - **control-box** - The container that surrounds the pause/play icons and provides their background.",
-      "attributes": [
-        {
-          "name": "src",
-          "description": "The path to the image to load.",
-          "values": []
-        },
-        {
-          "name": "alt",
-          "description": "A description of the image used by assistive devices.",
-          "values": []
-        },
-        {
-          "name": "play",
-          "description": "Plays the animation. When this attribute is remove, the animation will pause.",
-          "values": []
-        }
-      ],
-      "references": [
-        {
-          "name": "Documentation",
-          "url": "https://nebulaui.org/components/animated-image"
-        }
-      ]
-    },
-    {
       "name": "nu-animation",
       "description": "Animate elements declaratively with nearly 100 baked-in presets, or roll your own with custom keyframes. Powered by the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API).\n---\n\n\n### **Events:**\n - **nu-cancel** - Emitted when the animation is canceled.\n- **nu-finish** - Emitted when the animation finishes.\n- **nu-start** - Emitted when the animation starts or restarts.\n\n### **Methods:**\n - **cancel()** - Clears all keyframe effects caused by this animation and aborts its playback.\n- **finish()** - Sets the playback time to the end of the animation corresponding to the current playback direction.\n\n### **Slots:**\n - _default_ - The element to animate. Avoid slotting in more than one element, as subsequent ones will be ignored. To animate multiple elements, either wrap them in a single container or use multiple `<nu-animation>` elements.",
       "attributes": [
@@ -131,6 +104,33 @@
         {
           "name": "Documentation",
           "url": "https://nebulaui.org/components/animation"
+        }
+      ]
+    },
+    {
+      "name": "nu-animated-image",
+      "description": "A component for displaying animated GIFs and WEBPs that play and pause on interaction.\n---\n\n\n### **Events:**\n - **nu-load** - Emitted when the image loads successfully.\n- **nu-error** - Emitted when the image fails to load.\n\n### **Slots:**\n - **play-icon** - Optional play icon to use instead of the default. Works best with `<nu-icon>`.\n- **pause-icon** - Optional pause icon to use instead of the default. Works best with `<nu-icon>`.\n\n### **CSS Properties:**\n - **--control-box-size** - The size of the icon box. _(default: undefined)_\n- **--icon-size** - The size of the play/pause icons. _(default: undefined)_\n\n### **CSS Parts:**\n - **control-box** - The container that surrounds the pause/play icons and provides their background.",
+      "attributes": [
+        {
+          "name": "src",
+          "description": "The path to the image to load.",
+          "values": []
+        },
+        {
+          "name": "alt",
+          "description": "A description of the image used by assistive devices.",
+          "values": []
+        },
+        {
+          "name": "play",
+          "description": "Plays the animation. When this attribute is remove, the animation will pause.",
+          "values": []
+        }
+      ],
+      "references": [
+        {
+          "name": "Documentation",
+          "url": "https://nebulaui.org/components/animated-image"
         }
       ]
     },
@@ -673,68 +673,6 @@
       ]
     },
     {
-      "name": "nu-copy-button",
-      "description": "Copies text data to the clipboard when the user clicks the trigger.\n---\n\n\n### **Events:**\n - **nu-copy** - Emitted when the data has been copied.\n- **nu-error** - Emitted when the data could not be copied.\n\n### **Slots:**\n - **copy-icon** - The icon to show in the default copy state. Works best with `<nu-icon>`.\n- **success-icon** - The icon to show when the content is copied. Works best with `<nu-icon>`.\n- **error-icon** - The icon to show when a copy error occurs. Works best with `<nu-icon>`.\n\n### **CSS Properties:**\n - **--success-color** - The color to use for success feedback. _(default: undefined)_\n- **--error-color** - The color to use for error feedback. _(default: undefined)_\n\n### **CSS Parts:**\n - **button** - The internal `<button>` element.\n- **copy-icon** - The container that holds the copy icon.\n- **success-icon** - The container that holds the success icon.\n- **error-icon** - The container that holds the error icon.\n- **tooltip__base** - The tooltip's exported `base` part.\n- **tooltip__base__popup** - The tooltip's exported `popup` part.\n- **tooltip__base__arrow** - The tooltip's exported `arrow` part.\n- **tooltip__body** - The tooltip's exported `body` part.",
-      "attributes": [
-        {
-          "name": "value",
-          "description": "The text value to copy.",
-          "values": []
-        },
-        {
-          "name": "from",
-          "description": "An id that references an element in the same document from which data will be copied. If both this and `value` are\npresent, this value will take precedence. By default, the target element's `textContent` will be copied. To copy an\nattribute, append the attribute name wrapped in square brackets, e.g. `from=\"el[value]\"`. To copy a property,\nappend a dot and the property name, e.g. `from=\"el.value\"`.",
-          "values": []
-        },
-        {
-          "name": "disabled",
-          "description": "Disables the copy button.",
-          "values": []
-        },
-        {
-          "name": "copy-label",
-          "description": "A custom label to show in the tooltip.",
-          "values": []
-        },
-        {
-          "name": "success-label",
-          "description": "A custom label to show in the tooltip after copying.",
-          "values": []
-        },
-        {
-          "name": "error-label",
-          "description": "A custom label to show in the tooltip when a copy error occurs.",
-          "values": []
-        },
-        {
-          "name": "feedback-duration",
-          "description": "The length of time to show feedback before restoring the default trigger.",
-          "values": []
-        },
-        {
-          "name": "tooltip-placement",
-          "description": "The preferred placement of the tooltip.",
-          "values": [
-            { "name": "top" },
-            { "name": "right" },
-            { "name": "bottom" },
-            { "name": "left" }
-          ]
-        },
-        {
-          "name": "hoist",
-          "description": "Enable this option to prevent the tooltip from being clipped when the component is placed inside a container with\n`overflow: auto|hidden|scroll`. Hoisting uses a fixed positioning strategy that works in many, but not all,\nscenarios.",
-          "values": []
-        }
-      ],
-      "references": [
-        {
-          "name": "Documentation",
-          "url": "https://nebulaui.org/components/copy-button"
-        }
-      ]
-    },
-    {
       "name": "nu-color-picker",
       "description": "Color pickers allow the user to select a color.\n---\n\n\n### **Events:**\n - **nu-blur** - Emitted when the color picker loses focus.\n- **nu-change** - Emitted when the color picker's value changes.\n- **nu-focus** - Emitted when the color picker receives focus.\n- **nu-input** - Emitted when the color picker receives input.\n- **nu-invalid** - Emitted when the form control has been checked for validity and its constraints aren't satisfied.\n\n### **Methods:**\n - **focus(options: _FocusOptions_)** - Sets focus on the color picker.\n- **blur()** - Removes focus from the color picker.\n- **getFormattedValue(format: _'hex' | 'hexa' | 'rgb' | 'rgba' | 'hsl' | 'hsla' | 'hsv' | 'hsva'_)** - Returns the current value as a string in the specified format.\n- **checkValidity()** - Checks for validity but does not show a validation message. Returns `true` when valid and `false` when invalid.\n- **getForm(): _HTMLFormElement | null_** - Gets the associated form, if one exists.\n- **reportValidity()** - Checks for validity and shows the browser's validation message if the control is invalid.\n- **setCustomValidity(message: _string_)** - Sets a custom validation message. Pass an empty string to restore validity.\n\n### **Slots:**\n - **label** - The color picker's form label. Alternatively, you can use the `label` attribute.\n\n### **CSS Properties:**\n - **--grid-width** - The width of the color grid. _(default: undefined)_\n- **--grid-height** - The height of the color grid. _(default: undefined)_\n- **--grid-handle-size** - The size of the color grid's handle. _(default: undefined)_\n- **--slider-height** - The height of the hue and alpha sliders. _(default: undefined)_\n- **--slider-handle-size** - The diameter of the slider's handle. _(default: undefined)_\n- **--swatch-size** - The size of each predefined color swatch. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - The component's base wrapper.\n- **trigger** - The color picker's dropdown trigger.\n- **swatches** - The container that holds the swatches.\n- **swatch** - Each individual swatch.\n- **grid** - The color grid.\n- **grid-handle** - The color grid's handle.\n- **slider** - Hue and opacity sliders.\n- **slider-handle** - Hue and opacity slider handles.\n- **hue-slider** - The hue slider.\n- **hue-slider-handle** - The hue slider's handle.\n- **opacity-slider** - The opacity slider.\n- **opacity-slider-handle** - The opacity slider's handle.\n- **preview** - The preview color.\n- **input** - The text input.\n- **eye-dropper-button** - The eye dropper button.\n- **eye-dropper-button__base** - The eye dropper button's exported `button` part.\n- **eye-dropper-button__prefix** - The eye dropper button's exported `prefix` part.\n- **eye-dropper-button__label** - The eye dropper button's exported `label` part.\n- **eye-dropper-button__suffix** - The eye dropper button's exported `suffix` part.\n- **eye-dropper-button__caret** - The eye dropper button's exported `caret` part.\n- **format-button** - The format button.\n- **format-button__base** - The format button's exported `button` part.\n- **format-button__prefix** - The format button's exported `prefix` part.\n- **format-button__label** - The format button's exported `label` part.\n- **format-button__suffix** - The format button's exported `suffix` part.\n- **format-button__caret** - The format button's exported `caret` part.",
       "attributes": [
@@ -822,6 +760,68 @@
         {
           "name": "Documentation",
           "url": "https://nebulaui.org/components/color-picker"
+        }
+      ]
+    },
+    {
+      "name": "nu-copy-button",
+      "description": "Copies text data to the clipboard when the user clicks the trigger.\n---\n\n\n### **Events:**\n - **nu-copy** - Emitted when the data has been copied.\n- **nu-error** - Emitted when the data could not be copied.\n\n### **Slots:**\n - **copy-icon** - The icon to show in the default copy state. Works best with `<nu-icon>`.\n- **success-icon** - The icon to show when the content is copied. Works best with `<nu-icon>`.\n- **error-icon** - The icon to show when a copy error occurs. Works best with `<nu-icon>`.\n\n### **CSS Properties:**\n - **--success-color** - The color to use for success feedback. _(default: undefined)_\n- **--error-color** - The color to use for error feedback. _(default: undefined)_\n\n### **CSS Parts:**\n - **button** - The internal `<button>` element.\n- **copy-icon** - The container that holds the copy icon.\n- **success-icon** - The container that holds the success icon.\n- **error-icon** - The container that holds the error icon.\n- **tooltip__base** - The tooltip's exported `base` part.\n- **tooltip__base__popup** - The tooltip's exported `popup` part.\n- **tooltip__base__arrow** - The tooltip's exported `arrow` part.\n- **tooltip__body** - The tooltip's exported `body` part.",
+      "attributes": [
+        {
+          "name": "value",
+          "description": "The text value to copy.",
+          "values": []
+        },
+        {
+          "name": "from",
+          "description": "An id that references an element in the same document from which data will be copied. If both this and `value` are\npresent, this value will take precedence. By default, the target element's `textContent` will be copied. To copy an\nattribute, append the attribute name wrapped in square brackets, e.g. `from=\"el[value]\"`. To copy a property,\nappend a dot and the property name, e.g. `from=\"el.value\"`.",
+          "values": []
+        },
+        {
+          "name": "disabled",
+          "description": "Disables the copy button.",
+          "values": []
+        },
+        {
+          "name": "copy-label",
+          "description": "A custom label to show in the tooltip.",
+          "values": []
+        },
+        {
+          "name": "success-label",
+          "description": "A custom label to show in the tooltip after copying.",
+          "values": []
+        },
+        {
+          "name": "error-label",
+          "description": "A custom label to show in the tooltip when a copy error occurs.",
+          "values": []
+        },
+        {
+          "name": "feedback-duration",
+          "description": "The length of time to show feedback before restoring the default trigger.",
+          "values": []
+        },
+        {
+          "name": "tooltip-placement",
+          "description": "The preferred placement of the tooltip.",
+          "values": [
+            { "name": "top" },
+            { "name": "right" },
+            { "name": "bottom" },
+            { "name": "left" }
+          ]
+        },
+        {
+          "name": "hoist",
+          "description": "Enable this option to prevent the tooltip from being clipped when the component is placed inside a container with\n`overflow: auto|hidden|scroll`. Hoisting uses a fixed positioning strategy that works in many, but not all,\nscenarios.",
+          "values": []
+        }
+      ],
+      "references": [
+        {
+          "name": "Documentation",
+          "url": "https://nebulaui.org/components/copy-button"
         }
       ]
     },
@@ -1842,28 +1842,6 @@
       ]
     },
     {
-      "name": "nu-option",
-      "description": "Options define the selectable items within various form controls such as [select](/components/select).\n---\n\n\n### **Methods:**\n - **getTextLabel()** - Returns a plain text label based on the option's content.\n\n### **Slots:**\n - _default_ - The option's label.\n- **prefix** - Used to prepend an icon or similar element to the menu item.\n- **suffix** - Used to append an icon or similar element to the menu item.\n\n### **CSS Parts:**\n - **checked-icon** - The checked icon, an `<nu-icon>` element.\n- **base** - The component's base wrapper.\n- **label** - The option's label.\n- **prefix** - The container that wraps the prefix.\n- **suffix** - The container that wraps the suffix.",
-      "attributes": [
-        {
-          "name": "value",
-          "description": "The option's value. When selected, the containing form control will receive this value. The value must be unique\nfrom other options in the same group. Values may not contain spaces, as spaces are used as delimiters when listing\nmultiple values.",
-          "values": []
-        },
-        {
-          "name": "disabled",
-          "description": "Draws the option in a disabled state, preventing selection.",
-          "values": []
-        }
-      ],
-      "references": [
-        {
-          "name": "Documentation",
-          "url": "https://nebulaui.org/components/option"
-        }
-      ]
-    },
-    {
       "name": "nu-mutation-observer",
       "description": "The Mutation Observer component offers a thin, declarative interface to the [`MutationObserver API`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver).\n---\n\n\n### **Events:**\n - **nu-mutation** - Emitted when a mutation occurs.\n\n### **Slots:**\n - _default_ - The content to watch for mutations.",
       "attributes": [
@@ -1902,6 +1880,28 @@
         {
           "name": "Documentation",
           "url": "https://nebulaui.org/components/mutation-observer"
+        }
+      ]
+    },
+    {
+      "name": "nu-option",
+      "description": "Options define the selectable items within various form controls such as [select](/components/select).\n---\n\n\n### **Methods:**\n - **getTextLabel()** - Returns a plain text label based on the option's content.\n\n### **Slots:**\n - _default_ - The option's label.\n- **prefix** - Used to prepend an icon or similar element to the menu item.\n- **suffix** - Used to append an icon or similar element to the menu item.\n\n### **CSS Parts:**\n - **checked-icon** - The checked icon, an `<nu-icon>` element.\n- **base** - The component's base wrapper.\n- **label** - The option's label.\n- **prefix** - The container that wraps the prefix.\n- **suffix** - The container that wraps the suffix.",
+      "attributes": [
+        {
+          "name": "value",
+          "description": "The option's value. When selected, the containing form control will receive this value. The value must be unique\nfrom other options in the same group. Values may not contain spaces, as spaces are used as delimiters when listing\nmultiple values.",
+          "values": []
+        },
+        {
+          "name": "disabled",
+          "description": "Draws the option in a disabled state, preventing selection.",
+          "values": []
+        }
+      ],
+      "references": [
+        {
+          "name": "Documentation",
+          "url": "https://nebulaui.org/components/option"
         }
       ]
     },

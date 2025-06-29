@@ -1,8 +1,8 @@
 import type { DefineComponent } from "vue";
 
 import type { NuAlert } from "../../components/alert/alert.component.js";
-import type { NuAnimatedImage } from "../../components/animated-image/animated-image.component.js";
 import type { NuAnimation } from "../../components/animation/animation.component.js";
+import type { NuAnimatedImage } from "../../components/animated-image/animated-image.component.js";
 import type { NuAreaChart } from "../../components/area-chart/area-chart.component.js";
 import type { NuAvatar } from "../../components/avatar/avatar.component.js";
 import type { NuBadge } from "../../components/badge/badge.component.js";
@@ -39,8 +39,8 @@ import type { NuMenuItem } from "../../components/menu-item/menu-item.component.
 import type { NuMenuLabel } from "../../components/menu-label/menu-label.component.js";
 import type { NuMutationObserver } from "../../components/mutation-observer/mutation-observer.component.js";
 import type { NuOption } from "../../components/option/option.component.js";
-import type { NuPopup } from "../../components/popup/popup.component.js";
 import type { NuPieChart } from "../../components/pie-chart/pie-chart.component.js";
+import type { NuPopup } from "../../components/popup/popup.component.js";
 import type { NuProgressBar } from "../../components/progress-bar/progress-bar.component.js";
 import type { NuProgressRing } from "../../components/progress-ring/progress-ring.component.js";
 import type { NuQrCode } from "../../components/qr-code/qr-code.component.js";
@@ -91,25 +91,6 @@ the alert will not close on its own. */
   onNuAfterHide?: (e: CustomEvent<never>) => void;
 };
 
-type NuAnimatedImageProps = {
-  /** The path to the image to load. */
-  src?: NuAnimatedImage["src"];
-  /** A description of the image used by assistive devices. */
-  alt?: NuAnimatedImage["alt"];
-  /** Plays the animation. When this attribute is remove, the animation will pause. */
-  play?: NuAnimatedImage["play"];
-  /**  */
-  animatedImage?: NuAnimatedImage["animatedImage"];
-  /**  */
-  frozenFrame?: NuAnimatedImage["frozenFrame"];
-  /**  */
-  isLoaded?: NuAnimatedImage["isLoaded"];
-  /** Emitted when the image loads successfully. */
-  onNuLoad?: (e: CustomEvent<never>) => void;
-  /** Emitted when the image fails to load. */
-  onNuError?: (e: CustomEvent<never>) => void;
-};
-
 type NuAnimationProps = {
   /** The name of the built-in animation to use. For custom animations, use the `keyframes` prop. */
   name?: NuAnimation["name"];
@@ -150,6 +131,25 @@ value can be changed without causing the animation to restart. */
   onNuFinish?: (e: CustomEvent<never>) => void;
   /** Emitted when the animation starts or restarts. */
   onNuStart?: (e: CustomEvent<never>) => void;
+};
+
+type NuAnimatedImageProps = {
+  /** The path to the image to load. */
+  src?: NuAnimatedImage["src"];
+  /** A description of the image used by assistive devices. */
+  alt?: NuAnimatedImage["alt"];
+  /** Plays the animation. When this attribute is remove, the animation will pause. */
+  play?: NuAnimatedImage["play"];
+  /**  */
+  animatedImage?: NuAnimatedImage["animatedImage"];
+  /**  */
+  frozenFrame?: NuAnimatedImage["frozenFrame"];
+  /**  */
+  isLoaded?: NuAnimatedImage["isLoaded"];
+  /** Emitted when the image loads successfully. */
+  onNuLoad?: (e: CustomEvent<never>) => void;
+  /** Emitted when the image fails to load. */
+  onNuError?: (e: CustomEvent<never>) => void;
 };
 
 type NuAreaChartProps = {
@@ -1062,6 +1062,37 @@ multiple values. */
   hasHover?: NuOption["hasHover"];
 };
 
+type NuPieChartProps = {
+  /** The chart data as JSON string or array of data points. */
+  data?: NuPieChart["data"];
+  /** The size of the chart in pixels (width and height). */
+  size?: NuPieChart["size"];
+  /** The inner radius for donut charts (0 for full pie, 0.5-0.8 for donut). */
+  "inner-radius"?: NuPieChart["innerRadius"];
+  /** The gap between slices in radians. */
+  gap?: NuPieChart["gap"];
+  /** The corner radius for rounded slice corners. */
+  "corner-radius"?: NuPieChart["cornerRadius"];
+  /** Whether to show slice labels. */
+  "show-labels"?: NuPieChart["showLabels"];
+  /** Whether to show values in labels. */
+  "show-values"?: NuPieChart["showValues"];
+  /** The minimum angle (in degrees) required to show labels. */
+  "min-label-angle"?: NuPieChart["minLabelAngle"];
+  /** Custom center text for donut charts. */
+  "center-text"?: NuPieChart["centerText"];
+  /** Custom center value for donut charts. */
+  "center-value"?: NuPieChart["centerValue"];
+  /** Whether to animate the chart on load. */
+  "animate-chart"?: NuPieChart["animateChart"];
+  /**  */
+  svg?: NuPieChart["svg"];
+  /** Emitted when hovering over a pie slice. */
+  onNuSliceHover?: (e: CustomEvent<never>) => void;
+  /** Emitted when clicking a pie slice. */
+  onNuSliceClick?: (e: CustomEvent<never>) => void;
+};
+
 type NuPopupProps = {
   /** The element the popup will be anchored to. If the anchor lives outside of the popup, you can provide the anchor
 element `id`, a DOM element reference, or a `VirtualElement`. If the anchor lives inside the popup, use the
@@ -1135,37 +1166,6 @@ active. */
   popup?: NuPopup["popup"];
   /** Emitted when the popup is repositioned. This event can fire a lot, so avoid putting expensive operations in your listener or consider debouncing it. */
   onNuReposition?: (e: CustomEvent<never>) => void;
-};
-
-type NuPieChartProps = {
-  /** The chart data as JSON string or array of data points. */
-  data?: NuPieChart["data"];
-  /** The size of the chart in pixels (width and height). */
-  size?: NuPieChart["size"];
-  /** The inner radius for donut charts (0 for full pie, 0.5-0.8 for donut). */
-  "inner-radius"?: NuPieChart["innerRadius"];
-  /** The gap between slices in radians. */
-  gap?: NuPieChart["gap"];
-  /** The corner radius for rounded slice corners. */
-  "corner-radius"?: NuPieChart["cornerRadius"];
-  /** Whether to show slice labels. */
-  "show-labels"?: NuPieChart["showLabels"];
-  /** Whether to show values in labels. */
-  "show-values"?: NuPieChart["showValues"];
-  /** The minimum angle (in degrees) required to show labels. */
-  "min-label-angle"?: NuPieChart["minLabelAngle"];
-  /** Custom center text for donut charts. */
-  "center-text"?: NuPieChart["centerText"];
-  /** Custom center value for donut charts. */
-  "center-value"?: NuPieChart["centerValue"];
-  /** Whether to animate the chart on load. */
-  "animate-chart"?: NuPieChart["animateChart"];
-  /**  */
-  svg?: NuPieChart["svg"];
-  /** Emitted when hovering over a pie slice. */
-  onNuSliceHover?: (e: CustomEvent<never>) => void;
-  /** Emitted when clicking a pie slice. */
-  onNuSliceClick?: (e: CustomEvent<never>) => void;
 };
 
 type NuProgressBarProps = {
@@ -1830,6 +1830,25 @@ export type CustomElements = {
   "nu-alert": DefineComponent<NuAlertProps>;
 
   /**
+   * Animate elements declaratively with nearly 100 baked-in presets, or roll your own with custom keyframes. Powered by the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API).
+   * ---
+   *
+   *
+   * ### **Events:**
+   *  - **nu-cancel** - Emitted when the animation is canceled.
+   * - **nu-finish** - Emitted when the animation finishes.
+   * - **nu-start** - Emitted when the animation starts or restarts.
+   *
+   * ### **Methods:**
+   *  - **cancel()** - Clears all keyframe effects caused by this animation and aborts its playback.
+   * - **finish()** - Sets the playback time to the end of the animation corresponding to the current playback direction.
+   *
+   * ### **Slots:**
+   *  - _default_ - The element to animate. Avoid slotting in more than one element, as subsequent ones will be ignored. To animate multiple elements, either wrap them in a single container or use multiple `<nu-animation>` elements.
+   */
+  "nu-animation": DefineComponent<NuAnimationProps>;
+
+  /**
    * A component for displaying animated GIFs and WEBPs that play and pause on interaction.
    * ---
    *
@@ -1850,25 +1869,6 @@ export type CustomElements = {
    *  - **control-box** - The container that surrounds the pause/play icons and provides their background.
    */
   "nu-animated-image": DefineComponent<NuAnimatedImageProps>;
-
-  /**
-   * Animate elements declaratively with nearly 100 baked-in presets, or roll your own with custom keyframes. Powered by the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API).
-   * ---
-   *
-   *
-   * ### **Events:**
-   *  - **nu-cancel** - Emitted when the animation is canceled.
-   * - **nu-finish** - Emitted when the animation finishes.
-   * - **nu-start** - Emitted when the animation starts or restarts.
-   *
-   * ### **Methods:**
-   *  - **cancel()** - Clears all keyframe effects caused by this animation and aborts its playback.
-   * - **finish()** - Sets the playback time to the end of the animation corresponding to the current playback direction.
-   *
-   * ### **Slots:**
-   *  - _default_ - The element to animate. Avoid slotting in more than one element, as subsequent ones will be ignored. To animate multiple elements, either wrap them in a single container or use multiple `<nu-animation>` elements.
-   */
-  "nu-animation": DefineComponent<NuAnimationProps>;
 
   /**
    * Area charts visualize data over time with filled areas below the line.
@@ -2753,34 +2753,6 @@ export type CustomElements = {
   "nu-option": DefineComponent<NuOptionProps>;
 
   /**
-   * Popup is a utility that lets you declaratively anchor "popup" containers to another element.
-   * ---
-   *
-   *
-   * ### **Events:**
-   *  - **nu-reposition** - Emitted when the popup is repositioned. This event can fire a lot, so avoid putting expensive operations in your listener or consider debouncing it.
-   *
-   * ### **Methods:**
-   *  - **reposition()** - Forces the popup to recalculate and reposition itself.
-   *
-   * ### **Slots:**
-   *  - _default_ - The popup's content.
-   * - **anchor** - The element the popup will be anchored to. If the anchor lives outside of the popup, you can use the `anchor` attribute or property instead.
-   *
-   * ### **CSS Properties:**
-   *  - **--arrow-size** - The size of the arrow. Note that an arrow won't be shown unless the `arrow` attribute is used. _(default: 6px)_
-   * - **--arrow-color** - The color of the arrow. _(default: var(--nu-color-neutral-0))_
-   * - **--auto-size-available-width** - A read-only custom property that determines the amount of width the popup can be before overflowing. Useful for positioning child elements that need to overflow. This property is only available when using `auto-size`. _(default: undefined)_
-   * - **--auto-size-available-height** - A read-only custom property that determines the amount of height the popup can be before overflowing. Useful for positioning child elements that need to overflow. This property is only available when using `auto-size`. _(default: undefined)_
-   *
-   * ### **CSS Parts:**
-   *  - **arrow** - The arrow's container. Avoid setting `top|bottom|left|right` properties, as these values are assigned dynamically as the popup moves. This is most useful for applying a background color to match the popup, and maybe a border or box shadow.
-   * - **popup** - The popup's container. Useful for setting a background color, box shadow, etc.
-   * - **hover-bridge** - The hover bridge element. Only available when the `hover-bridge` option is enabled.
-   */
-  "nu-popup": DefineComponent<NuPopupProps>;
-
-  /**
    * Pie charts display proportional data as circular segments, ideal for showing portfolio allocations and market share.
    * ---
    *
@@ -2814,6 +2786,34 @@ export type CustomElements = {
    * - **center** - The center content area for donut charts.
    */
   "nu-pie-chart": DefineComponent<NuPieChartProps>;
+
+  /**
+   * Popup is a utility that lets you declaratively anchor "popup" containers to another element.
+   * ---
+   *
+   *
+   * ### **Events:**
+   *  - **nu-reposition** - Emitted when the popup is repositioned. This event can fire a lot, so avoid putting expensive operations in your listener or consider debouncing it.
+   *
+   * ### **Methods:**
+   *  - **reposition()** - Forces the popup to recalculate and reposition itself.
+   *
+   * ### **Slots:**
+   *  - _default_ - The popup's content.
+   * - **anchor** - The element the popup will be anchored to. If the anchor lives outside of the popup, you can use the `anchor` attribute or property instead.
+   *
+   * ### **CSS Properties:**
+   *  - **--arrow-size** - The size of the arrow. Note that an arrow won't be shown unless the `arrow` attribute is used. _(default: 6px)_
+   * - **--arrow-color** - The color of the arrow. _(default: var(--nu-color-neutral-0))_
+   * - **--auto-size-available-width** - A read-only custom property that determines the amount of width the popup can be before overflowing. Useful for positioning child elements that need to overflow. This property is only available when using `auto-size`. _(default: undefined)_
+   * - **--auto-size-available-height** - A read-only custom property that determines the amount of height the popup can be before overflowing. Useful for positioning child elements that need to overflow. This property is only available when using `auto-size`. _(default: undefined)_
+   *
+   * ### **CSS Parts:**
+   *  - **arrow** - The arrow's container. Avoid setting `top|bottom|left|right` properties, as these values are assigned dynamically as the popup moves. This is most useful for applying a background color to match the popup, and maybe a border or box shadow.
+   * - **popup** - The popup's container. Useful for setting a background color, box shadow, etc.
+   * - **hover-bridge** - The hover bridge element. Only available when the `hover-bridge` option is enabled.
+   */
+  "nu-popup": DefineComponent<NuPopupProps>;
 
   /**
    * Progress bars are used to show the status of an ongoing operation.

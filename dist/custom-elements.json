@@ -264,192 +264,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/animated-image/animated-image.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "NuAnimatedImage",
-          "cssProperties": [
-            {
-              "description": "The size of the icon box.",
-              "name": "--control-box-size"
-            },
-            {
-              "description": "The size of the play/pause icons.",
-              "name": "--icon-size"
-            }
-          ],
-          "cssParts": [
-            {
-              "description": "The container that surrounds the pause/play icons and provides their background.",
-              "name": "control-box"
-            }
-          ],
-          "slots": [
-            {
-              "description": "Optional play icon to use instead of the default. Works best with `<nu-icon>`.",
-              "name": "play-icon"
-            },
-            {
-              "description": "Optional pause icon to use instead of the default. Works best with `<nu-icon>`.",
-              "name": "pause-icon"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "dependencies",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "default": "{ 'nu-icon': NuIcon }"
-            },
-            {
-              "kind": "field",
-              "name": "animatedImage",
-              "type": {
-                "text": "HTMLImageElement"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "frozenFrame",
-              "type": {
-                "text": "string"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "isLoaded",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false"
-            },
-            {
-              "kind": "field",
-              "name": "src",
-              "type": {
-                "text": "string"
-              },
-              "description": "The path to the image to load.",
-              "attribute": "src"
-            },
-            {
-              "kind": "field",
-              "name": "alt",
-              "type": {
-                "text": "string"
-              },
-              "description": "A description of the image used by assistive devices.",
-              "attribute": "alt"
-            },
-            {
-              "kind": "field",
-              "name": "play",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Plays the animation. When this attribute is remove, the animation will pause.",
-              "attribute": "play",
-              "reflects": true
-            },
-            {
-              "kind": "method",
-              "name": "handleClick",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "handleLoad",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "handleError",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "handlePlayChange"
-            },
-            {
-              "kind": "method",
-              "name": "handleSrcChange"
-            }
-          ],
-          "events": [
-            {
-              "description": "Emitted when the image loads successfully.",
-              "name": "nu-load",
-              "reactName": "onNuLoad",
-              "eventName": "NuLoadEvent"
-            },
-            {
-              "description": "Emitted when the image fails to load.",
-              "name": "nu-error",
-              "reactName": "onNuError",
-              "eventName": "NuErrorEvent"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "src",
-              "type": {
-                "text": "string"
-              },
-              "description": "The path to the image to load.",
-              "fieldName": "src"
-            },
-            {
-              "name": "alt",
-              "type": {
-                "text": "string"
-              },
-              "description": "A description of the image used by assistive devices.",
-              "fieldName": "alt"
-            },
-            {
-              "name": "play",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Plays the animation. When this attribute is remove, the animation will pause.",
-              "fieldName": "play"
-            }
-          ],
-          "superclass": {
-            "name": "NebulaElement",
-            "module": "/src/internal/nebula-element.js"
-          },
-          "summary": "A component for displaying animated GIFs and WEBPs that play and pause on interaction.",
-          "tagNameWithoutPrefix": "animated-image",
-          "tagName": "nu-animated-image",
-          "customElement": true,
-          "jsDoc": "/**\n * @summary A component for displaying animated GIFs and WEBPs that play and pause on interaction.\n * @documentation https://nebulaui.org/components/animated-image\n * @status stable\n * @since 2.0\n *\n * @dependency sl-icon\n *\n * @event nu-load - Emitted when the image loads successfully.\n * @event nu-error - Emitted when the image fails to load.\n *\n * @slot play-icon - Optional play icon to use instead of the default. Works best with `<nu-icon>`.\n * @slot pause-icon - Optional pause icon to use instead of the default. Works best with `<nu-icon>`.\n *\n * @part control-box - The container that surrounds the pause/play icons and provides their background.\n *\n * @cssproperty --control-box-size - The size of the icon box.\n * @cssproperty --icon-size - The size of the play/pause icons.\n */",
-          "documentation": "https://nebulaui.org/components/animated-image",
-          "status": "stable",
-          "since": "2.0",
-          "dependencies": [
-            "sl-icon"
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "NuAnimatedImage",
-            "module": "components/animated-image/animated-image.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "components/animation/animation.js",
       "declarations": [
         {
@@ -801,6 +615,192 @@
           "declaration": {
             "name": "NuAnimation",
             "module": "components/animation/animation.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/animated-image/animated-image.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "NuAnimatedImage",
+          "cssProperties": [
+            {
+              "description": "The size of the icon box.",
+              "name": "--control-box-size"
+            },
+            {
+              "description": "The size of the play/pause icons.",
+              "name": "--icon-size"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "The container that surrounds the pause/play icons and provides their background.",
+              "name": "control-box"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Optional play icon to use instead of the default. Works best with `<nu-icon>`.",
+              "name": "play-icon"
+            },
+            {
+              "description": "Optional pause icon to use instead of the default. Works best with `<nu-icon>`.",
+              "name": "pause-icon"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "dependencies",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ 'nu-icon': NuIcon }"
+            },
+            {
+              "kind": "field",
+              "name": "animatedImage",
+              "type": {
+                "text": "HTMLImageElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "frozenFrame",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "isLoaded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "src",
+              "type": {
+                "text": "string"
+              },
+              "description": "The path to the image to load.",
+              "attribute": "src"
+            },
+            {
+              "kind": "field",
+              "name": "alt",
+              "type": {
+                "text": "string"
+              },
+              "description": "A description of the image used by assistive devices.",
+              "attribute": "alt"
+            },
+            {
+              "kind": "field",
+              "name": "play",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Plays the animation. When this attribute is remove, the animation will pause.",
+              "attribute": "play",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "handleClick",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleLoad",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleError",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handlePlayChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleSrcChange"
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitted when the image loads successfully.",
+              "name": "nu-load",
+              "reactName": "onNuLoad",
+              "eventName": "NuLoadEvent"
+            },
+            {
+              "description": "Emitted when the image fails to load.",
+              "name": "nu-error",
+              "reactName": "onNuError",
+              "eventName": "NuErrorEvent"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "src",
+              "type": {
+                "text": "string"
+              },
+              "description": "The path to the image to load.",
+              "fieldName": "src"
+            },
+            {
+              "name": "alt",
+              "type": {
+                "text": "string"
+              },
+              "description": "A description of the image used by assistive devices.",
+              "fieldName": "alt"
+            },
+            {
+              "name": "play",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Plays the animation. When this attribute is remove, the animation will pause.",
+              "fieldName": "play"
+            }
+          ],
+          "superclass": {
+            "name": "NebulaElement",
+            "module": "/src/internal/nebula-element.js"
+          },
+          "summary": "A component for displaying animated GIFs and WEBPs that play and pause on interaction.",
+          "tagNameWithoutPrefix": "animated-image",
+          "tagName": "nu-animated-image",
+          "customElement": true,
+          "jsDoc": "/**\n * @summary A component for displaying animated GIFs and WEBPs that play and pause on interaction.\n * @documentation https://nebulaui.org/components/animated-image\n * @status stable\n * @since 2.0\n *\n * @dependency sl-icon\n *\n * @event nu-load - Emitted when the image loads successfully.\n * @event nu-error - Emitted when the image fails to load.\n *\n * @slot play-icon - Optional play icon to use instead of the default. Works best with `<nu-icon>`.\n * @slot pause-icon - Optional pause icon to use instead of the default. Works best with `<nu-icon>`.\n *\n * @part control-box - The container that surrounds the pause/play icons and provides their background.\n *\n * @cssproperty --control-box-size - The size of the icon box.\n * @cssproperty --icon-size - The size of the play/pause icons.\n */",
+          "documentation": "https://nebulaui.org/components/animated-image",
+          "status": "stable",
+          "since": "2.0",
+          "dependencies": [
+            "sl-icon"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "NuAnimatedImage",
+            "module": "components/animated-image/animated-image.js"
           }
         }
       ]
@@ -3985,379 +3985,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/copy-button/copy-button.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "NuCopyButton",
-          "cssProperties": [
-            {
-              "description": "The color to use for success feedback.",
-              "name": "--success-color"
-            },
-            {
-              "description": "The color to use for error feedback.",
-              "name": "--error-color"
-            }
-          ],
-          "cssParts": [
-            {
-              "description": "The internal `<button>` element.",
-              "name": "button"
-            },
-            {
-              "description": "The container that holds the copy icon.",
-              "name": "copy-icon"
-            },
-            {
-              "description": "The container that holds the success icon.",
-              "name": "success-icon"
-            },
-            {
-              "description": "The container that holds the error icon.",
-              "name": "error-icon"
-            },
-            {
-              "description": "The tooltip's exported `base` part.",
-              "name": "tooltip__base"
-            },
-            {
-              "description": "The tooltip's exported `popup` part.",
-              "name": "tooltip__base__popup"
-            },
-            {
-              "description": "The tooltip's exported `arrow` part.",
-              "name": "tooltip__base__arrow"
-            },
-            {
-              "description": "The tooltip's exported `body` part.",
-              "name": "tooltip__body"
-            }
-          ],
-          "slots": [
-            {
-              "description": "The icon to show in the default copy state. Works best with `<nu-icon>`.",
-              "name": "copy-icon"
-            },
-            {
-              "description": "The icon to show when the content is copied. Works best with `<nu-icon>`.",
-              "name": "success-icon"
-            },
-            {
-              "description": "The icon to show when a copy error occurs. Works best with `<nu-icon>`.",
-              "name": "error-icon"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "dependencies",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "default": "{\n    'nu-icon': NuIcon,\n    'nu-tooltip': NuTooltip\n  }"
-            },
-            {
-              "kind": "field",
-              "name": "localize",
-              "privacy": "private",
-              "readonly": true,
-              "default": "new LocalizeController(this)"
-            },
-            {
-              "kind": "field",
-              "name": "copyIcon",
-              "type": {
-                "text": "HTMLSlotElement"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "successIcon",
-              "type": {
-                "text": "HTMLSlotElement"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "errorIcon",
-              "type": {
-                "text": "HTMLSlotElement"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "tooltip",
-              "type": {
-                "text": "NuTooltip"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "isCopying",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false"
-            },
-            {
-              "kind": "field",
-              "name": "status",
-              "type": {
-                "text": "'rest' | 'success' | 'error'"
-              },
-              "default": "'rest'"
-            },
-            {
-              "kind": "field",
-              "name": "value",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "The text value to copy.",
-              "attribute": "value"
-            },
-            {
-              "kind": "field",
-              "name": "from",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "An id that references an element in the same document from which data will be copied. If both this and `value` are\npresent, this value will take precedence. By default, the target element's `textContent` will be copied. To copy an\nattribute, append the attribute name wrapped in square brackets, e.g. `from=\"el[value]\"`. To copy a property,\nappend a dot and the property name, e.g. `from=\"el.value\"`.",
-              "attribute": "from"
-            },
-            {
-              "kind": "field",
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Disables the copy button.",
-              "attribute": "disabled",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "copyLabel",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "A custom label to show in the tooltip.",
-              "attribute": "copy-label"
-            },
-            {
-              "kind": "field",
-              "name": "successLabel",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "A custom label to show in the tooltip after copying.",
-              "attribute": "success-label"
-            },
-            {
-              "kind": "field",
-              "name": "errorLabel",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "A custom label to show in the tooltip when a copy error occurs.",
-              "attribute": "error-label"
-            },
-            {
-              "kind": "field",
-              "name": "feedbackDuration",
-              "type": {
-                "text": "number"
-              },
-              "default": "1000",
-              "description": "The length of time to show feedback before restoring the default trigger.",
-              "attribute": "feedback-duration"
-            },
-            {
-              "kind": "field",
-              "name": "tooltipPlacement",
-              "type": {
-                "text": "'top' | 'right' | 'bottom' | 'left'"
-              },
-              "default": "'top'",
-              "description": "The preferred placement of the tooltip.",
-              "attribute": "tooltip-placement"
-            },
-            {
-              "kind": "field",
-              "name": "hoist",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Enable this option to prevent the tooltip from being clipped when the component is placed inside a container with\n`overflow: auto|hidden|scroll`. Hoisting uses a fixed positioning strategy that works in many, but not all,\nscenarios.",
-              "attribute": "hoist"
-            },
-            {
-              "kind": "method",
-              "name": "handleCopy",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "showStatus",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "status",
-                  "type": {
-                    "text": "'success' | 'error'"
-                  }
-                }
-              ]
-            }
-          ],
-          "events": [
-            {
-              "description": "Emitted when the data has been copied.",
-              "name": "nu-copy",
-              "reactName": "onNuCopy",
-              "eventName": "NuCopyEvent"
-            },
-            {
-              "description": "Emitted when the data could not be copied.",
-              "name": "nu-error",
-              "reactName": "onNuError",
-              "eventName": "NuErrorEvent"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "value",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "The text value to copy.",
-              "fieldName": "value"
-            },
-            {
-              "name": "from",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "An id that references an element in the same document from which data will be copied. If both this and `value` are\npresent, this value will take precedence. By default, the target element's `textContent` will be copied. To copy an\nattribute, append the attribute name wrapped in square brackets, e.g. `from=\"el[value]\"`. To copy a property,\nappend a dot and the property name, e.g. `from=\"el.value\"`.",
-              "fieldName": "from"
-            },
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Disables the copy button.",
-              "fieldName": "disabled"
-            },
-            {
-              "name": "copy-label",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "A custom label to show in the tooltip.",
-              "fieldName": "copyLabel"
-            },
-            {
-              "name": "success-label",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "A custom label to show in the tooltip after copying.",
-              "fieldName": "successLabel"
-            },
-            {
-              "name": "error-label",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "A custom label to show in the tooltip when a copy error occurs.",
-              "fieldName": "errorLabel"
-            },
-            {
-              "name": "feedback-duration",
-              "type": {
-                "text": "number"
-              },
-              "default": "1000",
-              "description": "The length of time to show feedback before restoring the default trigger.",
-              "fieldName": "feedbackDuration"
-            },
-            {
-              "name": "tooltip-placement",
-              "type": {
-                "text": "'top' | 'right' | 'bottom' | 'left'"
-              },
-              "default": "'top'",
-              "description": "The preferred placement of the tooltip.",
-              "fieldName": "tooltipPlacement"
-            },
-            {
-              "name": "hoist",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Enable this option to prevent the tooltip from being clipped when the component is placed inside a container with\n`overflow: auto|hidden|scroll`. Hoisting uses a fixed positioning strategy that works in many, but not all,\nscenarios.",
-              "fieldName": "hoist"
-            }
-          ],
-          "superclass": {
-            "name": "NebulaElement",
-            "module": "/src/internal/nebula-element.js"
-          },
-          "summary": "Copies text data to the clipboard when the user clicks the trigger.",
-          "tagNameWithoutPrefix": "copy-button",
-          "tagName": "nu-copy-button",
-          "customElement": true,
-          "jsDoc": "/**\n * @summary Copies text data to the clipboard when the user clicks the trigger.\n * @documentation https://nebulaui.org/components/copy\n * @status experimental\n * @since 2.7\n *\n * @dependency sl-icon\n * @dependency sl-tooltip\n *\n * @event nu-copy - Emitted when the data has been copied.\n * @event nu-error - Emitted when the data could not be copied.\n *\n * @slot copy-icon - The icon to show in the default copy state. Works best with `<nu-icon>`.\n * @slot success-icon - The icon to show when the content is copied. Works best with `<nu-icon>`.\n * @slot error-icon - The icon to show when a copy error occurs. Works best with `<nu-icon>`.\n *\n * @csspart button - The internal `<button>` element.\n * @csspart copy-icon - The container that holds the copy icon.\n * @csspart success-icon - The container that holds the success icon.\n * @csspart error-icon - The container that holds the error icon.\n * @csspart tooltip__base - The tooltip's exported `base` part.\n * @csspart tooltip__base__popup - The tooltip's exported `popup` part.\n * @csspart tooltip__base__arrow - The tooltip's exported `arrow` part.\n * @csspart tooltip__body - The tooltip's exported `body` part.\n *\n * @cssproperty --success-color - The color to use for success feedback.\n * @cssproperty --error-color - The color to use for error feedback.\n *\n * @animation copy.in - The animation to use when feedback icons animate in.\n * @animation copy.out - The animation to use when feedback icons animate out.\n */",
-          "documentation": "https://nebulaui.org/components/copy",
-          "status": "experimental",
-          "since": "2.7",
-          "dependencies": [
-            "sl-icon",
-            "sl-tooltip"
-          ],
-          "animations": [
-            {
-              "name": "copy.in",
-              "description": "The animation to use when feedback icons animate in."
-            },
-            {
-              "name": "copy.out",
-              "description": "The animation to use when feedback icons animate out."
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "NuCopyButton",
-            "module": "components/copy-button/copy-button.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "components/color-picker/color-picker.js",
       "declarations": [
         {
@@ -5362,6 +4989,379 @@
           "declaration": {
             "name": "NuColorPicker",
             "module": "components/color-picker/color-picker.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/copy-button/copy-button.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "NuCopyButton",
+          "cssProperties": [
+            {
+              "description": "The color to use for success feedback.",
+              "name": "--success-color"
+            },
+            {
+              "description": "The color to use for error feedback.",
+              "name": "--error-color"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "The internal `<button>` element.",
+              "name": "button"
+            },
+            {
+              "description": "The container that holds the copy icon.",
+              "name": "copy-icon"
+            },
+            {
+              "description": "The container that holds the success icon.",
+              "name": "success-icon"
+            },
+            {
+              "description": "The container that holds the error icon.",
+              "name": "error-icon"
+            },
+            {
+              "description": "The tooltip's exported `base` part.",
+              "name": "tooltip__base"
+            },
+            {
+              "description": "The tooltip's exported `popup` part.",
+              "name": "tooltip__base__popup"
+            },
+            {
+              "description": "The tooltip's exported `arrow` part.",
+              "name": "tooltip__base__arrow"
+            },
+            {
+              "description": "The tooltip's exported `body` part.",
+              "name": "tooltip__body"
+            }
+          ],
+          "slots": [
+            {
+              "description": "The icon to show in the default copy state. Works best with `<nu-icon>`.",
+              "name": "copy-icon"
+            },
+            {
+              "description": "The icon to show when the content is copied. Works best with `<nu-icon>`.",
+              "name": "success-icon"
+            },
+            {
+              "description": "The icon to show when a copy error occurs. Works best with `<nu-icon>`.",
+              "name": "error-icon"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "dependencies",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{\n    'nu-icon': NuIcon,\n    'nu-tooltip': NuTooltip\n  }"
+            },
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new LocalizeController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "copyIcon",
+              "type": {
+                "text": "HTMLSlotElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "successIcon",
+              "type": {
+                "text": "HTMLSlotElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "errorIcon",
+              "type": {
+                "text": "HTMLSlotElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "tooltip",
+              "type": {
+                "text": "NuTooltip"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "isCopying",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "status",
+              "type": {
+                "text": "'rest' | 'success' | 'error'"
+              },
+              "default": "'rest'"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The text value to copy.",
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "from",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "An id that references an element in the same document from which data will be copied. If both this and `value` are\npresent, this value will take precedence. By default, the target element's `textContent` will be copied. To copy an\nattribute, append the attribute name wrapped in square brackets, e.g. `from=\"el[value]\"`. To copy a property,\nappend a dot and the property name, e.g. `from=\"el.value\"`.",
+              "attribute": "from"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Disables the copy button.",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "copyLabel",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "A custom label to show in the tooltip.",
+              "attribute": "copy-label"
+            },
+            {
+              "kind": "field",
+              "name": "successLabel",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "A custom label to show in the tooltip after copying.",
+              "attribute": "success-label"
+            },
+            {
+              "kind": "field",
+              "name": "errorLabel",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "A custom label to show in the tooltip when a copy error occurs.",
+              "attribute": "error-label"
+            },
+            {
+              "kind": "field",
+              "name": "feedbackDuration",
+              "type": {
+                "text": "number"
+              },
+              "default": "1000",
+              "description": "The length of time to show feedback before restoring the default trigger.",
+              "attribute": "feedback-duration"
+            },
+            {
+              "kind": "field",
+              "name": "tooltipPlacement",
+              "type": {
+                "text": "'top' | 'right' | 'bottom' | 'left'"
+              },
+              "default": "'top'",
+              "description": "The preferred placement of the tooltip.",
+              "attribute": "tooltip-placement"
+            },
+            {
+              "kind": "field",
+              "name": "hoist",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Enable this option to prevent the tooltip from being clipped when the component is placed inside a container with\n`overflow: auto|hidden|scroll`. Hoisting uses a fixed positioning strategy that works in many, but not all,\nscenarios.",
+              "attribute": "hoist"
+            },
+            {
+              "kind": "method",
+              "name": "handleCopy",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "showStatus",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "status",
+                  "type": {
+                    "text": "'success' | 'error'"
+                  }
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitted when the data has been copied.",
+              "name": "nu-copy",
+              "reactName": "onNuCopy",
+              "eventName": "NuCopyEvent"
+            },
+            {
+              "description": "Emitted when the data could not be copied.",
+              "name": "nu-error",
+              "reactName": "onNuError",
+              "eventName": "NuErrorEvent"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The text value to copy.",
+              "fieldName": "value"
+            },
+            {
+              "name": "from",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "An id that references an element in the same document from which data will be copied. If both this and `value` are\npresent, this value will take precedence. By default, the target element's `textContent` will be copied. To copy an\nattribute, append the attribute name wrapped in square brackets, e.g. `from=\"el[value]\"`. To copy a property,\nappend a dot and the property name, e.g. `from=\"el.value\"`.",
+              "fieldName": "from"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Disables the copy button.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "copy-label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "A custom label to show in the tooltip.",
+              "fieldName": "copyLabel"
+            },
+            {
+              "name": "success-label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "A custom label to show in the tooltip after copying.",
+              "fieldName": "successLabel"
+            },
+            {
+              "name": "error-label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "A custom label to show in the tooltip when a copy error occurs.",
+              "fieldName": "errorLabel"
+            },
+            {
+              "name": "feedback-duration",
+              "type": {
+                "text": "number"
+              },
+              "default": "1000",
+              "description": "The length of time to show feedback before restoring the default trigger.",
+              "fieldName": "feedbackDuration"
+            },
+            {
+              "name": "tooltip-placement",
+              "type": {
+                "text": "'top' | 'right' | 'bottom' | 'left'"
+              },
+              "default": "'top'",
+              "description": "The preferred placement of the tooltip.",
+              "fieldName": "tooltipPlacement"
+            },
+            {
+              "name": "hoist",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Enable this option to prevent the tooltip from being clipped when the component is placed inside a container with\n`overflow: auto|hidden|scroll`. Hoisting uses a fixed positioning strategy that works in many, but not all,\nscenarios.",
+              "fieldName": "hoist"
+            }
+          ],
+          "superclass": {
+            "name": "NebulaElement",
+            "module": "/src/internal/nebula-element.js"
+          },
+          "summary": "Copies text data to the clipboard when the user clicks the trigger.",
+          "tagNameWithoutPrefix": "copy-button",
+          "tagName": "nu-copy-button",
+          "customElement": true,
+          "jsDoc": "/**\n * @summary Copies text data to the clipboard when the user clicks the trigger.\n * @documentation https://nebulaui.org/components/copy\n * @status experimental\n * @since 2.7\n *\n * @dependency sl-icon\n * @dependency sl-tooltip\n *\n * @event nu-copy - Emitted when the data has been copied.\n * @event nu-error - Emitted when the data could not be copied.\n *\n * @slot copy-icon - The icon to show in the default copy state. Works best with `<nu-icon>`.\n * @slot success-icon - The icon to show when the content is copied. Works best with `<nu-icon>`.\n * @slot error-icon - The icon to show when a copy error occurs. Works best with `<nu-icon>`.\n *\n * @csspart button - The internal `<button>` element.\n * @csspart copy-icon - The container that holds the copy icon.\n * @csspart success-icon - The container that holds the success icon.\n * @csspart error-icon - The container that holds the error icon.\n * @csspart tooltip__base - The tooltip's exported `base` part.\n * @csspart tooltip__base__popup - The tooltip's exported `popup` part.\n * @csspart tooltip__base__arrow - The tooltip's exported `arrow` part.\n * @csspart tooltip__body - The tooltip's exported `body` part.\n *\n * @cssproperty --success-color - The color to use for success feedback.\n * @cssproperty --error-color - The color to use for error feedback.\n *\n * @animation copy.in - The animation to use when feedback icons animate in.\n * @animation copy.out - The animation to use when feedback icons animate out.\n */",
+          "documentation": "https://nebulaui.org/components/copy",
+          "status": "experimental",
+          "since": "2.7",
+          "dependencies": [
+            "sl-icon",
+            "sl-tooltip"
+          ],
+          "animations": [
+            {
+              "name": "copy.in",
+              "description": "The animation to use when feedback icons animate in."
+            },
+            {
+              "name": "copy.out",
+              "description": "The animation to use when feedback icons animate out."
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "NuCopyButton",
+            "module": "components/copy-button/copy-button.js"
           }
         }
       ]
@@ -11097,6 +11097,206 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/mutation-observer/mutation-observer.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "NuMutationObserver",
+          "slots": [
+            {
+              "description": "The content to watch for mutations.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "mutationObserver",
+              "type": {
+                "text": "MutationObserver"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "attr",
+              "type": {
+                "text": "string"
+              },
+              "description": "Watches for changes to attributes. To watch only specific attributes, separate them by a space, e.g.\n`attr=\"class id title\"`. To watch all attributes, use `*`.",
+              "attribute": "attr",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "attrOldValue",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicates whether or not the attribute's previous value should be recorded when monitoring changes.",
+              "attribute": "attr-old-value",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "charData",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Watches for changes to the character data contained within the node.",
+              "attribute": "char-data",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "charDataOldValue",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicates whether or not the previous value of the node's text should be recorded.",
+              "attribute": "char-data-old-value",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "childList",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Watches for the addition or removal of new child nodes.",
+              "attribute": "child-list",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Disables the observer.",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "handleMutation",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "startObserver",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "stopObserver",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleDisabledChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleChange"
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitted when a mutation occurs.",
+              "name": "nu-mutation",
+              "reactName": "onNuMutation",
+              "eventName": "NuMutationEvent"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "attr",
+              "type": {
+                "text": "string"
+              },
+              "description": "Watches for changes to attributes. To watch only specific attributes, separate them by a space, e.g.\n`attr=\"class id title\"`. To watch all attributes, use `*`.",
+              "fieldName": "attr"
+            },
+            {
+              "name": "attr-old-value",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicates whether or not the attribute's previous value should be recorded when monitoring changes.",
+              "fieldName": "attrOldValue"
+            },
+            {
+              "name": "char-data",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Watches for changes to the character data contained within the node.",
+              "fieldName": "charData"
+            },
+            {
+              "name": "char-data-old-value",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicates whether or not the previous value of the node's text should be recorded.",
+              "fieldName": "charDataOldValue"
+            },
+            {
+              "name": "child-list",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Watches for the addition or removal of new child nodes.",
+              "fieldName": "childList"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Disables the observer.",
+              "fieldName": "disabled"
+            }
+          ],
+          "superclass": {
+            "name": "NebulaElement",
+            "module": "/src/internal/nebula-element.js"
+          },
+          "summary": "The Mutation Observer component offers a thin, declarative interface to the [`MutationObserver API`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver).",
+          "tagNameWithoutPrefix": "mutation-observer",
+          "tagName": "nu-mutation-observer",
+          "customElement": true,
+          "jsDoc": "/**\n * @summary The Mutation Observer component offers a thin, declarative interface to the [`MutationObserver API`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver).\n * @documentation https://nebulaui.org/components/mutation-observer\n * @status stable\n * @since 2.0\n *\n * @event nu-mutation - Emitted when a mutation occurs.\n *\n * @slot - The content to watch for mutations.\n */",
+          "documentation": "https://nebulaui.org/components/mutation-observer",
+          "status": "stable",
+          "since": "2.0"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "NuMutationObserver",
+            "module": "components/mutation-observer/mutation-observer.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/option/option.js",
       "declarations": [
         {
@@ -11294,206 +11494,6 @@
           "declaration": {
             "name": "NuOption",
             "module": "components/option/option.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/mutation-observer/mutation-observer.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "NuMutationObserver",
-          "slots": [
-            {
-              "description": "The content to watch for mutations.",
-              "name": ""
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "mutationObserver",
-              "type": {
-                "text": "MutationObserver"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "attr",
-              "type": {
-                "text": "string"
-              },
-              "description": "Watches for changes to attributes. To watch only specific attributes, separate them by a space, e.g.\n`attr=\"class id title\"`. To watch all attributes, use `*`.",
-              "attribute": "attr",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "attrOldValue",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Indicates whether or not the attribute's previous value should be recorded when monitoring changes.",
-              "attribute": "attr-old-value",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "charData",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Watches for changes to the character data contained within the node.",
-              "attribute": "char-data",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "charDataOldValue",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Indicates whether or not the previous value of the node's text should be recorded.",
-              "attribute": "char-data-old-value",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "childList",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Watches for the addition or removal of new child nodes.",
-              "attribute": "child-list",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Disables the observer.",
-              "attribute": "disabled",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "handleMutation",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "startObserver",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "stopObserver",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "handleDisabledChange"
-            },
-            {
-              "kind": "method",
-              "name": "handleChange"
-            }
-          ],
-          "events": [
-            {
-              "description": "Emitted when a mutation occurs.",
-              "name": "nu-mutation",
-              "reactName": "onNuMutation",
-              "eventName": "NuMutationEvent"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "attr",
-              "type": {
-                "text": "string"
-              },
-              "description": "Watches for changes to attributes. To watch only specific attributes, separate them by a space, e.g.\n`attr=\"class id title\"`. To watch all attributes, use `*`.",
-              "fieldName": "attr"
-            },
-            {
-              "name": "attr-old-value",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Indicates whether or not the attribute's previous value should be recorded when monitoring changes.",
-              "fieldName": "attrOldValue"
-            },
-            {
-              "name": "char-data",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Watches for changes to the character data contained within the node.",
-              "fieldName": "charData"
-            },
-            {
-              "name": "char-data-old-value",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Indicates whether or not the previous value of the node's text should be recorded.",
-              "fieldName": "charDataOldValue"
-            },
-            {
-              "name": "child-list",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Watches for the addition or removal of new child nodes.",
-              "fieldName": "childList"
-            },
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Disables the observer.",
-              "fieldName": "disabled"
-            }
-          ],
-          "superclass": {
-            "name": "NebulaElement",
-            "module": "/src/internal/nebula-element.js"
-          },
-          "summary": "The Mutation Observer component offers a thin, declarative interface to the [`MutationObserver API`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver).",
-          "tagNameWithoutPrefix": "mutation-observer",
-          "tagName": "nu-mutation-observer",
-          "customElement": true,
-          "jsDoc": "/**\n * @summary The Mutation Observer component offers a thin, declarative interface to the [`MutationObserver API`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver).\n * @documentation https://nebulaui.org/components/mutation-observer\n * @status stable\n * @since 2.0\n *\n * @event nu-mutation - Emitted when a mutation occurs.\n *\n * @slot - The content to watch for mutations.\n */",
-          "documentation": "https://nebulaui.org/components/mutation-observer",
-          "status": "stable",
-          "since": "2.0"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "NuMutationObserver",
-            "module": "components/mutation-observer/mutation-observer.js"
           }
         }
       ]
