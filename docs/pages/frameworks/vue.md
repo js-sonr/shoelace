@@ -82,7 +82,7 @@ Once you have configured your application for custom elements, you should be abl
   }
 
   sl-input {
-    margin: var(--sl-spacing-large) 0;
+    margin: var(--nu-spacing-large) 0;
   }
 </style>
 ```

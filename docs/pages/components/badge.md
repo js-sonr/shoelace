@@ -211,8 +211,8 @@ const App = () => (
   <SlMenu
     style={{
       maxWidth: '240px',
-      border: 'solid 1px var(--sl-panel-border-color)',
-      borderRadius: 'var(--sl-border-radius-medium)'
+      border: 'solid 1px var(--nu-panel-border-color)',
+      borderRadius: 'var(--nu-border-radius-medium)'
     }}
   >
     <SlMenuLabel>Messages</SlMenuLabel>

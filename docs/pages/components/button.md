@@ -510,8 +510,8 @@ This example demonstrates how to style buttons using a custom class. This is the
 <style>
   sl-button.pink::part(base) {
     /* Set design tokens for height and border width */
-    --sl-input-height-medium: 48px;
-    --sl-input-border-width: 4px;
+    --nu-input-height-medium: 48px;
+    --nu-input-border-width: 4px;
 
     border-radius: 0;
     background-color: #ff1493;
@@ -522,7 +522,7 @@ This example demonstrates how to style buttons using a custom class. This is the
     color: white;
     font-size: 1.125rem;
     box-shadow: 0 2px 10px #0002;
-    transition: var(--sl-transition-medium) transform ease, var(--sl-transition-medium) border ease;
+    transition: var(--nu-transition-medium) transform ease, var(--nu-transition-medium) border ease;
   }
 
   sl-button.pink::part(base):hover {

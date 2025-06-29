@@ -1,13 +1,14 @@
-import { property, state, query } from 'lit/decorators.js';
+import { arc, pie } from 'd3';
 import { html, svg } from 'lit';
+// import { LocalizeController } from '../../utilities/localize.js';
+import { property, query, state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
-import { LocalizeController } from '../../utilities/localize.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import NebulaElement from '../../internal/nebula-element.js';
 import styles from './pie-chart.styles.js';
 import type { CSSResultGroup } from 'lit';
-import { pie, arc, PieArcDatum } from 'd3';
+import type { PieArcDatum } from 'd3';
 
 export interface PieChartDataPoint {
   name: string;
@@ -48,7 +49,7 @@ export interface PieChartDataPoint {
 export default class NuPieChart extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
-  private readonly localize = new LocalizeController(this);
+  // private readonly localize = new LocalizeController(this);
 
   @query('svg') svg: SVGElement;
 
@@ -83,7 +84,7 @@ export default class NuPieChart extends NebulaElement {
   @property({ attribute: 'center-value' }) centerValue = '';
 
   /** Whether to animate the chart on load. */
-  @property({ type: Boolean }) animate = true;
+  @property({ type: Boolean, attribute: 'animate-chart' }) animateChart = true;
 
   @state() private parsedData: PieChartDataPoint[] = [];
 
@@ -95,12 +96,19 @@ export default class NuPieChart extends NebulaElement {
 
   private parseData() {
     try {
-      const rawData = typeof this.data === 'string' ? JSON.parse(this.data) : this.data;
-      this.parsedData = rawData.map((d: any) => ({
-        name: String(d.name || d.key || d.label),
-        value: Number(d.value),
-        color: d.color
-      }));
+      const rawData: unknown = typeof this.data === 'string' ? JSON.parse(this.data) : this.data;
+      if (!Array.isArray(rawData)) {
+        this.parsedData = [];
+        return;
+      }
+      this.parsedData = rawData.map((d: unknown) => {
+        const item = d as Record<string, unknown>;
+        return {
+          name: String(item.name || item.key || item.label || ''),
+          value: Number(item.value || 0),
+          color: typeof item.color === 'string' ? item.color : undefined
+        };
+      });
     } catch (error) {
       console.error('Failed to parse chart data:', error);
       this.parsedData = [];
@@ -177,7 +185,8 @@ export default class NuPieChart extends NebulaElement {
       <!-- Slices -->
       ${arcs.map((d, i) => {
         const angle = this.computeAngle(d);
-        let centroid = arcLabel.centroid(d);
+        const centroid = arcLabel.centroid(d);
+        if (!centroid) return '';
         
         // Adjust label position based on slice location
         if (d.endAngle > Math.PI) {
@@ -233,7 +242,7 @@ export default class NuPieChart extends NebulaElement {
       detail: {
         data: d.data,
         index,
-        value: d.value,
+        value: d.value as number,
         startAngle: d.startAngle,
         endAngle: d.endAngle
       }
@@ -245,7 +254,7 @@ export default class NuPieChart extends NebulaElement {
       detail: {
         data: d.data,
         index,
-        value: d.value,
+        value: d.value as number,
         startAngle: d.startAngle,
         endAngle: d.endAngle
       }

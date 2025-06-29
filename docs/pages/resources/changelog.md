@@ -402,8 +402,8 @@ This release includes a complete rewrite of `<nu-select>` to improve accessibili
 ## 2.0.0-beta.87
 
 - 🚨 BREAKING: changed the default size of medium checkboxes, radios, and switches to 18px instead of 16px
-- 🚨 BREAKING: renamed the `--sl-toggle-size` design token to `--sl-toggle-size-medium`
-- Added the `--sl-toggle-size-small` and `--sl-toggle-size-large` design tokens
+- 🚨 BREAKING: renamed the `--nu-toggle-size` design token to `--nu-toggle-size-medium`
+- Added the `--nu-toggle-size-small` and `--nu-toggle-size-large` design tokens
 - Added the `size` attribute to `<nu-checkbox>`, `<nu-radio>`, and `<nu-switch>` [#1071]
 - Added the `sl-input` event to `<nu-checkbox>`, `<nu-color-picker>`, `<nu-radio>`, `<nu-range>`, and `<nu-switch>`
 - Added HSV format to `<nu-color-picker>` [#1072]
@@ -474,7 +474,7 @@ This release includes a complete rewrite of `<nu-select>` to improve accessibili
   [#956]
 - Added translations for Hungarian, Turkish, English (United Kingdom) and German (Austria) [#982]
 - Added `--indicator-transition-duration` custom property to `<nu-progress-ring>` [#986]
-- Added `--sl-input-required-content-color` custom property to all form controls [#948]
+- Added `--nu-input-required-content-color` custom property to all form controls [#948]
 - Added the ability to cancel `sl-show` and `sl-hide` events in `<nu-details>` [#993]
 - Added `focus()` and `blur()` methods to `<nu-radio-button>`
 - Added `stepUp()` and `stepDown()` methods to `<nu-input>` and `<nu-range>` [#1013]
@@ -643,7 +643,7 @@ To upgrade to this version, you will need to rework your radio controls by movin
 ## 2.0.0-beta.77
 
 - Added styles to required form controls so they show an asterisk next to the label by default
-- Added the `--sl-input-required-content` design token
+- Added the `--nu-input-required-content` design token
 - Added the `required` attribute to `<nu-radio-group>` and fixed constraint validation logic to support custom validation
 - Added the `checked-icon` part to `<nu-menu-item>`
 - Added the `no-spin-buttons` attribute to `<nu-input type="number">` [#798]
@@ -654,7 +654,7 @@ To upgrade to this version, you will need to rework your radio controls by movin
 - Fixed a bug in `<nu-color-picker>` where values were logged to the console when using the keyboard
 - Fixed a bug in `<nu-input>` where password controls would try to autocorrect/autocomplete/autocapitalize when the password is visible
 - Fixed label alignment in `<nu-checkbox>` and `<nu-radio>` so they align to the top of the control instead of the center when wrapping
-- Fixed labels in `<nu-checkbox>` and `<nu-radio>` so they use the `--sl-input-label-color` design token
+- Fixed labels in `<nu-checkbox>` and `<nu-radio>` so they use the `--nu-input-label-color` design token
 - Improved performance of the tabbable utility which can prevent the browser from temporarily locking up in focus traps [#800]
 - Updated the `fieldset` attribute so it reflects in `<nu-radio-group>`
 
@@ -688,9 +688,9 @@ To upgrade to this version, you will need to rework your radio controls by movin
 ## 2.0.0-beta.74
 
 - 🚨 BREAKING: reworked focus rings to use outlines instead of box shadows
-  - Removed the `--sl-focus-ring-alpha` design token
-  - Refactored `--sl-focus-ring` to be an `outline` property instead of a `box-shadow` property
-  - Added `--sl-focus-ring-color`, `--sl-focus-ring-style`, and `--sl-focus-ring-offset`
+  - Removed the `--nu-focus-ring-alpha` design token
+  - Refactored `--nu-focus-ring` to be an `outline` property instead of a `box-shadow` property
+  - Added `--nu-focus-ring-color`, `--nu-focus-ring-style`, and `--nu-focus-ring-offset`
 - 🚨 BREAKING: removed `variant` from `<nu-radio-button>`
 - Added `sl-label-change` event to `<nu-menu-item>`
 - Added `blur()`, `click()`, and `focus()` methods as well as `sl-blur` and `sl-focus` events to `<nu-icon-button>` [#730]
@@ -784,7 +784,7 @@ To upgrade to this version, you will need to rework your radio controls by movin
 - Improved checkmark size and positioning in `<nu-menu-item>`
 - Improved accessibility in form controls that have help text so they're announced correctly in various screen readers
 - Removed feature detection for `focus({ preventScroll })` since it no longer works in Safari
-- Removed the `--sl-tooltip-arrow-start-end-offset` design token
+- Removed the `--nu-tooltip-arrow-start-end-offset` design token
 - Removed the `pattern` attribute from `<nu-textarea>` as it was documented incorrectly and never supported
 - Replaced Popper positioning dependency with Floating UI in `<nu-dropdown>` and `<nu-tooltip>`
 
@@ -907,18 +907,18 @@ If you're using color tokens in your own stylesheet, simply remove the `rgb()` t
 ```css
 .your-styles {
   /* change this */
-  color: rgb(var(--sl-color-primary-500));
+  color: rgb(var(--nu-color-primary-500));
 
   /* to this */
-  color: var(--sl-color-primary-500);
+  color: var(--nu-color-primary-500);
 }
 ```
 
 Thank you for your help and patience with testing Nebula. I promise, we're not far from a stable release!
 
 - 🚨 BREAKING: removed blue gray, cool gray, true gray, and warm gray color palettes
-- 🚨 BREAKING: removed `--sl-focus-ring-color`, and `--sl-focus-ring-alpha` (use `--sl-focus-ring` instead)
-- 🚨 BREAKING: removed `--sl-surface-base` and `--sl-surface-base-alt` tokens (use the neutral palette instead)
+- 🚨 BREAKING: removed `--nu-focus-ring-color`, and `--nu-focus-ring-alpha` (use `--nu-focus-ring` instead)
+- 🚨 BREAKING: removed `--nu-surface-base` and `--nu-surface-base-alt` tokens (use the neutral palette instead)
 - Added experimental `<nu-visually-hidden>` component
 - Added `clear-icon` slot to `<nu-select>` [#591]
 - Fixed a bug in `<nu-progress-bar>` where the label would show in the default slot
@@ -1000,8 +1000,8 @@ Nebula doesn't have a lot of dependencies, but this release unbundles most of th
 - 🚨 BREAKING: switched the default `type` of `<nu-tag>` from `primary` to `neutral`
 - Added the experimental `<nu-mutation-observer>` component
 - Added the `<nu-divider>` component
-- Added `--sl-color-neutral-0` and `--sl-color-neutral-50` as early surface tokens to improve the appearance of alert, card, and panels in dark mode
-- Added the `--sl-panel-border-width` design token
+- Added `--nu-color-neutral-0` and `--nu-color-neutral-50` as early surface tokens to improve the appearance of alert, card, and panels in dark mode
+- Added the `--nu-panel-border-width` design token
 - Added missing background color to `<nu-details>`
 - Added the `--padding` custom property to `<nu-tab-panel>`
 - Added the `outline` variation to `<nu-button>` [#522]
@@ -1031,13 +1031,13 @@ Nebula doesn't have a lot of dependencies, but this release unbundles most of th
 
 ## 2.0.0-beta.51
 
-A number of users had trouble counting characters that repeat, so this release improves design token patterns so that "t-shirt sizes" are more accessible. For example, `--sl-font-size-xxx-large` has become `--sl-font-size-3x-large`. This change applies to all design tokens that use this scale.
+A number of users had trouble counting characters that repeat, so this release improves design token patterns so that "t-shirt sizes" are more accessible. For example, `--nu-font-size-xxx-large` has become `--nu-font-size-3x-large`. This change applies to all design tokens that use this scale.
 
 - 🚨 BREAKING: all t-shirt size design tokens now use `2x`, `3x`, `4x` instead of `xx`, `xxx`, `xxxx`
-- Added missing `--sl-focus-ring-*` tokens to dark theme
+- Added missing `--nu-focus-ring-*` tokens to dark theme
 - Added an "Importing" section to all components with copy/paste code to make cherry picking easier
 - Improved the documentation search with a custom plugin powered by [Lunr](https://lunrjs.com/)
-- Improved the `--sl-shadow-x-small` elevation
+- Improved the `--nu-shadow-x-small` elevation
 - Improved visibility of elevations and overlays in dark theme
 - Reduced the size of `<nu-color-picker>` slightly to better accommodate mobile devices
 - Removed `<nu-icon>` dependency from `<nu-color-picker>` and improved the copy animation
@@ -1045,23 +1045,23 @@ A number of users had trouble counting characters that repeat, so this release i
 ## 2.0.0-beta.50
 
 - Added `<nu-breadcrumb>` and `<nu-breadcrumb-item>` components
-- Added `--sl-letter-spacing-denser`, `--sl-letter-spacing-looser`, `--sl-line-height-denser`, and `--sl-line-height-looser` design tokens
+- Added `--nu-letter-spacing-denser`, `--nu-letter-spacing-looser`, `--nu-line-height-denser`, and `--nu-line-height-looser` design tokens
 - Fixed a bug where form controls would error out when the value was set to `undefined` [#513]
 
 ## 2.0.0-beta.49
 
 This release changes the way focus states are applied to elements. In browsers that support [`:focus-visible`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible), it will be used. In unsupportive browsers ([currently only Safari](https://caniuse.com/mdn-css_selectors_focus-visible)), `:focus` will be used instead. This means the browser will determine whether a focus ring should be shown based on how the user interacts with the page.
 
-This release also fixes a critical bug in the color scale where `--sl-color-neutral-0` and `--sl-color-neutral-1000` were reversed.
+This release also fixes a critical bug in the color scale where `--nu-color-neutral-0` and `--nu-color-neutral-1000` were reversed.
 
-- 🚨 BREAKING: fixed a bug where `--sl-color-neutral-0` and `--sl-color-neutral-1000` were inverted (swap them to update)
+- 🚨 BREAKING: fixed a bug where `--nu-color-neutral-0` and `--nu-color-neutral-1000` were inverted (swap them to update)
 - 🚨 BREAKING: removed the `no-fieldset` property from `<nu-radio-group>` (fieldsets are now hidden by default; use `fieldset` to show them)
 - 🚨 BREAKING: removed `--focus-ring` custom property from `<nu-input>`, `<nu-select>`, `<nu-tab>` for consistency with other form controls
 - Added `--swatch-size` custom property to `<nu-color-picker>`
 - Added `date` to `<nu-input>` as a supported `type`
-- Added the `--sl-focus-ring` design token for a more convenient way to apply focus ring styles
+- Added the `--nu-focus-ring` design token for a more convenient way to apply focus ring styles
 - Adjusted elevation tokens to use neutral in light mode and black in dark mode
-- Adjusted `--sl-overlay-background-color` in dark theme to be black instead of gray
+- Adjusted `--nu-overlay-background-color` in dark theme to be black instead of gray
 - Fixed a bug in `<nu-color-picker>` where the opacity slider wasn't showing the current color
 - Fixed a bug where Edge in Windows would show the native password toggle next to the custom password toggle [#508]
 - Fixed a bug where pressing up/down in `<nu-tab-group>` didn't select the next/previous tab in vertical placements
@@ -1083,7 +1083,7 @@ Previously, color tokens were in hexadecimal format. Now, Nebula now uses an `R 
 ```css
 .example {
   /* rgb() is required now */
-  color: var(--sl-color-neutral-500);
+  color: var(--nu-color-neutral-500);
 }
 ```
 
@@ -1092,23 +1092,23 @@ This is more verbose than previous versions, but it has the advantage of letting
 ```css
 .example-with-alpha {
   /* easily adjust opacity for any color token */
-  color: rgb(var(--sl-color-neutral-500) / 50%);
+  color: rgb(var(--nu-color-neutral-500) / 50%);
 }
 ```
 
 This change applies to all design tokens that implement a color. Refer to the [color tokens](/tokens/color) page for more details.
 
 - 🚨 BREAKING: all design tokens that implement colors have been converted to `R G B` and must be used with the `rgb()` function
-- 🚨 BREAKING: removed `--sl-color-black|white` color tokens (use `--sl-color-neutral-0|1000` instead)
-- 🚨 BREAKING: removed `--sl-color-primary|success|warning|info|danger-text` design tokens (use theme or primitive colors instead)
+- 🚨 BREAKING: removed `--nu-color-black|white` color tokens (use `--nu-color-neutral-0|1000` instead)
+- 🚨 BREAKING: removed `--nu-color-primary|success|warning|info|danger-text` design tokens (use theme or primitive colors instead)
 - 🚨 BREAKING: removed `info` variant from `<nu-alert>`, `<nu-badge>`, `<nu-button>`, and `<nu-tag>` (use `neutral` instead)
-- 🚨 BREAKING: removed `--sl-color-info-*` design token (use `--sl-color-neutral-*` instead)
+- 🚨 BREAKING: removed `--nu-color-info-*` design token (use `--nu-color-neutral-*` instead)
 - 🚨 BREAKING: renamed `dist/themes/base.css` to `dist/themes/light.css`
-- 🚨 BREAKING: removed `--sl-focus-ring-color-primary` tokens (use color tokens and `--sl-focus-ring-width|alpha` instead)
+- 🚨 BREAKING: removed `--nu-focus-ring-color-primary` tokens (use color tokens and `--nu-focus-ring-width|alpha` instead)
 - 🚨 BREAKING: removed `--tabs-border-color` from `<nu-tab-group>` (use `--track-color` instead)
 - 🚨 BREAKING: changed the default value for `effect` to `none` in `<nu-skeleton>` (use `sheen` to restore the original behavior)
 - Added new color primitives to the base set of design tokens
-- Added `--sl-color-*-950` swatches to all color palettes
+- Added `--nu-color-*-950` swatches to all color palettes
 - Added a console error that appears when menu items have duplicate values in `<nu-select>`
 - Added CodePen link to code examples
 - Added `prefix` and `suffix` slots to `<nu-select>` [#501]
@@ -1269,7 +1269,7 @@ The most elegant solution I found was to use the [Web Animations API](https://de
 - Added `<nu-radio-group>` component [#218]
 - Added `--header-spacing`, `--body-spacing`, and `--footer-spacing` custom properties to `<nu-drawer>` and `<nu-dialog>` [#409]
 - Fixed a bug where `<nu-menu-item>` prefix and suffix slots wouldn't always receive the correct spacing
-- Fixed a bug where `<nu-badge>` used `--sl-color-white` instead of the correct design tokens [#407]
+- Fixed a bug where `<nu-badge>` used `--nu-color-white` instead of the correct design tokens [#407]
 - Fixed a bug in `<nu-dialog>` and `<nu-drawer>` where the escape key would cause parent components to close
 - Fixed a race condition bug in `<nu-icon>` [#410]
 - Improved focus trap behavior in `<nu-dialog>` and `<nu-drawer>`
@@ -1619,7 +1619,7 @@ The following pages demonstrate why this change was necessary.
 - Added keyboard support to the preview resizer in the docs
 - Fixed a bug where the `aria-selected` state was incorrect in `<nu-menu-item>`
 - Fixed a bug where custom properties applied to `<nu-tooltip>` didn't affect show/hide transitions
-- Fixed a bug where `--sl-input-color-*` custom properties had no effect on `<nu-input>` and `<nu-textarea>`
+- Fixed a bug where `--nu-input-color-*` custom properties had no effect on `<nu-input>` and `<nu-textarea>`
 - Refactored `<nu-dropdown>` and `<nu-tooltip>` to use positioner elements so panels/tooltips can be customized easier
 
 ## 2.0.0-beta.15
@@ -1637,7 +1637,7 @@ The following pages demonstrate why this change was necessary.
 ## 2.0.0-beta.14
 
 - Added dark theme
-- Added `--sl-panel-background-color` and `--sl-panel-border-color` tokens
+- Added `--nu-panel-background-color` and `--nu-panel-border-color` tokens
 - Added `--tabs-border-color` custom property to `<nu-tab-group>`
 - Added `--track-color` custom property to `<nu-range>`
 - Added `tag` part to `<nu-select>`

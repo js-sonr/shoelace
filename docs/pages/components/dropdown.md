@@ -355,8 +355,8 @@ import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 
 const css = `
   .dropdown-hoist {
-    border: solid 2px var(--sl-panel-border-color);
-    padding: var(--sl-spacing-medium);
+    border: solid 2px var(--nu-panel-border-color);
+    padding: var(--nu-spacing-medium);
     overflow: hidden;
   }
 `;
@@ -428,8 +428,8 @@ Dropdown panels will be clipped if they're inside a container that has `overflow
 <style>
   .dropdown-hoist {
     position: relative;
-    border: solid 2px var(--sl-panel-border-color);
-    padding: var(--sl-spacing-medium);
+    border: solid 2px var(--nu-panel-border-color);
+    padding: var(--nu-spacing-medium);
     overflow: hidden;
   }
 </style>
@@ -444,8 +444,8 @@ import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 
 const css = `
   .dropdown-hoist {
-    border: solid 2px var(--sl-panel-border-color);
-    padding: var(--sl-spacing-medium);
+    border: solid 2px var(--nu-panel-border-color);
+    padding: var(--nu-spacing-medium);
     overflow: hidden;
   }
 `;

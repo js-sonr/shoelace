@@ -105,7 +105,7 @@ By design, a dialog's height will never exceed that of the viewport. As such, di
 
 ```html:preview
 <nu-dialog label="Dialog" class="dialog-scrolling">
-  <div style="height: 150vh; border: dashed 2px var(--sl-color-neutral-200); padding: 0 1rem;">
+  <div style="height: 150vh; border: dashed 2px var(--nu-color-neutral-200); padding: 0 1rem;">
     <p>Scroll down and give it a try! 👇</p>
   </div>
   <nu-button slot="footer" variant="primary">Close</nu-button>
@@ -139,7 +139,7 @@ const App = () => {
         <div
           style={{
             height: '150vh',
-            border: 'dashed 2px var(--sl-color-neutral-200)',
+            border: 'dashed 2px var(--nu-color-neutral-200)',
             padding: '0 1rem'
           }}
         >

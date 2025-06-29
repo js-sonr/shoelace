@@ -352,12 +352,12 @@ To expose custom properties as part of a component's API, scope them to the `:ho
 
 ```css
 :host {
-  --color: var(--sl-color-primary-500);
-  --background-color: var(--sl-color-neutral-100);
+  --color: var(--nu-color-primary-500);
+  --background-color: var(--nu-color-neutral-100);
 }
 ```
 
-Then use the following syntax for comments so they appear in the generated docs. Do not use the `--sl-` prefix, as that is reserved for design tokens that live in the global scope.
+Then use the following syntax for comments so they appear in the generated docs. Do not use the `--nu-` prefix, as that is reserved for design tokens that live in the global scope.
 
 ```js
 /**

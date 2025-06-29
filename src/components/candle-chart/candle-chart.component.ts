@@ -1,13 +1,14 @@
-import { property, state, query } from 'lit/decorators.js';
+import { max as d3max, min as d3min, scaleLinear, scaleTime } from 'd3';
 import { html, svg } from 'lit';
+// import { LocalizeController } from '../../utilities/localize.js';
+import { property, query, state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
-import { LocalizeController } from '../../utilities/localize.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import NebulaElement from '../../internal/nebula-element.js';
 import styles from './candle-chart.styles.js';
 import type { CSSResultGroup } from 'lit';
-import { scaleTime, scaleLinear, max as d3max, min as d3min } from 'd3';
+import type { ScaleLinear, ScaleTime } from 'd3';
 
 export interface CandleChartDataPoint {
   date: string | Date;
@@ -48,7 +49,7 @@ export interface CandleChartDataPoint {
 export default class NuCandleChart extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
-  private readonly localize = new LocalizeController(this);
+  // private readonly localize = new LocalizeController(this);
 
   @query('svg') svg: SVGElement;
 
@@ -77,7 +78,7 @@ export default class NuCandleChart extends NebulaElement {
   @property({ type: Number, attribute: 'candle-width' }) candleWidth = 0.7;
 
   /** Whether to animate the chart on load. */
-  @property({ type: Boolean }) animate = true;
+  @property({ type: Boolean, attribute: 'animate-chart' }) animateChart = true;
 
   @state() private parsedData: CandleChartDataPoint[] = [];
 
@@ -89,15 +90,22 @@ export default class NuCandleChart extends NebulaElement {
 
   private parseData() {
     try {
-      const rawData = typeof this.data === 'string' ? JSON.parse(this.data) : this.data;
-      this.parsedData = rawData.map((d: any) => ({
-        date: typeof d.date === 'string' ? new Date(d.date) : d.date,
-        open: Number(d.open),
-        high: Number(d.high),
-        low: Number(d.low),
-        close: Number(d.close),
-        volume: d.volume ? Number(d.volume) : undefined
-      }));
+      const rawData: unknown = typeof this.data === 'string' ? JSON.parse(this.data) : this.data;
+      if (!Array.isArray(rawData)) {
+        this.parsedData = [];
+        return;
+      }
+      this.parsedData = rawData.map((d: unknown) => {
+        const item = d as Record<string, unknown>;
+        return {
+          date: typeof item.date === 'string' ? new Date(item.date) : (item.date instanceof Date ? item.date : new Date()),
+          open: Number(item.open || 0),
+          high: Number(item.high || 0),
+          low: Number(item.low || 0),
+          close: Number(item.close || 0),
+          volume: typeof item.volume === 'number' ? item.volume : undefined
+        };
+      });
     } catch (error) {
       console.error('Failed to parse chart data:', error);
       this.parsedData = [];
@@ -127,18 +135,18 @@ export default class NuCandleChart extends NebulaElement {
     const pricePadding = priceRange * 0.1;
 
     // Create scales
-    const xScale = scaleTime()
+    const xScale: ScaleTime<number, number> = scaleTime()
       .domain([
         this.parsedData[0].date as Date,
         this.parsedData[this.parsedData.length - 1].date as Date
       ])
       .range([0, innerWidth]);
 
-    const yScale = scaleLinear()
+    const yScale: ScaleLinear<number, number> = scaleLinear()
       .domain([minPrice - pricePadding, maxPrice + pricePadding])
       .range([priceHeight, 0]);
 
-    const volumeScale = this.showVolume ? scaleLinear()
+    const volumeScale: ScaleLinear<number, number> | null = this.showVolume ? scaleLinear()
       .domain([0, d3max(this.parsedData.map(d => d.volume || 0)) || 0])
       .range([innerHeight, priceHeight + 10]) : null;
 
@@ -152,13 +160,13 @@ export default class NuCandleChart extends NebulaElement {
     // X-axis labels (dates)
     const xAxisLabels = xTicks.map(tick => ({
       value: (tick as Date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
-      position: (xScale(tick) / innerWidth) * 100
+      position: ((xScale(tick) as number) / innerWidth) * 100
     }));
 
     // Y-axis labels (prices)
     const yAxisLabels = yTicks.map(tick => ({
       value: tick.toFixed(2),
-      position: (yScale(tick) / priceHeight) * 100
+      position: ((yScale(tick) as number) / priceHeight) * 100
     }));
 
     return html`
@@ -215,18 +223,18 @@ export default class NuCandleChart extends NebulaElement {
             ` : ''}
 
             <!-- Volume bars -->
-            ${this.showVolume && volumeScale ? this.parsedData.map((d, i) => {
+            ${this.showVolume && volumeScale ? this.parsedData.map((d) => {
               if (!d.volume) return '';
-              const x = xScale(d.date as Date);
+              const x = xScale(d.date as Date) as number;
               const isBullish = d.close >= d.open;
               return svg`
                 <rect
                   part="volume"
                   class="volume-bar ${isBullish ? 'bullish' : 'bearish'}"
                   x="${x - candlePixelWidth / 2}"
-                  y="${volumeScale(d.volume)}"
+                  y="${volumeScale(d.volume) as number}"
                   width="${candlePixelWidth}"
-                  height="${innerHeight - volumeScale(d.volume)}"
+                  height="${innerHeight - (volumeScale(d.volume) as number)}"
                   fill="${isBullish ? 'var(--bullish-color, #22c55e)' : 'var(--bearish-color, #ef4444)'}"
                   opacity="0.3"
                 />
@@ -235,10 +243,10 @@ export default class NuCandleChart extends NebulaElement {
 
             <!-- Candlesticks -->
             ${this.parsedData.map((d, i) => {
-              const x = xScale(d.date as Date);
+              const x = xScale(d.date as Date) as number;
               const isBullish = d.close >= d.open;
-              const bodyTop = yScale(Math.max(d.open, d.close));
-              const bodyBottom = yScale(Math.min(d.open, d.close));
+              const bodyTop = yScale(Math.max(d.open, d.close)) as number;
+              const bodyBottom = yScale(Math.min(d.open, d.close)) as number;
               const bodyHeight = bodyBottom - bodyTop;
               
               const color = isBullish ? 'var(--bullish-color, #22c55e)' : 'var(--bearish-color, #ef4444)';
@@ -254,9 +262,9 @@ export default class NuCandleChart extends NebulaElement {
                     part="wick"
                     class="wick"
                     x1="${x}"
-                    y1="${yScale(d.high)}"
+                    y1="${yScale(d.high) as number}"
                     x2="${x}"
-                    y2="${yScale(d.low)}"
+                    y2="${yScale(d.low) as number}"
                     stroke="${color}"
                     stroke-width="2"
                   />

@@ -1,13 +1,14 @@
-import { property, state, query } from 'lit/decorators.js';
-import { html, svg } from 'lit';
+import { curveBasis, curveCardinal, curveLinear, curveMonotoneX, curveStep, area as d3area, line as d3line, max as d3max, scaleLinear, scaleTime } from 'd3';
+import { html } from 'lit';
+// import { LocalizeController } from '../../utilities/localize.js';
+import { property, query, state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
-import { LocalizeController } from '../../utilities/localize.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import NebulaElement from '../../internal/nebula-element.js';
 import styles from './area-chart.styles.js';
+import type { Area, Line, ScaleLinear, ScaleTime } from 'd3';
 import type { CSSResultGroup } from 'lit';
-import { scaleTime, scaleLinear, line as d3line, max as d3max, area as d3area, curveMonotoneX, curveLinear, curveCardinal, curveBasis, curveStep } from 'd3';
 
 export interface AreaChartDataPoint {
   date: string | Date;
@@ -40,7 +41,7 @@ export interface AreaChartDataPoint {
 export default class NuAreaChart extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
-  private readonly localize = new LocalizeController(this);
+  // private readonly localize = new LocalizeController(this);
 
   @query('svg') svg: SVGElement;
 
@@ -66,7 +67,7 @@ export default class NuAreaChart extends NebulaElement {
   @property({ type: String }) curve = 'monotone';
 
   /** Whether to animate the chart on load. */
-  @property({ type: Boolean }) animate = true;
+  @property({ type: Boolean, attribute: 'animate-chart' }) animateChart = true;
 
   @state() private parsedData: AreaChartDataPoint[] = [];
 
@@ -78,11 +79,18 @@ export default class NuAreaChart extends NebulaElement {
 
   private parseData() {
     try {
-      const rawData = typeof this.data === 'string' ? JSON.parse(this.data) : this.data;
-      this.parsedData = rawData.map((d: any) => ({
-        date: typeof d.date === 'string' ? new Date(d.date) : (d.date || new Date(d.key)),
-        value: Number(d.value)
-      }));
+      const rawData: unknown = typeof this.data === 'string' ? JSON.parse(this.data) : this.data;
+      if (!Array.isArray(rawData)) {
+        this.parsedData = [];
+        return;
+      }
+      this.parsedData = rawData.map((d: unknown) => {
+        const item = d as Record<string, unknown>;
+        return {
+          date: typeof item.date === 'string' ? new Date(item.date) : (item.date instanceof Date ? item.date : new Date(String(item.key || ''))),
+          value: Number(item.value || 0)
+        };
+      });
     } catch (error) {
       console.error('Failed to parse chart data:', error);
       this.parsedData = [];
@@ -94,7 +102,7 @@ export default class NuAreaChart extends NebulaElement {
     this.parseData();
   }
 
-  private getCurveFunction() {
+  private getCurveFunction(): typeof curveMonotoneX {
     switch (this.curve) {
       case 'linear': return curveLinear;
       case 'monotone': return curveMonotoneX;
@@ -111,24 +119,24 @@ export default class NuAreaChart extends NebulaElement {
     }
 
     // Create scales using percentage-based approach like RosenCharts
-    const xScale = scaleTime()
-      .domain([this.parsedData[0].date, this.parsedData[this.parsedData.length - 1].date] as [Date, Date])
+    const xScale: ScaleTime<number, number> = scaleTime()
+      .domain([this.parsedData[0].date as Date, this.parsedData[this.parsedData.length - 1].date as Date])
       .range([0, 100]);
 
-    const yScale = scaleLinear()
-      .domain([0, d3max(this.parsedData.map(d => d.value)) ?? 0])
+    const yScale: ScaleLinear<number, number> = scaleLinear()
+      .domain([0, d3max(this.parsedData, d => d.value) ?? 0])
       .range([100, 0]);
 
     // Line and area generators
-    const line = d3line<AreaChartDataPoint>()
-      .x(d => xScale(d.date as Date))
-      .y(d => yScale(d.value))
+    const line: Line<AreaChartDataPoint> = d3line<AreaChartDataPoint>()
+      .x(d => xScale(d.date as Date) as number)
+      .y(d => yScale(d.value) as number)
       .curve(this.getCurveFunction());
 
-    const area = d3area<AreaChartDataPoint>()
-      .x(d => xScale(d.date as Date))
-      .y0(yScale(0))
-      .y1(d => yScale(d.value))
+    const area: Area<AreaChartDataPoint> = d3area<AreaChartDataPoint>()
+      .x(d => xScale(d.date as Date) as number)
+      .y0(yScale(0) as number)
+      .y1(d => yScale(d.value) as number)
       .curve(this.getCurveFunction());
 
     const areaPath = area(this.parsedData) ?? undefined;
@@ -145,10 +153,10 @@ export default class NuAreaChart extends NebulaElement {
         if (i % 6 !== 0 || i === 0 || i >= this.parsedData.length - 3) return null;
         return { 
           value: (day.date as Date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
-          position: xScale(day.date as Date)
+          position: xScale(day.date as Date) as number
         };
       })
-      .filter(Boolean);
+      .filter(Boolean) as { value: string; position: number }[];
 
     const yAxisLabels = yScale
       .ticks(8)
@@ -157,10 +165,10 @@ export default class NuAreaChart extends NebulaElement {
         if (i < 1) return null;
         return {
           value,
-          position: yScale(+value)
+          position: yScale(+value) as number
         };
       })
-      .filter(Boolean);
+      .filter(Boolean) as { value: string; position: number }[];
 
     return html`
       <div class="chart-container">

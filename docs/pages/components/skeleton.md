@@ -129,7 +129,7 @@ There are two built-in effects, `sheen` and `pulse`. Effects are intentionally s
 
 <style>
   .skeleton-effects {
-    font-size: var(--sl-font-size-small);
+    font-size: var(--nu-font-size-small);
   }
 
   .skeleton-effects sl-skeleton:not(:first-child) {
@@ -143,7 +143,7 @@ import SlSkeleton from '@onsonr/nebula/dist/react/skeleton';
 
 const css = `
   .skeleton-effects {
-    font-size: var(--sl-font-size-small);
+    font-size: var(--nu-font-size-small);
   }
 
   .skeleton-effects sl-skeleton:not(:first-child) {
@@ -259,7 +259,7 @@ Set a matching width and height to make a circle, square, or rounded avatar skel
   }
 
   .skeleton-avatars sl-skeleton:nth-child(2) {
-    --border-radius: var(--sl-border-radius-medium);
+    --border-radius: var(--nu-border-radius-medium);
   }
 </style>
 ```
@@ -280,7 +280,7 @@ const css = `
   }
 
   .skeleton-avatars sl-skeleton:nth-child(2) {
-    --border-radius: var(--sl-border-radius-medium);
+    --border-radius: var(--nu-border-radius-medium);
   }
 `;
 
@@ -318,11 +318,11 @@ Use the `--border-radius` custom property to make circles, squares, and rectangl
   }
 
   .skeleton-shapes .square::part(indicator) {
-    --border-radius: var(--sl-border-radius-medium);
+    --border-radius: var(--nu-border-radius-medium);
   }
 
   .skeleton-shapes .circle::part(indicator) {
-    --border-radius: var(--sl-border-radius-circle);
+    --border-radius: var(--nu-border-radius-circle);
   }
 
   .skeleton-shapes .triangle::part(indicator) {
@@ -370,11 +370,11 @@ const css = `
   }
 
   .skeleton-shapes .square::part(indicator) {
-    --border-radius: var(--sl-border-radius-medium);
+    --border-radius: var(--nu-border-radius-medium);
   }
 
   .skeleton-shapes .circle::part(indicator) {
-    --border-radius: var(--sl-border-radius-circle);
+    --border-radius: var(--nu-border-radius-circle);
   }
 
   .skeleton-shapes .triangle::part(indicator) {
@@ -438,7 +438,7 @@ const css = `
   }
 
   .skeleton-avatars sl-skeleton:nth-child(2) {
-    --border-radius: var(--sl-border-radius-medium);
+    --border-radius: var(--nu-border-radius-medium);
   }
 `;
 

@@ -10,8 +10,8 @@ Z-indexes are used to stack components in a logical manner.
 
 | Token                      | Value |
 | -------------------------- | ----- |
-| `--sl-z-index-drawer`      | 700   |
-| `--sl-z-index-dialog`      | 800   |
-| `--sl-z-index-dropdown`    | 900   |
-| `--sl-z-index-alert-group` | 950   |
-| `--sl-z-index-tooltip`     | 1000  |
+| `--nu-z-index-drawer`      | 700   |
+| `--nu-z-index-dialog`      | 800   |
+| `--nu-z-index-dropdown`    | 900   |
+| `--nu-z-index-alert-group` | 950   |
+| `--nu-z-index-tooltip`     | 1000  |

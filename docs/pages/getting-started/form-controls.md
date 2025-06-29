@@ -56,7 +56,7 @@ Client-side validation can be used to improve the UX of forms, but it is not a r
 
 ### Required Fields
 
-To make a field required, use the `required` attribute. Required fields will automatically receive a `*` after their labels. This is configurable through the `--sl-input-required-content` custom property.
+To make a field required, use the `required` attribute. Required fields will automatically receive a `*` after their labels. This is configurable through the `--nu-input-required-content` custom property.
 
 The form will not be submitted if a required field is incomplete.
 
@@ -386,20 +386,20 @@ This example demonstrates custom validation styles using `data-user-invalid` and
   .validity-styles sl-select,
   .validity-styles sl-checkbox {
     display: block;
-    margin-bottom: var(--sl-spacing-medium);
+    margin-bottom: var(--nu-spacing-medium);
   }
 
   /* user invalid styles */
   .validity-styles sl-input[data-user-invalid]::part(base),
   .validity-styles sl-select[data-user-invalid]::part(combobox),
   .validity-styles sl-checkbox[data-user-invalid]::part(control) {
-    border-color: var(--sl-color-danger-600);
+    border-color: var(--nu-color-danger-600);
   }
 
   .validity-styles [data-user-invalid]::part(form-control-label),
   .validity-styles [data-user-invalid]::part(form-control-help-text),
   .validity-styles sl-checkbox[data-user-invalid]::part(label) {
-    color: var(--sl-color-danger-700);
+    color: var(--nu-color-danger-700);
   }
 
   .validity-styles sl-checkbox[data-user-invalid]::part(control) {
@@ -409,33 +409,33 @@ This example demonstrates custom validation styles using `data-user-invalid` and
   .validity-styles sl-input:focus-within[data-user-invalid]::part(base),
   .validity-styles sl-select:focus-within[data-user-invalid]::part(combobox),
   .validity-styles sl-checkbox:focus-within[data-user-invalid]::part(control) {
-    border-color: var(--sl-color-danger-600);
-    box-shadow: 0 0 0 var(--sl-focus-ring-width) var(--sl-color-danger-300);
+    border-color: var(--nu-color-danger-600);
+    box-shadow: 0 0 0 var(--nu-focus-ring-width) var(--nu-color-danger-300);
   }
 
   /* User valid styles */
   .validity-styles sl-input[data-user-valid]::part(base),
   .validity-styles sl-select[data-user-valid]::part(combobox),
   .validity-styles sl-checkbox[data-user-valid]::part(control) {
-    border-color: var(--sl-color-success-600);
+    border-color: var(--nu-color-success-600);
   }
 
   .validity-styles [data-user-valid]::part(form-control-label),
   .validity-styles [data-user-valid]::part(form-control-help-text),
   .validity-styles sl-checkbox[data-user-valid]::part(label) {
-    color: var(--sl-color-success-700);
+    color: var(--nu-color-success-700);
   }
 
   .validity-styles sl-checkbox[data-user-valid]::part(control) {
-    background-color: var(--sl-color-success-600);
+    background-color: var(--nu-color-success-600);
     outline: none;
   }
 
   .validity-styles sl-input:focus-within[data-user-valid]::part(base),
   .validity-styles sl-select:focus-within[data-user-valid]::part(combobox),
   .validity-styles sl-checkbox:focus-within[data-user-valid]::part(control) {
-    border-color: var(--sl-color-success-600);
-    box-shadow: 0 0 0 var(--sl-focus-ring-width) var(--sl-color-success-300);
+    border-color: var(--nu-color-success-600);
+    box-shadow: 0 0 0 var(--nu-focus-ring-width) var(--nu-color-success-300);
   }
 </style>
 ```
@@ -504,12 +504,12 @@ To disable the browser's error messages, you need to cancel the `sl-invalid` eve
 
 <style>
   #name-error {
-    font-size: var(--sl-input-help-text-font-size-medium);
-    color: var(--sl-color-danger-700);
+    font-size: var(--nu-input-help-text-font-size-medium);
+    color: var(--nu-color-danger-700);
   }
 
   #name-error ~ sl-button {
-    margin-top: var(--sl-spacing-medium);
+    margin-top: var(--nu-spacing-medium);
   }
 
   .inline-validation sl-input {
@@ -518,32 +518,32 @@ To disable the browser's error messages, you need to cancel the `sl-invalid` eve
 
   /* user invalid styles */
   .inline-validation sl-input[data-user-invalid]::part(base) {
-    border-color: var(--sl-color-danger-600);
+    border-color: var(--nu-color-danger-600);
   }
 
   .inline-validation [data-user-invalid]::part(form-control-label),
   .inline-validation [data-user-invalid]::part(form-control-help-text) {
-    color: var(--sl-color-danger-700);
+    color: var(--nu-color-danger-700);
   }
 
   .inline-validation sl-input:focus-within[data-user-invalid]::part(base) {
-    border-color: var(--sl-color-danger-600);
-    box-shadow: 0 0 0 var(--sl-focus-ring-width) var(--sl-color-danger-300);
+    border-color: var(--nu-color-danger-600);
+    box-shadow: 0 0 0 var(--nu-focus-ring-width) var(--nu-color-danger-300);
   }
 
   /* User valid styles */
   .inline-validation sl-input[data-user-valid]::part(base) {
-    border-color: var(--sl-color-success-600);
+    border-color: var(--nu-color-success-600);
   }
 
   .inline-validation [data-user-valid]::part(form-control-label),
   .inline-validation [data-user-valid]::part(form-control-help-text) {
-    color: var(--sl-color-success-700);
+    color: var(--nu-color-success-700);
   }
 
   .inline-validation sl-input:focus-within[data-user-valid]::part(base) {
-    border-color: var(--sl-color-success-600);
-    box-shadow: 0 0 0 var(--sl-focus-ring-width) var(--sl-color-success-300);
+    border-color: var(--nu-color-success-600);
+    box-shadow: 0 0 0 var(--nu-focus-ring-width) var(--nu-color-success-300);
   }
 </style>
 ```

@@ -518,12 +518,12 @@ The `slides-per-page` attribute makes it possible to display multiple slides at 
 
 ```html:preview
 <nu-carousel navigation pagination slides-per-page="2" slides-per-move="2">
-  <nu-carousel-item style="background: var(--sl-color-red-200);">Slide 1</nu-carousel-item>
-  <nu-carousel-item style="background: var(--sl-color-orange-200);">Slide 2</nu-carousel-item>
-  <nu-carousel-item style="background: var(--sl-color-yellow-200);">Slide 3</nu-carousel-item>
-  <nu-carousel-item style="background: var(--sl-color-green-200);">Slide 4</nu-carousel-item>
-  <nu-carousel-item style="background: var(--sl-color-blue-200);">Slide 5</nu-carousel-item>
-  <nu-carousel-item style="background: var(--sl-color-violet-200);">Slide 6</nu-carousel-item>
+  <nu-carousel-item style="background: var(--nu-color-red-200);">Slide 1</nu-carousel-item>
+  <nu-carousel-item style="background: var(--nu-color-orange-200);">Slide 2</nu-carousel-item>
+  <nu-carousel-item style="background: var(--nu-color-yellow-200);">Slide 3</nu-carousel-item>
+  <nu-carousel-item style="background: var(--nu-color-green-200);">Slide 4</nu-carousel-item>
+  <nu-carousel-item style="background: var(--nu-color-blue-200);">Slide 5</nu-carousel-item>
+  <nu-carousel-item style="background: var(--nu-color-violet-200);">Slide 6</nu-carousel-item>
 </nu-carousel>
 ```
 
@@ -535,12 +535,12 @@ import SlCarouselItem from '@onsonr/nebula/dist/react/carousel-item';
 
 const App = () => (
   <SlCarousel navigation pagination slidesPerPage={2} slidesPerMove={2}>
-    <SlCarouselItem style={{ background: 'var(--sl-color-red-200)' }}>Slide 1</SlCarouselItem>
-    <SlCarouselItem style={{ background: 'var(--sl-color-orange-200)' }}>Slide 2</SlCarouselItem>
-    <SlCarouselItem style={{ background: 'var(--sl-color-yellow-200)' }}>Slide 3</SlCarouselItem>
-    <SlCarouselItem style={{ background: 'var(--sl-color-green-200)' }}>Slide 4</SlCarouselItem>
-    <SlCarouselItem style={{ background: 'var(--sl-color-blue-200)' }}>Slide 5</SlCarouselItem>
-    <SlCarouselItem style={{ background: 'var(--sl-color-violet-200)' }}>Slide 6</SlCarouselItem>
+    <SlCarouselItem style={{ background: 'var(--nu-color-red-200)' }}>Slide 1</SlCarouselItem>
+    <SlCarouselItem style={{ background: 'var(--nu-color-orange-200)' }}>Slide 2</SlCarouselItem>
+    <SlCarouselItem style={{ background: 'var(--nu-color-yellow-200)' }}>Slide 3</SlCarouselItem>
+    <SlCarouselItem style={{ background: 'var(--nu-color-green-200)' }}>Slide 4</SlCarouselItem>
+    <SlCarouselItem style={{ background: 'var(--nu-color-blue-200)' }}>Slide 5</SlCarouselItem>
+    <SlCarouselItem style={{ background: 'var(--nu-color-violet-200)' }}>Slide 6</SlCarouselItem>
   </SlCarousel>
 );
 ```
@@ -553,9 +553,9 @@ The content of the carousel can be changed by adding or removing carousel items.
 
 ```html:preview
 <nu-carousel class="dynamic-carousel" pagination navigation>
-  <nu-carousel-item style="background: var(--sl-color-red-200)">Slide 1</nu-carousel-item>
-  <nu-carousel-item style="background: var(--sl-color-orange-200)">Slide 2</nu-carousel-item>
-  <nu-carousel-item style="background: var(--sl-color-yellow-200)">Slide 3</nu-carousel-item>
+  <nu-carousel-item style="background: var(--nu-color-red-200)">Slide 1</nu-carousel-item>
+  <nu-carousel-item style="background: var(--nu-color-orange-200)">Slide 2</nu-carousel-item>
+  <nu-carousel-item style="background: var(--nu-color-yellow-200)">Slide 3</nu-carousel-item>
 </nu-carousel>
 
 <div class="carousel-options">
@@ -571,8 +571,8 @@ The content of the carousel can be changed by adding or removing carousel items.
   .dynamic-carousel ~ .carousel-options {
     display: flex;
     justify-content: center;
-    gap: var(--sl-spacing-x-small);
-    margin-top: var(--sl-spacing-large);
+    gap: var(--nu-spacing-x-small);
+    margin-top: var(--nu-spacing-large);
   }
 
   .dynamic-carousel sl-carousel-item {
@@ -580,7 +580,7 @@ The content of the carousel can be changed by adding or removing carousel items.
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--sl-font-size-2x-large);
+    font-size: var(--nu-font-size-2x-large);
   }
 </style>
 
@@ -596,7 +596,7 @@ The content of the carousel can be changed by adding or removing carousel items.
       const slide = document.createElement('sl-carousel-item');
       const color = colors[++colorIndex % colors.length];
       slide.innerText = `Slide ${dynamicCarousel.children.length + 1}`;
-      slide.style.setProperty('background', `var(--sl-color-${color}-200)`);
+      slide.style.setProperty('background', `var(--nu-color-${color}-200)`);
       dynamicCarousel.appendChild(slide);
       dynamicRemove.disabled = false;
     };
@@ -634,7 +634,7 @@ const css = `
   .dynamic-carousel ~ .carousel-options {
     display: flex;
     justify-content: center;
-    margin-top: var(--sl-spacing-large);
+    margin-top: var(--nu-spacing-large);
   }
 
   .dynamic-carousel sl-carousel-item {
@@ -643,7 +643,7 @@ const css = `
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: var(--sl-font-size-2x-large);
+    font-size: var(--nu-font-size-2x-large);
   }
 `;
 
@@ -1076,11 +1076,11 @@ The carousel has a robust API that makes it possible to extend and customize. Th
 
   .thumbnails__scroller {
     display: flex;
-    gap: var(--sl-spacing-small);
+    gap: var(--nu-spacing-small);
     overflow-x: auto;
     scrollbar-width: none;
     scroll-behavior: smooth;
-    scroll-padding: var(--sl-spacing-small);
+    scroll-padding: var(--nu-spacing-small);
   }
 
   .thumbnails__scroller::-webkit-scrollbar {
@@ -1154,11 +1154,11 @@ const css = `
 
   .thumbnails__scroller {
     display: flex;
-    gap: var(--sl-spacing-small);
+    gap: var(--nu-spacing-small);
     overflow-x: auto;
     scrollbar-width: none;
     scroll-behavior: smooth;
-    scroll-padding: var(--sl-spacing-small);
+    scroll-padding: var(--nu-spacing-small);
   }
 
   .thumbnails__scroller::-webkit-scrollbar {

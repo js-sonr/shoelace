@@ -137,9 +137,9 @@ The event has a payload with `phase` and `value` properties. The `phase` propert
     position: relative;
     top: -4px;
     left: 8px;
-    border-radius: var(--sl-border-radius-small);
-    background: var(--sl-color-neutral-900);
-    color: var(--sl-color-neutral-0);
+    border-radius: var(--nu-border-radius-small);
+    background: var(--nu-color-neutral-900);
+    color: var(--nu-color-neutral-0);
     text-align: center;
     padding: 4px 6px;
   }
@@ -160,9 +160,9 @@ const css = `
     position: relative;
     top: -4px;
     left: 8px;
-    border-radius: var(--sl-border-radius-small);
-    background: var(--sl-color-neutral-900);
-    color: var(--sl-color-neutral-0);
+    border-radius: var(--nu-border-radius-small);
+    background: var(--nu-color-neutral-900);
+    color: var(--nu-color-neutral-0);
     text-align: center;
     padding: 4px 6px;
   }

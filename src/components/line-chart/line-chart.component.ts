@@ -1,13 +1,14 @@
-import { property, state, query } from 'lit/decorators.js';
+import { curveBasis, curveCardinal, curveLinear, curveMonotoneX, curveStep, line as d3line, max as d3max, scaleLinear, scaleTime } from 'd3';
 import { html, svg } from 'lit';
+// import { LocalizeController } from '../../utilities/localize.js';
+import { property, query, state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
-import { LocalizeController } from '../../utilities/localize.js';
 import { watch } from '../../internal/watch.js';
 import componentStyles from '../../styles/component.styles.js';
 import NebulaElement from '../../internal/nebula-element.js';
 import styles from './line-chart.styles.js';
 import type { CSSResultGroup } from 'lit';
-import { scaleTime, scaleLinear, line as d3line, max as d3max, curveMonotoneX, curveLinear, curveCardinal, curveBasis, curveStep } from 'd3';
+import type { Line, ScaleLinear, ScaleTime } from 'd3';
 
 export interface LineChartDataPoint {
   date: string | Date;
@@ -54,7 +55,7 @@ export interface LineChartSeries {
 export default class NuLineChart extends NebulaElement {
   static styles: CSSResultGroup = [componentStyles, styles];
 
-  private readonly localize = new LocalizeController(this);
+  // private readonly localize = new LocalizeController(this);
 
   @query('svg') svg: SVGElement;
 
@@ -83,10 +84,10 @@ export default class NuLineChart extends NebulaElement {
   @property({ type: String }) curve = 'monotone';
 
   /** Whether to animate the chart on load. */
-  @property({ type: Boolean }) animate = true;
+  @property({ type: Boolean, attribute: 'animate-chart' }) animateChart = true;
 
   @state() private parsedData: LineChartSeries[] = [];
-  @state() private isSingleSeries = true;
+  // @state() private isSingleSeries = true;
 
   @watch('data')
   handleDataChange() {
@@ -96,32 +97,43 @@ export default class NuLineChart extends NebulaElement {
 
   private parseData() {
     try {
-      const rawData = typeof this.data === 'string' ? JSON.parse(this.data) : this.data;
+      const rawData: unknown = typeof this.data === 'string' ? JSON.parse(this.data) : this.data;
       
       // Check if it's a single series (array of data points) or multiple series
       if (Array.isArray(rawData) && rawData.length > 0) {
-        if ('id' in rawData[0] || 'data' in rawData[0]) {
+        const firstItem = rawData[0] as Record<string, unknown>;
+        if ('id' in firstItem || 'data' in firstItem) {
           // Multiple series format
-          this.isSingleSeries = false;
-          this.parsedData = rawData.map((series: any, index: number) => ({
-            id: series.id || `series-${index}`,
-            data: series.data.map((d: any) => ({
-              date: typeof d.date === 'string' ? new Date(d.date) : d.date,
-              value: Number(d.value)
-            })),
-            color: series.color,
-            strokeWidth: series.strokeWidth || 2,
-            showDots: series.showDots !== undefined ? series.showDots : this.showDots
-          }));
+          // this.isSingleSeries = false;
+          this.parsedData = rawData.map((series: unknown, index: number) => {
+            const seriesItem = series as Record<string, unknown>;
+            const seriesData = Array.isArray(seriesItem.data) ? seriesItem.data : [];
+            return {
+              id: String(seriesItem.id || `series-${index}`),
+              data: seriesData.map((d: unknown) => {
+                const item = d as Record<string, unknown>;
+                return {
+                  date: typeof item.date === 'string' ? new Date(item.date) : (item.date instanceof Date ? item.date : new Date()),
+                  value: Number(item.value || 0)
+                };
+              }),
+              color: typeof seriesItem.color === 'string' ? seriesItem.color : undefined,
+              strokeWidth: typeof seriesItem.strokeWidth === 'number' ? seriesItem.strokeWidth : 2,
+              showDots: typeof seriesItem.showDots === 'boolean' ? seriesItem.showDots : this.showDots
+            };
+          });
         } else {
           // Single series format
-          this.isSingleSeries = true;
+          // this.isSingleSeries = true;
           this.parsedData = [{
             id: 'default',
-            data: rawData.map((d: any) => ({
-              date: typeof d.date === 'string' ? new Date(d.date) : (d.date || new Date(d.key)),
-              value: Number(d.value)
-            })),
+            data: rawData.map((d: unknown) => {
+              const item = d as Record<string, unknown>;
+              return {
+                date: typeof item.date === 'string' ? new Date(item.date) : (item.date instanceof Date ? item.date : new Date(String(item.key || ''))),
+                value: Number(item.value || 0)
+              };
+            }),
             showDots: this.showDots
           }];
         }
@@ -137,7 +149,7 @@ export default class NuLineChart extends NebulaElement {
     this.parseData();
   }
 
-  private getCurveFunction() {
+  private getCurveFunction(): typeof curveMonotoneX {
     switch (this.curve) {
       case 'linear': return curveLinear;
       case 'monotone': return curveMonotoneX;
@@ -159,18 +171,18 @@ export default class NuLineChart extends NebulaElement {
     const allValues = allData.map(d => d.value);
 
     // Create scales
-    const xScale = scaleTime()
+    const xScale: ScaleTime<number, number> = scaleTime()
       .domain([Math.min(...allDates.map(d => d.getTime())), Math.max(...allDates.map(d => d.getTime()))])
       .range([0, 100]);
 
-    const yScale = scaleLinear()
+    const yScale: ScaleLinear<number, number> = scaleLinear()
       .domain([0, d3max(allValues) ?? 0])
       .range([100, 0]);
 
     // Line generator
-    const line = d3line<LineChartDataPoint>()
-      .x(d => xScale(d.date as Date))
-      .y(d => yScale(d.value))
+    const line: Line<LineChartDataPoint> = d3line<LineChartDataPoint>()
+      .x(d => xScale(d.date as Date) as number)
+      .y(d => yScale(d.value) as number)
       .curve(this.getCurveFunction());
 
     // Generate grid lines
@@ -193,17 +205,17 @@ export default class NuLineChart extends NebulaElement {
         
         return {
           value: (day.date as Date).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' }),
-          position: xScale(day.date as Date),
+          position: xScale(day.date as Date) as number,
           transform
         };
       })
-      .filter(Boolean);
+      .filter(Boolean) as { value: string; position: number; transform: string }[];
 
     return html`
       <div class="chart-container">
         <!-- Y axis -->
         <div class="y-axis">
-          ${yTicks.map((tick, i) => html`
+          ${yTicks.map((tick) => html`
             <div
               class="y-axis-label"
               style="top: ${yScale(tick)}%;"
@@ -259,11 +271,11 @@ export default class NuLineChart extends NebulaElement {
                 />
 
                 <!-- Dots -->
-                ${series.showDots !== false ? series.data.map((point, pointIndex) => svg`
+                ${series.showDots !== false ? series.data.map((point) => svg`
                   <path
                     part="dot"
                     class="dot dot-${seriesIndex}"
-                    d="M ${xScale(point.date as Date)} ${yScale(point.value)} l 0.0001 0"
+                    d="M ${xScale(point.date as Date) as number} ${yScale(point.value) as number} l 0.0001 0"
                     vector-effect="non-scaling-stroke"
                     stroke-width="7"
                     stroke-linecap="round"

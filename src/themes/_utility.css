@@ -6,7 +6,7 @@
 
 @supports (scrollbar-gutter: stable) {
   .nu-scroll-lock {
-    scrollbar-gutter: var(--sl-scroll-lock-gutter) !important;
+    scrollbar-gutter: var(--nu-scroll-lock-gutter) !important;
   }
 
   .nu-scroll-lock body {
@@ -17,7 +17,7 @@
 /** This can go away once Safari has scrollbar-gutter support. */
 @supports not (scrollbar-gutter: stable) {
   .nu-scroll-lock body {
-    padding-right: var(--sl-scroll-lock-size) !important;
+    padding-right: var(--nu-scroll-lock-size) !important;
     overflow: hidden !important;
   }
 }
@@ -26,7 +26,7 @@
   position: fixed;
   top: 0;
   inset-inline-end: 0;
-  z-index: var(--sl-z-index-toast);
+  z-index: var(--nu-z-index-toast);
   width: 28rem;
   max-width: 100%;
   max-height: 100%;
@@ -34,9 +34,9 @@
 }
 
 .nu-toast-stack sl-alert {
-  margin: var(--sl-spacing-medium);
+  margin: var(--nu-spacing-medium);
 }
 
 .nu-toast-stack sl-alert::part(base) {
-  box-shadow: var(--sl-shadow-large);
+  box-shadow: var(--nu-shadow-large);
 }
