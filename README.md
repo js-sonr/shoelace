@@ -1,8 +1,8 @@
-# Sonr UI Components
+# Nebula UI Components
 
-> A specialized fork of [Shoelace](https://github.com/shoelace-style/shoelace) customized for the [Sonr Network](https://sonr.io/), focusing on cryptocurrency and blockchain interfaces.
+> A comprehensive web components library built for the [Sonr Network](https://sonr.io/), specializing in cryptocurrency and blockchain interfaces.
 
-A tailored web components library for blockchain applications.
+A modern, extensible component library designed specifically for Web3 applications.
 
 - Custom crypto-focused icon library 🪙
 - Sonr design system integration 🎨
@@ -11,37 +11,37 @@ A tailored web components library for blockchain applications.
 - Built with accessibility in mind ♿️
 - Open source 😸
 
-Originally designed by [Cory LaViska](https://twitter.com/claviska), customized for Sonr Network.
+Built with LitElement and optimized for blockchain applications.
 
 ---
 
 Documentation: [docs.sonr.io/design](https://docs.sonr.io/components)
 
-Source: [github.com/onsonr/styles](https://github.com/sonr-io/components)
+Source: [github.com/sonr-io/nebula](https://github.com/sonr-io/nebula)
 
 Twitter: [@sonr_io](https://twitter.com/sonr_io)
 
 ---
 
-## Shoemakers 🥾
+## Contributing to Nebula 🚀
 
-Shoemakers, or "Shoelace developers," can use this documentation to learn how to build Shoelace from source. You will need Node >= 14.17 to build and run the project locally.
+Developers can use this documentation to learn how to build Nebula from source. You will need Node >= 14.17 to build and run the project locally.
 
-**You don't need to do any of this to use Shoelace!** This page is for people who want to contribute to the project, tinker with the source, or create a custom build of Shoelace.
+**You don't need to do any of this to use Nebula!** This page is for people who want to contribute to the project, tinker with the source, or create a custom build of Nebula.
 
-If that's not what you're trying to do, the [documentation website](https://nebulaui.org) is where you want to be.
+If that's not what you're trying to do, the [documentation website](https://docs.sonr.io/nebula) is where you want to be.
 
-### How are Sonr components built?
+### How are Nebula components built?
 
-Components are built with [LitElement](https://lit-element.polymer-project.org/) for reactive web components, integrated with Sonr's design system and custom icon libraries specifically created for cryptocurrency and blockchain interfaces. The build process uses [esbuild](https://esbuild.github.io/) for efficient bundling.
+Components are built with [LitElement](https://lit.dev/) for reactive web components, integrated with Sonr's design system and custom icon libraries specifically created for cryptocurrency and blockchain interfaces. The build process uses [esbuild](https://esbuild.github.io/) for efficient bundling.
 
 ### Forking the Repo
 
-Start by [forking the repo](https://github.com/shoelace-style/shoelace/fork) on GitHub, then clone it locally and install dependencies.
+Start by [forking the repo](https://github.com/sonr-io/nebula/fork) on GitHub, then clone it locally and install dependencies.
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/shoelace
-cd shoelace
+git clone https://github.com/YOUR_GITHUB_USERNAME/nebula
+cd nebula
 npm install
 ```
 
@@ -65,20 +65,20 @@ npm run build
 
 ### Creating New Components
 
-To scaffold a new component, run the following command, replacing `sl-tag-name` with the desired tag name.
+To scaffold a new component, run the following command, replacing `nu-tag-name` with the desired tag name.
 
 ```bash
-npm run create sl-tag-name
+npm run create nu-tag-name
 ```
 
 This will generate a source file, a stylesheet, and a docs page for you. When you start the dev server, you'll find the new component in the "Components" section of the sidebar.
 
 ### Contributing
 
-Shoelace is an open source project and contributions are encouraged! If you're interesting in contributing, please review the [contribution guidelines](CONTRIBUTING.md) first.
+Nebula is an open source project and contributions are encouraged! If you're interested in contributing, please review the [contribution guidelines](CONTRIBUTING.md) first.
 
 ## License
 
-Shoelace was created by [Cory LaViska](https://twitter.com/claviska) and is available under the terms of the MIT license.
+Nebula is available under the terms of the MIT license.
 
-Whether you're building Shoelace or building something _with_ Shoelace — have fun creating! 🥾
+Whether you're building Nebula or building something _with_ Nebula — have fun creating! 🚀
