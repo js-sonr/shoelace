@@ -1,7 +1,7 @@
 {
-  "name": "nebula",
+  "name": "nebula-ui",
   "description": "A specialized fork of Shoelace customized for the Sonr Network, focusing on cryptocurrency and blockchain interfaces.",
-  "version": "0.0.14",
+  "version": "0.0.1",
   "homepage": "https://nebulaui.org",
   "author": "Prad <prad@sonr.io>",
   "license": "MIT",
