@@ -48,6 +48,8 @@
     "minify": "svgo --config=svgo.config.mjs -rf ./assets/sonr-icons/ -o ./assets/sonr-icons/",
     "start": "node scripts/build.js --serve",
     "build": "node scripts/build.js",
+    "docs:serve": "node scripts/build.js --serve",
+    "docs:build": "node scripts/build.js",
     "verify": "npm run prettier:check && npm run lint && npm run build && npm run test",
     "prepare": "npx playwright install",
     "prettier": "prettier --write --log-level=warn .",

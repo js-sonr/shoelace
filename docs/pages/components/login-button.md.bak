@@ -1,0 +1,105 @@
+---
+meta:
+  title: Login Button
+  description: A WebAuthn-enabled button component for secure biometric and security key authentication.
+layout: component
+---
+
+A specialized button component that provides WebAuthn-based authentication login functionality. It supports platform authenticators like biometric sensors (fingerprint, face recognition) and security keys for secure user authentication.
+
+```html:preview
+<nu-button variant="primary">
+  <nu-icon name="shield-check" slot="prefix"></nu-icon>
+  Sign In with Biometrics
+</nu-button>
+```
+
+```html:preview
+<nu-button variant="success" size="large" disabled>
+  Disabled Login
+</nu-button>
+```
+
+## Examples
+
+### Basic Login Button
+
+The most basic login button requires credential IDs to authenticate against existing user credentials.
+
+```html:preview
+<nu-button variant="primary">
+  <nu-icon name="shield-check" slot="prefix"></nu-icon>
+  Secure Login
+</nu-button>
+```
+
+### Custom Styling and Variants
+
+Login buttons support all standard button variants and sizes.
+
+```html:preview
+<nu-button variant="primary" size="small">Small Login</nu-button>
+<nu-button variant="success" size="medium">Medium Login</nu-button>  
+<nu-button variant="danger" size="large">Large Login</nu-button>
+```
+
+### Loading States
+
+The button automatically shows loading state during WebAuthn operations.
+
+```html:preview
+<nu-button loading>Authenticating...</nu-button>
+```
+
+### Event Handling
+
+Listen for WebAuthn authentication events to handle the login flow.
+
+```html:preview
+<nu-login-button id="login-btn" credential-ids="['demo-credential']">
+  Authenticate
+</nu-login-button>
+
+<script>
+  const loginBtn = document.getElementById('login-btn');
+
+  loginBtn.addEventListener('nu-login-start', () => {
+    console.log('Authentication started');
+  });
+
+  loginBtn.addEventListener('nu-login-success', (event) => {
+    console.log('Authentication successful:', event.detail.credential);
+    // Handle successful login with credential data
+  });
+
+  loginBtn.addEventListener('nu-login-error', (event) => {
+    console.error('Authentication failed:', event.detail.error);
+    // Handle authentication error
+  });
+</script>
+```
+
+## Configuration
+
+### Required Properties
+
+- `credential-ids`: Array of existing credential IDs to authenticate against
+
+### Optional Properties
+
+- `rp-id`: Relying party identifier (defaults to current hostname)
+- `user-handle`: Specific user handle for login
+- `timeout`: WebAuthn operation timeout in milliseconds (default: 60000)
+
+## Browser Support
+
+Requires WebAuthn API support. The component automatically checks for browser compatibility and emits an error event if WebAuthn is not available.
+
+Supported browsers:
+
+- Chrome 67+
+- Firefox 60+
+- Safari 14+
+- Edge 18+
+
+[component-metadata:nu-login-button]
