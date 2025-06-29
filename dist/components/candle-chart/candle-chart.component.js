@@ -1,7 +1,7 @@
 import {
   NuCandleChart
-} from "../../chunks/chunk.ZEOE7243.js";
-import "../../chunks/chunk.YGYVGY6Z.js";
+} from "../../chunks/chunk.4IJQU5NT.js";
+import "../../chunks/chunk.KGCDG5SX.js";
 import "../../chunks/chunk.RKDWVAGI.js";
 import "../../chunks/chunk.CX67Q22O.js";
 import "../../chunks/chunk.UP75L23G.js";

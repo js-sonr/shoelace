@@ -486,6 +486,12 @@
             <li data-level="3"><a href="#donut-chart-with-slot-content">Donut Chart with Slot Content</a></li>
             <li data-level="3"><a href="#small-pie-chart">Small Pie Chart</a></li>
             <li data-level="3"><a href="#without-labels">Without Labels</a></li>
+            <li data-level="2"><a href="#theming-and-customization">Theming and Customization</a></li>
+            <li data-level="3"><a href="#consistent-design-tokens">Consistent Design Tokens</a></li>
+            <li data-level="3"><a href="#chart-specific-variables">Chart-Specific Variables</a></li>
+            <li data-level="3"><a href="#color-scheme-improvements">Color Scheme Improvements</a></li>
+            <li data-level="3"><a href="#lightdark-theme-support">Light/Dark Theme Support</a></li>
+            <li data-level="3"><a href="#advanced-customization-examples">Advanced Customization Examples</a></li>
             <li data-level="2"><a href="#data-format">Data Format</a></li>
             <li data-level="3"><a href="#json-string">JSON String</a></li>
             <li data-level="3"><a href="#javascript-array">JavaScript Array</a></li>
@@ -553,9 +559,9 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-233">
+            <div class="code-preview__source-group" id="code-preview-source-group-251">
               <div class="code-preview__source code-preview__source--html">
-                <pre><code class="language-html" id="code-block-737"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
+                <pre><code class="language-html" id="code-block-661"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
   <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>[
     {"name": "AAPL", "value": 30},
     {"name": "BTC", "value": 22}, 
@@ -566,7 +572,7 @@
   ]<span class="token punctuation">'</span></span>
   <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-pie-chart</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-737"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-661"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -575,7 +581,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-233"
+                aria-controls="code-preview-source-group-251"
               >
                 Source
                 <svg
@@ -635,9 +641,9 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-234">
+            <div class="code-preview__source-group" id="code-preview-source-group-252">
               <div class="code-preview__source code-preview__source--html">
-                <pre><code class="language-html" id="code-block-738"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
+                <pre><code class="language-html" id="code-block-662"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
   <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>[
     {"name": "Bitcoin", "value": 45},
     {"name": "Ethereum", "value": 30},
@@ -646,7 +652,7 @@
   ]<span class="token punctuation">'</span></span>
   <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>250<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-pie-chart</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-738"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-662"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -655,7 +661,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-234"
+                aria-controls="code-preview-source-group-252"
               >
                 Source
                 <svg
@@ -719,9 +725,9 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-235">
+            <div class="code-preview__source-group" id="code-preview-source-group-253">
               <div class="code-preview__source code-preview__source--html">
-                <pre><code class="language-html" id="code-block-739"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
+                <pre><code class="language-html" id="code-block-663"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
   <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>[
     {"name": "AAPL", "value": 30},
     {"name": "MSFT", "value": 25},
@@ -734,7 +740,7 @@
   <span class="token attr-name">center-text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Portfolio<span class="token punctuation">"</span></span>
   <span class="token attr-name">center-value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$184K<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-pie-chart</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-739"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-663"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -743,7 +749,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-235"
+                aria-controls="code-preview-source-group-253"
               >
                 Source
                 <svg
@@ -801,9 +807,9 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-236">
+            <div class="code-preview__source-group" id="code-preview-source-group-254">
               <div class="code-preview__source code-preview__source--html">
-                <pre><code class="language-html" id="code-block-740"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
+                <pre><code class="language-html" id="code-block-664"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
   <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>[
     {"name": "Revenue", "value": 60},
     {"name": "Costs", "value": 25},
@@ -817,7 +823,7 @@
     --slice-color-3: #3b82f6;
   <span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-pie-chart</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-740"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-664"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -826,7 +832,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-236"
+                aria-controls="code-preview-source-group-254"
               >
                 Source
                 <svg
@@ -897,9 +903,9 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-237">
+            <div class="code-preview__source-group" id="code-preview-source-group-255">
               <div class="code-preview__source code-preview__source--html">
-                <pre><code class="language-html" id="code-block-741"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
+                <pre><code class="language-html" id="code-block-665"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
   <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>[
     {"name": "BTC", "value": 45000},
     {"name": "ETH", "value": 22000},
@@ -919,7 +925,7 @@
     --slice-color-5: #ec4899;
   <span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-pie-chart</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-741"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-665"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -928,7 +934,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-237"
+                aria-controls="code-preview-source-group-255"
               >
                 Source
                 <svg
@@ -993,9 +999,9 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-238">
+            <div class="code-preview__source-group" id="code-preview-source-group-256">
               <div class="code-preview__source code-preview__source--html">
-                <pre><code class="language-html" id="code-block-742"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
+                <pre><code class="language-html" id="code-block-666"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
   <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>[
     {"name": "Stocks", "value": 50},
     {"name": "Bonds", "value": 30},
@@ -1009,7 +1015,7 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">color</span><span class="token punctuation">:</span> #22c55e<span class="token punctuation">;</span> <span class="token property">font-size</span><span class="token punctuation">:</span> 0.875rem<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>+12.5%<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-pie-chart</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-742"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-666"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -1018,7 +1024,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-238"
+                aria-controls="code-preview-source-group-256"
               >
                 Source
                 <svg
@@ -1074,9 +1080,9 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-239">
+            <div class="code-preview__source-group" id="code-preview-source-group-257">
               <div class="code-preview__source code-preview__source--html">
-                <pre><code class="language-html" id="code-block-743"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
+                <pre><code class="language-html" id="code-block-667"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
   <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>[
     {"name": "Yes", "value": 65},
     {"name": "No", "value": 35}
@@ -1088,7 +1094,7 @@
     --label-size: 12px;
   <span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-pie-chart</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-743"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-667"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -1097,7 +1103,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-239"
+                aria-controls="code-preview-source-group-257"
               >
                 Source
                 <svg
@@ -1155,9 +1161,9 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-240">
+            <div class="code-preview__source-group" id="code-preview-source-group-258">
               <div class="code-preview__source code-preview__source--html">
-                <pre><code class="language-html" id="code-block-744"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
+                <pre><code class="language-html" id="code-block-668"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
   <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>[
     {"name": "Category A", "value": 40},
     {"name": "Category B", "value": 30},
@@ -1167,7 +1173,7 @@
   <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>200<span class="token punctuation">"</span></span>
   <span class="token attr-name">show-labels</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-pie-chart</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-744"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-668"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -1176,7 +1182,216 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-240"
+                aria-controls="code-preview-source-group-258"
+              >
+                Source
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+
+              <button type="button" class="code-preview__button code-preview__button--codepen" title="Edit on CodePen">
+                <svg
+                  width="138"
+                  height="26"
+                  viewBox="0 0 138 26"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M80 6h-9v14h9 M114 6h-9 v14h9 M111 13h-6 M77 13h-6 M122 20V6l11 14V6 M22 16.7L33 24l11-7.3V9.3L33 2L22 9.3V16.7z M44 16.7L33 9.3l-11 7.4 M22 9.3l11 7.3 l11-7.3 M33 2v7.3 M33 16.7V24 M88 14h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14 M15 8c-1.3-1.3-3-2-5-2c-4 0-7 3-7 7s3 7 7 7 c2 0 3.7-0.8 5-2 M64 13c0 4-3 7-7 7h-5V6h5C61 6 64 9 64 13z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <h2 id="theming-and-customization" class="anchor-heading">
+            Theming and Customization<a
+              href="#theming-and-customization"
+              aria-label='Direct link to "Theming and Customization"'
+            ></a>
+          </h2>
+          <p>
+            The Pie Chart component now leverages Nebula’s comprehensive design token system for consistent theming and
+            customization across light and dark modes.
+          </p>
+          <h3 id="consistent-design-tokens" class="anchor-heading">
+            Consistent Design Tokens<a
+              href="#consistent-design-tokens"
+              aria-label='Direct link to "Consistent Design Tokens"'
+            ></a>
+          </h3>
+          <p>All chart styling now uses standardized design tokens from the Nebula theme system:</p>
+          <pre><code class="language-css" id="code-block-669"><span class="token selector">nu-pie-chart</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* Colors use theme tokens */</span>
+  <span class="token property">--slice-color-1</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-purple-600<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--slice-color-2</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-blue-600<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--slice-color-3</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-cyan-600<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--slice-color-4</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-purple-400<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--slice-color-5</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-blue-400<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--slice-color-6</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-cyan-400<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">/* Typography tokens */</span>
+  <span class="token property">--label-size</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-font-size-small<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--label-weight</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-font-weight-normal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--center-text-size</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-font-size-medium<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--center-value-size</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-font-size-large<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">/* Spacing tokens */</span>
+  <span class="token property">--chart-spacing</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-spacing-small<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--chart-margin</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-spacing-medium<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">/* Border radius tokens */</span>
+  <span class="token property">--chart-border-radius</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-border-radius-medium<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">/* Transition tokens */</span>
+  <span class="token property">--chart-transition</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-transition-fast<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-669"></sl-copy-button></pre>
+          <h3 id="chart-specific-variables" class="anchor-heading">
+            Chart-Specific Variables<a
+              href="#chart-specific-variables"
+              aria-label='Direct link to "Chart-Specific Variables"'
+            ></a>
+          </h3>
+          <p>The component provides these chart-specific custom properties that map to design tokens:</p>
+          <ul>
+            <li><code>--chart-spacing</code>: Internal padding using <code>--nu-spacing-small</code></li>
+            <li><code>--chart-border-radius</code>: Container borders using <code>--nu-border-radius-medium</code></li>
+            <li><code>--chart-margin</code>: Chart margins using <code>--nu-spacing-medium</code></li>
+          </ul>
+          <h3 id="color-scheme-improvements" class="anchor-heading">
+            Color Scheme Improvements<a
+              href="#color-scheme-improvements"
+              aria-label='Direct link to "Color Scheme Improvements"'
+            ></a>
+          </h3>
+          <p>Pie charts now use a purple/blue/cyan gradient color scheme by default for consistent theming:</p>
+          <pre><code class="language-css" id="code-block-670"><span class="token selector">nu-pie-chart</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* Primary gradient palette */</span>
+  <span class="token property">--slice-color-1</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-purple-600<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--slice-color-2</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-purple-500<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--slice-color-3</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-blue-600<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--slice-color-4</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-blue-500<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--slice-color-5</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-cyan-600<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--slice-color-6</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-cyan-500<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">/* Stroke and labels */</span>
+  <span class="token property">--slice-stroke</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--label-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-700<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--center-text-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-600<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--center-value-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-900<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-670"></sl-copy-button></pre>
+          <h3 id="lightdark-theme-support" class="anchor-heading">
+            Light/Dark Theme Support<a
+              href="#lightdark-theme-support"
+              aria-label='Direct link to "Light/Dark Theme Support"'
+            ></a>
+          </h3>
+          <p>The charts automatically adapt to light and dark themes through CSS custom properties:</p>
+          <pre><code class="language-css" id="code-block-671"><span class="token comment">/* Light theme (default) */</span>
+<span class="token selector">nu-pie-chart</span> <span class="token punctuation">{</span>
+  <span class="token property">--slice-stroke</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--label-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-700<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--center-text-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-600<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--center-value-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-900<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* Dark theme */</span>
+<span class="token selector">[data-theme='dark'] nu-pie-chart</span> <span class="token punctuation">{</span>
+  <span class="token property">--slice-stroke</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-800<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--label-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-300<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--center-text-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-400<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--center-value-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-900<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">/* Adjusted slice colors for dark theme */</span>
+  <span class="token property">--slice-color-1</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-purple-400<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--slice-color-2</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-purple-300<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--slice-color-3</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-blue-400<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--slice-color-4</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-blue-300<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--slice-color-5</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-cyan-400<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--slice-color-6</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-cyan-300<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-671"></sl-copy-button></pre>
+          <h3 id="advanced-customization-examples" class="anchor-heading">
+            Advanced Customization Examples<a
+              href="#advanced-customization-examples"
+              aria-label='Direct link to "Advanced Customization Examples"'
+            ></a>
+          </h3>
+          <p>Use theme tokens for consistent brand colors:</p>
+
+          <div class="code-preview">
+            <div class="code-preview__preview">
+              <nu-pie-chart
+                data='[
+    {"name": "Revenue", "value": 45},
+    {"name": "Costs", "value": 30},
+    {"name": "Profit", "value": 25}
+  ]'
+                size="280"
+                inner-radius="0.5"
+                center-text="Business"
+                center-value="$125K"
+                style="
+                  --slice-color-1: var(--nu-color-success-600);
+                  --slice-color-2: var(--nu-color-warning-600);
+                  --slice-color-3: var(--nu-color-primary-600);
+                  --center-text-color: var(--nu-color-neutral-600);
+                  --center-value-color: var(--nu-color-success-700);
+                "
+              >
+              </nu-pie-chart>
+
+              <div class="code-preview__resizer">
+                <sl-icon name="grip-vertical"></sl-icon>
+              </div>
+            </div>
+
+            <div class="code-preview__source-group" id="code-preview-source-group-259">
+              <div class="code-preview__source code-preview__source--html">
+                <pre><code class="language-html" id="code-block-672"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
+  <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>[
+    {"name": "Revenue", "value": 45},
+    {"name": "Costs", "value": 30},
+    {"name": "Profit", "value": 25}
+  ]<span class="token punctuation">'</span></span>
+  <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>280<span class="token punctuation">"</span></span>
+  <span class="token attr-name">inner-radius</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0.5<span class="token punctuation">"</span></span>
+  <span class="token attr-name">center-text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Business<span class="token punctuation">"</span></span>
+  <span class="token attr-name">center-value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$125K<span class="token punctuation">"</span></span>
+  <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>
+    --slice-color-1: var(--nu-color-success-600);
+    --slice-color-2: var(--nu-color-warning-600);
+    --slice-color-3: var(--nu-color-primary-600);
+    --center-text-color: var(--nu-color-neutral-600);
+    --center-value-color: var(--nu-color-success-700);
+  <span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-pie-chart</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-672"></sl-copy-button></pre>
+              </div>
+            </div>
+
+            <div class="code-preview__buttons">
+              <button
+                type="button"
+                class="code-preview__button code-preview__toggle"
+                aria-expanded="false"
+                aria-controls="code-preview-source-group-259"
               >
                 Source
                 <svg
@@ -1214,41 +1429,41 @@
             Data Format<a href="#data-format" aria-label='Direct link to "Data Format"'></a>
           </h2>
           <p>Pie charts expect data in the following format:</p>
-          <pre><code class="language-typescript" id="code-block-745"><span class="token keyword">interface</span> <span class="token class-name">PieChartDataPoint</span> <span class="token punctuation">{</span>
+          <pre><code class="language-typescript" id="code-block-673"><span class="token keyword">interface</span> <span class="token class-name">PieChartDataPoint</span> <span class="token punctuation">{</span>
   name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
   value<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
   color<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-745"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-673"></sl-copy-button></pre>
           <h3 id="json-string" class="anchor-heading">
             JSON String<a href="#json-string" aria-label='Direct link to "JSON String"'></a>
           </h3>
-          <pre><code class="language-html" id="code-block-746"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
+          <pre><code class="language-html" id="code-block-674"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-pie-chart</span> 
   <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>[
     {"name": "Bitcoin", "value": 45000},
     {"name": "Ethereum", "value": 22000}
   ]<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-pie-chart</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-746"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-674"></sl-copy-button></pre>
           <h3 id="javascript-array" class="anchor-heading">
             JavaScript Array<a href="#javascript-array" aria-label='Direct link to "JavaScript Array"'></a>
           </h3>
-          <pre><code class="language-javascript" id="code-block-747"><span class="token keyword">const</span> portfolioData <span class="token operator">=</span> <span class="token punctuation">[</span>
+          <pre><code class="language-javascript" id="code-block-675"><span class="token keyword">const</span> portfolioData <span class="token operator">=</span> <span class="token punctuation">[</span>
   <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Bitcoin'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token number">45000</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Ethereum'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token number">22000</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Cardano'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token number">8000</span> <span class="token punctuation">}</span>
 <span class="token punctuation">]</span><span class="token punctuation">;</span>
 
 document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'nu-pie-chart'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>data <span class="token operator">=</span> portfolioData<span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-747"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-675"></sl-copy-button></pre>
           <h3 id="with-custom-colors" class="anchor-heading">
             With Custom Colors<a href="#with-custom-colors" aria-label='Direct link to "With Custom Colors"'></a>
           </h3>
-          <pre><code class="language-javascript" id="code-block-748"><span class="token keyword">const</span> customData <span class="token operator">=</span> <span class="token punctuation">[</span>
+          <pre><code class="language-javascript" id="code-block-676"><span class="token keyword">const</span> customData <span class="token operator">=</span> <span class="token punctuation">[</span>
   <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Bitcoin'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token number">45000</span><span class="token punctuation">,</span> <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">'#f97316'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Ethereum'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token number">22000</span><span class="token punctuation">,</span> <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">'#3b82f6'</span> <span class="token punctuation">}</span>
 <span class="token punctuation">]</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-748"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-676"></sl-copy-button></pre>
           <h2 id="customization" class="anchor-heading">
             Customization<a href="#customization" aria-label='Direct link to "Customization"'></a>
           </h2>
@@ -1258,7 +1473,7 @@ document<span class="token punctuation">.</span><span class="token function">que
               aria-label='Direct link to "CSS Custom Properties"'
             ></a>
           </h3>
-          <pre><code class="language-css" id="code-block-749"><span class="token selector">nu-pie-chart</span> <span class="token punctuation">{</span>
+          <pre><code class="language-css" id="code-block-677"><span class="token selector">nu-pie-chart</span> <span class="token punctuation">{</span>
   <span class="token comment">/* Slice colors */</span>
   <span class="token property">--slice-color-1</span><span class="token punctuation">:</span> #7e4cfe<span class="token punctuation">;</span>
   <span class="token property">--slice-color-2</span><span class="token punctuation">:</span> #895cfc<span class="token punctuation">;</span>
@@ -1274,7 +1489,7 @@ document<span class="token punctuation">.</span><span class="token function">que
   <span class="token property">--center-text-color</span><span class="token punctuation">:</span> #71717a<span class="token punctuation">;</span>
   <span class="token property">--center-value-color</span><span class="token punctuation">:</span> #000<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-749"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-677"></sl-copy-button></pre>
           <h3 id="properties" class="anchor-heading">
             Properties<a href="#properties" aria-label='Direct link to "Properties"'></a>
           </h3>
@@ -1306,19 +1521,19 @@ document<span class="token punctuation">.</span><span class="token function">que
             nu-slice-hover<a href="#nu-slice-hover" aria-label='Direct link to "nu-slice-hover"'></a>
           </h3>
           <p>Emitted when hovering over a pie slice.</p>
-          <pre><code class="language-javascript" id="code-block-750">chart<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'nu-slice-hover'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <pre><code class="language-javascript" id="code-block-678">chart<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'nu-slice-hover'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Hovered slice:'</span><span class="token punctuation">,</span> event<span class="token punctuation">.</span>detail<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-750"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-678"></sl-copy-button></pre>
           <h3 id="nu-slice-click" class="anchor-heading">
             nu-slice-click<a href="#nu-slice-click" aria-label='Direct link to "nu-slice-click"'></a>
           </h3>
           <p>Emitted when clicking a pie slice.</p>
-          <pre><code class="language-javascript" id="code-block-751">chart<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'nu-slice-click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <pre><code class="language-javascript" id="code-block-679">chart<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'nu-slice-click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Clicked slice:'</span><span class="token punctuation">,</span> event<span class="token punctuation">.</span>detail<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Percentage:'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>detail<span class="token punctuation">.</span>value <span class="token operator">/</span> totalValue<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'%'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-751"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-679"></sl-copy-button></pre>
           <h2 id="accessibility" class="anchor-heading">
             Accessibility<a href="#accessibility" aria-label='Direct link to "Accessibility"'></a>
           </h2>
@@ -1379,7 +1594,7 @@ document<span class="token punctuation">.</span><span class="token function">que
                 >
                 using a script tag:
               </p>
-              <pre><code class="language-html" id="code-block-752"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/pie-chart/pie-chart.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><sl-copy-button class="copy-code-button" from="code-block-752"></sl-copy-button></pre>
+              <pre><code class="language-html" id="code-block-680"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/pie-chart/pie-chart.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><sl-copy-button class="copy-code-button" from="code-block-680"></sl-copy-button></pre>
             </nu-tab-panel>
 
             <nu-tab-panel name="import">
@@ -1394,17 +1609,17 @@ document<span class="token punctuation">.</span><span class="token function">que
                 >
                 using a JavaScript import:
               </p>
-              <pre><code class="language-js" id="code-block-753"><span class="token keyword">import</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/pie-chart/pie-chart.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-753"></sl-copy-button></pre>
+              <pre><code class="language-js" id="code-block-681"><span class="token keyword">import</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/pie-chart/pie-chart.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-681"></sl-copy-button></pre>
             </nu-tab-panel>
 
             <nu-tab-panel name="bundler">
               <p>To import this component using <a href="/getting-started/installation#bundling">a bundler</a>:</p>
-              <pre><code class="language-js" id="code-block-754"><span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/pie-chart/pie-chart.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-754"></sl-copy-button></pre>
+              <pre><code class="language-js" id="code-block-682"><span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/pie-chart/pie-chart.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-682"></sl-copy-button></pre>
             </nu-tab-panel>
 
             <nu-tab-panel name="react">
               <p>To import this component as a <a href="/frameworks/react">React component</a>:</p>
-              <pre><code class="language-js" id="code-block-755"><span class="token keyword">import</span> NuPieChart <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/pie-chart'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-755"></sl-copy-button></pre>
+              <pre><code class="language-js" id="code-block-683"><span class="token keyword">import</span> NuPieChart <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/pie-chart'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-683"></sl-copy-button></pre>
             </nu-tab-panel>
           </nu-tab-group>
 

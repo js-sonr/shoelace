@@ -3741,7 +3741,7 @@
               "description": "The button variant.",
               "value": {
                 "type": "'default' | 'primary' | 'success' | 'neutral' | 'warning' | 'danger' | 'text'",
-                "default": "'primary'"
+                "default": "'neutral'"
               }
             },
             {
@@ -5263,7 +5263,7 @@
               "description": "The button variant.",
               "value": {
                 "type": "'default' | 'primary' | 'success' | 'neutral' | 'warning' | 'danger' | 'text'",
-                "default": "'success'"
+                "default": "'primary'"
               }
             },
             {

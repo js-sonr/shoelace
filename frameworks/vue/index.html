@@ -506,19 +506,19 @@
             Installation<a href="#installation" aria-label='Direct link to "Installation"'></a>
           </h2>
           <p>To add Nebula to your Vue app, install the package from npm.</p>
-          <pre><code class="language-bash" id="code-block-89"><span class="token function">npm</span> <span class="token function">install</span> @onsonr/nebula
-</code><sl-copy-button class="copy-code-button" from="code-block-89"></sl-copy-button></pre>
+          <pre><code class="language-bash" id="code-block-1164"><span class="token function">npm</span> <span class="token function">install</span> @onsonr/nebula
+</code><sl-copy-button class="copy-code-button" from="code-block-1164"></sl-copy-button></pre>
           <p>
             Next, <a href="/getting-started/themes">include a theme</a> and set the
             <a href="/getting-started/installation#setting-the-base-path">base path</a> for icons and other assets. In
             this example, we’ll import the light theme and use the CDN as a base path.
           </p>
-          <pre><code class="language-jsx" id="code-block-90"><span class="token comment">// main.js or main.ts</span>
+          <pre><code class="language-jsx" id="code-block-1165"><span class="token comment">// main.js or main.ts</span>
 <span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/themes/light.css'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> setBasePath <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/utilities/base-path'</span><span class="token punctuation">;</span>
 
 <span class="token function">setBasePath</span><span class="token punctuation">(</span><span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-90"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1165"></sl-copy-button></pre>
           <div role="alert" class="callout callout--tip">
             <p>
               If you’d rather not use the CDN for assets, you can create a build task that copies
@@ -550,12 +550,12 @@
             components, you can import the Nebula Vue types into your <code>tsconfig.json</code> to get better
             integration in your standard Vue and JSX templates.
           </p>
-          <pre><code class="language-json" id="code-block-91"><span class="token punctuation">{</span>
+          <pre><code class="language-json" id="code-block-1166"><span class="token punctuation">{</span>
   <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"types"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"@onsonr/nebula/dist/types/vue"</span><span class="token punctuation">]</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-91"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1166"></sl-copy-button></pre>
           <h2 id="usage" class="anchor-heading">Usage<a href="#usage" aria-label='Direct link to "Usage"'></a></h2>
           <h3 id="qr-code-generator-example" class="anchor-heading">
             QR code generator example<a
@@ -563,7 +563,7 @@
               aria-label='Direct link to "QR code generator example"'
             ></a>
           </h3>
-          <pre><code class="language-html" id="code-block-92"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+          <pre><code class="language-html" id="code-block-1167"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>QR code generator<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
 
@@ -591,7 +591,7 @@
     <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-spacing-large<span class="token punctuation">)</span> 0<span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-92"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1167"></sl-copy-button></pre>
           <h3 id="binding-complex-data" class="anchor-heading">
             Binding Complex Data<a href="#binding-complex-data" aria-label='Direct link to "Binding Complex Data"'></a>
           </h3>
@@ -599,8 +599,8 @@
             When binding complex data such as objects and arrays, use the <code>.prop</code> modifier to make Vue bind
             them as a property instead of an attribute.
           </p>
-          <pre><code class="language-html" id="code-block-93"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-color-picker</span> <span class="token attr-name">:swatches.prop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mySwatches<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-93"></sl-copy-button></pre>
+          <pre><code class="language-html" id="code-block-1168"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-color-picker</span> <span class="token attr-name">:swatches.prop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mySwatches<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-1168"></sl-copy-button></pre>
           <h3 id="two-way-binding" class="anchor-heading">
             Two-way Binding<a href="#two-way-binding" aria-label='Direct link to "Two-way Binding"'></a>
           </h3>
@@ -614,11 +614,11 @@
               >no support for v-model on custom elements</a
             >, but you can still achieve two-way binding manually.
           </p>
-          <pre><code class="language-html" id="code-block-94"><span class="token comment">&lt;!-- This doesn't work --&gt;</span>
+          <pre><code class="language-html" id="code-block-1169"><span class="token comment">&lt;!-- This doesn't work --&gt;</span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-input</span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-input</span><span class="token punctuation">&gt;</span></span>
 <span class="token comment">&lt;!-- This works, but it's a bit longer --&gt;</span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-input</span> <span class="token attr-name">:value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span> <span class="token attr-name">@input</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name = $event.target.value<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-input</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-94"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1169"></sl-copy-button></pre>
           <p>
             If that’s too verbose for your liking, you can use a custom directive instead.
             <a
@@ -648,13 +648,13 @@
             elements using the <code>slot</code> attribute followed by the name of the slot it is being assigned to.
           </p>
           <p>Here is an example:</p>
-          <pre><code class="language-html" id="code-block-95"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-drawer</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Drawer<span class="token punctuation">"</span></span> <span class="token attr-name">placement</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>start<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>drawer-placement-start<span class="token punctuation">"</span></span> <span class="token attr-name">:open</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>drawerIsOpen<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+          <pre><code class="language-html" id="code-block-1170"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-drawer</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Drawer<span class="token punctuation">"</span></span> <span class="token attr-name">placement</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>start<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>drawer-placement-start<span class="token punctuation">"</span></span> <span class="token attr-name">:open</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>drawerIsOpen<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   This drawer slides in from the start.
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-button</span> <span class="token attr-name">variant</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span> drawerIsOpen = false<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Close<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-button</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-drawer</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-95"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1170"></sl-copy-button></pre>
         </div>
       </article>
     </main>

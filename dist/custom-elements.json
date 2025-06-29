@@ -10412,7 +10412,7 @@
               "type": {
                 "text": "'default' | 'primary' | 'success' | 'neutral' | 'warning' | 'danger' | 'text'"
               },
-              "default": "'primary'",
+              "default": "'neutral'",
               "description": "The button variant.",
               "attribute": "variant",
               "reflects": true
@@ -10562,7 +10562,7 @@
               "type": {
                 "text": "'default' | 'primary' | 'success' | 'neutral' | 'warning' | 'danger' | 'text'"
               },
-              "default": "'primary'",
+              "default": "'neutral'",
               "description": "The button variant.",
               "fieldName": "variant"
             },
@@ -14901,7 +14901,7 @@
               "type": {
                 "text": "'default' | 'primary' | 'success' | 'neutral' | 'warning' | 'danger' | 'text'"
               },
-              "default": "'success'",
+              "default": "'primary'",
               "description": "The button variant.",
               "attribute": "variant",
               "reflects": true
@@ -15061,7 +15061,7 @@
               "type": {
                 "text": "'default' | 'primary' | 'success' | 'neutral' | 'warning' | 'danger' | 'text'"
               },
-              "default": "'success'",
+              "default": "'primary'",
               "description": "The button variant.",
               "fieldName": "variant"
             },

@@ -5821,14 +5821,14 @@
             If you’re using color tokens in your own stylesheet, simply remove the <code>rgb()</code> to update to this
             version.
           </p>
-          <pre><code class="language-css" id="code-block-96"><span class="token selector">.your-styles</span> <span class="token punctuation">{</span>
+          <pre><code class="language-css" id="code-block-1171"><span class="token selector">.your-styles</span> <span class="token punctuation">{</span>
   <span class="token comment">/* change this */</span>
   <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span>--nu-color-primary-500<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
   <span class="token comment">/* to this */</span>
   <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-primary-500<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-96"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1171"></sl-copy-button></pre>
           <p>
             Thank you for your help and patience with testing Nebula. I promise, we’re not far from a stable release!
           </p>
@@ -6345,20 +6345,20 @@
             Previously, color tokens were in hexadecimal format. Now, Nebula now uses an <code>R G B</code> format that
             requires you to use the <code>rgb()</code> function in your CSS.
           </p>
-          <pre><code class="language-css" id="code-block-97"><span class="token selector">.example</span> <span class="token punctuation">{</span>
+          <pre><code class="language-css" id="code-block-1172"><span class="token selector">.example</span> <span class="token punctuation">{</span>
   <span class="token comment">/* rgb() is required now */</span>
   <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-500<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-97"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1172"></sl-copy-button></pre>
           <p>
             This is more verbose than previous versions, but it has the advantage of letting you set the alpha channel
             of any color token.
           </p>
-          <pre><code class="language-css" id="code-block-98"><span class="token selector">.example-with-alpha</span> <span class="token punctuation">{</span>
+          <pre><code class="language-css" id="code-block-1173"><span class="token selector">.example-with-alpha</span> <span class="token punctuation">{</span>
   <span class="token comment">/* easily adjust opacity for any color token */</span>
   <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-500<span class="token punctuation">)</span> / 50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-98"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1173"></sl-copy-button></pre>
           <p>
             This change applies to all design tokens that implement a color. Refer to the
             <a href="/tokens/color">color tokens</a> page for more details.
