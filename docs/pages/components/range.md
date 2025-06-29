@@ -112,8 +112,8 @@ You can customize the active and inactive portions of the track using the `--tra
 ```html:preview
 <nu-range
   style="
-  --track-color-active: var(--sl-color-primary-600);
-  --track-color-inactive: var(--sl-color-primary-100);
+  --track-color-active: var(--nu-color-primary-600);
+  --track-color-inactive: var(--nu-color-primary-100);
 "
 ></nu-range>
 ```
@@ -126,8 +126,8 @@ import SlRange from '@onsonr/nebula/dist/react/range';
 const App = () => (
   <SlRange
     style={{
-      '--track-color-active': 'var(--sl-color-primary-600)',
-      '--track-color-inactive': 'var(--sl-color-primary-200)'
+      '--track-color-active': 'var(--nu-color-primary-600)',
+      '--track-color-inactive': 'var(--nu-color-primary-200)'
     }}
   />
 );
@@ -144,8 +144,8 @@ You can customize the initial offset of the active track using the `--track-acti
   min="-100"
   max="100"
   style="
-  --track-color-active: var(--sl-color-primary-600);
-  --track-color-inactive: var(--sl-color-primary-100);
+  --track-color-active: var(--nu-color-primary-600);
+  --track-color-inactive: var(--nu-color-primary-100);
   --track-active-offset: 50%;
 "
 ></nu-range>
@@ -161,8 +161,8 @@ const App = () => (
     min={-100}
     max={100}
     style={{
-      '--track-color-active': 'var(--sl-color-primary-600)',
-      '--track-color-inactive': 'var(--sl-color-primary-200)',
+      '--track-color-active': 'var(--nu-color-primary-600)',
+      '--track-color-inactive': 'var(--nu-color-primary-200)',
       '--track-active-offset': '50%'
     }}
   />

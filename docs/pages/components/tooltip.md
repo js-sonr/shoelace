@@ -295,10 +295,10 @@ const App = () => {
 
 ### Removing Arrows
 
-You can control the size of tooltip arrows by overriding the `--sl-tooltip-arrow-size` design token. To remove them, set the value to `0` as shown below.
+You can control the size of tooltip arrows by overriding the `--nu-tooltip-arrow-size` design token. To remove them, set the value to `0` as shown below.
 
 ```html:preview
-<nu-tooltip content="This is a tooltip" style="--sl-tooltip-arrow-size: 0;">
+<nu-tooltip content="This is a tooltip" style="--nu-tooltip-arrow-size: 0;">
   <nu-button>No Arrow</nu-button>
 </nu-tooltip>
 ```
@@ -310,7 +310,7 @@ import SlButton from '@onsonr/nebula/dist/react/button';
 import SlTooltip from '@onsonr/nebula/dist/react/tooltip';
 
 const App = () => (
-  <div style={{ '--sl-tooltip-arrow-size': '0' }}>
+  <div style={{ '--nu-tooltip-arrow-size': '0' }}>
     <SlTooltip content="This is a tooltip">
       <SlButton>Above</SlButton>
     </SlTooltip>
@@ -328,7 +328,7 @@ To override it globally, set it in a root block in your stylesheet after the Neb
 
 ```css
 :root {
-  --sl-tooltip-arrow-size: 0;
+  --nu-tooltip-arrow-size: 0;
 }
 ```
 
@@ -402,9 +402,9 @@ Tooltips will be clipped if they're inside a container that has `overflow: auto|
 <style>
   .tooltip-hoist {
     position: relative;
-    border: solid 2px var(--sl-panel-border-color);
+    border: solid 2px var(--nu-panel-border-color);
     overflow: hidden;
-    padding: var(--sl-spacing-medium);
+    padding: var(--nu-spacing-medium);
   }
 </style>
 ```
@@ -415,9 +415,9 @@ import SlTooltip from '@onsonr/nebula/dist/react/tooltip';
 
 const css = `
   .tooltip-hoist {
-    border: solid 2px var(--sl-panel-border-color);
+    border: solid 2px var(--nu-panel-border-color);
     overflow: hidden;
-    padding: var(--sl-spacing-medium);
+    padding: var(--nu-spacing-medium);
     position: relative;
   }
 `;

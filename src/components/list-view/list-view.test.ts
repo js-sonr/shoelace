@@ -1,8 +1,8 @@
 import '../../../dist/nebula.js';
 import { expect, fixture, html } from '@open-wc/testing';
 import sinon from 'sinon';
-import type NuListView from './list-view.js';
 import type { ActivityItem } from './list-view.component.js';
+import type NuListView from './list-view.js';
 
 describe('<nu-list-view>', () => {
   const mockItems: ActivityItem[] = [

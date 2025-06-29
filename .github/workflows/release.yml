@@ -3,7 +3,8 @@ name: Deploy CDN WebComponents
 on:
   push:
     branches:
-      - "other"
+      - "main"
+      - "master"
 
 jobs:
   deploy-docs:

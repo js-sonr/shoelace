@@ -45,9 +45,9 @@ export function lockBodyScrolling(lockingEl: HTMLElement) {
       // if there's no scrollbar, just set it to "revert" so whatever the user has set gets used. This is useful is the page is not overflowing and showing a scrollbar, or if the user has overflow: hidden, or any other reason a scrollbar may not be showing.
       scrollbarGutterProperty = 'revert';
     }
-    document.documentElement.style.setProperty('--sl-scroll-lock-gutter', scrollbarGutterProperty);
+    document.documentElement.style.setProperty('--nu-scroll-lock-gutter', scrollbarGutterProperty);
     document.documentElement.classList.add('sl-scroll-lock');
-    document.documentElement.style.setProperty('--sl-scroll-lock-size', `${scrollbarWidth}px`);
+    document.documentElement.style.setProperty('--nu-scroll-lock-size', `${scrollbarWidth}px`);
   }
 }
 
@@ -59,7 +59,7 @@ export function unlockBodyScrolling(lockingEl: HTMLElement) {
 
   if (locks.size === 0) {
     document.documentElement.classList.remove('sl-scroll-lock');
-    document.documentElement.style.removeProperty('--sl-scroll-lock-size');
+    document.documentElement.style.removeProperty('--nu-scroll-lock-size');
   }
 }
 

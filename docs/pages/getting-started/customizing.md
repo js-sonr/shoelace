@@ -14,24 +14,24 @@ Nebula makes use of several design tokens to provide a consistent appearance acr
 
 Design tokens offer a high-level way to customize the library with minimal effort. There are no component-specific variables, however, as design tokens are intended to be generic and highly reusable. To customize an individual component, refer to the section entitled [CSS Parts](#css-parts).
 
-Design tokens are accessed through CSS custom properties that are defined in your theme. Because design tokens live at the page level, they're prefixed with `--sl-` to avoid collisions with other libraries.
+Design tokens are accessed through CSS custom properties that are defined in your theme. Because design tokens live at the page level, they're prefixed with `--nu-` to avoid collisions with other libraries.
 
 To customize a design token, simply override it in your stylesheet using a `:root` block. Here's an example that changes the primary theme to purple based on existing [color primitives](/tokens/color#primitives).
 
 ```css
 :root {
   /* Changes the primary theme color to purple using primitives */
-  --sl-color-primary-50: var(--sl-color-purple-50);
-  --sl-color-primary-100: var(--sl-color-purple-100);
-  --sl-color-primary-200: var(--sl-color-purple-200);
-  --sl-color-primary-300: var(--sl-color-purple-300);
-  --sl-color-primary-400: var(--sl-color-purple-400);
-  --sl-color-primary-500: var(--sl-color-purple-500);
-  --sl-color-primary-600: var(--sl-color-purple-600);
-  --sl-color-primary-700: var(--sl-color-purple-700);
-  --sl-color-primary-800: var(--sl-color-purple-800);
-  --sl-color-primary-900: var(--sl-color-purple-900);
-  --sl-color-primary-950: var(--sl-color-purple-950);
+  --nu-color-primary-50: var(--nu-color-purple-50);
+  --nu-color-primary-100: var(--nu-color-purple-100);
+  --nu-color-primary-200: var(--nu-color-purple-200);
+  --nu-color-primary-300: var(--nu-color-purple-300);
+  --nu-color-primary-400: var(--nu-color-purple-400);
+  --nu-color-primary-500: var(--nu-color-purple-500);
+  --nu-color-primary-600: var(--nu-color-purple-600);
+  --nu-color-primary-700: var(--nu-color-purple-700);
+  --nu-color-primary-800: var(--nu-color-purple-800);
+  --nu-color-primary-900: var(--nu-color-purple-900);
+  --nu-color-primary-950: var(--nu-color-purple-950);
 }
 ```
 
@@ -50,7 +50,7 @@ Here's an example that modifies buttons with the `tomato-button` class.
 
 <style>
   .tomato-button::part(base) {
-    background: var(--sl-color-neutral-0);
+    background: var(--nu-color-neutral-0);
     border: solid 1px tomato;
   }
 
@@ -84,7 +84,7 @@ Most (but not all) components expose parts. You can find them in each component'
 
 ## Custom Properties
 
-For convenience, some components expose CSS custom properties you can override. These are not design tokens, nor do they have the same `--sl-` prefix since they're scoped to a component.
+For convenience, some components expose CSS custom properties you can override. These are not design tokens, nor do they have the same `--nu-` prefix since they're scoped to a component.
 
 You can set custom properties on a component in your stylesheet.
 

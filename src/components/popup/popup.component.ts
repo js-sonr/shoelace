@@ -43,7 +43,7 @@ function isVirtualElement(e: unknown): e is VirtualElement {
  *
  * @cssproperty [--arrow-size=6px] - The size of the arrow. Note that an arrow won't be shown unless the `arrow`
  *  attribute is used.
- * @cssproperty [--arrow-color=var(--sl-color-neutral-0)] - The color of the arrow.
+ * @cssproperty [--arrow-color=var(--nu-color-neutral-0)] - The color of the arrow.
  * @cssproperty [--auto-size-available-width] - A read-only custom property that determines the amount of width the
  *  popup can be before overflowing. Useful for positioning child elements that need to overflow. This property is only
  *  available when using `auto-size`.

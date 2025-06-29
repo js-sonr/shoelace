@@ -43,3 +43,12 @@ export type { NuSortChangeEvent } from './nu-sort-change.js';
 export type { NuStartEvent } from './nu-start.js';
 export type { NuTabHideEvent } from './nu-tab-hide.js';
 export type { NuTabShowEvent } from './nu-tab-show.js';
+
+// Chart component events
+export type { NuDataPointHoverEvent } from './nu-data-point-hover.js';
+export type { NuDataPointClickEvent } from './nu-data-point-click.js';
+export type { NuLineHoverEvent } from './nu-line-hover.js';
+export type { NuSliceHoverEvent } from './nu-slice-hover.js';
+export type { NuSliceClickEvent } from './nu-slice-click.js';
+export type { NuCandleHoverEvent } from './nu-candle-hover.js';
+export type { NuCandleClickEvent } from './nu-candle-click.js';

@@ -9,13 +9,13 @@ layout: component
 <nu-split-panel>
   <div
     slot="start"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+    style="height: 200px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
     Start
   </div>
   <div
     slot="end"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+    style="height: 200px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
     End
   </div>
@@ -33,7 +33,7 @@ const App = () => (
       slot="start"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--nu-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -45,7 +45,7 @@ const App = () => (
       slot="end"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--nu-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -69,13 +69,13 @@ To set the initial position, use the `position` attribute. If no position is pro
 <nu-split-panel position="75">
   <div
     slot="start"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+    style="height: 200px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
     Start
   </div>
   <div
     slot="end"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+    style="height: 200px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
     End
   </div>
@@ -90,13 +90,13 @@ To set the initial position in pixels instead of a percentage, use the `position
 <nu-split-panel position-in-pixels="150">
   <div
     slot="start"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+    style="height: 200px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
     Start
   </div>
   <div
     slot="end"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+    style="height: 200px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
     End
   </div>
@@ -114,7 +114,7 @@ const App = () => (
       slot="start"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--nu-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -126,7 +126,7 @@ const App = () => (
       slot="end"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--nu-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -148,13 +148,13 @@ Add the `vertical` attribute to render the split panel in a vertical orientation
 <nu-split-panel vertical style="height: 400px;">
   <div
     slot="start"
-    style="height: 100%; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+    style="height: 100%; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
     Start
   </div>
   <div
     slot="end"
-    style="height: 100%; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+    style="height: 100%; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
     End
   </div>
@@ -172,7 +172,7 @@ const App = () => (
       slot="start"
       style={{
         height: '100%',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--nu-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -184,7 +184,7 @@ const App = () => (
       slot="end"
       style={{
         height: '100%',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--nu-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -207,13 +207,13 @@ To snap panels at specific positions while dragging, add the `snap` attribute wi
   <nu-split-panel snap="100px 50%">
     <div
       slot="start"
-      style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+      style="height: 200px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
     >
       Start
     </div>
     <div
       slot="end"
-      style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+      style="height: 200px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
     >
       End
     </div>
@@ -235,7 +235,7 @@ To snap panels at specific positions while dragging, add the `snap` attribute wi
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--sl-color-neutral-400);
+    background: var(--nu-color-neutral-400);
     transform: translateX(-3px);
   }
 
@@ -267,7 +267,7 @@ const css = `
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--sl-color-neutral-400);
+    background: var(--nu-color-neutral-400);
     transform: translateX(-3px);
   }
 
@@ -288,7 +288,7 @@ const App = () => (
           slot="start"
           style={{
             height: '200px',
-            background: 'var(--sl-color-neutral-50)',
+            background: 'var(--nu-color-neutral-50)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
@@ -300,7 +300,7 @@ const App = () => (
           slot="end"
           style={{
             height: '200px',
-            background: 'var(--sl-color-neutral-50)',
+            background: 'var(--nu-color-neutral-50)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
@@ -328,13 +328,13 @@ Add the `disabled` attribute to prevent the divider from being repositioned.
 <nu-split-panel disabled>
   <div
     slot="start"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+    style="height: 200px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
     Start
   </div>
   <div
     slot="end"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+    style="height: 200px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
     End
   </div>
@@ -352,7 +352,7 @@ const App = () => (
       slot="start"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--nu-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -364,7 +364,7 @@ const App = () => (
       slot="end"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--nu-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -389,13 +389,13 @@ Try resizing the example below with each option and notice how the panels respon
   <nu-split-panel>
     <div
       slot="start"
-      style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+      style="height: 200px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
     >
       Start
     </div>
     <div
       slot="end"
-      style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+      style="height: 200px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
     >
       End
     </div>
@@ -435,7 +435,7 @@ const App = () => {
           slot="start"
           style={{
             height: '200px',
-            background: 'var(--sl-color-neutral-50)',
+            background: 'var(--nu-color-neutral-50)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
@@ -447,7 +447,7 @@ const App = () => {
           slot="end"
           style={{
             height: '200px',
-            background: 'var(--sl-color-neutral-50)',
+            background: 'var(--nu-color-neutral-50)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
@@ -484,13 +484,13 @@ This examples demonstrates how you can ensure both panels are at least 150px usi
 <nu-split-panel style="--min: 150px; --max: calc(100% - 150px);">
   <div
     slot="start"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+    style="height: 200px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
     Start
   </div>
   <div
     slot="end"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+    style="height: 200px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
     End
   </div>
@@ -508,7 +508,7 @@ const App = () => (
       slot="start"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--nu-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -520,7 +520,7 @@ const App = () => (
       slot="end"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--nu-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -542,7 +542,7 @@ Create complex layouts that can be repositioned independently by nesting split p
 <nu-split-panel>
   <div
     slot="start"
-    style="height: 400px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden"
+    style="height: 400px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden"
   >
     Start
   </div>
@@ -550,13 +550,13 @@ Create complex layouts that can be repositioned independently by nesting split p
     <nu-split-panel vertical style="height: 400px;">
       <div
         slot="start"
-        style="height: 100%; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden"
+        style="height: 100%; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden"
       >
         Top
       </div>
       <div
         slot="end"
-        style="height: 100%; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden"
+        style="height: 100%; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden"
       >
         Bottom
       </div>
@@ -576,7 +576,7 @@ const App = () => (
       slot="start"
       style={{
         height: '400px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--nu-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -590,7 +590,7 @@ const App = () => (
           slot="start"
           style={{
             height: '100%',
-            background: 'var(--sl-color-neutral-50)',
+            background: 'var(--nu-color-neutral-50)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
@@ -602,7 +602,7 @@ const App = () => (
           slot="end"
           style={{
             height: '100%',
-            background: 'var(--sl-color-neutral-50)',
+            background: 'var(--nu-color-neutral-50)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
@@ -627,13 +627,13 @@ You can target the `divider` part to apply CSS properties to the divider. To add
   <nu-icon slot="divider" name="grip-vertical"></nu-icon>
   <div
     slot="start"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+    style="height: 200px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
     Start
   </div>
   <div
     slot="end"
-    style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+    style="height: 200px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
   >
     End
   </div>
@@ -653,7 +653,7 @@ const App = () => (
       slot="start"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--nu-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -665,7 +665,7 @@ const App = () => (
       slot="end"
       style={{
         height: '200px',
-        background: 'var(--sl-color-neutral-50)',
+        background: 'var(--nu-color-neutral-50)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -687,13 +687,13 @@ Here's a more elaborate example that changes the divider's color and width and a
     <nu-icon slot="divider" name="grip-vertical"></nu-icon>
     <div
       slot="start"
-      style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+      style="height: 200px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
     >
       Start
     </div>
     <div
       slot="end"
-      style="height: 200px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+      style="height: 200px; background: var(--nu-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
     >
       End
     </div>
@@ -706,24 +706,24 @@ Here's a more elaborate example that changes the divider's color and width and a
   }
 
   .split-panel-divider sl-split-panel::part(divider) {
-    background-color: var(--sl-color-pink-600);
+    background-color: var(--nu-color-pink-600);
   }
 
   .split-panel-divider sl-icon {
     position: absolute;
-    border-radius: var(--sl-border-radius-small);
-    background: var(--sl-color-pink-600);
-    color: var(--sl-color-neutral-0);
+    border-radius: var(--nu-border-radius-small);
+    background: var(--nu-color-pink-600);
+    color: var(--nu-color-neutral-0);
     padding: 0.5rem 0.125rem;
   }
 
   .split-panel-divider sl-split-panel::part(divider):focus-visible {
-    background-color: var(--sl-color-primary-600);
+    background-color: var(--nu-color-primary-600);
   }
 
   .split-panel-divider sl-split-panel:focus-within sl-icon {
-    background-color: var(--sl-color-primary-600);
-    color: var(--sl-color-neutral-0);
+    background-color: var(--nu-color-primary-600);
+    color: var(--nu-color-neutral-0);
   }
 </style>
 ```
@@ -740,24 +740,24 @@ const css = `
   }
 
   .split-panel-divider sl-split-panel::part(divider) {
-    background-color: var(--sl-color-pink-600);
+    background-color: var(--nu-color-pink-600);
   }
 
   .split-panel-divider sl-icon {
     position: absolute;
-    border-radius: var(--sl-border-radius-small);
-    background: var(--sl-color-pink-600);
-    color: var(--sl-color-neutral-0);
+    border-radius: var(--nu-border-radius-small);
+    background: var(--nu-color-pink-600);
+    color: var(--nu-color-neutral-0);
     padding: .5rem .125rem;
   }
 
   .split-panel-divider sl-split-panel::part(divider):focus-visible {
-    background-color: var(--sl-color-primary-600);
+    background-color: var(--nu-color-primary-600);
   }
 
   .split-panel-divider sl-split-panel:focus-within sl-icon {
-    background-color: var(--sl-color-primary-600);
-    color: var(--sl-color-neutral-0);
+    background-color: var(--nu-color-primary-600);
+    color: var(--nu-color-neutral-0);
   }
 `;
 
@@ -770,7 +770,7 @@ const App = () => (
           slot="start"
           style={{
             height: '200px',
-            background: 'var(--sl-color-neutral-50)',
+            background: 'var(--nu-color-neutral-50)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
@@ -782,7 +782,7 @@ const App = () => (
           slot="end"
           style={{
             height: '200px',
-            background: 'var(--sl-color-neutral-50)',
+            background: 'var(--nu-color-neutral-50)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'

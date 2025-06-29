@@ -26,7 +26,7 @@ The resize observer will report changes to the dimensions of the elements it wra
 <style>
   .resize-observer-overview div {
     display: flex;
-    border: solid 2px var(--sl-input-border-color);
+    border: solid 2px var(--nu-input-border-color);
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -41,7 +41,7 @@ import SlResizeObserver from '@onsonr/nebula/dist/react/resize-observer';
 const css = `
   .resize-observer-overview div {
     display: flex;
-    border: solid 2px var(--sl-input-border-color);
+    border: solid 2px var(--nu-input-border-color);
     align-items: center;
     justify-content: center;
     text-align: center;

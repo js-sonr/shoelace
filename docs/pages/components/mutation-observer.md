@@ -51,7 +51,7 @@ import SlMutationObserver from '@onsonr/nebula/dist/react/mutation-observer';
 const css = `
   .resize-observer-overview div {
     display: flex;
-    border: solid 2px var(--sl-input-border-color);
+    border: solid 2px var(--nu-input-border-color);
     align-items: center;
     justify-content: center;
     text-align: center;

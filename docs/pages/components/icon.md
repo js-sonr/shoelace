@@ -380,9 +380,9 @@ If you want to change the icons Nebula uses internally, you can register an icon
 
 <style>
   .icon-search {
-    border: solid 1px var(--sl-panel-border-color);
-    border-radius: var(--sl-border-radius-medium);
-    padding: var(--sl-spacing-medium);
+    border: solid 1px var(--nu-panel-border-color);
+    border-radius: var(--nu-border-radius-medium);
+    padding: var(--nu-spacing-medium);
   }
 
   .icon-search [hidden] {
@@ -426,18 +426,18 @@ If you want to change the icons Nebula uses internally, you can register an icon
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--sl-border-radius-medium);
+    border-radius: var(--nu-border-radius-medium);
     font-size: 24px;
     width: 2em;
     height: 2em;
     margin: 0 auto;
     cursor: copy;
-    transition: var(--sl-transition-medium) all;
+    transition: var(--nu-transition-medium) all;
   }
 
   .icon-list-item:hover {
-    background-color: var(--sl-color-primary-50);
-    color: var(--sl-color-primary-600);
+    background-color: var(--nu-color-primary-50);
+    color: var(--nu-color-primary-600);
   }
 
   .icon-list[data-type="outline"] .icon-list-item[data-name$="-fill"] {
