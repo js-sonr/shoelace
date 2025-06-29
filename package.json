@@ -4,6 +4,9 @@
   "version": "0.0.1",
   "homepage": "https://nebulaui.org",
   "author": "Prad <prad@sonr.io>",
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "customElements": "dist/custom-elements.json",
   "web-types": "./dist/web-types.json",
