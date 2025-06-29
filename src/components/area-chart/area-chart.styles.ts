@@ -3,11 +3,13 @@ import { css } from 'lit';
 export default css`
   :host {
     display: block;
-    --area-gradient-start: rgba(234, 179, 8, 0.2);
-    --area-gradient-end: rgba(234, 179, 8, 0.02);
-    --line-stroke: #eab308;
-    --axis-label-color: #71717a;
-    --axis-label-size: 0.75rem;
+    --area-gradient-start: hsl(var(--nu-color-warning-500) / 0.2);
+    --area-gradient-end: hsl(var(--nu-color-warning-500) / 0.02);
+    --line-stroke: var(--nu-color-warning-500);
+    --axis-label-color: var(--nu-color-neutral-500);
+    --axis-label-size: var(--nu-font-size-x-small);
+    --chart-spacing: var(--nu-spacing-small);
+    --chart-border-radius: var(--nu-border-radius-medium);
   }
 
   .area-chart {
@@ -21,6 +23,8 @@ export default css`
     height: 100%;
     width: 100%;
     overflow: visible;
+    padding: var(--chart-spacing);
+    border-radius: var(--chart-border-radius);
   }
 
   .chart-svg {
@@ -57,10 +61,10 @@ export default css`
 
   /* Dark theme support */
   :host([data-theme='dark']) {
-    --area-gradient-start: rgba(234, 179, 8, 0.2);
-    --area-gradient-end: rgba(234, 179, 8, 0.02);
-    --line-stroke: #ca8a04;
-    --axis-label-color: #a1a1aa;
+    --area-gradient-start: hsl(var(--nu-color-warning-600) / 0.2);
+    --area-gradient-end: hsl(var(--nu-color-warning-600) / 0.02);
+    --line-stroke: var(--nu-color-warning-600);
+    --axis-label-color: var(--nu-color-neutral-400);
   }
 
   /* High contrast mode */

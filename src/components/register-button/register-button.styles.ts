@@ -10,6 +10,6 @@ export default css`
   }
 
   .register-button nu-button::part(base) {
-    color: var(--nu-register-button-color, var(--nu-color-success-600));
+    color: var(--nu-register-button-color, var(--nu-color-primary-600));
   }
 `;

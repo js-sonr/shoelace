@@ -27,7 +27,7 @@ const App = () => (
 
 ### Variants
 
-Use the `variant` attribute to set the button's variant, inheriting from the base button component.
+Use the `variant` attribute to set the button's variant, inheriting from the base button component. The default variant is `neutral` for a clean, professional appearance.
 
 ```html:preview
 <nu-login-button variant="default">Default Login</nu-login-button>
@@ -77,22 +77,21 @@ const App = () => (
 
 ### With Icons
 
-Add icons to enhance the visual appearance and indicate the authentication method.
+The login button uses the Sonr passkey icon by default to maintain consistent branding. You can customize the icon using slots.
 
 ```html:preview
 <nu-login-button>
-  <nu-icon slot="prefix" name="shield-lock"></nu-icon>
-  Secure Login
+  Sign In
+</nu-login-button>
+
+<nu-login-button variant="primary">
+  <nu-icon slot="prefix" name="passkey" library="sonr"></nu-icon>
+  Passkey Login
 </nu-login-button>
 
 <nu-login-button variant="success">
   <nu-icon slot="prefix" name="fingerprint"></nu-icon>
   Biometric Login
-</nu-login-button>
-
-<nu-login-button variant="primary">
-  <nu-icon slot="prefix" name="key"></nu-icon>
-  Security Key Login
   <nu-icon slot="suffix" name="arrow-right"></nu-icon>
 </nu-login-button>
 ```
@@ -332,7 +331,7 @@ You can customize the appearance using CSS custom properties:
 
 ```css
 nu-login-button {
-  --nu-login-button-color: var(--nu-color-primary-600);
+  --nu-login-button-color: var(--nu-color-neutral-600);
 }
 
 nu-login-button::part(button) {

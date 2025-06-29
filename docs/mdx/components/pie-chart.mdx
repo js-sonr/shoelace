@@ -365,6 +365,159 @@ Hide slice labels for a cleaner look:
   </Tab>
 </Tabs>
 
+## Theming and Customization
+
+The Pie Chart component now leverages Nebula's comprehensive design token system for consistent theming and customization across light and dark modes.
+
+### Consistent Design Tokens
+
+All chart styling now uses standardized design tokens from the Nebula theme system:
+
+```css
+nu-pie-chart {
+  /* Colors use theme tokens */
+  --slice-color-1: var(--nu-color-purple-600);
+  --slice-color-2: var(--nu-color-blue-600);
+  --slice-color-3: var(--nu-color-cyan-600);
+  --slice-color-4: var(--nu-color-purple-400);
+  --slice-color-5: var(--nu-color-blue-400);
+  --slice-color-6: var(--nu-color-cyan-400);
+  
+  /* Typography tokens */
+  --label-size: var(--nu-font-size-small);
+  --label-weight: var(--nu-font-weight-normal);
+  --center-text-size: var(--nu-font-size-medium);
+  --center-value-size: var(--nu-font-size-large);
+  
+  /* Spacing tokens */
+  --chart-spacing: var(--nu-spacing-small);
+  --chart-margin: var(--nu-spacing-medium);
+  
+  /* Border radius tokens */
+  --chart-border-radius: var(--nu-border-radius-medium);
+  
+  /* Transition tokens */
+  --chart-transition: var(--nu-transition-fast);
+}
+```
+
+### Chart-Specific Variables
+
+The component provides these chart-specific custom properties that map to design tokens:
+
+- `--chart-spacing`: Internal padding using `--nu-spacing-small`
+- `--chart-border-radius`: Container borders using `--nu-border-radius-medium`
+- `--chart-margin`: Chart margins using `--nu-spacing-medium`
+
+### Color Scheme Improvements
+
+Pie charts now use a purple/blue/cyan gradient color scheme by default for consistent theming:
+
+```css
+nu-pie-chart {
+  /* Primary gradient palette */
+  --slice-color-1: var(--nu-color-purple-600);
+  --slice-color-2: var(--nu-color-purple-500);
+  --slice-color-3: var(--nu-color-blue-600);
+  --slice-color-4: var(--nu-color-blue-500);
+  --slice-color-5: var(--nu-color-cyan-600);
+  --slice-color-6: var(--nu-color-cyan-500);
+  
+  /* Stroke and labels */
+  --slice-stroke: var(--nu-color-neutral-0);
+  --label-color: var(--nu-color-neutral-700);
+  --center-text-color: var(--nu-color-neutral-600);
+  --center-value-color: var(--nu-color-neutral-900);
+}
+```
+
+### Light/Dark Theme Support
+
+The charts automatically adapt to light and dark themes through CSS custom properties:
+
+```css
+/* Light theme (default) */
+nu-pie-chart {
+  --slice-stroke: var(--nu-color-neutral-0);
+  --label-color: var(--nu-color-neutral-700);
+  --center-text-color: var(--nu-color-neutral-600);
+  --center-value-color: var(--nu-color-neutral-900);
+  --background-color: var(--nu-color-neutral-0);
+}
+
+/* Dark theme */
+[data-theme='dark'] nu-pie-chart {
+  --slice-stroke: var(--nu-color-neutral-800);
+  --label-color: var(--nu-color-neutral-300);
+  --center-text-color: var(--nu-color-neutral-400);
+  --center-value-color: var(--nu-color-neutral-0);
+  --background-color: var(--nu-color-neutral-900);
+  
+  /* Adjusted slice colors for dark theme */
+  --slice-color-1: var(--nu-color-purple-400);
+  --slice-color-2: var(--nu-color-purple-300);
+  --slice-color-3: var(--nu-color-blue-400);
+  --slice-color-4: var(--nu-color-blue-300);
+  --slice-color-5: var(--nu-color-cyan-400);
+  --slice-color-6: var(--nu-color-cyan-300);
+}
+```
+
+### Advanced Customization Examples
+
+Use theme tokens for consistent brand colors:
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-pie-chart 
+      data='[
+        {"name": "Revenue", "value": 45},
+        {"name": "Costs", "value": 30},
+        {"name": "Profit", "value": 25}
+      ]'
+      size="280"
+      inner-radius="0.5"
+      center-text="Business"
+      center-value="$125K"
+      style="
+        --slice-color-1: var(--nu-color-success-600);
+        --slice-color-2: var(--nu-color-warning-600);
+        --slice-color-3: var(--nu-color-primary-600);
+        --center-text-color: var(--nu-color-neutral-600);
+        --center-value-color: var(--nu-color-success-700);
+      ">
+    </nu-pie-chart>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-pie-chart 
+      data='[
+        {"name": "Revenue", "value": 45},
+        {"name": "Costs", "value": 30},
+        {"name": "Profit", "value": 25}
+      ]'
+      size="280"
+      inner-radius="0.5"
+      center-text="Business"
+      center-value="$125K"
+      style="
+        --slice-color-1: var(--nu-color-success-600);
+        --slice-color-2: var(--nu-color-warning-600);
+        --slice-color-3: var(--nu-color-primary-600);
+        --center-text-color: var(--nu-color-neutral-600);
+        --center-value-color: var(--nu-color-success-700);
+      ">
+    </nu-pie-chart>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
 ## Data Format
 
 Pie charts expect data in the following format:

@@ -3,16 +3,19 @@ import { css } from 'lit';
 export default css`
   :host {
     display: block;
-    --line-stroke-1: #a855f7;
-    --line-stroke-2: #ec4899;
-    --line-stroke-3: #06b6d4;
-    --dot-fill-1: #c084fc;
-    --dot-fill-2: #f0abfc;
-    --dot-fill-3: #67e8f9;
-    --grid-color: #e4e4e7;
-    --axis-color: #71717a;
-    --axis-label-color: #71717a;
-    --axis-label-size: 0.75rem;
+    --line-stroke-1: var(--nu-color-purple-500);
+    --line-stroke-2: var(--nu-color-pink-500);
+    --line-stroke-3: var(--nu-color-cyan-500);
+    --dot-fill-1: var(--nu-color-purple-400);
+    --dot-fill-2: var(--nu-color-pink-400);
+    --dot-fill-3: var(--nu-color-cyan-400);
+    --grid-color: var(--nu-color-neutral-200);
+    --axis-color: var(--nu-color-neutral-500);
+    --axis-label-color: var(--nu-color-neutral-500);
+    --axis-label-size: var(--nu-font-size-x-small);
+    --chart-spacing: var(--nu-spacing-small);
+    --chart-border-radius: var(--nu-border-radius-medium);
+    --chart-margin: var(--nu-spacing-medium);
   }
 
   .line-chart {
@@ -23,20 +26,19 @@ export default css`
 
   .chart-container {
     position: relative;
-    height: calc(100% - var(--margin-top) - var(--margin-bottom));
-    width: calc(100% - var(--margin-left) - var(--margin-right));
-    margin-top: var(--margin-top);
-    margin-left: var(--margin-left);
-    margin-right: var(--margin-right);
-    margin-bottom: var(--margin-bottom);
+    height: calc(100% - var(--chart-margin) - var(--chart-margin));
+    width: calc(100% - var(--chart-margin) - var(--chart-margin));
+    margin: var(--chart-margin);
+    padding: var(--chart-spacing);
+    border-radius: var(--chart-border-radius);
   }
 
   .y-axis {
     position: absolute;
     inset: 0;
     height: 100%;
-    width: var(--margin-left);
-    transform: translateX(calc(-1 * var(--margin-left)));
+    width: var(--chart-margin);
+    transform: translateX(calc(-1 * var(--chart-margin)));
     overflow: visible;
   }
 
@@ -55,7 +57,7 @@ export default css`
 
   .x-axis {
     position: relative;
-    transform: translateY(0.5rem);
+    transform: translateY(var(--nu-spacing-x-small));
   }
 
   .no-data {
@@ -84,7 +86,7 @@ export default css`
     font-variant-numeric: tabular-nums;
     width: 100%;
     text-align: right;
-    padding-right: 0.5rem;
+    padding-right: var(--nu-spacing-x-small);
     white-space: nowrap;
   }
 
@@ -112,9 +114,9 @@ export default css`
 
   /* Dark theme support */
   :host([data-theme='dark']) {
-    --grid-color: #3f3f46;
-    --axis-color: #a1a1aa;
-    --axis-label-color: #a1a1aa;
+    --grid-color: var(--nu-color-neutral-700);
+    --axis-color: var(--nu-color-neutral-400);
+    --axis-label-color: var(--nu-color-neutral-400);
   }
 
   /* High contrast mode */

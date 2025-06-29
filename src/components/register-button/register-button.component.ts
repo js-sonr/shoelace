@@ -38,7 +38,7 @@ export default class NuRegisterButton extends NebulaElement {
 
 
   /** The button variant. */
-  @property({ reflect: true }) variant: 'default' | 'primary' | 'success' | 'neutral' | 'warning' | 'danger' | 'text' = 'success';
+  @property({ reflect: true }) variant: 'default' | 'primary' | 'success' | 'neutral' | 'warning' | 'danger' | 'text' = 'primary';
 
   /** The button size. */
   @property({ reflect: true }) size: 'small' | 'medium' | 'large' = 'medium';
@@ -173,7 +173,7 @@ export default class NuRegisterButton extends NebulaElement {
           @click=${this.handleRegister}
         >
           <slot name="prefix" slot="prefix">
-            <nu-icon name="person-plus" library="default"></nu-icon>
+            <nu-icon name="passkey" library="sonr"></nu-icon>
           </slot>
           <slot>Create Account</slot>
           <slot name="suffix" slot="suffix"></slot>

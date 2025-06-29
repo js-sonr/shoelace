@@ -3,18 +3,20 @@ import { css } from 'lit';
 export default css`
   :host {
     display: block;
-    --slice-color-1: #7e4cfe;
-    --slice-color-2: #895cfc;
-    --slice-color-3: #956bff;
-    --slice-color-4: #a37fff;
-    --slice-color-5: #b291fd;
-    --slice-color-6: #b597ff;
-    --slice-stroke: rgba(255, 255, 255, 0.2);
-    --slice-stroke-width: 10;
-    --label-color: #eee;
-    --label-size: 14px;
-    --center-text-color: #71717a;
-    --center-value-color: #000;
+    --slice-color-1: var(--nu-color-purple-500);
+    --slice-color-2: var(--nu-color-purple-400);
+    --slice-color-3: var(--nu-color-blue-500);
+    --slice-color-4: var(--nu-color-blue-400);
+    --slice-color-5: var(--nu-color-cyan-500);
+    --slice-color-6: var(--nu-color-cyan-400);
+    --slice-stroke: hsl(var(--nu-color-neutral-0) / 0.2);
+    --slice-stroke-width: 2;
+    --label-color: var(--nu-color-neutral-700);
+    --label-size: var(--nu-font-size-small);
+    --center-text-color: var(--nu-color-neutral-500);
+    --center-value-color: var(--nu-color-neutral-900);
+    --chart-spacing: var(--nu-spacing-small);
+    --chart-border-radius: var(--nu-border-radius-medium);
   }
 
   .pie-chart {
@@ -31,6 +33,8 @@ export default css`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: var(--chart-spacing);
+    border-radius: var(--chart-border-radius);
   }
 
   .chart-svg {
@@ -53,16 +57,16 @@ export default css`
   }
 
   .center-label {
-    font-size: 1.125rem;
+    font-size: var(--nu-font-size-large);
     color: var(--center-text-color);
-    margin-bottom: 0.25rem;
+    margin-bottom: var(--nu-spacing-2x-small);
   }
 
   .center-value {
-    font-size: 2.25rem;
-    font-weight: 700;
+    font-size: var(--nu-font-size-2x-large);
+    font-weight: var(--nu-font-weight-bold);
     color: var(--center-value-color);
-    transition: color 0.3s ease;
+    transition: color var(--nu-transition-fast) ease;
   }
 
   .no-data {
@@ -77,7 +81,7 @@ export default css`
   /* Slice interactions */
   .slice {
     cursor: pointer;
-    transition: transform 0.2s ease, filter 0.2s ease;
+    transition: transform var(--nu-transition-medium) ease, filter var(--nu-transition-medium) ease;
   }
 
   .slice:hover {
@@ -101,10 +105,10 @@ export default css`
 
   /* Dark theme support */
   :host([data-theme='dark']) {
-    --slice-stroke: rgba(255, 255, 255, 0.1);
-    --label-color: #f4f4f5;
-    --center-text-color: #a1a1aa;
-    --center-value-color: #f4f4f5;
+    --slice-stroke: hsl(var(--nu-color-neutral-1000) / 0.1);
+    --label-color: var(--nu-color-neutral-100);
+    --center-text-color: var(--nu-color-neutral-400);
+    --center-value-color: var(--nu-color-neutral-100);
   }
 
   /* High contrast mode */
@@ -126,25 +130,25 @@ export default css`
   /* Responsive text sizing */
   @container (max-width: 200px) {
     .center-label {
-      font-size: 0.875rem;
+      font-size: var(--nu-font-size-small);
     }
     
     .center-value {
-      font-size: 1.5rem;
+      font-size: var(--nu-font-size-x-large);
     }
     
-    --label-size: 12px;
+    --label-size: var(--nu-font-size-x-small);
   }
 
   @container (min-width: 400px) {
     .center-label {
-      font-size: 1.25rem;
+      font-size: var(--nu-font-size-x-large);
     }
     
     .center-value {
-      font-size: 3rem;
+      font-size: var(--nu-font-size-3x-large);
     }
     
-    --label-size: 16px;
+    --label-size: var(--nu-font-size-medium);
   }
 `;

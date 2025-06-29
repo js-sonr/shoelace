@@ -10,6 +10,6 @@ export default css`
   }
 
   .login-button nu-button::part(base) {
-    color: var(--nu-login-button-color, var(--nu-color-primary-600));
+    color: var(--nu-login-button-color, var(--nu-color-neutral-600));
   }
 `;

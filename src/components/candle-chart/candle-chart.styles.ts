@@ -3,14 +3,17 @@ import { css } from 'lit';
 export default css`
   :host {
     display: block;
-    --bullish-color: #22c55e;
-    --bearish-color: #ef4444;
+    --bullish-color: var(--nu-color-success-500);
+    --bearish-color: var(--nu-color-danger-500);
     --wick-color: inherit;
-    --grid-color: #e4e4e7;
-    --axis-color: #71717a;
-    --axis-label-color: #71717a;
-    --axis-label-size: 0.75rem;
+    --grid-color: var(--nu-color-neutral-200);
+    --axis-color: var(--nu-color-neutral-500);
+    --axis-label-color: var(--nu-color-neutral-500);
+    --axis-label-size: var(--nu-font-size-x-small);
     --candle-width: 0.7;
+    --chart-spacing: var(--nu-spacing-small);
+    --chart-border-radius: var(--nu-border-radius-medium);
+    --chart-margin: var(--nu-spacing-medium);
   }
 
   .candle-chart {
@@ -21,20 +24,19 @@ export default css`
 
   .chart-container {
     position: relative;
-    height: calc(100% - var(--margin-top) - var(--margin-bottom));
-    width: calc(100% - var(--margin-left) - var(--margin-right));
-    margin-top: var(--margin-top);
-    margin-left: var(--margin-left);
-    margin-right: var(--margin-right);
-    margin-bottom: var(--margin-bottom);
+    height: calc(100% - var(--chart-margin) - var(--chart-margin));
+    width: calc(100% - var(--chart-margin) - var(--chart-margin));
+    margin: var(--chart-margin);
+    padding: var(--chart-spacing);
+    border-radius: var(--chart-border-radius);
   }
 
   .y-axis {
     position: absolute;
     inset: 0;
     height: 100%;
-    width: var(--margin-left);
-    transform: translateX(calc(-1 * var(--margin-left)));
+    width: var(--chart-margin);
+    transform: translateX(calc(-1 * var(--chart-margin)));
     overflow: visible;
   }
 
@@ -53,7 +55,7 @@ export default css`
 
   .x-axis {
     position: relative;
-    transform: translateY(0.5rem);
+    transform: translateY(var(--nu-spacing-x-small));
   }
 
   .no-data {
@@ -82,7 +84,7 @@ export default css`
     font-variant-numeric: tabular-nums;
     width: 100%;
     text-align: right;
-    padding-right: 0.5rem;
+    padding-right: var(--nu-spacing-x-small);
     white-space: nowrap;
     font-weight: 500;
   }
@@ -94,7 +96,7 @@ export default css`
   /* Candlestick styling */
   .candle {
     cursor: pointer;
-    transition: opacity 0.2s ease;
+    transition: opacity var(--nu-transition-medium) ease;
   }
 
   .candle:hover {
@@ -110,11 +112,11 @@ export default css`
   }
 
   .wick {
-    transition: stroke-width 0.2s ease;
+    transition: stroke-width var(--nu-transition-medium) ease;
   }
 
   .body {
-    transition: stroke-width 0.2s ease, opacity 0.2s ease;
+    transition: stroke-width var(--nu-transition-medium) ease, opacity var(--nu-transition-medium) ease;
   }
 
   /* Bullish (green) candles */
@@ -141,7 +143,7 @@ export default css`
 
   /* Volume bars */
   .volume-bar {
-    transition: opacity 0.2s ease;
+    transition: opacity var(--nu-transition-medium) ease;
   }
 
   .volume-bar:hover {
@@ -158,17 +160,17 @@ export default css`
 
   /* Dark theme support */
   :host([data-theme='dark']) {
-    --grid-color: #3f3f46;
-    --axis-color: #a1a1aa;
-    --axis-label-color: #a1a1aa;
-    --bullish-color: #16a34a;
-    --bearish-color: #dc2626;
+    --grid-color: var(--nu-color-neutral-700);
+    --axis-color: var(--nu-color-neutral-400);
+    --axis-label-color: var(--nu-color-neutral-400);
+    --bullish-color: var(--nu-color-success-600);
+    --bearish-color: var(--nu-color-danger-600);
   }
 
   /* High contrast mode */
   @media (prefers-contrast: high) {
-    --bullish-color: #15803d;
-    --bearish-color: #b91c1c;
+    --bullish-color: var(--nu-color-success-700);
+    --bearish-color: var(--nu-color-danger-700);
     --axis-label-color: currentColor;
     --grid-color: currentColor;
   }
@@ -185,10 +187,10 @@ export default css`
 
   /* Responsive adjustments */
   @container (max-width: 400px) {
-    --axis-label-size: 0.65rem;
+    --axis-label-size: var(--nu-font-size-2x-small);
   }
 
   @container (min-width: 800px) {
-    --axis-label-size: 0.875rem;
+    --axis-label-size: var(--nu-font-size-small);
   }
 `;

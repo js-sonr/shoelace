@@ -53,7 +53,7 @@ Register buttons provide WebAuthn-based user registration functionality, enablin
 
 ### Variants
 
-Use the `variant` attribute to set the button's variant, inheriting from the base button component.
+Use the `variant` attribute to set the button's variant, inheriting from the base button component. The default variant is `primary` to emphasize the registration action.
 
 <Tabs items={['Preview', 'Web Component', 'React']}>
   <Tab value="Preview">
@@ -134,24 +134,23 @@ Use the `size` attribute to change the button's size.
 
 ### With Icons
 
-Add icons to enhance the visual appearance and indicate the registration method.
+The register button uses the Sonr passkey icon by default to maintain consistent branding with the login button. You can customize the icon using slots.
 
 <Tabs items={['Preview', 'Web Component', 'React']}>
   <Tab value="Preview">
     ```tsx
     <nu-register-button user-id="1" user-name="user1" user-display-name="User 1">
-      <nu-icon slot="prefix" name="person-plus"></nu-icon>
       Create Account
     </nu-register-button>
     
     <nu-register-button variant="success" user-id="2" user-name="user2" user-display-name="User 2">
-      <nu-icon slot="prefix" name="fingerprint"></nu-icon>
-      Register with Biometrics
+      <nu-icon slot="prefix" name="passkey" library="sonr"></nu-icon>
+      Register with Passkey
     </nu-register-button>
     
-    <nu-register-button variant="primary" user-id="3" user-name="user3" user-display-name="User 3">
-      <nu-icon slot="prefix" name="key"></nu-icon>
-      Register Security Key
+    <nu-register-button variant="neutral" user-id="3" user-name="user3" user-display-name="User 3">
+      <nu-icon slot="prefix" name="fingerprint"></nu-icon>
+      Register with Biometrics
       <nu-icon slot="suffix" name="arrow-right"></nu-icon>
     </nu-register-button>
     ```
@@ -159,18 +158,17 @@ Add icons to enhance the visual appearance and indicate the registration method.
   <Tab value="Web Component">
     ```html
     <nu-register-button user-id="1" user-name="user1" user-display-name="User 1">
-      <nu-icon slot="prefix" name="person-plus"></nu-icon>
       Create Account
     </nu-register-button>
     
     <nu-register-button variant="success" user-id="2" user-name="user2" user-display-name="User 2">
-      <nu-icon slot="prefix" name="fingerprint"></nu-icon>
-      Register with Biometrics
+      <nu-icon slot="prefix" name="passkey" library="sonr"></nu-icon>
+      Register with Passkey
     </nu-register-button>
     
-    <nu-register-button variant="primary" user-id="3" user-name="user3" user-display-name="User 3">
-      <nu-icon slot="prefix" name="key"></nu-icon>
-      Register Security Key
+    <nu-register-button variant="neutral" user-id="3" user-name="user3" user-display-name="User 3">
+      <nu-icon slot="prefix" name="fingerprint"></nu-icon>
+      Register with Biometrics
       <nu-icon slot="suffix" name="arrow-right"></nu-icon>
     </nu-register-button>
     ```
@@ -577,7 +575,7 @@ Customize the appearance using CSS custom properties:
 
 ```css
 nu-register-button {
-  --nu-register-button-color: var(--nu-color-success-600);
+  --nu-register-button-color: var(--nu-color-primary-600);
 }
 
 nu-register-button::part(button) {

@@ -292,6 +292,136 @@ Area charts adapt to any size:
   </Tab>
 </Tabs>
 
+## Theming and Customization
+
+The Area Chart component now leverages Nebula's comprehensive design token system for consistent theming and customization across light and dark modes.
+
+### Consistent Design Tokens
+
+All chart styling now uses standardized design tokens from the Nebula theme system:
+
+```css
+nu-area-chart {
+  /* Colors use theme tokens */
+  --area-gradient-start: var(--nu-color-warning-200);
+  --area-gradient-end: var(--nu-color-warning-50);
+  --line-stroke: var(--nu-color-warning-600);
+  
+  /* Typography tokens */
+  --axis-label-size: var(--nu-font-size-small);
+  --axis-label-weight: var(--nu-font-weight-normal);
+  
+  /* Spacing tokens */
+  --chart-spacing: var(--nu-spacing-small);
+  --chart-margin: var(--nu-spacing-medium);
+  
+  /* Border radius tokens */
+  --chart-border-radius: var(--nu-border-radius-medium);
+  
+  /* Transition tokens */
+  --chart-transition: var(--nu-transition-fast);
+}
+```
+
+### Chart-Specific Variables
+
+The component provides these chart-specific custom properties that map to design tokens:
+
+- `--chart-spacing`: Internal padding using `--nu-spacing-small`
+- `--chart-border-radius`: Container borders using `--nu-border-radius-medium`
+- `--chart-margin`: Chart margins using `--nu-spacing-medium`
+
+### Color Scheme Improvements
+
+Area charts now use the warning color palette by default for consistent theming:
+
+```css
+nu-area-chart {
+  /* Primary area colors */
+  --area-gradient-start: var(--nu-color-warning-200);
+  --area-gradient-end: var(--nu-color-warning-100);
+  --line-stroke: var(--nu-color-warning-600);
+  
+  /* Alternative color schemes */
+  --area-gradient-start: var(--nu-color-primary-200);
+  --area-gradient-end: var(--nu-color-primary-100);
+  --line-stroke: var(--nu-color-primary-600);
+}
+```
+
+### Light/Dark Theme Support
+
+The charts automatically adapt to light and dark themes through CSS custom properties:
+
+```css
+/* Light theme (default) */
+nu-area-chart {
+  --grid-color: var(--nu-color-neutral-200);
+  --axis-label-color: var(--nu-color-neutral-600);
+  --background-color: var(--nu-color-neutral-0);
+}
+
+/* Dark theme */
+[data-theme='dark'] nu-area-chart {
+  --grid-color: var(--nu-color-neutral-700);
+  --axis-label-color: var(--nu-color-neutral-400);
+  --background-color: var(--nu-color-neutral-900);
+}
+```
+
+### Advanced Customization Examples
+
+Use theme tokens for consistent brand colors:
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-area-chart 
+      data='[
+        {"date": "2024-01-01", "value": 30},
+        {"date": "2024-01-02", "value": 50},
+        {"date": "2024-01-03", "value": 40},
+        {"date": "2024-01-04", "value": 70},
+        {"date": "2024-01-05", "value": 60}
+      ]'
+      width="500"
+      height="250"
+      style="
+        --area-gradient-start: var(--nu-color-success-200);
+        --area-gradient-end: var(--nu-color-success-100);
+        --line-stroke: var(--nu-color-success-600);
+        --grid-color: var(--nu-color-success-100);
+      ">
+    </nu-area-chart>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-area-chart 
+      data='[
+        {"date": "2024-01-01", "value": 30},
+        {"date": "2024-01-02", "value": 50},
+        {"date": "2024-01-03", "value": 40},
+        {"date": "2024-01-04", "value": 70},
+        {"date": "2024-01-05", "value": 60}
+      ]'
+      width="500"
+      height="250"
+      style="
+        --area-gradient-start: var(--nu-color-success-200);
+        --area-gradient-end: var(--nu-color-success-100);
+        --line-stroke: var(--nu-color-success-600);
+        --grid-color: var(--nu-color-success-100);
+      ">
+    </nu-area-chart>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
 ## Data Format
 
 Area charts expect data in the following format:

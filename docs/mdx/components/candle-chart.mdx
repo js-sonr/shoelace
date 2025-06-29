@@ -308,6 +308,149 @@ Minimal chart for dashboard widgets:
   </Tab>
 </Tabs>
 
+## Theming and Customization
+
+The Candle Chart component now leverages Nebula's comprehensive design token system for consistent theming and customization across light and dark modes.
+
+### Consistent Design Tokens
+
+All chart styling now uses standardized design tokens from the Nebula theme system:
+
+```css
+nu-candle-chart {
+  /* Colors use theme tokens */
+  --bullish-color: var(--nu-color-success-600);
+  --bearish-color: var(--nu-color-danger-600);
+  --grid-color: var(--nu-color-neutral-200);
+  --axis-label-color: var(--nu-color-neutral-600);
+  
+  /* Typography tokens */
+  --axis-label-size: var(--nu-font-size-small);
+  --axis-label-weight: var(--nu-font-weight-normal);
+  
+  /* Spacing tokens */
+  --chart-spacing: var(--nu-spacing-small);
+  --chart-margin: var(--nu-spacing-medium);
+  
+  /* Border radius tokens */
+  --chart-border-radius: var(--nu-border-radius-medium);
+  
+  /* Transition tokens */
+  --chart-transition: var(--nu-transition-fast);
+}
+```
+
+### Chart-Specific Variables
+
+The component provides these chart-specific custom properties that map to design tokens:
+
+- `--chart-spacing`: Internal padding using `--nu-spacing-small`
+- `--chart-border-radius`: Container borders using `--nu-border-radius-medium`
+- `--chart-margin`: Chart margins using `--nu-spacing-medium`
+
+### Color Scheme Improvements
+
+Candle charts now use success/danger colors by default for traditional bullish/bearish theming:
+
+```css
+nu-candle-chart {
+  /* Traditional trading colors */
+  --bullish-color: var(--nu-color-success-600);
+  --bearish-color: var(--nu-color-danger-600);
+  
+  /* Alternative color schemes */
+  --bullish-alt: var(--nu-color-success-500);
+  --bearish-alt: var(--nu-color-danger-500);
+  
+  /* Volume colors */
+  --volume-bullish: var(--nu-color-success-200);
+  --volume-bearish: var(--nu-color-danger-200);
+  
+  /* Grid and labels */
+  --grid-color: var(--nu-color-neutral-200);
+  --axis-label-color: var(--nu-color-neutral-600);
+}
+```
+
+### Light/Dark Theme Support
+
+The charts automatically adapt to light and dark themes through CSS custom properties:
+
+```css
+/* Light theme (default) */
+nu-candle-chart {
+  --bullish-color: var(--nu-color-success-600);
+  --bearish-color: var(--nu-color-danger-600);
+  --grid-color: var(--nu-color-neutral-200);
+  --axis-label-color: var(--nu-color-neutral-600);
+  --background-color: var(--nu-color-neutral-0);
+}
+
+/* Dark theme */
+[data-theme='dark'] nu-candle-chart {
+  --bullish-color: var(--nu-color-success-400);
+  --bearish-color: var(--nu-color-danger-400);
+  --grid-color: var(--nu-color-neutral-700);
+  --axis-label-color: var(--nu-color-neutral-400);
+  --background-color: var(--nu-color-neutral-900);
+  
+  /* Adjusted volume colors for dark theme */
+  --volume-bullish: var(--nu-color-success-800);
+  --volume-bearish: var(--nu-color-danger-800);
+}
+```
+
+### Advanced Customization Examples
+
+Use theme tokens for consistent brand colors and alternative color schemes:
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-candle-chart 
+      data='[
+        {"date": "2024-01-01", "open": 100, "high": 110, "low": 95, "close": 105},
+        {"date": "2024-01-02", "open": 105, "high": 108, "low": 100, "close": 98},
+        {"date": "2024-01-03", "open": 98, "high": 102, "low": 90, "close": 108},
+        {"date": "2024-01-04", "open": 108, "high": 120, "low": 105, "close": 118}
+      ]'
+      width="500"
+      height="300"
+      style="
+        --bullish-color: var(--nu-color-primary-600);
+        --bearish-color: var(--nu-color-warning-600);
+        --grid-color: var(--nu-color-neutral-100);
+        --axis-label-color: var(--nu-color-neutral-700);
+      ">
+    </nu-candle-chart>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-candle-chart 
+      data='[
+        {"date": "2024-01-01", "open": 100, "high": 110, "low": 95, "close": 105},
+        {"date": "2024-01-02", "open": 105, "high": 108, "low": 100, "close": 98},
+        {"date": "2024-01-03", "open": 98, "high": 102, "low": 90, "close": 108},
+        {"date": "2024-01-04", "open": 108, "high": 120, "low": 105, "close": 118}
+      ]'
+      width="500"
+      height="300"
+      style="
+        --bullish-color: var(--nu-color-primary-600);
+        --bearish-color: var(--nu-color-warning-600);
+        --grid-color: var(--nu-color-neutral-100);
+        --axis-label-color: var(--nu-color-neutral-700);
+      ">
+    </nu-candle-chart>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
 ## Data Format
 
 Candlestick charts expect OHLC data in the following format:

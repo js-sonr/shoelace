@@ -38,7 +38,7 @@ export default class NuLoginButton extends NebulaElement {
 
   /** The button variant. */
   @property({ reflect: true }) variant: 'default' | 'primary' | 'success' | 'neutral' | 'warning' | 'danger' | 'text' =
-    'primary';
+    'neutral';
 
   /** The button size. */
   @property({ reflect: true }) size: 'small' | 'medium' | 'large' = 'medium';
@@ -157,7 +157,7 @@ export default class NuLoginButton extends NebulaElement {
           @click=${this.handleLogin}
         >
           <slot name="prefix" slot="prefix">
-            <nu-icon name="shield-check" library="default"></nu-icon>
+            <nu-icon name="passkey" library="sonr"></nu-icon>
           </slot>
           <slot>Sign In</slot>
           <slot name="suffix" slot="suffix"></slot>

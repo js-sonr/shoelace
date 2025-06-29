@@ -367,6 +367,143 @@ Hide the dots to show only the line:
   </Tab>
 </Tabs>
 
+## Theming and Customization
+
+The Line Chart component now leverages Nebula's comprehensive design token system for consistent theming and customization across light and dark modes.
+
+### Consistent Design Tokens
+
+All chart styling now uses standardized design tokens from the Nebula theme system:
+
+```css
+nu-line-chart {
+  /* Colors use theme tokens */
+  --line-stroke-1: var(--nu-color-purple-600);
+  --line-stroke-2: var(--nu-color-pink-600);
+  --line-stroke-3: var(--nu-color-cyan-600);
+  
+  /* Typography tokens */
+  --axis-label-size: var(--nu-font-size-small);
+  --axis-label-weight: var(--nu-font-weight-normal);
+  
+  /* Spacing tokens */
+  --chart-spacing: var(--nu-spacing-small);
+  --chart-margin: var(--nu-spacing-medium);
+  
+  /* Border radius tokens */
+  --chart-border-radius: var(--nu-border-radius-medium);
+  
+  /* Transition tokens */
+  --chart-transition: var(--nu-transition-fast);
+}
+```
+
+### Chart-Specific Variables
+
+The component provides these chart-specific custom properties that map to design tokens:
+
+- `--chart-spacing`: Internal padding using `--nu-spacing-small`
+- `--chart-border-radius`: Container borders using `--nu-border-radius-medium`
+- `--chart-margin`: Chart margins using `--nu-spacing-medium`
+
+### Color Scheme Improvements
+
+Line charts now use purple, pink, and cyan color schemes by default for consistent multi-series theming:
+
+```css
+nu-line-chart {
+  /* Multi-series color palette */
+  --line-stroke-1: var(--nu-color-purple-600);
+  --line-stroke-2: var(--nu-color-pink-600);
+  --line-stroke-3: var(--nu-color-cyan-600);
+  
+  /* Corresponding dot colors */
+  --dot-fill-1: var(--nu-color-purple-400);
+  --dot-fill-2: var(--nu-color-pink-400);
+  --dot-fill-3: var(--nu-color-cyan-400);
+  
+  /* Grid and labels */
+  --grid-color: var(--nu-color-neutral-200);
+  --axis-label-color: var(--nu-color-neutral-600);
+}
+```
+
+### Light/Dark Theme Support
+
+The charts automatically adapt to light and dark themes through CSS custom properties:
+
+```css
+/* Light theme (default) */
+nu-line-chart {
+  --grid-color: var(--nu-color-neutral-200);
+  --axis-label-color: var(--nu-color-neutral-600);
+  --background-color: var(--nu-color-neutral-0);
+}
+
+/* Dark theme */
+[data-theme='dark'] nu-line-chart {
+  --grid-color: var(--nu-color-neutral-700);
+  --axis-label-color: var(--nu-color-neutral-400);
+  --background-color: var(--nu-color-neutral-900);
+  
+  /* Adjusted line colors for dark theme */
+  --line-stroke-1: var(--nu-color-purple-400);
+  --line-stroke-2: var(--nu-color-pink-400);
+  --line-stroke-3: var(--nu-color-cyan-400);
+}
+```
+
+### Advanced Customization Examples
+
+Use theme tokens for consistent brand colors:
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-line-chart 
+      data='[
+        {"date": "2024-01-01", "value": 25},
+        {"date": "2024-01-02", "value": 45},
+        {"date": "2024-01-03", "value": 35},
+        {"date": "2024-01-04", "value": 55},
+        {"date": "2024-01-05", "value": 50}
+      ]'
+      width="500"
+      height="250"
+      style="
+        --line-stroke-1: var(--nu-color-success-600);
+        --dot-fill-1: var(--nu-color-success-400);
+        --grid-color: var(--nu-color-success-100);
+      ">
+    </nu-line-chart>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-line-chart 
+      data='[
+        {"date": "2024-01-01", "value": 25},
+        {"date": "2024-01-02", "value": 45},
+        {"date": "2024-01-03", "value": 35},
+        {"date": "2024-01-04", "value": 55},
+        {"date": "2024-01-05", "value": 50}
+      ]'
+      width="500"
+      height="250"
+      style="
+        --line-stroke-1: var(--nu-color-success-600);
+        --dot-fill-1: var(--nu-color-success-400);
+        --grid-color: var(--nu-color-success-100);
+      ">
+    </nu-line-chart>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
 ## Data Formats
 
 Line charts support both single and multiple series data formats:
