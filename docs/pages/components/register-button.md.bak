@@ -1,0 +1,175 @@
+---
+meta:
+  title: Register Button
+  description: A WebAuthn-enabled button component for secure biometric user registration and credential creation.
+layout: component
+---
+
+A specialized button component that provides WebAuthn-based user registration functionality. It creates new platform credentials using biometric sensors (fingerprint, face recognition) or security keys for secure user account creation.
+
+```html:preview
+<nu-button variant="success">
+  <nu-icon name="person-plus" slot="prefix"></nu-icon>
+  Create Secure Account
+</nu-button>
+```
+
+```html:preview
+<nu-button variant="primary" size="large" disabled>
+  Disabled Registration
+</nu-button>
+```
+
+## Examples
+
+### Basic Registration Button
+
+The registration button requires user details to create new WebAuthn credentials.
+
+```html:preview
+<nu-register-button 
+  user-id="demo-user-123"
+  user-name="demo@example.com"
+  user-display-name="Demo User"
+  rp-id="example.com"
+  rp-name="Demo App">
+  <nu-icon name="person-plus" slot="prefix"></nu-icon>
+  Register Account
+</nu-register-button>
+```
+
+### Custom Styling and Variants
+
+Registration buttons support all standard button variants and sizes.
+
+```html:preview
+<nu-register-button 
+  user-id="user1" 
+  user-name="user1@example.com" 
+  user-display-name="User 1"
+  variant="success" 
+  size="small">
+  Small Register
+</nu-register-button>
+
+<nu-register-button 
+  user-id="user2" 
+  user-name="user2@example.com" 
+  user-display-name="User 2"
+  variant="primary" 
+  size="medium">
+  Medium Register
+</nu-register-button>
+
+<nu-register-button 
+  user-id="user3" 
+  user-name="user3@example.com" 
+  user-display-name="User 3"
+  variant="neutral" 
+  size="large">
+  Large Register
+</nu-register-button>
+```
+
+### User Verification Options
+
+Control whether user verification (biometrics/PIN) is required during registration.
+
+```html:preview
+<nu-register-button 
+  user-id="secure-user"
+  user-name="secure@example.com"
+  user-display-name="Secure User"
+  user-verification>
+  Register with Biometrics Required
+</nu-register-button>
+
+<nu-register-button 
+  user-id="basic-user"
+  user-name="basic@example.com"
+  user-display-name="Basic User">
+  Register (Biometrics Preferred)
+</nu-register-button>
+```
+
+### Loading States
+
+The button automatically shows loading state during WebAuthn credential creation.
+
+```html:preview
+<nu-register-button 
+  user-id="loading-user"
+  user-name="loading@example.com"
+  user-display-name="Loading User"
+  loading>
+  Creating Account...
+</nu-register-button>
+```
+
+### Event Handling
+
+Listen for WebAuthn registration events to handle the signup flow.
+
+```html:preview
+<nu-register-button 
+  id="register-btn"
+  user-id="event-user-123"
+  user-name="events@example.com"
+  user-display-name="Event User">
+  Create Account
+</nu-register-button>
+
+<script>
+  const registerBtn = document.getElementById('register-btn');
+  
+  registerBtn.addEventListener('nu-register-start', () => {
+    console.log('Registration started');
+  });
+  
+  registerBtn.addEventListener('nu-register-success', (event) => {
+    console.log('Registration successful:', event.detail.credential);
+    // Handle successful registration with credential data
+    // Send credential.id and credential.rawId to your server
+  });
+  
+  registerBtn.addEventListener('nu-register-error', (event) => {
+    console.error('Registration failed:', event.detail.error);
+    // Handle registration error
+  });
+</script>
+```
+
+## Configuration
+
+### Required Properties
+
+- `user-id`: Unique identifier for the user account
+- `user-name`: Username/email for the account  
+- `user-display-name`: Human-readable display name
+
+### Optional Properties
+
+- `rp-id`: Relying party identifier (defaults to current hostname)
+- `rp-name`: Relying party name (defaults to "Nebula App")
+- `user-verification`: Require user verification (default: true)
+- `timeout`: WebAuthn operation timeout in milliseconds (default: 60000)
+
+## Security Features
+
+- Creates resident credentials (stored on device)
+- Supports ES256 and RS256 cryptographic algorithms
+- Requires platform authenticator (built-in biometrics/security)
+- Uses direct attestation for credential verification
+- Generates secure random challenges
+
+## Browser Support
+
+Requires WebAuthn API support. The component automatically checks for browser compatibility and emits an error event if WebAuthn is not available.
+
+Supported browsers:
+- Chrome 67+
+- Firefox 60+ 
+- Safari 14+
+- Edge 18+
+
+[component-metadata:nu-register-button]

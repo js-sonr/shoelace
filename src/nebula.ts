@@ -27,6 +27,7 @@ export { default as NuIconButton } from './components/icon-button/icon-button.js
 export { default as NuImageComparer } from './components/image-comparer/image-comparer.js';
 export { default as NuInclude } from './components/include/include.js';
 export { default as NuInput } from './components/input/input.js';
+export { default as NuLoginButton } from './components/login-button/login-button.js';
 export { default as NuMenu } from './components/menu/menu.js';
 export { default as NuMenuItem } from './components/menu-item/menu-item.js';
 export { default as NuMenuLabel } from './components/menu-label/menu-label.js';
@@ -41,6 +42,7 @@ export { default as NuRadioButton } from './components/radio-button/radio-button
 export { default as NuRadioGroup } from './components/radio-group/radio-group.js';
 export { default as NuRange } from './components/range/range.js';
 export { default as NuRating } from './components/rating/rating.js';
+export { default as NuRegisterButton } from './components/register-button/register-button.js';
 export { default as NuRelativeTime } from './components/relative-time/relative-time.js';
 export { default as NuResizeObserver } from './components/resize-observer/resize-observer.js';
 export { default as NuSelect } from './components/select/select.js';
