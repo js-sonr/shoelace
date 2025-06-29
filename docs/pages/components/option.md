@@ -18,11 +18,11 @@ import SlOption from '@onsonr/nebula/dist/react/option';
 import SlSelect from '@onsonr/nebula/dist/react/select';
 
 const App = () => (
-  <SlSelect>
-    <SlOption value="option-1">Option 1</SlOption>
-    <SlOption value="option-2">Option 2</SlOption>
-    <SlOption value="option-3">Option 3</SlOption>
-  </SlSelect>
+  <NuSelect>
+    <NuOption value="option-1">Option 1</NuOption>
+    <NuOption value="option-2">Option 2</NuOption>
+    <NuOption value="option-3">Option 3</NuOption>
+  </NuSelect>
 );
 ```
 
@@ -45,13 +45,13 @@ import SlOption from '@onsonr/nebula/dist/react/option';
 import SlSelect from '@onsonr/nebula/dist/react/select';
 
 const App = () => (
-  <SlSelect>
-    <SlOption value="option-1">Option 1</SlOption>
-    <SlOption value="option-2" disabled>
+  <NuSelect>
+    <NuOption value="option-1">Option 1</NuOption>
+    <NuOption value="option-2" disabled>
       Option 2
-    </SlOption>
-    <SlOption value="option-3">Option 3</SlOption>
-  </SlSelect>
+    </NuOption>
+    <NuOption value="option-3">Option 3</NuOption>
+  </NuSelect>
 );
 ```
 

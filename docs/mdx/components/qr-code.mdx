@@ -1,0 +1,266 @@
+---
+title: QR Code
+description: Generates a QR code and renders it using the Canvas API.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+QR codes are useful for providing small pieces of information to users who can quickly scan them with a smartphone. Most smartphones have built-in QR code scanners, so simply pointing the camera at a QR code will decode it and allow the user to visit a website, dial a phone number, read a message, etc.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <div class="qr-overview">
+      <nu-qr-code value="https://nebulaui.org/" label="Scan this code to visit Nebula on the web!"></nu-qr-code>
+      <br />
+    
+      <nu-input maxlength="255" clearable label="Value"></nu-input>
+    </div>
+    
+    <script>
+      const container = document.querySelector('.qr-overview');
+      const qrCode = container.querySelector('sl-qr-code');
+      const input = container.querySelector('sl-input');
+    
+      customElements.whenDefined('sl-qr-code').then(() => {
+        input.value = qrCode.value;
+        input.addEventListener('sl-input', () => (qrCode.value = input.value));
+      });
+    </script>
+    
+    <style>
+      .qr-overview {
+        max-width: 256px;
+      }
+    
+      .qr-overview sl-input {
+        margin-top: 1rem;
+      }
+    </style>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <div class="qr-overview">
+      <nu-qr-code value="https://nebulaui.org/" label="Scan this code to visit Nebula on the web!"></nu-qr-code>
+      <br />
+    
+      <nu-input maxlength="255" clearable label="Value"></nu-input>
+    </div>
+    
+    <script>
+      const container = document.querySelector('.qr-overview');
+      const qrCode = container.querySelector('sl-qr-code');
+      const input = container.querySelector('sl-input');
+    
+      customElements.whenDefined('sl-qr-code').then(() => {
+        input.value = qrCode.value;
+        input.addEventListener('sl-input', () => (qrCode.value = input.value));
+      });
+    </script>
+    
+    <style>
+      .qr-overview {
+        max-width: 256px;
+      }
+    
+      .qr-overview sl-input {
+        margin-top: 1rem;
+      }
+    </style>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import { useState } from 'react'
+    ;
+    import SlQrCode from '@onsonr/nebula/dist/react/qr-code'
+    ;
+    import SlInput from '@onsonr/nebula/dist/react/input'
+    ;
+    
+    const css = `
+      .qr-overview {
+        max-width: 256px;
+      }
+    
+      .qr-overview sl-input {
+        margin-top: 1rem;
+      }
+    `;
+    
+    const App = () => {
+      const [value, setValue] = useState('https://nebulaui.org/');
+    
+      return (
+        <>
+          <div className="qr-overview">
+            <NuQrCode value={value} label="Scan this code to visit Nebula on the web!" />
+            <br />
+    
+            <NuInput maxlength="255" clearable onInput={event => setValue(event.target.value)} />
+          </div>
+    
+          <style>{css}</style>
+        </>
+      );
+    };
+    ```
+  </Tab>
+</Tabs>
+
+## Examples
+
+### Colors
+
+Use the `fill` and `background` attributes to modify the QR code's colors. You should always ensure good contrast for optimal compatibility with QR code scanners.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-qr-code value="https://nebulaui.org/" fill="deeppink" background="white"></nu-qr-code>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-qr-code value="https://nebulaui.org/" fill="deeppink" background="white"></nu-qr-code>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlQrCode from '@onsonr/nebula/dist/react/qr-code'
+    ;
+    
+    const App = () => <NuQrCode value="https://nebulaui.org/" fill="deeppink" background="white" />;
+    ```
+  </Tab>
+</Tabs>
+
+### Size
+
+Use the `size` attribute to change the size of the QR code.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-qr-code value="https://nebulaui.org/" size="64"></nu-qr-code>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-qr-code value="https://nebulaui.org/" size="64"></nu-qr-code>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlQrCode from '@onsonr/nebula/dist/react/qr-code'
+    ;
+    
+    const App = () => <NuQrCode value="https://nebulaui.org/" size="64" />;
+    ```
+  </Tab>
+</Tabs>
+
+### Radius
+
+Create a rounded effect with the `radius` attribute.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-qr-code value="https://nebulaui.org/" radius="0.5"></nu-qr-code>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-qr-code value="https://nebulaui.org/" radius="0.5"></nu-qr-code>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlQrCode from '@onsonr/nebula/dist/react/qr-code'
+    ;
+    
+    const App = () => <NuQrCode value="https://nebulaui.org/" radius="0.5" />;
+    ```
+  </Tab>
+</Tabs>
+
+### Error Correction
+
+QR codes can be rendered with various levels of [error correction](https://www.qrcode.com/en/about/error_correction.html) that can be set using the `error-correction` attribute. This example generates four codes with the same value using different error correction levels.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <div class="qr-error-correction">
+      <nu-qr-code value="https://nebulaui.org/" error-correction="L"></nu-qr-code>
+      <nu-qr-code value="https://nebulaui.org/" error-correction="M"></nu-qr-code>
+      <nu-qr-code value="https://nebulaui.org/" error-correction="Q"></nu-qr-code>
+      <nu-qr-code value="https://nebulaui.org/" error-correction="H"></nu-qr-code>
+    </div>
+    
+    <style>
+      .qr-error-correction {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    </style>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <div class="qr-error-correction">
+      <nu-qr-code value="https://nebulaui.org/" error-correction="L"></nu-qr-code>
+      <nu-qr-code value="https://nebulaui.org/" error-correction="M"></nu-qr-code>
+      <nu-qr-code value="https://nebulaui.org/" error-correction="Q"></nu-qr-code>
+      <nu-qr-code value="https://nebulaui.org/" error-correction="H"></nu-qr-code>
+    </div>
+    
+    <style>
+      .qr-error-correction {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    </style>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlQrCode from '@onsonr/nebula/dist/react/qr-code'
+    ;
+    
+    const css = `
+      .qr-error-correction {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    `;
+    
+    const App = () => {
+      return (
+        <>
+          <div className="qr-error-correction">
+            <NuQrCode value="https://nebulaui.org/" error-correction="L" />
+            <NuQrCode value="https://nebulaui.org/" error-correction="M" />
+            <NuQrCode value="https://nebulaui.org/" error-correction="Q" />
+            <NuQrCode value="https://nebulaui.org/" error-correction="H" />
+          </div>
+    
+          <style>{css}</style>
+        </>
+      );
+    };
+    ```
+  </Tab>
+</Tabs>
+
+## Properties
+
+<AutoTypeTable path="./src/components/qr-code/qr-code.component.ts" name="NuQrCode" />
+

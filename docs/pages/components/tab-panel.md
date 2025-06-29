@@ -25,25 +25,25 @@ import SlTabGroup from '@onsonr/nebula/dist/react/tab-group';
 import SlTabPanel from '@onsonr/nebula/dist/react/tab-panel';
 
 const App = () => (
-  <SlTabGroup>
-    <SlTab slot="nav" panel="general">
+  <NuTabGroup>
+    <NuTab slot="nav" panel="general">
       General
-    </SlTab>
-    <SlTab slot="nav" panel="custom">
+    </NuTab>
+    <NuTab slot="nav" panel="custom">
       Custom
-    </SlTab>
-    <SlTab slot="nav" panel="advanced">
+    </NuTab>
+    <NuTab slot="nav" panel="advanced">
       Advanced
-    </SlTab>
-    <SlTab slot="nav" panel="disabled" disabled>
+    </NuTab>
+    <NuTab slot="nav" panel="disabled" disabled>
       Disabled
-    </SlTab>
+    </NuTab>
 
-    <SlTabPanel name="general">This is the general tab panel.</SlTabPanel>
-    <SlTabPanel name="custom">This is the custom tab panel.</SlTabPanel>
-    <SlTabPanel name="advanced">This is the advanced tab panel.</SlTabPanel>
-    <SlTabPanel name="disabled">This is a disabled tab panel.</SlTabPanel>
-  </SlTabGroup>
+    <NuTabPanel name="general">This is the general tab panel.</NuTabPanel>
+    <NuTabPanel name="custom">This is the custom tab panel.</NuTabPanel>
+    <NuTabPanel name="advanced">This is the advanced tab panel.</NuTabPanel>
+    <NuTabPanel name="disabled">This is a disabled tab panel.</NuTabPanel>
+  </NuTabGroup>
 );
 ```
 

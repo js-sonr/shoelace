@@ -1,0 +1,493 @@
+---
+title: Input
+description: Inputs collect data from the user.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-input></nu-input>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-input></nu-input>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlInput from '@onsonr/nebula/dist/react/input'
+    ;
+    
+    const App = () => <NuInput />;
+    ```
+  </Tab>
+</Tabs>
+
+<Callout type="info">
+This component works with standard `<form>` elements. Please refer to the section on [form controls](/getting-started/form-controls) to learn more about form submission and client-side validation.
+</Callout>
+
+## Examples
+
+### Labels
+
+Use the `label` attribute to give the input an accessible label. For labels that contain HTML, use the `label` slot instead.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-input label="What is your name?"></nu-input>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-input label="What is your name?"></nu-input>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlIcon from '@onsonr/nebula/dist/react/icon'
+    ;
+    import SlInput from '@onsonr/nebula/dist/react/input'
+    ;
+    
+    const App = () => <NuInput label="What is your name?" />;
+    ```
+  </Tab>
+</Tabs>
+
+### Help Text
+
+Add descriptive help text to an input with the `help-text` attribute. For help texts that contain HTML, use the `help-text` slot instead.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-input label="Nickname" help-text="What would you like people to call you?"></nu-input>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-input label="Nickname" help-text="What would you like people to call you?"></nu-input>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlIcon from '@onsonr/nebula/dist/react/icon'
+    ;
+    import SlInput from '@onsonr/nebula/dist/react/input'
+    ;
+    
+    const App = () => <NuInput label="Nickname" help-text="What would you like people to call you?" />;
+    ```
+  </Tab>
+</Tabs>
+
+### Placeholders
+
+Use the `placeholder` attribute to add a placeholder.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-input placeholder="Type something"></nu-input>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-input placeholder="Type something"></nu-input>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlInput from '@onsonr/nebula/dist/react/input'
+    ;
+    
+    const App = () => <NuInput placeholder="Type something" />;
+    ```
+  </Tab>
+</Tabs>
+
+### Clearable
+
+Add the `clearable` attribute to add a clear button when the input has content.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-input placeholder="Clearable" clearable></nu-input>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-input placeholder="Clearable" clearable></nu-input>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlInput from '@onsonr/nebula/dist/react/input'
+    ;
+    
+    const App = () => <NuInput placeholder="Clearable" clearable />;
+    ```
+  </Tab>
+</Tabs>
+
+### Toggle Password
+
+Add the `password-toggle` attribute to add a toggle button that will show the password when activated.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-input type="password" placeholder="Password Toggle" password-toggle></nu-input>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-input type="password" placeholder="Password Toggle" password-toggle></nu-input>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlInput from '@onsonr/nebula/dist/react/input'
+    ;
+    
+    const App = () => <NuInput type="password" placeholder="Password Toggle" size="medium" password-toggle />;
+    ```
+  </Tab>
+</Tabs>
+
+### Filled Inputs
+
+Add the `filled` attribute to draw a filled input.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-input placeholder="Type something" filled></nu-input>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-input placeholder="Type something" filled></nu-input>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlInput from '@onsonr/nebula/dist/react/input'
+    ;
+    
+    const App = () => <NuInput placeholder="Type something" filled />;
+    ```
+  </Tab>
+</Tabs>
+
+### Disabled
+
+Use the `disabled` attribute to disable an input.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-input placeholder="Disabled" disabled></nu-input>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-input placeholder="Disabled" disabled></nu-input>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlInput from '@onsonr/nebula/dist/react/input'
+    ;
+    
+    const App = () => <NuInput placeholder="Disabled" disabled />;
+    ```
+  </Tab>
+</Tabs>
+
+### Sizes
+
+Use the `size` attribute to change an input's size.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-input placeholder="Small" size="small"></nu-input>
+    <br />
+    <nu-input placeholder="Medium" size="medium"></nu-input>
+    <br />
+    <nu-input placeholder="Large" size="large"></nu-input>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-input placeholder="Small" size="small"></nu-input>
+    <br />
+    <nu-input placeholder="Medium" size="medium"></nu-input>
+    <br />
+    <nu-input placeholder="Large" size="large"></nu-input>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlInput from '@onsonr/nebula/dist/react/input'
+    ;
+    
+    const App = () => (
+      
+      <>
+        <NuInput placeholder="Small" size="small" />
+        <br />
+        <NuInput placeholder="Medium" size="medium" />
+        <br />
+        <NuInput placeholder="Large" size="large" />
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Pill
+
+Use the `pill` attribute to give inputs rounded edges.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-input placeholder="Small" size="small" pill></nu-input>
+    <br />
+    <nu-input placeholder="Medium" size="medium" pill></nu-input>
+    <br />
+    <nu-input placeholder="Large" size="large" pill></nu-input>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-input placeholder="Small" size="small" pill></nu-input>
+    <br />
+    <nu-input placeholder="Medium" size="medium" pill></nu-input>
+    <br />
+    <nu-input placeholder="Large" size="large" pill></nu-input>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlInput from '@onsonr/nebula/dist/react/input'
+    ;
+    
+    const App = () => (
+      
+      <>
+        <NuInput placeholder="Small" size="small" pill />
+        <br />
+        <NuInput placeholder="Medium" size="medium" pill />
+        <br />
+        <NuInput placeholder="Large" size="large" pill />
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Input Types
+
+The `type` attribute controls the type of input the browser renders.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-input type="email" placeholder="Email"></nu-input>
+    <br />
+    <nu-input type="number" placeholder="Number"></nu-input>
+    <br />
+    <nu-input type="date" placeholder="Date"></nu-input>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-input type="email" placeholder="Email"></nu-input>
+    <br />
+    <nu-input type="number" placeholder="Number"></nu-input>
+    <br />
+    <nu-input type="date" placeholder="Date"></nu-input>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlInput from '@onsonr/nebula/dist/react/input'
+    ;
+    
+    const App = () => (
+      
+      <>
+        <NuInput type="email" placeholder="Email" />
+        <br />
+        <NuInput type="number" placeholder="Number" />
+        <br />
+        <NuInput type="date" placeholder="Date" />
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Prefix & Suffix Icons
+
+Use the `prefix` and `suffix` slots to add icons.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-input placeholder="Small" size="small">
+      <nu-icon name="house" slot="prefix"></nu-icon>
+      <nu-icon name="chat" slot="suffix"></nu-icon>
+    </nu-input>
+    <br />
+    <nu-input placeholder="Medium" size="medium">
+      <nu-icon name="house" slot="prefix"></nu-icon>
+      <nu-icon name="chat" slot="suffix"></nu-icon>
+    </nu-input>
+    <br />
+    <nu-input placeholder="Large" size="large">
+      <nu-icon name="house" slot="prefix"></nu-icon>
+      <nu-icon name="chat" slot="suffix"></nu-icon>
+    </nu-input>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-input placeholder="Small" size="small">
+      <nu-icon name="house" slot="prefix"></nu-icon>
+      <nu-icon name="chat" slot="suffix"></nu-icon>
+    </nu-input>
+    <br />
+    <nu-input placeholder="Medium" size="medium">
+      <nu-icon name="house" slot="prefix"></nu-icon>
+      <nu-icon name="chat" slot="suffix"></nu-icon>
+    </nu-input>
+    <br />
+    <nu-input placeholder="Large" size="large">
+      <nu-icon name="house" slot="prefix"></nu-icon>
+      <nu-icon name="chat" slot="suffix"></nu-icon>
+    </nu-input>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlIcon from '@onsonr/nebula/dist/react/icon'
+    ;
+    import SlInput from '@onsonr/nebula/dist/react/input'
+    ;
+    
+    const App = () => (
+      
+      <>
+        <NuInput placeholder="Small" size="small">
+          <NuIcon name="house" slot="prefix"></NuIcon>
+          <NuIcon name="chat" slot="suffix"></NuIcon>
+        </NuInput>
+        <br />
+        <NuInput placeholder="Medium" size="medium">
+          <NuIcon name="house" slot="prefix"></NuIcon>
+          <NuIcon name="chat" slot="suffix"></NuIcon>
+        </NuInput>
+        <br />
+        <NuInput placeholder="Large" size="large">
+          <NuIcon name="house" slot="prefix"></NuIcon>
+          <NuIcon name="chat" slot="suffix"></NuIcon>
+        </NuInput>
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Customizing Label Position
+
+Use [CSS parts](#css-parts) to customize the way form controls are drawn. This example uses CSS grid to position the label to the left of the control, but the possible orientations are nearly endless. The same technique works for inputs, textareas, radio groups, and similar form controls.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-input class="label-on-left" label="Name" help-text="Enter your name"></nu-input>
+    <nu-input class="label-on-left" label="Email" type="email" help-text="Enter your email"></nu-input>
+    <nu-textarea class="label-on-left" label="Bio" help-text="Tell us something about yourself"></nu-textarea>
+    
+    <style>
+      .label-on-left {
+        --label-width: 3.75rem;
+        --gap-width: 1rem;
+      }
+    
+      .label-on-left + .label-on-left {
+        margin-top: var(--nu-spacing-medium);
+      }
+    
+      .label-on-left::part(form-control) {
+        display: grid;
+        grid: auto / var(--label-width) 1fr;
+        gap: var(--nu-spacing-3x-small) var(--gap-width);
+        align-items: center;
+      }
+    
+      .label-on-left::part(form-control-label) {
+        text-align: right;
+      }
+    
+      .label-on-left::part(form-control-help-text) {
+        grid-column-start: 2;
+      }
+    </style>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-input class="label-on-left" label="Name" help-text="Enter your name"></nu-input>
+    <nu-input class="label-on-left" label="Email" type="email" help-text="Enter your email"></nu-input>
+    <nu-textarea class="label-on-left" label="Bio" help-text="Tell us something about yourself"></nu-textarea>
+    
+    <style>
+      .label-on-left {
+        --label-width: 3.75rem;
+        --gap-width: 1rem;
+      }
+    
+      .label-on-left + .label-on-left {
+        margin-top: var(--nu-spacing-medium);
+      }
+    
+      .label-on-left::part(form-control) {
+        display: grid;
+        grid: auto / var(--label-width) 1fr;
+        gap: var(--nu-spacing-3x-small) var(--gap-width);
+        align-items: center;
+      }
+    
+      .label-on-left::part(form-control-label) {
+        text-align: right;
+      }
+    
+      .label-on-left::part(form-control-help-text) {
+        grid-column-start: 2;
+      }
+    </style>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+## Properties
+
+<AutoTypeTable path="./src/components/input/input.component.ts" name="NuInput" />
+

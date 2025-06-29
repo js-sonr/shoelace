@@ -46,38 +46,38 @@ import SlCarouselItem from '@onsonr/nebula/dist/react/carousel-item';
 
 const App = () => (
   <>
-    <SlCarousel pagination mouse-dragging>
-      <SlCarouselItem>
+    <NuCarousel pagination mouse-dragging>
+      <NuCarouselItem>
         <img
           alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
           src="/assets/examples/carousel/mountains.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </NuCarouselItem>
+      <NuCarouselItem>
         <img
           alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
           src="/assets/examples/carousel/waterfall.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </NuCarouselItem>
+      <NuCarouselItem>
         <img
           alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
           src="/assets/examples/carousel/sunset.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </NuCarouselItem>
+      <NuCarouselItem>
         <img
           alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
           src="/assets/examples/carousel/field.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </NuCarouselItem>
+      <NuCarouselItem>
         <img
           alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
           src="/assets/examples/carousel/valley.jpg"
         />
-      </SlCarouselItem>
-    </SlCarousel>
+      </NuCarouselItem>
+    </NuCarousel>
   </>
 );
 ```
@@ -128,38 +128,38 @@ import SlCarousel from '@onsonr/nebula/dist/react/carousel';
 import SlCarouselItem from '@onsonr/nebula/dist/react/carousel-item';
 
 const App = () => (
-  <SlCarousel pagination>
-    <SlCarouselItem>
+  <NuCarousel pagination>
+    <NuCarouselItem>
       <img
         alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
         src="/assets/examples/carousel/mountains.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </NuCarouselItem>
+    <NuCarouselItem>
       <img
         alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
         src="/assets/examples/carousel/waterfall.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </NuCarouselItem>
+    <NuCarouselItem>
       <img
         alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
         src="/assets/examples/carousel/sunset.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </NuCarouselItem>
+    <NuCarouselItem>
       <img
         alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
         src="/assets/examples/carousel/field.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </NuCarouselItem>
+    <NuCarouselItem>
       <img
         alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
         src="/assets/examples/carousel/valley.jpg"
       />
-    </SlCarouselItem>
-  </SlCarousel>
+    </NuCarouselItem>
+  </NuCarousel>
 );
 ```
 
@@ -207,38 +207,38 @@ import SlCarousel from '@onsonr/nebula/dist/react/carousel';
 import SlCarouselItem from '@onsonr/nebula/dist/react/carousel-item';
 
 const App = () => (
-  <SlCarousel navigation>
-    <SlCarouselItem>
+  <NuCarousel navigation>
+    <NuCarouselItem>
       <img
         alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
         src="/assets/examples/carousel/mountains.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </NuCarouselItem>
+    <NuCarouselItem>
       <img
         alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
         src="/assets/examples/carousel/waterfall.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </NuCarouselItem>
+    <NuCarouselItem>
       <img
         alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
         src="/assets/examples/carousel/sunset.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </NuCarouselItem>
+    <NuCarouselItem>
       <img
         alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
         src="/assets/examples/carousel/field.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </NuCarouselItem>
+    <NuCarouselItem>
       <img
         alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
         src="/assets/examples/carousel/valley.jpg"
       />
-    </SlCarouselItem>
-  </SlCarousel>
+    </NuCarouselItem>
+  </NuCarousel>
 );
 ```
 
@@ -286,38 +286,38 @@ import SlCarousel from '@onsonr/nebula/dist/react/carousel';
 import SlCarouselItem from '@onsonr/nebula/dist/react/carousel-item';
 
 const App = () => (
-  <SlCarousel loop navigation pagination>
-    <SlCarouselItem>
+  <NuCarousel loop navigation pagination>
+    <NuCarouselItem>
       <img
         alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
         src="/assets/examples/carousel/mountains.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </NuCarouselItem>
+    <NuCarouselItem>
       <img
         alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
         src="/assets/examples/carousel/waterfall.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </NuCarouselItem>
+    <NuCarouselItem>
       <img
         alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
         src="/assets/examples/carousel/sunset.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </NuCarouselItem>
+    <NuCarouselItem>
       <img
         alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
         src="/assets/examples/carousel/field.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </NuCarouselItem>
+    <NuCarouselItem>
       <img
         alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
         src="/assets/examples/carousel/valley.jpg"
       />
-    </SlCarouselItem>
-  </SlCarousel>
+    </NuCarouselItem>
+  </NuCarousel>
 );
 ```
 
@@ -365,38 +365,38 @@ import SlCarousel from '@onsonr/nebula/dist/react/carousel';
 import SlCarouselItem from '@onsonr/nebula/dist/react/carousel-item';
 
 const App = () => (
-  <SlCarousel autoplay loop pagination>
-    <SlCarouselItem>
+  <NuCarousel autoplay loop pagination>
+    <NuCarouselItem>
       <img
         alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
         src="/assets/examples/carousel/mountains.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </NuCarouselItem>
+    <NuCarouselItem>
       <img
         alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
         src="/assets/examples/carousel/waterfall.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </NuCarouselItem>
+    <NuCarouselItem>
       <img
         alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
         src="/assets/examples/carousel/sunset.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </NuCarouselItem>
+    <NuCarouselItem>
       <img
         alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
         src="/assets/examples/carousel/field.jpg"
       />
-    </SlCarouselItem>
-    <SlCarouselItem>
+    </NuCarouselItem>
+    <NuCarouselItem>
       <img
         alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
         src="/assets/examples/carousel/valley.jpg"
       />
-    </SlCarouselItem>
-  </SlCarousel>
+    </NuCarouselItem>
+  </NuCarousel>
 );
 ```
 
@@ -469,44 +469,44 @@ const App = () => {
 
   return (
     <>
-      <SlCarousel navigation mouseDragging={isEnabled}>
-        <SlCarouselItem>
+      <NuCarousel navigation mouseDragging={isEnabled}>
+        <NuCarouselItem>
           <img
             alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
             src="/assets/examples/carousel/mountains.jpg"
           />
-        </SlCarouselItem>
-        <SlCarouselItem>
+        </NuCarouselItem>
+        <NuCarouselItem>
           <img
             alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
             src="/assets/examples/carousel/waterfall.jpg"
           />
-        </SlCarouselItem>
-        <SlCarouselItem>
+        </NuCarouselItem>
+        <NuCarouselItem>
           <img
             alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
             src="/assets/examples/carousel/sunset.jpg"
           />
-        </SlCarouselItem>
-        <SlCarouselItem>
+        </NuCarouselItem>
+        <NuCarouselItem>
           <img
             alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
             src="/assets/examples/carousel/field.jpg"
           />
-        </SlCarouselItem>
-        <SlCarouselItem>
+        </NuCarouselItem>
+        <NuCarouselItem>
           <img
             alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
             src="/assets/examples/carousel/valley.jpg"
           />
-        </SlCarouselItem>
-      </SlCarousel>
+        </NuCarouselItem>
+      </NuCarousel>
 
-      <SlDivider></SlDivider>
+      <NuDivider></NuDivider>
 
-      <SlSwitch checked={isEnabled} onSlInput={() => setIsEnabled(!isEnabled)}>
+      <NuSwitch checked={isEnabled} onSlInput={() => setIsEnabled(!isEnabled)}>
         Enable mouse dragging
-      </SlSwitch>
+      </NuSwitch>
     </>
   );
 };
@@ -534,14 +534,14 @@ import SlCarousel from '@onsonr/nebula/dist/react/carousel';
 import SlCarouselItem from '@onsonr/nebula/dist/react/carousel-item';
 
 const App = () => (
-  <SlCarousel navigation pagination slidesPerPage={2} slidesPerMove={2}>
-    <SlCarouselItem style={{ background: 'var(--nu-color-red-200)' }}>Slide 1</SlCarouselItem>
-    <SlCarouselItem style={{ background: 'var(--nu-color-orange-200)' }}>Slide 2</SlCarouselItem>
-    <SlCarouselItem style={{ background: 'var(--nu-color-yellow-200)' }}>Slide 3</SlCarouselItem>
-    <SlCarouselItem style={{ background: 'var(--nu-color-green-200)' }}>Slide 4</SlCarouselItem>
-    <SlCarouselItem style={{ background: 'var(--nu-color-blue-200)' }}>Slide 5</SlCarouselItem>
-    <SlCarouselItem style={{ background: 'var(--nu-color-violet-200)' }}>Slide 6</SlCarouselItem>
-  </SlCarousel>
+  <NuCarousel navigation pagination slidesPerPage={2} slidesPerMove={2}>
+    <NuCarouselItem style={{ background: 'var(--nu-color-red-200)' }}>Slide 1</NuCarouselItem>
+    <NuCarouselItem style={{ background: 'var(--nu-color-orange-200)' }}>Slide 2</NuCarouselItem>
+    <NuCarouselItem style={{ background: 'var(--nu-color-yellow-200)' }}>Slide 3</NuCarouselItem>
+    <NuCarouselItem style={{ background: 'var(--nu-color-green-200)' }}>Slide 4</NuCarouselItem>
+    <NuCarouselItem style={{ background: 'var(--nu-color-blue-200)' }}>Slide 5</NuCarouselItem>
+    <NuCarouselItem style={{ background: 'var(--nu-color-violet-200)' }}>Slide 6</NuCarouselItem>
+  </NuCarousel>
 );
 ```
 
@@ -661,17 +661,17 @@ const App = () => {
 
   return (
     <>
-      <SlCarousel className="dynamic-carousel" pagination navigation>
+      <NuCarousel className="dynamic-carousel" pagination navigation>
         {slides.map((color, i) => (
-          <SlCarouselItem style={{ background: colors[i % colors.length }}>
+          <NuCarouselItem style={{ background: colors[i % colors.length }}>
             Slide {i}
-          </SlCarouselItem>
+          </NuCarouselItem>
         ))}
-      </SlCarousel>
+      </NuCarousel>
 
       <div className="carousel-options">
-        <SlButton onClick={addSlide}>Add slide</SlButton>
-        <SlButton onClick={removeSlide}>Remove slide</SlButton>
+        <NuButton onClick={addSlide}>Add slide</NuButton>
+        <NuButton onClick={removeSlide}>Remove slide</NuButton>
       </div>
 
       <style>{css}</style>
@@ -764,38 +764,38 @@ const css = `
 
 const App = () => (
   <>
-    <SlCarousel className="vertical" loop pagination orientation="vertical">
-      <SlCarouselItem>
+    <NuCarousel className="vertical" loop pagination orientation="vertical">
+      <NuCarouselItem>
         <img
           alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
           src="/assets/examples/carousel/mountains.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </NuCarouselItem>
+      <NuCarouselItem>
         <img
           alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
           src="/assets/examples/carousel/waterfall.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </NuCarouselItem>
+      <NuCarouselItem>
         <img
           alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
           src="/assets/examples/carousel/sunset.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </NuCarouselItem>
+      <NuCarouselItem>
         <img
           alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
           src="/assets/examples/carousel/field.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </NuCarouselItem>
+      <NuCarouselItem>
         <img
           alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
           src="/assets/examples/carousel/valley.jpg"
         />
-      </SlCarouselItem>
-    </SlCarousel>
+      </NuCarouselItem>
+    </NuCarousel>
     <style>{css}</style>
   </>
 );
@@ -874,51 +874,51 @@ const App = () => {
 
   return (
     <>
-      <SlCarousel className="aspect-ratio" navigation pagination style={{ '--aspect-ratio': aspectRatio }}>
-        <SlCarouselItem>
+      <NuCarousel className="aspect-ratio" navigation pagination style={{ '--aspect-ratio': aspectRatio }}>
+        <NuCarouselItem>
           <img
             alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
             src="/assets/examples/carousel/mountains.jpg"
           />
-        </SlCarouselItem>
-        <SlCarouselItem>
+        </NuCarouselItem>
+        <NuCarouselItem>
           <img
             alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
             src="/assets/examples/carousel/waterfall.jpg"
           />
-        </SlCarouselItem>
-        <SlCarouselItem>
+        </NuCarouselItem>
+        <NuCarouselItem>
           <img
             alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
             src="/assets/examples/carousel/sunset.jpg"
           />
-        </SlCarouselItem>
-        <SlCarouselItem>
+        </NuCarouselItem>
+        <NuCarouselItem>
           <img
             alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
             src="/assets/examples/carousel/field.jpg"
           />
-        </SlCarouselItem>
-        <SlCarouselItem>
+        </NuCarouselItem>
+        <NuCarouselItem>
           <img
             alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
             src="/assets/examples/carousel/valley.jpg"
           />
-        </SlCarouselItem>
-      </SlCarousel>
+        </NuCarouselItem>
+      </NuCarousel>
 
-      <SlDivider />
+      <NuDivider />
 
-      <SlSelect
+      <NuSelect
         label="Aspect ratio"
         name="aspect"
         value={aspectRatio}
         onSlChange={event => setAspectRatio(event.target.value)}
       >
-        <SlOption value="1 / 1">1 / 1</SlOption>
-        <SlOption value="3 / 2">3 / 2</SlOption>
-        <SlOption value="16 / 9">16 / 9</SlOption>
-      </SlSelect>
+        <NuOption value="1 / 1">1 / 1</NuOption>
+        <NuOption value="3 / 2">3 / 2</NuOption>
+        <NuOption value="16 / 9">16 / 9</NuOption>
+      </NuSelect>
 
       <style>{css}</style>
     </>
@@ -978,38 +978,38 @@ import SlRange from '@onsonr/nebula/dist/react/range';
 
 const App = () => (
   <>
-    <SlCarousel className="scroll-hint" pagination style={{ '--scroll-hint': '10%' }}>
-      <SlCarouselItem>
+    <NuCarousel className="scroll-hint" pagination style={{ '--scroll-hint': '10%' }}>
+      <NuCarouselItem>
         <img
           alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
           src="/assets/examples/carousel/mountains.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </NuCarouselItem>
+      <NuCarouselItem>
         <img
           alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
           src="/assets/examples/carousel/waterfall.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </NuCarouselItem>
+      <NuCarouselItem>
         <img
           alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
           src="/assets/examples/carousel/sunset.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </NuCarouselItem>
+      <NuCarouselItem>
         <img
           alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
           src="/assets/examples/carousel/field.jpg"
         />
-      </SlCarouselItem>
-      <SlCarouselItem>
+      </NuCarouselItem>
+      <NuCarouselItem>
         <img
           alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
           src="/assets/examples/carousel/valley.jpg"
         />
-      </SlCarouselItem>
-    </SlCarousel>
+      </NuCarouselItem>
+    </NuCarousel>
   </>
 );
 ```
@@ -1229,16 +1229,16 @@ const App = () => {
 
   return (
     <>
-      <SlCarousel className="carousel-thumbnails" navigation loop onSlSlideChange={handleSlideChange}>
+      <NuCarousel className="carousel-thumbnails" navigation loop onSlSlideChange={handleSlideChange}>
         {images.map({ src, alt }) => (
-          <SlCarouselItem>
+          <NuCarouselItem>
             <img
               alt={alt}
               src={src}
             />
-          </SlCarouselItem>
+          </NuCarouselItem>
         )}
-      </SlCarousel>
+      </NuCarousel>
 
       <div class="thumbnails">
         <div class="thumbnails__scroller">

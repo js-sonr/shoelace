@@ -1,0 +1,337 @@
+---
+title: Tree Item
+description: A tree item serves as a hierarchical node that lives inside a tree.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-tree>
+      <nu-tree-item>
+        Item 1
+        <nu-tree-item>Item A</nu-tree-item>
+        <nu-tree-item>Item B</nu-tree-item>
+        <nu-tree-item>Item C</nu-tree-item>
+      </nu-tree-item>
+      <nu-tree-item>Item 2</nu-tree-item>
+      <nu-tree-item>Item 3</nu-tree-item>
+    </nu-tree>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-tree>
+      <nu-tree-item>
+        Item 1
+        <nu-tree-item>Item A</nu-tree-item>
+        <nu-tree-item>Item B</nu-tree-item>
+        <nu-tree-item>Item C</nu-tree-item>
+      </nu-tree-item>
+      <nu-tree-item>Item 2</nu-tree-item>
+      <nu-tree-item>Item 3</nu-tree-item>
+    </nu-tree>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+<!-- prettier-ignore -->
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlTree from '@onsonr/nebula/dist/react/tree'
+    ;
+    import SlTreeItem from '@onsonr/nebula/dist/react/tree-item'
+    ;
+    
+    const App = () => (
+      
+      <NuTree>
+        <NuTreeItem>
+          Item 1
+          <NuTreeItem>Item A</NuTreeItem>
+          <NuTreeItem>Item B</NuTreeItem>
+          <NuTreeItem>Item C</NuTreeItem>
+        </NuTreeItem>
+        <NuTreeItem>Item 2</NuTreeItem>
+        <NuTreeItem>Item 3</NuTreeItem>
+      </NuTree>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+## Examples
+
+### Nested tree items
+
+A tree item can contain other tree items. This allows the node to be expanded or collapsed by the user.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-tree>
+      <nu-tree-item>
+        Item 1
+        <nu-tree-item>
+          Item A
+          <nu-tree-item>Item Z</nu-tree-item>
+          <nu-tree-item>Item Y</nu-tree-item>
+          <nu-tree-item>Item X</nu-tree-item>
+        </nu-tree-item>
+        <nu-tree-item>Item B</nu-tree-item>
+        <nu-tree-item>Item C</nu-tree-item>
+      </nu-tree-item>
+      <nu-tree-item>Item 2</nu-tree-item>
+      <nu-tree-item>Item 3</nu-tree-item>
+    </nu-tree>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-tree>
+      <nu-tree-item>
+        Item 1
+        <nu-tree-item>
+          Item A
+          <nu-tree-item>Item Z</nu-tree-item>
+          <nu-tree-item>Item Y</nu-tree-item>
+          <nu-tree-item>Item X</nu-tree-item>
+        </nu-tree-item>
+        <nu-tree-item>Item B</nu-tree-item>
+        <nu-tree-item>Item C</nu-tree-item>
+      </nu-tree-item>
+      <nu-tree-item>Item 2</nu-tree-item>
+      <nu-tree-item>Item 3</nu-tree-item>
+    </nu-tree>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+<!-- prettier-ignore -->
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlTree from '@onsonr/nebula/dist/react/tree'
+    ;
+    import SlTreeItem from '@onsonr/nebula/dist/react/tree-item'
+    ;
+    
+    const App = () => (
+      
+      <NuTree>
+        <NuTreeItem>
+          Item 1
+          <NuTreeItem>
+            Item A
+            <NuTreeItem>Item Z</NuTreeItem>
+            <NuTreeItem>Item Y</NuTreeItem>
+            <NuTreeItem>Item X</NuTreeItem>
+          </NuTreeItem>
+          <NuTreeItem>Item B</NuTreeItem>
+          <NuTreeItem>Item C</NuTreeItem>
+        </NuTreeItem>
+        <NuTreeItem>Item 2</NuTreeItem>
+        <NuTreeItem>Item 3</NuTreeItem>
+      </NuTree>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Selected
+
+Use the `selected` attribute to select a tree item initially.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-tree>
+      <nu-tree-item selected>
+        Item 1
+        <nu-tree-item>Item A</nu-tree-item>
+        <nu-tree-item>Item B</nu-tree-item>
+        <nu-tree-item>Item C</nu-tree-item>
+      </nu-tree-item>
+      <nu-tree-item>Item 2</nu-tree-item>
+      <nu-tree-item>Item 3</nu-tree-item>
+    </nu-tree>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-tree>
+      <nu-tree-item selected>
+        Item 1
+        <nu-tree-item>Item A</nu-tree-item>
+        <nu-tree-item>Item B</nu-tree-item>
+        <nu-tree-item>Item C</nu-tree-item>
+      </nu-tree-item>
+      <nu-tree-item>Item 2</nu-tree-item>
+      <nu-tree-item>Item 3</nu-tree-item>
+    </nu-tree>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+<!-- prettier-ignore -->
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlTree from '@onsonr/nebula/dist/react/tree'
+    ;
+    import SlTreeItem from '@onsonr/nebula/dist/react/tree-item'
+    ;
+    
+    const App = () => (
+      
+      <NuTree>
+        <NuTreeItem selected>
+          Item 1
+          <NuTreeItem>Item A</NuTreeItem>
+          <NuTreeItem>Item B</NuTreeItem>
+          <NuTreeItem>Item C</NuTreeItem>
+        </NuTreeItem>
+        <NuTreeItem>Item 2</NuTreeItem>
+        <NuTreeItem>Item 3</NuTreeItem>
+      </NuTree>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Expanded
+
+Use the `expanded` attribute to expand a tree item initially.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-tree>
+      <nu-tree-item expanded>
+        Item 1
+        <nu-tree-item expanded>
+          Item A
+          <nu-tree-item>Item Z</nu-tree-item>
+          <nu-tree-item>Item Y</nu-tree-item>
+          <nu-tree-item>Item X</nu-tree-item>
+        </nu-tree-item>
+        <nu-tree-item>Item B</nu-tree-item>
+        <nu-tree-item>Item C</nu-tree-item>
+      </nu-tree-item>
+      <nu-tree-item>Item 2</nu-tree-item>
+      <nu-tree-item>Item 3</nu-tree-item>
+    </nu-tree>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-tree>
+      <nu-tree-item expanded>
+        Item 1
+        <nu-tree-item expanded>
+          Item A
+          <nu-tree-item>Item Z</nu-tree-item>
+          <nu-tree-item>Item Y</nu-tree-item>
+          <nu-tree-item>Item X</nu-tree-item>
+        </nu-tree-item>
+        <nu-tree-item>Item B</nu-tree-item>
+        <nu-tree-item>Item C</nu-tree-item>
+      </nu-tree-item>
+      <nu-tree-item>Item 2</nu-tree-item>
+      <nu-tree-item>Item 3</nu-tree-item>
+    </nu-tree>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+<!-- prettier-ignore -->
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlTree from '@onsonr/nebula/dist/react/tree'
+    ;
+    import SlTreeItem from '@onsonr/nebula/dist/react/tree-item'
+    ;
+    
+    const App = () => (
+      
+      <NuTree>
+        <NuTreeItem expanded>
+          Item 1
+          <NuTreeItem expanded>
+            Item A
+            <NuTreeItem>Item Z</NuTreeItem>
+            <NuTreeItem>Item Y</NuTreeItem>
+            <NuTreeItem>Item X</NuTreeItem>
+          </NuTreeItem>
+          <NuTreeItem>Item B</NuTreeItem>
+          <NuTreeItem>Item C</NuTreeItem>
+        </NuTreeItem>
+        <NuTreeItem>Item 2</NuTreeItem>
+        <NuTreeItem>Item 3</NuTreeItem>
+      </NuTree>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+## Properties
+
+<AutoTypeTable path="./src/components/tree-item/tree-item.component.ts" name="NuTreeItem" />
+

@@ -12,7 +12,7 @@ layout: component
 ```jsx:react
 import SlRating from '@onsonr/nebula/dist/react/rating';
 
-const App = () => <SlRating label="Rating" />;
+const App = () => <NuRating label="Rating" />;
 ```
 
 ## Examples
@@ -28,7 +28,7 @@ Ratings are commonly identified contextually, so labels aren't displayed. Howeve
 ```jsx:react
 import SlRating from '@onsonr/nebula/dist/react/rating';
 
-const App = () => <SlRating label="Rate this component" />;
+const App = () => <NuRating label="Rate this component" />;
 ```
 
 ### Maximum Value
@@ -42,7 +42,7 @@ Ratings are 0-5 by default. To change the maximum possible value, use the `max` 
 ```jsx:react
 import SlRating from '@onsonr/nebula/dist/react/rating';
 
-const App = () => <SlRating label="Rating" max={3} />;
+const App = () => <NuRating label="Rating" max={3} />;
 ```
 
 ### Precision
@@ -56,7 +56,7 @@ Use the `precision` attribute to let users select fractional ratings.
 ```jsx:react
 import SlRating from '@onsonr/nebula/dist/react/rating';
 
-const App = () => <SlRating label="Rating" precision={0.5} value={2.5} />;
+const App = () => <NuRating label="Rating" precision={0.5} value={2.5} />;
 ```
 
 ### Symbol Sizes
@@ -72,7 +72,7 @@ Set the `--symbol-size` custom property to adjust the size.
 ```jsx:react
 import SlRating from '@onsonr/nebula/dist/react/rating';
 
-const App = () => <SlRating label="Rating" style={{ '--symbol-size': '2rem' }} />;
+const App = () => <NuRating label="Rating" style={{ '--symbol-size': '2rem' }} />;
 ```
 
 {% endraw %}
@@ -88,7 +88,7 @@ Use the `readonly` attribute to display a rating that users can't change.
 ```jsx:react
 import SlRating from '@onsonr/nebula/dist/react/rating';
 
-const App = () => <SlRating label="Rating" readonly value={3} />;
+const App = () => <NuRating label="Rating" readonly value={3} />;
 ```
 
 ### Disabled
@@ -102,7 +102,7 @@ Use the `disable` attribute to disable the rating.
 ```jsx:react
 import SlRating from '@onsonr/nebula/dist/react/rating';
 
-const App = () => <SlRating label="Rating" disabled value={3} />;
+const App = () => <NuRating label="Rating" disabled value={3} />;
 ```
 
 ### Detecting Hover
@@ -189,7 +189,7 @@ const App = () => {
   return (
     <>
       <div class="detect-hover">
-        <SlRating label="Rating" onSlHover={handleHover} />
+        <NuRating label="Rating" onSlHover={handleHover} />
         <span>{feedback}</span>
       </div>
       <style>{css}</style>
@@ -217,7 +217,7 @@ You can provide custom icons by passing a function to the `getSymbol` property.
 import SlRating from '@onsonr/nebula/dist/react/rating';
 
 const App = () => (
-  <SlRating
+  <NuRating
     label="Rating"
     getSymbol={() => '<nu-icon name="heart-fill"></nu-icon>'}
     style={{ '--symbol-color-active': '#ff4136' }}
@@ -252,5 +252,5 @@ function getSymbol(value) {
   return `<nu-icon name="${icons[value - 1]}"></nu-icon>`;
 }
 
-const App = () => <SlRating label="Rating" getSymbol={getSymbol} />;
+const App = () => <NuRating label="Rating" getSymbol={getSymbol} />;
 ```

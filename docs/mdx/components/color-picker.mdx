@@ -1,0 +1,238 @@
+---
+title: Color Picker
+description: Color pickers allow the user to select a color.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-color-picker label="Select a color"></nu-color-picker>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-color-picker label="Select a color"></nu-color-picker>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlColorPicker from '@onsonr/nebula/dist/react/color-picker'
+    ;
+    
+    const App = () => <NuColorPicker label="Select a color" />;
+    ```
+  </Tab>
+</Tabs>
+
+<Callout type="info">
+This component works with standard `<form>` elements. Please refer to the section on [form controls](/getting-started/form-controls) to learn more about form submission and client-side validation.
+</Callout>
+
+## Examples
+
+### Initial Value
+
+Use the `value` attribute to set an initial value for the color picker.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-color-picker value="#4a90e2" label="Select a color"></nu-color-picker>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-color-picker value="#4a90e2" label="Select a color"></nu-color-picker>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlColorPicker from '@onsonr/nebula/dist/react/color-picker'
+    ;
+    
+    const App = () => <NuColorPicker value="#4a90e2" label="Select a color" />;
+    ```
+  </Tab>
+</Tabs>
+
+### Opacity
+
+Use the `opacity` attribute to enable the opacity slider. When this is enabled, the value will be displayed as HEXA, RGBA, HSLA, or HSVA based on `format`.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-color-picker value="#f5a623ff" opacity label="Select a color"></nu-color-picker>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-color-picker value="#f5a623ff" opacity label="Select a color"></nu-color-picker>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlColorPicker from '@onsonr/nebula/dist/react/color-picker'
+    ;
+    
+    const App = () => <NuColorPicker opacity label="Select a color" />;
+    ```
+  </Tab>
+</Tabs>
+
+### Formats
+
+Set the color picker's format with the `format` attribute. Valid options include `hex`, `rgb`, `hsl`, and `hsv`. Note that the color picker's input will accept any parsable format (including CSS color names) regardless of this option.
+
+To prevent users from toggling the format themselves, add the `no-format-toggle` attribute.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-color-picker format="hex" value="#4a90e2" label="Select a color"></nu-color-picker>
+    <nu-color-picker format="rgb" value="rgb(80, 227, 194)" label="Select a color"></nu-color-picker>
+    <nu-color-picker format="hsl" value="hsl(290, 87%, 47%)" label="Select a color"></nu-color-picker>
+    <nu-color-picker format="hsv" value="hsv(55, 89%, 97%)" label="Select a color"></nu-color-picker>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-color-picker format="hex" value="#4a90e2" label="Select a color"></nu-color-picker>
+    <nu-color-picker format="rgb" value="rgb(80, 227, 194)" label="Select a color"></nu-color-picker>
+    <nu-color-picker format="hsl" value="hsl(290, 87%, 47%)" label="Select a color"></nu-color-picker>
+    <nu-color-picker format="hsv" value="hsv(55, 89%, 97%)" label="Select a color"></nu-color-picker>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlColorPicker from '@onsonr/nebula/dist/react/color-picker'
+    ;
+    
+    const App = () => (
+      
+      <>
+        <NuColorPicker format="hex" value="#4a90e2" />
+        <NuColorPicker format="rgb" value="rgb(80, 227, 194)" />
+        <NuColorPicker format="hsl" value="hsl(290, 87%, 47%)" />
+        <NuColorPicker format="hsv" value="hsv(55, 89%, 97%)" />
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Swatches
+
+Use the `swatches` attribute to add convenient presets to the color picker. Any format the color picker can parse is acceptable (including CSS color names), but each value must be separated by a semicolon (`;`). Alternatively, you can pass an array of color values to this property using JavaScript.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-color-picker
+      label="Select a color"
+      swatches="
+        #d0021b; #f5a623; #f8e71c; #8b572a; #7ed321; #417505; #bd10e0; #9013fe;
+        #4a90e2; #50e3c2; #b8e986; #000; #444; #888; #ccc; #fff;
+      "
+    ></nu-color-picker>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-color-picker
+      label="Select a color"
+      swatches="
+        #d0021b; #f5a623; #f8e71c; #8b572a; #7ed321; #417505; #bd10e0; #9013fe;
+        #4a90e2; #50e3c2; #b8e986; #000; #444; #888; #ccc; #fff;
+      "
+    ></nu-color-picker>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlColorPicker from '@onsonr/nebula/dist/react/color-picker'
+    ;
+    
+    const App = () => (
+      
+      <NuColorPicker
+        label="Select a color"
+        swatches="
+          #d0021b; #f5a623; #f8e71c; #8b572a; #7ed321; #417505; #bd10e0; #9013fe;
+          #4a90e2; #50e3c2; #b8e986; #000; #444; #888; #ccc; #fff;
+        "
+      />
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Sizes
+
+Use the `size` attribute to change the color picker's trigger size.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-color-picker size="small" label="Select a color"></nu-color-picker>
+    <nu-color-picker size="medium" label="Select a color"></nu-color-picker>
+    <nu-color-picker size="large" label="Select a color"></nu-color-picker>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-color-picker size="small" label="Select a color"></nu-color-picker>
+    <nu-color-picker size="medium" label="Select a color"></nu-color-picker>
+    <nu-color-picker size="large" label="Select a color"></nu-color-picker>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlColorPicker from '@onsonr/nebula/dist/react/color-picker'
+    ;
+    
+    const App = () => (
+      
+      <>
+        <NuColorPicker size="small" label="Select a color" />
+        <NuColorPicker size="medium" label="Select a color" />
+        <NuColorPicker size="large" label="Select a color" />
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Inline
+
+The color picker can be rendered inline instead of in a dropdown using the `inline` attribute.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-color-picker inline label="Select a color"></nu-color-picker>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-color-picker inline label="Select a color"></nu-color-picker>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlColorPicker from '@onsonr/nebula/dist/react/color-picker'
+    ;
+    
+    const App = () => <NuColorPicker inline label="Select a color" />;
+    ```
+  </Tab>
+</Tabs>
+
+## Properties
+
+<AutoTypeTable path="./src/components/color-picker/color-picker.component.ts" name="NuColorPicker" />
+

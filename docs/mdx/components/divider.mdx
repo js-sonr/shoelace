@@ -1,0 +1,309 @@
+---
+title: Divider
+description: Dividers are used to visually separate or group elements.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-divider></nu-divider>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-divider></nu-divider>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlDivider from '@onsonr/nebula/dist/react/divider'
+    ;
+    
+    const App = () => <NuDivider />;
+    ```
+  </Tab>
+</Tabs>
+
+## Examples
+
+### Width
+
+Use the `--width` custom property to change the width of the divider.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-divider style="--width: 4px;"></nu-divider>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-divider style="--width: 4px;"></nu-divider>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlDivider from '@onsonr/nebula/dist/react/divider'
+    ;
+    
+    const App = () => <NuDivider style={{ '--width': '4px' }} />;
+    ```
+  </Tab>
+</Tabs>
+
+### Color
+
+Use the `--color` custom property to change the color of the divider.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-divider style="--color: tomato;"></nu-divider>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-divider style="--color: tomato;"></nu-divider>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlDivider from '@onsonr/nebula/dist/react/divider'
+    ;
+    
+    const App = () => <NuDivider style={{ '--color': 'tomato' }} />;
+    ```
+  </Tab>
+</Tabs>
+
+### Spacing
+
+Use the `--spacing` custom property to change the amount of space between the divider and it's neighboring elements.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <div style="text-align: center;">
+      Above
+      <nu-divider style="--spacing: 2rem;"></nu-divider>
+      Below
+    </div>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <div style="text-align: center;">
+      Above
+      <nu-divider style="--spacing: 2rem;"></nu-divider>
+      Below
+    </div>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlDivider from '@onsonr/nebula/dist/react/divider'
+    ;
+    
+    const App = () => (
+      
+      <>
+        Above
+        <NuDivider style={{ '--spacing': '2rem' }} />
+        Below
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Vertical
+
+Add the `vertical` attribute to draw the divider in a vertical orientation. The divider will span the full height of its container. Vertical dividers work especially well inside of a flex container.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <div style="display: flex; align-items: center; height: 2rem;">
+      First
+      <nu-divider vertical></nu-divider>
+      Middle
+      <nu-divider vertical></nu-divider>
+      Last
+    </div>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <div style="display: flex; align-items: center; height: 2rem;">
+      First
+      <nu-divider vertical></nu-divider>
+      Middle
+      <nu-divider vertical></nu-divider>
+      Last
+    </div>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlDivider from '@onsonr/nebula/dist/react/divider'
+    ;
+    
+    const App = () => (
+      
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          height: '2rem'
+        }}
+      >
+        First
+        <NuDivider vertical />
+        Middle
+        <NuDivider vertical />
+        Last
+      </div>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Menu Dividers
+
+Use dividers in [menus](/components/menu) to visually group menu items.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-menu style="max-width: 200px;">
+      <nu-menu-item value="1">Option 1</nu-menu-item>
+      <nu-menu-item value="2">Option 2</nu-menu-item>
+      <nu-menu-item value="3">Option 3</nu-menu-item>
+      <nu-divider></nu-divider>
+      <nu-menu-item value="4">Option 4</nu-menu-item>
+      <nu-menu-item value="5">Option 5</nu-menu-item>
+      <nu-menu-item value="6">Option 6</nu-menu-item>
+    </nu-menu>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-menu style="max-width: 200px;">
+      <nu-menu-item value="1">Option 1</nu-menu-item>
+      <nu-menu-item value="2">Option 2</nu-menu-item>
+      <nu-menu-item value="3">Option 3</nu-menu-item>
+      <nu-divider></nu-divider>
+      <nu-menu-item value="4">Option 4</nu-menu-item>
+      <nu-menu-item value="5">Option 5</nu-menu-item>
+      <nu-menu-item value="6">Option 6</nu-menu-item>
+    </nu-menu>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlDivider from '@onsonr/nebula/dist/react/divider'
+    ;
+    import SlMenu from '@onsonr/nebula/dist/react/menu'
+    ;
+    import SlMenuItem from '@onsonr/nebula/dist/react/menu-item'
+    ;
+    
+    const App = () => (
+      
+      <NuMenu style={{ maxWidth: '200px' }}>
+        <NuMenuItem value="1">Option 1</NuMenuItem>
+        <NuMenuItem value="2">Option 2</NuMenuItem>
+        <NuMenuItem value="3">Option 3</NuMenuItem>
+        <nu-divider />
+        <NuMenuItem value="4">Option 4</NuMenuItem>
+        <NuMenuItem value="5">Option 5</NuMenuItem>
+        <NuMenuItem value="6">Option 6</NuMenuItem>
+      </NuMenu>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+## Properties
+
+<AutoTypeTable path="./src/components/divider/divider.component.ts" name="NuDivider" />
+

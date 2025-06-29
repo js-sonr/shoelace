@@ -20,9 +20,9 @@ import SlButton from '@onsonr/nebula/dist/react/button';
 import SlTooltip from '@onsonr/nebula/dist/react/tooltip';
 
 const App = () => (
-  <SlTooltip content="This is a tooltip">
-    <SlButton>Hover Me</SlButton>
-  </SlTooltip>
+  <NuTooltip content="This is a tooltip">
+    <NuButton>Hover Me</NuButton>
+  </NuTooltip>
 );
 ```
 
@@ -163,61 +163,61 @@ const App = () => (
   <>
     <div className="tooltip-placement-example">
       <div className="tooltip-placement-example-row">
-        <SlTooltip content="top-start" placement="top-start">
-          <SlButton />
-        </SlTooltip>
+        <NuTooltip content="top-start" placement="top-start">
+          <NuButton />
+        </NuTooltip>
 
-        <SlTooltip content="top" placement="top">
-          <SlButton />
-        </SlTooltip>
+        <NuTooltip content="top" placement="top">
+          <NuButton />
+        </NuTooltip>
 
-        <SlTooltip content="top-end" placement="top-end">
-          <SlButton />
-        </SlTooltip>
+        <NuTooltip content="top-end" placement="top-end">
+          <NuButton />
+        </NuTooltip>
       </div>
 
       <div className="tooltip-placement-example-row">
-        <SlTooltip content="left-start" placement="left-start">
-          <SlButton />
-        </SlTooltip>
+        <NuTooltip content="left-start" placement="left-start">
+          <NuButton />
+        </NuTooltip>
 
-        <SlTooltip content="right-start" placement="right-start">
-          <SlButton />
-        </SlTooltip>
+        <NuTooltip content="right-start" placement="right-start">
+          <NuButton />
+        </NuTooltip>
       </div>
 
       <div className="tooltip-placement-example-row">
-        <SlTooltip content="left" placement="left">
-          <SlButton />
-        </SlTooltip>
+        <NuTooltip content="left" placement="left">
+          <NuButton />
+        </NuTooltip>
 
-        <SlTooltip content="right" placement="right">
-          <SlButton />
-        </SlTooltip>
+        <NuTooltip content="right" placement="right">
+          <NuButton />
+        </NuTooltip>
       </div>
 
       <div className="tooltip-placement-example-row">
-        <SlTooltip content="left-end" placement="left-end">
-          <SlButton />
-        </SlTooltip>
+        <NuTooltip content="left-end" placement="left-end">
+          <NuButton />
+        </NuTooltip>
 
-        <SlTooltip content="right-end" placement="right-end">
-          <SlButton />
-        </SlTooltip>
+        <NuTooltip content="right-end" placement="right-end">
+          <NuButton />
+        </NuTooltip>
       </div>
 
       <div className="tooltip-placement-example-row">
-        <SlTooltip content="bottom-start" placement="bottom-start">
-          <SlButton />
-        </SlTooltip>
+        <NuTooltip content="bottom-start" placement="bottom-start">
+          <NuButton />
+        </NuTooltip>
 
-        <SlTooltip content="bottom" placement="bottom">
-          <SlButton />
-        </SlTooltip>
+        <NuTooltip content="bottom" placement="bottom">
+          <NuButton />
+        </NuTooltip>
 
-        <SlTooltip content="bottom-end" placement="bottom-end">
-          <SlButton />
-        </SlTooltip>
+        <NuTooltip content="bottom-end" placement="bottom-end">
+          <NuButton />
+        </NuTooltip>
       </div>
     </div>
 
@@ -241,9 +241,9 @@ import SlButton from '@onsonr/nebula/dist/react/button';
 import SlTooltip from '@onsonr/nebula/dist/react/tooltip';
 
 const App = () => (
-  <SlTooltip content="Click again to dismiss" trigger="click">
-    <SlButton>Click to Toggle</SlButton>
-  </SlTooltip>
+  <NuTooltip content="Click again to dismiss" trigger="click">
+    <NuButton>Click to Toggle</NuButton>
+  </NuTooltip>
 );
 ```
 
@@ -279,13 +279,13 @@ const App = () => {
 
   return (
     <>
-      <SlButton style={{ marginRight: '4rem' }} onClick={() => setOpen(!open)}>
+      <NuButton style={{ marginRight: '4rem' }} onClick={() => setOpen(!open)}>
         Toggle Manually
-      </SlButton>
+      </NuButton>
 
-      <SlTooltip open={open} content="This is an avatar" trigger="manual">
-        <SlAvatar />
-      </SlTooltip>
+      <NuTooltip open={open} content="This is an avatar" trigger="manual">
+        <NuAvatar />
+      </NuTooltip>
     </>
   );
 };
@@ -311,13 +311,13 @@ import SlTooltip from '@onsonr/nebula/dist/react/tooltip';
 
 const App = () => (
   <div style={{ '--nu-tooltip-arrow-size': '0' }}>
-    <SlTooltip content="This is a tooltip">
-      <SlButton>Above</SlButton>
-    </SlTooltip>
+    <NuTooltip content="This is a tooltip">
+      <NuButton>Above</NuButton>
+    </NuTooltip>
 
-    <SlTooltip content="This is a tooltip" placement="bottom">
-      <SlButton>Below</SlButton>
-    </SlTooltip>
+    <NuTooltip content="This is a tooltip" placement="bottom">
+      <NuButton>Below</NuButton>
+    </NuTooltip>
   </div>
 );
 ```
@@ -349,13 +349,13 @@ import SlButton from '@onsonr/nebula/dist/react/button';
 import SlTooltip from '@onsonr/nebula/dist/react/tooltip';
 
 const App = () => (
-  <SlTooltip>
+  <NuTooltip>
     <div slot="content">
       I'm not <strong>just</strong> a tooltip, I'm a <em>tooltip</em> with HTML!
     </div>
 
-    <SlButton>Hover Me</SlButton>
-  </SlTooltip>
+    <NuButton>Hover Me</NuButton>
+  </NuTooltip>
 );
 ```
 
@@ -376,9 +376,9 @@ import SlButton from '@onsonr/nebula/dist/react/button';
 import SlTooltip from '@onsonr/nebula/dist/react/tooltip';
 
 const App = () => (
-  <SlTooltip style={{ '--max-width': '80px' }} content="This tooltip will wrap after only 80 pixels.">
-    <SlButton>Hover Me</SlButton>
-  </SlTooltip>
+  <NuTooltip style={{ '--max-width': '80px' }} content="This tooltip will wrap after only 80 pixels.">
+    <NuButton>Hover Me</NuButton>
+  </NuTooltip>
 );
 ```
 
@@ -425,13 +425,13 @@ const css = `
 const App = () => (
   <>
     <div class="tooltip-hoist">
-      <SlTooltip content="This is a tooltip">
-        <SlButton>No Hoist</SlButton>
-      </SlTooltip>
+      <NuTooltip content="This is a tooltip">
+        <NuButton>No Hoist</NuButton>
+      </NuTooltip>
 
-      <SlTooltip content="This is a tooltip" hoist>
-        <SlButton>Hoist</SlButton>
-      </SlTooltip>
+      <NuTooltip content="This is a tooltip" hoist>
+        <NuButton>Hoist</NuButton>
+      </NuTooltip>
     </div>
 
     <style>{css}</style>

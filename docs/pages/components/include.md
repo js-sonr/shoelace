@@ -16,7 +16,7 @@ The included content will be inserted into the `<nu-include>` element's default 
 ```jsx:react
 import SlInclude from '@onsonr/nebula/dist/react/include';
 
-const App = () => <SlInclude src="https://nebulaui.org/assets/examples/include.html" />;
+const App = () => <NuInclude src="https://nebulaui.org/assets/examples/include.html" />;
 ```
 
 ## Examples

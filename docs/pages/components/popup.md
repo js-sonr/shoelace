@@ -160,7 +160,7 @@ const App = () => {
   return (
     <>
       <div className="popup-overview">
-        <SlPopup
+        <NuPopup
           placement={placement}
           active={active || null}
           distance={distance}
@@ -169,37 +169,37 @@ const App = () => {
         >
           <span slot="anchor" />
           <div className="box" />
-        </SlPopup>
+        </NuPopup>
 
         <div className="popup-overview-options">
-          <SlSelect
+          <NuSelect
             label="Placement"
             name="placement"
             value={placement}
             className="popup-overview-select"
             onSlChange={event => setPlacement(event.target.value)}
           >
-            <SlMenuItem value="top">top</SlMenuItem>
-            <SlMenuItem value="top-start">top-start</SlMenuItem>
-            <SlMenuItem value="top-end">top-end</SlMenuItem>
-            <SlMenuItem value="bottom">bottom</SlMenuItem>
-            <SlMenuItem value="bottom-start">bottom-start</SlMenuItem>
-            <SlMenuItem value="bottom-end">bottom-end</SlMenuItem>
-            <SlMenuItem value="right">right</SlMenuItem>
-            <SlMenuItem value="right-start">right-start</SlMenuItem>
-            <SlMenuItem value="right-end">right-end</SlMenuItem>
-            <SlMenuItem value="left">left</SlMenuItem>
-            <SlMenuItem value="left-start">left-start</SlMenuItem>
-            <SlMenuItem value="left-end">left-end</SlMenuItem>
-          </SlSelect>
-          <SlInput
+            <NuMenuItem value="top">top</NuMenuItem>
+            <NuMenuItem value="top-start">top-start</NuMenuItem>
+            <NuMenuItem value="top-end">top-end</NuMenuItem>
+            <NuMenuItem value="bottom">bottom</NuMenuItem>
+            <NuMenuItem value="bottom-start">bottom-start</NuMenuItem>
+            <NuMenuItem value="bottom-end">bottom-end</NuMenuItem>
+            <NuMenuItem value="right">right</NuMenuItem>
+            <NuMenuItem value="right-start">right-start</NuMenuItem>
+            <NuMenuItem value="right-end">right-end</NuMenuItem>
+            <NuMenuItem value="left">left</NuMenuItem>
+            <NuMenuItem value="left-start">left-start</NuMenuItem>
+            <NuMenuItem value="left-end">left-end</NuMenuItem>
+          </NuSelect>
+          <NuInput
             type="number"
             name="distance"
             label="distance"
             value={distance}
             onSlInput={event => setDistance(event.target.value)}
           />
-          <SlInput
+          <NuInput
             type="number"
             name="skidding"
             label="Skidding"
@@ -209,12 +209,12 @@ const App = () => {
         </div>
 
         <div className="popup-overview-options">
-          <SlSwitch checked={active} onSlChange={event => setActive(event.target.checked)}>
+          <NuSwitch checked={active} onSlChange={event => setActive(event.target.checked)}>
             Active
-          </SlSwitch>
-          <SlSwitch checked={arrow} onSlChange={event => setArrow(event.target.checked)}>
+          </NuSwitch>
+          <NuSwitch checked={arrow} onSlChange={event => setArrow(event.target.checked)}>
             Arrow
-          </SlSwitch>
+          </NuSwitch>
         </div>
       </div>
 
@@ -299,15 +299,15 @@ const App = () => {
   return (
     <>
       <div className="popup-active">
-        <SlPopup placement="top" active={active}>
+        <NuPopup placement="top" active={active}>
           <span slot="anchor" />
           <div className="box" />
-        </SlPopup>
+        </NuPopup>
 
         <br />
-        <SlSwitch checked={active} onSlChange={event => setActive(event.target.checked)}>
+        <NuSwitch checked={active} onSlChange={event => setActive(event.target.checked)}>
           Active
-        </SlSwitch>
+        </NuSwitch>
       </div>
 
       <style>{css}</style>
@@ -370,9 +370,9 @@ const App = () => {
     <>
       <span id="external-anchor" />
 
-      <SlPopup anchor="external-anchor" placement="top" active>
+      <NuPopup anchor="external-anchor" placement="top" active>
         <div class="box" />
-      </SlPopup>
+      </NuPopup>
 
       <style>{css}</style>
     </>
@@ -472,25 +472,25 @@ const App = () => {
   return (
     <div className="popup-active">
       <div className="popup-placement">
-        <SlPopup placement={placement} active>
+        <NuPopup placement={placement} active>
           <span slot="anchor" />
           <div className="box" />
-        </SlPopup>
+        </NuPopup>
 
-        <SlSelect label="Placement" value={placement} onSlChange={event => setPlacement(event.target.value)}>
-          <SlMenuItem value="top">top</SlMenuItem>
-          <SlMenuItem value="top-start">top-start</SlMenuItem>
-          <SlMenuItem value="top-end">top-end</SlMenuItem>
-          <SlMenuItem value="bottom">bottom</SlMenuItem>
-          <SlMenuItem value="bottom-start">bottom-start</SlMenuItem>
-          <SlMenuItem value="bottom-end">bottom-end</SlMenuItem>
-          <SlMenuItem value="right">right</SlMenuItem>
-          <SlMenuItem value="right-start">right-start</SlMenuItem>
-          <SlMenuItem value="right-end">right-end</SlMenuItem>
-          <SlMenuItem value="left">left</SlMenuItem>
-          <SlMenuItem value="left-start">left-start</SlMenuItem>
-          <SlMenuItem value="left-end">left-end</SlMenuItem>
-        </SlSelect>
+        <NuSelect label="Placement" value={placement} onSlChange={event => setPlacement(event.target.value)}>
+          <NuMenuItem value="top">top</NuMenuItem>
+          <NuMenuItem value="top-start">top-start</NuMenuItem>
+          <NuMenuItem value="top-end">top-end</NuMenuItem>
+          <NuMenuItem value="bottom">bottom</NuMenuItem>
+          <NuMenuItem value="bottom-start">bottom-start</NuMenuItem>
+          <NuMenuItem value="bottom-end">bottom-end</NuMenuItem>
+          <NuMenuItem value="right">right</NuMenuItem>
+          <NuMenuItem value="right-start">right-start</NuMenuItem>
+          <NuMenuItem value="right-end">right-end</NuMenuItem>
+          <NuMenuItem value="left">left</NuMenuItem>
+          <NuMenuItem value="left-start">left-start</NuMenuItem>
+          <NuMenuItem value="left-end">left-end</NuMenuItem>
+        </NuSelect>
       </div>
 
       <style>{css}</style>
@@ -575,12 +575,12 @@ const App = () => {
   return (
     <>
       <div className="popup-distance">
-        <SlPopup placement="top" distance={distance} active>
+        <NuPopup placement="top" distance={distance} active>
           <span slot="anchor" />
           <div class="box" />
-        </SlPopup>
+        </NuPopup>
 
-        <SlRange
+        <NuRange
           label="Distance"
           min="-50"
           max="50"
@@ -672,12 +672,12 @@ const App = () => {
   return (
     <>
       <div className="popup-skidding">
-        <SlPopup placement="top" skidding={skidding} active>
+        <NuPopup placement="top" skidding={skidding} active>
           <span slot="anchor"></span>
           <div className="box"></div>
-        </SlPopup>
+        </NuPopup>
 
-        <SlRange
+        <NuRange
           label="Skidding"
           min="-50"
           max="50"
@@ -835,50 +835,50 @@ const App = () => {
   return (
     <>
       <div className="popup-arrow">
-        <SlPopup placement={placement} arrow={arrow || null} arrow-placement={arrowPlacement} distance="8" active>
+        <NuPopup placement={placement} arrow={arrow || null} arrow-placement={arrowPlacement} distance="8" active>
           <span slot="anchor" />
           <div className="box" />
-        </SlPopup>
+        </NuPopup>
 
         <div className="popup-arrow-options">
-          <SlSelect
+          <NuSelect
             label="Placement"
             name="placement"
             value={placement}
             className="popup-overview-select"
             onSlChange={event => setPlacement(event.target.value)}
           >
-            <SlMenuItem value="top">top</SlMenuItem>
-            <SlMenuItem value="top-start">top-start</SlMenuItem>
-            <SlMenuItem value="top-end">top-end</SlMenuItem>
-            <SlMenuItem value="bottom">bottom</SlMenuItem>
-            <SlMenuItem value="bottom-start">bottom-start</SlMenuItem>
-            <SlMenuItem value="bottom-end">bottom-end</SlMenuItem>
-            <SlMenuItem value="right">right</SlMenuItem>
-            <SlMenuItem value="right-start">right-start</SlMenuItem>
-            <SlMenuItem value="right-end">right-end</SlMenuItem>
-            <SlMenuItem value="left">left</SlMenuItem>
-            <SlMenuItem value="left-start">left-start</SlMenuItem>
-            <SlMenuItem value="left-end">left-end</SlMenuItem>
-          </SlSelect>
+            <NuMenuItem value="top">top</NuMenuItem>
+            <NuMenuItem value="top-start">top-start</NuMenuItem>
+            <NuMenuItem value="top-end">top-end</NuMenuItem>
+            <NuMenuItem value="bottom">bottom</NuMenuItem>
+            <NuMenuItem value="bottom-start">bottom-start</NuMenuItem>
+            <NuMenuItem value="bottom-end">bottom-end</NuMenuItem>
+            <NuMenuItem value="right">right</NuMenuItem>
+            <NuMenuItem value="right-start">right-start</NuMenuItem>
+            <NuMenuItem value="right-end">right-end</NuMenuItem>
+            <NuMenuItem value="left">left</NuMenuItem>
+            <NuMenuItem value="left-start">left-start</NuMenuItem>
+            <NuMenuItem value="left-end">left-end</NuMenuItem>
+          </NuSelect>
 
-          <SlSelect
+          <NuSelect
             label="Arrow Placement"
             name="arrow-placement"
             value={arrowPlacement}
             onSlChange={event => setArrowPlacement(event.target.value)}
           >
-            <SlMenuItem value="anchor">anchor</SlMenuItem>
-            <SlMenuItem value="start">start</SlMenuItem>
-            <SlMenuItem value="end">end</SlMenuItem>
-            <SlMenuItem value="center">center</SlMenuItem>
-          </SlSelect>
+            <NuMenuItem value="anchor">anchor</NuMenuItem>
+            <NuMenuItem value="start">start</NuMenuItem>
+            <NuMenuItem value="end">end</NuMenuItem>
+            <NuMenuItem value="center">center</NuMenuItem>
+          </NuSelect>
         </div>
 
         <div className="popup-arrow-options">
-          <SlSwitch name="arrow" checked={arrow} onSlChange={event => setArrow(event.target.checked)}>
+          <NuSwitch name="arrow" checked={arrow} onSlChange={event => setArrow(event.target.checked)}>
             Arrow
-          </SlSwitch>
+          </NuSwitch>
         </div>
       </div>
 
@@ -975,17 +975,17 @@ const App = () => {
   return (
     <>
       <div class="popup-sync">
-        <SlPopup placement="top" sync={sync} active>
+        <NuPopup placement="top" sync={sync} active>
           <span slot="anchor" />
           <div class="box" />
-        </SlPopup>
+        </NuPopup>
 
-        <SlSelect value={sync} label="Sync" onSlChange={event => setSync(event.target.value)}>
-          <SlMenuItem value="width">Width</SlMenuItem>
-          <SlMenuItem value="height">Height</SlMenuItem>
-          <SlMenuItem value="both">Both</SlMenuItem>
-          <SlMenuItem value="">None</SlMenuItem>
-        </SlSelect>
+        <NuSelect value={sync} label="Sync" onSlChange={event => setSync(event.target.value)}>
+          <NuMenuItem value="width">Width</NuMenuItem>
+          <NuMenuItem value="height">Height</NuMenuItem>
+          <NuMenuItem value="both">Both</NuMenuItem>
+          <NuMenuItem value="">None</NuMenuItem>
+        </NuSelect>
       </div>
 
       <style>{css}</style>
@@ -1093,15 +1093,15 @@ const App = () => {
     <>
       <div className="popup-strategy">
         <div className="overflow">
-          <SlPopup placement="top" strategy={fixed ? 'fixed' : 'absolute'} active>
+          <NuPopup placement="top" strategy={fixed ? 'fixed' : 'absolute'} active>
             <span slot="anchor" />
             <div className="box" />
-          </SlPopup>
+          </NuPopup>
         </div>
 
-        <SlSwitch checked={fixed} onSlChange={event => setFixed(event.target.checked)}>
+        <NuSwitch checked={fixed} onSlChange={event => setFixed(event.target.checked)}>
           Fixed
-        </SlSwitch>
+        </NuSwitch>
       </div>
 
       <style>{css}</style>
@@ -1198,16 +1198,16 @@ const App = () => {
     <>
       <div className="popup-flip">
         <div className="overflow">
-          <SlPopup placement="top" flip={flip} active>
+          <NuPopup placement="top" flip={flip} active>
             <span slot="anchor" />
             <div className="box" />
-          </SlPopup>
+          </NuPopup>
         </div>
 
         <br />
-        <SlSwitch checked={flip} onSlChange={event => setFlip(event.target.checked)}>
+        <NuSwitch checked={flip} onSlChange={event => setFlip(event.target.checked)}>
           Flip
-        </SlSwitch>
+        </NuSwitch>
       </div>
 
       <style>{css}</style>
@@ -1293,10 +1293,10 @@ const App = () => {
     <>
       <div className="popup-flip-fallbacks">
         <div className="overflow">
-          <SlPopup placement="top" flip flip-fallback-placements="right bottom" flip-fallback-strategy="initial" active>
+          <NuPopup placement="top" flip flip-fallback-placements="right bottom" flip-fallback-strategy="initial" active>
             <span slot="anchor" />
             <div className="box" />
-          </SlPopup>
+          </NuPopup>
         </div>
       </div>
 
@@ -1391,15 +1391,15 @@ const App = () => {
     <>
       <div className="popup-shift">
         <div className="overflow">
-          <SlPopup placement="top" shift={shift} shift-padding="10" active>
+          <NuPopup placement="top" shift={shift} shift-padding="10" active>
             <span slot="anchor" />
             <div className="box" />
-          </SlPopup>
+          </NuPopup>
         </div>
 
-        <SlSwitch checked={shift} onSlChange={event => setShift(event.target.checked)}>
+        <NuSwitch checked={shift} onSlChange={event => setShift(event.target.checked)}>
           Shift
-        </SlSwitch>
+        </NuSwitch>
       </div>
 
       <style>{css}</style>
@@ -1512,16 +1512,16 @@ const App = () => {
     <>
       <div className="popup-auto-size">
         <div className="overflow">
-          <SlPopup placement="top" auto-size={autoSize ? 'both' || null} auto-size-padding="10" active>
+          <NuPopup placement="top" auto-size={autoSize ? 'both' || null} auto-size-padding="10" active>
             <span slot="anchor" />
             <div className="box" />
-          </SlPopup>
+          </NuPopup>
         </div>
 
         <br />
-        <SlSwitch checked={autoSize} onSlChange={event => setAutoSize(event.target.checked)}>
+        <NuSwitch checked={autoSize} onSlChange={event => setAutoSize(event.target.checked)}>
           Auto-size
-        </SlSwitch>
+        </NuSwitch>
       </div>
 
       <style>{css}</style>
@@ -1628,19 +1628,19 @@ const App = () => {
   return (
     <>
       <div class="popup-hover-bridge">
-        <SlPopup placement="top" hover-bridge={hoverBridge} distance={distance} skidding={skidding} active>
+        <NuPopup placement="top" hover-bridge={hoverBridge} distance={distance} skidding={skidding} active>
           <span slot="anchor" />
           <div class="box" />
-        </SlPopup>
+        </NuPopup>
 
         <br />
-        <SlSwitch
+        <NuSwitch
           checked={hoverBridge}
           onSlChange={event => setHoverBridge(event.target.checked)}
          >
           Hover Bridge
-        </SlSwitch><br />
-        <SlRange
+        </NuSwitch><br />
+        <NuRange
           min="0"
           max="50"
           step="1"
@@ -1648,7 +1648,7 @@ const App = () => {
           label="Distance"
           onSlInput={event => setDistance(event.target.value)}
         />
-        <SlRange
+        <NuRange
           min="-50"
           max="50"
           step="1"
@@ -1820,18 +1820,18 @@ const App = () => {
   return (
     <>
       <div className="popup-virtual-element">
-        <SlPopup
+        <NuPopup
           ref={popup}
           placement="right-start"
           active={enabled}
           anchor={virtualElement}
         >
           <div ref={circle} className="circle" />
-        </SlPopup>
+        </NuPopup>
 
-        <SlSwitch checked={enabled} onSlChange={event => setEnabled(event.target.checked)}>
+        <NuSwitch checked={enabled} onSlChange={event => setEnabled(event.target.checked)}>
           Highlight mouse cursor
-        </SlSwitch>
+        </NuSwitch>
       </div>
 
       <style>{css}</style>

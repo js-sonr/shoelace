@@ -16,7 +16,7 @@ layout: component
 import SlAnimatedImage from '@onsonr/nebula/dist/react/animated-image';
 
 const App = () => (
-  <SlAnimatedImage
+  <NuAnimatedImage
     src="https://nebulaui.org/assets/images/walk.gif"
     alt="Animation of untied shoes walking on pavement"
   />
@@ -44,7 +44,7 @@ Both GIF and WEBP images are supported.
 import SlAnimatedImage from '@onsonr/nebula/dist/react/animated-image';
 
 const App = () => (
-  <SlAnimatedImage src="https://nebulaui.org/assets/images/tie.webp" alt="Animation of a shoe being tied" />
+  <NuAnimatedImage src="https://nebulaui.org/assets/images/tie.webp" alt="Animation of a shoe being tied" />
 );
 ```
 
@@ -67,7 +67,7 @@ To set a custom size, apply a width and/or height to the host element.
 import SlAnimatedImage from '@onsonr/nebula/dist/react/animated-image';
 
 const App = () => (
-  <SlAnimatedImage
+  <NuAnimatedImage
     src="https://nebulaui.org/assets/images/walk.gif"
     alt="Animation of untied shoes walking on pavement"
     style={{ width: '150px', height: '200px' }}
@@ -118,7 +118,7 @@ const css = `
 
 const App = () => (
   <>
-    <SlAnimatedImage
+    <NuAnimatedImage
       className="animated-image-custom-control-box"
       src="https://nebulaui.org/assets/images/walk.gif"
       alt="Animation of untied shoes walking on pavement"

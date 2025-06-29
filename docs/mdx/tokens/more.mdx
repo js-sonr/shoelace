@@ -1,0 +1,165 @@
+---
+title: More Design Tokens
+description: Additional design tokens can be found here.
+---
+
+import { Callout } from "fumadocs-ui/components/callout";
+
+
+# More Design Tokens
+
+All of the design tokens described herein are considered relatively stable. However, some changes might occur in future versions to address mission critical bugs or improvements. If such changes occur, they _will not_ be considered breaking changes and will be clearly documented in the [changelog](/resources/changelog).
+
+Most design tokens are consistent across the light and dark theme. Those that vary will show both values.
+
+<Callout type="info">
+Currently, the source of design tokens is considered to be [`light.css`](https://github.com/onsonr/nebula/blob/next/src/themes/light.css). The dark theme, [dark.css](https://github.com/onsonr/nebula/blob/next/src/themes/dark.css), mirrors all of the same tokens with dark mode-specific values where appropriate. Work is planned to move all design tokens to a single file, perhaps JSON or YAML, in the near future.
+</Callout>
+
+## Focus Rings
+
+Focus ring tokens control the appearance of focus rings. Note that form inputs use `--nu-input-focus-ring-*` tokens instead.
+
+| Token                    | Value                                                                                     |
+| ------------------------ | ----------------------------------------------------------------------------------------- |
+| `--nu-focus-ring-color`  | `var(--nu-color-primary-600)` (light theme)<br />`var(--nu-color-primary-700)` (dark theme) |
+| `--nu-focus-ring-style`  | `solid`                                                                                   |
+| `--nu-focus-ring-width`  | `3px`                                                                                     |
+| `--nu-focus-ring`        | `var(--nu-focus-ring-style) var(--nu-focus-ring-width) var(--nu-focus-ring-color)`        |
+| `--nu-focus-ring-offset` | `1px`                                                                                     |
+
+## Buttons
+
+Button tokens control the appearance of buttons. In addition, buttons also currently use some form input tokens such as `--nu-input-height-*` and `--nu-input-border-*`. More button tokens may be added in the future to make it easier to style them more independently.
+
+| Token                          | Value                         |
+| ------------------------------ | ----------------------------- |
+| `--nu-button-font-size-small`  | `var(--nu-font-size-x-small)` |
+| `--nu-button-font-size-medium` | `var(--nu-font-size-small)`   |
+| `--nu-button-font-size-large`  | `var(--nu-font-size-medium)`  |
+
+## Form Inputs
+
+Form input tokens control the appearance of form controls such as [input](/components/input), [select](/components/select), [textarea](/components/textarea), etc.
+
+| Token                                   | Value                              |
+| --------------------------------------- | ---------------------------------- |
+| `--nu-input-height-small`               | `1.875rem` (30px @ 16px base)      |
+| `--nu-input-height-medium`              | `2.5rem` (40px @ 16px base)        |
+| `--nu-input-height-large`               | `3.125rem` (50px @ 16px base)      |
+| `--nu-input-background-color`           | `var(--nu-color-neutral-0)`        |
+| `--nu-input-background-color-hover`     | `var(--nu-input-background-color)` |
+| `--nu-input-background-color-focus`     | `var(--nu-input-background-color)` |
+| `--nu-input-background-color-disabled`  | `var(--nu-color-neutral-100)`      |
+| `--nu-input-border-color`               | `var(--nu-color-neutral-300)`      |
+| `--nu-input-border-color-hover`         | `var(--nu-color-neutral-400)`      |
+| `--nu-input-border-color-focus`         | `var(--nu-color-primary-500)`      |
+| `--nu-input-border-color-disabled`      | `var(--nu-color-neutral-300)`      |
+| `--nu-input-border-width`               | `1px`                              |
+| `--nu-input-required-content`           | `*`                                |
+| `--nu-input-required-content-offset`    | `-2px`                             |
+| `--nu-input-required-content-color`     | `var(--nu-input-label-color)`      |
+| `--nu-input-border-radius-small`        | `var(--nu-border-radius-medium)`   |
+| `--nu-input-border-radius-medium`       | `var(--nu-border-radius-medium)`   |
+| `--nu-input-border-radius-large`        | `var(--nu-border-radius-medium)`   |
+| `--nu-input-font-family`                | `var(--nu-font-sans)`              |
+| `--nu-input-font-weight`                | `var(--nu-font-weight-normal)`     |
+| `--nu-input-font-size-small`            | `var(--nu-font-size-small)`        |
+| `--nu-input-font-size-medium`           | `var(--nu-font-size-medium)`       |
+| `--nu-input-font-size-large`            | `var(--nu-font-size-large)`        |
+| `--nu-input-letter-spacing`             | `var(--nu-letter-spacing-normal)`  |
+| `--nu-input-color`                      | `var(--nu-color-neutral-700)`      |
+| `--nu-input-color-hover`                | `var(--nu-color-neutral-700)`      |
+| `--nu-input-color-focus`                | `var(--nu-color-neutral-700)`      |
+| `--nu-input-color-disabled`             | `var(--nu-color-neutral-900)`      |
+| `--nu-input-icon-color`                 | `var(--nu-color-neutral-500)`      |
+| `--nu-input-icon-color-hover`           | `var(--nu-color-neutral-600)`      |
+| `--nu-input-icon-color-focus`           | `var(--nu-color-neutral-600)`      |
+| `--nu-input-placeholder-color`          | `var(--nu-color-neutral-500)`      |
+| `--nu-input-placeholder-color-disabled` | `var(--nu-color-neutral-600)`      |
+| `--nu-input-spacing-small`              | `var(--nu-spacing-small)`          |
+| `--nu-input-spacing-medium`             | `var(--nu-spacing-medium)`         |
+| `--nu-input-spacing-large`              | `var(--nu-spacing-large)`          |
+| `--nu-input-focus-ring-color`           | `hsl(198.6 88.7% 48.4% / 40%)`     |
+| `--nu-input-focus-ring-offset`          | `0`                                |
+
+## Filled Form Inputs
+
+Filled form input tokens control the appearance of form controls using the `filled` variant.
+
+| Token                                         | Value                         |
+| --------------------------------------------- | ----------------------------- |
+| `--nu-input-filled-background-color`          | `var(--nu-color-neutral-100)` |
+| `--nu-input-filled-background-color-hover`    | `var(--nu-color-neutral-100)` |
+| `--nu-input-filled-background-color-focus`    | `var(--nu-color-neutral-100)` |
+| `--nu-input-filled-background-color-disabled` | `var(--nu-color-neutral-100)` |
+| `--nu-input-filled-color`                     | `var(--nu-color-neutral-800)` |
+| `--nu-input-filled-color-hover`               | `var(--nu-color-neutral-800)` |
+| `--nu-input-filled-color-focus`               | `var(--nu-color-neutral-700)` |
+| `--nu-input-filled-color-disabled`            | `var(--nu-color-neutral-800)` |
+
+## Form Labels
+
+Form label tokens control the appearance of labels in form controls.
+
+| Token                               | Value                        |
+| ----------------------------------- | ---------------------------- |
+| `--nu-input-label-font-size-small`  | `var(--nu-font-size-small)`  |
+| `--nu-input-label-font-size-medium` | `var(--nu-font-size-medium`) |
+| `--nu-input-label-font-size-large`  | `var(--nu-font-size-large)`  |
+| `--nu-input-label-color`            | `inherit`                    |
+
+## Help Text
+
+Help text tokens control the appearance of help text in form controls.
+
+| Token                                   | Value                         |
+| --------------------------------------- | ----------------------------- |
+| `--nu-input-help-text-font-size-small`  | `var(--nu-font-size-x-small)` |
+| `--nu-input-help-text-font-size-medium` | `var(--nu-font-size-small)`   |
+| `--nu-input-help-text-font-size-large`  | `var(--nu-font-size-medium)`  |
+| `--nu-input-help-text-color`            | `var(--nu-color-neutral-500)` |
+
+## Toggles
+
+Toggle tokens control the appearance of toggles such as [checkbox](/components/checkbox), [radio](/components/radio), [switch](/components/switch), etc.
+
+| Token                     | Value                         |
+| ------------------------- | ----------------------------- |
+| `--nu-toggle-size-small`  | `0.875rem` (14px @ 16px base) |
+| `--nu-toggle-size-medium` | `1.125rem` (18px @ 16px base) |
+| `--nu-toggle-size-large`  | `1.375rem` (22px @ 16px base) |
+
+## Overlays
+
+Overlay tokens control the appearance of overlays as used in [dialog](/components/dialog), [drawer](/components/drawer), etc.
+
+| Token                           | Value                       |
+| ------------------------------- | --------------------------- |
+| `--nu-overlay-background-color` | `hsl(240 3.8% 46.1% / 33%)` |
+
+## Panels
+
+Panel tokens control the appearance of panels such as those used in [dialog](/components/dialog), [drawer](/components/drawer), [menu](/components/menu), etc.
+
+| Token                         | Value                         |
+| ----------------------------- | ----------------------------- |
+| `--nu-panel-background-color` | `var(--nu-color-neutral-0)`   |
+| `--nu-panel-border-color`     | `var(--nu-color-neutral-200)` |
+| `--nu-panel-border-width`     | `1px`                         |
+
+## Tooltips
+
+Tooltip tokens control the appearance of tooltips. This includes the [tooltip](/components/tooltip) component as well as other implementations, such [range tooltips](/components/range).
+
+| Token                           | Value                                                  |
+| ------------------------------- | ------------------------------------------------------ |
+| `--nu-tooltip-border-radius`    | `var(--nu-border-radius-medium)`                       |
+| `--nu-tooltip-background-color` | `var(--nu-color-neutral-800)`                          |
+| `--nu-tooltip-color`            | `var(--nu-color-neutral-0)`                            |
+| `--nu-tooltip-font-family`      | `var(--nu-font-sans)`                                  |
+| `--nu-tooltip-font-weight`      | `var(--nu-font-weight-normal)`                         |
+| `--nu-tooltip-font-size`        | `var(--nu-font-size-small)`                            |
+| `--nu-tooltip-line-height`      | `var(--nu-line-height-dense)`                          |
+| `--nu-tooltip-padding`          | `var(--nu-spacing-2x-small) var(--nu-spacing-x-small)` |
+| `--nu-tooltip-arrow-size`       | `6px`                                                  |

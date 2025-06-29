@@ -35,14 +35,14 @@ const App = () => {
 
   return (
     <>
-      <SlDialog label="Dialog" open={open} onSlAfterHide={() => setOpen(false)}>
+      <NuDialog label="Dialog" open={open} onSlAfterHide={() => setOpen(false)}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <SlButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
+        <NuButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
           Close
-        </SlButton>
-      </SlDialog>
+        </NuButton>
+      </NuDialog>
 
-      <SlButton onClick={() => setOpen(true)}>Open Dialog</SlButton>
+      <NuButton onClick={() => setOpen(true)}>Open Dialog</NuButton>
     </>
   );
 };
@@ -84,14 +84,14 @@ const App = () => {
 
   return (
     <>
-      <SlDialog label="Dialog" open={open} style={{ '--width': '50vw' }} onSlAfterHide={() => setOpen(false)}>
+      <NuDialog label="Dialog" open={open} style={{ '--width': '50vw' }} onSlAfterHide={() => setOpen(false)}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <SlButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
+        <NuButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
           Close
-        </SlButton>
-      </SlDialog>
+        </NuButton>
+      </NuDialog>
 
-      <SlButton onClick={() => setOpen(true)}>Open Dialog</SlButton>
+      <NuButton onClick={() => setOpen(true)}>Open Dialog</NuButton>
     </>
   );
 };
@@ -135,7 +135,7 @@ const App = () => {
 
   return (
     <>
-      <SlDialog label="Dialog" open={open} onSlAfterHide={() => setOpen(false)}>
+      <NuDialog label="Dialog" open={open} onSlAfterHide={() => setOpen(false)}>
         <div
           style={{
             height: '150vh',
@@ -146,12 +146,12 @@ const App = () => {
           <p>Scroll down and give it a try! 👇</p>
         </div>
 
-        <SlButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
+        <NuButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
           Close
-        </SlButton>
-      </SlDialog>
+        </NuButton>
+      </NuDialog>
 
-      <SlButton onClick={() => setOpen(true)}>Open Dialog</SlButton>
+      <NuButton onClick={() => setOpen(true)}>Open Dialog</NuButton>
     </>
   );
 };
@@ -195,20 +195,20 @@ const App = () => {
 
   return (
     <>
-      <SlDialog label="Dialog" open={open} onSlAfterHide={() => setOpen(false)}>
-        <SlIconButton
+      <NuDialog label="Dialog" open={open} onSlAfterHide={() => setOpen(false)}>
+        <NuIconButton
           class="new-window"
           slot="header-actions"
           name="box-arrow-up-right"
           onClick={() => window.open(location.href)}
         />
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <SlButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
+        <NuButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
           Close
-        </SlButton>
-      </SlDialog>
+        </NuButton>
+      </NuDialog>
 
-      <SlButton onClick={() => setOpen(true)}>Open Dialog</SlButton>
+      <NuButton onClick={() => setOpen(true)}>Open Dialog</NuButton>
     </>
   );
 };
@@ -264,14 +264,14 @@ const App = () => {
 
   return (
     <>
-      <SlDialog label="Dialog" open={open} onSlRequestClose={handleRequestClose} onSlAfterHide={() => setOpen(false)}>
+      <NuDialog label="Dialog" open={open} onSlRequestClose={handleRequestClose} onSlAfterHide={() => setOpen(false)}>
         This dialog will not close when you click on the overlay.
-        <SlButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
+        <NuButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
           Close
-        </SlButton>
-      </SlDialog>
+        </NuButton>
+      </NuDialog>
 
-      <SlButton onClick={() => setOpen(true)}>Open Dialog</SlButton>
+      <NuButton onClick={() => setOpen(true)}>Open Dialog</NuButton>
     </>
   );
 };
@@ -311,14 +311,14 @@ const App = () => {
 
   return (
     <>
-      <SlDialog label="Dialog" open={open} onSlAfterHide={() => setOpen(false)}>
-        <SlInput autofocus placeholder="I will have focus when the dialog is opened" />
-        <SlButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
+      <NuDialog label="Dialog" open={open} onSlAfterHide={() => setOpen(false)}>
+        <NuInput autofocus placeholder="I will have focus when the dialog is opened" />
+        <NuButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
           Close
-        </SlButton>
-      </SlDialog>
+        </NuButton>
+      </NuDialog>
 
-      <SlButton onClick={() => setOpen(true)}>Open Dialog</SlButton>
+      <NuButton onClick={() => setOpen(true)}>Open Dialog</NuButton>
     </>
   );
 };

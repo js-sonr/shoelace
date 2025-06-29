@@ -58,10 +58,10 @@ const App = () => {
   return (
     <>
       <div className="qr-overview">
-        <SlQrCode value={value} label="Scan this code to visit Nebula on the web!" />
+        <NuQrCode value={value} label="Scan this code to visit Nebula on the web!" />
         <br />
 
-        <SlInput maxlength="255" clearable onInput={event => setValue(event.target.value)} />
+        <NuInput maxlength="255" clearable onInput={event => setValue(event.target.value)} />
       </div>
 
       <style>{css}</style>
@@ -83,7 +83,7 @@ Use the `fill` and `background` attributes to modify the QR code's colors. You s
 ```jsx:react
 import SlQrCode from '@onsonr/nebula/dist/react/qr-code';
 
-const App = () => <SlQrCode value="https://nebulaui.org/" fill="deeppink" background="white" />;
+const App = () => <NuQrCode value="https://nebulaui.org/" fill="deeppink" background="white" />;
 ```
 
 ### Size
@@ -97,7 +97,7 @@ Use the `size` attribute to change the size of the QR code.
 ```jsx:react
 import SlQrCode from '@onsonr/nebula/dist/react/qr-code';
 
-const App = () => <SlQrCode value="https://nebulaui.org/" size="64" />;
+const App = () => <NuQrCode value="https://nebulaui.org/" size="64" />;
 ```
 
 ### Radius
@@ -111,7 +111,7 @@ Create a rounded effect with the `radius` attribute.
 ```jsx:react
 import SlQrCode from '@onsonr/nebula/dist/react/qr-code';
 
-const App = () => <SlQrCode value="https://nebulaui.org/" radius="0.5" />;
+const App = () => <NuQrCode value="https://nebulaui.org/" radius="0.5" />;
 ```
 
 ### Error Correction
@@ -150,10 +150,10 @@ const App = () => {
   return (
     <>
       <div className="qr-error-correction">
-        <SlQrCode value="https://nebulaui.org/" error-correction="L" />
-        <SlQrCode value="https://nebulaui.org/" error-correction="M" />
-        <SlQrCode value="https://nebulaui.org/" error-correction="Q" />
-        <SlQrCode value="https://nebulaui.org/" error-correction="H" />
+        <NuQrCode value="https://nebulaui.org/" error-correction="L" />
+        <NuQrCode value="https://nebulaui.org/" error-correction="M" />
+        <NuQrCode value="https://nebulaui.org/" error-correction="Q" />
+        <NuQrCode value="https://nebulaui.org/" error-correction="H" />
       </div>
 
       <style>{css}</style>

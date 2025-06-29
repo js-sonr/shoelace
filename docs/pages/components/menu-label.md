@@ -28,17 +28,17 @@ import SlMenuLabel from '@onsonr/nebula/dist/react/menu-label';
 import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 
 const App = () => (
-  <SlMenu style={{ maxWidth: '200px' }}>
-    <SlMenuLabel>Fruits</SlMenuLabel>
-    <SlMenuItem value="apple">Apple</SlMenuItem>
-    <SlMenuItem value="banana">Banana</SlMenuItem>
-    <SlMenuItem value="orange">Orange</SlMenuItem>
-    <SlDivider />
-    <SlMenuLabel>Vegetables</SlMenuLabel>
-    <SlMenuItem value="broccoli">Broccoli</SlMenuItem>
-    <SlMenuItem value="carrot">Carrot</SlMenuItem>
-    <SlMenuItem value="zucchini">Zucchini</SlMenuItem>
-  </SlMenu>
+  <NuMenu style={{ maxWidth: '200px' }}>
+    <NuMenuLabel>Fruits</NuMenuLabel>
+    <NuMenuItem value="apple">Apple</NuMenuItem>
+    <NuMenuItem value="banana">Banana</NuMenuItem>
+    <NuMenuItem value="orange">Orange</NuMenuItem>
+    <NuDivider />
+    <NuMenuLabel>Vegetables</NuMenuLabel>
+    <NuMenuItem value="broccoli">Broccoli</NuMenuItem>
+    <NuMenuItem value="carrot">Carrot</NuMenuItem>
+    <NuMenuItem value="zucchini">Zucchini</NuMenuItem>
+  </NuMenu>
 );
 ```
 

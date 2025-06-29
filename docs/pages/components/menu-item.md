@@ -34,25 +34,25 @@ import SlMenu from '@onsonr/nebula/dist/react/menu';
 import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 
 const App = () => (
-  <SlMenu style={{ maxWidth: '200px' }}>
-    <SlMenuItem>Option 1</SlMenuItem>
-    <SlMenuItem>Option 2</SlMenuItem>
-    <SlMenuItem>Option 3</SlMenuItem>
-    <SlDivider />
-    <SlMenuItem type="checkbox" checked>
+  <NuMenu style={{ maxWidth: '200px' }}>
+    <NuMenuItem>Option 1</NuMenuItem>
+    <NuMenuItem>Option 2</NuMenuItem>
+    <NuMenuItem>Option 3</NuMenuItem>
+    <NuDivider />
+    <NuMenuItem type="checkbox" checked>
       Checkbox
-    </SlMenuItem>
-    <SlMenuItem disabled>Disabled</SlMenuItem>
-    <SlDivider />
-    <SlMenuItem>
+    </NuMenuItem>
+    <NuMenuItem disabled>Disabled</NuMenuItem>
+    <NuDivider />
+    <NuMenuItem>
       Prefix Icon
-      <SlIcon slot="prefix" name="gift" />
-    </SlMenuItem>
-    <SlMenuItem>
+      <NuIcon slot="prefix" name="gift" />
+    </NuMenuItem>
+    <NuMenuItem>
       Suffix Icon
-      <SlIcon slot="suffix" name="heart" />
-    </SlMenuItem>
-  </SlMenu>
+      <NuIcon slot="suffix" name="heart" />
+    </NuMenuItem>
+  </NuMenu>
 );
 ```
 
@@ -96,27 +96,27 @@ import SlMenu from '@onsonr/nebula/dist/react/menu';
 import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 
 const App = () => (
-  <SlMenu style={{ maxWidth: '200px' }}>
-    <SlMenuItem>
-      <SlIcon slot="prefix" name="house" />
+  <NuMenu style={{ maxWidth: '200px' }}>
+    <NuMenuItem>
+      <NuIcon slot="prefix" name="house" />
       Home
-    </SlMenuItem>
+    </NuMenuItem>
 
-    <SlMenuItem>
-      <SlIcon slot="prefix" name="envelope" />
+    <NuMenuItem>
+      <NuIcon slot="prefix" name="envelope" />
       Messages
-      <SlBadge slot="suffix" variant="primary" pill>
+      <NuBadge slot="suffix" variant="primary" pill>
         12
-      </SlBadge>
-    </SlMenuItem>
+      </NuBadge>
+    </NuMenuItem>
 
-    <SlDivider />
+    <NuDivider />
 
-    <SlMenuItem>
-      <SlIcon slot="prefix" name="gear" />
+    <NuMenuItem>
+      <NuIcon slot="prefix" name="gear" />
       Settings
-    </SlMenuItem>
-  </SlMenu>
+    </NuMenuItem>
+  </NuMenu>
 );
 ```
 
@@ -141,11 +141,11 @@ import SlMenu from '@onsonr/nebula/dist/react/menu';
 import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 
 const App = () => (
-  <SlMenu style={{ maxWidth: '200px' }}>
-    <SlMenuItem>Option 1</SlMenuItem>
-    <SlMenuItem disabled>Option 2</SlMenuItem>
-    <SlMenuItem>Option 3</SlMenuItem>
-  </SlMenu>
+  <NuMenu style={{ maxWidth: '200px' }}>
+    <NuMenuItem>Option 1</NuMenuItem>
+    <NuMenuItem disabled>Option 2</NuMenuItem>
+    <NuMenuItem>Option 3</NuMenuItem>
+  </NuMenu>
 );
 ```
 
@@ -170,11 +170,11 @@ import SlMenu from '@onsonr/nebula/dist/react/menu';
 import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 
 const App = () => (
-  <SlMenu style={{ maxWidth: '200px' }}>
-    <SlMenuItem>Option 1</SlMenuItem>
-    <SlMenuItem loading>Option 2</SlMenuItem>
-    <SlMenuItem>Option 3</SlMenuItem>
-  </SlMenu>
+  <NuMenu style={{ maxWidth: '200px' }}>
+    <NuMenuItem>Option 1</NuMenuItem>
+    <NuMenuItem loading>Option 2</NuMenuItem>
+    <NuMenuItem>Option 3</NuMenuItem>
+  </NuMenu>
 );
 ```
 
@@ -201,13 +201,13 @@ import SlMenu from '@onsonr/nebula/dist/react/menu';
 import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 
 const App = () => (
-  <SlMenu style={{ maxWidth: '200px' }}>
-    <SlMenuItem type="checkbox">Autosave</SlMenuItem>
-    <SlMenuItem type="checkbox" checked>
+  <NuMenu style={{ maxWidth: '200px' }}>
+    <NuMenuItem type="checkbox">Autosave</NuMenuItem>
+    <NuMenuItem type="checkbox" checked>
       Check Spelling
-    </SlMenuItem>
-    <SlMenuItem type="checkbox">Word Wrap</SlMenuItem>
-  </SlMenu>
+    </NuMenuItem>
+    <NuMenuItem type="checkbox">Word Wrap</NuMenuItem>
+  </NuMenu>
 );
 ```
 
@@ -262,11 +262,11 @@ const App = () => {
   }
 
   return (
-    <SlMenu style={{ maxWidth: '200px' }} onSlSelect={handleSelect}>
-      <SlMenuItem value="opt-1">Option 1</SlMenuItem>
-      <SlMenuItem value="opt-2">Option 2</SlMenuItem>
-      <SlMenuItem value="opt-3">Option 3</SlMenuItem>
-    </SlMenu>
+    <NuMenu style={{ maxWidth: '200px' }} onSlSelect={handleSelect}>
+      <NuMenuItem value="opt-1">Option 1</NuMenuItem>
+      <NuMenuItem value="opt-2">Option 2</NuMenuItem>
+      <NuMenuItem value="opt-3">Option 3</NuMenuItem>
+    </NuMenu>
   );
 };
 ```

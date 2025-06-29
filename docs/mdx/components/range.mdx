@@ -1,0 +1,350 @@
+---
+title: Range
+description: Ranges allow the user to select a single value within a given range using a slider.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-range></nu-range>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-range></nu-range>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlRange from '@onsonr/nebula/dist/react/range'
+    ;
+    
+    const App = () => <NuRange />;
+    ```
+  </Tab>
+</Tabs>
+
+<Callout type="info">
+This component works with standard `<form>` elements. Please refer to the section on [form controls](/getting-started/form-controls) to learn more about form submission and client-side validation.
+</Callout>
+
+## Examples
+
+### Labels
+
+Use the `label` attribute to give the range an accessible label. For labels that contain HTML, use the `label` slot instead.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-range label="Volume" min="0" max="100"></nu-range>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-range label="Volume" min="0" max="100"></nu-range>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlRange from '@onsonr/nebula/dist/react/range'
+    ;
+    
+    const App = () => <NuRange label="Volume" min={0} max={100} />;
+    ```
+  </Tab>
+</Tabs>
+
+### Help Text
+
+Add descriptive help text to a range with the `help-text` attribute. For help texts that contain HTML, use the `help-text` slot instead.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-range label="Volume" help-text="Controls the volume of the current song." min="0" max="100"></nu-range>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-range label="Volume" help-text="Controls the volume of the current song." min="0" max="100"></nu-range>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlRange from '@onsonr/nebula/dist/react/range'
+    ;
+    
+    const App = () => <NuRange label="Volume" help-text="Controls the volume of the current song." min={0} max={100} />;
+    ```
+  </Tab>
+</Tabs>
+
+### Min, Max, and Step
+
+Use the `min` and `max` attributes to set the range's minimum and maximum values, respectively. The `step` attribute determines the value's interval when increasing and decreasing.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-range min="0" max="10" step="1"></nu-range>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-range min="0" max="10" step="1"></nu-range>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlRange from '@onsonr/nebula/dist/react/range'
+    ;
+    
+    const App = () => <NuRange min={0} max={10} step={1} />;
+    ```
+  </Tab>
+</Tabs>
+
+### Disabled
+
+Use the `disabled` attribute to disable a slider.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-range disabled></nu-range>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-range disabled></nu-range>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlRange from '@onsonr/nebula/dist/react/range'
+    ;
+    
+    const App = () => <NuRange disabled />;
+    ```
+  </Tab>
+</Tabs>
+
+### Tooltip Placement
+
+By default, the tooltip is shown on top. Set `tooltip` to `bottom` to show it below the slider.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-range tooltip="bottom"></nu-range>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-range tooltip="bottom"></nu-range>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlRange from '@onsonr/nebula/dist/react/range'
+    ;
+    
+    const App = () => <NuRange tooltip="bottom" />;
+    ```
+  </Tab>
+</Tabs>
+
+### Disable the Tooltip
+
+To disable the tooltip, set `tooltip` to `none`.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-range tooltip="none"></nu-range>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-range tooltip="none"></nu-range>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlRange from '@onsonr/nebula/dist/react/range'
+    ;
+    
+    const App = () => <NuRange tooltip="none" />;
+    ```
+  </Tab>
+</Tabs>
+
+### Custom Track Colors
+
+You can customize the active and inactive portions of the track using the `--track-color-active` and `--track-color-inactive` custom properties.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-range
+      style="
+      --track-color-active: var(--nu-color-primary-600);
+      --track-color-inactive: var(--nu-color-primary-100);
+    "
+    ></nu-range>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-range
+      style="
+      --track-color-active: var(--nu-color-primary-600);
+      --track-color-inactive: var(--nu-color-primary-100);
+    "
+    ></nu-range>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlRange from '@onsonr/nebula/dist/react/range'
+    ;
+    
+    const App = () => (
+      
+      <NuRange
+        style={{
+          '--track-color-active': 'var(--nu-color-primary-600)',
+          '--track-color-inactive': 'var(--nu-color-primary-200)'
+        }}
+      />
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Custom Track Offset
+
+You can customize the initial offset of the active track using the `--track-active-offset` custom property.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-range
+      min="-100"
+      max="100"
+      style="
+      --track-color-active: var(--nu-color-primary-600);
+      --track-color-inactive: var(--nu-color-primary-100);
+      --track-active-offset: 50%;
+    "
+    ></nu-range>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-range
+      min="-100"
+      max="100"
+      style="
+      --track-color-active: var(--nu-color-primary-600);
+      --track-color-inactive: var(--nu-color-primary-100);
+      --track-active-offset: 50%;
+    "
+    ></nu-range>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlRange from '@onsonr/nebula/dist/react/range'
+    ;
+    
+    const App = () => (
+      
+      <NuRange
+        min={-100}
+        max={100}
+        style={{
+          '--track-color-active': 'var(--nu-color-primary-600)',
+          '--track-color-inactive': 'var(--nu-color-primary-200)',
+          '--track-active-offset': '50%'
+        }}
+      />
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Custom Tooltip Formatter
+
+You can change the tooltip's content by setting the `tooltipFormatter` property to a function that accepts the range's value as an argument.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-range min="0" max="100" step="1" class="range-with-custom-formatter"></nu-range>
+    
+    <script>
+      const range = document.querySelector('.range-with-custom-formatter');
+      range.tooltipFormatter = value => `Total - ${value}%`;
+    </script>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-range min="0" max="100" step="1" class="range-with-custom-formatter"></nu-range>
+    
+    <script>
+      const range = document.querySelector('.range-with-custom-formatter');
+      range.tooltipFormatter = value => `Total - ${value}%`;
+    </script>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlRange from '@onsonr/nebula/dist/react/range'
+    ;
+    
+    const App = () => <NuRange min={0} max={100} step={1} tooltipFormatter={value => `Total - ${value}%`} />;
+    ```
+  </Tab>
+</Tabs>
+
+## Properties
+
+<AutoTypeTable path="./src/components/range/range.component.ts" name="NuRange" />
+

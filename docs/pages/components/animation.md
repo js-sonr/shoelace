@@ -42,18 +42,18 @@ const css = `
 const App = () => (
   <>
     <div class="animation-overview">
-      <SlAnimation name="bounce" duration={2000} play>
+      <NuAnimation name="bounce" duration={2000} play>
         <div class="box" />
-      </SlAnimation>
-      <SlAnimation name="jello" duration={2000} play>
+      </NuAnimation>
+      <NuAnimation name="jello" duration={2000} play>
         <div class="box" />
-      </SlAnimation>
-      <SlAnimation name="heartBeat" duration={2000} play>
+      </NuAnimation>
+      <NuAnimation name="heartBeat" duration={2000} play>
         <div class="box" />
-      </SlAnimation>
-      <SlAnimation name="flip" duration={2000} play>
+      </NuAnimation>
+      <NuAnimation name="flip" duration={2000} play>
         <div class="box" />
-      </SlAnimation>
+      </NuAnimation>
     </div>
 
     <style>{css}</style>
@@ -210,9 +210,9 @@ const App = () => {
   return (
     <>
       <div class="animation-scroll">
-        <SlAnimation ref={animation} name="jackInTheBox" duration={2000} iterations={1}>
+        <NuAnimation ref={animation} name="jackInTheBox" duration={2000} iterations={1}>
           <div ref={box} class="box" />
-        </SlAnimation>
+        </NuAnimation>
       </div>
 
       <style>{css}</style>
@@ -275,7 +275,7 @@ const css = `
 const App = () => (
   <>
     <div class="animation-keyframes">
-      <SlAnimation
+      <NuAnimation
         easing="ease-in-out"
         duration={2000}
         play
@@ -297,7 +297,7 @@ const App = () => (
         ]}
       >
         <div class="box" />
-      </SlAnimation>
+      </NuAnimation>
     </div>
 
     <style>{css}</style>
@@ -337,11 +337,11 @@ const App = () => {
 
   return (
     <div class="animation-form">
-      <SlAnimation name="rubberBand" duration={1000} iterations={1} play={play} onSlFinish={() => setPlay(false)}>
-        <SlButton variant="primary" onClick={() => setPlay(true)}>
+      <NuAnimation name="rubberBand" duration={1000} iterations={1} play={play} onSlFinish={() => setPlay(false)}>
+        <NuButton variant="primary" onClick={() => setPlay(true)}>
           Click me
-        </SlButton>
-      </SlAnimation>
+        </NuButton>
+      </NuAnimation>
     </div>
   );
 };

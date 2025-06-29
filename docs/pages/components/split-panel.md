@@ -28,7 +28,7 @@ layout: component
 import SlSplitPanel from '@onsonr/nebula/dist/react/split-panel';
 
 const App = () => (
-  <SlSplitPanel>
+  <NuSplitPanel>
     <div
       slot="start"
       style={{
@@ -53,7 +53,7 @@ const App = () => (
     >
       End
     </div>
-  </SlSplitPanel>
+  </NuSplitPanel>
 );
 ```
 
@@ -109,7 +109,7 @@ To set the initial position in pixels instead of a percentage, use the `position
 import SlSplitPanel from '@onsonr/nebula/dist/react/split-panel';
 
 const App = () => (
-  <SlSplitPanel position="200">
+  <NuSplitPanel position="200">
     <div
       slot="start"
       style={{
@@ -134,7 +134,7 @@ const App = () => (
     >
       End
     </div>
-  </SlSplitPanel>
+  </NuSplitPanel>
 );
 ```
 
@@ -167,7 +167,7 @@ Add the `vertical` attribute to render the split panel in a vertical orientation
 import SlSplitPanel from '@onsonr/nebula/dist/react/split-panel';
 
 const App = () => (
-  <SlSplitPanel vertical style={{ height: '400px' }}>
+  <NuSplitPanel vertical style={{ height: '400px' }}>
     <div
       slot="start"
       style={{
@@ -192,7 +192,7 @@ const App = () => (
     >
       End
     </div>
-  </SlSplitPanel>
+  </NuSplitPanel>
 );
 ```
 
@@ -283,7 +283,7 @@ const css = `
 const App = () => (
   <>
     <div className="split-panel-snapping">
-      <SlSplitPanel snap="100px 50%">
+      <NuSplitPanel snap="100px 50%">
         <div
           slot="start"
           style={{
@@ -308,7 +308,7 @@ const App = () => (
         >
           End
         </div>
-      </SlSplitPanel>
+      </NuSplitPanel>
 
       <div className="split-panel-snapping-dots" />
     </div>
@@ -347,7 +347,7 @@ Add the `disabled` attribute to prevent the divider from being repositioned.
 import SlSplitPanel from '@onsonr/nebula/dist/react/split-panel';
 
 const App = () => (
-  <SlSplitPanel disabled>
+  <NuSplitPanel disabled>
     <div
       slot="start"
       style={{
@@ -372,7 +372,7 @@ const App = () => (
     >
       End
     </div>
-  </SlSplitPanel>
+  </NuSplitPanel>
 );
 ```
 
@@ -430,7 +430,7 @@ const App = () => {
 
   return (
     <>
-      <SlSplitPanel primary={primary}>
+      <NuSplitPanel primary={primary}>
         <div
           slot="start"
           style={{
@@ -455,18 +455,18 @@ const App = () => {
         >
           End
         </div>
-      </SlSplitPanel>
+      </NuSplitPanel>
 
-      <SlSelect
+      <NuSelect
         label="Primary Panel"
         value={primary}
         style={{ maxWidth: '200px', marginTop: '1rem' }}
         onSlChange={event => setPrimary(event.target.value)}
       >
-        <SlMenuItem value="">None</SlMenuItem>
-        <SlMenuItem value="start">Start</SlMenuItem>
-        <SlMenuItem value="end">End</SlMenuItem>
-      </SlSelect>
+        <NuMenuItem value="">None</NuMenuItem>
+        <NuMenuItem value="start">Start</NuMenuItem>
+        <NuMenuItem value="end">End</NuMenuItem>
+      </NuSelect>
     </>
   );
 };
@@ -503,7 +503,7 @@ This examples demonstrates how you can ensure both panels are at least 150px usi
 import SlSplitPanel from '@onsonr/nebula/dist/react/split-panel';
 
 const App = () => (
-  <SlSplitPanel style={{ '--min': '150px', '--max': 'calc(100% - 150px)' }}>
+  <NuSplitPanel style={{ '--min': '150px', '--max': 'calc(100% - 150px)' }}>
     <div
       slot="start"
       style={{
@@ -528,7 +528,7 @@ const App = () => (
     >
       End
     </div>
-  </SlSplitPanel>
+  </NuSplitPanel>
 );
 ```
 
@@ -571,7 +571,7 @@ Create complex layouts that can be repositioned independently by nesting split p
 import SlSplitPanel from '@onsonr/nebula/dist/react/split-panel';
 
 const App = () => (
-  <SlSplitPanel>
+  <NuSplitPanel>
     <div
       slot="start"
       style={{
@@ -585,7 +585,7 @@ const App = () => (
       Start
     </div>
     <div slot="end">
-      <SlSplitPanel vertical style={{ height: '400px' }}>
+      <NuSplitPanel vertical style={{ height: '400px' }}>
         <div
           slot="start"
           style={{
@@ -610,9 +610,9 @@ const App = () => (
         >
           End
         </div>
-      </SlSplitPanel>
+      </NuSplitPanel>
     </div>
-  </SlSplitPanel>
+  </NuSplitPanel>
 );
 ```
 
@@ -647,8 +647,8 @@ import SlSplitPanel from '@onsonr/nebula/dist/react/split-panel';
 import SlIcon from '@onsonr/nebula/dist/react/icon';
 
 const App = () => (
-  <SlSplitPanel style={{ '--divider-width': '20px' }}>
-    <SlIcon slot="divider" name="grip-vertical" />
+  <NuSplitPanel style={{ '--divider-width': '20px' }}>
+    <NuIcon slot="divider" name="grip-vertical" />
     <div
       slot="start"
       style={{
@@ -673,7 +673,7 @@ const App = () => (
     >
       End
     </div>
-  </SlSplitPanel>
+  </NuSplitPanel>
 );
 ```
 
@@ -764,8 +764,8 @@ const css = `
 const App = () => (
   <>
     <div className="split-panel-divider">
-      <SlSplitPanel>
-        <SlIcon slot="divider" name="grip-vertical" />
+      <NuSplitPanel>
+        <NuIcon slot="divider" name="grip-vertical" />
         <div
           slot="start"
           style={{
@@ -790,7 +790,7 @@ const App = () => (
         >
           End
         </div>
-      </SlSplitPanel>
+      </NuSplitPanel>
     </div>
 
     <style>{css}</style>

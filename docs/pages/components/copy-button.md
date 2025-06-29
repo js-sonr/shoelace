@@ -13,7 +13,7 @@ layout: component
 import { SlCopyButton } from '@onsonr/nebula/dist/react/copy-button';
 
 const App = () => (
-  <SlCopyButton value="Nebula rocks!" />
+  <NuCopyButton value="Nebula rocks!" />
 );
 ```
 
@@ -36,7 +36,7 @@ Copy Buttons display feedback in a tooltip. You can customize the labels using t
 import { SlCopyButton } from '@onsonr/nebula/dist/react/copy-button';
 
 const App = () => (
-  <SlCopyButton
+  <NuCopyButton
     value="Custom labels are easy"
     copy-label="Click to copy"
     success-label="You did it!"
@@ -63,11 +63,11 @@ import { SlIcon } from '@onsonr/nebula/dist/react/icon';
 
 const App = () => (
   <>
-    <SlCopyButton value="Copied from a custom button">
-      <SlIcon slot="copy-icon" name="clipboard" />
-      <SlIcon slot="success-icon" name="clipboard-check" />
-      <SlIcon slot="error-icon" name="clipboard-x" />
-    </SlCopyButton>
+    <NuCopyButton value="Copied from a custom button">
+      <NuIcon slot="copy-icon" name="clipboard" />
+      <NuIcon slot="success-icon" name="clipboard-check" />
+      <NuIcon slot="error-icon" name="clipboard-x" />
+    </NuCopyButton>
   </>
 );
 ```
@@ -106,19 +106,19 @@ const App = () => (
   <>
     {/* Copies the span's textContent */}
     <span id="my-phone">+1 (234) 456-7890</span>
-    <SlCopyButton from="my-phone" />
+    <NuCopyButton from="my-phone" />
 
     <br /><br />
 
     {/* Copies the input's "value" property */}
-    <SlInput id="my-input" type="text" />
-    <SlCopyButton from="my-input.value" />
+    <NuInput id="my-input" type="text" />
+    <NuCopyButton from="my-input.value" />
 
     <br /><br />
 
     {/* Copies the link's "href" attribute */}
     <a id="my-link" href="https://nebulaui.org/">Nebula Website</a>
-    <SlCopyButton from="my-link[href]" />
+    <NuCopyButton from="my-link[href]" />
   </>
 );
 ```
@@ -137,7 +137,7 @@ This example demonstrates what happens when a copy error occurs. You can customi
 import { SlCopyButton } from '@onsonr/nebula/dist/react/copy-button';
 
 const App = () => (
-  <SlCopyButton from="i-do-not-exist" />
+  <NuCopyButton from="i-do-not-exist" />
 );
 ```
 
@@ -153,7 +153,7 @@ Copy buttons can be disabled by adding the `disabled` attribute.
 import { SlCopyButton } from '@onsonr/nebula/dist/react/copy-button';
 
 const App = () => (
-  <SlCopyButton value="You can't copy me" disabled />
+  <NuCopyButton value="You can't copy me" disabled />
 );
 ```
 
@@ -169,7 +169,7 @@ A success indicator is briefly shown after copying. You can customize the length
 import { SlCopyButton } from '@onsonr/nebula/dist/react/copy-button';
 
 const App = () => (
-  <SlCopyButton value="Nebula rocks!" feedback-duration={250} />
+  <NuCopyButton value="Nebula rocks!" feedback-duration={250} />
 );
 ```
 
@@ -250,7 +250,7 @@ const css = `
 
 const App = () => (
   <>
-    <SlCopyButton value="I'm so stylish" className="custom-styles" />
+    <NuCopyButton value="I'm so stylish" className="custom-styles" />
 
     <style>{css}</style>
   </>

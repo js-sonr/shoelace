@@ -20,11 +20,11 @@ import SlRadio from '@onsonr/nebula/dist/react/radio';
 import SlRadioGroup from '@onsonr/nebula/dist/react/radio-group';
 
 const App = () => (
-  <SlRadioGroup label="Select an option" name="a" value="1">
-    <SlRadio value="1">Option 1</SlRadio>
-    <SlRadio value="2">Option 2</SlRadio>
-    <SlRadio value="3">Option 3</SlRadio>
-  </SlRadioGroup>
+  <NuRadioGroup label="Select an option" name="a" value="1">
+    <NuRadio value="1">Option 1</NuRadio>
+    <NuRadio value="2">Option 2</NuRadio>
+    <NuRadio value="3">Option 3</NuRadio>
+  </NuRadioGroup>
 );
 ```
 
@@ -51,11 +51,11 @@ import SlRadio from '@onsonr/nebula/dist/react/radio';
 import SlRadioGroup from '@onsonr/nebula/dist/react/radio-group';
 
 const App = () => (
-  <SlRadioGroup label="Select an option" name="a" value="3">
-    <SlRadio value="1">Option 1</SlRadio>
-    <SlRadio value="2">Option 2</SlRadio>
-    <SlRadio value="3">Option 3</SlRadio>
-  </SlRadioGroup>
+  <NuRadioGroup label="Select an option" name="a" value="3">
+    <NuRadio value="1">Option 1</NuRadio>
+    <NuRadio value="2">Option 2</NuRadio>
+    <NuRadio value="3">Option 3</NuRadio>
+  </NuRadioGroup>
 );
 ```
 
@@ -76,13 +76,13 @@ import SlRadio from '@onsonr/nebula/dist/react/radio';
 import SlRadioGroup from '@onsonr/nebula/dist/react/radio-group';
 
 const App = () => (
-  <SlRadioGroup label="Select an option" name="a" value="1">
-    <SlRadio value="1">Option 1</SlRadio>
-    <SlRadio value="2" disabled>
+  <NuRadioGroup label="Select an option" name="a" value="1">
+    <NuRadio value="1">Option 1</NuRadio>
+    <NuRadio value="2" disabled>
       Option 2
-    </SlRadio>
-    <SlRadio value="3">Option 3</SlRadio>
-  </SlRadioGroup>
+    </NuRadio>
+    <NuRadio value="3">Option 3</NuRadio>
+  </NuRadioGroup>
 );
 ```
 
@@ -119,27 +119,27 @@ import SlRadio from '@onsonr/nebula/dist/react/radio';
 
 const App = () => (
   <>
-    <SlRadioGroup size="small" value="1">
-      <SlRadio value="1">Small 1</SlRadio>
-      <SlRadio value="2">Small 2</SlRadio>
-      <SlRadio value="3">Small 3</SlRadio>
-    </SlRadioGroup>
+    <NuRadioGroup size="small" value="1">
+      <NuRadio value="1">Small 1</NuRadio>
+      <NuRadio value="2">Small 2</NuRadio>
+      <NuRadio value="3">Small 3</NuRadio>
+    </NuRadioGroup>
 
     <br />
 
-    <SlRadioGroup size="medium" value="1">
-      <SlRadio value="1">Medium 1</SlRadio>
-      <SlRadio value="2">Medium 2</SlRadio>
-      <SlRadio value="3">Medium 3</SlRadio>
-    </SlRadioGroup>
+    <NuRadioGroup size="medium" value="1">
+      <NuRadio value="1">Medium 1</NuRadio>
+      <NuRadio value="2">Medium 2</NuRadio>
+      <NuRadio value="3">Medium 3</NuRadio>
+    </NuRadioGroup>
 
     <br />
 
-    <SlRadioGroup size="large" value="1">
-      <SlRadio value="1">Large 1</SlRadio>
-      <SlRadio value="2">Large 2</SlRadio>
-      <SlRadio value="3">Large 3</SlRadio>
-    </SlRadioGroup>
+    <NuRadioGroup size="large" value="1">
+      <NuRadio value="1">Large 1</NuRadio>
+      <NuRadio value="2">Large 2</NuRadio>
+      <NuRadio value="3">Large 3</NuRadio>
+    </NuRadioGroup>
   </>
 );
 ```

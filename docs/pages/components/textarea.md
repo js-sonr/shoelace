@@ -12,7 +12,7 @@ layout: component
 ```jsx:react
 import SlTextarea from '@onsonr/nebula/dist/react/textarea';
 
-const App = () => <SlTextarea />;
+const App = () => <NuTextarea />;
 ```
 
 :::tip
@@ -32,7 +32,7 @@ Use the `label` attribute to give the textarea an accessible label. For labels t
 ```jsx:react
 import SlTextarea from '@onsonr/nebula/dist/react/textarea';
 
-const App = () => <SlTextarea label="Comments" />;
+const App = () => <NuTextarea label="Comments" />;
 ```
 
 ### Help Text
@@ -46,7 +46,7 @@ Add descriptive help text to a textarea with the `help-text` attribute. For help
 ```jsx:react
 import SlTextarea from '@onsonr/nebula/dist/react/textarea';
 
-const App = () => <SlTextarea label="Feedback" help-text="Please tell us what you think." />;
+const App = () => <NuTextarea label="Feedback" help-text="Please tell us what you think." />;
 ```
 
 ### Rows
@@ -60,7 +60,7 @@ Use the `rows` attribute to change the number of text rows that get shown.
 ```jsx:react
 import SlTextarea from '@onsonr/nebula/dist/react/textarea';
 
-const App = () => <SlTextarea rows={2} />;
+const App = () => <NuTextarea rows={2} />;
 ```
 
 ### Placeholders
@@ -74,7 +74,7 @@ Use the `placeholder` attribute to add a placeholder.
 ```jsx:react
 import SlTextarea from '@onsonr/nebula/dist/react/textarea';
 
-const App = () => <SlTextarea placeholder="Type something" />;
+const App = () => <NuTextarea placeholder="Type something" />;
 ```
 
 ### Filled Textareas
@@ -88,7 +88,7 @@ Add the `filled` attribute to draw a filled textarea.
 ```jsx:react
 import SlTextarea from '@onsonr/nebula/dist/react/textarea';
 
-const App = () => <SlTextarea placeholder="Type something" filled />;
+const App = () => <NuTextarea placeholder="Type something" filled />;
 ```
 
 ### Disabled
@@ -102,7 +102,7 @@ Use the `disabled` attribute to disable a textarea.
 ```jsx:react
 import SlTextarea from '@onsonr/nebula/dist/react/textarea';
 
-const App = () => <SlTextarea placeholder="Textarea" disabled />;
+const App = () => <NuTextarea placeholder="Textarea" disabled />;
 ```
 
 ### Sizes
@@ -122,11 +122,11 @@ import SlTextarea from '@onsonr/nebula/dist/react/textarea';
 
 const App = () => (
   <>
-    <SlTextarea placeholder="Small" size="small"></SlTextarea>
+    <NuTextarea placeholder="Small" size="small"></NuTextarea>
     <br />
-    <SlTextarea placeholder="Medium" size="medium"></SlTextarea>
+    <NuTextarea placeholder="Medium" size="medium"></NuTextarea>
     <br />
-    <SlTextarea placeholder="Large" size="large"></SlTextarea>
+    <NuTextarea placeholder="Large" size="large"></NuTextarea>
   </>
 );
 ```
@@ -142,7 +142,7 @@ By default, textareas can be resized vertically by the user. To prevent resizing
 ```jsx:react
 import SlTextarea from '@onsonr/nebula/dist/react/textarea';
 
-const App = () => <SlTextarea resize="none" />;
+const App = () => <NuTextarea resize="none" />;
 ```
 
 ### Expand with Content
@@ -156,5 +156,5 @@ Textareas will automatically resize to expand to fit their content when `resize`
 ```jsx:react
 import SlTextarea from '@onsonr/nebula/dist/react/textarea';
 
-const App = () => <SlTextarea resize="auto" />;
+const App = () => <NuTextarea resize="auto" />;
 ```

@@ -22,14 +22,14 @@ import SlBreadcrumbItem from '@onsonr/nebula/dist/react/breadcrumb-item';
 import SlIcon from '@onsonr/nebula/dist/react/icon';
 
 const App = () => (
-  <SlBreadcrumb>
-    <SlBreadcrumbItem>
-      <SlIcon slot="prefix" name="house"></SlIcon>
+  <NuBreadcrumb>
+    <NuBreadcrumbItem>
+      <NuIcon slot="prefix" name="house"></NuIcon>
       Home
-    </SlBreadcrumbItem>
-    <SlBreadcrumbItem>Clothing</SlBreadcrumbItem>
-    <SlBreadcrumbItem>Shirts</SlBreadcrumbItem>
-  </SlBreadcrumb>
+    </NuBreadcrumbItem>
+    <NuBreadcrumbItem>Clothing</NuBreadcrumbItem>
+    <NuBreadcrumbItem>Shirts</NuBreadcrumbItem>
+  </NuBreadcrumb>
 );
 ```
 

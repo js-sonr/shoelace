@@ -1,0 +1,368 @@
+---
+title: Area Chart
+description: Area charts visualize data over time with filled areas below the line, perfect for showing trends and patterns in blockchain and financial data.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+Area charts are ideal for displaying time-series data with filled areas that emphasize volume and trends. Built with D3.js for mathematical calculations and rendered using SVG for maximum customization.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-area-chart 
+      data='[
+        {"date": "2024-01-01", "value": 100},
+        {"date": "2024-01-02", "value": 120},
+        {"date": "2024-01-03", "value": 95},
+        {"date": "2024-01-04", "value": 140},
+        {"date": "2024-01-05", "value": 130}
+      ]'
+      width="400"
+      height="200">
+    </nu-area-chart>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-area-chart 
+      data='[
+        {"date": "2024-01-01", "value": 100},
+        {"date": "2024-01-02", "value": 120},
+        {"date": "2024-01-03", "value": 95},
+        {"date": "2024-01-04", "value": 140},
+        {"date": "2024-01-05", "value": 130}
+      ]'
+      width="400"
+      height="200">
+    </nu-area-chart>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+## Examples
+
+### Basic Usage
+
+The simplest area chart with time-series data:
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-area-chart 
+      data='[
+        {"date": "2024-01-01", "value": 50},
+        {"date": "2024-01-02", "value": 75},
+        {"date": "2024-01-03", "value": 60},
+        {"date": "2024-01-04", "value": 90},
+        {"date": "2024-01-05", "value": 85}
+      ]'
+      width="500"
+      height="250">
+    </nu-area-chart>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-area-chart 
+      data='[
+        {"date": "2024-01-01", "value": 50},
+        {"date": "2024-01-02", "value": 75},
+        {"date": "2024-01-03", "value": 60},
+        {"date": "2024-01-04", "value": 90},
+        {"date": "2024-01-05", "value": 85}
+      ]'
+      width="500"
+      height="250">
+    </nu-area-chart>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+### Cryptocurrency Price Data
+
+Display crypto price movements with custom styling:
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-area-chart 
+      data='[
+        {"date": "2024-01-01", "value": 42000},
+        {"date": "2024-01-02", "value": 43500},
+        {"date": "2024-01-03", "value": 41800},
+        {"date": "2024-01-04", "value": 44200},
+        {"date": "2024-01-05", "value": 46000}
+      ]'
+      width="600"
+      height="300"
+      curve="monotone"
+      style="
+        --area-gradient-start: rgba(249, 115, 22, 0.3);
+        --area-gradient-end: rgba(249, 115, 22, 0.05);
+        --line-stroke: #f97316;
+      ">
+    </nu-area-chart>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-area-chart 
+      data='[
+        {"date": "2024-01-01", "value": 42000},
+        {"date": "2024-01-02", "value": 43500},
+        {"date": "2024-01-03", "value": 41800},
+        {"date": "2024-01-04", "value": 44200},
+        {"date": "2024-01-05", "value": 46000}
+      ]'
+      width="600"
+      height="300"
+      curve="monotone"
+      style="
+        --area-gradient-start: rgba(249, 115, 22, 0.3);
+        --area-gradient-end: rgba(249, 115, 22, 0.05);
+        --line-stroke: #f97316;
+      ">
+    </nu-area-chart>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+### Different Curve Types
+
+Explore various curve interpolations:
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+      <div>
+        <h4>Linear Curve</h4>
+        <nu-area-chart 
+          data='[
+            {"date": "2024-01-01", "value": 10},
+            {"date": "2024-01-02", "value": 30},
+            {"date": "2024-01-03", "value": 20},
+            {"date": "2024-01-04", "value": 40},
+            {"date": "2024-01-05", "value": 35}
+          ]'
+          curve="linear"
+          width="250"
+          height="150">
+        </nu-area-chart>
+      </div>
+      
+      <div>
+        <h4>Cardinal Curve</h4>
+        <nu-area-chart 
+          data='[
+            {"date": "2024-01-01", "value": 10},
+            {"date": "2024-01-02", "value": 30},
+            {"date": "2024-01-03", "value": 20},
+            {"date": "2024-01-04", "value": 40},
+            {"date": "2024-01-05", "value": 35}
+          ]'
+          curve="cardinal"
+          width="250"
+          height="150"
+          style="
+            --area-gradient-start: rgba(59, 130, 246, 0.3);
+            --area-gradient-end: rgba(59, 130, 246, 0.05);
+            --line-stroke: #3b82f6;
+          ">
+        </nu-area-chart>
+      </div>
+    </div>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+      <div>
+        <h4>Linear Curve</h4>
+        <nu-area-chart 
+          data='[
+            {"date": "2024-01-01", "value": 10},
+            {"date": "2024-01-02", "value": 30},
+            {"date": "2024-01-03", "value": 20},
+            {"date": "2024-01-04", "value": 40},
+            {"date": "2024-01-05", "value": 35}
+          ]'
+          curve="linear"
+          width="250"
+          height="150">
+        </nu-area-chart>
+      </div>
+      
+      <div>
+        <h4>Cardinal Curve</h4>
+        <nu-area-chart 
+          data='[
+            {"date": "2024-01-01", "value": 10},
+            {"date": "2024-01-02", "value": 30},
+            {"date": "2024-01-03", "value": 20},
+            {"date": "2024-01-04", "value": 40},
+            {"date": "2024-01-05", "value": 35}
+          ]'
+          curve="cardinal"
+          width="250"
+          height="150"
+          style="
+            --area-gradient-start: rgba(59, 130, 246, 0.3);
+            --area-gradient-end: rgba(59, 130, 246, 0.05);
+            --line-stroke: #3b82f6;
+          ">
+        </nu-area-chart>
+      </div>
+    </div>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+### Custom Dimensions
+
+Area charts adapt to any size:
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-area-chart 
+      data='[
+        {"date": "2024-01-01", "value": 25},
+        {"date": "2024-01-02", "value": 45},
+        {"date": "2024-01-03", "value": 35},
+        {"date": "2024-01-04", "value": 55},
+        {"date": "2024-01-05", "value": 50},
+        {"date": "2024-01-06", "value": 40},
+        {"date": "2024-01-07", "value": 60}
+      ]'
+      width="800"
+      height="200"
+      style="
+        --area-gradient-start: rgba(168, 85, 247, 0.3);
+        --area-gradient-end: rgba(168, 85, 247, 0.05);
+        --line-stroke: #a855f7;
+      ">
+    </nu-area-chart>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-area-chart 
+      data='[
+        {"date": "2024-01-01", "value": 25},
+        {"date": "2024-01-02", "value": 45},
+        {"date": "2024-01-03", "value": 35},
+        {"date": "2024-01-04", "value": 55},
+        {"date": "2024-01-05", "value": 50},
+        {"date": "2024-01-06", "value": 40},
+        {"date": "2024-01-07", "value": 60}
+      ]'
+      width="800"
+      height="200"
+      style="
+        --area-gradient-start: rgba(168, 85, 247, 0.3);
+        --area-gradient-end: rgba(168, 85, 247, 0.05);
+        --line-stroke: #a855f7;
+      ">
+    </nu-area-chart>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+## Data Format
+
+Area charts expect data in the following format:
+
+```typescript
+interface AreaChartDataPoint {
+  date: string | Date;
+  value: number;
+}
+```
+
+### JSON String
+
+```html
+<nu-area-chart 
+  data='[
+    {"date": "2024-01-01", "value": 100},
+    {"date": "2024-01-02", "value": 120}
+  ]'>
+</nu-area-chart>
+```
+
+### JavaScript Array
+
+```javascript
+const chartData = [
+  { date: new Date('2024-01-01'), value: 100 },
+  { date: new Date('2024-01-02'), value: 120 }
+];
+
+document.querySelector('nu-area-chart').data = chartData;
+```
+
+## Customization
+
+### CSS Custom Properties
+
+```css
+nu-area-chart {
+  --area-gradient-start: rgba(34, 197, 94, 0.3);
+  --area-gradient-end: rgba(34, 197, 94, 0.05);
+  --line-stroke: #22c55e;
+  --axis-label-color: #6b7280;
+  --axis-label-size: 0.75rem;
+}
+```
+
+### Curve Types
+
+Available curve interpolations:
+- `linear` - Straight lines between points
+- `monotone` - Smooth curves that preserve monotonicity (default)
+- `cardinal` - Smooth curves with tension
+- `basis` - B-spline curves
+- `step` - Step function curves
+
+## Accessibility
+
+Area charts include built-in accessibility features:
+- Semantic SVG structure with proper ARIA labels
+- High contrast mode support
+- Reduced motion preferences respected
+- Keyboard navigation support (coming soon)
+
+## Server-Side Rendering
+
+Area charts are fully compatible with server-side rendering and React Server Components. No client-side JavaScript is required for basic rendering.
+
+[component-metadata:nu-area-chart]
+
+## Properties
+
+<AutoTypeTable path="./src/components/area-chart/area-chart.component.ts" name="NuAreaChart" />
+

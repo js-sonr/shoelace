@@ -114,23 +114,23 @@ const App = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <SlInput name="name" label="Name" required />
+      <NuInput name="name" label="Name" required />
       <br />
-      <SlSelect label="Favorite Animal" clearable required>
-        <SlMenuItem value="birds">Birds</SlMenuItem>
-        <SlMenuItem value="cats">Cats</SlMenuItem>
-        <SlMenuItem value="dogs">Dogs</SlMenuItem>
-        <SlMenuItem value="other">Other</SlMenuItem>
-      </SlSelect>
+      <NuSelect label="Favorite Animal" clearable required>
+        <NuMenuItem value="birds">Birds</NuMenuItem>
+        <NuMenuItem value="cats">Cats</NuMenuItem>
+        <NuMenuItem value="dogs">Dogs</NuMenuItem>
+        <NuMenuItem value="other">Other</NuMenuItem>
+      </NuSelect>
       <br />
-      <SlTextarea name="comment" label="Comment" required></SlTextarea>
+      <NuTextarea name="comment" label="Comment" required></NuTextarea>
       <br />
-      <SlCheckbox required>Check me before submitting</SlCheckbox>
+      <NuCheckbox required>Check me before submitting</NuCheckbox>
       <br />
       <br />
-      <SlButton type="submit" variant="primary">
+      <NuButton type="submit" variant="primary">
         Submit
-      </SlButton>
+      </NuButton>
     </form>
   );
 };
@@ -176,11 +176,11 @@ const App = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <SlInput name="letters" required label="Letters" pattern="[A-Za-z]+" />
+      <NuInput name="letters" required label="Letters" pattern="[A-Za-z]+" />
       <br />
-      <SlButton type="submit" variant="primary">
+      <NuButton type="submit" variant="primary">
         Submit
-      </SlButton>
+      </NuButton>
     </form>
   );
 };
@@ -228,13 +228,13 @@ const App = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <SlInput type="email" label="Email" placeholder="you@example.com" required />
+      <NuInput type="email" label="Email" placeholder="you@example.com" required />
       <br />
-      <SlInput type="url" label="URL" placeholder="https://example.com/" required />
+      <NuInput type="url" label="URL" placeholder="https://example.com/" required />
       <br />
-      <SlButton type="submit" variant="primary">
+      <NuButton type="submit" variant="primary">
         Submit
-      </SlButton>
+      </NuButton>
     </form>
   );
 };
@@ -303,11 +303,11 @@ const App = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <SlInput ref={input} label="Type 'shoelace'" required value={value} onSlInput={handleInput} />
+      <NuInput ref={input} label="Type 'shoelace'" required value={value} onSlInput={handleInput} />
       <br />
-      <SlButton type="submit" variant="primary">
+      <NuButton type="submit" variant="primary">
         Submit
-      </SlButton>
+      </NuButton>
     </form>
   );
 };

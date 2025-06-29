@@ -18,11 +18,11 @@ import SlButton from '@onsonr/nebula/dist/react/button';
 import SlButtonGroup from '@onsonr/nebula/dist/react/button-group';
 
 const App = () => (
-  <SlButtonGroup label="Alignment">
-    <SlButton>Left</SlButton>
-    <SlButton>Center</SlButton>
-    <SlButton>Right</SlButton>
-  </SlButtonGroup>
+  <NuButtonGroup label="Alignment">
+    <NuButton>Left</NuButton>
+    <NuButton>Center</NuButton>
+    <NuButton>Right</NuButton>
+  </NuButtonGroup>
 );
 ```
 
@@ -62,29 +62,29 @@ import SlButtonGroup from '@onsonr/nebula/dist/react/button-group';
 
 const App = () => (
   <>
-    <SlButtonGroup label="Alignment">
-      <SlButton size="small">Left</SlButton>
-      <SlButton size="small">Center</SlButton>
-      <SlButton size="small">Right</SlButton>
-    </SlButtonGroup>
+    <NuButtonGroup label="Alignment">
+      <NuButton size="small">Left</NuButton>
+      <NuButton size="small">Center</NuButton>
+      <NuButton size="small">Right</NuButton>
+    </NuButtonGroup>
 
     <br />
     <br />
 
-    <SlButtonGroup label="Alignment">
-      <SlButton size="medium">Left</SlButton>
-      <SlButton size="medium">Center</SlButton>
-      <SlButton size="medium">Right</SlButton>
-    </SlButtonGroup>
+    <NuButtonGroup label="Alignment">
+      <NuButton size="medium">Left</NuButton>
+      <NuButton size="medium">Center</NuButton>
+      <NuButton size="medium">Right</NuButton>
+    </NuButtonGroup>
 
     <br />
     <br />
 
-    <SlButtonGroup label="Alignment">
-      <SlButton size="large">Left</SlButton>
-      <SlButton size="large">Center</SlButton>
-      <SlButton size="large">Right</SlButton>
-    </SlButtonGroup>
+    <NuButtonGroup label="Alignment">
+      <NuButton size="large">Left</NuButton>
+      <NuButton size="large">Center</NuButton>
+      <NuButton size="large">Right</NuButton>
+    </NuButtonGroup>
   </>
 );
 ```
@@ -139,47 +139,47 @@ import SlButtonGroup from '@onsonr/nebula/dist/react/button-group';
 
 const App = () => (
   <>
-    <SlButtonGroup label="Alignment">
-      <SlButton variant="primary">Left</SlButton>
-      <SlButton variant="primary">Center</SlButton>
-      <SlButton variant="primary">Right</SlButton>
-    </SlButtonGroup>
+    <NuButtonGroup label="Alignment">
+      <NuButton variant="primary">Left</NuButton>
+      <NuButton variant="primary">Center</NuButton>
+      <NuButton variant="primary">Right</NuButton>
+    </NuButtonGroup>
 
     <br />
     <br />
 
-    <SlButtonGroup label="Alignment">
-      <SlButton variant="success">Left</SlButton>
-      <SlButton variant="success">Center</SlButton>
-      <SlButton variant="success">Right</SlButton>
-    </SlButtonGroup>
+    <NuButtonGroup label="Alignment">
+      <NuButton variant="success">Left</NuButton>
+      <NuButton variant="success">Center</NuButton>
+      <NuButton variant="success">Right</NuButton>
+    </NuButtonGroup>
 
     <br />
     <br />
 
-    <SlButtonGroup label="Alignment">
-      <SlButton variant="neutral">Left</SlButton>
-      <SlButton variant="neutral">Center</SlButton>
-      <SlButton variant="neutral">Right</SlButton>
-    </SlButtonGroup>
+    <NuButtonGroup label="Alignment">
+      <NuButton variant="neutral">Left</NuButton>
+      <NuButton variant="neutral">Center</NuButton>
+      <NuButton variant="neutral">Right</NuButton>
+    </NuButtonGroup>
 
     <br />
     <br />
 
-    <SlButtonGroup label="Alignment">
-      <SlButton variant="warning">Left</SlButton>
-      <SlButton variant="warning">Center</SlButton>
-      <SlButton variant="warning">Right</SlButton>
-    </SlButtonGroup>
+    <NuButtonGroup label="Alignment">
+      <NuButton variant="warning">Left</NuButton>
+      <NuButton variant="warning">Center</NuButton>
+      <NuButton variant="warning">Right</NuButton>
+    </NuButtonGroup>
 
     <br />
     <br />
 
-    <SlButtonGroup label="Alignment">
-      <SlButton variant="danger">Left</SlButton>
-      <SlButton variant="danger">Center</SlButton>
-      <SlButton variant="danger">Right</SlButton>
-    </SlButtonGroup>
+    <NuButtonGroup label="Alignment">
+      <NuButton variant="danger">Left</NuButton>
+      <NuButton variant="danger">Center</NuButton>
+      <NuButton variant="danger">Right</NuButton>
+    </NuButtonGroup>
   </>
 );
 ```
@@ -218,47 +218,47 @@ import SlButtonGroup from '@onsonr/nebula/dist/react/button-group';
 
 const App = () => (
   <>
-    <SlButtonGroup label="Alignment">
-      <SlButton size="small" pill>
+    <NuButtonGroup label="Alignment">
+      <NuButton size="small" pill>
         Left
-      </SlButton>
-      <SlButton size="small" pill>
+      </NuButton>
+      <NuButton size="small" pill>
         Center
-      </SlButton>
-      <SlButton size="small" pill>
+      </NuButton>
+      <NuButton size="small" pill>
         Right
-      </SlButton>
-    </SlButtonGroup>
+      </NuButton>
+    </NuButtonGroup>
 
     <br />
     <br />
 
-    <SlButtonGroup label="Alignment">
-      <SlButton size="medium" pill>
+    <NuButtonGroup label="Alignment">
+      <NuButton size="medium" pill>
         Left
-      </SlButton>
-      <SlButton size="medium" pill>
+      </NuButton>
+      <NuButton size="medium" pill>
         Center
-      </SlButton>
-      <SlButton size="medium" pill>
+      </NuButton>
+      <NuButton size="medium" pill>
         Right
-      </SlButton>
-    </SlButtonGroup>
+      </NuButton>
+    </NuButtonGroup>
 
     <br />
     <br />
 
-    <SlButtonGroup label="Alignment">
-      <SlButton size="large" pill>
+    <NuButtonGroup label="Alignment">
+      <NuButton size="large" pill>
         Left
-      </SlButton>
-      <SlButton size="large" pill>
+      </NuButton>
+      <NuButton size="large" pill>
         Center
-      </SlButton>
-      <SlButton size="large" pill>
+      </NuButton>
+      <NuButton size="large" pill>
         Right
-      </SlButton>
-    </SlButtonGroup>
+      </NuButton>
+    </NuButtonGroup>
   </>
 );
 ```
@@ -290,20 +290,20 @@ import SlMenu from '@onsonr/nebula/dist/react/menu';
 import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 
 const App = () => (
-  <SlButtonGroup label="Example Button Group">
-    <SlButton>Button</SlButton>
-    <SlButton>Button</SlButton>
-    <SlDropdown>
-      <SlButton slot="trigger" caret>
+  <NuButtonGroup label="Example Button Group">
+    <NuButton>Button</NuButton>
+    <NuButton>Button</NuButton>
+    <NuDropdown>
+      <NuButton slot="trigger" caret>
         Dropdown
-      </SlButton>
-      <SlMenu>
-        <SlMenuItem>Item 1</SlMenuItem>
-        <SlMenuItem>Item 2</SlMenuItem>
-        <SlMenuItem>Item 3</SlMenuItem>
-      </SlMenu>
-    </SlDropdown>
-  </SlButtonGroup>
+      </NuButton>
+      <NuMenu>
+        <NuMenuItem>Item 1</NuMenuItem>
+        <NuMenuItem>Item 2</NuMenuItem>
+        <NuMenuItem>Item 3</NuMenuItem>
+      </NuMenu>
+    </NuDropdown>
+  </NuButtonGroup>
 );
 ```
 
@@ -335,17 +335,17 @@ import SlMenu from '@onsonr/nebula/dist/react/menu';
 import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 
 const App = () => (
-  <SlButtonGroup label="Example Button Group">
-    <SlButton variant="primary">Save</SlButton>
-    <SlDropdown placement="bottom-end">
-      <SlButton slot="trigger" variant="primary" caret></SlButton>
-      <SlMenu>
-        <SlMenuItem>Save</SlMenuItem>
-        <SlMenuItem>Save as&hellip;</SlMenuItem>
-        <SlMenuItem>Save all</SlMenuItem>
-      </SlMenu>
-    </SlDropdown>
-  </SlButtonGroup>
+  <NuButtonGroup label="Example Button Group">
+    <NuButton variant="primary">Save</NuButton>
+    <NuDropdown placement="bottom-end">
+      <NuButton slot="trigger" variant="primary" caret></NuButton>
+      <NuMenu>
+        <NuMenuItem>Save</NuMenuItem>
+        <NuMenuItem>Save as&hellip;</NuMenuItem>
+        <NuMenuItem>Save all</NuMenuItem>
+      </NuMenu>
+    </NuDropdown>
+  </NuButtonGroup>
 );
 ```
 
@@ -376,19 +376,19 @@ import SlTooltip from '@onsonr/nebula/dist/react/tooltip';
 
 const App = () => (
   <>
-    <SlButtonGroup label="Alignment">
-      <SlTooltip content="I'm on the left">
-        <SlButton>Left</SlButton>
-      </SlTooltip>
+    <NuButtonGroup label="Alignment">
+      <NuTooltip content="I'm on the left">
+        <NuButton>Left</NuButton>
+      </NuTooltip>
 
-      <SlTooltip content="I'm in the middle">
-        <SlButton>Center</SlButton>
-      </SlTooltip>
+      <NuTooltip content="I'm in the middle">
+        <NuButton>Center</NuButton>
+      </NuTooltip>
 
-      <SlTooltip content="I'm on the right">
-        <SlButton>Right</SlButton>
-      </SlTooltip>
-    </SlButtonGroup>
+      <NuTooltip content="I'm on the right">
+        <NuButton>Right</NuButton>
+      </NuTooltip>
+    </NuButtonGroup>
   </>
 );
 ```
@@ -455,54 +455,54 @@ const css = `
 const App = () => (
   <>
     <div className="button-group-toolbar">
-      <SlButtonGroup label="History">
-        <SlTooltip content="Undo">
-          <SlButton>
-            <SlIcon name="arrow-counterclockwise"></SlIcon>
-          </SlButton>
-        </SlTooltip>
-        <SlTooltip content="Redo">
-          <SlButton>
-            <SlIcon name="arrow-clockwise"></SlIcon>
-          </SlButton>
-        </SlTooltip>
-      </SlButtonGroup>
+      <NuButtonGroup label="History">
+        <NuTooltip content="Undo">
+          <NuButton>
+            <NuIcon name="arrow-counterclockwise"></NuIcon>
+          </NuButton>
+        </NuTooltip>
+        <NuTooltip content="Redo">
+          <NuButton>
+            <NuIcon name="arrow-clockwise"></NuIcon>
+          </NuButton>
+        </NuTooltip>
+      </NuButtonGroup>
 
-      <SlButtonGroup label="Formatting">
-        <SlTooltip content="Bold">
-          <SlButton>
-            <SlIcon name="type-bold"></SlIcon>
-          </SlButton>
-        </SlTooltip>
-        <SlTooltip content="Italic">
-          <SlButton>
-            <SlIcon name="type-italic"></SlIcon>
-          </SlButton>
-        </SlTooltip>
-        <SlTooltip content="Underline">
-          <SlButton>
-            <SlIcon name="type-underline"></SlIcon>
-          </SlButton>
-        </SlTooltip>
-      </SlButtonGroup>
+      <NuButtonGroup label="Formatting">
+        <NuTooltip content="Bold">
+          <NuButton>
+            <NuIcon name="type-bold"></NuIcon>
+          </NuButton>
+        </NuTooltip>
+        <NuTooltip content="Italic">
+          <NuButton>
+            <NuIcon name="type-italic"></NuIcon>
+          </NuButton>
+        </NuTooltip>
+        <NuTooltip content="Underline">
+          <NuButton>
+            <NuIcon name="type-underline"></NuIcon>
+          </NuButton>
+        </NuTooltip>
+      </NuButtonGroup>
 
-      <SlButtonGroup label="Alignment">
-        <SlTooltip content="Align Left">
-          <SlButton>
-            <SlIcon name="justify-left"></SlIcon>
-          </SlButton>
-        </SlTooltip>
-        <SlTooltip content="Align Center">
-          <SlButton>
-            <SlIcon name="justify"></SlIcon>
-          </SlButton>
-        </SlTooltip>
-        <SlTooltip content="Align Right">
-          <SlButton>
-            <SlIcon name="justify-right"></SlIcon>
-          </SlButton>
-        </SlTooltip>
-      </SlButtonGroup>
+      <NuButtonGroup label="Alignment">
+        <NuTooltip content="Align Left">
+          <NuButton>
+            <NuIcon name="justify-left"></NuIcon>
+          </NuButton>
+        </NuTooltip>
+        <NuTooltip content="Align Center">
+          <NuButton>
+            <NuIcon name="justify"></NuIcon>
+          </NuButton>
+        </NuTooltip>
+        <NuTooltip content="Align Right">
+          <NuButton>
+            <NuIcon name="justify-right"></NuIcon>
+          </NuButton>
+        </NuTooltip>
+      </NuButtonGroup>
     </div>
 
     <style>{css}</style>

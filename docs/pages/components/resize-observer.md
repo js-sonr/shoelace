@@ -52,9 +52,9 @@ const css = `
 const App = () => (
   <>
     <div className="resize-observer-overview">
-      <SlResizeObserver onSlResize={event => console.log(event.detail)}>
+      <NuResizeObserver onSlResize={event => console.log(event.detail)}>
         <div>Resize this box and watch the console 👉</div>
-      </SlResizeObserver>
+      </NuResizeObserver>
     </div>
 
     <style>{css}</style>

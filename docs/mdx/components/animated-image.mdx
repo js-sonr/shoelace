@@ -1,0 +1,223 @@
+---
+title: Animated Image
+description: A component for displaying animated GIFs and WEBPs that play and pause on interaction.
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { AutoTypeTable } from 'fumadocs-typescript/ui';
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-animated-image
+      src="https://nebulaui.org/assets/images/walk.gif"
+      alt="Animation of untied shoes walking on pavement"
+    ></nu-animated-image>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-animated-image
+      src="https://nebulaui.org/assets/images/walk.gif"
+      alt="Animation of untied shoes walking on pavement"
+    ></nu-animated-image>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlAnimatedImage from '@onsonr/nebula/dist/react/animated-image'
+    ;
+    
+    const App = () => (
+      
+      <NuAnimatedImage
+        src="https://nebulaui.org/assets/images/walk.gif"
+        alt="Animation of untied shoes walking on pavement"
+      />
+    );
+    ```
+  </Tab>
+</Tabs>
+
+<Callout type="info">
+This component uses `<canvas>` to draw freeze frames, so images are subject to [cross-origin restrictions](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image).
+</Callout>
+
+## Examples
+
+### WEBP Images
+
+Both GIF and WEBP images are supported.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-animated-image
+      src="https://nebulaui.org/assets/images/tie.webp"
+      alt="Animation of a shoe being tied"
+    ></nu-animated-image>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-animated-image
+      src="https://nebulaui.org/assets/images/tie.webp"
+      alt="Animation of a shoe being tied"
+    ></nu-animated-image>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlAnimatedImage from '@onsonr/nebula/dist/react/animated-image'
+    ;
+    
+    const App = () => (
+      
+      <NuAnimatedImage src="https://nebulaui.org/assets/images/tie.webp" alt="Animation of a shoe being tied" />
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Setting a Width and Height
+
+To set a custom size, apply a width and/or height to the host element.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-animated-image
+      src="https://nebulaui.org/assets/images/walk.gif"
+      alt="Animation of untied shoes walking on pavement"
+      style="width: 150px; height: 200px;"
+    >
+    </nu-animated-image>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-animated-image
+      src="https://nebulaui.org/assets/images/walk.gif"
+      alt="Animation of untied shoes walking on pavement"
+      style="width: 150px; height: 200px;"
+    >
+    </nu-animated-image>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    ```
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlAnimatedImage from '@onsonr/nebula/dist/react/animated-image'
+    ;
+    
+    const App = () => (
+      
+      <NuAnimatedImage
+        src="https://nebulaui.org/assets/images/walk.gif"
+        alt="Animation of untied shoes walking on pavement"
+        style={{ width: '150px', height: '200px' }}
+      />
+    );
+    ```
+  </Tab>
+</Tabs>
+
+### Customizing the Control Box
+
+You can change the appearance and location of the control box by targeting the `control-box` part in your styles.
+
+<Tabs items={['Preview', 'Web Component', 'React']}>
+  <Tab value="Preview">
+    ```tsx
+    <nu-animated-image
+      src="https://nebulaui.org/assets/images/walk.gif"
+      alt="Animation of untied shoes walking on pavement"
+      class="animated-image-custom-control-box"
+    ></nu-animated-image>
+    
+    <style>
+      .animated-image-custom-control-box::part(control-box) {
+        top: auto;
+        right: auto;
+        bottom: 1rem;
+        left: 1rem;
+        background-color: deeppink;
+        border: none;
+        color: pink;
+      }
+    </style>
+    ```
+  </Tab>
+  <Tab value="Web Component">
+    ```html
+    <nu-animated-image
+      src="https://nebulaui.org/assets/images/walk.gif"
+      alt="Animation of untied shoes walking on pavement"
+      class="animated-image-custom-control-box"
+    ></nu-animated-image>
+    
+    <style>
+      .animated-image-custom-control-box::part(control-box) {
+        top: auto;
+        right: auto;
+        bottom: 1rem;
+        left: 1rem;
+        background-color: deeppink;
+        border: none;
+        color: pink;
+      }
+    </style>
+    ```
+  </Tab>
+  <Tab value="React">
+    ```tsx
+    import SlAnimatedImage from '@onsonr/nebula/dist/react/animated-image'
+    ;
+    
+    const css = `
+      .animated-image-custom-control-box::part(control-box) {
+        top: auto;
+        right: auto;
+        bottom: 1rem;
+        left: 1rem;
+        background-color: deeppink;
+        border: none;
+        color: pink;
+      }
+    `;
+    
+    const App = () => (
+      
+      <>
+        <NuAnimatedImage
+          className="animated-image-custom-control-box"
+          src="https://nebulaui.org/assets/images/walk.gif"
+          alt="Animation of untied shoes walking on pavement"
+        />
+    
+        <style>{css}</style>
+      </>
+    );
+    ```
+  </Tab>
+</Tabs>
+
+## Properties
+
+<AutoTypeTable path="./src/components/animated-image/animated-image.component.ts" name="NuAnimatedImage" />
+

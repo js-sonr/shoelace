@@ -27,15 +27,15 @@ import SlMenu from '@onsonr/nebula/dist/react/menu';
 import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 
 const App = () => (
-  <SlMenu style={{ maxWidth: '200px' }}>
-    <SlMenuItem value="undo">Undo</SlMenuItem>
-    <SlMenuItem value="redo">Redo</SlMenuItem>
-    <SlDivider />
-    <SlMenuItem value="cut">Cut</SlMenuItem>
-    <SlMenuItem value="copy">Copy</SlMenuItem>
-    <SlMenuItem value="paste">Paste</SlMenuItem>
-    <SlMenuItem value="delete">Delete</SlMenuItem>
-  </SlMenu>
+  <NuMenu style={{ maxWidth: '200px' }}>
+    <NuMenuItem value="undo">Undo</NuMenuItem>
+    <NuMenuItem value="redo">Redo</NuMenuItem>
+    <NuDivider />
+    <NuMenuItem value="cut">Cut</NuMenuItem>
+    <NuMenuItem value="copy">Copy</NuMenuItem>
+    <NuMenuItem value="paste">Paste</NuMenuItem>
+    <NuMenuItem value="delete">Delete</NuMenuItem>
+  </NuMenu>
 );
 ```
 
@@ -69,14 +69,14 @@ import SlMenu from '@onsonr/nebula/dist/react/menu';
 import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 
 const App = () => (
-  <SlDropdown>
-    <SlButton slot="trigger" caret>Edit</SlButton>
-    <SlMenu>
-      <SlMenuItem value="cut">Cut</SlMenuItem>
-      <SlMenuItem value="copy">Copy</SlMenuItem>
-      <SlMenuItem value="paste">Paste</SlMenuItem>
-    </SlMenu>
-  </SlDropdown>
+  <NuDropdown>
+    <NuButton slot="trigger" caret>Edit</NuButton>
+    <NuMenu>
+      <NuMenuItem value="cut">Cut</NuMenuItem>
+      <NuMenuItem value="copy">Copy</NuMenuItem>
+      <NuMenuItem value="paste">Paste</NuMenuItem>
+    </NuMenu>
+  </NuDropdown>
 );
 ```
 
@@ -120,31 +120,31 @@ import SlMenu from '@onsonr/nebula/dist/react/menu';
 import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
 
 const App = () => (
-  <SlMenu style={{ maxWidth: '200px' }}>
-    <SlMenuItem value="undo">Undo</SlMenuItem>
-    <SlMenuItem value="redo">Redo</SlMenuItem>
-    <SlDivider />
-    <SlMenuItem value="cut">Cut</SlMenuItem>
-    <SlMenuItem value="copy">Copy</SlMenuItem>
-    <SlMenuItem value="paste">Paste</SlMenuItem>
-    <SlDivider />
-    <SlMenuItem>
+  <NuMenu style={{ maxWidth: '200px' }}>
+    <NuMenuItem value="undo">Undo</NuMenuItem>
+    <NuMenuItem value="redo">Redo</NuMenuItem>
+    <NuDivider />
+    <NuMenuItem value="cut">Cut</NuMenuItem>
+    <NuMenuItem value="copy">Copy</NuMenuItem>
+    <NuMenuItem value="paste">Paste</NuMenuItem>
+    <NuDivider />
+    <NuMenuItem>
       Find
-      <SlMenu slot="submenu">
-        <SlMenuItem value="find">Find…</SlMenuItem>
-        <SlMenuItem value="find-previous">Find Next</SlMenuItem>
-        <SlMenuItem value="find-next">Find Previous</SlMenuItem>
-      </SlMenu>
-    </SlMenuItem>
-    <SlMenuItem>
+      <NuMenu slot="submenu">
+        <NuMenuItem value="find">Find…</NuMenuItem>
+        <NuMenuItem value="find-previous">Find Next</NuMenuItem>
+        <NuMenuItem value="find-next">Find Previous</NuMenuItem>
+      </NuMenu>
+    </NuMenuItem>
+    <NuMenuItem>
       Transformations
-      <SlMenu slot="submenu">
-        <SlMenuItem value="uppercase">Make uppercase</SlMenuItem>
-        <SlMenuItem value="lowercase">Make lowercase</SlMenuItem>
-        <SlMenuItem value="capitalize">Capitalize</SlMenuItem>
-      </SlMenu>
-    </SlMenuItem>
-  </SlMenu>
+      <NuMenu slot="submenu">
+        <NuMenuItem value="uppercase">Make uppercase</NuMenuItem>
+        <NuMenuItem value="lowercase">Make lowercase</NuMenuItem>
+        <NuMenuItem value="capitalize">Capitalize</NuMenuItem>
+      </NuMenu>
+    </NuMenuItem>
+  </NuMenu>
 );
 ```
 
