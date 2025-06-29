@@ -1,14 +1,14 @@
 import Component from '../../components/split-panel/split-panel.component.js';
 import { type EventName } from '@lit/react';
-import type { SlRepositionEvent } from '../../events/events.js';
-export type { SlRepositionEvent } from '../../events/events.js';
+import type { NuRepositionEvent } from '../../events/events.js';
+export type { NuRepositionEvent } from '../../events/events.js';
 /**
  * @summary Split panels display two adjacent panels, allowing the user to reposition them.
- * @documentation https://shoelace.style/components/split-panel
+ * @documentation https://nebulaui.org/components/split-panel
  * @status stable
  * @since 2.0
  *
- * @event sl-reposition - Emitted when the divider's position changes.
+ * @event nu-reposition - Emitted when the divider's position changes.
  *
  * @slot start - Content to place in the start panel.
  * @slot end - Content to place in the end panel.
@@ -26,6 +26,6 @@ export type { SlRepositionEvent } from '../../events/events.js';
  * @cssproperty [--max=100%] - The maximum allowed size of the primary panel.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {
-    onSlReposition: EventName<SlRepositionEvent>;
+    onNuReposition: EventName<NuRepositionEvent>;
 }>;
 export default reactWrapper;

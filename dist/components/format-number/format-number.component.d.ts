@@ -1,11 +1,11 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 /**
  * @summary Formats a number using the specified locale and options.
- * @documentation https://shoelace.style/components/format-number
+ * @documentation https://nebulaui.org/components/format-number
  * @status stable
  * @since 2.0
  */
-export default class SlFormatNumber extends ShoelaceElement {
+export default class NuFormatNumber extends NebulaElement {
     private readonly localize;
     /** The number to format. */
     value: number;

@@ -1,6 +1,6 @@
 import '../../internal/scrollend-polyfill.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIcon from '../icon/icon.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIcon from '../icon/icon.component.js';
 import type { CSSResultGroup, PropertyValueMap } from 'lit';
 /**
  * @summary Carousels display an arbitrary number of content slides along a horizontal or vertical axis.
@@ -10,11 +10,11 @@ import type { CSSResultGroup, PropertyValueMap } from 'lit';
  *
  * @dependency sl-icon
  *
- * @event {{ index: number, slide: SlCarouselItem }} sl-slide-change - Emitted when the active slide changes.
+ * @event nu-slide-change - Emitted when the active slide changes.
  *
- * @slot - The carousel's main content, one or more `<sl-carousel-item>` elements.
- * @slot next-icon - Optional next icon to use instead of the default. Works best with `<sl-icon>`.
- * @slot previous-icon - Optional previous icon to use instead of the default. Works best with `<sl-icon>`.
+ * @slot - The carousel's main content, one or more `<nu-carousel-item>` elements.
+ * @slot next-icon - Optional next icon to use instead of the default. Works best with `<nu-icon>`.
+ * @slot previous-icon - Optional previous icon to use instead of the default. Works best with `<nu-icon>`.
  *
  * @csspart base - The carousel's internal wrapper.
  * @csspart scroll-container - The scroll container that wraps the slides.
@@ -31,10 +31,10 @@ import type { CSSResultGroup, PropertyValueMap } from 'lit';
  * @cssproperty --scroll-hint - The amount of padding to apply to the scroll area, allowing adjacent slides to become
  *  partially visible as a scroll hint.
  */
-export default class SlCarousel extends ShoelaceElement {
+export default class NuCarousel extends NebulaElement {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-icon': typeof SlIcon;
+        'nu-icon': typeof NuIcon;
     };
     /** When set, allows the user to navigate the carousel in the same direction indefinitely. */
     loop: boolean;
@@ -68,7 +68,7 @@ export default class SlCarousel extends ShoelaceElement {
     connectedCallback(): void;
     disconnectedCallback(): void;
     protected firstUpdated(): void;
-    protected willUpdate(changedProperties: PropertyValueMap<SlCarousel> | Map<PropertyKey, unknown>): void;
+    protected willUpdate(changedProperties: PropertyValueMap<NuCarousel> | Map<PropertyKey, unknown>): void;
     private getPageCount;
     private getCurrentPage;
     private canScrollNext;

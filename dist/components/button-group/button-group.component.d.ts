@@ -1,16 +1,16 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Button groups can be used to group related buttons into sections.
- * @documentation https://shoelace.style/components/button-group
+ * @documentation https://nebulaui.org/components/button-group
  * @status stable
  * @since 2.0
  *
- * @slot - One or more `<sl-button>` elements to display in the button group.
+ * @slot - One or more `<nu-button>` elements to display in the button group.
  *
  * @csspart base - The component's base wrapper.
  */
-export default class SlButtonGroup extends ShoelaceElement {
+export default class NuButtonGroup extends NebulaElement {
     static styles: CSSResultGroup;
     defaultSlot: HTMLSlotElement;
     disableRole: boolean;

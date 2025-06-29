@@ -1,4 +1,4 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import type { CSSResultGroup } from 'lit';
 export interface VirtualElement {
     getBoundingClientRect: () => DOMRect;
@@ -6,11 +6,11 @@ export interface VirtualElement {
 }
 /**
  * @summary Popup is a utility that lets you declaratively anchor "popup" containers to another element.
- * @documentation https://shoelace.style/components/popup
+ * @documentation https://nebulaui.org/components/popup
  * @status stable
  * @since 2.0
  *
- * @event sl-reposition - Emitted when the popup is repositioned. This event can fire a lot, so avoid putting expensive
+ * @event nu-reposition - Emitted when the popup is repositioned. This event can fire a lot, so avoid putting expensive
  *  operations in your listener or consider debouncing it.
  *
  * @slot - The popup's content.
@@ -25,7 +25,7 @@ export interface VirtualElement {
  *
  * @cssproperty [--arrow-size=6px] - The size of the arrow. Note that an arrow won't be shown unless the `arrow`
  *  attribute is used.
- * @cssproperty [--arrow-color=var(--sl-color-neutral-0)] - The color of the arrow.
+ * @cssproperty [--arrow-color=var(--nu-color-neutral-0)] - The color of the arrow.
  * @cssproperty [--auto-size-available-width] - A read-only custom property that determines the amount of width the
  *  popup can be before overflowing. Useful for positioning child elements that need to overflow. This property is only
  *  available when using `auto-size`.
@@ -33,7 +33,7 @@ export interface VirtualElement {
  *  popup can be before overflowing. Useful for positioning child elements that need to overflow. This property is only
  *  available when using `auto-size`.
  */
-export default class SlPopup extends ShoelaceElement {
+export default class NuPopup extends NebulaElement {
     static styles: CSSResultGroup;
     private anchorEl;
     private cleanup;

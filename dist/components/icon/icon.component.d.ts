@@ -1,18 +1,18 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import type { CSSResultGroup, HTMLTemplateResult } from 'lit';
 /**
  * @summary Icons are symbols that can be used to represent various options within an application.
- * @documentation https://shoelace.style/components/icon
+ * @documentation https://nebulaui.org/components/icon
  * @status stable
  * @since 2.0
  *
- * @event sl-load - Emitted when the icon has loaded. When using `spriteSheet: true` this will not emit.
- * @event sl-error - Emitted when the icon fails to load due to an error. When using `spriteSheet: true` this will not emit.
+ * @event nu-load - Emitted when the icon has loaded. When using `spriteSheet: true` this will not emit.
+ * @event nu-error - Emitted when the icon fails to load due to an error. When using `spriteSheet: true` this will not emit.
  *
  * @csspart svg - The internal SVG element.
  * @csspart use - The <use> element generated when using `spriteSheet: true`
  */
-export default class SlIcon extends ShoelaceElement {
+export default class NuIcon extends NebulaElement {
     static styles: CSSResultGroup;
     private initialRender;
     /** Given a URL, this function returns the resulting SVG element or an appropriate error symbol. */

@@ -1,8 +1,8 @@
-import SlTextarea from './textarea.component.js';
+import NuTextarea from './textarea.component.js';
 export * from './textarea.component.js';
-export default SlTextarea;
+export default NuTextarea;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-textarea': SlTextarea;
+        'nu-textarea': NuTextarea;
     }
 }

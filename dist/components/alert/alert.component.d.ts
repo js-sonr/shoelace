@@ -1,35 +1,35 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIconButton from '../icon-button/icon-button.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIconButton from '../icon-button/icon-button.component.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Alerts are used to display important messages inline or as toast notifications.
- * @documentation https://shoelace.style/components/alert
+ * @documentation https://nebulaui.org/components/alert
  * @status stable
  * @since 2.0
  *
  * @dependency sl-icon-button
  *
  * @slot - The alert's main content.
- * @slot icon - An icon to show in the alert. Works best with `<sl-icon>`.
+ * @slot icon - An icon to show in the alert. Works best with `<nu-icon>`.
  *
- * @event sl-show - Emitted when the alert opens.
- * @event sl-after-show - Emitted after the alert opens and all animations are complete.
- * @event sl-hide - Emitted when the alert closes.
- * @event sl-after-hide - Emitted after the alert closes and all animations are complete.
+ * @event nu-show - Emitted when the alert opens.
+ * @event nu-after-show - Emitted after the alert opens and all animations are complete.
+ * @event nu-hide - Emitted when the alert closes.
+ * @event nu-after-hide - Emitted after the alert closes and all animations are complete.
  *
  * @csspart base - The component's base wrapper.
  * @csspart icon - The container that wraps the optional icon.
  * @csspart message - The container that wraps the alert's main content.
- * @csspart close-button - The close button, an `<sl-icon-button>`.
+ * @csspart close-button - The close button, an `<nu-icon-button>`.
  * @csspart close-button__base - The close button's exported `base` part.
  *
  * @animation alert.show - The animation to use when showing the alert.
  * @animation alert.hide - The animation to use when hiding the alert.
  */
-export default class SlAlert extends ShoelaceElement {
+export default class NuAlert extends NebulaElement {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-icon-button': typeof SlIconButton;
+        'nu-icon-button': typeof NuIconButton;
     };
     private autoHideTimeout;
     private readonly hasSlotController;

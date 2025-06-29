@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="component" data-shoelace-version="0.0.10">
+<html lang="en" data-layout="component" data-nebula-version="0.0.1">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,14 +25,14 @@
 
     <link rel="stylesheet" href="/dist/themes/light.css" />
     <link rel="stylesheet" href="/dist/themes/dark.css" />
-    <script type="module" src="/dist/shoelace-autoloader.js"></script>
+    <script type="module" src="/dist/nebula-autoloader.js"></script>
 
     <script>
       (() => {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = localStorage.getItem('theme') || 'auto';
         document.documentElement.classList.toggle(
-          'sl-theme-dark',
+          'nu-theme-dark',
           theme === 'dark' || (theme === 'auto' && prefersDark)
         );
       })();
@@ -65,7 +65,7 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="github"></sl-icon>
+        <nu-icon name="github"></nu-icon>
       </a>
 
       <a
@@ -75,21 +75,21 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="twitter"></sl-icon>
+        <nu-icon name="twitter"></nu-icon>
       </a>
 
-      <sl-dropdown id="theme-selector" placement="bottom-end" distance="3">
-        <sl-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
-          <sl-icon class="only-light" name="sun-fill"></sl-icon>
-          <sl-icon class="only-dark" name="moon-fill"></sl-icon>
-        </sl-button>
-        <sl-menu>
-          <sl-menu-item type="checkbox" value="light">Light</sl-menu-item>
-          <sl-menu-item type="checkbox" value="dark">Dark</sl-menu-item>
-          <sl-divider></sl-divider>
-          <sl-menu-item type="checkbox" value="auto">System</sl-menu-item>
-        </sl-menu>
-      </sl-dropdown>
+      <nu-dropdown id="theme-selector" placement="bottom-end" distance="3">
+        <nu-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
+          <nu-icon class="only-light" name="sun-fill"></nu-icon>
+          <nu-icon class="only-dark" name="moon-fill"></nu-icon>
+        </nu-button>
+        <nu-menu>
+          <nu-menu-item type="checkbox" value="light">Light</nu-menu-item>
+          <nu-menu-item type="checkbox" value="dark">Dark</nu-menu-item>
+          <nu-divider></nu-divider>
+          <nu-menu-item type="checkbox" value="auto">System</nu-menu-item>
+        </nu-menu>
+      </nu-dropdown>
     </div>
 
     <aside id="sidebar" data-preserve-scroll="">
@@ -97,38 +97,38 @@
         <a href="/">
           <img src="/assets/images/wordmark.svg" alt="Nebula" />
         </a>
-        <div class="sidebar-version">0.0.10</div>
+        <div class="sidebar-version">0.0.1</div>
       </header>
 
       <div class="sidebar-buttons">
-        <sl-button
+        <nu-button
           size="small"
           class="repo-button repo-button--github"
           href="https://github.com/onsonr/nebula"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="github"></sl-icon> Code
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="github"></nu-icon> Code
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--star"
           href="https://github.com/onsonr/nebula/stargazers"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="star-fill"></sl-icon> Star
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="star-fill"></nu-icon> Star
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--twitter"
           href="https://twitter.com/shoelace_style"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="twitter"></sl-icon> Follow
-        </sl-button>
+          <nu-icon slot="prefix" name="twitter"></nu-icon> Follow
+        </nu-button>
       </div>
 
       <button class="search-box" type="button" title="Press / to search" aria-label="Search" data-plugin="search">
-        <sl-icon name="search"></sl-icon>
+        <nu-icon name="search"></nu-icon>
         <span>Search</span>
       </button>
 
@@ -188,6 +188,10 @@
               </li>
 
               <li>
+                <a href="/components/area-chart"> Area Chart </a>
+              </li>
+
+              <li>
                 <a href="/components/avatar"> Avatar </a>
               </li>
 
@@ -209,6 +213,10 @@
 
               <li>
                 <a href="/components/button-group"> Button Group </a>
+              </li>
+
+              <li>
+                <a href="/components/candle-chart"> Candle Chart </a>
               </li>
 
               <li>
@@ -288,6 +296,22 @@
               </li>
 
               <li>
+                <a href="/components/line-chart"> Line Chart </a>
+              </li>
+
+              <li>
+                <a href="/components/list-item"> List Item </a>
+              </li>
+
+              <li>
+                <a href="/components/list-view"> List View </a>
+              </li>
+
+              <li>
+                <a href="/components/login-button"> Login Button </a>
+              </li>
+
+              <li>
                 <a href="/components/menu"> Menu </a>
               </li>
 
@@ -305,6 +329,10 @@
 
               <li>
                 <a href="/components/option"> Option </a>
+              </li>
+
+              <li>
+                <a href="/components/pie-chart"> Pie Chart </a>
               </li>
 
               <li>
@@ -341,6 +369,10 @@
 
               <li>
                 <a href="/components/rating"> Rating </a>
+              </li>
+
+              <li>
+                <a href="/components/register-button"> Register Button </a>
               </li>
 
               <li>
@@ -453,12 +485,12 @@
             <h1>Include</h1>
 
             <div class="component-header__tag">
-              <code>&lt;sl-include&gt; | SlInclude</code>
+              <code>&lt;nu-include&gt; | NuInclude</code>
             </div>
 
             <div class="component-header__info">
-              <sl-badge variant="neutral" pill=""> Since 2.0 </sl-badge>
-              <sl-badge variant="primary" pill="" style="text-transform: capitalize"> stable </sl-badge>
+              <nu-badge variant="neutral" pill=""> Since 2.0 </nu-badge>
+              <nu-badge variant="primary" pill="" style="text-transform: capitalize"> stable </nu-badge>
             </div>
           </header>
 
@@ -469,30 +501,30 @@
             same file can be included multiple times, but only one request will be made.
           </p>
           <p>
-            The included content will be inserted into the <code>&lt;sl-include&gt;</code> element’s default slot so it
+            The included content will be inserted into the <code>&lt;nu-include&gt;</code> element’s default slot so it
             can be easily accessed and styled through the light DOM.
           </p>
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-include src="https://shoelace.style/assets/examples/include.html"></sl-include>
+              <nu-include src="https://nebulaui.org/assets/examples/include.html"></nu-include>
 
               <div class="code-preview__resizer">
                 <sl-icon name="grip-vertical"></sl-icon>
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-185">
+            <div class="code-preview__source-group" id="code-preview-source-group-178">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-608"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-include</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/assets/examples/include.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-include</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-608"></sl-copy-button></pre>
+                <pre><code class="language-html" id="code-block-596"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-include</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/assets/examples/include.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-include</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-596"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-609"><span class="token keyword">import</span> SlInclude <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/include'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-597"><span class="token keyword">import</span> SlInclude <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/include'</span><span class="token punctuation">;</span>
 
-<span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlInclude</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/assets/examples/include.html<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-609"></sl-copy-button></pre>
+<span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlInclude</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/assets/examples/include.html<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token punctuation">;</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-597"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -501,7 +533,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-185"
+                aria-controls="code-preview-source-group-178"
               >
                 Source
                 <svg
@@ -558,7 +590,7 @@
             <code>event.detail.status</code> will contain the resulting HTTP status code of the request, e.g. 404 (not
             found).
           </p>
-          <pre><code class="language-html" id="code-block-610"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-include</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/assets/examples/include.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-include</span><span class="token punctuation">&gt;</span></span>
+          <pre><code class="language-html" id="code-block-598"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-include</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/assets/examples/include.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-include</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
   <span class="token keyword">const</span> include <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'sl-include'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -575,7 +607,7 @@
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-610"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-598"></sl-copy-button></pre>
 
           <h2 id="importing" class="anchor-heading">
             Importing<a href="#importing" aria-label='Direct link to "Importing"'></a>
@@ -586,13 +618,13 @@
             <a href="/getting-started/installation#cherry-picking">cherry pick</a> this component.
           </p>
 
-          <sl-tab-group>
-            <sl-tab slot="nav" panel="script">Script</sl-tab>
-            <sl-tab slot="nav" panel="import">Import</sl-tab>
-            <sl-tab slot="nav" panel="bundler">Bundler</sl-tab>
-            <sl-tab slot="nav" panel="react">React</sl-tab>
+          <nu-tab-group>
+            <nu-tab slot="nav" panel="script">Script</nu-tab>
+            <nu-tab slot="nav" panel="import">Import</nu-tab>
+            <nu-tab slot="nav" panel="bundler">Bundler</nu-tab>
+            <nu-tab slot="nav" panel="react">React</nu-tab>
 
-            <sl-tab-panel name="script">
+            <nu-tab-panel name="script">
               <p>
                 To import this component from
                 <a
@@ -604,10 +636,10 @@
                 >
                 using a script tag:
               </p>
-              <pre><code class="language-html" id="code-block-611"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.10/cdn/components/include/include.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><sl-copy-button class="copy-code-button" from="code-block-611"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-html" id="code-block-599"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/include/include.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><sl-copy-button class="copy-code-button" from="code-block-599"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="import">
+            <nu-tab-panel name="import">
               <p>
                 To import this component from
                 <a
@@ -619,19 +651,19 @@
                 >
                 using a JavaScript import:
               </p>
-              <pre><code class="language-js" id="code-block-612"><span class="token keyword">import</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.10/cdn/components/include/include.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-612"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-js" id="code-block-600"><span class="token keyword">import</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/include/include.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-600"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="bundler">
+            <nu-tab-panel name="bundler">
               <p>To import this component using <a href="/getting-started/installation#bundling">a bundler</a>:</p>
-              <pre><code class="language-js" id="code-block-613"><span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/include/include.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-613"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-js" id="code-block-601"><span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/include/include.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-601"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="react">
+            <nu-tab-panel name="react">
               <p>To import this component as a <a href="/frameworks/react">React component</a>:</p>
-              <pre><code class="language-js" id="code-block-614"><span class="token keyword">import</span> SlInclude <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/include'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-614"></sl-copy-button></pre>
-            </sl-tab-panel>
-          </sl-tab-group>
+              <pre><code class="language-js" id="code-block-602"><span class="token keyword">import</span> NuInclude <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/include'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-602"></sl-copy-button></pre>
+            </nu-tab-panel>
+          </nu-tab-group>
 
           <h2 id="properties" class="anchor-heading">
             Properties<a href="#properties" aria-label='Direct link to "Properties"'></a>
@@ -683,11 +715,11 @@
                     <code class="nowrap">allowScripts</code>
 
                     <br />
-                    <sl-tooltip content="This attribute is different from its property">
+                    <nu-tooltip content="This attribute is different from its property">
                       <small>
                         <code class="nowrap"> allow-scripts </code>
                       </small>
-                    </sl-tooltip>
+                    </nu-tooltip>
                   </td>
                   <td>
                     Allows included scripts to be executed. Be sure you trust the content you are including as it will
@@ -737,19 +769,17 @@
               </thead>
               <tbody>
                 <tr>
-                  <td data-flavor="html"><code class="nowrap">sl-load</code></td>
-                  <td data-flavor="react"><code class="nowrap">onSlLoad</code></td>
+                  <td data-flavor="html"><code class="nowrap">nu-load</code></td>
+                  <td data-flavor="react"><code class="nowrap">onNuLoad</code></td>
                   <td>Emitted when the included file is loaded.</td>
                   <td>-</td>
                 </tr>
 
                 <tr>
-                  <td data-flavor="html"><code class="nowrap">sl-error</code></td>
-                  <td data-flavor="react"><code class="nowrap">onSlError</code></td>
+                  <td data-flavor="html"><code class="nowrap">nu-error</code></td>
+                  <td data-flavor="react"><code class="nowrap">onNuError</code></td>
                   <td>Emitted when the included file fails to load due to an error.</td>
-                  <td>
-                    <code>{ status: number }</code>
-                  </td>
+                  <td>-</td>
                 </tr>
               </tbody>
             </table>

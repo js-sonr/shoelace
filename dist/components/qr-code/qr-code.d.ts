@@ -1,8 +1,8 @@
-import SlQrCode from './qr-code.component.js';
+import NuQrCode from './qr-code.component.js';
 export * from './qr-code.component.js';
-export default SlQrCode;
+export default NuQrCode;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-qr-code': SlQrCode;
+        'nu-qr-code': NuQrCode;
     }
 }

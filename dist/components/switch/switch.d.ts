@@ -1,8 +1,8 @@
-import SlSwitch from './switch.component.js';
+import NuSwitch from './switch.component.js';
 export * from './switch.component.js';
-export default SlSwitch;
+export default NuSwitch;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-switch': SlSwitch;
+        'nu-switch': NuSwitch;
     }
 }

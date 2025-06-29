@@ -1,8 +1,8 @@
-import SlAnimation from './animation.component.js';
+import NuAnimation from './animation.component.js';
 export * from './animation.component.js';
-export default SlAnimation;
+export default NuAnimation;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-animation': SlAnimation;
+        'nu-animation': NuAnimation;
     }
 }

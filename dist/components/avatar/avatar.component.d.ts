@@ -1,15 +1,15 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIcon from '../icon/icon.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIcon from '../icon/icon.component.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Avatars are used to represent a person or object.
- * @documentation https://shoelace.style/components/avatar
+ * @documentation https://nebulaui.org/components/avatar
  * @status stable
  * @since 2.0
  *
  * @dependency sl-icon
  *
- * @slot icon - The default icon to use when no image or initials are present. Works best with `<sl-icon>`.
+ * @slot icon - The default icon to use when no image or initials are present. Works best with `<nu-icon>`.
  *
  * @csspart base - The component's base wrapper.
  * @csspart icon - The container that wraps the avatar's icon.
@@ -18,10 +18,10 @@ import type { CSSResultGroup } from 'lit';
  *
  * @cssproperty --size - The size of the avatar.
  */
-export default class SlAvatar extends ShoelaceElement {
+export default class NuAvatar extends NebulaElement {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-icon': typeof SlIcon;
+        'nu-icon': typeof NuIcon;
     };
     private hasError;
     /** The image source to use for the avatar. */

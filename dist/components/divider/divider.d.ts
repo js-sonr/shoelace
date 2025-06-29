@@ -1,8 +1,8 @@
-import SlDivider from './divider.component.js';
+import NuDivider from './divider.component.js';
 export * from './divider.component.js';
-export default SlDivider;
+export default NuDivider;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-divider': SlDivider;
+        'nu-divider': NuDivider;
     }
 }

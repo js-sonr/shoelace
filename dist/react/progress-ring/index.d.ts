@@ -1,7 +1,7 @@
 import Component from '../../components/progress-ring/progress-ring.component.js';
 /**
  * @summary Progress rings are used to show the progress of a determinate operation in a circular fashion.
- * @documentation https://shoelace.style/components/progress-ring
+ * @documentation https://nebulaui.org/components/progress-ring
  * @status stable
  * @since 2.0
  *

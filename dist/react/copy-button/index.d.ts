@@ -1,24 +1,24 @@
 import Component from '../../components/copy-button/copy-button.component.js';
 import { type EventName } from '@lit/react';
-import type { SlCopyEvent } from '../../events/events.js';
-import type { SlErrorEvent } from '../../events/events.js';
-export type { SlCopyEvent } from '../../events/events.js';
-export type { SlErrorEvent } from '../../events/events.js';
+import type { NuCopyEvent } from '../../events/events.js';
+import type { NuErrorEvent } from '../../events/events.js';
+export type { NuCopyEvent } from '../../events/events.js';
+export type { NuErrorEvent } from '../../events/events.js';
 /**
  * @summary Copies text data to the clipboard when the user clicks the trigger.
- * @documentation https://shoelace.style/components/copy
+ * @documentation https://nebulaui.org/components/copy
  * @status experimental
  * @since 2.7
  *
  * @dependency sl-icon
  * @dependency sl-tooltip
  *
- * @event sl-copy - Emitted when the data has been copied.
- * @event sl-error - Emitted when the data could not be copied.
+ * @event nu-copy - Emitted when the data has been copied.
+ * @event nu-error - Emitted when the data could not be copied.
  *
- * @slot copy-icon - The icon to show in the default copy state. Works best with `<sl-icon>`.
- * @slot success-icon - The icon to show when the content is copied. Works best with `<sl-icon>`.
- * @slot error-icon - The icon to show when a copy error occurs. Works best with `<sl-icon>`.
+ * @slot copy-icon - The icon to show in the default copy state. Works best with `<nu-icon>`.
+ * @slot success-icon - The icon to show when the content is copied. Works best with `<nu-icon>`.
+ * @slot error-icon - The icon to show when a copy error occurs. Works best with `<nu-icon>`.
  *
  * @csspart button - The internal `<button>` element.
  * @csspart copy-icon - The container that holds the copy icon.
@@ -36,7 +36,7 @@ export type { SlErrorEvent } from '../../events/events.js';
  * @animation copy.out - The animation to use when feedback icons animate out.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {
-    onSlCopy: EventName<SlCopyEvent>;
-    onSlError: EventName<SlErrorEvent>;
+    onNuCopy: EventName<NuCopyEvent>;
+    onNuError: EventName<NuErrorEvent>;
 }>;
 export default reactWrapper;

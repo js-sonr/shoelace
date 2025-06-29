@@ -1,10 +1,10 @@
 import Modal from '../../internal/modal.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIconButton from '../icon-button/icon-button.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIconButton from '../icon-button/icon-button.component.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Dialogs, sometimes called "modals", appear above the page and require the user's immediate attention.
- * @documentation https://shoelace.style/components/dialog
+ * @documentation https://nebulaui.org/components/dialog
  * @status stable
  * @since 2.0
  *
@@ -12,16 +12,16 @@ import type { CSSResultGroup } from 'lit';
  *
  * @slot - The dialog's main content.
  * @slot label - The dialog's label. Alternatively, you can use the `label` attribute.
- * @slot header-actions - Optional actions to add to the header. Works best with `<sl-icon-button>`.
+ * @slot header-actions - Optional actions to add to the header. Works best with `<nu-icon-button>`.
  * @slot footer - The dialog's footer, usually one or more buttons representing various options.
  *
- * @event sl-show - Emitted when the dialog opens.
- * @event sl-after-show - Emitted after the dialog opens and all animations are complete.
- * @event sl-hide - Emitted when the dialog closes.
- * @event sl-after-hide - Emitted after the dialog closes and all animations are complete.
- * @event sl-initial-focus - Emitted when the dialog opens and is ready to receive focus. Calling
+ * @event nu-show - Emitted when the dialog opens.
+ * @event nu-after-show - Emitted after the dialog opens and all animations are complete.
+ * @event nu-hide - Emitted when the dialog closes.
+ * @event nu-after-hide - Emitted after the dialog closes and all animations are complete.
+ * @event nu-initial-focus - Emitted when the dialog opens and is ready to receive focus. Calling
  *   `event.preventDefault()` will prevent focusing and allow you to set it on a different element, such as an input.
- * @event {{ source: 'close-button' | 'keyboard' | 'overlay' }} sl-request-close - Emitted when the user attempts to
+ * @event nu-request-close - Emitted when the user attempts to
  *   close the dialog by clicking the close button, clicking the overlay, or pressing escape. Calling
  *   `event.preventDefault()` will keep the dialog open. Avoid using this unless closing the dialog will result in
  *   destructive behavior such as data loss.
@@ -30,9 +30,9 @@ import type { CSSResultGroup } from 'lit';
  * @csspart overlay - The overlay that covers the screen behind the dialog.
  * @csspart panel - The dialog's panel (where the dialog and its content are rendered).
  * @csspart header - The dialog's header. This element wraps the title and header actions.
- * @csspart header-actions - Optional actions to add to the header. Works best with `<sl-icon-button>`.
+ * @csspart header-actions - Optional actions to add to the header. Works best with `<nu-icon-button>`.
  * @csspart title - The dialog's title.
- * @csspart close-button - The close button, an `<sl-icon-button>`.
+ * @csspart close-button - The close button, an `<nu-icon-button>`.
  * @csspart close-button__base - The close button's exported `base` part.
  * @csspart body - The dialog's body.
  * @csspart footer - The dialog's footer.
@@ -52,10 +52,10 @@ import type { CSSResultGroup } from 'lit';
  *   trapping and allow third-party modals spawned from an active Shoelace modal, call `modal.activateExternal()` when
  *   the third-party modal opens. Upon closing, call `modal.deactivateExternal()` to restore Shoelace's focus trapping.
  */
-export default class SlDialog extends ShoelaceElement {
+export default class NuDialog extends NebulaElement {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-icon-button': typeof SlIconButton;
+        'nu-icon-button': typeof NuIconButton;
     };
     private readonly hasSlotController;
     private readonly localize;

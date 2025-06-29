@@ -1,8 +1,8 @@
-import SlImageComparer from './image-comparer.component.js';
+import NuImageComparer from './image-comparer.component.js';
 export * from './image-comparer.component.js';
-export default SlImageComparer;
+export default NuImageComparer;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-image-comparer': SlImageComparer;
+        'nu-image-comparer': NuImageComparer;
     }
 }

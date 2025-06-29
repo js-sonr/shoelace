@@ -1,10 +1,10 @@
 import Modal from '../../internal/modal.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIconButton from '../icon-button/icon-button.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIconButton from '../icon-button/icon-button.component.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Drawers slide in from a container to expose additional options and information.
- * @documentation https://shoelace.style/components/drawer
+ * @documentation https://nebulaui.org/components/drawer
  * @status stable
  * @since 2.0
  *
@@ -12,16 +12,16 @@ import type { CSSResultGroup } from 'lit';
  *
  * @slot - The drawer's main content.
  * @slot label - The drawer's label. Alternatively, you can use the `label` attribute.
- * @slot header-actions - Optional actions to add to the header. Works best with `<sl-icon-button>`.
+ * @slot header-actions - Optional actions to add to the header. Works best with `<nu-icon-button>`.
  * @slot footer - The drawer's footer, usually one or more buttons representing various options.
  *
- * @event sl-show - Emitted when the drawer opens.
- * @event sl-after-show - Emitted after the drawer opens and all animations are complete.
- * @event sl-hide - Emitted when the drawer closes.
- * @event sl-after-hide - Emitted after the drawer closes and all animations are complete.
- * @event sl-initial-focus - Emitted when the drawer opens and is ready to receive focus. Calling
+ * @event nu-show - Emitted when the drawer opens.
+ * @event nu-after-show - Emitted after the drawer opens and all animations are complete.
+ * @event nu-hide - Emitted when the drawer closes.
+ * @event nu-after-hide - Emitted after the drawer closes and all animations are complete.
+ * @event nu-initial-focus - Emitted when the drawer opens and is ready to receive focus. Calling
  *   `event.preventDefault()` will prevent focusing and allow you to set it on a different element, such as an input.
- * @event {{ source: 'close-button' | 'keyboard' | 'overlay' }} sl-request-close - Emitted when the user attempts to
+ * @event nu-request-close - Emitted when the user attempts to
  *   close the drawer by clicking the close button, clicking the overlay, or pressing escape. Calling
  *   `event.preventDefault()` will keep the drawer open. Avoid using this unless closing the drawer will result in
  *   destructive behavior such as data loss.
@@ -30,9 +30,9 @@ import type { CSSResultGroup } from 'lit';
  * @csspart overlay - The overlay that covers the screen behind the drawer.
  * @csspart panel - The drawer's panel (where the drawer and its content are rendered).
  * @csspart header - The drawer's header. This element wraps the title and header actions.
- * @csspart header-actions - Optional actions to add to the header. Works best with `<sl-icon-button>`.
+ * @csspart header-actions - Optional actions to add to the header. Works best with `<nu-icon-button>`.
  * @csspart title - The drawer's title.
- * @csspart close-button - The close button, an `<sl-icon-button>`.
+ * @csspart close-button - The close button, an `<nu-icon-button>`.
  * @csspart close-button__base - The close button's exported `base` part.
  * @csspart body - The drawer's body.
  * @csspart footer - The drawer's footer.
@@ -59,10 +59,10 @@ import type { CSSResultGroup } from 'lit';
  *   trapping and allow third-party modals spawned from an active Shoelace modal, call `modal.activateExternal()` when
  *   the third-party modal opens. Upon closing, call `modal.deactivateExternal()` to restore Shoelace's focus trapping.
  */
-export default class SlDrawer extends ShoelaceElement {
+export default class NuDrawer extends NebulaElement {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-icon-button': typeof SlIconButton;
+        'nu-icon-button': typeof NuIconButton;
     };
     private readonly hasSlotController;
     private readonly localize;

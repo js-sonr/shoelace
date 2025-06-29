@@ -1,9 +1,9 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIcon from '../icon/icon.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIcon from '../icon/icon.component.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Radios allow the user to select a single option from a group.
- * @documentation https://shoelace.style/components/radio
+ * @documentation https://nebulaui.org/components/radio
  * @status stable
  * @since 2.0
  *
@@ -11,19 +11,19 @@ import type { CSSResultGroup } from 'lit';
  *
  * @slot - The radio's label.
  *
- * @event sl-blur - Emitted when the control loses focus.
- * @event sl-focus - Emitted when the control gains focus.
+ * @event nu-blur - Emitted when the control loses focus.
+ * @event nu-focus - Emitted when the control gains focus.
  *
  * @csspart base - The component's base wrapper.
  * @csspart control - The circular container that wraps the radio's checked state.
  * @csspart control--checked - The radio control when the radio is checked.
- * @csspart checked-icon - The checked icon, an `<sl-icon>` element.
+ * @csspart checked-icon - The checked icon, an `<nu-icon>` element.
  * @csspart label - The container that wraps the radio's label.
  */
-export default class SlRadio extends ShoelaceElement {
+export default class NuRadio extends NebulaElement {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-icon': typeof SlIcon;
+        'nu-icon': typeof NuIcon;
     };
     checked: boolean;
     protected hasFocus: boolean;

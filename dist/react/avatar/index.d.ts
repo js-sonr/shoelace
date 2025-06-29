@@ -1,13 +1,13 @@
 import Component from '../../components/avatar/avatar.component.js';
 /**
  * @summary Avatars are used to represent a person or object.
- * @documentation https://shoelace.style/components/avatar
+ * @documentation https://nebulaui.org/components/avatar
  * @status stable
  * @since 2.0
  *
  * @dependency sl-icon
  *
- * @slot icon - The default icon to use when no image or initials are present. Works best with `<sl-icon>`.
+ * @slot icon - The default icon to use when no image or initials are present. Works best with `<nu-icon>`.
  *
  * @csspart base - The component's base wrapper.
  * @csspart icon - The container that wraps the avatar's icon.

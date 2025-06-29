@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="component" data-shoelace-version="0.0.10">
+<html lang="en" data-layout="component" data-nebula-version="0.0.1">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,14 +25,14 @@
 
     <link rel="stylesheet" href="/dist/themes/light.css" />
     <link rel="stylesheet" href="/dist/themes/dark.css" />
-    <script type="module" src="/dist/shoelace-autoloader.js"></script>
+    <script type="module" src="/dist/nebula-autoloader.js"></script>
 
     <script>
       (() => {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = localStorage.getItem('theme') || 'auto';
         document.documentElement.classList.toggle(
-          'sl-theme-dark',
+          'nu-theme-dark',
           theme === 'dark' || (theme === 'auto' && prefersDark)
         );
       })();
@@ -65,7 +65,7 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="github"></sl-icon>
+        <nu-icon name="github"></nu-icon>
       </a>
 
       <a
@@ -75,21 +75,21 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="twitter"></sl-icon>
+        <nu-icon name="twitter"></nu-icon>
       </a>
 
-      <sl-dropdown id="theme-selector" placement="bottom-end" distance="3">
-        <sl-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
-          <sl-icon class="only-light" name="sun-fill"></sl-icon>
-          <sl-icon class="only-dark" name="moon-fill"></sl-icon>
-        </sl-button>
-        <sl-menu>
-          <sl-menu-item type="checkbox" value="light">Light</sl-menu-item>
-          <sl-menu-item type="checkbox" value="dark">Dark</sl-menu-item>
-          <sl-divider></sl-divider>
-          <sl-menu-item type="checkbox" value="auto">System</sl-menu-item>
-        </sl-menu>
-      </sl-dropdown>
+      <nu-dropdown id="theme-selector" placement="bottom-end" distance="3">
+        <nu-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
+          <nu-icon class="only-light" name="sun-fill"></nu-icon>
+          <nu-icon class="only-dark" name="moon-fill"></nu-icon>
+        </nu-button>
+        <nu-menu>
+          <nu-menu-item type="checkbox" value="light">Light</nu-menu-item>
+          <nu-menu-item type="checkbox" value="dark">Dark</nu-menu-item>
+          <nu-divider></nu-divider>
+          <nu-menu-item type="checkbox" value="auto">System</nu-menu-item>
+        </nu-menu>
+      </nu-dropdown>
     </div>
 
     <aside id="sidebar" data-preserve-scroll="">
@@ -97,38 +97,38 @@
         <a href="/">
           <img src="/assets/images/wordmark.svg" alt="Nebula" />
         </a>
-        <div class="sidebar-version">0.0.10</div>
+        <div class="sidebar-version">0.0.1</div>
       </header>
 
       <div class="sidebar-buttons">
-        <sl-button
+        <nu-button
           size="small"
           class="repo-button repo-button--github"
           href="https://github.com/onsonr/nebula"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="github"></sl-icon> Code
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="github"></nu-icon> Code
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--star"
           href="https://github.com/onsonr/nebula/stargazers"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="star-fill"></sl-icon> Star
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="star-fill"></nu-icon> Star
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--twitter"
           href="https://twitter.com/shoelace_style"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="twitter"></sl-icon> Follow
-        </sl-button>
+          <nu-icon slot="prefix" name="twitter"></nu-icon> Follow
+        </nu-button>
       </div>
 
       <button class="search-box" type="button" title="Press / to search" aria-label="Search" data-plugin="search">
-        <sl-icon name="search"></sl-icon>
+        <nu-icon name="search"></nu-icon>
         <span>Search</span>
       </button>
 
@@ -188,6 +188,10 @@
               </li>
 
               <li>
+                <a href="/components/area-chart"> Area Chart </a>
+              </li>
+
+              <li>
                 <a href="/components/avatar"> Avatar </a>
               </li>
 
@@ -209,6 +213,10 @@
 
               <li>
                 <a href="/components/button-group"> Button Group </a>
+              </li>
+
+              <li>
+                <a href="/components/candle-chart"> Candle Chart </a>
               </li>
 
               <li>
@@ -288,6 +296,22 @@
               </li>
 
               <li>
+                <a href="/components/line-chart"> Line Chart </a>
+              </li>
+
+              <li>
+                <a href="/components/list-item"> List Item </a>
+              </li>
+
+              <li>
+                <a href="/components/list-view"> List View </a>
+              </li>
+
+              <li>
+                <a href="/components/login-button"> Login Button </a>
+              </li>
+
+              <li>
                 <a href="/components/menu"> Menu </a>
               </li>
 
@@ -305,6 +329,10 @@
 
               <li>
                 <a href="/components/option"> Option </a>
+              </li>
+
+              <li>
+                <a href="/components/pie-chart"> Pie Chart </a>
               </li>
 
               <li>
@@ -341,6 +369,10 @@
 
               <li>
                 <a href="/components/rating"> Rating </a>
+              </li>
+
+              <li>
+                <a href="/components/register-button"> Register Button </a>
               </li>
 
               <li>
@@ -456,12 +488,12 @@
             <h1>QR Code</h1>
 
             <div class="component-header__tag">
-              <code>&lt;sl-qr-code&gt; | SlQrCode</code>
+              <code>&lt;nu-qr-code&gt; | NuQrCode</code>
             </div>
 
             <div class="component-header__info">
-              <sl-badge variant="neutral" pill=""> Since 2.0 </sl-badge>
-              <sl-badge variant="primary" pill="" style="text-transform: capitalize"> stable </sl-badge>
+              <nu-badge variant="neutral" pill=""> Since 2.0 </nu-badge>
+              <nu-badge variant="primary" pill="" style="text-transform: capitalize"> stable </nu-badge>
             </div>
           </header>
 
@@ -489,13 +521,13 @@
           <div class="code-preview">
             <div class="code-preview__preview">
               <div class="qr-overview">
-                <sl-qr-code
-                  value="https://shoelace.style/"
+                <nu-qr-code
+                  value="https://nebulaui.org/"
                   label="Scan this code to visit Nebula on the web!"
-                ></sl-qr-code>
+                ></nu-qr-code>
                 <br />
 
-                <sl-input maxlength="255" clearable="" label="Value"></sl-input>
+                <nu-input maxlength="255" clearable="" label="Value"></nu-input>
               </div>
 
               <script>
@@ -526,13 +558,13 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-207">
+            <div class="code-preview__source-group" id="code-preview-source-group-283">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-675"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>qr-overview<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-qr-code</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/<span class="token punctuation">"</span></span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Scan this code to visit Nebula on the web!<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-qr-code</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-868"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>qr-overview<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-qr-code</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/<span class="token punctuation">"</span></span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Scan this code to visit Nebula on the web!<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-qr-code</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-input</span> <span class="token attr-name">maxlength</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>255<span class="token punctuation">"</span></span> <span class="token attr-name">clearable</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Value<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-input</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-input</span> <span class="token attr-name">maxlength</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>255<span class="token punctuation">"</span></span> <span class="token attr-name">clearable</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Value<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-input</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
@@ -555,11 +587,11 @@
     <span class="token property">margin-top</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-675"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-868"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-676"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-869"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlQrCode <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/qr-code'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlInput <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/input'</span><span class="token punctuation">;</span>
 
@@ -574,7 +606,7 @@
 </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-  <span class="token keyword">const</span> <span class="token punctuation">[</span>value<span class="token punctuation">,</span> setValue<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token string">'https://shoelace.style/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>value<span class="token punctuation">,</span> setValue<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token string">'https://nebulaui.org/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
   <span class="token keyword">return</span> <span class="token punctuation">(</span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
@@ -589,7 +621,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-676"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-869"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -598,7 +630,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-207"
+                aria-controls="code-preview-source-group-283"
               >
                 Source
                 <svg
@@ -651,24 +683,24 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-qr-code value="https://shoelace.style/" fill="deeppink" background="white"></sl-qr-code>
+              <nu-qr-code value="https://nebulaui.org/" fill="deeppink" background="white"></nu-qr-code>
 
               <div class="code-preview__resizer">
                 <sl-icon name="grip-vertical"></sl-icon>
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-208">
+            <div class="code-preview__source-group" id="code-preview-source-group-284">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-677"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-qr-code</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>deeppink<span class="token punctuation">"</span></span> <span class="token attr-name">background</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>white<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-qr-code</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-677"></sl-copy-button></pre>
+                <pre><code class="language-html" id="code-block-870"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-qr-code</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>deeppink<span class="token punctuation">"</span></span> <span class="token attr-name">background</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>white<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-qr-code</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-870"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-678"><span class="token keyword">import</span> SlQrCode <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/qr-code'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-871"><span class="token keyword">import</span> SlQrCode <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/qr-code'</span><span class="token punctuation">;</span>
 
-<span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlQrCode</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>deeppink<span class="token punctuation">"</span></span> <span class="token attr-name">background</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>white<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-678"></sl-copy-button></pre>
+<span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlQrCode</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>deeppink<span class="token punctuation">"</span></span> <span class="token attr-name">background</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>white<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token punctuation">;</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-871"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -677,7 +709,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-208"
+                aria-controls="code-preview-source-group-284"
               >
                 Source
                 <svg
@@ -724,24 +756,24 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-qr-code value="https://shoelace.style/" size="64"></sl-qr-code>
+              <nu-qr-code value="https://nebulaui.org/" size="64"></nu-qr-code>
 
               <div class="code-preview__resizer">
                 <sl-icon name="grip-vertical"></sl-icon>
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-209">
+            <div class="code-preview__source-group" id="code-preview-source-group-285">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-679"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-qr-code</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>64<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-qr-code</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-679"></sl-copy-button></pre>
+                <pre><code class="language-html" id="code-block-872"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-qr-code</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>64<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-qr-code</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-872"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-680"><span class="token keyword">import</span> SlQrCode <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/qr-code'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-873"><span class="token keyword">import</span> SlQrCode <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/qr-code'</span><span class="token punctuation">;</span>
 
-<span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlQrCode</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>64<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-680"></sl-copy-button></pre>
+<span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlQrCode</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>64<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token punctuation">;</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-873"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -750,7 +782,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-209"
+                aria-controls="code-preview-source-group-285"
               >
                 Source
                 <svg
@@ -797,24 +829,24 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-qr-code value="https://shoelace.style/" radius="0.5"></sl-qr-code>
+              <nu-qr-code value="https://nebulaui.org/" radius="0.5"></nu-qr-code>
 
               <div class="code-preview__resizer">
                 <sl-icon name="grip-vertical"></sl-icon>
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-210">
+            <div class="code-preview__source-group" id="code-preview-source-group-286">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-681"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-qr-code</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/<span class="token punctuation">"</span></span> <span class="token attr-name">radius</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0.5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-qr-code</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-681"></sl-copy-button></pre>
+                <pre><code class="language-html" id="code-block-874"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-qr-code</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/<span class="token punctuation">"</span></span> <span class="token attr-name">radius</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0.5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-qr-code</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-874"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-682"><span class="token keyword">import</span> SlQrCode <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/qr-code'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-875"><span class="token keyword">import</span> SlQrCode <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/qr-code'</span><span class="token punctuation">;</span>
 
-<span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlQrCode</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/<span class="token punctuation">"</span></span> <span class="token attr-name">radius</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0.5<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-682"></sl-copy-button></pre>
+<span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlQrCode</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/<span class="token punctuation">"</span></span> <span class="token attr-name">radius</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0.5<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token punctuation">;</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-875"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -823,7 +855,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-210"
+                aria-controls="code-preview-source-group-286"
               >
                 Source
                 <svg
@@ -884,10 +916,10 @@
           <div class="code-preview">
             <div class="code-preview__preview">
               <div class="qr-error-correction">
-                <sl-qr-code value="https://shoelace.style/" error-correction="L"></sl-qr-code>
-                <sl-qr-code value="https://shoelace.style/" error-correction="M"></sl-qr-code>
-                <sl-qr-code value="https://shoelace.style/" error-correction="Q"></sl-qr-code>
-                <sl-qr-code value="https://shoelace.style/" error-correction="H"></sl-qr-code>
+                <nu-qr-code value="https://nebulaui.org/" error-correction="L"></nu-qr-code>
+                <nu-qr-code value="https://nebulaui.org/" error-correction="M"></nu-qr-code>
+                <nu-qr-code value="https://nebulaui.org/" error-correction="Q"></nu-qr-code>
+                <nu-qr-code value="https://nebulaui.org/" error-correction="H"></nu-qr-code>
               </div>
 
               <style>
@@ -903,13 +935,13 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-211">
+            <div class="code-preview__source-group" id="code-preview-source-group-287">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-683"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>qr-error-correction<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-qr-code</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/<span class="token punctuation">"</span></span> <span class="token attr-name">error-correction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>L<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-qr-code</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-qr-code</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/<span class="token punctuation">"</span></span> <span class="token attr-name">error-correction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>M<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-qr-code</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-qr-code</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/<span class="token punctuation">"</span></span> <span class="token attr-name">error-correction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Q<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-qr-code</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-qr-code</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/<span class="token punctuation">"</span></span> <span class="token attr-name">error-correction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>H<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-qr-code</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-876"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>qr-error-correction<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-qr-code</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/<span class="token punctuation">"</span></span> <span class="token attr-name">error-correction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>L<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-qr-code</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-qr-code</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/<span class="token punctuation">"</span></span> <span class="token attr-name">error-correction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>M<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-qr-code</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-qr-code</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/<span class="token punctuation">"</span></span> <span class="token attr-name">error-correction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Q<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-qr-code</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-qr-code</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/<span class="token punctuation">"</span></span> <span class="token attr-name">error-correction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>H<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-qr-code</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
@@ -919,11 +951,11 @@
     <span class="token property">gap</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-683"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-876"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-684"><span class="token keyword">import</span> SlQrCode <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/qr-code'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-877"><span class="token keyword">import</span> SlQrCode <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/qr-code'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> css <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
   .qr-error-correction {
@@ -937,17 +969,17 @@
   <span class="token keyword">return</span> <span class="token punctuation">(</span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
       </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>qr-error-correction<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlQrCode</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/<span class="token punctuation">"</span></span> <span class="token attr-name">error-correction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>L<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlQrCode</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/<span class="token punctuation">"</span></span> <span class="token attr-name">error-correction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>M<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlQrCode</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/<span class="token punctuation">"</span></span> <span class="token attr-name">error-correction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Q<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlQrCode</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/<span class="token punctuation">"</span></span> <span class="token attr-name">error-correction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>H<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlQrCode</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/<span class="token punctuation">"</span></span> <span class="token attr-name">error-correction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>L<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlQrCode</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/<span class="token punctuation">"</span></span> <span class="token attr-name">error-correction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>M<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlQrCode</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/<span class="token punctuation">"</span></span> <span class="token attr-name">error-correction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Q<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlQrCode</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/<span class="token punctuation">"</span></span> <span class="token attr-name">error-correction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>H<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
       </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
 
       </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">{css}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-684"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-877"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -956,7 +988,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-211"
+                aria-controls="code-preview-source-group-287"
               >
                 Source
                 <svg
@@ -1007,13 +1039,13 @@
             <a href="/getting-started/installation#cherry-picking">cherry pick</a> this component.
           </p>
 
-          <sl-tab-group>
-            <sl-tab slot="nav" panel="script">Script</sl-tab>
-            <sl-tab slot="nav" panel="import">Import</sl-tab>
-            <sl-tab slot="nav" panel="bundler">Bundler</sl-tab>
-            <sl-tab slot="nav" panel="react">React</sl-tab>
+          <nu-tab-group>
+            <nu-tab slot="nav" panel="script">Script</nu-tab>
+            <nu-tab slot="nav" panel="import">Import</nu-tab>
+            <nu-tab slot="nav" panel="bundler">Bundler</nu-tab>
+            <nu-tab slot="nav" panel="react">React</nu-tab>
 
-            <sl-tab-panel name="script">
+            <nu-tab-panel name="script">
               <p>
                 To import this component from
                 <a
@@ -1025,10 +1057,10 @@
                 >
                 using a script tag:
               </p>
-              <pre><code class="language-html" id="code-block-685"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.10/cdn/components/qr-code/qr-code.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><sl-copy-button class="copy-code-button" from="code-block-685"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-html" id="code-block-878"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/qr-code/qr-code.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><sl-copy-button class="copy-code-button" from="code-block-878"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="import">
+            <nu-tab-panel name="import">
               <p>
                 To import this component from
                 <a
@@ -1040,19 +1072,19 @@
                 >
                 using a JavaScript import:
               </p>
-              <pre><code class="language-js" id="code-block-686"><span class="token keyword">import</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.10/cdn/components/qr-code/qr-code.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-686"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-js" id="code-block-879"><span class="token keyword">import</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/qr-code/qr-code.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-879"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="bundler">
+            <nu-tab-panel name="bundler">
               <p>To import this component using <a href="/getting-started/installation#bundling">a bundler</a>:</p>
-              <pre><code class="language-js" id="code-block-687"><span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/qr-code/qr-code.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-687"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-js" id="code-block-880"><span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/qr-code/qr-code.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-880"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="react">
+            <nu-tab-panel name="react">
               <p>To import this component as a <a href="/frameworks/react">React component</a>:</p>
-              <pre><code class="language-js" id="code-block-688"><span class="token keyword">import</span> SlQrCode <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/qr-code'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-688"></sl-copy-button></pre>
-            </sl-tab-panel>
-          </sl-tab-group>
+              <pre><code class="language-js" id="code-block-881"><span class="token keyword">import</span> NuQrCode <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/qr-code'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-881"></sl-copy-button></pre>
+            </nu-tab-panel>
+          </nu-tab-group>
 
           <h2 id="properties" class="anchor-heading">
             Properties<a href="#properties" aria-label='Direct link to "Properties"'></a>
@@ -1162,11 +1194,11 @@
                     <code class="nowrap">errorCorrection</code>
 
                     <br />
-                    <sl-tooltip content="This attribute is different from its property">
+                    <nu-tooltip content="This attribute is different from its property">
                       <small>
                         <code class="nowrap"> error-correction </code>
                       </small>
-                    </sl-tooltip>
+                    </nu-tooltip>
                   </td>
                   <td>
                     The level of error correction to use.

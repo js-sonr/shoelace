@@ -1,8 +1,8 @@
-import SlFormatDate from './format-date.component.js';
+import NuFormatDate from './format-date.component.js';
 export * from './format-date.component.js';
-export default SlFormatDate;
+export default NuFormatDate;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-format-date': SlFormatDate;
+        'nu-format-date': NuFormatDate;
     }
 }

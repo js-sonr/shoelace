@@ -1,11 +1,11 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 /**
  * @summary Formats a number as a human readable bytes value.
- * @documentation https://shoelace.style/components/format-bytes
+ * @documentation https://nebulaui.org/components/format-bytes
  * @status stable
  * @since 2.0
  */
-export default class SlFormatBytes extends ShoelaceElement {
+export default class NuFormatBytes extends NebulaElement {
     private readonly localize;
     /** The number to format in bytes. */
     value: number;

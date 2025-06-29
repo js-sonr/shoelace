@@ -1,11 +1,11 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIcon from '../icon/icon.component.js';
-import SlPopup from '../popup/popup.component.js';
-import SlSpinner from '../spinner/spinner.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIcon from '../icon/icon.component.js';
+import NuPopup from '../popup/popup.component.js';
+import NuSpinner from '../spinner/spinner.component.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Menu items provide options for the user to pick from in a menu.
- * @documentation https://shoelace.style/components/menu-item
+ * @documentation https://nebulaui.org/components/menu-item
  * @status stable
  * @since 2.0
  *
@@ -29,12 +29,12 @@ import type { CSSResultGroup } from 'lit';
  *
  * @cssproperty [--submenu-offset=-2px] - The distance submenus shift to overlap the parent menu.
  */
-export default class SlMenuItem extends ShoelaceElement {
+export default class NuMenuItem extends NebulaElement {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-icon': typeof SlIcon;
-        'sl-popup': typeof SlPopup;
-        'sl-spinner': typeof SlSpinner;
+        'nu-icon': typeof NuIcon;
+        'nu-popup': typeof NuPopup;
+        'nu-spinner': typeof NuSpinner;
     };
     private cachedTextLabel;
     defaultSlot: HTMLSlotElement;

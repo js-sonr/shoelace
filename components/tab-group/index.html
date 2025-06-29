@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="component" data-shoelace-version="0.0.10">
+<html lang="en" data-layout="component" data-nebula-version="0.0.1">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,14 +28,14 @@
 
     <link rel="stylesheet" href="/dist/themes/light.css" />
     <link rel="stylesheet" href="/dist/themes/dark.css" />
-    <script type="module" src="/dist/shoelace-autoloader.js"></script>
+    <script type="module" src="/dist/nebula-autoloader.js"></script>
 
     <script>
       (() => {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = localStorage.getItem('theme') || 'auto';
         document.documentElement.classList.toggle(
-          'sl-theme-dark',
+          'nu-theme-dark',
           theme === 'dark' || (theme === 'auto' && prefersDark)
         );
       })();
@@ -68,7 +68,7 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="github"></sl-icon>
+        <nu-icon name="github"></nu-icon>
       </a>
 
       <a
@@ -78,21 +78,21 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="twitter"></sl-icon>
+        <nu-icon name="twitter"></nu-icon>
       </a>
 
-      <sl-dropdown id="theme-selector" placement="bottom-end" distance="3">
-        <sl-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
-          <sl-icon class="only-light" name="sun-fill"></sl-icon>
-          <sl-icon class="only-dark" name="moon-fill"></sl-icon>
-        </sl-button>
-        <sl-menu>
-          <sl-menu-item type="checkbox" value="light">Light</sl-menu-item>
-          <sl-menu-item type="checkbox" value="dark">Dark</sl-menu-item>
-          <sl-divider></sl-divider>
-          <sl-menu-item type="checkbox" value="auto">System</sl-menu-item>
-        </sl-menu>
-      </sl-dropdown>
+      <nu-dropdown id="theme-selector" placement="bottom-end" distance="3">
+        <nu-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
+          <nu-icon class="only-light" name="sun-fill"></nu-icon>
+          <nu-icon class="only-dark" name="moon-fill"></nu-icon>
+        </nu-button>
+        <nu-menu>
+          <nu-menu-item type="checkbox" value="light">Light</nu-menu-item>
+          <nu-menu-item type="checkbox" value="dark">Dark</nu-menu-item>
+          <nu-divider></nu-divider>
+          <nu-menu-item type="checkbox" value="auto">System</nu-menu-item>
+        </nu-menu>
+      </nu-dropdown>
     </div>
 
     <aside id="sidebar" data-preserve-scroll="">
@@ -100,38 +100,38 @@
         <a href="/">
           <img src="/assets/images/wordmark.svg" alt="Nebula" />
         </a>
-        <div class="sidebar-version">0.0.10</div>
+        <div class="sidebar-version">0.0.1</div>
       </header>
 
       <div class="sidebar-buttons">
-        <sl-button
+        <nu-button
           size="small"
           class="repo-button repo-button--github"
           href="https://github.com/onsonr/nebula"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="github"></sl-icon> Code
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="github"></nu-icon> Code
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--star"
           href="https://github.com/onsonr/nebula/stargazers"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="star-fill"></sl-icon> Star
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="star-fill"></nu-icon> Star
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--twitter"
           href="https://twitter.com/shoelace_style"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="twitter"></sl-icon> Follow
-        </sl-button>
+          <nu-icon slot="prefix" name="twitter"></nu-icon> Follow
+        </nu-button>
       </div>
 
       <button class="search-box" type="button" title="Press / to search" aria-label="Search" data-plugin="search">
-        <sl-icon name="search"></sl-icon>
+        <nu-icon name="search"></nu-icon>
         <span>Search</span>
       </button>
 
@@ -191,6 +191,10 @@
               </li>
 
               <li>
+                <a href="/components/area-chart"> Area Chart </a>
+              </li>
+
+              <li>
                 <a href="/components/avatar"> Avatar </a>
               </li>
 
@@ -212,6 +216,10 @@
 
               <li>
                 <a href="/components/button-group"> Button Group </a>
+              </li>
+
+              <li>
+                <a href="/components/candle-chart"> Candle Chart </a>
               </li>
 
               <li>
@@ -291,6 +299,22 @@
               </li>
 
               <li>
+                <a href="/components/line-chart"> Line Chart </a>
+              </li>
+
+              <li>
+                <a href="/components/list-item"> List Item </a>
+              </li>
+
+              <li>
+                <a href="/components/list-view"> List View </a>
+              </li>
+
+              <li>
+                <a href="/components/login-button"> Login Button </a>
+              </li>
+
+              <li>
                 <a href="/components/menu"> Menu </a>
               </li>
 
@@ -308,6 +332,10 @@
 
               <li>
                 <a href="/components/option"> Option </a>
+              </li>
+
+              <li>
+                <a href="/components/pie-chart"> Pie Chart </a>
               </li>
 
               <li>
@@ -344,6 +372,10 @@
 
               <li>
                 <a href="/components/rating"> Rating </a>
+              </li>
+
+              <li>
+                <a href="/components/register-button"> Register Button </a>
               </li>
 
               <li>
@@ -466,12 +498,12 @@
             <h1>Tab Group</h1>
 
             <div class="component-header__tag">
-              <code>&lt;sl-tab-group&gt; | SlTabGroup</code>
+              <code>&lt;nu-tab-group&gt; | NuTabGroup</code>
             </div>
 
             <div class="component-header__info">
-              <sl-badge variant="neutral" pill=""> Since 2.0 </sl-badge>
-              <sl-badge variant="primary" pill="" style="text-transform: capitalize"> stable </sl-badge>
+              <nu-badge variant="neutral" pill=""> Since 2.0 </nu-badge>
+              <nu-badge variant="primary" pill="" style="text-transform: capitalize"> stable </nu-badge>
             </div>
           </header>
 
@@ -487,41 +519,41 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-tab-group>
-                <sl-tab slot="nav" panel="general">General</sl-tab>
-                <sl-tab slot="nav" panel="custom">Custom</sl-tab>
-                <sl-tab slot="nav" panel="advanced">Advanced</sl-tab>
-                <sl-tab slot="nav" panel="disabled" disabled="">Disabled</sl-tab>
+              <nu-tab-group>
+                <nu-tab slot="nav" panel="general">General</nu-tab>
+                <nu-tab slot="nav" panel="custom">Custom</nu-tab>
+                <nu-tab slot="nav" panel="advanced">Advanced</nu-tab>
+                <nu-tab slot="nav" panel="disabled" disabled="">Disabled</nu-tab>
 
-                <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
-                <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
-                <sl-tab-panel name="advanced">This is the advanced tab panel.</sl-tab-panel>
-                <sl-tab-panel name="disabled">This is a disabled tab panel.</sl-tab-panel>
-              </sl-tab-group>
+                <nu-tab-panel name="general">This is the general tab panel.</nu-tab-panel>
+                <nu-tab-panel name="custom">This is the custom tab panel.</nu-tab-panel>
+                <nu-tab-panel name="advanced">This is the advanced tab panel.</nu-tab-panel>
+                <nu-tab-panel name="disabled">This is a disabled tab panel.</nu-tab-panel>
+              </nu-tab-group>
 
               <div class="code-preview__resizer">
                 <sl-icon name="grip-vertical"></sl-icon>
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-303">
+            <div class="code-preview__source-group" id="code-preview-source-group-361">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-928"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-group</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>General<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Custom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Advanced<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">&gt;</span></span>Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-1076"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-group</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>General<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Custom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Advanced<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">&gt;</span></span>Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the general tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the custom tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the advanced tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a disabled tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-group</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-928"></sl-copy-button></pre>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the general tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the custom tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the advanced tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a disabled tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-group</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-1076"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-929"><span class="token keyword">import</span> SlTab <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-1077"><span class="token keyword">import</span> SlTab <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTabGroup <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab-group'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTabPanel <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab-panel'</span><span class="token punctuation">;</span>
 
@@ -546,7 +578,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlTabPanel</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">This is a disabled tab panel.</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTabPanel</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTabGroup</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-929"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1077"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -555,7 +587,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-303"
+                aria-controls="code-preview-source-group-361"
               >
                 Source
                 <svg
@@ -607,41 +639,41 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-tab-group placement="bottom">
-                <sl-tab slot="nav" panel="general">General</sl-tab>
-                <sl-tab slot="nav" panel="custom">Custom</sl-tab>
-                <sl-tab slot="nav" panel="advanced">Advanced</sl-tab>
-                <sl-tab slot="nav" panel="disabled" disabled="">Disabled</sl-tab>
+              <nu-tab-group placement="bottom">
+                <nu-tab slot="nav" panel="general">General</nu-tab>
+                <nu-tab slot="nav" panel="custom">Custom</nu-tab>
+                <nu-tab slot="nav" panel="advanced">Advanced</nu-tab>
+                <nu-tab slot="nav" panel="disabled" disabled="">Disabled</nu-tab>
 
-                <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
-                <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
-                <sl-tab-panel name="advanced">This is the advanced tab panel.</sl-tab-panel>
-                <sl-tab-panel name="disabled">This is a disabled tab panel.</sl-tab-panel>
-              </sl-tab-group>
+                <nu-tab-panel name="general">This is the general tab panel.</nu-tab-panel>
+                <nu-tab-panel name="custom">This is the custom tab panel.</nu-tab-panel>
+                <nu-tab-panel name="advanced">This is the advanced tab panel.</nu-tab-panel>
+                <nu-tab-panel name="disabled">This is a disabled tab panel.</nu-tab-panel>
+              </nu-tab-group>
 
               <div class="code-preview__resizer">
                 <sl-icon name="grip-vertical"></sl-icon>
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-304">
+            <div class="code-preview__source-group" id="code-preview-source-group-362">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-930"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-group</span> <span class="token attr-name">placement</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bottom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>General<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Custom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Advanced<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">&gt;</span></span>Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-1078"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-group</span> <span class="token attr-name">placement</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bottom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>General<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Custom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Advanced<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">&gt;</span></span>Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the general tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the custom tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the advanced tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a disabled tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-group</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-930"></sl-copy-button></pre>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the general tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the custom tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the advanced tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a disabled tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-group</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-1078"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-931"><span class="token keyword">import</span> SlTab <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-1079"><span class="token keyword">import</span> SlTab <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTabGroup <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab-group'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTabPanel <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab-panel'</span><span class="token punctuation">;</span>
 
@@ -666,7 +698,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlTabPanel</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">This is a disabled tab panel.</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTabPanel</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTabGroup</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-931"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1079"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -675,7 +707,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-304"
+                aria-controls="code-preview-source-group-362"
               >
                 Source
                 <svg
@@ -724,41 +756,41 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-tab-group placement="start">
-                <sl-tab slot="nav" panel="general">General</sl-tab>
-                <sl-tab slot="nav" panel="custom">Custom</sl-tab>
-                <sl-tab slot="nav" panel="advanced">Advanced</sl-tab>
-                <sl-tab slot="nav" panel="disabled" disabled="">Disabled</sl-tab>
+              <nu-tab-group placement="start">
+                <nu-tab slot="nav" panel="general">General</nu-tab>
+                <nu-tab slot="nav" panel="custom">Custom</nu-tab>
+                <nu-tab slot="nav" panel="advanced">Advanced</nu-tab>
+                <nu-tab slot="nav" panel="disabled" disabled="">Disabled</nu-tab>
 
-                <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
-                <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
-                <sl-tab-panel name="advanced">This is the advanced tab panel.</sl-tab-panel>
-                <sl-tab-panel name="disabled">This is a disabled tab panel.</sl-tab-panel>
-              </sl-tab-group>
+                <nu-tab-panel name="general">This is the general tab panel.</nu-tab-panel>
+                <nu-tab-panel name="custom">This is the custom tab panel.</nu-tab-panel>
+                <nu-tab-panel name="advanced">This is the advanced tab panel.</nu-tab-panel>
+                <nu-tab-panel name="disabled">This is a disabled tab panel.</nu-tab-panel>
+              </nu-tab-group>
 
               <div class="code-preview__resizer">
                 <sl-icon name="grip-vertical"></sl-icon>
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-305">
+            <div class="code-preview__source-group" id="code-preview-source-group-363">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-932"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-group</span> <span class="token attr-name">placement</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>start<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>General<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Custom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Advanced<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">&gt;</span></span>Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-1080"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-group</span> <span class="token attr-name">placement</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>start<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>General<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Custom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Advanced<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">&gt;</span></span>Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the general tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the custom tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the advanced tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a disabled tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-group</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-932"></sl-copy-button></pre>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the general tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the custom tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the advanced tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a disabled tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-group</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-1080"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-933"><span class="token keyword">import</span> SlTab <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-1081"><span class="token keyword">import</span> SlTab <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTabGroup <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab-group'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTabPanel <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab-panel'</span><span class="token punctuation">;</span>
 
@@ -783,7 +815,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlTabPanel</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">This is a disabled tab panel.</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTabPanel</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTabGroup</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-933"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1081"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -792,7 +824,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-305"
+                aria-controls="code-preview-source-group-363"
               >
                 Source
                 <svg
@@ -841,41 +873,41 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-tab-group placement="end">
-                <sl-tab slot="nav" panel="general">General</sl-tab>
-                <sl-tab slot="nav" panel="custom">Custom</sl-tab>
-                <sl-tab slot="nav" panel="advanced">Advanced</sl-tab>
-                <sl-tab slot="nav" panel="disabled" disabled="">Disabled</sl-tab>
+              <nu-tab-group placement="end">
+                <nu-tab slot="nav" panel="general">General</nu-tab>
+                <nu-tab slot="nav" panel="custom">Custom</nu-tab>
+                <nu-tab slot="nav" panel="advanced">Advanced</nu-tab>
+                <nu-tab slot="nav" panel="disabled" disabled="">Disabled</nu-tab>
 
-                <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
-                <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
-                <sl-tab-panel name="advanced">This is the advanced tab panel.</sl-tab-panel>
-                <sl-tab-panel name="disabled">This is a disabled tab panel.</sl-tab-panel>
-              </sl-tab-group>
+                <nu-tab-panel name="general">This is the general tab panel.</nu-tab-panel>
+                <nu-tab-panel name="custom">This is the custom tab panel.</nu-tab-panel>
+                <nu-tab-panel name="advanced">This is the advanced tab panel.</nu-tab-panel>
+                <nu-tab-panel name="disabled">This is a disabled tab panel.</nu-tab-panel>
+              </nu-tab-group>
 
               <div class="code-preview__resizer">
                 <sl-icon name="grip-vertical"></sl-icon>
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-306">
+            <div class="code-preview__source-group" id="code-preview-source-group-364">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-934"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-group</span> <span class="token attr-name">placement</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>end<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>General<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Custom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Advanced<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">&gt;</span></span>Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-1082"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-group</span> <span class="token attr-name">placement</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>end<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>General<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Custom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Advanced<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">&gt;</span></span>Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the general tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the custom tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the advanced tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a disabled tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-group</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-934"></sl-copy-button></pre>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the general tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the custom tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the advanced tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a disabled tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-group</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-1082"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-935"><span class="token keyword">import</span> SlTab <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-1083"><span class="token keyword">import</span> SlTab <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTabGroup <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab-group'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTabPanel <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab-panel'</span><span class="token punctuation">;</span>
 
@@ -900,7 +932,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlTabPanel</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">This is a disabled tab panel.</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTabPanel</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTabGroup</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-935"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1083"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -909,7 +941,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-306"
+                aria-controls="code-preview-source-group-364"
               >
                 Source
                 <svg
@@ -961,17 +993,17 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-tab-group class="tabs-closable">
-                <sl-tab slot="nav" panel="general">General</sl-tab>
-                <sl-tab slot="nav" panel="closable-1" closable="">Closable 1</sl-tab>
-                <sl-tab slot="nav" panel="closable-2" closable="">Closable 2</sl-tab>
-                <sl-tab slot="nav" panel="closable-3" closable="">Closable 3</sl-tab>
+              <nu-tab-group class="tabs-closable">
+                <nu-tab slot="nav" panel="general">General</nu-tab>
+                <nu-tab slot="nav" panel="closable-1" closable="">Closable 1</nu-tab>
+                <nu-tab slot="nav" panel="closable-2" closable="">Closable 2</nu-tab>
+                <nu-tab slot="nav" panel="closable-3" closable="">Closable 3</nu-tab>
 
-                <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
-                <sl-tab-panel name="closable-1">This is the first closable tab panel.</sl-tab-panel>
-                <sl-tab-panel name="closable-2">This is the second closable tab panel.</sl-tab-panel>
-                <sl-tab-panel name="closable-3">This is the third closable tab panel.</sl-tab-panel>
-              </sl-tab-group>
+                <nu-tab-panel name="general">This is the general tab panel.</nu-tab-panel>
+                <nu-tab-panel name="closable-1">This is the first closable tab panel.</nu-tab-panel>
+                <nu-tab-panel name="closable-2">This is the second closable tab panel.</nu-tab-panel>
+                <nu-tab-panel name="closable-3">This is the third closable tab panel.</nu-tab-panel>
+              </nu-tab-group>
 
               <script>
                 (() => {
@@ -998,19 +1030,19 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-307">
+            <div class="code-preview__source-group" id="code-preview-source-group-365">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-936"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-group</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tabs-closable<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>General<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>closable-1<span class="token punctuation">"</span></span> <span class="token attr-name">closable</span><span class="token punctuation">&gt;</span></span>Closable 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>closable-2<span class="token punctuation">"</span></span> <span class="token attr-name">closable</span><span class="token punctuation">&gt;</span></span>Closable 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>closable-3<span class="token punctuation">"</span></span> <span class="token attr-name">closable</span><span class="token punctuation">&gt;</span></span>Closable 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-1084"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-group</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tabs-closable<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>General<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>closable-1<span class="token punctuation">"</span></span> <span class="token attr-name">closable</span><span class="token punctuation">&gt;</span></span>Closable 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>closable-2<span class="token punctuation">"</span></span> <span class="token attr-name">closable</span><span class="token punctuation">&gt;</span></span>Closable 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>closable-3<span class="token punctuation">"</span></span> <span class="token attr-name">closable</span><span class="token punctuation">&gt;</span></span>Closable 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the general tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>closable-1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the first closable tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>closable-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the second closable tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>closable-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the third closable tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-group</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the general tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>closable-1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the first closable tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>closable-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the second closable tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>closable-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the third closable tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-group</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
   <span class="token keyword">const</span> tabGroup <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.tabs-closable'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1029,11 +1061,11 @@
     panel<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-936"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1084"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-937"><span class="token keyword">import</span> SlTab <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-1085"><span class="token keyword">import</span> SlTab <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTabGroup <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab-group'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTabPanel <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab-panel'</span><span class="token punctuation">;</span>
 
@@ -1074,7 +1106,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTabGroup</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-937"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1085"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -1083,7 +1115,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-307"
+                aria-controls="code-preview-source-group-365"
               >
                 Source
                 <svg
@@ -1132,105 +1164,105 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-tab-group>
-                <sl-tab slot="nav" panel="tab-1">Tab 1</sl-tab>
-                <sl-tab slot="nav" panel="tab-2">Tab 2</sl-tab>
-                <sl-tab slot="nav" panel="tab-3">Tab 3</sl-tab>
-                <sl-tab slot="nav" panel="tab-4">Tab 4</sl-tab>
-                <sl-tab slot="nav" panel="tab-5">Tab 5</sl-tab>
-                <sl-tab slot="nav" panel="tab-6">Tab 6</sl-tab>
-                <sl-tab slot="nav" panel="tab-7">Tab 7</sl-tab>
-                <sl-tab slot="nav" panel="tab-8">Tab 8</sl-tab>
-                <sl-tab slot="nav" panel="tab-9">Tab 9</sl-tab>
-                <sl-tab slot="nav" panel="tab-10">Tab 10</sl-tab>
-                <sl-tab slot="nav" panel="tab-11">Tab 11</sl-tab>
-                <sl-tab slot="nav" panel="tab-12">Tab 12</sl-tab>
-                <sl-tab slot="nav" panel="tab-13">Tab 13</sl-tab>
-                <sl-tab slot="nav" panel="tab-14">Tab 14</sl-tab>
-                <sl-tab slot="nav" panel="tab-15">Tab 15</sl-tab>
-                <sl-tab slot="nav" panel="tab-16">Tab 16</sl-tab>
-                <sl-tab slot="nav" panel="tab-17">Tab 17</sl-tab>
-                <sl-tab slot="nav" panel="tab-18">Tab 18</sl-tab>
-                <sl-tab slot="nav" panel="tab-19">Tab 19</sl-tab>
-                <sl-tab slot="nav" panel="tab-20">Tab 20</sl-tab>
+              <nu-tab-group>
+                <nu-tab slot="nav" panel="tab-1">Tab 1</nu-tab>
+                <nu-tab slot="nav" panel="tab-2">Tab 2</nu-tab>
+                <nu-tab slot="nav" panel="tab-3">Tab 3</nu-tab>
+                <nu-tab slot="nav" panel="tab-4">Tab 4</nu-tab>
+                <nu-tab slot="nav" panel="tab-5">Tab 5</nu-tab>
+                <nu-tab slot="nav" panel="tab-6">Tab 6</nu-tab>
+                <nu-tab slot="nav" panel="tab-7">Tab 7</nu-tab>
+                <nu-tab slot="nav" panel="tab-8">Tab 8</nu-tab>
+                <nu-tab slot="nav" panel="tab-9">Tab 9</nu-tab>
+                <nu-tab slot="nav" panel="tab-10">Tab 10</nu-tab>
+                <nu-tab slot="nav" panel="tab-11">Tab 11</nu-tab>
+                <nu-tab slot="nav" panel="tab-12">Tab 12</nu-tab>
+                <nu-tab slot="nav" panel="tab-13">Tab 13</nu-tab>
+                <nu-tab slot="nav" panel="tab-14">Tab 14</nu-tab>
+                <nu-tab slot="nav" panel="tab-15">Tab 15</nu-tab>
+                <nu-tab slot="nav" panel="tab-16">Tab 16</nu-tab>
+                <nu-tab slot="nav" panel="tab-17">Tab 17</nu-tab>
+                <nu-tab slot="nav" panel="tab-18">Tab 18</nu-tab>
+                <nu-tab slot="nav" panel="tab-19">Tab 19</nu-tab>
+                <nu-tab slot="nav" panel="tab-20">Tab 20</nu-tab>
 
-                <sl-tab-panel name="tab-1">Tab panel 1</sl-tab-panel>
-                <sl-tab-panel name="tab-2">Tab panel 2</sl-tab-panel>
-                <sl-tab-panel name="tab-3">Tab panel 3</sl-tab-panel>
-                <sl-tab-panel name="tab-4">Tab panel 4</sl-tab-panel>
-                <sl-tab-panel name="tab-5">Tab panel 5</sl-tab-panel>
-                <sl-tab-panel name="tab-6">Tab panel 6</sl-tab-panel>
-                <sl-tab-panel name="tab-7">Tab panel 7</sl-tab-panel>
-                <sl-tab-panel name="tab-8">Tab panel 8</sl-tab-panel>
-                <sl-tab-panel name="tab-9">Tab panel 9</sl-tab-panel>
-                <sl-tab-panel name="tab-10">Tab panel 10</sl-tab-panel>
-                <sl-tab-panel name="tab-11">Tab panel 11</sl-tab-panel>
-                <sl-tab-panel name="tab-12">Tab panel 12</sl-tab-panel>
-                <sl-tab-panel name="tab-13">Tab panel 13</sl-tab-panel>
-                <sl-tab-panel name="tab-14">Tab panel 14</sl-tab-panel>
-                <sl-tab-panel name="tab-15">Tab panel 15</sl-tab-panel>
-                <sl-tab-panel name="tab-16">Tab panel 16</sl-tab-panel>
-                <sl-tab-panel name="tab-17">Tab panel 17</sl-tab-panel>
-                <sl-tab-panel name="tab-18">Tab panel 18</sl-tab-panel>
-                <sl-tab-panel name="tab-19">Tab panel 19</sl-tab-panel>
-                <sl-tab-panel name="tab-20">Tab panel 20</sl-tab-panel>
-              </sl-tab-group>
+                <nu-tab-panel name="tab-1">Tab panel 1</nu-tab-panel>
+                <nu-tab-panel name="tab-2">Tab panel 2</nu-tab-panel>
+                <nu-tab-panel name="tab-3">Tab panel 3</nu-tab-panel>
+                <nu-tab-panel name="tab-4">Tab panel 4</nu-tab-panel>
+                <nu-tab-panel name="tab-5">Tab panel 5</nu-tab-panel>
+                <nu-tab-panel name="tab-6">Tab panel 6</nu-tab-panel>
+                <nu-tab-panel name="tab-7">Tab panel 7</nu-tab-panel>
+                <nu-tab-panel name="tab-8">Tab panel 8</nu-tab-panel>
+                <nu-tab-panel name="tab-9">Tab panel 9</nu-tab-panel>
+                <nu-tab-panel name="tab-10">Tab panel 10</nu-tab-panel>
+                <nu-tab-panel name="tab-11">Tab panel 11</nu-tab-panel>
+                <nu-tab-panel name="tab-12">Tab panel 12</nu-tab-panel>
+                <nu-tab-panel name="tab-13">Tab panel 13</nu-tab-panel>
+                <nu-tab-panel name="tab-14">Tab panel 14</nu-tab-panel>
+                <nu-tab-panel name="tab-15">Tab panel 15</nu-tab-panel>
+                <nu-tab-panel name="tab-16">Tab panel 16</nu-tab-panel>
+                <nu-tab-panel name="tab-17">Tab panel 17</nu-tab-panel>
+                <nu-tab-panel name="tab-18">Tab panel 18</nu-tab-panel>
+                <nu-tab-panel name="tab-19">Tab panel 19</nu-tab-panel>
+                <nu-tab-panel name="tab-20">Tab panel 20</nu-tab-panel>
+              </nu-tab-group>
 
               <div class="code-preview__resizer">
                 <sl-icon name="grip-vertical"></sl-icon>
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-308">
+            <div class="code-preview__source-group" id="code-preview-source-group-366">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-938"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-group</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-7<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 7<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-9<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 9<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-10<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 10<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-11<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 11<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 12<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-13<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 13<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-14<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 14<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-15<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 15<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-16<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 16<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-17<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 17<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-18<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 18<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-19<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 19<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-20<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 20<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-1086"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-group</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-7<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 7<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-9<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 9<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-10<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 10<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-11<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 11<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 12<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-13<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 13<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-14<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 14<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-15<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 15<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-16<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 16<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-17<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 17<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-18<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 18<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-19<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 19<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-20<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab 20<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-7<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 7<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-9<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 9<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-10<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 10<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-11<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 11<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 12<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-13<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 13<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-14<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 14<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-15<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 15<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-16<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 16<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-17<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 17<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-18<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 18<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-19<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 19<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-20<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 20<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-group</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-938"></sl-copy-button></pre>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-7<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 7<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-9<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 9<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-10<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 10<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-11<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 11<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 12<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-13<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 13<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-14<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 14<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-15<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 15<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-16<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 16<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-17<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 17<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-18<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 18<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-19<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 19<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-20<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tab panel 20<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-group</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-1086"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-939"><span class="token keyword">import</span> SlTab <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-1087"><span class="token keyword">import</span> SlTab <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTabGroup <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab-group'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTabPanel <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab-panel'</span><span class="token punctuation">;</span>
 
@@ -1319,7 +1351,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlTabPanel</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab-20<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Tab panel 20</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTabPanel</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTabGroup</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-939"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1087"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -1328,7 +1360,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-308"
+                aria-controls="code-preview-source-group-366"
               >
                 Source
                 <svg
@@ -1382,41 +1414,41 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-tab-group activation="manual">
-                <sl-tab slot="nav" panel="general">General</sl-tab>
-                <sl-tab slot="nav" panel="custom">Custom</sl-tab>
-                <sl-tab slot="nav" panel="advanced">Advanced</sl-tab>
-                <sl-tab slot="nav" panel="disabled" disabled="">Disabled</sl-tab>
+              <nu-tab-group activation="manual">
+                <nu-tab slot="nav" panel="general">General</nu-tab>
+                <nu-tab slot="nav" panel="custom">Custom</nu-tab>
+                <nu-tab slot="nav" panel="advanced">Advanced</nu-tab>
+                <nu-tab slot="nav" panel="disabled" disabled="">Disabled</nu-tab>
 
-                <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
-                <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
-                <sl-tab-panel name="advanced">This is the advanced tab panel.</sl-tab-panel>
-                <sl-tab-panel name="disabled">This is a disabled tab panel.</sl-tab-panel>
-              </sl-tab-group>
+                <nu-tab-panel name="general">This is the general tab panel.</nu-tab-panel>
+                <nu-tab-panel name="custom">This is the custom tab panel.</nu-tab-panel>
+                <nu-tab-panel name="advanced">This is the advanced tab panel.</nu-tab-panel>
+                <nu-tab-panel name="disabled">This is a disabled tab panel.</nu-tab-panel>
+              </nu-tab-group>
 
               <div class="code-preview__resizer">
                 <sl-icon name="grip-vertical"></sl-icon>
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-309">
+            <div class="code-preview__source-group" id="code-preview-source-group-367">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-940"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-group</span> <span class="token attr-name">activation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>manual<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>General<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Custom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Advanced<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">&gt;</span></span>Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-1088"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-group</span> <span class="token attr-name">activation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>manual<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>General<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Custom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Advanced<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav<span class="token punctuation">"</span></span> <span class="token attr-name">panel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">&gt;</span></span>Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab</span><span class="token punctuation">&gt;</span></span>
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the general tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the custom tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the advanced tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a disabled tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-panel</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tab-group</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-940"></sl-copy-button></pre>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>general<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the general tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the custom tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>advanced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the advanced tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tab-panel</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a disabled tab panel.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-panel</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tab-group</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-1088"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-941"><span class="token keyword">import</span> SlTab <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-1089"><span class="token keyword">import</span> SlTab <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTabGroup <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab-group'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTabPanel <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab-panel'</span><span class="token punctuation">;</span>
 
@@ -1441,7 +1473,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlTabPanel</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">This is a disabled tab panel.</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTabPanel</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTabGroup</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-941"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1089"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -1450,7 +1482,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-309"
+                aria-controls="code-preview-source-group-367"
               >
                 Source
                 <svg
@@ -1501,13 +1533,13 @@
             <a href="/getting-started/installation#cherry-picking">cherry pick</a> this component.
           </p>
 
-          <sl-tab-group>
-            <sl-tab slot="nav" panel="script">Script</sl-tab>
-            <sl-tab slot="nav" panel="import">Import</sl-tab>
-            <sl-tab slot="nav" panel="bundler">Bundler</sl-tab>
-            <sl-tab slot="nav" panel="react">React</sl-tab>
+          <nu-tab-group>
+            <nu-tab slot="nav" panel="script">Script</nu-tab>
+            <nu-tab slot="nav" panel="import">Import</nu-tab>
+            <nu-tab slot="nav" panel="bundler">Bundler</nu-tab>
+            <nu-tab slot="nav" panel="react">React</nu-tab>
 
-            <sl-tab-panel name="script">
+            <nu-tab-panel name="script">
               <p>
                 To import this component from
                 <a
@@ -1519,10 +1551,10 @@
                 >
                 using a script tag:
               </p>
-              <pre><code class="language-html" id="code-block-942"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.10/cdn/components/tab-group/tab-group.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><sl-copy-button class="copy-code-button" from="code-block-942"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-html" id="code-block-1090"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/tab-group/tab-group.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><sl-copy-button class="copy-code-button" from="code-block-1090"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="import">
+            <nu-tab-panel name="import">
               <p>
                 To import this component from
                 <a
@@ -1534,19 +1566,19 @@
                 >
                 using a JavaScript import:
               </p>
-              <pre><code class="language-js" id="code-block-943"><span class="token keyword">import</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.10/cdn/components/tab-group/tab-group.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-943"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-js" id="code-block-1091"><span class="token keyword">import</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/tab-group/tab-group.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-1091"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="bundler">
+            <nu-tab-panel name="bundler">
               <p>To import this component using <a href="/getting-started/installation#bundling">a bundler</a>:</p>
-              <pre><code class="language-js" id="code-block-944"><span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/tab-group/tab-group.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-944"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-js" id="code-block-1092"><span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/tab-group/tab-group.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-1092"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="react">
+            <nu-tab-panel name="react">
               <p>To import this component as a <a href="/frameworks/react">React component</a>:</p>
-              <pre><code class="language-js" id="code-block-945"><span class="token keyword">import</span> SlTabGroup <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab-group'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-945"></sl-copy-button></pre>
-            </sl-tab-panel>
-          </sl-tab-group>
+              <pre><code class="language-js" id="code-block-1093"><span class="token keyword">import</span> NuTabGroup <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tab-group'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-1093"></sl-copy-button></pre>
+            </nu-tab-panel>
+          </nu-tab-group>
 
           <h2 id="slots" class="anchor-heading">Slots<a href="#slots" aria-label='Direct link to "Slots"'></a></h2>
 
@@ -1562,7 +1594,7 @@
                 <tr>
                   <td class="nowrap">(default)</td>
                   <td>
-                    Used for grouping tab panels in the tab group. Must be <code>&lt;sl-tab-panel&gt;</code> elements.
+                    Used for grouping tab panels in the tab group. Must be <code>&lt;nu-tab-panel&gt;</code> elements.
                   </td>
                 </tr>
 
@@ -1570,7 +1602,7 @@
                   <td class="nowrap">
                     <code>nav</code>
                   </td>
-                  <td>Used for grouping tabs in the tab group. Must be <code>&lt;sl-tab&gt;</code> elements.</td>
+                  <td>Used for grouping tabs in the tab group. Must be <code>&lt;nu-tab&gt;</code> elements.</td>
                 </tr>
               </tbody>
             </table>
@@ -1633,11 +1665,11 @@
                     <code class="nowrap">noScrollControls</code>
 
                     <br />
-                    <sl-tooltip content="This attribute is different from its property">
+                    <nu-tooltip content="This attribute is different from its property">
                       <small>
                         <code class="nowrap"> no-scroll-controls </code>
                       </small>
-                    </sl-tooltip>
+                    </nu-tooltip>
                   </td>
                   <td>Disables the scroll arrows that appear when tabs overflow.</td>
                   <td style="text-align: center"></td>
@@ -1684,21 +1716,17 @@
               </thead>
               <tbody>
                 <tr>
-                  <td data-flavor="html"><code class="nowrap">sl-tab-show</code></td>
-                  <td data-flavor="react"><code class="nowrap">onSlTabShow</code></td>
+                  <td data-flavor="html"><code class="nowrap">nu-tab-show</code></td>
+                  <td data-flavor="react"><code class="nowrap">onNuTabShow</code></td>
                   <td>Emitted when a tab is shown.</td>
-                  <td>
-                    <code>{ name: String }</code>
-                  </td>
+                  <td>-</td>
                 </tr>
 
                 <tr>
-                  <td data-flavor="html"><code class="nowrap">sl-tab-hide</code></td>
-                  <td data-flavor="react"><code class="nowrap">onSlTabHide</code></td>
+                  <td data-flavor="html"><code class="nowrap">nu-tab-hide</code></td>
+                  <td data-flavor="react"><code class="nowrap">onNuTabHide</code></td>
                   <td>Emitted when a tab is hidden.</td>
-                  <td>
-                    <code>{ name: String }</code>
-                  </td>
+                  <td>-</td>
                 </tr>
               </tbody>
             </table>
@@ -1819,7 +1847,7 @@
                   <td class="nowrap"><code>scroll-button</code></td>
                   <td>
                     The previous/next scroll buttons that show when tabs are scrollable, an
-                    <code>&lt;sl-icon-button&gt;</code>.
+                    <code>&lt;nu-icon-button&gt;</code>.
                   </td>
                 </tr>
 
@@ -1852,8 +1880,6 @@
           <p>This component automatically imports the following dependencies.</p>
 
           <ul>
-            <li><code>&lt;sl-icon&gt;</code></li>
-
             <li><code>&lt;sl-icon-button&gt;</code></li>
           </ul>
         </div>

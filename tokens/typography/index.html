@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="default" data-shoelace-version="0.0.10">
+<html lang="en" data-layout="default" data-nebula-version="0.0.1">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,14 +31,14 @@
 
     <link rel="stylesheet" href="/dist/themes/light.css" />
     <link rel="stylesheet" href="/dist/themes/dark.css" />
-    <script type="module" src="/dist/shoelace-autoloader.js"></script>
+    <script type="module" src="/dist/nebula-autoloader.js"></script>
 
     <script>
       (() => {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = localStorage.getItem('theme') || 'auto';
         document.documentElement.classList.toggle(
-          'sl-theme-dark',
+          'nu-theme-dark',
           theme === 'dark' || (theme === 'auto' && prefersDark)
         );
       })();
@@ -71,7 +71,7 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="github"></sl-icon>
+        <nu-icon name="github"></nu-icon>
       </a>
 
       <a
@@ -81,21 +81,21 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="twitter"></sl-icon>
+        <nu-icon name="twitter"></nu-icon>
       </a>
 
-      <sl-dropdown id="theme-selector" placement="bottom-end" distance="3">
-        <sl-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
-          <sl-icon class="only-light" name="sun-fill"></sl-icon>
-          <sl-icon class="only-dark" name="moon-fill"></sl-icon>
-        </sl-button>
-        <sl-menu>
-          <sl-menu-item type="checkbox" value="light">Light</sl-menu-item>
-          <sl-menu-item type="checkbox" value="dark">Dark</sl-menu-item>
-          <sl-divider></sl-divider>
-          <sl-menu-item type="checkbox" value="auto">System</sl-menu-item>
-        </sl-menu>
-      </sl-dropdown>
+      <nu-dropdown id="theme-selector" placement="bottom-end" distance="3">
+        <nu-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
+          <nu-icon class="only-light" name="sun-fill"></nu-icon>
+          <nu-icon class="only-dark" name="moon-fill"></nu-icon>
+        </nu-button>
+        <nu-menu>
+          <nu-menu-item type="checkbox" value="light">Light</nu-menu-item>
+          <nu-menu-item type="checkbox" value="dark">Dark</nu-menu-item>
+          <nu-divider></nu-divider>
+          <nu-menu-item type="checkbox" value="auto">System</nu-menu-item>
+        </nu-menu>
+      </nu-dropdown>
     </div>
 
     <aside id="sidebar" data-preserve-scroll="">
@@ -103,38 +103,38 @@
         <a href="/">
           <img src="/assets/images/wordmark.svg" alt="Nebula" />
         </a>
-        <div class="sidebar-version">0.0.10</div>
+        <div class="sidebar-version">0.0.1</div>
       </header>
 
       <div class="sidebar-buttons">
-        <sl-button
+        <nu-button
           size="small"
           class="repo-button repo-button--github"
           href="https://github.com/onsonr/nebula"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="github"></sl-icon> Code
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="github"></nu-icon> Code
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--star"
           href="https://github.com/onsonr/nebula/stargazers"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="star-fill"></sl-icon> Star
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="star-fill"></nu-icon> Star
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--twitter"
           href="https://twitter.com/shoelace_style"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="twitter"></sl-icon> Follow
-        </sl-button>
+          <nu-icon slot="prefix" name="twitter"></nu-icon> Follow
+        </nu-button>
       </div>
 
       <button class="search-box" type="button" title="Press / to search" aria-label="Search" data-plugin="search">
-        <sl-icon name="search"></sl-icon>
+        <nu-icon name="search"></nu-icon>
         <span>Search</span>
       </button>
 
@@ -194,6 +194,10 @@
               </li>
 
               <li>
+                <a href="/components/area-chart"> Area Chart </a>
+              </li>
+
+              <li>
                 <a href="/components/avatar"> Avatar </a>
               </li>
 
@@ -215,6 +219,10 @@
 
               <li>
                 <a href="/components/button-group"> Button Group </a>
+              </li>
+
+              <li>
+                <a href="/components/candle-chart"> Candle Chart </a>
               </li>
 
               <li>
@@ -294,6 +302,22 @@
               </li>
 
               <li>
+                <a href="/components/line-chart"> Line Chart </a>
+              </li>
+
+              <li>
+                <a href="/components/list-item"> List Item </a>
+              </li>
+
+              <li>
+                <a href="/components/list-view"> List View </a>
+              </li>
+
+              <li>
+                <a href="/components/login-button"> Login Button </a>
+              </li>
+
+              <li>
                 <a href="/components/menu"> Menu </a>
               </li>
 
@@ -311,6 +335,10 @@
 
               <li>
                 <a href="/components/option"> Option </a>
+              </li>
+
+              <li>
+                <a href="/components/pie-chart"> Pie Chart </a>
               </li>
 
               <li>
@@ -347,6 +375,10 @@
 
               <li>
                 <a href="/components/rating"> Rating </a>
+              </li>
+
+              <li>
+                <a href="/components/register-button"> Register Button </a>
               </li>
 
               <li>
@@ -472,27 +504,27 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><code>--sl-font-sans</code></td>
+                  <td><code>--nu-font-sans</code></td>
                   <td>
                     -apple-system, BlinkMacSystemFont, ‘Segoe UI’, Roboto, Helvetica, Arial, sans-serif, ‘Apple Color
                     Emoji’, ‘Segoe UI Emoji’, ‘Segoe UI Symbol’
                   </td>
                   <td>
-                    <span style="font-family: var(--sl-font-sans)">The quick brown fox jumped over the lazy dog.</span>
+                    <span style="font-family: var(--nu-font-sans)">The quick brown fox jumped over the lazy dog.</span>
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-font-serif</code></td>
+                  <td><code>--nu-font-serif</code></td>
                   <td>Georgia, ‘Times New Roman’, serif</td>
                   <td>
-                    <span style="font-family: var(--sl-font-serif)">The quick brown fox jumped over the lazy dog.</span>
+                    <span style="font-family: var(--nu-font-serif)">The quick brown fox jumped over the lazy dog.</span>
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-font-mono</code></td>
+                  <td><code>--nu-font-mono</code></td>
                   <td>SFMono-Regular, Consolas, ‘Liberation Mono’, Menlo, monospace;</td>
                   <td>
-                    <span style="font-family: var(--sl-font-mono)">The quick brown fox jumped over the lazy dog.</span>
+                    <span style="font-family: var(--nu-font-mono)">The quick brown fox jumped over the lazy dog.</span>
                   </td>
                 </tr>
               </tbody>
@@ -516,49 +548,49 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><code>--sl-font-size-2x-small</code></td>
+                  <td><code>--nu-font-size-2x-small</code></td>
                   <td>0.625rem (10px)</td>
-                  <td><span style="font-size: var(--sl-font-size-2x-small)">Aa</span></td>
+                  <td><span style="font-size: var(--nu-font-size-2x-small)">Aa</span></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-font-size-x-small</code></td>
+                  <td><code>--nu-font-size-x-small</code></td>
                   <td>0.75rem (12px)</td>
-                  <td><span style="font-size: var(--sl-font-size-x-small)">Aa</span></td>
+                  <td><span style="font-size: var(--nu-font-size-x-small)">Aa</span></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-font-size-small</code></td>
+                  <td><code>--nu-font-size-small</code></td>
                   <td>0.875rem (14px)</td>
-                  <td><span style="font-size: var(--sl-font-size-small)">Aa</span></td>
+                  <td><span style="font-size: var(--nu-font-size-small)">Aa</span></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-font-size-medium</code></td>
+                  <td><code>--nu-font-size-medium</code></td>
                   <td>1rem (16px)</td>
-                  <td><span style="font-size: var(--sl-font-size-medium)">Aa</span></td>
+                  <td><span style="font-size: var(--nu-font-size-medium)">Aa</span></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-font-size-large</code></td>
+                  <td><code>--nu-font-size-large</code></td>
                   <td>1.25rem (20px)</td>
-                  <td><span style="font-size: var(--sl-font-size-large)">Aa</span></td>
+                  <td><span style="font-size: var(--nu-font-size-large)">Aa</span></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-font-size-x-large</code></td>
+                  <td><code>--nu-font-size-x-large</code></td>
                   <td>1.5rem (24px)</td>
-                  <td><span style="font-size: var(--sl-font-size-x-large)">Aa</span></td>
+                  <td><span style="font-size: var(--nu-font-size-x-large)">Aa</span></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-font-size-2x-large</code></td>
+                  <td><code>--nu-font-size-2x-large</code></td>
                   <td>2.25rem (36px)</td>
-                  <td><span style="font-size: var(--sl-font-size-2x-large)">Aa</span></td>
+                  <td><span style="font-size: var(--nu-font-size-2x-large)">Aa</span></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-font-size-3x-large</code></td>
+                  <td><code>--nu-font-size-3x-large</code></td>
                   <td>3rem (48px)</td>
-                  <td><span style="font-size: var(--sl-font-size-3x-large)">Aa</span></td>
+                  <td><span style="font-size: var(--nu-font-size-3x-large)">Aa</span></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-font-size-4x-large</code></td>
+                  <td><code>--nu-font-size-4x-large</code></td>
                   <td>4.5rem (72px)</td>
-                  <td><span style="font-size: var(--sl-font-size-4x-large)">Aa</span></td>
+                  <td><span style="font-size: var(--nu-font-size-4x-large)">Aa</span></td>
                 </tr>
               </tbody>
             </table>
@@ -577,37 +609,37 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><code>--sl-font-weight-light</code></td>
+                  <td><code>--nu-font-weight-light</code></td>
                   <td>300</td>
                   <td>
-                    <span style="font-weight: var(--sl-font-weight-light)"
+                    <span style="font-weight: var(--nu-font-weight-light)"
                       >The quick brown fox jumped over the lazy dog.</span
                     >
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-font-weight-normal</code></td>
+                  <td><code>--nu-font-weight-normal</code></td>
                   <td>400</td>
                   <td>
-                    <span style="font-weight: var(--sl-font-weight-normal)"
+                    <span style="font-weight: var(--nu-font-weight-normal)"
                       >The quick brown fox jumped over the lazy dog.</span
                     >
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-font-weight-semibold</code></td>
+                  <td><code>--nu-font-weight-semibold</code></td>
                   <td>500</td>
                   <td>
-                    <span style="font-weight: var(--sl-font-weight-semibold)"
+                    <span style="font-weight: var(--nu-font-weight-semibold)"
                       >The quick brown fox jumped over the lazy dog.</span
                     >
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-font-weight-bold</code></td>
+                  <td><code>--nu-font-weight-bold</code></td>
                   <td>700</td>
                   <td>
-                    <span style="font-weight: var(--sl-font-weight-bold)"
+                    <span style="font-weight: var(--nu-font-weight-bold)"
                       >The quick brown fox jumped over the lazy dog.</span
                     >
                   </td>
@@ -629,46 +661,46 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><code>--sl-letter-spacing-denser</code></td>
+                  <td><code>--nu-letter-spacing-denser</code></td>
                   <td>-0.03em</td>
                   <td>
-                    <span style="letter-spacing: var(--sl-letter-spacing-denser)"
+                    <span style="letter-spacing: var(--nu-letter-spacing-denser)"
                       >The quick brown fox jumped over the lazy dog.</span
                     >
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-letter-spacing-dense</code></td>
+                  <td><code>--nu-letter-spacing-dense</code></td>
                   <td>-0.015em</td>
                   <td>
-                    <span style="letter-spacing: var(--sl-letter-spacing-dense)"
+                    <span style="letter-spacing: var(--nu-letter-spacing-dense)"
                       >The quick brown fox jumped over the lazy dog.</span
                     >
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-letter-spacing-normal</code></td>
+                  <td><code>--nu-letter-spacing-normal</code></td>
                   <td>normal</td>
                   <td>
-                    <span style="letter-spacing: var(--sl-letter-spacing-normal)"
+                    <span style="letter-spacing: var(--nu-letter-spacing-normal)"
                       >The quick brown fox jumped over the lazy dog.</span
                     >
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-letter-spacing-loose</code></td>
+                  <td><code>--nu-letter-spacing-loose</code></td>
                   <td>0.075em</td>
                   <td>
-                    <span style="letter-spacing: var(--sl-letter-spacing-loose)"
+                    <span style="letter-spacing: var(--nu-letter-spacing-loose)"
                       >The quick brown fox jumped over the lazy dog.</span
                     >
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-letter-spacing-looser</code></td>
+                  <td><code>--nu-letter-spacing-looser</code></td>
                   <td>0.15em</td>
                   <td>
-                    <span style="letter-spacing: var(--sl-letter-spacing-looser)"
+                    <span style="letter-spacing: var(--nu-letter-spacing-looser)"
                       >The quick brown fox jumped over the lazy dog.</span
                     >
                   </td>
@@ -690,50 +722,50 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><code>--sl-line-height-denser</code></td>
+                  <td><code>--nu-line-height-denser</code></td>
                   <td>1</td>
                   <td>
-                    <div style="line-height: var(--sl-line-height-denser)">
+                    <div style="line-height: var(--nu-line-height-denser)">
                       The quick brown fox jumped over the lazy dog.<br />The quick brown fox jumped over the lazy
                       dog.<br />The quick brown fox jumped over the lazy dog.
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-line-height-dense</code></td>
+                  <td><code>--nu-line-height-dense</code></td>
                   <td>1.4</td>
                   <td>
-                    <div style="line-height: var(--sl-line-height-dense)">
+                    <div style="line-height: var(--nu-line-height-dense)">
                       The quick brown fox jumped over the lazy dog.<br />The quick brown fox jumped over the lazy
                       dog.<br />The quick brown fox jumped over the lazy dog.
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-line-height-normal</code></td>
+                  <td><code>--nu-line-height-normal</code></td>
                   <td>1.8</td>
                   <td>
-                    <div style="line-height: var(--sl-line-height-normal)">
+                    <div style="line-height: var(--nu-line-height-normal)">
                       The quick brown fox jumped over the lazy dog.<br />The quick brown fox jumped over the lazy
                       dog.<br />The quick brown fox jumped over the lazy dog.
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-line-height-loose</code></td>
+                  <td><code>--nu-line-height-loose</code></td>
                   <td>2.2</td>
                   <td>
-                    <div style="line-height: var(--sl-line-height-loose)">
+                    <div style="line-height: var(--nu-line-height-loose)">
                       The quick brown fox jumped over the lazy dog.<br />The quick brown fox jumped over the lazy
                       dog.<br />The quick brown fox jumped over the lazy dog.
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-line-height-looser</code></td>
+                  <td><code>--nu-line-height-looser</code></td>
                   <td>2.6</td>
                   <td>
-                    <div style="line-height: var(--sl-line-height-looser)">
+                    <div style="line-height: var(--nu-line-height-looser)">
                       The quick brown fox jumped over the lazy dog.<br />The quick brown fox jumped over the lazy
                       dog.<br />The quick brown fox jumped over the lazy dog.
                     </div>

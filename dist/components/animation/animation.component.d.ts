@@ -1,19 +1,19 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Animate elements declaratively with nearly 100 baked-in presets, or roll your own with custom keyframes. Powered by the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API).
- * @documentation https://shoelace.style/components/animation
+ * @documentation https://nebulaui.org/components/animation
  * @status stable
  * @since 2.0
  *
- * @event sl-cancel - Emitted when the animation is canceled.
- * @event sl-finish - Emitted when the animation finishes.
- * @event sl-start - Emitted when the animation starts or restarts.
+ * @event nu-cancel - Emitted when the animation is canceled.
+ * @event nu-finish - Emitted when the animation finishes.
+ * @event nu-start - Emitted when the animation starts or restarts.
  *
  * @slot - The element to animate. Avoid slotting in more than one element, as subsequent ones will be ignored. To
- *  animate multiple elements, either wrap them in a single container or use multiple `<sl-animation>` elements.
+ *  animate multiple elements, either wrap them in a single container or use multiple `<nu-animation>` elements.
  */
-export default class SlAnimation extends ShoelaceElement {
+export default class NuAnimation extends NebulaElement {
     static styles: CSSResultGroup;
     private animation?;
     private hasStarted;

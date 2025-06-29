@@ -1,12 +1,12 @@
 import {
-  SlMutationObserver
-} from "../../chunks/chunk.S5PKGTUY.js";
-import "../../chunks/chunk.5BQ3JFXK.js";
-import "../../chunks/chunk.FA5RT4K4.js";
-import "../../chunks/chunk.K23QWHWK.js";
-import "../../chunks/chunk.URGPTPT3.js";
-import "../../chunks/chunk.CXZZ2LVK.js";
-import "../../chunks/chunk.KIILAQWQ.js";
+  NuMutationObserver
+} from "../../chunks/chunk.B2FFOSS2.js";
+import "../../chunks/chunk.JYHMI7KY.js";
+import "../../chunks/chunk.KYKJHNMB.js";
+import "../../chunks/chunk.XTL2AE6H.js";
+import "../../chunks/chunk.ZEQQFH7C.js";
+import "../../chunks/chunk.3KZKYYLP.js";
+import "../../chunks/chunk.TGTXVMVL.js";
 export {
-  SlMutationObserver as default
+  NuMutationObserver as default
 };

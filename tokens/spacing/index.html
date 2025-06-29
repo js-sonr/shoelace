@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="default" data-shoelace-version="0.0.10">
+<html lang="en" data-layout="default" data-nebula-version="0.0.1">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,14 +31,14 @@
 
     <link rel="stylesheet" href="/dist/themes/light.css" />
     <link rel="stylesheet" href="/dist/themes/dark.css" />
-    <script type="module" src="/dist/shoelace-autoloader.js"></script>
+    <script type="module" src="/dist/nebula-autoloader.js"></script>
 
     <script>
       (() => {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = localStorage.getItem('theme') || 'auto';
         document.documentElement.classList.toggle(
-          'sl-theme-dark',
+          'nu-theme-dark',
           theme === 'dark' || (theme === 'auto' && prefersDark)
         );
       })();
@@ -71,7 +71,7 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="github"></sl-icon>
+        <nu-icon name="github"></nu-icon>
       </a>
 
       <a
@@ -81,21 +81,21 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="twitter"></sl-icon>
+        <nu-icon name="twitter"></nu-icon>
       </a>
 
-      <sl-dropdown id="theme-selector" placement="bottom-end" distance="3">
-        <sl-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
-          <sl-icon class="only-light" name="sun-fill"></sl-icon>
-          <sl-icon class="only-dark" name="moon-fill"></sl-icon>
-        </sl-button>
-        <sl-menu>
-          <sl-menu-item type="checkbox" value="light">Light</sl-menu-item>
-          <sl-menu-item type="checkbox" value="dark">Dark</sl-menu-item>
-          <sl-divider></sl-divider>
-          <sl-menu-item type="checkbox" value="auto">System</sl-menu-item>
-        </sl-menu>
-      </sl-dropdown>
+      <nu-dropdown id="theme-selector" placement="bottom-end" distance="3">
+        <nu-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
+          <nu-icon class="only-light" name="sun-fill"></nu-icon>
+          <nu-icon class="only-dark" name="moon-fill"></nu-icon>
+        </nu-button>
+        <nu-menu>
+          <nu-menu-item type="checkbox" value="light">Light</nu-menu-item>
+          <nu-menu-item type="checkbox" value="dark">Dark</nu-menu-item>
+          <nu-divider></nu-divider>
+          <nu-menu-item type="checkbox" value="auto">System</nu-menu-item>
+        </nu-menu>
+      </nu-dropdown>
     </div>
 
     <aside id="sidebar" data-preserve-scroll="">
@@ -103,38 +103,38 @@
         <a href="/">
           <img src="/assets/images/wordmark.svg" alt="Nebula" />
         </a>
-        <div class="sidebar-version">0.0.10</div>
+        <div class="sidebar-version">0.0.1</div>
       </header>
 
       <div class="sidebar-buttons">
-        <sl-button
+        <nu-button
           size="small"
           class="repo-button repo-button--github"
           href="https://github.com/onsonr/nebula"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="github"></sl-icon> Code
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="github"></nu-icon> Code
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--star"
           href="https://github.com/onsonr/nebula/stargazers"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="star-fill"></sl-icon> Star
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="star-fill"></nu-icon> Star
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--twitter"
           href="https://twitter.com/shoelace_style"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="twitter"></sl-icon> Follow
-        </sl-button>
+          <nu-icon slot="prefix" name="twitter"></nu-icon> Follow
+        </nu-button>
       </div>
 
       <button class="search-box" type="button" title="Press / to search" aria-label="Search" data-plugin="search">
-        <sl-icon name="search"></sl-icon>
+        <nu-icon name="search"></nu-icon>
         <span>Search</span>
       </button>
 
@@ -194,6 +194,10 @@
               </li>
 
               <li>
+                <a href="/components/area-chart"> Area Chart </a>
+              </li>
+
+              <li>
                 <a href="/components/avatar"> Avatar </a>
               </li>
 
@@ -215,6 +219,10 @@
 
               <li>
                 <a href="/components/button-group"> Button Group </a>
+              </li>
+
+              <li>
+                <a href="/components/candle-chart"> Candle Chart </a>
               </li>
 
               <li>
@@ -294,6 +302,22 @@
               </li>
 
               <li>
+                <a href="/components/line-chart"> Line Chart </a>
+              </li>
+
+              <li>
+                <a href="/components/list-item"> List Item </a>
+              </li>
+
+              <li>
+                <a href="/components/list-view"> List View </a>
+              </li>
+
+              <li>
+                <a href="/components/login-button"> Login Button </a>
+              </li>
+
+              <li>
                 <a href="/components/menu"> Menu </a>
               </li>
 
@@ -311,6 +335,10 @@
 
               <li>
                 <a href="/components/option"> Option </a>
+              </li>
+
+              <li>
+                <a href="/components/pie-chart"> Pie Chart </a>
               </li>
 
               <li>
@@ -347,6 +375,10 @@
 
               <li>
                 <a href="/components/rating"> Rating </a>
+              </li>
+
+              <li>
+                <a href="/components/register-button"> Register Button </a>
               </li>
 
               <li>
@@ -463,102 +495,102 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><code>--sl-spacing-3x-small</code></td>
+                  <td><code>--nu-spacing-3x-small</code></td>
                   <td>0.125rem (2px)</td>
                   <td>
                     <div
                       class="spacing-demo"
-                      style="width: var(--sl-spacing-3x-small); height: var(--sl-spacing-3x-small)"
+                      style="width: var(--nu-spacing-3x-small); height: var(--nu-spacing-3x-small)"
                     ></div>
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-spacing-2x-small</code></td>
+                  <td><code>--nu-spacing-2x-small</code></td>
                   <td>0.25rem (4px)</td>
                   <td>
                     <div
                       class="spacing-demo"
-                      style="width: var(--sl-spacing-2x-small); height: var(--sl-spacing-2x-small)"
+                      style="width: var(--nu-spacing-2x-small); height: var(--nu-spacing-2x-small)"
                     ></div>
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-spacing-x-small</code></td>
+                  <td><code>--nu-spacing-x-small</code></td>
                   <td>0.5rem (8px)</td>
                   <td>
                     <div
                       class="spacing-demo"
-                      style="width: var(--sl-spacing-x-small); height: var(--sl-spacing-x-small)"
+                      style="width: var(--nu-spacing-x-small); height: var(--nu-spacing-x-small)"
                     ></div>
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-spacing-small</code></td>
+                  <td><code>--nu-spacing-small</code></td>
                   <td>0.75rem (12px)</td>
                   <td>
                     <div
                       class="spacing-demo"
-                      style="width: var(--sl-spacing-small); height: var(--sl-spacing-small)"
+                      style="width: var(--nu-spacing-small); height: var(--nu-spacing-small)"
                     ></div>
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-spacing-medium</code></td>
+                  <td><code>--nu-spacing-medium</code></td>
                   <td>1rem (16px)</td>
                   <td>
                     <div
                       class="spacing-demo"
-                      style="width: var(--sl-spacing-medium); height: var(--sl-spacing-medium)"
+                      style="width: var(--nu-spacing-medium); height: var(--nu-spacing-medium)"
                     ></div>
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-spacing-large</code></td>
+                  <td><code>--nu-spacing-large</code></td>
                   <td>1.25rem (20px)</td>
                   <td>
                     <div
                       class="spacing-demo"
-                      style="width: var(--sl-spacing-large); height: var(--sl-spacing-large)"
+                      style="width: var(--nu-spacing-large); height: var(--nu-spacing-large)"
                     ></div>
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-spacing-x-large</code></td>
+                  <td><code>--nu-spacing-x-large</code></td>
                   <td>1.75rem (28px)</td>
                   <td>
                     <div
                       class="spacing-demo"
-                      style="width: var(--sl-spacing-x-large); height: var(--sl-spacing-x-large)"
+                      style="width: var(--nu-spacing-x-large); height: var(--nu-spacing-x-large)"
                     ></div>
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-spacing-2x-large</code></td>
+                  <td><code>--nu-spacing-2x-large</code></td>
                   <td>2.25rem (36px)</td>
                   <td>
                     <div
                       class="spacing-demo"
-                      style="width: var(--sl-spacing-2x-large); height: var(--sl-spacing-2x-large)"
+                      style="width: var(--nu-spacing-2x-large); height: var(--nu-spacing-2x-large)"
                     ></div>
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-spacing-3x-large</code></td>
+                  <td><code>--nu-spacing-3x-large</code></td>
                   <td>3rem (48px)</td>
                   <td>
                     <div
                       class="spacing-demo"
-                      style="width: var(--sl-spacing-3x-large); height: var(--sl-spacing-3x-large)"
+                      style="width: var(--nu-spacing-3x-large); height: var(--nu-spacing-3x-large)"
                     ></div>
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-spacing-4x-large</code></td>
+                  <td><code>--nu-spacing-4x-large</code></td>
                   <td>4.5rem (72px)</td>
                   <td>
                     <div
                       class="spacing-demo"
-                      style="width: var(--sl-spacing-4x-large); height: var(--sl-spacing-4x-large)"
+                      style="width: var(--nu-spacing-4x-large); height: var(--nu-spacing-4x-large)"
                     ></div>
                   </td>
                 </tr>

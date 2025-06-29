@@ -1,20 +1,20 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import type { CSSResultGroup } from 'lit';
-import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
+import type { NebulaFormControl } from '../../internal/nebula-element.js';
 /**
  * @summary Ranges allow the user to select a single value within a given range using a slider.
- * @documentation https://shoelace.style/components/range
+ * @documentation https://nebulaui.org/components/range
  * @status stable
  * @since 2.0
  *
  * @slot label - The range's label. Alternatively, you can use the `label` attribute.
  * @slot help-text - Text that describes how to use the input. Alternatively, you can use the `help-text` attribute.
  *
- * @event sl-blur - Emitted when the control loses focus.
- * @event sl-change - Emitted when an alteration to the control's value is committed by the user.
- * @event sl-focus - Emitted when the control gains focus.
- * @event sl-input - Emitted when the control receives input.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-blur - Emitted when the control loses focus.
+ * @event nu-change - Emitted when an alteration to the control's value is committed by the user.
+ * @event nu-focus - Emitted when the control gains focus.
+ * @event nu-input - Emitted when the control receives input.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart form-control - The form control that wraps the label, input, and help text.
  * @csspart form-control-label - The label's wrapper.
@@ -31,7 +31,7 @@ import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
  * @cssproperty --track-height - The height of the track.
  * @cssproperty --track-active-offset - The point of origin of the active track.
  */
-export default class SlRange extends ShoelaceElement implements ShoelaceFormControl {
+export default class NuRange extends NebulaElement implements NebulaFormControl {
     static styles: CSSResultGroup;
     private readonly formControlController;
     private readonly hasSlotController;

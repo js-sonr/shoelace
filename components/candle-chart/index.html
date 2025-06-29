@@ -1,0 +1,1780 @@
+<!doctype html>
+<html lang="en" data-layout="component" data-nebula-version="0.0.1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Candlestick charts display OHLC (Open, High, Low, Close) financial data with green/red theming, perfect for trading interfaces and market analysis."
+    />
+    <title>Candle Chart</title>
+
+    <meta name="turbo-cache-control" />
+
+    <link rel="stylesheet" href="/assets/styles/docs.css" />
+    <link rel="stylesheet" href="/assets/styles/code-previews.css" />
+    <link rel="stylesheet" href="/assets/styles/search.css" />
+
+    <link rel="icon" href="/assets/images/logo.svg" type="image/x-icon" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="shoelace_style" />
+    <meta name="twitter:image" content="https://nebulaui.org/assets/images/og-image.png" />
+
+    <meta property="og:url" content="https://nebulaui.org/components/candle-chart/" />
+    <meta property="og:title" content="Candle Chart" />
+    <meta
+      property="og:description"
+      content="Candlestick charts display OHLC (Open, High, Low, Close) financial data with green/red theming, perfect for trading interfaces and market analysis."
+    />
+    <meta property="og:image" content="https://nebulaui.org/assets/images/og-image.png" />
+
+    <link rel="stylesheet" href="/dist/themes/light.css" />
+    <link rel="stylesheet" href="/dist/themes/dark.css" />
+    <script type="module" src="/dist/nebula-autoloader.js"></script>
+
+    <script>
+      (() => {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = localStorage.getItem('theme') || 'auto';
+        document.documentElement.classList.toggle(
+          'nu-theme-dark',
+          theme === 'dark' || (theme === 'auto' && prefersDark)
+        );
+      })();
+    </script>
+
+    <script src="/assets/scripts/turbo.js" type="module"></script>
+    <script src="/assets/scripts/docs.js" defer=""></script>
+    <script src="/assets/scripts/code-previews.js" defer=""></script>
+    <script src="/assets/scripts/lunr.js" defer=""></script>
+    <script src="/assets/scripts/search.js" defer=""></script>
+  </head>
+  <body>
+    <a id="skip-to-main" class="visually-hidden" href="#main-content" data-smooth-link="false">
+      Skip to main content
+    </a>
+
+    <button id="menu-toggle" type="button" aria-label="Menu">
+      <svg width="148" height="148" viewBox="0 0 148 148" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="currentColor" stroke-width="18" fill="none" fill-rule="evenodd" stroke-linecap="round">
+          <path d="M9.5 125.5h129M9.5 74.5h129M9.5 23.5h129"></path>
+        </g>
+      </svg>
+    </button>
+
+    <div id="icon-toolbar">
+      <a
+        href="https://github.com/onsonr/nebula"
+        title="View Nebula on GitHub"
+        class="external-link"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <nu-icon name="github"></nu-icon>
+      </a>
+
+      <a
+        href="https://twitter.com/shoelace_style"
+        title="Follow Nebula on Twitter"
+        class="external-link"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <nu-icon name="twitter"></nu-icon>
+      </a>
+
+      <nu-dropdown id="theme-selector" placement="bottom-end" distance="3">
+        <nu-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
+          <nu-icon class="only-light" name="sun-fill"></nu-icon>
+          <nu-icon class="only-dark" name="moon-fill"></nu-icon>
+        </nu-button>
+        <nu-menu>
+          <nu-menu-item type="checkbox" value="light">Light</nu-menu-item>
+          <nu-menu-item type="checkbox" value="dark">Dark</nu-menu-item>
+          <nu-divider></nu-divider>
+          <nu-menu-item type="checkbox" value="auto">System</nu-menu-item>
+        </nu-menu>
+      </nu-dropdown>
+    </div>
+
+    <aside id="sidebar" data-preserve-scroll="">
+      <header>
+        <a href="/">
+          <img src="/assets/images/wordmark.svg" alt="Nebula" />
+        </a>
+        <div class="sidebar-version">0.0.1</div>
+      </header>
+
+      <div class="sidebar-buttons">
+        <nu-button
+          size="small"
+          class="repo-button repo-button--github"
+          href="https://github.com/onsonr/nebula"
+          target="_blank"
+        >
+          <nu-icon slot="prefix" name="github"></nu-icon> Code
+        </nu-button>
+        <nu-button
+          size="small"
+          class="repo-button repo-button--star"
+          href="https://github.com/onsonr/nebula/stargazers"
+          target="_blank"
+        >
+          <nu-icon slot="prefix" name="star-fill"></nu-icon> Star
+        </nu-button>
+        <nu-button
+          size="small"
+          class="repo-button repo-button--twitter"
+          href="https://twitter.com/shoelace_style"
+          target="_blank"
+        >
+          <nu-icon slot="prefix" name="twitter"></nu-icon> Follow
+        </nu-button>
+      </div>
+
+      <button class="search-box" type="button" title="Press / to search" aria-label="Search" data-plugin="search">
+        <nu-icon name="search"></nu-icon>
+        <span>Search</span>
+      </button>
+
+      <nav>
+        <ul>
+          <li>
+            <h2>Getting Started</h2>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/getting-started/installation">Installation</a></li>
+              <li><a href="/getting-started/usage">Usage</a></li>
+              <li><a href="/getting-started/themes">Themes</a></li>
+              <li><a href="/getting-started/customizing">Customizing</a></li>
+              <li><a href="/getting-started/form-controls">Form Controls</a></li>
+              <li><a href="/getting-started/localization">Localization</a></li>
+            </ul>
+          </li>
+          <li>
+            <h2>Frameworks</h2>
+            <ul>
+              <li><a href="/frameworks/react">React</a></li>
+              <li><a href="/frameworks/vue">Vue</a></li>
+              <li><a href="/frameworks/angular">Angular</a></li>
+            </ul>
+          </li>
+          <li>
+            <h2>Resources</h2>
+            <ul>
+              <li><a href="/resources/community">Community</a></li>
+              <li>
+                <a
+                  href="https://github.com/onsonr/nebula/discussions"
+                  class="external-link"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >Help &amp; Support</a
+                >
+              </li>
+              <li><a href="/resources/accessibility">Accessibility</a></li>
+              <li><a href="/resources/contributing">Contributing</a></li>
+              <li><a href="/resources/changelog">Changelog</a></li>
+            </ul>
+          </li>
+          <li>
+            <h2>Components</h2>
+            <ul>
+              <li>
+                <a href="/components/alert"> Alert </a>
+              </li>
+
+              <li>
+                <a href="/components/animated-image"> Animated Image </a>
+              </li>
+
+              <li>
+                <a href="/components/animation"> Animation </a>
+              </li>
+
+              <li>
+                <a href="/components/area-chart"> Area Chart </a>
+              </li>
+
+              <li>
+                <a href="/components/avatar"> Avatar </a>
+              </li>
+
+              <li>
+                <a href="/components/badge"> Badge </a>
+              </li>
+
+              <li>
+                <a href="/components/breadcrumb"> Breadcrumb </a>
+              </li>
+
+              <li>
+                <a href="/components/breadcrumb-item"> Breadcrumb Item </a>
+              </li>
+
+              <li>
+                <a href="/components/button"> Button </a>
+              </li>
+
+              <li>
+                <a href="/components/button-group"> Button Group </a>
+              </li>
+
+              <li>
+                <a href="/components/candle-chart" class="active-link"> Candle Chart </a>
+              </li>
+
+              <li>
+                <a href="/components/card"> Card </a>
+              </li>
+
+              <li>
+                <a href="/components/carousel"> Carousel </a>
+              </li>
+
+              <li>
+                <a href="/components/carousel-item"> Carousel Item </a>
+              </li>
+
+              <li>
+                <a href="/components/checkbox"> Checkbox </a>
+              </li>
+
+              <li>
+                <a href="/components/color-picker"> Color Picker </a>
+              </li>
+
+              <li>
+                <a href="/components/copy-button"> Copy Button </a>
+              </li>
+
+              <li>
+                <a href="/components/details"> Details </a>
+              </li>
+
+              <li>
+                <a href="/components/dialog"> Dialog </a>
+              </li>
+
+              <li>
+                <a href="/components/divider"> Divider </a>
+              </li>
+
+              <li>
+                <a href="/components/drawer"> Drawer </a>
+              </li>
+
+              <li>
+                <a href="/components/dropdown"> Dropdown </a>
+              </li>
+
+              <li>
+                <a href="/components/format-bytes"> Format Bytes </a>
+              </li>
+
+              <li>
+                <a href="/components/format-date"> Format Date </a>
+              </li>
+
+              <li>
+                <a href="/components/format-number"> Format Number </a>
+              </li>
+
+              <li>
+                <a href="/components/icon"> Icon </a>
+              </li>
+
+              <li>
+                <a href="/components/icon-button"> Icon Button </a>
+              </li>
+
+              <li>
+                <a href="/components/image-comparer"> Image Comparer </a>
+              </li>
+
+              <li>
+                <a href="/components/include"> Include </a>
+              </li>
+
+              <li>
+                <a href="/components/input"> Input </a>
+              </li>
+
+              <li>
+                <a href="/components/line-chart"> Line Chart </a>
+              </li>
+
+              <li>
+                <a href="/components/list-item"> List Item </a>
+              </li>
+
+              <li>
+                <a href="/components/list-view"> List View </a>
+              </li>
+
+              <li>
+                <a href="/components/login-button"> Login Button </a>
+              </li>
+
+              <li>
+                <a href="/components/menu"> Menu </a>
+              </li>
+
+              <li>
+                <a href="/components/menu-item"> Menu Item </a>
+              </li>
+
+              <li>
+                <a href="/components/menu-label"> Menu Label </a>
+              </li>
+
+              <li>
+                <a href="/components/mutation-observer"> Mutation Observer </a>
+              </li>
+
+              <li>
+                <a href="/components/option"> Option </a>
+              </li>
+
+              <li>
+                <a href="/components/pie-chart"> Pie Chart </a>
+              </li>
+
+              <li>
+                <a href="/components/popup"> Popup </a>
+              </li>
+
+              <li>
+                <a href="/components/progress-bar"> Progress Bar </a>
+              </li>
+
+              <li>
+                <a href="/components/progress-ring"> Progress Ring </a>
+              </li>
+
+              <li>
+                <a href="/components/qr-code"> QR Code </a>
+              </li>
+
+              <li>
+                <a href="/components/radio"> Radio </a>
+              </li>
+
+              <li>
+                <a href="/components/radio-button"> Radio Button </a>
+              </li>
+
+              <li>
+                <a href="/components/radio-group"> Radio Group </a>
+              </li>
+
+              <li>
+                <a href="/components/range"> Range </a>
+              </li>
+
+              <li>
+                <a href="/components/rating"> Rating </a>
+              </li>
+
+              <li>
+                <a href="/components/register-button"> Register Button </a>
+              </li>
+
+              <li>
+                <a href="/components/relative-time"> Relative Time </a>
+              </li>
+
+              <li>
+                <a href="/components/resize-observer"> Resize Observer </a>
+              </li>
+
+              <li>
+                <a href="/components/select"> Select </a>
+              </li>
+
+              <li>
+                <a href="/components/skeleton"> Skeleton </a>
+              </li>
+
+              <li>
+                <a href="/components/spinner"> Spinner </a>
+              </li>
+
+              <li>
+                <a href="/components/split-panel"> Split Panel </a>
+              </li>
+
+              <li>
+                <a href="/components/switch"> Switch </a>
+              </li>
+
+              <li>
+                <a href="/components/tab"> Tab </a>
+              </li>
+
+              <li>
+                <a href="/components/tab-group"> Tab Group </a>
+              </li>
+
+              <li>
+                <a href="/components/tab-panel"> Tab Panel </a>
+              </li>
+
+              <li>
+                <a href="/components/tag"> Tag </a>
+              </li>
+
+              <li>
+                <a href="/components/textarea"> Textarea </a>
+              </li>
+
+              <li>
+                <a href="/components/tooltip"> Tooltip </a>
+              </li>
+
+              <li>
+                <a href="/components/tree"> Tree </a>
+              </li>
+
+              <li>
+                <a href="/components/tree-item"> Tree Item </a>
+              </li>
+
+              <li>
+                <a href="/components/visually-hidden"> Visually Hidden </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2>Design Tokens</h2>
+            <ul>
+              <li><a href="/tokens/typography">Typography</a></li>
+              <li><a href="/tokens/color">Color</a></li>
+              <li><a href="/tokens/spacing">Spacing</a></li>
+              <li><a href="/tokens/elevation">Elevation</a></li>
+              <li><a href="/tokens/border-radius">Border Radius</a></li>
+              <li><a href="/tokens/transition">Transition</a></li>
+              <li><a href="/tokens/z-index">Z-index</a></li>
+              <li><a href="/tokens/more">More Tokens</a></li>
+            </ul>
+          </li>
+          <li>
+            <h2>Tutorials</h2>
+            <ul>
+              <li><a href="/tutorials/integrating-with-astro">Integrating with Astro</a></li>
+              <li><a href="/tutorials/integrating-with-laravel">Integrating with Laravel</a></li>
+              <li><a href="/tutorials/integrating-with-nextjs">Integrating with NextJS</a></li>
+              <li><a href="/tutorials/integrating-with-rails">Integrating with Rails</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <a id="main-content"></a>
+      <article id="content" class="content content--with-toc">
+        <div class="content__toc">
+          <ul>
+            <li class="top"><a href="#">Candle Chart</a></li>
+            <li data-level="2"><a href="#examples">Examples</a></li>
+            <li data-level="3"><a href="#basic-ohlc-chart">Basic OHLC Chart</a></li>
+            <li data-level="3"><a href="#bitcoin-price-chart">Bitcoin Price Chart</a></li>
+            <li data-level="3"><a href="#stock-market-data">Stock Market Data</a></li>
+            <li data-level="3"><a href="#custom-theming">Custom Theming</a></li>
+            <li data-level="3"><a href="#wider-candle-bodies">Wider Candle Bodies</a></li>
+            <li data-level="3"><a href="#compact-view">Compact View</a></li>
+            <li data-level="2"><a href="#data-format">Data Format</a></li>
+            <li data-level="3"><a href="#json-string">JSON String</a></li>
+            <li data-level="3"><a href="#javascript-array">JavaScript Array</a></li>
+            <li data-level="3"><a href="#real-market-data-integration">Real Market Data Integration</a></li>
+            <li data-level="2"><a href="#understanding-candlesticks">Understanding Candlesticks</a></li>
+            <li data-level="3"><a href="#bullish-green-candles">Bullish (Green) Candles</a></li>
+            <li data-level="3"><a href="#bearish-red-candles">Bearish (Red) Candles</a></li>
+            <li data-level="3"><a href="#anatomy">Anatomy</a></li>
+            <li data-level="2"><a href="#customization">Customization</a></li>
+            <li data-level="3"><a href="#css-custom-properties">CSS Custom Properties</a></li>
+            <li data-level="3"><a href="#properties">Properties</a></li>
+            <li data-level="3"><a href="#dark-theme">Dark Theme</a></li>
+            <li data-level="2"><a href="#events">Events</a></li>
+            <li data-level="3"><a href="#nu-candle-hover">nu-candle-hover</a></li>
+            <li data-level="3"><a href="#nu-candle-click">nu-candle-click</a></li>
+            <li data-level="2"><a href="#volume-analysis">Volume Analysis</a></li>
+            <li data-level="2"><a href="#performance">Performance</a></li>
+            <li data-level="3"><a href="#large-datasets">Large Datasets</a></li>
+            <li data-level="3"><a href="#real-time-updates">Real-time Updates</a></li>
+            <li data-level="2"><a href="#accessibility">Accessibility</a></li>
+            <li data-level="2"><a href="#best-practices">Best Practices</a></li>
+            <li data-level="2"><a href="#importing">Importing</a></li>
+            <li data-level="2"><a href="#slots">Slots</a></li>
+            <li data-level="2"><a href="#properties-1">Properties</a></li>
+            <li data-level="2"><a href="#events-1">Events</a></li>
+            <li data-level="2"><a href="#custom-properties">Custom Properties</a></li>
+            <li data-level="2"><a href="#parts">Parts</a></li>
+          </ul>
+        </div>
+
+        <div class="content__body">
+          <header class="component-header">
+            <h1>Candle Chart</h1>
+
+            <div class="component-header__tag">
+              <code>&lt;nu-candle-chart&gt; | NuCandleChart</code>
+            </div>
+
+            <div class="component-header__info">
+              <nu-badge variant="neutral" pill=""> Since 2.0 </nu-badge>
+              <nu-badge variant="warning" pill="" style="text-transform: capitalize"> experimental </nu-badge>
+            </div>
+          </header>
+
+          <p class="component-summary">
+            Candlestick charts display OHLC (Open, High, Low, Close) financial data with green/red theming.
+          </p>
+
+          <p>
+            Candlestick charts are the standard visualization for financial markets, showing price action over time with
+            traditional OHLC data. Built with D3.js for precision scaling and featuring green/red theming for bullish
+            and bearish movements.
+          </p>
+
+          <div class="code-preview">
+            <div class="code-preview__preview">
+              <nu-candle-chart
+                data='[
+    {"date": "2024-01-01", "open": 42000, "high": 43500, "low": 41800, "close": 43200},
+    {"date": "2024-01-02", "open": 43200, "high": 44000, "low": 42500, "close": 42800},
+    {"date": "2024-01-03", "open": 42800, "high": 43200, "low": 42000, "close": 43000},
+    {"date": "2024-01-04", "open": 43000, "high": 44500, "low": 42800, "close": 44200},
+    {"date": "2024-01-05", "open": 44200, "high": 45000, "low": 43800, "close": 44800}
+  ]'
+                width="500"
+                height="300"
+              >
+              </nu-candle-chart>
+
+              <div class="code-preview__resizer">
+                <sl-icon name="grip-vertical"></sl-icon>
+              </div>
+            </div>
+
+            <div class="code-preview__source-group" id="code-preview-source-group-65">
+              <div class="code-preview__source code-preview__source--html">
+                <pre><code class="language-html" id="code-block-294"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-candle-chart</span> 
+  <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>[
+    {"date": "2024-01-01", "open": 42000, "high": 43500, "low": 41800, "close": 43200},
+    {"date": "2024-01-02", "open": 43200, "high": 44000, "low": 42500, "close": 42800},
+    {"date": "2024-01-03", "open": 42800, "high": 43200, "low": 42000, "close": 43000},
+    {"date": "2024-01-04", "open": 43000, "high": 44500, "low": 42800, "close": 44200},
+    {"date": "2024-01-05", "open": 44200, "high": 45000, "low": 43800, "close": 44800}
+  ]<span class="token punctuation">'</span></span>
+  <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>500<span class="token punctuation">"</span></span>
+  <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-candle-chart</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-294"></sl-copy-button></pre>
+              </div>
+            </div>
+
+            <div class="code-preview__buttons">
+              <button
+                type="button"
+                class="code-preview__button code-preview__toggle"
+                aria-expanded="false"
+                aria-controls="code-preview-source-group-65"
+              >
+                Source
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+
+              <button type="button" class="code-preview__button code-preview__button--codepen" title="Edit on CodePen">
+                <svg
+                  width="138"
+                  height="26"
+                  viewBox="0 0 138 26"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M80 6h-9v14h9 M114 6h-9 v14h9 M111 13h-6 M77 13h-6 M122 20V6l11 14V6 M22 16.7L33 24l11-7.3V9.3L33 2L22 9.3V16.7z M44 16.7L33 9.3l-11 7.4 M22 9.3l11 7.3 l11-7.3 M33 2v7.3 M33 16.7V24 M88 14h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14 M15 8c-1.3-1.3-3-2-5-2c-4 0-7 3-7 7s3 7 7 7 c2 0 3.7-0.8 5-2 M64 13c0 4-3 7-7 7h-5V6h5C61 6 64 9 64 13z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <h2 id="examples" class="anchor-heading">
+            Examples<a href="#examples" aria-label='Direct link to "Examples"'></a>
+          </h2>
+          <h3 id="basic-ohlc-chart" class="anchor-heading">
+            Basic OHLC Chart<a href="#basic-ohlc-chart" aria-label='Direct link to "Basic OHLC Chart"'></a>
+          </h3>
+          <p>A simple candlestick chart showing price movements:</p>
+
+          <div class="code-preview">
+            <div class="code-preview__preview">
+              <nu-candle-chart
+                data='[
+    {"date": "2024-01-01", "open": 100, "high": 110, "low": 95, "close": 105},
+    {"date": "2024-01-02", "open": 105, "high": 115, "low": 100, "close": 98},
+    {"date": "2024-01-03", "open": 98, "high": 102, "low": 90, "close": 108},
+    {"date": "2024-01-04", "open": 108, "high": 120, "low": 105, "close": 118},
+    {"date": "2024-01-05", "open": 118, "high": 125, "low": 115, "close": 122}
+  ]'
+                width="600"
+                height="350"
+              >
+              </nu-candle-chart>
+
+              <div class="code-preview__resizer">
+                <sl-icon name="grip-vertical"></sl-icon>
+              </div>
+            </div>
+
+            <div class="code-preview__source-group" id="code-preview-source-group-66">
+              <div class="code-preview__source code-preview__source--html">
+                <pre><code class="language-html" id="code-block-295"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-candle-chart</span> 
+  <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>[
+    {"date": "2024-01-01", "open": 100, "high": 110, "low": 95, "close": 105},
+    {"date": "2024-01-02", "open": 105, "high": 115, "low": 100, "close": 98},
+    {"date": "2024-01-03", "open": 98, "high": 102, "low": 90, "close": 108},
+    {"date": "2024-01-04", "open": 108, "high": 120, "low": 105, "close": 118},
+    {"date": "2024-01-05", "open": 118, "high": 125, "low": 115, "close": 122}
+  ]<span class="token punctuation">'</span></span>
+  <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>600<span class="token punctuation">"</span></span>
+  <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>350<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-candle-chart</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-295"></sl-copy-button></pre>
+              </div>
+            </div>
+
+            <div class="code-preview__buttons">
+              <button
+                type="button"
+                class="code-preview__button code-preview__toggle"
+                aria-expanded="false"
+                aria-controls="code-preview-source-group-66"
+              >
+                Source
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+
+              <button type="button" class="code-preview__button code-preview__button--codepen" title="Edit on CodePen">
+                <svg
+                  width="138"
+                  height="26"
+                  viewBox="0 0 138 26"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M80 6h-9v14h9 M114 6h-9 v14h9 M111 13h-6 M77 13h-6 M122 20V6l11 14V6 M22 16.7L33 24l11-7.3V9.3L33 2L22 9.3V16.7z M44 16.7L33 9.3l-11 7.4 M22 9.3l11 7.3 l11-7.3 M33 2v7.3 M33 16.7V24 M88 14h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14 M15 8c-1.3-1.3-3-2-5-2c-4 0-7 3-7 7s3 7 7 7 c2 0 3.7-0.8 5-2 M64 13c0 4-3 7-7 7h-5V6h5C61 6 64 9 64 13z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <h3 id="bitcoin-price-chart" class="anchor-heading">
+            Bitcoin Price Chart<a href="#bitcoin-price-chart" aria-label='Direct link to "Bitcoin Price Chart"'></a>
+          </h3>
+          <p>Display cryptocurrency price action with volume:</p>
+
+          <div class="code-preview">
+            <div class="code-preview__preview">
+              <nu-candle-chart
+                data='[
+    {"date": "2024-01-01", "open": 42000, "high": 43500, "low": 41800, "close": 43200, "volume": 1250000},
+    {"date": "2024-01-02", "open": 43200, "high": 44000, "low": 42500, "close": 42800, "volume": 1100000},
+    {"date": "2024-01-03", "open": 42800, "high": 43200, "low": 42000, "close": 43000, "volume": 980000},
+    {"date": "2024-01-04", "open": 43000, "high": 44500, "low": 42800, "close": 44200, "volume": 1350000},
+    {"date": "2024-01-05", "open": 44200, "high": 45000, "low": 43800, "close": 44800, "volume": 1420000}
+  ]'
+                width="700"
+                height="400"
+                show-volume="true"
+              >
+              </nu-candle-chart>
+
+              <div class="code-preview__resizer">
+                <sl-icon name="grip-vertical"></sl-icon>
+              </div>
+            </div>
+
+            <div class="code-preview__source-group" id="code-preview-source-group-67">
+              <div class="code-preview__source code-preview__source--html">
+                <pre><code class="language-html" id="code-block-296"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-candle-chart</span> 
+  <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>[
+    {"date": "2024-01-01", "open": 42000, "high": 43500, "low": 41800, "close": 43200, "volume": 1250000},
+    {"date": "2024-01-02", "open": 43200, "high": 44000, "low": 42500, "close": 42800, "volume": 1100000},
+    {"date": "2024-01-03", "open": 42800, "high": 43200, "low": 42000, "close": 43000, "volume": 980000},
+    {"date": "2024-01-04", "open": 43000, "high": 44500, "low": 42800, "close": 44200, "volume": 1350000},
+    {"date": "2024-01-05", "open": 44200, "high": 45000, "low": 43800, "close": 44800, "volume": 1420000}
+  ]<span class="token punctuation">'</span></span>
+  <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>700<span class="token punctuation">"</span></span>
+  <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span>
+  <span class="token attr-name">show-volume</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-candle-chart</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-296"></sl-copy-button></pre>
+              </div>
+            </div>
+
+            <div class="code-preview__buttons">
+              <button
+                type="button"
+                class="code-preview__button code-preview__toggle"
+                aria-expanded="false"
+                aria-controls="code-preview-source-group-67"
+              >
+                Source
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+
+              <button type="button" class="code-preview__button code-preview__button--codepen" title="Edit on CodePen">
+                <svg
+                  width="138"
+                  height="26"
+                  viewBox="0 0 138 26"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M80 6h-9v14h9 M114 6h-9 v14h9 M111 13h-6 M77 13h-6 M122 20V6l11 14V6 M22 16.7L33 24l11-7.3V9.3L33 2L22 9.3V16.7z M44 16.7L33 9.3l-11 7.4 M22 9.3l11 7.3 l11-7.3 M33 2v7.3 M33 16.7V24 M88 14h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14 M15 8c-1.3-1.3-3-2-5-2c-4 0-7 3-7 7s3 7 7 7 c2 0 3.7-0.8 5-2 M64 13c0 4-3 7-7 7h-5V6h5C61 6 64 9 64 13z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <h3 id="stock-market-data" class="anchor-heading">
+            Stock Market Data<a href="#stock-market-data" aria-label='Direct link to "Stock Market Data"'></a>
+          </h3>
+          <p>Traditional stock price visualization:</p>
+
+          <div class="code-preview">
+            <div class="code-preview__preview">
+              <nu-candle-chart
+                data='[
+    {"date": "2024-01-01", "open": 150.25, "high": 155.80, "low": 148.90, "close": 154.20},
+    {"date": "2024-01-02", "open": 154.20, "high": 157.50, "low": 152.10, "close": 151.80},
+    {"date": "2024-01-03", "open": 151.80, "high": 153.40, "low": 149.20, "close": 152.90},
+    {"date": "2024-01-04", "open": 152.90, "high": 159.70, "low": 151.50, "close": 158.40},
+    {"date": "2024-01-05", "open": 158.40, "high": 162.10, "low": 157.20, "close": 160.85}
+  ]'
+                width="600"
+                height="300"
+                style="--bullish-color: #16a34a; --bearish-color: #dc2626"
+              >
+              </nu-candle-chart>
+
+              <div class="code-preview__resizer">
+                <sl-icon name="grip-vertical"></sl-icon>
+              </div>
+            </div>
+
+            <div class="code-preview__source-group" id="code-preview-source-group-68">
+              <div class="code-preview__source code-preview__source--html">
+                <pre><code class="language-html" id="code-block-297"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-candle-chart</span> 
+  <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>[
+    {"date": "2024-01-01", "open": 150.25, "high": 155.80, "low": 148.90, "close": 154.20},
+    {"date": "2024-01-02", "open": 154.20, "high": 157.50, "low": 152.10, "close": 151.80},
+    {"date": "2024-01-03", "open": 151.80, "high": 153.40, "low": 149.20, "close": 152.90},
+    {"date": "2024-01-04", "open": 152.90, "high": 159.70, "low": 151.50, "close": 158.40},
+    {"date": "2024-01-05", "open": 158.40, "high": 162.10, "low": 157.20, "close": 160.85}
+  ]<span class="token punctuation">'</span></span>
+  <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>600<span class="token punctuation">"</span></span>
+  <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>300<span class="token punctuation">"</span></span>
+  <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>
+    --bullish-color: #16a34a;
+    --bearish-color: #dc2626;
+  <span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-candle-chart</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-297"></sl-copy-button></pre>
+              </div>
+            </div>
+
+            <div class="code-preview__buttons">
+              <button
+                type="button"
+                class="code-preview__button code-preview__toggle"
+                aria-expanded="false"
+                aria-controls="code-preview-source-group-68"
+              >
+                Source
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+
+              <button type="button" class="code-preview__button code-preview__button--codepen" title="Edit on CodePen">
+                <svg
+                  width="138"
+                  height="26"
+                  viewBox="0 0 138 26"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M80 6h-9v14h9 M114 6h-9 v14h9 M111 13h-6 M77 13h-6 M122 20V6l11 14V6 M22 16.7L33 24l11-7.3V9.3L33 2L22 9.3V16.7z M44 16.7L33 9.3l-11 7.4 M22 9.3l11 7.3 l11-7.3 M33 2v7.3 M33 16.7V24 M88 14h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14 M15 8c-1.3-1.3-3-2-5-2c-4 0-7 3-7 7s3 7 7 7 c2 0 3.7-0.8 5-2 M64 13c0 4-3 7-7 7h-5V6h5C61 6 64 9 64 13z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <h3 id="custom-theming" class="anchor-heading">
+            Custom Theming<a href="#custom-theming" aria-label='Direct link to "Custom Theming"'></a>
+          </h3>
+          <p>Customize colors for different market themes:</p>
+
+          <div class="code-preview">
+            <div class="code-preview__preview">
+              <nu-candle-chart
+                data='[
+    {"date": "2024-01-01", "open": 50, "high": 55, "low": 48, "close": 52},
+    {"date": "2024-01-02", "open": 52, "high": 54, "low": 49, "close": 48},
+    {"date": "2024-01-03", "open": 48, "high": 51, "low": 45, "close": 49},
+    {"date": "2024-01-04", "open": 49, "high": 56, "low": 47, "close": 54}
+  ]'
+                width="400"
+                height="250"
+                style="--bullish-color: #059669; --bearish-color: #b91c1c; --grid-color: #f3f4f6"
+              >
+              </nu-candle-chart>
+
+              <div class="code-preview__resizer">
+                <sl-icon name="grip-vertical"></sl-icon>
+              </div>
+            </div>
+
+            <div class="code-preview__source-group" id="code-preview-source-group-69">
+              <div class="code-preview__source code-preview__source--html">
+                <pre><code class="language-html" id="code-block-298"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-candle-chart</span> 
+  <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>[
+    {"date": "2024-01-01", "open": 50, "high": 55, "low": 48, "close": 52},
+    {"date": "2024-01-02", "open": 52, "high": 54, "low": 49, "close": 48},
+    {"date": "2024-01-03", "open": 48, "high": 51, "low": 45, "close": 49},
+    {"date": "2024-01-04", "open": 49, "high": 56, "low": 47, "close": 54}
+  ]<span class="token punctuation">'</span></span>
+  <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span>
+  <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>250<span class="token punctuation">"</span></span>
+  <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>
+    --bullish-color: #059669;
+    --bearish-color: #b91c1c;
+    --grid-color: #f3f4f6;
+  <span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-candle-chart</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-298"></sl-copy-button></pre>
+              </div>
+            </div>
+
+            <div class="code-preview__buttons">
+              <button
+                type="button"
+                class="code-preview__button code-preview__toggle"
+                aria-expanded="false"
+                aria-controls="code-preview-source-group-69"
+              >
+                Source
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+
+              <button type="button" class="code-preview__button code-preview__button--codepen" title="Edit on CodePen">
+                <svg
+                  width="138"
+                  height="26"
+                  viewBox="0 0 138 26"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M80 6h-9v14h9 M114 6h-9 v14h9 M111 13h-6 M77 13h-6 M122 20V6l11 14V6 M22 16.7L33 24l11-7.3V9.3L33 2L22 9.3V16.7z M44 16.7L33 9.3l-11 7.4 M22 9.3l11 7.3 l11-7.3 M33 2v7.3 M33 16.7V24 M88 14h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14 M15 8c-1.3-1.3-3-2-5-2c-4 0-7 3-7 7s3 7 7 7 c2 0 3.7-0.8 5-2 M64 13c0 4-3 7-7 7h-5V6h5C61 6 64 9 64 13z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <h3 id="wider-candle-bodies" class="anchor-heading">
+            Wider Candle Bodies<a href="#wider-candle-bodies" aria-label='Direct link to "Wider Candle Bodies"'></a>
+          </h3>
+          <p>Adjust candle width for better visibility:</p>
+
+          <div class="code-preview">
+            <div class="code-preview__preview">
+              <nu-candle-chart
+                data='[
+    {"date": "2024-01-01", "open": 200, "high": 220, "low": 190, "close": 210},
+    {"date": "2024-01-02", "open": 210, "high": 225, "low": 205, "close": 195},
+    {"date": "2024-01-03", "open": 195, "high": 200, "low": 180, "close": 215}
+  ]'
+                width="400"
+                height="200"
+                candle-width="0.9"
+              >
+              </nu-candle-chart>
+
+              <div class="code-preview__resizer">
+                <sl-icon name="grip-vertical"></sl-icon>
+              </div>
+            </div>
+
+            <div class="code-preview__source-group" id="code-preview-source-group-70">
+              <div class="code-preview__source code-preview__source--html">
+                <pre><code class="language-html" id="code-block-299"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-candle-chart</span> 
+  <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>[
+    {"date": "2024-01-01", "open": 200, "high": 220, "low": 190, "close": 210},
+    {"date": "2024-01-02", "open": 210, "high": 225, "low": 205, "close": 195},
+    {"date": "2024-01-03", "open": 195, "high": 200, "low": 180, "close": 215}
+  ]<span class="token punctuation">'</span></span>
+  <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span>
+  <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>200<span class="token punctuation">"</span></span>
+  <span class="token attr-name">candle-width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0.9<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-candle-chart</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-299"></sl-copy-button></pre>
+              </div>
+            </div>
+
+            <div class="code-preview__buttons">
+              <button
+                type="button"
+                class="code-preview__button code-preview__toggle"
+                aria-expanded="false"
+                aria-controls="code-preview-source-group-70"
+              >
+                Source
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+
+              <button type="button" class="code-preview__button code-preview__button--codepen" title="Edit on CodePen">
+                <svg
+                  width="138"
+                  height="26"
+                  viewBox="0 0 138 26"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M80 6h-9v14h9 M114 6h-9 v14h9 M111 13h-6 M77 13h-6 M122 20V6l11 14V6 M22 16.7L33 24l11-7.3V9.3L33 2L22 9.3V16.7z M44 16.7L33 9.3l-11 7.4 M22 9.3l11 7.3 l11-7.3 M33 2v7.3 M33 16.7V24 M88 14h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14 M15 8c-1.3-1.3-3-2-5-2c-4 0-7 3-7 7s3 7 7 7 c2 0 3.7-0.8 5-2 M64 13c0 4-3 7-7 7h-5V6h5C61 6 64 9 64 13z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <h3 id="compact-view" class="anchor-heading">
+            Compact View<a href="#compact-view" aria-label='Direct link to "Compact View"'></a>
+          </h3>
+          <p>Minimal chart for dashboard widgets:</p>
+
+          <div class="code-preview">
+            <div class="code-preview__preview">
+              <nu-candle-chart
+                data='[
+    {"date": "2024-01-01", "open": 100, "high": 105, "low": 98, "close": 103},
+    {"date": "2024-01-02", "open": 103, "high": 107, "low": 101, "close": 99},
+    {"date": "2024-01-03", "open": 99, "high": 101, "low": 95, "close": 102}
+  ]'
+                width="300"
+                height="150"
+                show-grid="false"
+              >
+              </nu-candle-chart>
+
+              <div class="code-preview__resizer">
+                <sl-icon name="grip-vertical"></sl-icon>
+              </div>
+            </div>
+
+            <div class="code-preview__source-group" id="code-preview-source-group-71">
+              <div class="code-preview__source code-preview__source--html">
+                <pre><code class="language-html" id="code-block-300"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-candle-chart</span> 
+  <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>[
+    {"date": "2024-01-01", "open": 100, "high": 105, "low": 98, "close": 103},
+    {"date": "2024-01-02", "open": 103, "high": 107, "low": 101, "close": 99},
+    {"date": "2024-01-03", "open": 99, "high": 101, "low": 95, "close": 102}
+  ]<span class="token punctuation">'</span></span>
+  <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>300<span class="token punctuation">"</span></span>
+  <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>150<span class="token punctuation">"</span></span>
+  <span class="token attr-name">show-grid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-candle-chart</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-300"></sl-copy-button></pre>
+              </div>
+            </div>
+
+            <div class="code-preview__buttons">
+              <button
+                type="button"
+                class="code-preview__button code-preview__toggle"
+                aria-expanded="false"
+                aria-controls="code-preview-source-group-71"
+              >
+                Source
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+
+              <button type="button" class="code-preview__button code-preview__button--codepen" title="Edit on CodePen">
+                <svg
+                  width="138"
+                  height="26"
+                  viewBox="0 0 138 26"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M80 6h-9v14h9 M114 6h-9 v14h9 M111 13h-6 M77 13h-6 M122 20V6l11 14V6 M22 16.7L33 24l11-7.3V9.3L33 2L22 9.3V16.7z M44 16.7L33 9.3l-11 7.4 M22 9.3l11 7.3 l11-7.3 M33 2v7.3 M33 16.7V24 M88 14h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14 M15 8c-1.3-1.3-3-2-5-2c-4 0-7 3-7 7s3 7 7 7 c2 0 3.7-0.8 5-2 M64 13c0 4-3 7-7 7h-5V6h5C61 6 64 9 64 13z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <h2 id="data-format" class="anchor-heading">
+            Data Format<a href="#data-format" aria-label='Direct link to "Data Format"'></a>
+          </h2>
+          <p>Candlestick charts expect OHLC data in the following format:</p>
+          <pre><code class="language-typescript" id="code-block-301"><span class="token keyword">interface</span> <span class="token class-name">CandleChartDataPoint</span> <span class="token punctuation">{</span>
+  date<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> Date<span class="token punctuation">;</span>
+  open<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  high<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  low<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  close<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  volume<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-301"></sl-copy-button></pre>
+          <h3 id="json-string" class="anchor-heading">
+            JSON String<a href="#json-string" aria-label='Direct link to "JSON String"'></a>
+          </h3>
+          <pre><code class="language-html" id="code-block-302"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-candle-chart</span> 
+  <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>[
+    {
+      "date": "2024-01-01",
+      "open": 42000,
+      "high": 43500, 
+      "low": 41800,
+      "close": 43200,
+      "volume": 1250000
+    }
+  ]<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-candle-chart</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-302"></sl-copy-button></pre>
+          <h3 id="javascript-array" class="anchor-heading">
+            JavaScript Array<a href="#javascript-array" aria-label='Direct link to "JavaScript Array"'></a>
+          </h3>
+          <pre><code class="language-javascript" id="code-block-303"><span class="token keyword">const</span> ohlcData <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token literal-property property">date</span><span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">'2024-01-01'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">open</span><span class="token operator">:</span> <span class="token number">42000</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">high</span><span class="token operator">:</span> <span class="token number">43500</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">low</span><span class="token operator">:</span> <span class="token number">41800</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">close</span><span class="token operator">:</span> <span class="token number">43200</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">volume</span><span class="token operator">:</span> <span class="token number">1250000</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token literal-property property">date</span><span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">'2024-01-02'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    <span class="token literal-property property">open</span><span class="token operator">:</span> <span class="token number">43200</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">high</span><span class="token operator">:</span> <span class="token number">44000</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">low</span><span class="token operator">:</span> <span class="token number">42500</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">close</span><span class="token operator">:</span> <span class="token number">42800</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">volume</span><span class="token operator">:</span> <span class="token number">1100000</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'nu-candle-chart'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>data <span class="token operator">=</span> ohlcData<span class="token punctuation">;</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-303"></sl-copy-button></pre>
+          <h3 id="real-market-data-integration" class="anchor-heading">
+            Real Market Data Integration<a
+              href="#real-market-data-integration"
+              aria-label='Direct link to "Real Market Data Integration"'
+            ></a>
+          </h3>
+          <pre><code class="language-javascript" id="code-block-304"><span class="token comment">// Example with API data</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">loadBitcoinData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'/api/bitcoin/ohlc'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token keyword">await</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'nu-candle-chart'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>data <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">d</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">date</span><span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span>timestamp<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">open</span><span class="token operator">:</span> d<span class="token punctuation">.</span>open<span class="token punctuation">,</span>
+    <span class="token literal-property property">high</span><span class="token operator">:</span> d<span class="token punctuation">.</span>high<span class="token punctuation">,</span>
+    <span class="token literal-property property">low</span><span class="token operator">:</span> d<span class="token punctuation">.</span>low<span class="token punctuation">,</span>
+    <span class="token literal-property property">close</span><span class="token operator">:</span> d<span class="token punctuation">.</span>close<span class="token punctuation">,</span>
+    <span class="token literal-property property">volume</span><span class="token operator">:</span> d<span class="token punctuation">.</span>volume
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-304"></sl-copy-button></pre>
+          <h2 id="understanding-candlesticks" class="anchor-heading">
+            Understanding Candlesticks<a
+              href="#understanding-candlesticks"
+              aria-label='Direct link to "Understanding Candlesticks"'
+            ></a>
+          </h2>
+          <h3 id="bullish-green-candles" class="anchor-heading">
+            Bullish (Green) Candles<a
+              href="#bullish-green-candles"
+              aria-label='Direct link to "Bullish (Green) Candles"'
+            ></a>
+          </h3>
+          <ul>
+            <li><strong>Condition</strong>: Close price ≥ Open price</li>
+            <li><strong>Body</strong>: Semi-transparent green rectangle</li>
+            <li><strong>Meaning</strong>: Price increased during the period</li>
+          </ul>
+          <h3 id="bearish-red-candles" class="anchor-heading">
+            Bearish (Red) Candles<a href="#bearish-red-candles" aria-label='Direct link to "Bearish (Red) Candles"'></a>
+          </h3>
+          <ul>
+            <li><strong>Condition</strong>: Close price &lt; Open price</li>
+            <li><strong>Body</strong>: Solid red rectangle</li>
+            <li><strong>Meaning</strong>: Price decreased during the period</li>
+          </ul>
+          <h3 id="anatomy" class="anchor-heading">
+            Anatomy<a href="#anatomy" aria-label='Direct link to "Anatomy"'></a>
+          </h3>
+          <ul>
+            <li><strong>Wick (Shadow)</strong>: Thin lines showing high and low prices</li>
+            <li><strong>Body</strong>: Rectangle showing open and close prices</li>
+            <li><strong>Upper Wick</strong>: Distance from body top to high price</li>
+            <li><strong>Lower Wick</strong>: Distance from body bottom to low price</li>
+          </ul>
+          <h2 id="customization" class="anchor-heading">
+            Customization<a href="#customization" aria-label='Direct link to "Customization"'></a>
+          </h2>
+          <h3 id="css-custom-properties" class="anchor-heading">
+            CSS Custom Properties<a
+              href="#css-custom-properties"
+              aria-label='Direct link to "CSS Custom Properties"'
+            ></a>
+          </h3>
+          <pre><code class="language-css" id="code-block-305"><span class="token selector">nu-candle-chart</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* Colors */</span>
+  <span class="token property">--bullish-color</span><span class="token punctuation">:</span> #22c55e<span class="token punctuation">;</span>
+  <span class="token property">--bearish-color</span><span class="token punctuation">:</span> #ef4444<span class="token punctuation">;</span>
+  <span class="token property">--grid-color</span><span class="token punctuation">:</span> #e4e4e7<span class="token punctuation">;</span>
+  <span class="token property">--axis-label-color</span><span class="token punctuation">:</span> #71717a<span class="token punctuation">;</span>
+  
+  <span class="token comment">/* Sizing */</span>
+  <span class="token property">--candle-width</span><span class="token punctuation">:</span> 0.7<span class="token punctuation">;</span>
+  <span class="token property">--axis-label-size</span><span class="token punctuation">:</span> 0.75rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-305"></sl-copy-button></pre>
+          <h3 id="properties" class="anchor-heading">
+            Properties<a href="#properties" aria-label='Direct link to "Properties"'></a>
+          </h3>
+          <ul>
+            <li><code>width</code> / <code>height</code> - Chart dimensions</li>
+            <li><code>margin</code> - Chart padding object</li>
+            <li><code>show-grid</code> - Show/hide grid lines</li>
+            <li><code>show-axes</code> - Show/hide axis labels</li>
+            <li><code>show-volume</code> - Show/hide volume bars</li>
+            <li><code>candle-width</code> - Width of candle bodies (0.1–0.9)</li>
+          </ul>
+          <h3 id="dark-theme" class="anchor-heading">
+            Dark Theme<a href="#dark-theme" aria-label='Direct link to "Dark Theme"'></a>
+          </h3>
+          <pre><code class="language-css" id="code-block-306"><span class="token selector">nu-candle-chart[data-theme='dark']</span> <span class="token punctuation">{</span>
+  <span class="token property">--bullish-color</span><span class="token punctuation">:</span> #16a34a<span class="token punctuation">;</span>
+  <span class="token property">--bearish-color</span><span class="token punctuation">:</span> #dc2626<span class="token punctuation">;</span>
+  <span class="token property">--grid-color</span><span class="token punctuation">:</span> #3f3f46<span class="token punctuation">;</span>
+  <span class="token property">--axis-label-color</span><span class="token punctuation">:</span> #a1a1aa<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-306"></sl-copy-button></pre>
+          <h2 id="events" class="anchor-heading">Events<a href="#events" aria-label='Direct link to "Events"'></a></h2>
+          <h3 id="nu-candle-hover" class="anchor-heading">
+            nu-candle-hover<a href="#nu-candle-hover" aria-label='Direct link to "nu-candle-hover"'></a>
+          </h3>
+          <p>Emitted when hovering over a candlestick.</p>
+          <pre><code class="language-javascript" id="code-block-307">chart<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'nu-candle-hover'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> data<span class="token punctuation">,</span> isBullish<span class="token punctuation">,</span> priceChange<span class="token punctuation">,</span> percentChange <span class="token punctuation">}</span> <span class="token operator">=</span> event<span class="token punctuation">.</span>detail<span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>isBullish <span class="token operator">?</span> <span class="token string">'Bullish'</span> <span class="token operator">:</span> <span class="token string">'Bearish'</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> candle</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Price change: $</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>priceChange<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> (</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>percentChange<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">%)</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-307"></sl-copy-button></pre>
+          <h3 id="nu-candle-click" class="anchor-heading">
+            nu-candle-click<a href="#nu-candle-click" aria-label='Direct link to "nu-candle-click"'></a>
+          </h3>
+          <p>Emitted when clicking a candlestick.</p>
+          <pre><code class="language-javascript" id="code-block-308">chart<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'nu-candle-click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> data<span class="token punctuation">,</span> index <span class="token punctuation">}</span> <span class="token operator">=</span> event<span class="token punctuation">.</span>detail<span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'OHLC Data:'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Candle index:'</span><span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-308"></sl-copy-button></pre>
+          <h2 id="volume-analysis" class="anchor-heading">
+            Volume Analysis<a href="#volume-analysis" aria-label='Direct link to "Volume Analysis"'></a>
+          </h2>
+          <p>When <code>show-volume</code> is enabled, volume bars appear at the bottom:</p>
+          <ul>
+            <li><strong>Green bars</strong>: Volume during bullish periods</li>
+            <li><strong>Red bars</strong>: Volume during bearish periods</li>
+            <li><strong>Height</strong>: Proportional to trading volume</li>
+            <li><strong>Positioning</strong>: Bottom 20% of chart area</li>
+          </ul>
+          <h2 id="performance" class="anchor-heading">
+            Performance<a href="#performance" aria-label='Direct link to "Performance"'></a>
+          </h2>
+          <h3 id="large-datasets" class="anchor-heading">
+            Large Datasets<a href="#large-datasets" aria-label='Direct link to "Large Datasets"'></a>
+          </h3>
+          <ul>
+            <li>Optimized for up to 1000+ candles</li>
+            <li>Automatic width calculation</li>
+            <li>Efficient SVG rendering</li>
+            <li>Smart grid line generation</li>
+          </ul>
+          <h3 id="real-time-updates" class="anchor-heading">
+            Real-time Updates<a href="#real-time-updates" aria-label='Direct link to "Real-time Updates"'></a>
+          </h3>
+          <pre><code class="language-javascript" id="code-block-309"><span class="token comment">// Update with new candle data</span>
+<span class="token keyword">const</span> newCandle <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">date</span><span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">open</span><span class="token operator">:</span> lastClose<span class="token punctuation">,</span>
+  <span class="token literal-property property">high</span><span class="token operator">:</span> currentHigh<span class="token punctuation">,</span>
+  <span class="token literal-property property">low</span><span class="token operator">:</span> currentLow<span class="token punctuation">,</span> 
+  <span class="token literal-property property">close</span><span class="token operator">:</span> currentPrice
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> currentData <span class="token operator">=</span> chart<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+chart<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>currentData<span class="token punctuation">,</span> newCandle<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-309"></sl-copy-button></pre>
+          <h2 id="accessibility" class="anchor-heading">
+            Accessibility<a href="#accessibility" aria-label='Direct link to "Accessibility"'></a>
+          </h2>
+          <p>Candlestick charts include built-in accessibility features:</p>
+          <ul>
+            <li>Semantic SVG structure with proper ARIA labels</li>
+            <li>High contrast mode support for color blind users</li>
+            <li>Reduced motion preferences respected</li>
+            <li>Screen reader friendly price data</li>
+            <li>Keyboard navigation support (coming soon)</li>
+          </ul>
+          <h2 id="best-practices" class="anchor-heading">
+            Best Practices<a href="#best-practices" aria-label='Direct link to "Best Practices"'></a>
+          </h2>
+          <ul>
+            <li><strong>Time Periods</strong>: Use consistent time intervals (1m, 5m, 1h, 1d)</li>
+            <li><strong>Price Formatting</strong>: Include currency symbols and appropriate decimal places</li>
+            <li><strong>Volume Context</strong>: Always show volume for complete market picture</li>
+            <li><strong>Responsive Design</strong>: Adjust candle width based on available space</li>
+            <li><strong>Color Consistency</strong>: Use standard green/red or blue/red color schemes</li>
+          </ul>
+          <p>[component-metadata:nu-candle-chart]</p>
+
+          <h2 id="importing" class="anchor-heading">
+            Importing<a href="#importing" aria-label='Direct link to "Importing"'></a>
+          </h2>
+          <p>
+            If you’re using the autoloader or the traditional loader, you can ignore this section. Otherwise, feel free
+            to use any of the following snippets to
+            <a href="/getting-started/installation#cherry-picking">cherry pick</a> this component.
+          </p>
+
+          <nu-tab-group>
+            <nu-tab slot="nav" panel="script">Script</nu-tab>
+            <nu-tab slot="nav" panel="import">Import</nu-tab>
+            <nu-tab slot="nav" panel="bundler">Bundler</nu-tab>
+            <nu-tab slot="nav" panel="react">React</nu-tab>
+
+            <nu-tab-panel name="script">
+              <p>
+                To import this component from
+                <a
+                  href="https://www.jsdelivr.com/package/npm/@onsonr/nebula"
+                  class="external-link"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >the CDN</a
+                >
+                using a script tag:
+              </p>
+              <pre><code class="language-html" id="code-block-310"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/candle-chart/candle-chart.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><sl-copy-button class="copy-code-button" from="code-block-310"></sl-copy-button></pre>
+            </nu-tab-panel>
+
+            <nu-tab-panel name="import">
+              <p>
+                To import this component from
+                <a
+                  href="https://www.jsdelivr.com/package/npm/@onsonr/nebula"
+                  class="external-link"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >the CDN</a
+                >
+                using a JavaScript import:
+              </p>
+              <pre><code class="language-js" id="code-block-311"><span class="token keyword">import</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/candle-chart/candle-chart.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-311"></sl-copy-button></pre>
+            </nu-tab-panel>
+
+            <nu-tab-panel name="bundler">
+              <p>To import this component using <a href="/getting-started/installation#bundling">a bundler</a>:</p>
+              <pre><code class="language-js" id="code-block-312"><span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/candle-chart/candle-chart.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-312"></sl-copy-button></pre>
+            </nu-tab-panel>
+
+            <nu-tab-panel name="react">
+              <p>To import this component as a <a href="/frameworks/react">React component</a>:</p>
+              <pre><code class="language-js" id="code-block-313"><span class="token keyword">import</span> NuCandleChart <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/candle-chart'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-313"></sl-copy-button></pre>
+            </nu-tab-panel>
+          </nu-tab-group>
+
+          <h2 id="slots" class="anchor-heading">Slots<a href="#slots" aria-label='Direct link to "Slots"'></a></h2>
+
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th class="table-name">Name</th>
+                  <th class="table-description">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="nowrap">(default)</td>
+                  <td>Optional content to display when no data is available.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            <em>Learn more about <a href="/getting-started/usage#slots">using slots</a>.</em>
+          </p>
+
+          <h2 id="properties-1" class="anchor-heading">
+            Properties<a href="#properties-1" aria-label='Direct link to "Properties"'></a>
+          </h2>
+
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th class="table-name">Name</th>
+                  <th class="table-description">Description</th>
+                  <th class="table-reflects">Reflects</th>
+                  <th class="table-type">Type</th>
+                  <th class="table-default">Default</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="nowrap">data</code>
+                  </td>
+                  <td>The chart data as JSON string or array of OHLC data points.</td>
+                  <td style="text-align: center"></td>
+                  <td>
+                    <code>string</code>
+                  </td>
+                  <td>
+                    <code>'[]'</code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <code class="nowrap">width</code>
+                  </td>
+                  <td>The width of the chart in pixels.</td>
+                  <td style="text-align: center"></td>
+                  <td>
+                    <code>number</code>
+                  </td>
+                  <td>
+                    <code>600</code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <code class="nowrap">height</code>
+                  </td>
+                  <td>The height of the chart in pixels.</td>
+                  <td style="text-align: center"></td>
+                  <td>
+                    <code>number</code>
+                  </td>
+                  <td>
+                    <code>400</code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <code class="nowrap">margin</code>
+                  </td>
+                  <td>The margin around the chart area.</td>
+                  <td style="text-align: center"></td>
+                  <td>
+                    <code>object</code>
+                  </td>
+                  <td>
+                    <code>{ top: 20, right: 30, bottom: 40, left: 60 }</code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <code class="nowrap">showGrid</code>
+
+                    <br />
+                    <nu-tooltip content="This attribute is different from its property">
+                      <small>
+                        <code class="nowrap"> show-grid </code>
+                      </small>
+                    </nu-tooltip>
+                  </td>
+                  <td>Whether to show grid lines.</td>
+                  <td style="text-align: center"></td>
+                  <td>
+                    <code>boolean</code>
+                  </td>
+                  <td>
+                    <code>true</code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <code class="nowrap">showAxes</code>
+
+                    <br />
+                    <nu-tooltip content="This attribute is different from its property">
+                      <small>
+                        <code class="nowrap"> show-axes </code>
+                      </small>
+                    </nu-tooltip>
+                  </td>
+                  <td>Whether to show axis labels.</td>
+                  <td style="text-align: center"></td>
+                  <td>
+                    <code>boolean</code>
+                  </td>
+                  <td>
+                    <code>true</code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <code class="nowrap">showVolume</code>
+
+                    <br />
+                    <nu-tooltip content="This attribute is different from its property">
+                      <small>
+                        <code class="nowrap"> show-volume </code>
+                      </small>
+                    </nu-tooltip>
+                  </td>
+                  <td>Whether to show volume bars.</td>
+                  <td style="text-align: center"></td>
+                  <td>
+                    <code>boolean</code>
+                  </td>
+                  <td>
+                    <code>false</code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <code class="nowrap">candleWidth</code>
+
+                    <br />
+                    <nu-tooltip content="This attribute is different from its property">
+                      <small>
+                        <code class="nowrap"> candle-width </code>
+                      </small>
+                    </nu-tooltip>
+                  </td>
+                  <td>The width of candle bodies as a percentage (0.1 to 0.9).</td>
+                  <td style="text-align: center"></td>
+                  <td>
+                    <code>number</code>
+                  </td>
+                  <td>
+                    <code>0.7</code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <code class="nowrap">animateChart</code>
+
+                    <br />
+                    <nu-tooltip content="This attribute is different from its property">
+                      <small>
+                        <code class="nowrap"> animate-chart </code>
+                      </small>
+                    </nu-tooltip>
+                  </td>
+                  <td>Whether to animate the chart on load.</td>
+                  <td style="text-align: center"></td>
+                  <td>
+                    <code>boolean</code>
+                  </td>
+                  <td>
+                    <code>true</code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="nowrap"><code>updateComplete</code></td>
+                  <td>
+                    A read-only promise that resolves when the component has
+                    <a href="/getting-started/usage?#component-rendering-and-updating">finished updating</a>.
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            <em
+              >Learn more about
+              <a href="/getting-started/usage#attributes-and-properties">attributes and properties</a>.</em
+            >
+          </p>
+
+          <h2 id="events-1" class="anchor-heading">
+            Events<a href="#events-1" aria-label='Direct link to "Events"'></a>
+          </h2>
+
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th class="table-name" data-flavor="html">Name</th>
+                  <th class="table-name" data-flavor="react">React Event</th>
+                  <th class="table-description">Description</th>
+                  <th class="table-event-detail">Event Detail</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-flavor="html"><code class="nowrap">nu-candle-hover</code></td>
+                  <td data-flavor="react"><code class="nowrap">onNuCandleHover</code></td>
+                  <td>Emitted when hovering over a candlestick.</td>
+                  <td>-</td>
+                </tr>
+
+                <tr>
+                  <td data-flavor="html"><code class="nowrap">nu-candle-click</code></td>
+                  <td data-flavor="react"><code class="nowrap">onNuCandleClick</code></td>
+                  <td>Emitted when clicking a candlestick.</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            <em>Learn more about <a href="/getting-started/usage#events">events</a>.</em>
+          </p>
+
+          <h2 id="custom-properties" class="anchor-heading">
+            Custom Properties<a href="#custom-properties" aria-label='Direct link to "Custom Properties"'></a>
+          </h2>
+
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th class="table-name">Name</th>
+                  <th class="table-description">Description</th>
+                  <th class="table-default">Default</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="nowrap"><code>--bullish-color</code></td>
+                  <td>The color for bullish (green) candles.</td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td class="nowrap"><code>--bearish-color</code></td>
+                  <td>The color for bearish (red) candles.</td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td class="nowrap"><code>--wick-color</code></td>
+                  <td>The color of the candle wicks.</td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td class="nowrap"><code>--grid-color</code></td>
+                  <td>The color of the grid lines.</td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td class="nowrap"><code>--axis-color</code></td>
+                  <td>The color of the axis.</td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td class="nowrap"><code>--axis-label-color</code></td>
+                  <td>The color of axis labels.</td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td class="nowrap"><code>--candle-width</code></td>
+                  <td>The width of the candle bodies.</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            <em
+              >Learn more about
+              <a href="/getting-started/usage#custom-properties">customizing CSS custom properties</a>.</em
+            >
+          </p>
+
+          <h2 id="parts" class="anchor-heading">Parts<a href="#parts" aria-label='Direct link to "Parts"'></a></h2>
+
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th class="table-name">Name</th>
+                  <th class="table-description">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="nowrap"><code>base</code></td>
+                  <td>The component’s base wrapper.</td>
+                </tr>
+
+                <tr>
+                  <td class="nowrap"><code>svg</code></td>
+                  <td>The SVG container.</td>
+                </tr>
+
+                <tr>
+                  <td class="nowrap"><code>candle</code></td>
+                  <td>The candlestick elements.</td>
+                </tr>
+
+                <tr>
+                  <td class="nowrap"><code>wick</code></td>
+                  <td>The high-low wick elements.</td>
+                </tr>
+
+                <tr>
+                  <td class="nowrap"><code>body</code></td>
+                  <td>The open-close body elements.</td>
+                </tr>
+
+                <tr>
+                  <td class="nowrap"><code>grid</code></td>
+                  <td>The grid lines.</td>
+                </tr>
+
+                <tr>
+                  <td class="nowrap"><code>axis</code></td>
+                  <td>The axis elements.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            <em>Learn more about <a href="/getting-started/customizing/#css-parts">customizing CSS parts</a>.</em>
+          </p>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

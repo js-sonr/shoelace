@@ -1,7 +1,7 @@
 import Component from '../../components/progress-bar/progress-bar.component.js';
 /**
  * @summary Progress bars are used to show the status of an ongoing operation.
- * @documentation https://shoelace.style/components/progress-bar
+ * @documentation https://nebulaui.org/components/progress-bar
  * @status stable
  * @since 2.0
  *

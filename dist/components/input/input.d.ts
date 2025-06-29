@@ -1,8 +1,8 @@
-import SlInput from './input.component.js';
+import NuInput from './input.component.js';
 export * from './input.component.js';
-export default SlInput;
+export default NuInput;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-input': SlInput;
+        'nu-input': NuInput;
     }
 }

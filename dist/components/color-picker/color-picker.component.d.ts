@@ -1,15 +1,15 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlButton from '../button/button.component.js';
-import SlButtonGroup from '../button-group/button-group.component.js';
-import SlDropdown from '../dropdown/dropdown.component.js';
-import SlIcon from '../icon/icon.component.js';
-import SlInput from '../input/input.component.js';
-import SlVisuallyHidden from '../visually-hidden/visually-hidden.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuButton from '../button/button.component.js';
+import NuButtonGroup from '../button-group/button-group.component.js';
+import NuDropdown from '../dropdown/dropdown.component.js';
+import NuIcon from '../icon/icon.component.js';
+import NuInput from '../input/input.component.js';
+import NuVisuallyHidden from '../visually-hidden/visually-hidden.component.js';
 import type { CSSResultGroup } from 'lit';
-import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
+import type { NebulaFormControl } from '../../internal/nebula-element.js';
 /**
  * @summary Color pickers allow the user to select a color.
- * @documentation https://shoelace.style/components/color-picker
+ * @documentation https://nebulaui.org/components/color-picker
  * @status stable
  * @since 2.0
  *
@@ -21,11 +21,11 @@ import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
  *
  * @slot label - The color picker's form label. Alternatively, you can use the `label` attribute.
  *
- * @event sl-blur - Emitted when the color picker loses focus.
- * @event sl-change - Emitted when the color picker's value changes.
- * @event sl-focus - Emitted when the color picker receives focus.
- * @event sl-input - Emitted when the color picker receives input.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-blur - Emitted when the color picker loses focus.
+ * @event nu-change - Emitted when the color picker's value changes.
+ * @event nu-focus - Emitted when the color picker receives focus.
+ * @event nu-input - Emitted when the color picker receives input.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart base - The component's base wrapper.
  * @csspart trigger - The color picker's dropdown trigger.
@@ -61,22 +61,22 @@ import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
  * @cssproperty --slider-handle-size - The diameter of the slider's handle.
  * @cssproperty --swatch-size - The size of each predefined color swatch.
  */
-export default class SlColorPicker extends ShoelaceElement implements ShoelaceFormControl {
+export default class NuColorPicker extends NebulaElement implements NebulaFormControl {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-button-group': typeof SlButtonGroup;
-        'sl-button': typeof SlButton;
-        'sl-dropdown': typeof SlDropdown;
-        'sl-icon': typeof SlIcon;
-        'sl-input': typeof SlInput;
-        'sl-visually-hidden': typeof SlVisuallyHidden;
+        'nu-button-group': typeof NuButtonGroup;
+        'nu-button': typeof NuButton;
+        'nu-dropdown': typeof NuDropdown;
+        'nu-icon': typeof NuIcon;
+        'nu-input': typeof NuInput;
+        'nu-visually-hidden': typeof NuVisuallyHidden;
     };
     private readonly formControlController;
     private isSafeValue;
     private readonly localize;
     base: HTMLElement;
-    input: SlInput;
-    dropdown: SlDropdown;
+    input: NuInput;
+    dropdown: NuDropdown;
     previewButton: HTMLButtonElement;
     trigger: HTMLButtonElement;
     private hasFocus;

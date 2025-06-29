@@ -1,8 +1,8 @@
-import SlDialog from './dialog.component.js';
+import NuDialog from './dialog.component.js';
 export * from './dialog.component.js';
-export default SlDialog;
+export default NuDialog;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-dialog': SlDialog;
+        'nu-dialog': NuDialog;
     }
 }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="default" data-shoelace-version="0.0.10">
+<html lang="en" data-layout="default" data-nebula-version="0.0.1">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,14 +25,14 @@
 
     <link rel="stylesheet" href="/dist/themes/light.css" />
     <link rel="stylesheet" href="/dist/themes/dark.css" />
-    <script type="module" src="/dist/shoelace-autoloader.js"></script>
+    <script type="module" src="/dist/nebula-autoloader.js"></script>
 
     <script>
       (() => {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = localStorage.getItem('theme') || 'auto';
         document.documentElement.classList.toggle(
-          'sl-theme-dark',
+          'nu-theme-dark',
           theme === 'dark' || (theme === 'auto' && prefersDark)
         );
       })();
@@ -65,7 +65,7 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="github"></sl-icon>
+        <nu-icon name="github"></nu-icon>
       </a>
 
       <a
@@ -75,21 +75,21 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="twitter"></sl-icon>
+        <nu-icon name="twitter"></nu-icon>
       </a>
 
-      <sl-dropdown id="theme-selector" placement="bottom-end" distance="3">
-        <sl-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
-          <sl-icon class="only-light" name="sun-fill"></sl-icon>
-          <sl-icon class="only-dark" name="moon-fill"></sl-icon>
-        </sl-button>
-        <sl-menu>
-          <sl-menu-item type="checkbox" value="light">Light</sl-menu-item>
-          <sl-menu-item type="checkbox" value="dark">Dark</sl-menu-item>
-          <sl-divider></sl-divider>
-          <sl-menu-item type="checkbox" value="auto">System</sl-menu-item>
-        </sl-menu>
-      </sl-dropdown>
+      <nu-dropdown id="theme-selector" placement="bottom-end" distance="3">
+        <nu-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
+          <nu-icon class="only-light" name="sun-fill"></nu-icon>
+          <nu-icon class="only-dark" name="moon-fill"></nu-icon>
+        </nu-button>
+        <nu-menu>
+          <nu-menu-item type="checkbox" value="light">Light</nu-menu-item>
+          <nu-menu-item type="checkbox" value="dark">Dark</nu-menu-item>
+          <nu-divider></nu-divider>
+          <nu-menu-item type="checkbox" value="auto">System</nu-menu-item>
+        </nu-menu>
+      </nu-dropdown>
     </div>
 
     <aside id="sidebar" data-preserve-scroll="">
@@ -97,38 +97,38 @@
         <a href="/">
           <img src="/assets/images/wordmark.svg" alt="Nebula" />
         </a>
-        <div class="sidebar-version">0.0.10</div>
+        <div class="sidebar-version">0.0.1</div>
       </header>
 
       <div class="sidebar-buttons">
-        <sl-button
+        <nu-button
           size="small"
           class="repo-button repo-button--github"
           href="https://github.com/onsonr/nebula"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="github"></sl-icon> Code
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="github"></nu-icon> Code
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--star"
           href="https://github.com/onsonr/nebula/stargazers"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="star-fill"></sl-icon> Star
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="star-fill"></nu-icon> Star
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--twitter"
           href="https://twitter.com/shoelace_style"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="twitter"></sl-icon> Follow
-        </sl-button>
+          <nu-icon slot="prefix" name="twitter"></nu-icon> Follow
+        </nu-button>
       </div>
 
       <button class="search-box" type="button" title="Press / to search" aria-label="Search" data-plugin="search">
-        <sl-icon name="search"></sl-icon>
+        <nu-icon name="search"></nu-icon>
         <span>Search</span>
       </button>
 
@@ -188,6 +188,10 @@
               </li>
 
               <li>
+                <a href="/components/area-chart"> Area Chart </a>
+              </li>
+
+              <li>
                 <a href="/components/avatar"> Avatar </a>
               </li>
 
@@ -209,6 +213,10 @@
 
               <li>
                 <a href="/components/button-group"> Button Group </a>
+              </li>
+
+              <li>
+                <a href="/components/candle-chart"> Candle Chart </a>
               </li>
 
               <li>
@@ -288,6 +296,22 @@
               </li>
 
               <li>
+                <a href="/components/line-chart"> Line Chart </a>
+              </li>
+
+              <li>
+                <a href="/components/list-item"> List Item </a>
+              </li>
+
+              <li>
+                <a href="/components/list-view"> List View </a>
+              </li>
+
+              <li>
+                <a href="/components/login-button"> Login Button </a>
+              </li>
+
+              <li>
                 <a href="/components/menu"> Menu </a>
               </li>
 
@@ -305,6 +329,10 @@
 
               <li>
                 <a href="/components/option"> Option </a>
+              </li>
+
+              <li>
+                <a href="/components/pie-chart"> Pie Chart </a>
               </li>
 
               <li>
@@ -341,6 +369,10 @@
 
               <li>
                 <a href="/components/rating"> Rating </a>
+              </li>
+
+              <li>
+                <a href="/components/register-button"> Register Button </a>
               </li>
 
               <li>
@@ -468,7 +500,7 @@
           </p>
           <p>
             Design tokens are accessed through CSS custom properties that are defined in your theme. Because design
-            tokens live at the page level, they’re prefixed with <code>--sl-</code> to avoid collisions with other
+            tokens live at the page level, they’re prefixed with <code>--nu-</code> to avoid collisions with other
             libraries.
           </p>
           <p>
@@ -476,21 +508,21 @@
             an example that changes the primary theme to purple based on existing
             <a href="/tokens/color#primitives">color primitives</a>.
           </p>
-          <pre><code class="language-css" id="code-block-35"><span class="token selector">:root</span> <span class="token punctuation">{</span>
+          <pre><code class="language-css" id="code-block-3"><span class="token selector">:root</span> <span class="token punctuation">{</span>
   <span class="token comment">/* Changes the primary theme color to purple using primitives */</span>
-  <span class="token property">--sl-color-primary-50</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sl-color-purple-50<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token property">--sl-color-primary-100</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sl-color-purple-100<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token property">--sl-color-primary-200</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sl-color-purple-200<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token property">--sl-color-primary-300</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sl-color-purple-300<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token property">--sl-color-primary-400</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sl-color-purple-400<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token property">--sl-color-primary-500</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sl-color-purple-500<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token property">--sl-color-primary-600</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sl-color-purple-600<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token property">--sl-color-primary-700</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sl-color-purple-700<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token property">--sl-color-primary-800</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sl-color-purple-800<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token property">--sl-color-primary-900</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sl-color-purple-900<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token property">--sl-color-primary-950</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sl-color-purple-950<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--nu-color-primary-50</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-purple-50<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--nu-color-primary-100</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-purple-100<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--nu-color-primary-200</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-purple-200<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--nu-color-primary-300</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-purple-300<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--nu-color-primary-400</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-purple-400<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--nu-color-primary-500</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-purple-500<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--nu-color-primary-600</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-purple-600<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--nu-color-primary-700</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-purple-700<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--nu-color-primary-800</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-purple-800<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--nu-color-primary-900</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-purple-900<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--nu-color-primary-950</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-purple-950<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-35"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-3"></sl-copy-button></pre>
           <p>
             Many design tokens are described further along in this documentation. For a complete list, refer to
             <code>src/themes/light.css</code> in the project’s
@@ -532,11 +564,11 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-button class="tomato-button"> Tomato Button </sl-button>
+              <nu-button class="tomato-button"> Tomato Button </nu-button>
 
               <style>
                 .tomato-button::part(base) {
-                  background: var(--sl-color-neutral-0);
+                  background: var(--nu-color-neutral-0);
                   border: solid 1px tomato;
                 }
 
@@ -564,11 +596,11 @@
 
             <div class="code-preview__source-group" id="code-preview-source-group-2">
               <div class="code-preview__source code-preview__source--html">
-                <pre><code class="language-html" id="code-block-36"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tomato-button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> Tomato Button <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-button</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-4"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tomato-button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> Tomato Button <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-button</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
   <span class="token selector">.tomato-button::part(base)</span> <span class="token punctuation">{</span>
-    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sl-color-neutral-0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-0<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token property">border</span><span class="token punctuation">:</span> solid 1px tomato<span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 
@@ -588,7 +620,7 @@
     <span class="token property">color</span><span class="token punctuation">:</span> tomato<span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-36"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-4"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -667,21 +699,21 @@
           </h2>
           <p>
             For convenience, some components expose CSS custom properties you can override. These are not design tokens,
-            nor do they have the same <code>--sl-</code> prefix since they’re scoped to a component.
+            nor do they have the same <code>--nu-</code> prefix since they’re scoped to a component.
           </p>
           <p>You can set custom properties on a component in your stylesheet.</p>
-          <pre><code class="language-css" id="code-block-37"><span class="token selector">sl-avatar</span> <span class="token punctuation">{</span>
+          <pre><code class="language-css" id="code-block-5"><span class="token selector">sl-avatar</span> <span class="token punctuation">{</span>
   <span class="token property">--size</span><span class="token punctuation">:</span> 6rem<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-37"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-5"></sl-copy-button></pre>
           <p>This will also work if you need to target a subset of components with a specific class.</p>
-          <pre><code class="language-css" id="code-block-38"><span class="token selector">sl-avatar.your-class</span> <span class="token punctuation">{</span>
+          <pre><code class="language-css" id="code-block-6"><span class="token selector">sl-avatar.your-class</span> <span class="token punctuation">{</span>
   <span class="token property">--size</span><span class="token punctuation">:</span> 6rem<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-38"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-6"></sl-copy-button></pre>
           <p>Alternatively, you can set them inline directly on the element.</p>
-          <pre><code class="language-html" id="code-block-39"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-avatar</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">--size</span><span class="token punctuation">:</span> 6rem<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-avatar</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-39"></sl-copy-button></pre>
+          <pre><code class="language-html" id="code-block-7"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-avatar</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">--size</span><span class="token punctuation">:</span> 6rem<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-avatar</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-7"></sl-copy-button></pre>
           <p>
             Not all components expose CSS custom properties. For those that do, they can be found in the component’s API
             documentation.
@@ -707,7 +739,7 @@
             <code>options</code> or <code>null</code> to disable the animation.
           </p>
           <p>This example will make all dialogs use a custom show animation.</p>
-          <pre><code class="language-js" id="code-block-40"><span class="token keyword">import</span> <span class="token punctuation">{</span> setDefaultAnimation <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/utilities/animation-registry.js'</span><span class="token punctuation">;</span>
+          <pre><code class="language-js" id="code-block-8"><span class="token keyword">import</span> <span class="token punctuation">{</span> setDefaultAnimation <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/utilities/animation-registry.js'</span><span class="token punctuation">;</span>
 
 <span class="token comment">// Change the default animation for all dialogs</span>
 <span class="token function">setDefaultAnimation</span><span class="token punctuation">(</span><span class="token string">'dialog.show'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
@@ -719,7 +751,7 @@
     <span class="token literal-property property">duration</span><span class="token operator">:</span> <span class="token number">500</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-40"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-8"></sl-copy-button></pre>
           <div role="alert" class="callout callout--tip">
             <p>
               To support RTL languages in your animation, you can pass an additional property called
@@ -734,7 +766,7 @@
             <code>keyframes</code> and <code>options</code>.
           </p>
           <p>In this example, only the target dialog will use a custom show animation.</p>
-          <pre><code class="language-js" id="code-block-41"><span class="token keyword">import</span> <span class="token punctuation">{</span> setAnimation <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/utilities/animation-registry.js'</span><span class="token punctuation">;</span>
+          <pre><code class="language-js" id="code-block-9"><span class="token keyword">import</span> <span class="token punctuation">{</span> setAnimation <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/utilities/animation-registry.js'</span><span class="token punctuation">;</span>
 
 <span class="token comment">// Change the animation for a single dialog</span>
 <span class="token keyword">const</span> dialog <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#my-dialog'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -748,7 +780,7 @@
     <span class="token literal-property property">duration</span><span class="token operator">:</span> <span class="token number">500</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-41"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-9"></sl-copy-button></pre>
           <p>
             To learn more about creating Web Animations, refer to the documentation for
             <a

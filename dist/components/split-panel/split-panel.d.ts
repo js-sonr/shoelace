@@ -1,8 +1,8 @@
-import SlSplitPanel from './split-panel.component.js';
+import NuSplitPanel from './split-panel.component.js';
 export * from './split-panel.component.js';
-export default SlSplitPanel;
+export default NuSplitPanel;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-split-panel': SlSplitPanel;
+        'nu-split-panel': NuSplitPanel;
     }
 }

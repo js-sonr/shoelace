@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="default" data-shoelace-version="0.0.10">
+<html lang="en" data-layout="default" data-nebula-version="0.0.1">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,14 +25,14 @@
 
     <link rel="stylesheet" href="/dist/themes/light.css" />
     <link rel="stylesheet" href="/dist/themes/dark.css" />
-    <script type="module" src="/dist/shoelace-autoloader.js"></script>
+    <script type="module" src="/dist/nebula-autoloader.js"></script>
 
     <script>
       (() => {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = localStorage.getItem('theme') || 'auto';
         document.documentElement.classList.toggle(
-          'sl-theme-dark',
+          'nu-theme-dark',
           theme === 'dark' || (theme === 'auto' && prefersDark)
         );
       })();
@@ -65,7 +65,7 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="github"></sl-icon>
+        <nu-icon name="github"></nu-icon>
       </a>
 
       <a
@@ -75,21 +75,21 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="twitter"></sl-icon>
+        <nu-icon name="twitter"></nu-icon>
       </a>
 
-      <sl-dropdown id="theme-selector" placement="bottom-end" distance="3">
-        <sl-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
-          <sl-icon class="only-light" name="sun-fill"></sl-icon>
-          <sl-icon class="only-dark" name="moon-fill"></sl-icon>
-        </sl-button>
-        <sl-menu>
-          <sl-menu-item type="checkbox" value="light">Light</sl-menu-item>
-          <sl-menu-item type="checkbox" value="dark">Dark</sl-menu-item>
-          <sl-divider></sl-divider>
-          <sl-menu-item type="checkbox" value="auto">System</sl-menu-item>
-        </sl-menu>
-      </sl-dropdown>
+      <nu-dropdown id="theme-selector" placement="bottom-end" distance="3">
+        <nu-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
+          <nu-icon class="only-light" name="sun-fill"></nu-icon>
+          <nu-icon class="only-dark" name="moon-fill"></nu-icon>
+        </nu-button>
+        <nu-menu>
+          <nu-menu-item type="checkbox" value="light">Light</nu-menu-item>
+          <nu-menu-item type="checkbox" value="dark">Dark</nu-menu-item>
+          <nu-divider></nu-divider>
+          <nu-menu-item type="checkbox" value="auto">System</nu-menu-item>
+        </nu-menu>
+      </nu-dropdown>
     </div>
 
     <aside id="sidebar" data-preserve-scroll="">
@@ -97,38 +97,38 @@
         <a href="/">
           <img src="/assets/images/wordmark.svg" alt="Nebula" />
         </a>
-        <div class="sidebar-version">0.0.10</div>
+        <div class="sidebar-version">0.0.1</div>
       </header>
 
       <div class="sidebar-buttons">
-        <sl-button
+        <nu-button
           size="small"
           class="repo-button repo-button--github"
           href="https://github.com/onsonr/nebula"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="github"></sl-icon> Code
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="github"></nu-icon> Code
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--star"
           href="https://github.com/onsonr/nebula/stargazers"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="star-fill"></sl-icon> Star
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="star-fill"></nu-icon> Star
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--twitter"
           href="https://twitter.com/shoelace_style"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="twitter"></sl-icon> Follow
-        </sl-button>
+          <nu-icon slot="prefix" name="twitter"></nu-icon> Follow
+        </nu-button>
       </div>
 
       <button class="search-box" type="button" title="Press / to search" aria-label="Search" data-plugin="search">
-        <sl-icon name="search"></sl-icon>
+        <nu-icon name="search"></nu-icon>
         <span>Search</span>
       </button>
 
@@ -188,6 +188,10 @@
               </li>
 
               <li>
+                <a href="/components/area-chart"> Area Chart </a>
+              </li>
+
+              <li>
                 <a href="/components/avatar"> Avatar </a>
               </li>
 
@@ -209,6 +213,10 @@
 
               <li>
                 <a href="/components/button-group"> Button Group </a>
+              </li>
+
+              <li>
+                <a href="/components/candle-chart"> Candle Chart </a>
               </li>
 
               <li>
@@ -288,6 +296,22 @@
               </li>
 
               <li>
+                <a href="/components/line-chart"> Line Chart </a>
+              </li>
+
+              <li>
+                <a href="/components/list-item"> List Item </a>
+              </li>
+
+              <li>
+                <a href="/components/list-view"> List View </a>
+              </li>
+
+              <li>
+                <a href="/components/login-button"> Login Button </a>
+              </li>
+
+              <li>
                 <a href="/components/menu"> Menu </a>
               </li>
 
@@ -305,6 +329,10 @@
 
               <li>
                 <a href="/components/option"> Option </a>
+              </li>
+
+              <li>
+                <a href="/components/pie-chart"> Pie Chart </a>
               </li>
 
               <li>
@@ -341,6 +369,10 @@
 
               <li>
                 <a href="/components/rating"> Rating </a>
+              </li>
+
+              <li>
+                <a href="/components/register-button"> Register Button </a>
               </li>
 
               <li>
@@ -476,8 +508,8 @@
             ></a>
           </h3>
           <p>To add Nebula to your Angular app, install the package from npm.</p>
-          <pre><code class="language-bash" id="code-block-1"><span class="token function">npm</span> <span class="token function">install</span> @onsonr/nebula
-</code><sl-copy-button class="copy-code-button" from="code-block-1"></sl-copy-button></pre>
+          <pre><code class="language-bash" id="code-block-64"><span class="token function">npm</span> <span class="token function">install</span> @onsonr/nebula
+</code><sl-copy-button class="copy-code-button" from="code-block-64"></sl-copy-button></pre>
           <h3 id="update-the-angular-configuration" class="anchor-heading">
             Update the Angular Configuration<a
               href="#update-the-angular-configuration"
@@ -492,7 +524,7 @@
             file. However, the Angular way to do it is by adding a script configurations into your angular.json file as
             follows:
           </p>
-          <pre><code class="language-json" id="code-block-2"><span class="token property">"architect"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <pre><code class="language-json" id="code-block-65"><span class="token property">"architect"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
   <span class="token property">"build"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     ...
     <span class="token property">"options"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -505,7 +537,7 @@
         <span class="token string">"@onsonr/nebula/dist/shoelace.js"</span>
       <span class="token punctuation">]</span>
       ...
-</code><sl-copy-button class="copy-code-button" from="code-block-2"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-65"></sl-copy-button></pre>
           <h3 id="setting-up-the-base-path" class="anchor-heading">
             Setting up the base path<a
               href="#setting-up-the-base-path"
@@ -516,10 +548,10 @@
             Next, set the <a href="/getting-started/installation#setting-the-base-path">base path</a> for icons and
             other assets in the <code>main.ts</code>. In this example, we’ll use the CDN as a base path.
           </p>
-          <pre><code class="language-jsx" id="code-block-3"><span class="token keyword">import</span> <span class="token punctuation">{</span> setBasePath <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/utilities/base-path'</span><span class="token punctuation">;</span>
+          <pre><code class="language-jsx" id="code-block-66"><span class="token keyword">import</span> <span class="token punctuation">{</span> setBasePath <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/utilities/base-path'</span><span class="token punctuation">;</span>
 
-<span class="token function">setBasePath</span><span class="token punctuation">(</span><span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.10/cdn/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-3"></sl-copy-button></pre>
+<span class="token function">setBasePath</span><span class="token punctuation">(</span><span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-66"></sl-copy-button></pre>
           <div role="alert" class="callout callout--tip">
             <p>
               If you’d rather not use the CDN for assets, you can create a build task that copies
@@ -531,7 +563,7 @@
             Configuration<a href="#configuration" aria-label='Direct link to "Configuration"'></a>
           </h2>
           <p>Then make sure to apply the custom elements schema as shown below.</p>
-          <pre><code class="language-js" id="code-block-4"><span class="token keyword">import</span> <span class="token punctuation">{</span> BrowserModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/platform-browser'</span><span class="token punctuation">;</span>
+          <pre><code class="language-js" id="code-block-67"><span class="token keyword">import</span> <span class="token punctuation">{</span> BrowserModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/platform-browser'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> NgModule<span class="token punctuation">,</span> <span class="token constant">CUSTOM_ELEMENTS_SCHEMA</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> <span class="token punctuation">{</span> AppComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./app.component'</span><span class="token punctuation">;</span>
@@ -544,18 +576,18 @@
   <span class="token literal-property property">schemas</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token constant">CUSTOM_ELEMENTS_SCHEMA</span><span class="token punctuation">]</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppModule</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-4"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-67"></sl-copy-button></pre>
           <h2 id="reference-nebula-components-in-your-angular-component-code" class="anchor-heading">
             Reference Nebula components in your Angular component code<a
               href="#reference-nebula-components-in-your-angular-component-code"
               aria-label='Direct link to "Reference Nebula components in your Angular component code"'
             ></a>
           </h2>
-          <pre><code class="language-js" id="code-block-5"><span class="token keyword">import</span> <span class="token punctuation">{</span> SlDrawer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula'</span><span class="token punctuation">;</span>
+          <pre><code class="language-js" id="code-block-68"><span class="token keyword">import</span> <span class="token punctuation">{</span> SlDrawer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula'</span><span class="token punctuation">;</span>
 
 @<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
   <span class="token literal-property property">selector</span><span class="token operator">:</span> <span class="token string">'app-drawer-example'</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token string">'&lt;div id="page"&gt;&lt;button (click)="showDrawer()"&gt;Show drawer&lt;/button&gt;&lt;sl-drawer #drawer label="Drawer" class="drawer-focus" style="--size: 50vw"&gt;&lt;p&gt;Drawer content&lt;/p&gt;&lt;/sl-drawer&gt;&lt;/div&gt;'</span>
+  <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token string">'&lt;div id="page"&gt;&lt;button (click)="showDrawer()"&gt;Show drawer&lt;/button&gt;&lt;nu-drawer #drawer label="Drawer" class="drawer-focus" style="--size: 50vw"&gt;&lt;p&gt;Drawer content&lt;/p&gt;&lt;/nu-drawer&gt;&lt;/div&gt;'</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">DrawerExampleComponent</span> <span class="token keyword">implements</span> <span class="token class-name">OnInit</span> <span class="token punctuation">{</span>
 
@@ -578,7 +610,7 @@
     <span class="token keyword">this</span><span class="token punctuation">.</span>drawer<span class="token operator">?.</span>nativeElement<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-5"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-68"></sl-copy-button></pre>
           <p>Now you can start using Nebula components in your app!</p>
           <div role="alert" class="callout callout--tip">
             <p>

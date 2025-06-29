@@ -1,8 +1,8 @@
-import SlCarousel from './carousel.component.js';
+import NuCarousel from './carousel.component.js';
 export * from './carousel.component.js';
-export default SlCarousel;
+export default NuCarousel;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-carousel': SlCarousel;
+        'nu-carousel': NuCarousel;
     }
 }

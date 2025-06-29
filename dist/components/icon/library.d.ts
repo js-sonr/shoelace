@@ -1,4 +1,4 @@
-import type SlIcon from '../icon/icon.js';
+import type NuIcon from '../icon/icon.js';
 export type IconLibraryResolver = (name: string) => string;
 export type IconLibraryMutator = (svg: SVGElement) => void;
 export interface IconLibrary {
@@ -8,9 +8,9 @@ export interface IconLibrary {
     spriteSheet?: boolean;
 }
 /** Adds an icon to the list of watched icons. */
-export declare function watchIcon(icon: SlIcon): void;
+export declare function watchIcon(icon: NuIcon): void;
 /** Removes an icon from the list of watched icons. */
-export declare function unwatchIcon(icon: SlIcon): void;
+export declare function unwatchIcon(icon: NuIcon): void;
 /** Returns a library from the registry. */
 export declare function getIconLibrary(name?: string): IconLibrary | undefined;
 /** Adds an icon library to the registry, or overrides an existing one. */

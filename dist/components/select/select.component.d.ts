@@ -1,13 +1,13 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIcon from '../icon/icon.component.js';
-import SlPopup from '../popup/popup.component.js';
-import SlTag from '../tag/tag.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIcon from '../icon/icon.component.js';
+import NuPopup from '../popup/popup.component.js';
+import NuTag from '../tag/tag.component.js';
 import type { CSSResultGroup, TemplateResult } from 'lit';
-import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
-import type SlOption from '../option/option.component.js';
+import type { NebulaFormControl } from '../../internal/nebula-element.js';
+import type NuOption from '../option/option.component.js';
 /**
  * @summary Selects allow you to choose items from a menu of predefined options.
- * @documentation https://shoelace.style/components/select
+ * @documentation https://nebulaui.org/components/select
  * @status stable
  * @since 2.0
  *
@@ -15,23 +15,23 @@ import type SlOption from '../option/option.component.js';
  * @dependency sl-popup
  * @dependency sl-tag
  *
- * @slot - The listbox options. Must be `<sl-option>` elements. You can use `<sl-divider>` to group items visually.
+ * @slot - The listbox options. Must be `<nu-option>` elements. You can use `<nu-divider>` to group items visually.
  * @slot label - The input's label. Alternatively, you can use the `label` attribute.
  * @slot prefix - Used to prepend a presentational icon or similar element to the combobox.
  * @slot clear-icon - An icon to use in lieu of the default clear icon.
  * @slot expand-icon - The icon to show when the control is expanded and collapsed. Rotates on open and close.
  * @slot help-text - Text that describes how to use the input. Alternatively, you can use the `help-text` attribute.
  *
- * @event sl-change - Emitted when the control's value changes.
- * @event sl-clear - Emitted when the control's value is cleared.
- * @event sl-input - Emitted when the control receives input.
- * @event sl-focus - Emitted when the control gains focus.
- * @event sl-blur - Emitted when the control loses focus.
- * @event sl-show - Emitted when the select's menu opens.
- * @event sl-after-show - Emitted after the select's menu opens and all animations are complete.
- * @event sl-hide - Emitted when the select's menu closes.
- * @event sl-after-hide - Emitted after the select's menu closes and all animations are complete.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-change - Emitted when the control's value changes.
+ * @event nu-clear - Emitted when the control's value is cleared.
+ * @event nu-input - Emitted when the control receives input.
+ * @event nu-focus - Emitted when the control gains focus.
+ * @event nu-blur - Emitted when the control loses focus.
+ * @event nu-show - Emitted when the select's menu opens.
+ * @event nu-after-show - Emitted after the select's menu opens and all animations are complete.
+ * @event nu-hide - Emitted when the select's menu closes.
+ * @event nu-after-hide - Emitted after the select's menu closes and all animations are complete.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart form-control - The form control that wraps the label, input, and help text.
  * @csspart form-control-label - The label's wrapper.
@@ -50,12 +50,12 @@ import type SlOption from '../option/option.component.js';
  * @csspart clear-button - The clear button.
  * @csspart expand-icon - The container that wraps the expand icon.
  */
-export default class SlSelect extends ShoelaceElement implements ShoelaceFormControl {
+export default class NuSelect extends NebulaElement implements NebulaFormControl {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-icon': typeof SlIcon;
-        'sl-popup': typeof SlPopup;
-        'sl-tag': typeof SlTag;
+        'nu-icon': typeof NuIcon;
+        'nu-popup': typeof NuPopup;
+        'nu-tag': typeof NuTag;
     };
     private readonly formControlController;
     private readonly hasSlotController;
@@ -63,15 +63,15 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
     private typeToSelectString;
     private typeToSelectTimeout;
     private closeWatcher;
-    popup: SlPopup;
+    popup: NuPopup;
     combobox: HTMLSlotElement;
     displayInput: HTMLInputElement;
     valueInput: HTMLInputElement;
     listbox: HTMLSlotElement;
     private hasFocus;
     displayLabel: string;
-    currentOption: SlOption;
-    selectedOptions: SlOption[];
+    currentOption: NuOption;
+    selectedOptions: NuOption[];
     /** The name of the select, submitted as a name/value pair with form data. */
     name: string;
     /**
@@ -133,7 +133,7 @@ export default class SlSelect extends ShoelaceElement implements ShoelaceFormCon
      * is the current tag's index.  The function should return either a Lit TemplateResult or a string containing trusted HTML of the symbol to render at
      * the specified value.
      */
-    getTag: (option: SlOption, index: number) => TemplateResult | string | HTMLElement;
+    getTag: (option: NuOption, index: number) => TemplateResult | string | HTMLElement;
     /** Gets the validity state object */
     get validity(): ValidityState;
     /** Gets the validation message */

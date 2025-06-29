@@ -1,7 +1,7 @@
 import Component from '../../components/option/option.component.js';
 /**
  * @summary Options define the selectable items within various form controls such as [select](/components/select).
- * @documentation https://shoelace.style/components/option
+ * @documentation https://nebulaui.org/components/option
  * @status stable
  * @since 2.0
  *
@@ -11,7 +11,7 @@ import Component from '../../components/option/option.component.js';
  * @slot prefix - Used to prepend an icon or similar element to the menu item.
  * @slot suffix - Used to append an icon or similar element to the menu item.
  *
- * @csspart checked-icon - The checked icon, an `<sl-icon>` element.
+ * @csspart checked-icon - The checked icon, an `<nu-icon>` element.
  * @csspart base - The component's base wrapper.
  * @csspart label - The option's label.
  * @csspart prefix - The container that wraps the prefix.

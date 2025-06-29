@@ -1,8 +1,8 @@
-import SlTag from './tag.component.js';
+import NuTag from './tag.component.js';
 export * from './tag.component.js';
-export default SlTag;
+export default NuTag;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-tag': SlTag;
+        'nu-tag': NuTag;
     }
 }

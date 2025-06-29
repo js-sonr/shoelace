@@ -1,8 +1,8 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Tab panels are used inside [tab groups](/components/tab-group) to display tabbed content.
- * @documentation https://shoelace.style/components/tab-panel
+ * @documentation https://nebulaui.org/components/tab-panel
  * @status stable
  * @since 2.0
  *
@@ -12,7 +12,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @cssproperty --padding - The tab panel's padding.
  */
-export default class SlTabPanel extends ShoelaceElement {
+export default class NuTabPanel extends NebulaElement {
     static styles: CSSResultGroup;
     private readonly attrId;
     private readonly componentId;

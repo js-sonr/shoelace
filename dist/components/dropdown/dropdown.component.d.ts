@@ -1,24 +1,24 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlPopup from '../popup/popup.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuPopup from '../popup/popup.component.js';
 import type { CSSResultGroup } from 'lit';
-import type SlMenu from '../menu/menu.js';
+import type NuMenu from '../menu/menu.js';
 /**
  * @summary Dropdowns expose additional content that "drops down" in a panel.
- * @documentation https://shoelace.style/components/dropdown
+ * @documentation https://nebulaui.org/components/dropdown
  * @status stable
  * @since 2.0
  *
  * @dependency sl-popup
  *
  * @slot - The dropdown's main content.
- * @slot trigger - The dropdown's trigger, usually a `<sl-button>` element.
+ * @slot trigger - The dropdown's trigger, usually a `<nu-button>` element.
  *
- * @event sl-show - Emitted when the dropdown opens.
- * @event sl-after-show - Emitted after the dropdown opens and all animations are complete.
- * @event sl-hide - Emitted when the dropdown closes.
- * @event sl-after-hide - Emitted after the dropdown closes and all animations are complete.
+ * @event nu-show - Emitted when the dropdown opens.
+ * @event nu-after-show - Emitted after the dropdown opens and all animations are complete.
+ * @event nu-hide - Emitted when the dropdown closes.
+ * @event nu-after-hide - Emitted after the dropdown closes and all animations are complete.
  *
- * @csspart base - The component's base wrapper, an `<sl-popup>` element.
+ * @csspart base - The component's base wrapper, an `<nu-popup>` element.
  * @csspart base__popup - The popup's exported `popup` part. Use this to target the tooltip's popup container.
  * @csspart trigger - The container that wraps the trigger.
  * @csspart panel - The panel that gets shown when the dropdown is open.
@@ -26,12 +26,12 @@ import type SlMenu from '../menu/menu.js';
  * @animation dropdown.show - The animation to use when showing the dropdown.
  * @animation dropdown.hide - The animation to use when hiding the dropdown.
  */
-export default class SlDropdown extends ShoelaceElement {
+export default class NuDropdown extends NebulaElement {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-popup': typeof SlPopup;
+        'nu-popup': typeof NuPopup;
     };
-    popup: SlPopup;
+    popup: NuPopup;
     trigger: HTMLSlotElement;
     panel: HTMLSlotElement;
     private readonly localize;
@@ -75,7 +75,7 @@ export default class SlDropdown extends ShoelaceElement {
     firstUpdated(): void;
     disconnectedCallback(): void;
     focusOnTrigger(): void;
-    getMenu(): SlMenu | undefined;
+    getMenu(): NuMenu | undefined;
     private handleKeyDown;
     private handleDocumentKeyDown;
     private handleDocumentMouseDown;

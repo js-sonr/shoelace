@@ -1,8 +1,8 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Progress bars are used to show the status of an ongoing operation.
- * @documentation https://shoelace.style/components/progress-bar
+ * @documentation https://nebulaui.org/components/progress-bar
  * @status stable
  * @since 2.0
  *
@@ -17,7 +17,7 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --indicator-color - The color of the indicator.
  * @cssproperty --label-color - The color of the label.
  */
-export default class SlProgressBar extends ShoelaceElement {
+export default class NuProgressBar extends NebulaElement {
     static styles: CSSResultGroup;
     private readonly localize;
     /** The current progress as a percentage, 0 to 100. */

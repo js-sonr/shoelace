@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="default" data-shoelace-version="0.0.10">
+<html lang="en" data-layout="default" data-nebula-version="0.0.1">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,14 +31,14 @@
 
     <link rel="stylesheet" href="/dist/themes/light.css" />
     <link rel="stylesheet" href="/dist/themes/dark.css" />
-    <script type="module" src="/dist/shoelace-autoloader.js"></script>
+    <script type="module" src="/dist/nebula-autoloader.js"></script>
 
     <script>
       (() => {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = localStorage.getItem('theme') || 'auto';
         document.documentElement.classList.toggle(
-          'sl-theme-dark',
+          'nu-theme-dark',
           theme === 'dark' || (theme === 'auto' && prefersDark)
         );
       })();
@@ -71,7 +71,7 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="github"></sl-icon>
+        <nu-icon name="github"></nu-icon>
       </a>
 
       <a
@@ -81,21 +81,21 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="twitter"></sl-icon>
+        <nu-icon name="twitter"></nu-icon>
       </a>
 
-      <sl-dropdown id="theme-selector" placement="bottom-end" distance="3">
-        <sl-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
-          <sl-icon class="only-light" name="sun-fill"></sl-icon>
-          <sl-icon class="only-dark" name="moon-fill"></sl-icon>
-        </sl-button>
-        <sl-menu>
-          <sl-menu-item type="checkbox" value="light">Light</sl-menu-item>
-          <sl-menu-item type="checkbox" value="dark">Dark</sl-menu-item>
-          <sl-divider></sl-divider>
-          <sl-menu-item type="checkbox" value="auto">System</sl-menu-item>
-        </sl-menu>
-      </sl-dropdown>
+      <nu-dropdown id="theme-selector" placement="bottom-end" distance="3">
+        <nu-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
+          <nu-icon class="only-light" name="sun-fill"></nu-icon>
+          <nu-icon class="only-dark" name="moon-fill"></nu-icon>
+        </nu-button>
+        <nu-menu>
+          <nu-menu-item type="checkbox" value="light">Light</nu-menu-item>
+          <nu-menu-item type="checkbox" value="dark">Dark</nu-menu-item>
+          <nu-divider></nu-divider>
+          <nu-menu-item type="checkbox" value="auto">System</nu-menu-item>
+        </nu-menu>
+      </nu-dropdown>
     </div>
 
     <aside id="sidebar" data-preserve-scroll="">
@@ -103,38 +103,38 @@
         <a href="/">
           <img src="/assets/images/wordmark.svg" alt="Nebula" />
         </a>
-        <div class="sidebar-version">0.0.10</div>
+        <div class="sidebar-version">0.0.1</div>
       </header>
 
       <div class="sidebar-buttons">
-        <sl-button
+        <nu-button
           size="small"
           class="repo-button repo-button--github"
           href="https://github.com/onsonr/nebula"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="github"></sl-icon> Code
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="github"></nu-icon> Code
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--star"
           href="https://github.com/onsonr/nebula/stargazers"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="star-fill"></sl-icon> Star
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="star-fill"></nu-icon> Star
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--twitter"
           href="https://twitter.com/shoelace_style"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="twitter"></sl-icon> Follow
-        </sl-button>
+          <nu-icon slot="prefix" name="twitter"></nu-icon> Follow
+        </nu-button>
       </div>
 
       <button class="search-box" type="button" title="Press / to search" aria-label="Search" data-plugin="search">
-        <sl-icon name="search"></sl-icon>
+        <nu-icon name="search"></nu-icon>
         <span>Search</span>
       </button>
 
@@ -194,6 +194,10 @@
               </li>
 
               <li>
+                <a href="/components/area-chart"> Area Chart </a>
+              </li>
+
+              <li>
                 <a href="/components/avatar"> Avatar </a>
               </li>
 
@@ -215,6 +219,10 @@
 
               <li>
                 <a href="/components/button-group"> Button Group </a>
+              </li>
+
+              <li>
+                <a href="/components/candle-chart"> Candle Chart </a>
               </li>
 
               <li>
@@ -294,6 +302,22 @@
               </li>
 
               <li>
+                <a href="/components/line-chart"> Line Chart </a>
+              </li>
+
+              <li>
+                <a href="/components/list-item"> List Item </a>
+              </li>
+
+              <li>
+                <a href="/components/list-view"> List View </a>
+              </li>
+
+              <li>
+                <a href="/components/login-button"> Login Button </a>
+              </li>
+
+              <li>
                 <a href="/components/menu"> Menu </a>
               </li>
 
@@ -311,6 +335,10 @@
 
               <li>
                 <a href="/components/option"> Option </a>
+              </li>
+
+              <li>
+                <a href="/components/pie-chart"> Pie Chart </a>
               </li>
 
               <li>
@@ -347,6 +375,10 @@
 
               <li>
                 <a href="/components/rating"> Rating </a>
+              </li>
+
+              <li>
+                <a href="/components/register-button"> Register Button </a>
               </li>
 
               <li>
@@ -688,7 +720,7 @@
           </h3>
           <p>
             <code>current</code> - This branch reflects the latest release and powers
-            <a href="https://shoelace.style/" class="external-link" rel="noopener noreferrer" target="_blank"
+            <a href="https://nebulaui.org/" class="external-link" rel="noopener noreferrer" target="_blank"
               >shoelace.style</a
             >.
           </p>
@@ -1000,7 +1032,7 @@ The details here are expandable.
             Component Structure<a href="#component-structure" aria-label='Direct link to "Component Structure"'></a>
           </h3>
           <p>
-            All components have a host element, which is a reference to the <code>&lt;sl-*&gt;</code> element itself.
+            All components have a host element, which is a reference to the <code>&lt;nu-*&gt;</code> element itself.
             Make sure to always set the host element’s <code>display</code> property to the appropriate value depending
             on your needs, as the default is <code>inline</code> per the custom element spec.
           </p>
@@ -1118,7 +1150,7 @@ The details here are expandable.
             ></a>
           </h3>
           <p>
-            A pattern has been established in <code>&lt;sl-details&gt;</code> and <code>&lt;sl-tree-item&gt;</code> for
+            A pattern has been established in <code>&lt;nu-details&gt;</code> and <code>&lt;nu-tree-item&gt;</code> for
             expand/collapse icons that animate on open/close. In short, create two slots called
             <code>expand-icon</code> and <code>collapse-icon</code> and render them both in the DOM, using CSS to
             show/hide only one based on the current open state. Avoid conditionally rendering them. Also avoid using
@@ -1128,8 +1160,8 @@ The details here are expandable.
           <p>
             There should be a container element immediately surrounding both slots. The container should be animated
             with CSS by default and it should have a part so the user can override the animation or disable it. Please
-            refer to the source and documentation for <code>&lt;sl-details&gt;</code> and/or
-            <code>&lt;sl-tree-item&gt;</code> for details.
+            refer to the source and documentation for <code>&lt;nu-details&gt;</code> and/or
+            <code>&lt;nu-tree-item&gt;</code> for details.
           </p>
           <h3 id="fallback-content-in-slots" class="anchor-heading">
             Fallback Content in Slots<a
@@ -1139,7 +1171,7 @@ The details here are expandable.
           </h3>
           <p>When providing fallback content inside of <code>&lt;slot&gt;</code> elements, avoid adding parts, e.g.:</p>
           <pre><code class="language-html" id="code-block-113"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>icon<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-icon</span> <span class="token attr-name">part</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>close-icon<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-icon</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-icon</span> <span class="token attr-name">part</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>close-icon<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-icon</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>
 </code><sl-copy-button class="copy-code-button" from="code-block-113"></sl-copy-button></pre>
           <p>
@@ -1184,13 +1216,13 @@ The details here are expandable.
           </h3>
           <p>To expose custom properties as part of a component’s API, scope them to the <code>:host</code> block.</p>
           <pre><code class="language-css" id="code-block-114"><span class="token selector">:host</span> <span class="token punctuation">{</span>
-  <span class="token property">--color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sl-color-primary-500<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token property">--background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--sl-color-neutral-100<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-primary-500<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">--background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-100<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code><sl-copy-button class="copy-code-button" from="code-block-114"></sl-copy-button></pre>
           <p>
             Then use the following syntax for comments so they appear in the generated docs. Do not use the
-            <code>--sl-</code> prefix, as that is reserved for design tokens that live in the global scope.
+            <code>--nu-</code> prefix, as that is reserved for design tokens that live in the global scope.
           </p>
           <pre><code class="language-js" id="code-block-115"><span class="token comment">/**
  * @cssproperty --color: The component's text color.
@@ -1281,7 +1313,7 @@ The details here are expandable.
           <pre><code class="language-js" id="code-block-116"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> html<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
     &lt;div part="base"&gt;
-      &lt;sl-icon part="icon" exportparts="base:icon__base" ...&gt;&lt;/sl-icon&gt;
+      &lt;nu-icon part="icon" exportparts="base:icon__base" ...&gt;&lt;/nu-icon&gt;
     &lt;/div&gt;
   </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -1299,13 +1331,13 @@ The details here are expandable.
           </p>
           <p>
             Many Nebula components use other Nebula components internally. For example,
-            <code>&lt;sl-button&gt;</code> uses both <code>&lt;sl-icon&gt;</code> and
-            <code>&lt;sl-spinner&gt;</code> for its caret icon and loading state, respectively. Since these components
+            <code>&lt;nu-button&gt;</code> uses both <code>&lt;nu-icon&gt;</code> and
+            <code>&lt;nu-spinner&gt;</code> for its caret icon and loading state, respectively. Since these components
             appear in the button’s shadow root, they are considered dependencies of Button. Since dependencies are
             automatically loaded, users only need to import the button and everything will work as expected.
           </p>
           <p>
-            Contrast this to <code>&lt;sl-select&gt;</code> and <code>&lt;sl-option&gt;</code>. At first, one might
+            Contrast this to <code>&lt;nu-select&gt;</code> and <code>&lt;nu-option&gt;</code>. At first, one might
             assume that Option is a dependency of Select. After all, you can’t really use Select without slotting in at
             least one Option. However, Option <em>is not</em> a dependency of Select! The reason is because no Option is
             rendered in the Select’s shadow root. Since the options are provided by the user, it’s up to them to import
@@ -1318,9 +1350,9 @@ The details here are expandable.
             of features? They wouldn’t be able to if Nebula automatically imported it!
           </p>
           <p>
-            Similarly, in the case of <code>&lt;sl-radio-group&gt;</code> there was originally only
-            <code>&lt;sl-radio&gt;</code>, but now you can use either <code>&lt;sl-radio&gt;</code> or
-            <code>&lt;sl-radio-button&gt;</code> as child elements. Which component(s) should be auto-loaded
+            Similarly, in the case of <code>&lt;nu-radio-group&gt;</code> there was originally only
+            <code>&lt;nu-radio&gt;</code>, but now you can use either <code>&lt;nu-radio&gt;</code> or
+            <code>&lt;nu-radio-button&gt;</code> as child elements. Which component(s) should be auto-loaded
             dependencies in this case? Had Radio been a dependency of Radio Group, users that only wanted Radio Buttons
             would be forced to register both with no way to opt out and no way to provide their own customized version.
           </p>
@@ -1357,10 +1389,10 @@ The details here are expandable.
           </h3>
           <p>
             Avoid inlining SVG icons inside of templates. If a component requires an icon, make sure
-            <code>&lt;sl-icon&gt;</code> is a dependency of the component and use the
+            <code>&lt;nu-icon&gt;</code> is a dependency of the component and use the
             <a href="/components/icon#customizing-the-system-library">system library</a>:
           </p>
-          <pre><code class="language-html" id="code-block-117"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-icon</span> <span class="token attr-name">library</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>system<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-icon</span><span class="token punctuation">&gt;</span></span>
+          <pre><code class="language-html" id="code-block-117"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-icon</span> <span class="token attr-name">library</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>system<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-icon</span><span class="token punctuation">&gt;</span></span>
 </code><sl-copy-button class="copy-code-button" from="code-block-117"></sl-copy-button></pre>
           <p>
             This will render the icons instantly whereas the default library will fetch them from a remote source. If an
@@ -1380,7 +1412,7 @@ The details here are expandable.
               to cover all scenarios.):
             </li>
           </ul>
-          <pre><code class="language-ts" id="code-block-118"><span class="token keyword">const</span> myComponent <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token generic-function"><span class="token function">fixture</span><span class="token generic class-name"><span class="token operator">&lt;</span>SlAlert<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>html<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;sl-my-component&gt;SomeContent&lt;/sl-my-component&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <pre><code class="language-ts" id="code-block-118"><span class="token keyword">const</span> myComponent <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token generic-function"><span class="token function">fixture</span><span class="token generic class-name"><span class="token operator">&lt;</span>SlAlert<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>html<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;nu-my-component&gt;SomeContent&lt;/nu-my-component&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token keyword">await</span> <span class="token function">expect</span><span class="token punctuation">(</span>myComponent<span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>be<span class="token punctuation">.</span><span class="token function">accessible</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code><sl-copy-button class="copy-code-button" from="code-block-118"></sl-copy-button></pre>

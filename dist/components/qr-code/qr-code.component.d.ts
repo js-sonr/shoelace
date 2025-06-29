@@ -1,14 +1,14 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Generates a [QR code](https://www.qrcode.com/) and renders it using the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API).
- * @documentation https://shoelace.style/components/qr-code
+ * @documentation https://nebulaui.org/components/qr-code
  * @status stable
  * @since 2.0
  *
  * @csspart base - The component's base wrapper.
  */
-export default class SlQrCode extends ShoelaceElement {
+export default class NuQrCode extends NebulaElement {
     static styles: CSSResultGroup;
     canvas: HTMLElement;
     /** The QR code's value. */

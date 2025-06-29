@@ -1,8 +1,8 @@
-import SlCheckbox from './checkbox.component.js';
+import NuCheckbox from './checkbox.component.js';
 export * from './checkbox.component.js';
-export default SlCheckbox;
+export default NuCheckbox;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-checkbox': SlCheckbox;
+        'nu-checkbox': NuCheckbox;
     }
 }

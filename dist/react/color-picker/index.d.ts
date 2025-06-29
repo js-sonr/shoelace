@@ -1,18 +1,18 @@
 import Component from '../../components/color-picker/color-picker.component.js';
 import { type EventName } from '@lit/react';
-import type { SlBlurEvent } from '../../events/events.js';
-import type { SlChangeEvent } from '../../events/events.js';
-import type { SlFocusEvent } from '../../events/events.js';
-import type { SlInputEvent } from '../../events/events.js';
-import type { SlInvalidEvent } from '../../events/events.js';
-export type { SlBlurEvent } from '../../events/events.js';
-export type { SlChangeEvent } from '../../events/events.js';
-export type { SlFocusEvent } from '../../events/events.js';
-export type { SlInputEvent } from '../../events/events.js';
-export type { SlInvalidEvent } from '../../events/events.js';
+import type { NuBlurEvent } from '../../events/events.js';
+import type { NuChangeEvent } from '../../events/events.js';
+import type { NuFocusEvent } from '../../events/events.js';
+import type { NuInputEvent } from '../../events/events.js';
+import type { NuInvalidEvent } from '../../events/events.js';
+export type { NuBlurEvent } from '../../events/events.js';
+export type { NuChangeEvent } from '../../events/events.js';
+export type { NuFocusEvent } from '../../events/events.js';
+export type { NuInputEvent } from '../../events/events.js';
+export type { NuInvalidEvent } from '../../events/events.js';
 /**
  * @summary Color pickers allow the user to select a color.
- * @documentation https://shoelace.style/components/color-picker
+ * @documentation https://nebulaui.org/components/color-picker
  * @status stable
  * @since 2.0
  *
@@ -24,11 +24,11 @@ export type { SlInvalidEvent } from '../../events/events.js';
  *
  * @slot label - The color picker's form label. Alternatively, you can use the `label` attribute.
  *
- * @event sl-blur - Emitted when the color picker loses focus.
- * @event sl-change - Emitted when the color picker's value changes.
- * @event sl-focus - Emitted when the color picker receives focus.
- * @event sl-input - Emitted when the color picker receives input.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-blur - Emitted when the color picker loses focus.
+ * @event nu-change - Emitted when the color picker's value changes.
+ * @event nu-focus - Emitted when the color picker receives focus.
+ * @event nu-input - Emitted when the color picker receives input.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart base - The component's base wrapper.
  * @csspart trigger - The color picker's dropdown trigger.
@@ -65,10 +65,10 @@ export type { SlInvalidEvent } from '../../events/events.js';
  * @cssproperty --swatch-size - The size of each predefined color swatch.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {
-    onSlBlur: EventName<SlBlurEvent>;
-    onSlChange: EventName<SlChangeEvent>;
-    onSlFocus: EventName<SlFocusEvent>;
-    onSlInput: EventName<SlInputEvent>;
-    onSlInvalid: EventName<SlInvalidEvent>;
+    onNuBlur: EventName<NuBlurEvent>;
+    onNuChange: EventName<NuChangeEvent>;
+    onNuFocus: EventName<NuFocusEvent>;
+    onNuInput: EventName<NuInputEvent>;
+    onNuInvalid: EventName<NuInvalidEvent>;
 }>;
 export default reactWrapper;

@@ -1,8 +1,8 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Spinners are used to show the progress of an indeterminate operation.
- * @documentation https://shoelace.style/components/spinner
+ * @documentation https://nebulaui.org/components/spinner
  * @status stable
  * @since 2.0
  *
@@ -13,7 +13,7 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --indicator-color - The color of the spinner's indicator.
  * @cssproperty --speed - The time it takes for the spinner to complete one animation cycle.
  */
-export default class SlSpinner extends ShoelaceElement {
+export default class NuSpinner extends NebulaElement {
     static styles: CSSResultGroup;
     private readonly localize;
     render(): import("lit-html").TemplateResult<1>;

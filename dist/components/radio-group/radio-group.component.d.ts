@@ -1,24 +1,24 @@
 import { FormControlController } from '../../internal/form.js';
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlButtonGroup from '../button-group/button-group.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuButtonGroup from '../button-group/button-group.component.js';
 import type { CSSResultGroup } from 'lit';
-import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
+import type { NebulaFormControl } from '../../internal/nebula-element.js';
 /**
  * @summary Radio groups are used to group multiple [radios](/components/radio) or [radio buttons](/components/radio-button) so they function as a single form control.
- * @documentation https://shoelace.style/components/radio-group
+ * @documentation https://nebulaui.org/components/radio-group
  * @status stable
  * @since 2.0
  *
  * @dependency sl-button-group
  *
- * @slot - The default slot where `<sl-radio>` or `<sl-radio-button>` elements are placed.
+ * @slot - The default slot where `<nu-radio>` or `<nu-radio-button>` elements are placed.
  * @slot label - The radio group's label. Required for proper accessibility. Alternatively, you can use the `label`
  *  attribute.
  * @slot help-text - Text that describes how to use the radio group. Alternatively, you can use the `help-text` attribute.
  *
- * @event sl-change - Emitted when the radio group's selected value changes.
- * @event sl-input - Emitted when the radio group receives user input.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-change - Emitted when the radio group's selected value changes.
+ * @event nu-input - Emitted when the radio group receives user input.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart form-control - The form control that wraps the label, input, and help text.
  * @csspart form-control-label - The label's wrapper.
@@ -27,10 +27,10 @@ import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
  * @csspart button-group - The button group that wraps radio buttons.
  * @csspart button-group__base - The button group's `base` part.
  */
-export default class SlRadioGroup extends ShoelaceElement implements ShoelaceFormControl {
+export default class NuRadioGroup extends NebulaElement implements NebulaFormControl {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-button-group': typeof SlButtonGroup;
+        'nu-button-group': typeof NuButtonGroup;
     };
     protected readonly formControlController: FormControlController;
     private readonly hasSlotController;

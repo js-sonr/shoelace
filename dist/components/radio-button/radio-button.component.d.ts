@@ -1,8 +1,8 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Radios buttons allow the user to select a single option from a group using a button-like control.
- * @documentation https://shoelace.style/components/radio-button
+ * @documentation https://nebulaui.org/components/radio-button
  * @status stable
  * @since 2.0
  *
@@ -10,8 +10,8 @@ import type { CSSResultGroup } from 'lit';
  * @slot prefix - A presentational prefix icon or similar element.
  * @slot suffix - A presentational suffix icon or similar element.
  *
- * @event sl-blur - Emitted when the button loses focus.
- * @event sl-focus - Emitted when the button gains focus.
+ * @event nu-blur - Emitted when the button loses focus.
+ * @event nu-focus - Emitted when the button gains focus.
  *
  * @csspart base - The component's base wrapper.
  * @csspart button - The internal `<button>` element.
@@ -20,7 +20,7 @@ import type { CSSResultGroup } from 'lit';
  * @csspart label - The container that wraps the radio button's label.
  * @csspart suffix - The container that wraps the suffix.
  */
-export default class SlRadioButton extends ShoelaceElement {
+export default class NuRadioButton extends NebulaElement {
     static styles: CSSResultGroup;
     private readonly hasSlotController;
     input: HTMLInputElement;

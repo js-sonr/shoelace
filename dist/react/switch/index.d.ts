@@ -1,29 +1,29 @@
 import Component from '../../components/switch/switch.component.js';
 import { type EventName } from '@lit/react';
-import type { SlBlurEvent } from '../../events/events.js';
-import type { SlChangeEvent } from '../../events/events.js';
-import type { SlInputEvent } from '../../events/events.js';
-import type { SlFocusEvent } from '../../events/events.js';
-import type { SlInvalidEvent } from '../../events/events.js';
-export type { SlBlurEvent } from '../../events/events.js';
-export type { SlChangeEvent } from '../../events/events.js';
-export type { SlInputEvent } from '../../events/events.js';
-export type { SlFocusEvent } from '../../events/events.js';
-export type { SlInvalidEvent } from '../../events/events.js';
+import type { NuBlurEvent } from '../../events/events.js';
+import type { NuChangeEvent } from '../../events/events.js';
+import type { NuInputEvent } from '../../events/events.js';
+import type { NuFocusEvent } from '../../events/events.js';
+import type { NuInvalidEvent } from '../../events/events.js';
+export type { NuBlurEvent } from '../../events/events.js';
+export type { NuChangeEvent } from '../../events/events.js';
+export type { NuInputEvent } from '../../events/events.js';
+export type { NuFocusEvent } from '../../events/events.js';
+export type { NuInvalidEvent } from '../../events/events.js';
 /**
  * @summary Switches allow the user to toggle an option on or off.
- * @documentation https://shoelace.style/components/switch
+ * @documentation https://nebulaui.org/components/switch
  * @status stable
  * @since 2.0
  *
  * @slot - The switch's label.
  * @slot help-text - Text that describes how to use the switch. Alternatively, you can use the `help-text` attribute.
  *
- * @event sl-blur - Emitted when the control loses focus.
- * @event sl-change - Emitted when the control's checked state changes.
- * @event sl-input - Emitted when the control receives input.
- * @event sl-focus - Emitted when the control gains focus.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-blur - Emitted when the control loses focus.
+ * @event nu-change - Emitted when the control's checked state changes.
+ * @event nu-input - Emitted when the control receives input.
+ * @event nu-focus - Emitted when the control gains focus.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart base - The component's base wrapper.
  * @csspart control - The control that houses the switch's thumb.
@@ -36,10 +36,10 @@ export type { SlInvalidEvent } from '../../events/events.js';
  * @cssproperty --thumb-size - The size of the thumb.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {
-    onSlBlur: EventName<SlBlurEvent>;
-    onSlChange: EventName<SlChangeEvent>;
-    onSlInput: EventName<SlInputEvent>;
-    onSlFocus: EventName<SlFocusEvent>;
-    onSlInvalid: EventName<SlInvalidEvent>;
+    onNuBlur: EventName<NuBlurEvent>;
+    onNuChange: EventName<NuChangeEvent>;
+    onNuInput: EventName<NuInputEvent>;
+    onNuFocus: EventName<NuFocusEvent>;
+    onNuInvalid: EventName<NuInvalidEvent>;
 }>;
 export default reactWrapper;

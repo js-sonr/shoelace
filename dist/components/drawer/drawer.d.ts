@@ -1,8 +1,8 @@
-import SlDrawer from './drawer.component.js';
+import NuDrawer from './drawer.component.js';
 export * from './drawer.component.js';
-export default SlDrawer;
+export default NuDrawer;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-drawer': SlDrawer;
+        'nu-drawer': NuDrawer;
     }
 }

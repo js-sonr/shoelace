@@ -1,30 +1,30 @@
+import type { NebulaFormControl } from '../internal/nebula-element.js';
 import type { ReactiveController, ReactiveControllerHost } from 'lit';
-import type { ShoelaceFormControl } from '../internal/shoelace-element.js';
-import type SlButton from '../components/button/button.js';
-export declare const formCollections: WeakMap<HTMLFormElement, Set<ShoelaceFormControl>>;
+import type NuButton from '../components/button/button.js';
+export declare const formCollections: WeakMap<HTMLFormElement, Set<NebulaFormControl>>;
 export interface FormControlControllerOptions {
     /** A function that returns the form containing the form control. */
-    form: (input: ShoelaceFormControl) => HTMLFormElement | null;
+    form: (input: NebulaFormControl) => HTMLFormElement | null;
     /** A function that returns the form control's name, which will be submitted with the form data. */
-    name: (input: ShoelaceFormControl) => string;
+    name: (input: NebulaFormControl) => string;
     /** A function that returns the form control's current value. */
-    value: (input: ShoelaceFormControl) => unknown | unknown[];
+    value: (input: NebulaFormControl) => unknown | unknown[];
     /** A function that returns the form control's default value. */
-    defaultValue: (input: ShoelaceFormControl) => unknown | unknown[];
+    defaultValue: (input: NebulaFormControl) => unknown | unknown[];
     /** A function that returns the form control's current disabled state. If disabled, the value won't be submitted. */
-    disabled: (input: ShoelaceFormControl) => boolean;
+    disabled: (input: NebulaFormControl) => boolean;
     /**
      * A function that maps to the form control's reportValidity() function. When the control is invalid, this will
      * prevent submission and trigger the browser's constraint violation warning.
      */
-    reportValidity: (input: ShoelaceFormControl) => boolean;
+    reportValidity: (input: NebulaFormControl) => boolean;
     /**
      * A function that maps to the form control's `checkValidity()` function. When the control is invalid, this will return false.
      *   this is helpful is you want to check validation without triggering the native browser constraint violation warning.
      */
-    checkValidity: (input: ShoelaceFormControl) => boolean;
+    checkValidity: (input: NebulaFormControl) => boolean;
     /** A function that sets the form control's value */
-    setValue: (input: ShoelaceFormControl, value: unknown) => void;
+    setValue: (input: NebulaFormControl, value: unknown) => void;
     /**
      * An array of event names to listen to. When all events in the list are emitted, the control will receive validity
      * states such as user-valid and user-invalid.user interacted validity states. */
@@ -32,10 +32,10 @@ export interface FormControlControllerOptions {
 }
 /** A reactive controller to allow form controls to participate in form submission, validation, etc. */
 export declare class FormControlController implements ReactiveController {
-    host: ShoelaceFormControl & ReactiveControllerHost;
+    host: NebulaFormControl & ReactiveControllerHost;
     form?: HTMLFormElement | null;
     options: FormControlControllerOptions;
-    constructor(host: ReactiveControllerHost & ShoelaceFormControl, options?: Partial<FormControlControllerOptions>);
+    constructor(host: ReactiveControllerHost & NebulaFormControl, options?: Partial<FormControlControllerOptions>);
     hostConnected(): void;
     hostDisconnected(): void;
     hostUpdated(): void;
@@ -52,9 +52,9 @@ export declare class FormControlController implements ReactiveController {
     /** Returns the associated `<form>` element, if one exists. */
     getForm(): HTMLFormElement | null;
     /** Resets the form, restoring all the control to their default value */
-    reset(submitter?: HTMLInputElement | SlButton): void;
+    reset(submitter?: HTMLInputElement | NuButton): void;
     /** Submits the form, triggering validation and form data injection. */
-    submit(submitter?: HTMLInputElement | SlButton): void;
+    submit(submitter?: HTMLInputElement | NuButton): void;
     /**
      * Synchronously sets the form control's validity. Call this when you know the future validity but need to update
      * the host element immediately, i.e. before Lit updates the component in the next update.

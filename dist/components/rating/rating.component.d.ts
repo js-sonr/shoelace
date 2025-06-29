@@ -1,16 +1,16 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIcon from '../icon/icon.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIcon from '../icon/icon.component.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Ratings give users a way to quickly view and provide feedback.
- * @documentation https://shoelace.style/components/rating
+ * @documentation https://nebulaui.org/components/rating
  * @status stable
  * @since 2.0
  *
  * @dependency sl-icon
  *
- * @event sl-change - Emitted when the rating's value changes.
- * @event {{ phase: 'start' | 'move' | 'end', value: number }} sl-hover - Emitted when the user hovers over a value. The
+ * @event nu-change - Emitted when the rating's value changes.
+ * @event nu-hover - Emitted when the user hovers over a value. The
  *  `phase` property indicates when hovering starts, moves to a new value, or ends. The `value` property tells what the
  *  rating's value would be if the user were to commit to the hovered value.
  *
@@ -21,10 +21,10 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --symbol-size - The size of symbols.
  * @cssproperty --symbol-spacing - The spacing to use around symbols.
  */
-export default class SlRating extends ShoelaceElement {
+export default class NuRating extends NebulaElement {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-icon': typeof SlIcon;
+        'nu-icon': typeof NuIcon;
     };
     rating: HTMLElement;
     private hoverValue;
@@ -47,7 +47,7 @@ export default class SlRating extends ShoelaceElement {
     /**
      * A function that customizes the symbol to be rendered. The first and only argument is the rating's current value.
      * The function should return a string containing trusted HTML of the symbol to render at the specified value. Works
-     * well with `<sl-icon>` elements.
+     * well with `<nu-icon>` elements.
      */
     getSymbol: (value: number) => string;
     private getValueFromMousePosition;

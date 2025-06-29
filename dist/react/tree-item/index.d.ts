@@ -1,20 +1,20 @@
 import Component from '../../components/tree-item/tree-item.component.js';
 import { type EventName } from '@lit/react';
-import type { SlExpandEvent } from '../../events/events.js';
-import type { SlAfterExpandEvent } from '../../events/events.js';
-import type { SlCollapseEvent } from '../../events/events.js';
-import type { SlAfterCollapseEvent } from '../../events/events.js';
-import type { SlLazyChangeEvent } from '../../events/events.js';
-import type { SlLazyLoadEvent } from '../../events/events.js';
-export type { SlExpandEvent } from '../../events/events.js';
-export type { SlAfterExpandEvent } from '../../events/events.js';
-export type { SlCollapseEvent } from '../../events/events.js';
-export type { SlAfterCollapseEvent } from '../../events/events.js';
-export type { SlLazyChangeEvent } from '../../events/events.js';
-export type { SlLazyLoadEvent } from '../../events/events.js';
+import type { NuExpandEvent } from '../../events/events.js';
+import type { NuAfterExpandEvent } from '../../events/events.js';
+import type { NuCollapseEvent } from '../../events/events.js';
+import type { NuAfterCollapseEvent } from '../../events/events.js';
+import type { NuLazyChangeEvent } from '../../events/events.js';
+import type { NuLazyLoadEvent } from '../../events/events.js';
+export type { NuExpandEvent } from '../../events/events.js';
+export type { NuAfterExpandEvent } from '../../events/events.js';
+export type { NuCollapseEvent } from '../../events/events.js';
+export type { NuAfterCollapseEvent } from '../../events/events.js';
+export type { NuLazyChangeEvent } from '../../events/events.js';
+export type { NuLazyLoadEvent } from '../../events/events.js';
 /**
  * @summary A tree item serves as a hierarchical node that lives inside a [tree](/components/tree).
- * @documentation https://shoelace.style/components/tree-item
+ * @documentation https://nebulaui.org/components/tree-item
  * @status stable
  * @since 2.0
  *
@@ -22,12 +22,12 @@ export type { SlLazyLoadEvent } from '../../events/events.js';
  * @dependency sl-icon
  * @dependency sl-spinner
  *
- * @event sl-expand - Emitted when the tree item expands.
- * @event sl-after-expand - Emitted after the tree item expands and all animations are complete.
- * @event sl-collapse - Emitted when the tree item collapses.
- * @event sl-after-collapse - Emitted after the tree item collapses and all animations are complete.
- * @event sl-lazy-change - Emitted when the tree item's lazy state changes.
- * @event sl-lazy-load - Emitted when a lazy item is selected. Use this event to asynchronously load data and append
+ * @event nu-expand - Emitted when the tree item expands.
+ * @event nu-after-expand - Emitted after the tree item expands and all animations are complete.
+ * @event nu-collapse - Emitted when the tree item collapses.
+ * @event nu-after-collapse - Emitted after the tree item collapses and all animations are complete.
+ * @event nu-lazy-change - Emitted when the tree item's lazy state changes.
+ * @event nu-lazy-load - Emitted when a lazy item is selected. Use this event to asynchronously load data and append
  *  items to the tree before expanding. After appending new items, remove the `lazy` attribute to remove the loading
  *  state and update the tree.
  *
@@ -57,11 +57,11 @@ export type { SlLazyLoadEvent } from '../../events/events.js';
  * @csspart checkbox__label - The checkbox's exported `label` part.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {
-    onSlExpand: EventName<SlExpandEvent>;
-    onSlAfterExpand: EventName<SlAfterExpandEvent>;
-    onSlCollapse: EventName<SlCollapseEvent>;
-    onSlAfterCollapse: EventName<SlAfterCollapseEvent>;
-    onSlLazyChange: EventName<SlLazyChangeEvent>;
-    onSlLazyLoad: EventName<SlLazyLoadEvent>;
+    onNuExpand: EventName<NuExpandEvent>;
+    onNuAfterExpand: EventName<NuAfterExpandEvent>;
+    onNuCollapse: EventName<NuCollapseEvent>;
+    onNuAfterCollapse: EventName<NuAfterCollapseEvent>;
+    onNuLazyChange: EventName<NuLazyChangeEvent>;
+    onNuLazyLoad: EventName<NuLazyLoadEvent>;
 }>;
 export default reactWrapper;

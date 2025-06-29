@@ -1,12 +1,12 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Split panels display two adjacent panels, allowing the user to reposition them.
- * @documentation https://shoelace.style/components/split-panel
+ * @documentation https://nebulaui.org/components/split-panel
  * @status stable
  * @since 2.0
  *
- * @event sl-reposition - Emitted when the divider's position changes.
+ * @event nu-reposition - Emitted when the divider's position changes.
  *
  * @slot start - Content to place in the start panel.
  * @slot end - Content to place in the end panel.
@@ -23,7 +23,7 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty [--min=0] - The minimum allowed size of the primary panel.
  * @cssproperty [--max=100%] - The maximum allowed size of the primary panel.
  */
-export default class SlSplitPanel extends ShoelaceElement {
+export default class NuSplitPanel extends NebulaElement {
     static styles: CSSResultGroup;
     private cachedPositionInPixels;
     private readonly localize;
@@ -69,6 +69,6 @@ export default class SlSplitPanel extends ShoelaceElement {
 }
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-split-panel': SlSplitPanel;
+        'sl-split-panel': NuSplitPanel;
     }
 }

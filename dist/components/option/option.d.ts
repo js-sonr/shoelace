@@ -1,8 +1,8 @@
-import SlOption from './option.component.js';
+import NuOption from './option.component.js';
 export * from './option.component.js';
-export default SlOption;
+export default NuOption;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-option': SlOption;
+        'nu-option': NuOption;
     }
 }

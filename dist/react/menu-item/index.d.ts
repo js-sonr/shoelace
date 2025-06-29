@@ -1,7 +1,7 @@
 import Component from '../../components/menu-item/menu-item.component.js';
 /**
  * @summary Menu items provide options for the user to pick from in a menu.
- * @documentation https://shoelace.style/components/menu-item
+ * @documentation https://nebulaui.org/components/menu-item
  * @status stable
  * @since 2.0
  *

@@ -1,8 +1,8 @@
-import SlRating from './rating.component.js';
+import NuRating from './rating.component.js';
 export * from './rating.component.js';
-export default SlRating;
+export default NuRating;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-rating': SlRating;
+        'nu-rating': NuRating;
     }
 }

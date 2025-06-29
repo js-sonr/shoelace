@@ -1,16 +1,16 @@
 import Component from '../../components/tooltip/tooltip.component.js';
 import { type EventName } from '@lit/react';
-import type { SlShowEvent } from '../../events/events.js';
-import type { SlAfterShowEvent } from '../../events/events.js';
-import type { SlHideEvent } from '../../events/events.js';
-import type { SlAfterHideEvent } from '../../events/events.js';
-export type { SlShowEvent } from '../../events/events.js';
-export type { SlAfterShowEvent } from '../../events/events.js';
-export type { SlHideEvent } from '../../events/events.js';
-export type { SlAfterHideEvent } from '../../events/events.js';
+import type { NuShowEvent } from '../../events/events.js';
+import type { NuAfterShowEvent } from '../../events/events.js';
+import type { NuHideEvent } from '../../events/events.js';
+import type { NuAfterHideEvent } from '../../events/events.js';
+export type { NuShowEvent } from '../../events/events.js';
+export type { NuAfterShowEvent } from '../../events/events.js';
+export type { NuHideEvent } from '../../events/events.js';
+export type { NuAfterHideEvent } from '../../events/events.js';
 /**
  * @summary Tooltips display additional information based on a specific action.
- * @documentation https://shoelace.style/components/tooltip
+ * @documentation https://nebulaui.org/components/tooltip
  * @status stable
  * @since 2.0
  *
@@ -19,12 +19,12 @@ export type { SlAfterHideEvent } from '../../events/events.js';
  * @slot - The tooltip's target element. Avoid slotting in more than one element, as subsequent ones will be ignored.
  * @slot content - The content to render in the tooltip. Alternatively, you can use the `content` attribute.
  *
- * @event sl-show - Emitted when the tooltip begins to show.
- * @event sl-after-show - Emitted after the tooltip has shown and all animations are complete.
- * @event sl-hide - Emitted when the tooltip begins to hide.
- * @event sl-after-hide - Emitted after the tooltip has hidden and all animations are complete.
+ * @event nu-show - Emitted when the tooltip begins to show.
+ * @event nu-after-show - Emitted after the tooltip has shown and all animations are complete.
+ * @event nu-hide - Emitted when the tooltip begins to hide.
+ * @event nu-after-hide - Emitted after the tooltip has hidden and all animations are complete.
  *
- * @csspart base - The component's base wrapper, an `<sl-popup>` element.
+ * @csspart base - The component's base wrapper, an `<nu-popup>` element.
  * @csspart base__popup - The popup's exported `popup` part. Use this to target the tooltip's popup container.
  * @csspart base__arrow - The popup's exported `arrow` part. Use this to target the tooltip's arrow.
  * @csspart body - The tooltip's body where its content is rendered.
@@ -37,9 +37,9 @@ export type { SlAfterHideEvent } from '../../events/events.js';
  * @animation tooltip.hide - The animation to use when hiding the tooltip.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {
-    onSlShow: EventName<SlShowEvent>;
-    onSlAfterShow: EventName<SlAfterShowEvent>;
-    onSlHide: EventName<SlHideEvent>;
-    onSlAfterHide: EventName<SlAfterHideEvent>;
+    onNuShow: EventName<NuShowEvent>;
+    onNuAfterShow: EventName<NuAfterShowEvent>;
+    onNuHide: EventName<NuHideEvent>;
+    onNuAfterHide: EventName<NuAfterHideEvent>;
 }>;
 export default reactWrapper;

@@ -1,20 +1,20 @@
 import Component from '../../components/drawer/drawer.component.js';
 import { type EventName } from '@lit/react';
-import type { SlShowEvent } from '../../events/events.js';
-import type { SlAfterShowEvent } from '../../events/events.js';
-import type { SlHideEvent } from '../../events/events.js';
-import type { SlAfterHideEvent } from '../../events/events.js';
-import type { SlInitialFocusEvent } from '../../events/events.js';
-import type { SlRequestCloseEvent } from '../../events/events.js';
-export type { SlShowEvent } from '../../events/events.js';
-export type { SlAfterShowEvent } from '../../events/events.js';
-export type { SlHideEvent } from '../../events/events.js';
-export type { SlAfterHideEvent } from '../../events/events.js';
-export type { SlInitialFocusEvent } from '../../events/events.js';
-export type { SlRequestCloseEvent } from '../../events/events.js';
+import type { NuShowEvent } from '../../events/events.js';
+import type { NuAfterShowEvent } from '../../events/events.js';
+import type { NuHideEvent } from '../../events/events.js';
+import type { NuAfterHideEvent } from '../../events/events.js';
+import type { NuInitialFocusEvent } from '../../events/events.js';
+import type { NuRequestCloseEvent } from '../../events/events.js';
+export type { NuShowEvent } from '../../events/events.js';
+export type { NuAfterShowEvent } from '../../events/events.js';
+export type { NuHideEvent } from '../../events/events.js';
+export type { NuAfterHideEvent } from '../../events/events.js';
+export type { NuInitialFocusEvent } from '../../events/events.js';
+export type { NuRequestCloseEvent } from '../../events/events.js';
 /**
  * @summary Drawers slide in from a container to expose additional options and information.
- * @documentation https://shoelace.style/components/drawer
+ * @documentation https://nebulaui.org/components/drawer
  * @status stable
  * @since 2.0
  *
@@ -22,16 +22,16 @@ export type { SlRequestCloseEvent } from '../../events/events.js';
  *
  * @slot - The drawer's main content.
  * @slot label - The drawer's label. Alternatively, you can use the `label` attribute.
- * @slot header-actions - Optional actions to add to the header. Works best with `<sl-icon-button>`.
+ * @slot header-actions - Optional actions to add to the header. Works best with `<nu-icon-button>`.
  * @slot footer - The drawer's footer, usually one or more buttons representing various options.
  *
- * @event sl-show - Emitted when the drawer opens.
- * @event sl-after-show - Emitted after the drawer opens and all animations are complete.
- * @event sl-hide - Emitted when the drawer closes.
- * @event sl-after-hide - Emitted after the drawer closes and all animations are complete.
- * @event sl-initial-focus - Emitted when the drawer opens and is ready to receive focus. Calling
+ * @event nu-show - Emitted when the drawer opens.
+ * @event nu-after-show - Emitted after the drawer opens and all animations are complete.
+ * @event nu-hide - Emitted when the drawer closes.
+ * @event nu-after-hide - Emitted after the drawer closes and all animations are complete.
+ * @event nu-initial-focus - Emitted when the drawer opens and is ready to receive focus. Calling
  *   `event.preventDefault()` will prevent focusing and allow you to set it on a different element, such as an input.
- * @event {{ source: 'close-button' | 'keyboard' | 'overlay' }} sl-request-close - Emitted when the user attempts to
+ * @event nu-request-close - Emitted when the user attempts to
  *   close the drawer by clicking the close button, clicking the overlay, or pressing escape. Calling
  *   `event.preventDefault()` will keep the drawer open. Avoid using this unless closing the drawer will result in
  *   destructive behavior such as data loss.
@@ -40,9 +40,9 @@ export type { SlRequestCloseEvent } from '../../events/events.js';
  * @csspart overlay - The overlay that covers the screen behind the drawer.
  * @csspart panel - The drawer's panel (where the drawer and its content are rendered).
  * @csspart header - The drawer's header. This element wraps the title and header actions.
- * @csspart header-actions - Optional actions to add to the header. Works best with `<sl-icon-button>`.
+ * @csspart header-actions - Optional actions to add to the header. Works best with `<nu-icon-button>`.
  * @csspart title - The drawer's title.
- * @csspart close-button - The close button, an `<sl-icon-button>`.
+ * @csspart close-button - The close button, an `<nu-icon-button>`.
  * @csspart close-button__base - The close button's exported `base` part.
  * @csspart body - The drawer's body.
  * @csspart footer - The drawer's footer.
@@ -70,11 +70,11 @@ export type { SlRequestCloseEvent } from '../../events/events.js';
  *   the third-party modal opens. Upon closing, call `modal.deactivateExternal()` to restore Shoelace's focus trapping.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {
-    onSlShow: EventName<SlShowEvent>;
-    onSlAfterShow: EventName<SlAfterShowEvent>;
-    onSlHide: EventName<SlHideEvent>;
-    onSlAfterHide: EventName<SlAfterHideEvent>;
-    onSlInitialFocus: EventName<SlInitialFocusEvent>;
-    onSlRequestClose: EventName<SlRequestCloseEvent>;
+    onNuShow: EventName<NuShowEvent>;
+    onNuAfterShow: EventName<NuAfterShowEvent>;
+    onNuHide: EventName<NuHideEvent>;
+    onNuAfterHide: EventName<NuAfterHideEvent>;
+    onNuInitialFocus: EventName<NuInitialFocusEvent>;
+    onNuRequestClose: EventName<NuRequestCloseEvent>;
 }>;
 export default reactWrapper;

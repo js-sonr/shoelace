@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="component" data-shoelace-version="0.0.10">
+<html lang="en" data-layout="component" data-nebula-version="0.0.1">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,14 +31,14 @@
 
     <link rel="stylesheet" href="/dist/themes/light.css" />
     <link rel="stylesheet" href="/dist/themes/dark.css" />
-    <script type="module" src="/dist/shoelace-autoloader.js"></script>
+    <script type="module" src="/dist/nebula-autoloader.js"></script>
 
     <script>
       (() => {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = localStorage.getItem('theme') || 'auto';
         document.documentElement.classList.toggle(
-          'sl-theme-dark',
+          'nu-theme-dark',
           theme === 'dark' || (theme === 'auto' && prefersDark)
         );
       })();
@@ -71,7 +71,7 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="github"></sl-icon>
+        <nu-icon name="github"></nu-icon>
       </a>
 
       <a
@@ -81,21 +81,21 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="twitter"></sl-icon>
+        <nu-icon name="twitter"></nu-icon>
       </a>
 
-      <sl-dropdown id="theme-selector" placement="bottom-end" distance="3">
-        <sl-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
-          <sl-icon class="only-light" name="sun-fill"></sl-icon>
-          <sl-icon class="only-dark" name="moon-fill"></sl-icon>
-        </sl-button>
-        <sl-menu>
-          <sl-menu-item type="checkbox" value="light">Light</sl-menu-item>
-          <sl-menu-item type="checkbox" value="dark">Dark</sl-menu-item>
-          <sl-divider></sl-divider>
-          <sl-menu-item type="checkbox" value="auto">System</sl-menu-item>
-        </sl-menu>
-      </sl-dropdown>
+      <nu-dropdown id="theme-selector" placement="bottom-end" distance="3">
+        <nu-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
+          <nu-icon class="only-light" name="sun-fill"></nu-icon>
+          <nu-icon class="only-dark" name="moon-fill"></nu-icon>
+        </nu-button>
+        <nu-menu>
+          <nu-menu-item type="checkbox" value="light">Light</nu-menu-item>
+          <nu-menu-item type="checkbox" value="dark">Dark</nu-menu-item>
+          <nu-divider></nu-divider>
+          <nu-menu-item type="checkbox" value="auto">System</nu-menu-item>
+        </nu-menu>
+      </nu-dropdown>
     </div>
 
     <aside id="sidebar" data-preserve-scroll="">
@@ -103,38 +103,38 @@
         <a href="/">
           <img src="/assets/images/wordmark.svg" alt="Nebula" />
         </a>
-        <div class="sidebar-version">0.0.10</div>
+        <div class="sidebar-version">0.0.1</div>
       </header>
 
       <div class="sidebar-buttons">
-        <sl-button
+        <nu-button
           size="small"
           class="repo-button repo-button--github"
           href="https://github.com/onsonr/nebula"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="github"></sl-icon> Code
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="github"></nu-icon> Code
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--star"
           href="https://github.com/onsonr/nebula/stargazers"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="star-fill"></sl-icon> Star
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="star-fill"></nu-icon> Star
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--twitter"
           href="https://twitter.com/shoelace_style"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="twitter"></sl-icon> Follow
-        </sl-button>
+          <nu-icon slot="prefix" name="twitter"></nu-icon> Follow
+        </nu-button>
       </div>
 
       <button class="search-box" type="button" title="Press / to search" aria-label="Search" data-plugin="search">
-        <sl-icon name="search"></sl-icon>
+        <nu-icon name="search"></nu-icon>
         <span>Search</span>
       </button>
 
@@ -194,6 +194,10 @@
               </li>
 
               <li>
+                <a href="/components/area-chart"> Area Chart </a>
+              </li>
+
+              <li>
                 <a href="/components/avatar"> Avatar </a>
               </li>
 
@@ -215,6 +219,10 @@
 
               <li>
                 <a href="/components/button-group"> Button Group </a>
+              </li>
+
+              <li>
+                <a href="/components/candle-chart"> Candle Chart </a>
               </li>
 
               <li>
@@ -294,6 +302,22 @@
               </li>
 
               <li>
+                <a href="/components/line-chart"> Line Chart </a>
+              </li>
+
+              <li>
+                <a href="/components/list-item"> List Item </a>
+              </li>
+
+              <li>
+                <a href="/components/list-view"> List View </a>
+              </li>
+
+              <li>
+                <a href="/components/login-button"> Login Button </a>
+              </li>
+
+              <li>
                 <a href="/components/menu"> Menu </a>
               </li>
 
@@ -311,6 +335,10 @@
 
               <li>
                 <a href="/components/option"> Option </a>
+              </li>
+
+              <li>
+                <a href="/components/pie-chart"> Pie Chart </a>
               </li>
 
               <li>
@@ -347,6 +375,10 @@
 
               <li>
                 <a href="/components/rating"> Rating </a>
+              </li>
+
+              <li>
+                <a href="/components/register-button"> Register Button </a>
               </li>
 
               <li>
@@ -469,12 +501,12 @@
             <h1>Dialog</h1>
 
             <div class="component-header__tag">
-              <code>&lt;sl-dialog&gt; | SlDialog</code>
+              <code>&lt;nu-dialog&gt; | NuDialog</code>
             </div>
 
             <div class="component-header__info">
-              <sl-badge variant="neutral" pill=""> Since 2.0 </sl-badge>
-              <sl-badge variant="primary" pill="" style="text-transform: capitalize"> stable </sl-badge>
+              <nu-badge variant="neutral" pill=""> Since 2.0 </nu-badge>
+              <nu-badge variant="primary" pill="" style="text-transform: capitalize"> stable </nu-badge>
             </div>
           </header>
 
@@ -486,12 +518,12 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-dialog label="Dialog" class="dialog-overview">
+              <nu-dialog label="Dialog" class="dialog-overview">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                <sl-button slot="footer" variant="primary">Close</sl-button>
-              </sl-dialog>
+                <nu-button slot="footer" variant="primary">Close</nu-button>
+              </nu-dialog>
 
-              <sl-button>Open Dialog</sl-button>
+              <nu-button>Open Dialog</nu-button>
 
               <script>
                 (() => {
@@ -509,14 +541,14 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-110">
+            <div class="code-preview__source-group" id="code-preview-source-group-128">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-412"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-dialog</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Dialog<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dialog-overview<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-461"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-dialog</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Dialog<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dialog-overview<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-button</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token attr-name">variant</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Close<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-button</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-dialog</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-button</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token attr-name">variant</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Close<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-dialog</span><span class="token punctuation">&gt;</span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-button</span><span class="token punctuation">&gt;</span></span>Open Dialog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-button</span><span class="token punctuation">&gt;</span></span>Open Dialog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-button</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
   <span class="token keyword">const</span> dialog <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.dialog-overview'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -526,11 +558,11 @@
   openButton<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> dialog<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   closeButton<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> dialog<span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-412"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-461"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-413"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-462"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlButton <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/button'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlDialog <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/dialog'</span><span class="token punctuation">;</span>
 
@@ -550,7 +582,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-413"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-462"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -559,7 +591,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-110"
+                aria-controls="code-preview-source-group-128"
               >
                 Source
                 <svg
@@ -611,12 +643,12 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-dialog label="Dialog" class="dialog-width" style="--width: 50vw">
+              <nu-dialog label="Dialog" class="dialog-width" style="--width: 50vw">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                <sl-button slot="footer" variant="primary">Close</sl-button>
-              </sl-dialog>
+                <nu-button slot="footer" variant="primary">Close</nu-button>
+              </nu-dialog>
 
-              <sl-button>Open Dialog</sl-button>
+              <nu-button>Open Dialog</nu-button>
 
               <script>
                 (() => {
@@ -634,14 +666,14 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-111">
+            <div class="code-preview__source-group" id="code-preview-source-group-129">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-414"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-dialog</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Dialog<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dialog-width<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">--width</span><span class="token punctuation">:</span> 50vw<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-463"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-dialog</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Dialog<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dialog-width<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">--width</span><span class="token punctuation">:</span> 50vw<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-button</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token attr-name">variant</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Close<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-button</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-dialog</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-button</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token attr-name">variant</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Close<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-dialog</span><span class="token punctuation">&gt;</span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-button</span><span class="token punctuation">&gt;</span></span>Open Dialog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-button</span><span class="token punctuation">&gt;</span></span>Open Dialog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-button</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
   <span class="token keyword">const</span> dialog <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.dialog-width'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -651,11 +683,11 @@
   openButton<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> dialog<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   closeButton<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> dialog<span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-414"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-463"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-415"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-464"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlButton <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/button'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlDialog <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/dialog'</span><span class="token punctuation">;</span>
 
@@ -675,7 +707,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-415"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-464"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -684,7 +716,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-111"
+                aria-controls="code-preview-source-group-129"
               >
                 Source
                 <svg
@@ -736,14 +768,14 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-dialog label="Dialog" class="dialog-scrolling">
-                <div style="height: 150vh; border: dashed 2px var(--sl-color-neutral-200); padding: 0 1rem">
+              <nu-dialog label="Dialog" class="dialog-scrolling">
+                <div style="height: 150vh; border: dashed 2px var(--nu-color-neutral-200); padding: 0 1rem">
                   <p>Scroll down and give it a try! 👇</p>
                 </div>
-                <sl-button slot="footer" variant="primary">Close</sl-button>
-              </sl-dialog>
+                <nu-button slot="footer" variant="primary">Close</nu-button>
+              </nu-dialog>
 
-              <sl-button>Open Dialog</sl-button>
+              <nu-button>Open Dialog</nu-button>
 
               <script>
                 (() => {
@@ -761,16 +793,16 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-112">
+            <div class="code-preview__source-group" id="code-preview-source-group-130">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-416"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-dialog</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Dialog<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dialog-scrolling<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">height</span><span class="token punctuation">:</span> 150vh<span class="token punctuation">;</span> <span class="token property">border</span><span class="token punctuation">:</span> dashed 2px <span class="token function">var</span><span class="token punctuation">(</span>--sl-color-neutral-200<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token property">padding</span><span class="token punctuation">:</span> 0 1rem<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-465"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-dialog</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Dialog<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dialog-scrolling<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">height</span><span class="token punctuation">:</span> 150vh<span class="token punctuation">;</span> <span class="token property">border</span><span class="token punctuation">:</span> dashed 2px <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-200<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token property">padding</span><span class="token punctuation">:</span> 0 1rem<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Scroll down and give it a try! 👇<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-button</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token attr-name">variant</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Close<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-button</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-dialog</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-button</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token attr-name">variant</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Close<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-dialog</span><span class="token punctuation">&gt;</span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-button</span><span class="token punctuation">&gt;</span></span>Open Dialog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-button</span><span class="token punctuation">&gt;</span></span>Open Dialog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-button</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
   <span class="token keyword">const</span> dialog <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.dialog-scrolling'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -780,11 +812,11 @@
   openButton<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> dialog<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   closeButton<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> dialog<span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-416"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-465"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-417"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-466"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlButton <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/button'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlDialog <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/dialog'</span><span class="token punctuation">;</span>
 
@@ -797,7 +829,7 @@
         </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>
           <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>
             <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token string">'150vh'</span><span class="token punctuation">,</span>
-            <span class="token literal-property property">border</span><span class="token operator">:</span> <span class="token string">'dashed 2px var(--sl-color-neutral-200)'</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">border</span><span class="token operator">:</span> <span class="token string">'dashed 2px var(--nu-color-neutral-200)'</span><span class="token punctuation">,</span>
             <span class="token literal-property property">padding</span><span class="token operator">:</span> <span class="token string">'0 1rem'</span>
           <span class="token punctuation">}</span><span class="token punctuation">}</span></span>
         <span class="token punctuation">&gt;</span></span><span class="token plain-text">
@@ -813,7 +845,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-417"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-466"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -822,7 +854,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-112"
+                aria-controls="code-preview-source-group-130"
               >
                 Source
                 <svg
@@ -874,13 +906,13 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-dialog label="Dialog" class="dialog-header-actions">
-                <sl-icon-button class="new-window" slot="header-actions" name="box-arrow-up-right"></sl-icon-button>
+              <nu-dialog label="Dialog" class="dialog-header-actions">
+                <nu-icon-button class="new-window" slot="header-actions" name="box-arrow-up-right"></nu-icon-button>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                <sl-button slot="footer" variant="primary">Close</sl-button>
-              </sl-dialog>
+                <nu-button slot="footer" variant="primary">Close</nu-button>
+              </nu-dialog>
 
-              <sl-button>Open Dialog</sl-button>
+              <nu-button>Open Dialog</nu-button>
 
               <script>
                 (() => {
@@ -900,15 +932,15 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-113">
+            <div class="code-preview__source-group" id="code-preview-source-group-131">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-418"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-dialog</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Dialog<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dialog-header-actions<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-icon-button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>new-window<span class="token punctuation">"</span></span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>header-actions<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box-arrow-up-right<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-icon-button</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-467"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-dialog</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Dialog<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dialog-header-actions<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-icon-button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>new-window<span class="token punctuation">"</span></span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>header-actions<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box-arrow-up-right<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-icon-button</span><span class="token punctuation">&gt;</span></span>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-button</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token attr-name">variant</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Close<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-button</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-dialog</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-button</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token attr-name">variant</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Close<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-dialog</span><span class="token punctuation">&gt;</span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-button</span><span class="token punctuation">&gt;</span></span>Open Dialog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-button</span><span class="token punctuation">&gt;</span></span>Open Dialog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-button</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
   <span class="token keyword">const</span> dialog <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.dialog-header-actions'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -920,11 +952,11 @@
   closeButton<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> dialog<span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   newWindowButton<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> window<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>location<span class="token punctuation">.</span>href<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-418"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-467"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-419"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-468"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlButton <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/button'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlDialog <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/dialog'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlIconButton <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/icon-button'</span><span class="token punctuation">;</span>
@@ -951,7 +983,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-419"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-468"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -960,7 +992,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-113"
+                aria-controls="code-preview-source-group-131"
               >
                 Source
                 <svg
@@ -1025,12 +1057,12 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-dialog label="Dialog" class="dialog-deny-close">
+              <nu-dialog label="Dialog" class="dialog-deny-close">
                 This dialog will not close when you click on the overlay.
-                <sl-button slot="footer" variant="primary">Close</sl-button>
-              </sl-dialog>
+                <nu-button slot="footer" variant="primary">Close</nu-button>
+              </nu-dialog>
 
-              <sl-button>Open Dialog</sl-button>
+              <nu-button>Open Dialog</nu-button>
 
               <script>
                 (() => {
@@ -1055,14 +1087,14 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-114">
+            <div class="code-preview__source-group" id="code-preview-source-group-132">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-420"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-dialog</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Dialog<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dialog-deny-close<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-469"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-dialog</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Dialog<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dialog-deny-close<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   This dialog will not close when you click on the overlay.
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-button</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token attr-name">variant</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Close<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-button</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-dialog</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-button</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token attr-name">variant</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Close<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-dialog</span><span class="token punctuation">&gt;</span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-button</span><span class="token punctuation">&gt;</span></span>Open Dialog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-button</span><span class="token punctuation">&gt;</span></span>Open Dialog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-button</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
   <span class="token keyword">const</span> dialog <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.dialog-deny-close'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1079,11 +1111,11 @@
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-420"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-469"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-421"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-470"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlButton <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/button'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlDialog <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/dialog'</span><span class="token punctuation">;</span>
 
@@ -1110,7 +1142,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-421"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-470"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -1119,7 +1151,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-114"
+                aria-controls="code-preview-source-group-132"
               >
                 Source
                 <svg
@@ -1175,12 +1207,12 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-dialog label="Dialog" class="dialog-focus">
-                <sl-input autofocus="" placeholder="I will have focus when the dialog is opened"></sl-input>
-                <sl-button slot="footer" variant="primary">Close</sl-button>
-              </sl-dialog>
+              <nu-dialog label="Dialog" class="dialog-focus">
+                <nu-input autofocus="" placeholder="I will have focus when the dialog is opened"></nu-input>
+                <nu-button slot="footer" variant="primary">Close</nu-button>
+              </nu-dialog>
 
-              <sl-button>Open Dialog</sl-button>
+              <nu-button>Open Dialog</nu-button>
 
               <script>
                 (() => {
@@ -1199,14 +1231,14 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-115">
+            <div class="code-preview__source-group" id="code-preview-source-group-133">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-422"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-dialog</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Dialog<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dialog-focus<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-input</span> <span class="token attr-name">autofocus</span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>I will have focus when the dialog is opened<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-input</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-button</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token attr-name">variant</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Close<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-button</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-dialog</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-471"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-dialog</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Dialog<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dialog-focus<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-input</span> <span class="token attr-name">autofocus</span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>I will have focus when the dialog is opened<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-input</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-button</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token attr-name">variant</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Close<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-dialog</span><span class="token punctuation">&gt;</span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-button</span><span class="token punctuation">&gt;</span></span>Open Dialog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-button</span><span class="token punctuation">&gt;</span></span>Open Dialog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-button</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
   <span class="token keyword">const</span> dialog <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.dialog-focus'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1217,11 +1249,11 @@
   openButton<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> dialog<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   closeButton<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> dialog<span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-422"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-471"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-423"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-472"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlButton <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/button'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlDialog <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/dialog'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlInput <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/input'</span><span class="token punctuation">;</span>
@@ -1242,7 +1274,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-423"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-472"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -1251,7 +1283,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-115"
+                aria-controls="code-preview-source-group-133"
               >
                 Source
                 <svg
@@ -1309,13 +1341,13 @@
             <a href="/getting-started/installation#cherry-picking">cherry pick</a> this component.
           </p>
 
-          <sl-tab-group>
-            <sl-tab slot="nav" panel="script">Script</sl-tab>
-            <sl-tab slot="nav" panel="import">Import</sl-tab>
-            <sl-tab slot="nav" panel="bundler">Bundler</sl-tab>
-            <sl-tab slot="nav" panel="react">React</sl-tab>
+          <nu-tab-group>
+            <nu-tab slot="nav" panel="script">Script</nu-tab>
+            <nu-tab slot="nav" panel="import">Import</nu-tab>
+            <nu-tab slot="nav" panel="bundler">Bundler</nu-tab>
+            <nu-tab slot="nav" panel="react">React</nu-tab>
 
-            <sl-tab-panel name="script">
+            <nu-tab-panel name="script">
               <p>
                 To import this component from
                 <a
@@ -1327,10 +1359,10 @@
                 >
                 using a script tag:
               </p>
-              <pre><code class="language-html" id="code-block-424"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.10/cdn/components/dialog/dialog.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><sl-copy-button class="copy-code-button" from="code-block-424"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-html" id="code-block-473"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/dialog/dialog.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><sl-copy-button class="copy-code-button" from="code-block-473"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="import">
+            <nu-tab-panel name="import">
               <p>
                 To import this component from
                 <a
@@ -1342,19 +1374,19 @@
                 >
                 using a JavaScript import:
               </p>
-              <pre><code class="language-js" id="code-block-425"><span class="token keyword">import</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.10/cdn/components/dialog/dialog.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-425"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-js" id="code-block-474"><span class="token keyword">import</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/dialog/dialog.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-474"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="bundler">
+            <nu-tab-panel name="bundler">
               <p>To import this component using <a href="/getting-started/installation#bundling">a bundler</a>:</p>
-              <pre><code class="language-js" id="code-block-426"><span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/dialog/dialog.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-426"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-js" id="code-block-475"><span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/dialog/dialog.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-475"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="react">
+            <nu-tab-panel name="react">
               <p>To import this component as a <a href="/frameworks/react">React component</a>:</p>
-              <pre><code class="language-js" id="code-block-427"><span class="token keyword">import</span> SlDialog <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/dialog'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-427"></sl-copy-button></pre>
-            </sl-tab-panel>
-          </sl-tab-group>
+              <pre><code class="language-js" id="code-block-476"><span class="token keyword">import</span> NuDialog <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/dialog'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-476"></sl-copy-button></pre>
+            </nu-tab-panel>
+          </nu-tab-group>
 
           <h2 id="slots" class="anchor-heading">Slots<a href="#slots" aria-label='Direct link to "Slots"'></a></h2>
 
@@ -1383,7 +1415,7 @@
                   <td class="nowrap">
                     <code>header-actions</code>
                   </td>
-                  <td>Optional actions to add to the header. Works best with <code>&lt;sl-icon-button&gt;</code>.</td>
+                  <td>Optional actions to add to the header. Works best with <code>&lt;nu-icon-button&gt;</code>.</td>
                 </tr>
 
                 <tr>
@@ -1443,7 +1475,7 @@
                     will reflect the dialog’s open state.
                   </td>
                   <td style="text-align: center">
-                    <sl-icon label="yes" name="check-lg"></sl-icon>
+                    <nu-icon label="yes" name="check-lg"></nu-icon>
                   </td>
                   <td>
                     <code>boolean</code>
@@ -1464,7 +1496,7 @@
                     the <code>label</code> slot instead.
                   </td>
                   <td style="text-align: center">
-                    <sl-icon label="yes" name="check-lg"></sl-icon>
+                    <nu-icon label="yes" name="check-lg"></nu-icon>
                   </td>
                   <td>
                     <code>string</code>
@@ -1479,18 +1511,18 @@
                     <code class="nowrap">noHeader</code>
 
                     <br />
-                    <sl-tooltip content="This attribute is different from its property">
+                    <nu-tooltip content="This attribute is different from its property">
                       <small>
                         <code class="nowrap"> no-header </code>
                       </small>
-                    </sl-tooltip>
+                    </nu-tooltip>
                   </td>
                   <td>
                     Disables the header. This will also remove the default close button, so please ensure you provide an
                     easy, accessible way for users to dismiss the dialog.
                   </td>
                   <td style="text-align: center">
-                    <sl-icon label="yes" name="check-lg"></sl-icon>
+                    <nu-icon label="yes" name="check-lg"></nu-icon>
                   </td>
                   <td>
                     <code>boolean</code>
@@ -1535,36 +1567,36 @@
               </thead>
               <tbody>
                 <tr>
-                  <td data-flavor="html"><code class="nowrap">sl-show</code></td>
-                  <td data-flavor="react"><code class="nowrap">onSlShow</code></td>
+                  <td data-flavor="html"><code class="nowrap">nu-show</code></td>
+                  <td data-flavor="react"><code class="nowrap">onNuShow</code></td>
                   <td>Emitted when the dialog opens.</td>
                   <td>-</td>
                 </tr>
 
                 <tr>
-                  <td data-flavor="html"><code class="nowrap">sl-after-show</code></td>
-                  <td data-flavor="react"><code class="nowrap">onSlAfterShow</code></td>
+                  <td data-flavor="html"><code class="nowrap">nu-after-show</code></td>
+                  <td data-flavor="react"><code class="nowrap">onNuAfterShow</code></td>
                   <td>Emitted after the dialog opens and all animations are complete.</td>
                   <td>-</td>
                 </tr>
 
                 <tr>
-                  <td data-flavor="html"><code class="nowrap">sl-hide</code></td>
-                  <td data-flavor="react"><code class="nowrap">onSlHide</code></td>
+                  <td data-flavor="html"><code class="nowrap">nu-hide</code></td>
+                  <td data-flavor="react"><code class="nowrap">onNuHide</code></td>
                   <td>Emitted when the dialog closes.</td>
                   <td>-</td>
                 </tr>
 
                 <tr>
-                  <td data-flavor="html"><code class="nowrap">sl-after-hide</code></td>
-                  <td data-flavor="react"><code class="nowrap">onSlAfterHide</code></td>
+                  <td data-flavor="html"><code class="nowrap">nu-after-hide</code></td>
+                  <td data-flavor="react"><code class="nowrap">onNuAfterHide</code></td>
                   <td>Emitted after the dialog closes and all animations are complete.</td>
                   <td>-</td>
                 </tr>
 
                 <tr>
-                  <td data-flavor="html"><code class="nowrap">sl-initial-focus</code></td>
-                  <td data-flavor="react"><code class="nowrap">onSlInitialFocus</code></td>
+                  <td data-flavor="html"><code class="nowrap">nu-initial-focus</code></td>
+                  <td data-flavor="react"><code class="nowrap">onNuInitialFocus</code></td>
                   <td>
                     Emitted when the dialog opens and is ready to receive focus. Calling
                     <code>event.preventDefault()</code> will prevent focusing and allow you to set it on a different
@@ -1574,16 +1606,14 @@
                 </tr>
 
                 <tr>
-                  <td data-flavor="html"><code class="nowrap">sl-request-close</code></td>
-                  <td data-flavor="react"><code class="nowrap">onSlRequestClose</code></td>
+                  <td data-flavor="html"><code class="nowrap">nu-request-close</code></td>
+                  <td data-flavor="react"><code class="nowrap">onNuRequestClose</code></td>
                   <td>
                     Emitted when the user attempts to close the dialog by clicking the close button, clicking the
                     overlay, or pressing escape. Calling <code>event.preventDefault()</code> will keep the dialog open.
                     Avoid using this unless closing the dialog will result in destructive behavior such as data loss.
                   </td>
-                  <td>
-                    <code>{ source: 'close-button' | 'keyboard' | 'overlay' }</code>
-                  </td>
+                  <td>-</td>
                 </tr>
               </tbody>
             </table>
@@ -1709,7 +1739,7 @@
 
                 <tr>
                   <td class="nowrap"><code>header-actions</code></td>
-                  <td>Optional actions to add to the header. Works best with <code>&lt;sl-icon-button&gt;</code>.</td>
+                  <td>Optional actions to add to the header. Works best with <code>&lt;nu-icon-button&gt;</code>.</td>
                 </tr>
 
                 <tr>
@@ -1719,7 +1749,7 @@
 
                 <tr>
                   <td class="nowrap"><code>close-button</code></td>
-                  <td>The close button, an <code>&lt;sl-icon-button&gt;</code>.</td>
+                  <td>The close button, an <code>&lt;nu-icon-button&gt;</code>.</td>
                 </tr>
 
                 <tr>
@@ -1796,8 +1826,6 @@
           <p>This component automatically imports the following dependencies.</p>
 
           <ul>
-            <li><code>&lt;sl-icon&gt;</code></li>
-
             <li><code>&lt;sl-icon-button&gt;</code></li>
           </ul>
         </div>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="component" data-shoelace-version="0.0.10">
+<html lang="en" data-layout="component" data-nebula-version="0.0.1">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,14 +31,14 @@
 
     <link rel="stylesheet" href="/dist/themes/light.css" />
     <link rel="stylesheet" href="/dist/themes/dark.css" />
-    <script type="module" src="/dist/shoelace-autoloader.js"></script>
+    <script type="module" src="/dist/nebula-autoloader.js"></script>
 
     <script>
       (() => {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = localStorage.getItem('theme') || 'auto';
         document.documentElement.classList.toggle(
-          'sl-theme-dark',
+          'nu-theme-dark',
           theme === 'dark' || (theme === 'auto' && prefersDark)
         );
       })();
@@ -71,7 +71,7 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="github"></sl-icon>
+        <nu-icon name="github"></nu-icon>
       </a>
 
       <a
@@ -81,21 +81,21 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="twitter"></sl-icon>
+        <nu-icon name="twitter"></nu-icon>
       </a>
 
-      <sl-dropdown id="theme-selector" placement="bottom-end" distance="3">
-        <sl-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
-          <sl-icon class="only-light" name="sun-fill"></sl-icon>
-          <sl-icon class="only-dark" name="moon-fill"></sl-icon>
-        </sl-button>
-        <sl-menu>
-          <sl-menu-item type="checkbox" value="light">Light</sl-menu-item>
-          <sl-menu-item type="checkbox" value="dark">Dark</sl-menu-item>
-          <sl-divider></sl-divider>
-          <sl-menu-item type="checkbox" value="auto">System</sl-menu-item>
-        </sl-menu>
-      </sl-dropdown>
+      <nu-dropdown id="theme-selector" placement="bottom-end" distance="3">
+        <nu-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
+          <nu-icon class="only-light" name="sun-fill"></nu-icon>
+          <nu-icon class="only-dark" name="moon-fill"></nu-icon>
+        </nu-button>
+        <nu-menu>
+          <nu-menu-item type="checkbox" value="light">Light</nu-menu-item>
+          <nu-menu-item type="checkbox" value="dark">Dark</nu-menu-item>
+          <nu-divider></nu-divider>
+          <nu-menu-item type="checkbox" value="auto">System</nu-menu-item>
+        </nu-menu>
+      </nu-dropdown>
     </div>
 
     <aside id="sidebar" data-preserve-scroll="">
@@ -103,38 +103,38 @@
         <a href="/">
           <img src="/assets/images/wordmark.svg" alt="Nebula" />
         </a>
-        <div class="sidebar-version">0.0.10</div>
+        <div class="sidebar-version">0.0.1</div>
       </header>
 
       <div class="sidebar-buttons">
-        <sl-button
+        <nu-button
           size="small"
           class="repo-button repo-button--github"
           href="https://github.com/onsonr/nebula"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="github"></sl-icon> Code
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="github"></nu-icon> Code
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--star"
           href="https://github.com/onsonr/nebula/stargazers"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="star-fill"></sl-icon> Star
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="star-fill"></nu-icon> Star
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--twitter"
           href="https://twitter.com/shoelace_style"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="twitter"></sl-icon> Follow
-        </sl-button>
+          <nu-icon slot="prefix" name="twitter"></nu-icon> Follow
+        </nu-button>
       </div>
 
       <button class="search-box" type="button" title="Press / to search" aria-label="Search" data-plugin="search">
-        <sl-icon name="search"></sl-icon>
+        <nu-icon name="search"></nu-icon>
         <span>Search</span>
       </button>
 
@@ -194,6 +194,10 @@
               </li>
 
               <li>
+                <a href="/components/area-chart"> Area Chart </a>
+              </li>
+
+              <li>
                 <a href="/components/avatar"> Avatar </a>
               </li>
 
@@ -215,6 +219,10 @@
 
               <li>
                 <a href="/components/button-group"> Button Group </a>
+              </li>
+
+              <li>
+                <a href="/components/candle-chart"> Candle Chart </a>
               </li>
 
               <li>
@@ -294,6 +302,22 @@
               </li>
 
               <li>
+                <a href="/components/line-chart"> Line Chart </a>
+              </li>
+
+              <li>
+                <a href="/components/list-item"> List Item </a>
+              </li>
+
+              <li>
+                <a href="/components/list-view"> List View </a>
+              </li>
+
+              <li>
+                <a href="/components/login-button"> Login Button </a>
+              </li>
+
+              <li>
                 <a href="/components/menu"> Menu </a>
               </li>
 
@@ -311,6 +335,10 @@
 
               <li>
                 <a href="/components/option"> Option </a>
+              </li>
+
+              <li>
+                <a href="/components/pie-chart"> Pie Chart </a>
               </li>
 
               <li>
@@ -347,6 +375,10 @@
 
               <li>
                 <a href="/components/rating"> Rating </a>
+              </li>
+
+              <li>
+                <a href="/components/register-button"> Register Button </a>
               </li>
 
               <li>
@@ -465,12 +497,12 @@
             <h1>Animated Image</h1>
 
             <div class="component-header__tag">
-              <code>&lt;sl-animated-image&gt; | SlAnimatedImage</code>
+              <code>&lt;nu-animated-image&gt; | NuAnimatedImage</code>
             </div>
 
             <div class="component-header__info">
-              <sl-badge variant="neutral" pill=""> Since 2.0 </sl-badge>
-              <sl-badge variant="primary" pill="" style="text-transform: capitalize"> stable </sl-badge>
+              <nu-badge variant="neutral" pill=""> Since 2.0 </nu-badge>
+              <nu-badge variant="primary" pill="" style="text-transform: capitalize"> stable </nu-badge>
             </div>
           </header>
 
@@ -480,35 +512,35 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-animated-image
-                src="https://shoelace.style/assets/images/walk.gif"
+              <nu-animated-image
+                src="https://nebulaui.org/assets/images/walk.gif"
                 alt="Animation of untied shoes walking on pavement"
-              ></sl-animated-image>
+              ></nu-animated-image>
 
               <div class="code-preview__resizer">
                 <sl-icon name="grip-vertical"></sl-icon>
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-16">
+            <div class="code-preview__source-group" id="code-preview-source-group-26">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-167"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-animated-image</span>
-  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/assets/images/walk.gif<span class="token punctuation">"</span></span>
+                <pre><code class="language-html" id="code-block-193"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-animated-image</span>
+  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/assets/images/walk.gif<span class="token punctuation">"</span></span>
   <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Animation of untied shoes walking on pavement<span class="token punctuation">"</span></span>
-<span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-animated-image</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-167"></sl-copy-button></pre>
+<span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-animated-image</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-193"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-168"><span class="token keyword">import</span> SlAnimatedImage <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/animated-image'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-194"><span class="token keyword">import</span> SlAnimatedImage <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/animated-image'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlAnimatedImage</span></span>
-    <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/assets/images/walk.gif<span class="token punctuation">"</span></span>
+    <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/assets/images/walk.gif<span class="token punctuation">"</span></span>
     <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Animation of untied shoes walking on pavement<span class="token punctuation">"</span></span>
   <span class="token punctuation">/&gt;</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-168"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-194"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -517,7 +549,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-16"
+                aria-controls="code-preview-source-group-26"
               >
                 Source
                 <svg
@@ -581,32 +613,32 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-animated-image
-                src="https://shoelace.style/assets/images/tie.webp"
+              <nu-animated-image
+                src="https://nebulaui.org/assets/images/tie.webp"
                 alt="Animation of a shoe being tied"
-              ></sl-animated-image>
+              ></nu-animated-image>
 
               <div class="code-preview__resizer">
                 <sl-icon name="grip-vertical"></sl-icon>
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-17">
+            <div class="code-preview__source-group" id="code-preview-source-group-27">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-169"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-animated-image</span>
-  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/assets/images/tie.webp<span class="token punctuation">"</span></span>
+                <pre><code class="language-html" id="code-block-195"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-animated-image</span>
+  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/assets/images/tie.webp<span class="token punctuation">"</span></span>
   <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Animation of a shoe being tied<span class="token punctuation">"</span></span>
-<span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-animated-image</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-169"></sl-copy-button></pre>
+<span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-animated-image</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-195"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-170"><span class="token keyword">import</span> SlAnimatedImage <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/animated-image'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-196"><span class="token keyword">import</span> SlAnimatedImage <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/animated-image'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlAnimatedImage</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/assets/images/tie.webp<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Animation of a shoe being tied<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlAnimatedImage</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/assets/images/tie.webp<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Animation of a shoe being tied<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-170"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-196"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -615,7 +647,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-17"
+                aria-controls="code-preview-source-group-27"
               >
                 Source
                 <svg
@@ -667,40 +699,40 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-animated-image
-                src="https://shoelace.style/assets/images/walk.gif"
+              <nu-animated-image
+                src="https://nebulaui.org/assets/images/walk.gif"
                 alt="Animation of untied shoes walking on pavement"
                 style="width: 150px; height: 200px"
               >
-              </sl-animated-image>
+              </nu-animated-image>
 
               <div class="code-preview__resizer">
                 <sl-icon name="grip-vertical"></sl-icon>
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-18">
+            <div class="code-preview__source-group" id="code-preview-source-group-28">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-171"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-animated-image</span>
-  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/assets/images/walk.gif<span class="token punctuation">"</span></span>
+                <pre><code class="language-html" id="code-block-197"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-animated-image</span>
+  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/assets/images/walk.gif<span class="token punctuation">"</span></span>
   <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Animation of untied shoes walking on pavement<span class="token punctuation">"</span></span>
   <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">width</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span>
 <span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-animated-image</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-171"></sl-copy-button></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-animated-image</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-197"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-172"><span class="token keyword">import</span> SlAnimatedImage <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/animated-image'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-198"><span class="token keyword">import</span> SlAnimatedImage <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/animated-image'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlAnimatedImage</span></span>
-    <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/assets/images/walk.gif<span class="token punctuation">"</span></span>
+    <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/assets/images/walk.gif<span class="token punctuation">"</span></span>
     <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Animation of untied shoes walking on pavement<span class="token punctuation">"</span></span>
     <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token string">'150px'</span><span class="token punctuation">,</span> <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token string">'200px'</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></span>
   <span class="token punctuation">/&gt;</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-172"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-198"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -709,7 +741,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-18"
+                aria-controls="code-preview-source-group-28"
               >
                 Source
                 <svg
@@ -764,11 +796,11 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-animated-image
-                src="https://shoelace.style/assets/images/walk.gif"
+              <nu-animated-image
+                src="https://nebulaui.org/assets/images/walk.gif"
                 alt="Animation of untied shoes walking on pavement"
                 class="animated-image-custom-control-box"
-              ></sl-animated-image>
+              ></nu-animated-image>
 
               <style>
                 .animated-image-custom-control-box::part(control-box) {
@@ -787,13 +819,13 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-19">
+            <div class="code-preview__source-group" id="code-preview-source-group-29">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-173"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-animated-image</span>
-  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/assets/images/walk.gif<span class="token punctuation">"</span></span>
+                <pre><code class="language-html" id="code-block-199"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-animated-image</span>
+  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/assets/images/walk.gif<span class="token punctuation">"</span></span>
   <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Animation of untied shoes walking on pavement<span class="token punctuation">"</span></span>
   <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>animated-image-custom-control-box<span class="token punctuation">"</span></span>
-<span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-animated-image</span><span class="token punctuation">&gt;</span></span>
+<span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-animated-image</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
   <span class="token selector">.animated-image-custom-control-box::part(control-box)</span> <span class="token punctuation">{</span>
@@ -806,11 +838,11 @@
     <span class="token property">color</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-173"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-199"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-174"><span class="token keyword">import</span> SlAnimatedImage <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/animated-image'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-200"><span class="token keyword">import</span> SlAnimatedImage <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/animated-image'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> css <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
   .animated-image-custom-control-box::part(control-box) {
@@ -828,14 +860,14 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlAnimatedImage</span></span>
       <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>animated-image-custom-control-box<span class="token punctuation">"</span></span>
-      <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://shoelace.style/assets/images/walk.gif<span class="token punctuation">"</span></span>
+      <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://nebulaui.org/assets/images/walk.gif<span class="token punctuation">"</span></span>
       <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Animation of untied shoes walking on pavement<span class="token punctuation">"</span></span>
     <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
 
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">{css}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-174"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-200"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -844,7 +876,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-19"
+                aria-controls="code-preview-source-group-29"
               >
                 Source
                 <svg
@@ -895,13 +927,13 @@
             <a href="/getting-started/installation#cherry-picking">cherry pick</a> this component.
           </p>
 
-          <sl-tab-group>
-            <sl-tab slot="nav" panel="script">Script</sl-tab>
-            <sl-tab slot="nav" panel="import">Import</sl-tab>
-            <sl-tab slot="nav" panel="bundler">Bundler</sl-tab>
-            <sl-tab slot="nav" panel="react">React</sl-tab>
+          <nu-tab-group>
+            <nu-tab slot="nav" panel="script">Script</nu-tab>
+            <nu-tab slot="nav" panel="import">Import</nu-tab>
+            <nu-tab slot="nav" panel="bundler">Bundler</nu-tab>
+            <nu-tab slot="nav" panel="react">React</nu-tab>
 
-            <sl-tab-panel name="script">
+            <nu-tab-panel name="script">
               <p>
                 To import this component from
                 <a
@@ -913,10 +945,10 @@
                 >
                 using a script tag:
               </p>
-              <pre><code class="language-html" id="code-block-175"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.10/cdn/components/animated-image/animated-image.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><sl-copy-button class="copy-code-button" from="code-block-175"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-html" id="code-block-201"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/animated-image/animated-image.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><sl-copy-button class="copy-code-button" from="code-block-201"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="import">
+            <nu-tab-panel name="import">
               <p>
                 To import this component from
                 <a
@@ -928,19 +960,19 @@
                 >
                 using a JavaScript import:
               </p>
-              <pre><code class="language-js" id="code-block-176"><span class="token keyword">import</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.10/cdn/components/animated-image/animated-image.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-176"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-js" id="code-block-202"><span class="token keyword">import</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/animated-image/animated-image.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-202"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="bundler">
+            <nu-tab-panel name="bundler">
               <p>To import this component using <a href="/getting-started/installation#bundling">a bundler</a>:</p>
-              <pre><code class="language-js" id="code-block-177"><span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/animated-image/animated-image.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-177"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-js" id="code-block-203"><span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/animated-image/animated-image.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-203"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="react">
+            <nu-tab-panel name="react">
               <p>To import this component as a <a href="/frameworks/react">React component</a>:</p>
-              <pre><code class="language-js" id="code-block-178"><span class="token keyword">import</span> SlAnimatedImage <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/animated-image'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-178"></sl-copy-button></pre>
-            </sl-tab-panel>
-          </sl-tab-group>
+              <pre><code class="language-js" id="code-block-204"><span class="token keyword">import</span> NuAnimatedImage <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/animated-image'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-204"></sl-copy-button></pre>
+            </nu-tab-panel>
+          </nu-tab-group>
 
           <h2 id="slots" class="anchor-heading">Slots<a href="#slots" aria-label='Direct link to "Slots"'></a></h2>
 
@@ -958,7 +990,7 @@
                     <code>play-icon</code>
                   </td>
                   <td>
-                    Optional play icon to use instead of the default. Works best with <code>&lt;sl-icon&gt;</code>.
+                    Optional play icon to use instead of the default. Works best with <code>&lt;nu-icon&gt;</code>.
                   </td>
                 </tr>
 
@@ -967,7 +999,7 @@
                     <code>pause-icon</code>
                   </td>
                   <td>
-                    Optional pause icon to use instead of the default. Works best with <code>&lt;sl-icon&gt;</code>.
+                    Optional pause icon to use instead of the default. Works best with <code>&lt;nu-icon&gt;</code>.
                   </td>
                 </tr>
               </tbody>
@@ -1024,7 +1056,7 @@
                   </td>
                   <td>Plays the animation. When this attribute is remove, the animation will pause.</td>
                   <td style="text-align: center">
-                    <sl-icon label="yes" name="check-lg"></sl-icon>
+                    <nu-icon label="yes" name="check-lg"></nu-icon>
                   </td>
                   <td>
                     <code>boolean</code>
@@ -1067,15 +1099,15 @@
               </thead>
               <tbody>
                 <tr>
-                  <td data-flavor="html"><code class="nowrap">sl-load</code></td>
-                  <td data-flavor="react"><code class="nowrap">onSlLoad</code></td>
+                  <td data-flavor="html"><code class="nowrap">nu-load</code></td>
+                  <td data-flavor="react"><code class="nowrap">onNuLoad</code></td>
                   <td>Emitted when the image loads successfully.</td>
                   <td>-</td>
                 </tr>
 
                 <tr>
-                  <td data-flavor="html"><code class="nowrap">sl-error</code></td>
-                  <td data-flavor="react"><code class="nowrap">onSlError</code></td>
+                  <td data-flavor="html"><code class="nowrap">nu-error</code></td>
+                  <td data-flavor="react"><code class="nowrap">onNuError</code></td>
                   <td>Emitted when the image fails to load.</td>
                   <td>-</td>
                 </tr>

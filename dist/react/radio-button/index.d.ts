@@ -1,12 +1,12 @@
 import Component from '../../components/radio-button/radio-button.component.js';
 import { type EventName } from '@lit/react';
-import type { SlBlurEvent } from '../../events/events.js';
-import type { SlFocusEvent } from '../../events/events.js';
-export type { SlBlurEvent } from '../../events/events.js';
-export type { SlFocusEvent } from '../../events/events.js';
+import type { NuBlurEvent } from '../../events/events.js';
+import type { NuFocusEvent } from '../../events/events.js';
+export type { NuBlurEvent } from '../../events/events.js';
+export type { NuFocusEvent } from '../../events/events.js';
 /**
  * @summary Radios buttons allow the user to select a single option from a group using a button-like control.
- * @documentation https://shoelace.style/components/radio-button
+ * @documentation https://nebulaui.org/components/radio-button
  * @status stable
  * @since 2.0
  *
@@ -14,8 +14,8 @@ export type { SlFocusEvent } from '../../events/events.js';
  * @slot prefix - A presentational prefix icon or similar element.
  * @slot suffix - A presentational suffix icon or similar element.
  *
- * @event sl-blur - Emitted when the button loses focus.
- * @event sl-focus - Emitted when the button gains focus.
+ * @event nu-blur - Emitted when the button loses focus.
+ * @event nu-focus - Emitted when the button gains focus.
  *
  * @csspart base - The component's base wrapper.
  * @csspart button - The internal `<button>` element.
@@ -25,7 +25,7 @@ export type { SlFocusEvent } from '../../events/events.js';
  * @csspart suffix - The container that wraps the suffix.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {
-    onSlBlur: EventName<SlBlurEvent>;
-    onSlFocus: EventName<SlFocusEvent>;
+    onNuBlur: EventName<NuBlurEvent>;
+    onNuFocus: EventName<NuFocusEvent>;
 }>;
 export default reactWrapper;

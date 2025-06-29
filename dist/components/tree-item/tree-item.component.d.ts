@@ -1,11 +1,11 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlCheckbox from '../checkbox/checkbox.component.js';
-import SlIcon from '../icon/icon.component.js';
-import SlSpinner from '../spinner/spinner.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuCheckbox from '../checkbox/checkbox.component.js';
+import NuIcon from '../icon/icon.component.js';
+import NuSpinner from '../spinner/spinner.component.js';
 import type { CSSResultGroup, PropertyValueMap } from 'lit';
 /**
  * @summary A tree item serves as a hierarchical node that lives inside a [tree](/components/tree).
- * @documentation https://shoelace.style/components/tree-item
+ * @documentation https://nebulaui.org/components/tree-item
  * @status stable
  * @since 2.0
  *
@@ -13,12 +13,12 @@ import type { CSSResultGroup, PropertyValueMap } from 'lit';
  * @dependency sl-icon
  * @dependency sl-spinner
  *
- * @event sl-expand - Emitted when the tree item expands.
- * @event sl-after-expand - Emitted after the tree item expands and all animations are complete.
- * @event sl-collapse - Emitted when the tree item collapses.
- * @event sl-after-collapse - Emitted after the tree item collapses and all animations are complete.
- * @event sl-lazy-change - Emitted when the tree item's lazy state changes.
- * @event sl-lazy-load - Emitted when a lazy item is selected. Use this event to asynchronously load data and append
+ * @event nu-expand - Emitted when the tree item expands.
+ * @event nu-after-expand - Emitted after the tree item expands and all animations are complete.
+ * @event nu-collapse - Emitted when the tree item collapses.
+ * @event nu-after-collapse - Emitted after the tree item collapses and all animations are complete.
+ * @event nu-lazy-change - Emitted when the tree item's lazy state changes.
+ * @event nu-lazy-load - Emitted when a lazy item is selected. Use this event to asynchronously load data and append
  *  items to the tree before expanding. After appending new items, remove the `lazy` attribute to remove the loading
  *  state and update the tree.
  *
@@ -47,12 +47,12 @@ import type { CSSResultGroup, PropertyValueMap } from 'lit';
  * @csspart checkbox__indeterminate-icon - The checkbox's exported `indeterminate-icon` part.
  * @csspart checkbox__label - The checkbox's exported `label` part.
  */
-export default class SlTreeItem extends ShoelaceElement {
+export default class NuTreeItem extends NebulaElement {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-checkbox': typeof SlCheckbox;
-        'sl-icon': typeof SlIcon;
-        'sl-spinner': typeof SlSpinner;
+        'nu-checkbox': typeof NuCheckbox;
+        'nu-icon': typeof NuIcon;
+        'nu-spinner': typeof NuSpinner;
     };
     static isTreeItem(node: Node): boolean;
     private readonly localize;
@@ -78,7 +78,7 @@ export default class SlTreeItem extends ShoelaceElement {
     private animateCollapse;
     private isNestedItem;
     private handleChildrenSlotChange;
-    protected willUpdate(changedProperties: PropertyValueMap<SlTreeItem> | Map<PropertyKey, unknown>): void;
+    protected willUpdate(changedProperties: PropertyValueMap<NuTreeItem> | Map<PropertyKey, unknown>): void;
     private animateExpand;
     handleLoadingChange(): void;
     handleDisabledChange(): void;
@@ -89,6 +89,6 @@ export default class SlTreeItem extends ShoelaceElement {
     /** Gets all the nested tree items in this node. */
     getChildrenItems({ includeDisabled }?: {
         includeDisabled?: boolean;
-    }): SlTreeItem[];
+    }): NuTreeItem[];
     render(): import("lit-html").TemplateResult<1>;
 }

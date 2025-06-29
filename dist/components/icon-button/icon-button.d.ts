@@ -1,8 +1,8 @@
-import SlIconButton from './icon-button.component.js';
+import NuIconButton from './icon-button.component.js';
 export * from './icon-button.component.js';
-export default SlIconButton;
+export default NuIconButton;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-icon-button': SlIconButton;
+        'nu-icon-button': NuIconButton;
     }
 }

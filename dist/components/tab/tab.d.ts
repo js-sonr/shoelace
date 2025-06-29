@@ -1,8 +1,8 @@
-import SlTab from './tab.component.js';
+import NuTab from './tab.component.js';
 export * from './tab.component.js';
-export default SlTab;
+export default NuTab;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-tab': SlTab;
+        'nu-tab': NuTab;
     }
 }

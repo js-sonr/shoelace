@@ -1,20 +1,20 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIcon from '../icon/icon.component.js';
-import SlSpinner from '../spinner/spinner.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIcon from '../icon/icon.component.js';
+import NuSpinner from '../spinner/spinner.component.js';
 import type { CSSResultGroup } from 'lit';
-import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
+import type { NebulaFormControl } from '../../internal/nebula-element.js';
 /**
  * @summary Buttons represent actions that are available to the user.
- * @documentation https://shoelace.style/components/button
+ * @documentation https://nebulaui.org/components/button
  * @status stable
  * @since 2.0
  *
  * @dependency sl-icon
  * @dependency sl-spinner
  *
- * @event sl-blur - Emitted when the button loses focus.
- * @event sl-focus - Emitted when the button gains focus.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-blur - Emitted when the button loses focus.
+ * @event nu-focus - Emitted when the button gains focus.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @slot - The button's label.
  * @slot prefix - A presentational prefix icon or similar element.
@@ -24,14 +24,14 @@ import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
  * @csspart prefix - The container that wraps the prefix.
  * @csspart label - The button's label.
  * @csspart suffix - The container that wraps the suffix.
- * @csspart caret - The button's caret icon, an `<sl-icon>` element.
+ * @csspart caret - The button's caret icon, an `<nu-icon>` element.
  * @csspart spinner - The spinner that shows when the button is in the loading state.
  */
-export default class SlButton extends ShoelaceElement implements ShoelaceFormControl {
+export default class NuButton extends NebulaElement implements NebulaFormControl {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-icon': typeof SlIcon;
-        'sl-spinner': typeof SlSpinner;
+        'nu-icon': typeof NuIcon;
+        'nu-spinner': typeof NuSpinner;
     };
     private readonly formControlController;
     private readonly hasSlotController;
@@ -55,7 +55,7 @@ export default class SlButton extends ShoelaceElement implements ShoelaceFormCon
     /** Draws a pill-style button with rounded edges. */
     pill: boolean;
     /**
-     * Draws a circular icon button. When this attribute is present, the button expects a single `<sl-icon>` in the
+     * Draws a circular icon button. When this attribute is present, the button expects a single `<nu-icon>` in the
      * default slot.
      */
     circle: boolean;

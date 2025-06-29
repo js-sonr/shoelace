@@ -1,8 +1,8 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Badges are used to draw attention and display statuses or counts.
- * @documentation https://shoelace.style/components/badge
+ * @documentation https://nebulaui.org/components/badge
  * @status stable
  * @since 2.0
  *
@@ -10,7 +10,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @csspart base - The component's base wrapper.
  */
-export default class SlBadge extends ShoelaceElement {
+export default class NuBadge extends NebulaElement {
     static styles: CSSResultGroup;
     /** The badge's theme variant. */
     variant: 'primary' | 'success' | 'neutral' | 'warning' | 'danger';

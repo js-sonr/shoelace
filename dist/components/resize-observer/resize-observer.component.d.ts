@@ -1,16 +1,16 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary The Resize Observer component offers a thin, declarative interface to the [`ResizeObserver API`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver).
- * @documentation https://shoelace.style/components/resize-observer
+ * @documentation https://nebulaui.org/components/resize-observer
  * @status stable
  * @since 2.0
  *
  * @slot - One or more elements to watch for resizing.
  *
- * @event {{ entries: ResizeObserverEntry[] }} sl-resize - Emitted when the element is resized.
+ * @event nu-resize - Emitted when the element is resized.
  */
-export default class SlResizeObserver extends ShoelaceElement {
+export default class NuResizeObserver extends NebulaElement {
     static styles: CSSResultGroup;
     private resizeObserver;
     private observedElements;
@@ -26,6 +26,6 @@ export default class SlResizeObserver extends ShoelaceElement {
 }
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-resize-observer': SlResizeObserver;
+        'sl-resize-observer': NuResizeObserver;
     }
 }

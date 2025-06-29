@@ -1,19 +1,19 @@
 import Component from '../../components/rating/rating.component.js';
 import { type EventName } from '@lit/react';
-import type { SlChangeEvent } from '../../events/events.js';
-import type { SlHoverEvent } from '../../events/events.js';
-export type { SlChangeEvent } from '../../events/events.js';
-export type { SlHoverEvent } from '../../events/events.js';
+import type { NuChangeEvent } from '../../events/events.js';
+import type { NuHoverEvent } from '../../events/events.js';
+export type { NuChangeEvent } from '../../events/events.js';
+export type { NuHoverEvent } from '../../events/events.js';
 /**
  * @summary Ratings give users a way to quickly view and provide feedback.
- * @documentation https://shoelace.style/components/rating
+ * @documentation https://nebulaui.org/components/rating
  * @status stable
  * @since 2.0
  *
  * @dependency sl-icon
  *
- * @event sl-change - Emitted when the rating's value changes.
- * @event {{ phase: 'start' | 'move' | 'end', value: number }} sl-hover - Emitted when the user hovers over a value. The
+ * @event nu-change - Emitted when the rating's value changes.
+ * @event nu-hover - Emitted when the user hovers over a value. The
  *  `phase` property indicates when hovering starts, moves to a new value, or ends. The `value` property tells what the
  *  rating's value would be if the user were to commit to the hovered value.
  *
@@ -25,7 +25,7 @@ export type { SlHoverEvent } from '../../events/events.js';
  * @cssproperty --symbol-spacing - The spacing to use around symbols.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {
-    onSlChange: EventName<SlChangeEvent>;
-    onSlHover: EventName<SlHoverEvent>;
+    onNuChange: EventName<NuChangeEvent>;
+    onNuHover: EventName<NuHoverEvent>;
 }>;
 export default reactWrapper;

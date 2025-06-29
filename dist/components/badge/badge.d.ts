@@ -1,8 +1,8 @@
-import SlBadge from './badge.component.js';
+import NuBadge from './badge.component.js';
 export * from './badge.component.js';
-export default SlBadge;
+export default NuBadge;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-badge': SlBadge;
+        'nu-badge': NuBadge;
     }
 }

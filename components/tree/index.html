@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="component" data-shoelace-version="0.0.10">
+<html lang="en" data-layout="component" data-nebula-version="0.0.1">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,14 +31,14 @@
 
     <link rel="stylesheet" href="/dist/themes/light.css" />
     <link rel="stylesheet" href="/dist/themes/dark.css" />
-    <script type="module" src="/dist/shoelace-autoloader.js"></script>
+    <script type="module" src="/dist/nebula-autoloader.js"></script>
 
     <script>
       (() => {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = localStorage.getItem('theme') || 'auto';
         document.documentElement.classList.toggle(
-          'sl-theme-dark',
+          'nu-theme-dark',
           theme === 'dark' || (theme === 'auto' && prefersDark)
         );
       })();
@@ -71,7 +71,7 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="github"></sl-icon>
+        <nu-icon name="github"></nu-icon>
       </a>
 
       <a
@@ -81,21 +81,21 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="twitter"></sl-icon>
+        <nu-icon name="twitter"></nu-icon>
       </a>
 
-      <sl-dropdown id="theme-selector" placement="bottom-end" distance="3">
-        <sl-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
-          <sl-icon class="only-light" name="sun-fill"></sl-icon>
-          <sl-icon class="only-dark" name="moon-fill"></sl-icon>
-        </sl-button>
-        <sl-menu>
-          <sl-menu-item type="checkbox" value="light">Light</sl-menu-item>
-          <sl-menu-item type="checkbox" value="dark">Dark</sl-menu-item>
-          <sl-divider></sl-divider>
-          <sl-menu-item type="checkbox" value="auto">System</sl-menu-item>
-        </sl-menu>
-      </sl-dropdown>
+      <nu-dropdown id="theme-selector" placement="bottom-end" distance="3">
+        <nu-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
+          <nu-icon class="only-light" name="sun-fill"></nu-icon>
+          <nu-icon class="only-dark" name="moon-fill"></nu-icon>
+        </nu-button>
+        <nu-menu>
+          <nu-menu-item type="checkbox" value="light">Light</nu-menu-item>
+          <nu-menu-item type="checkbox" value="dark">Dark</nu-menu-item>
+          <nu-divider></nu-divider>
+          <nu-menu-item type="checkbox" value="auto">System</nu-menu-item>
+        </nu-menu>
+      </nu-dropdown>
     </div>
 
     <aside id="sidebar" data-preserve-scroll="">
@@ -103,38 +103,38 @@
         <a href="/">
           <img src="/assets/images/wordmark.svg" alt="Nebula" />
         </a>
-        <div class="sidebar-version">0.0.10</div>
+        <div class="sidebar-version">0.0.1</div>
       </header>
 
       <div class="sidebar-buttons">
-        <sl-button
+        <nu-button
           size="small"
           class="repo-button repo-button--github"
           href="https://github.com/onsonr/nebula"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="github"></sl-icon> Code
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="github"></nu-icon> Code
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--star"
           href="https://github.com/onsonr/nebula/stargazers"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="star-fill"></sl-icon> Star
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="star-fill"></nu-icon> Star
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--twitter"
           href="https://twitter.com/shoelace_style"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="twitter"></sl-icon> Follow
-        </sl-button>
+          <nu-icon slot="prefix" name="twitter"></nu-icon> Follow
+        </nu-button>
       </div>
 
       <button class="search-box" type="button" title="Press / to search" aria-label="Search" data-plugin="search">
-        <sl-icon name="search"></sl-icon>
+        <nu-icon name="search"></nu-icon>
         <span>Search</span>
       </button>
 
@@ -194,6 +194,10 @@
               </li>
 
               <li>
+                <a href="/components/area-chart"> Area Chart </a>
+              </li>
+
+              <li>
                 <a href="/components/avatar"> Avatar </a>
               </li>
 
@@ -215,6 +219,10 @@
 
               <li>
                 <a href="/components/button-group"> Button Group </a>
+              </li>
+
+              <li>
+                <a href="/components/candle-chart"> Candle Chart </a>
               </li>
 
               <li>
@@ -294,6 +302,22 @@
               </li>
 
               <li>
+                <a href="/components/line-chart"> Line Chart </a>
+              </li>
+
+              <li>
+                <a href="/components/list-item"> List Item </a>
+              </li>
+
+              <li>
+                <a href="/components/list-view"> List View </a>
+              </li>
+
+              <li>
+                <a href="/components/login-button"> Login Button </a>
+              </li>
+
+              <li>
                 <a href="/components/menu"> Menu </a>
               </li>
 
@@ -311,6 +335,10 @@
 
               <li>
                 <a href="/components/option"> Option </a>
+              </li>
+
+              <li>
+                <a href="/components/pie-chart"> Pie Chart </a>
               </li>
 
               <li>
@@ -347,6 +375,10 @@
 
               <li>
                 <a href="/components/rating"> Rating </a>
+              </li>
+
+              <li>
+                <a href="/components/register-button"> Register Button </a>
               </li>
 
               <li>
@@ -468,12 +500,12 @@
             <h1>Tree</h1>
 
             <div class="component-header__tag">
-              <code>&lt;sl-tree&gt; | SlTree</code>
+              <code>&lt;nu-tree&gt; | NuTree</code>
             </div>
 
             <div class="component-header__info">
-              <sl-badge variant="neutral" pill=""> Since 2.0 </sl-badge>
-              <sl-badge variant="primary" pill="" style="text-transform: capitalize"> stable </sl-badge>
+              <nu-badge variant="neutral" pill=""> Since 2.0 </nu-badge>
+              <nu-badge variant="primary" pill="" style="text-transform: capitalize"> stable </nu-badge>
             </div>
           </header>
 
@@ -484,73 +516,73 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-tree>
-                <sl-tree-item>
+              <nu-tree>
+                <nu-tree-item>
                   Deciduous
-                  <sl-tree-item>Birch</sl-tree-item>
-                  <sl-tree-item>
+                  <nu-tree-item>Birch</nu-tree-item>
+                  <nu-tree-item>
                     Maple
-                    <sl-tree-item>Field maple</sl-tree-item>
-                    <sl-tree-item>Red maple</sl-tree-item>
-                    <sl-tree-item>Sugar maple</sl-tree-item>
-                  </sl-tree-item>
-                  <sl-tree-item>Oak</sl-tree-item>
-                </sl-tree-item>
+                    <nu-tree-item>Field maple</nu-tree-item>
+                    <nu-tree-item>Red maple</nu-tree-item>
+                    <nu-tree-item>Sugar maple</nu-tree-item>
+                  </nu-tree-item>
+                  <nu-tree-item>Oak</nu-tree-item>
+                </nu-tree-item>
 
-                <sl-tree-item>
+                <nu-tree-item>
                   Coniferous
-                  <sl-tree-item>Cedar</sl-tree-item>
-                  <sl-tree-item>Pine</sl-tree-item>
-                  <sl-tree-item>Spruce</sl-tree-item>
-                </sl-tree-item>
+                  <nu-tree-item>Cedar</nu-tree-item>
+                  <nu-tree-item>Pine</nu-tree-item>
+                  <nu-tree-item>Spruce</nu-tree-item>
+                </nu-tree-item>
 
-                <sl-tree-item>
+                <nu-tree-item>
                   Non-trees
-                  <sl-tree-item>Bamboo</sl-tree-item>
-                  <sl-tree-item>Cactus</sl-tree-item>
-                  <sl-tree-item>Fern</sl-tree-item>
-                </sl-tree-item>
-              </sl-tree>
+                  <nu-tree-item>Bamboo</nu-tree-item>
+                  <nu-tree-item>Cactus</nu-tree-item>
+                  <nu-tree-item>Fern</nu-tree-item>
+                </nu-tree-item>
+              </nu-tree>
 
               <div class="code-preview__resizer">
                 <sl-icon name="grip-vertical"></sl-icon>
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-343">
+            <div class="code-preview__source-group" id="code-preview-source-group-399">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-1041"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-1185"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
     Deciduous
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Birch<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Birch<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
       Maple
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Field maple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Red maple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Sugar maple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Oak<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Field maple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Red maple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Sugar maple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Oak<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
     Coniferous
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Cedar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Pine<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Spruce<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Cedar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Pine<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Spruce<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
     Non-trees
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Bamboo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Cactus<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Fern<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1041"></sl-copy-button></pre>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Bamboo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Cactus<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Fern<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-1185"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-1042"><span class="token keyword">import</span> SlTree <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-1186"><span class="token keyword">import</span> SlTree <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTreeItem <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree-item'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
@@ -582,7 +614,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTreeItem</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTree</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1042"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1186"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -591,7 +623,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-343"
+                aria-controls="code-preview-source-group-399"
               >
                 Source
                 <svg
@@ -648,29 +680,29 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-select id="selection-mode" value="single" label="Selection">
-                <sl-option value="single">Single</sl-option>
-                <sl-option value="multiple">Multiple</sl-option>
-                <sl-option value="leaf">Leaf</sl-option>
-              </sl-select>
+              <nu-select id="selection-mode" value="single" label="Selection">
+                <nu-option value="single">Single</nu-option>
+                <nu-option value="multiple">Multiple</nu-option>
+                <nu-option value="leaf">Leaf</nu-option>
+              </nu-select>
 
               <br />
 
-              <sl-tree class="tree-selectable">
-                <sl-tree-item>
+              <nu-tree class="tree-selectable">
+                <nu-tree-item>
                   Item 1
-                  <sl-tree-item>
+                  <nu-tree-item>
                     Item A
-                    <sl-tree-item>Item Z</sl-tree-item>
-                    <sl-tree-item>Item Y</sl-tree-item>
-                    <sl-tree-item>Item X</sl-tree-item>
-                  </sl-tree-item>
-                  <sl-tree-item>Item B</sl-tree-item>
-                  <sl-tree-item>Item C</sl-tree-item>
-                </sl-tree-item>
-                <sl-tree-item>Item 2</sl-tree-item>
-                <sl-tree-item>Item 3</sl-tree-item>
-              </sl-tree>
+                    <nu-tree-item>Item Z</nu-tree-item>
+                    <nu-tree-item>Item Y</nu-tree-item>
+                    <nu-tree-item>Item X</nu-tree-item>
+                  </nu-tree-item>
+                  <nu-tree-item>Item B</nu-tree-item>
+                  <nu-tree-item>Item C</nu-tree-item>
+                </nu-tree-item>
+                <nu-tree-item>Item 2</nu-tree-item>
+                <nu-tree-item>Item 3</nu-tree-item>
+              </nu-tree>
 
               <script>
                 (() => {
@@ -689,31 +721,31 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-344">
+            <div class="code-preview__source-group" id="code-preview-source-group-400">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-1043"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>selection-mode<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>single<span class="token punctuation">"</span></span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Selection<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>single<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Single<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-option</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>multiple<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Multiple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-option</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>leaf<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Leaf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-option</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-select</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-1187"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>selection-mode<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>single<span class="token punctuation">"</span></span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Selection<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>single<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Single<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-option</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>multiple<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Multiple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-option</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>leaf<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Leaf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-option</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-select</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tree-selectable<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tree-selectable<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
     Item 1
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
       Item A
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Item Z<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Item Y<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Item X<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Item B<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Item C<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Item Z<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Item Y<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Item X<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Item B<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Item C<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
   <span class="token keyword">const</span> selectionMode <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#selection-mode'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -724,11 +756,11 @@
     tree<span class="token punctuation">.</span>selection <span class="token operator">=</span> selectionMode<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1043"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1187"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-1044"><span class="token keyword">import</span> SlTree <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-1188"><span class="token keyword">import</span> SlTree <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTreeItem <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree-item'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
@@ -762,7 +794,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1044"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1188"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -771,7 +803,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-344"
+                aria-controls="code-preview-source-group-400"
               >
                 Source
                 <svg
@@ -824,33 +856,33 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-tree class="tree-with-lines">
-                <sl-tree-item expanded="">
+              <nu-tree class="tree-with-lines">
+                <nu-tree-item expanded="">
                   Deciduous
-                  <sl-tree-item>Birch</sl-tree-item>
-                  <sl-tree-item expanded="">
+                  <nu-tree-item>Birch</nu-tree-item>
+                  <nu-tree-item expanded="">
                     Maple
-                    <sl-tree-item>Field maple</sl-tree-item>
-                    <sl-tree-item>Red maple</sl-tree-item>
-                    <sl-tree-item>Sugar maple</sl-tree-item>
-                  </sl-tree-item>
-                  <sl-tree-item>Oak</sl-tree-item>
-                </sl-tree-item>
+                    <nu-tree-item>Field maple</nu-tree-item>
+                    <nu-tree-item>Red maple</nu-tree-item>
+                    <nu-tree-item>Sugar maple</nu-tree-item>
+                  </nu-tree-item>
+                  <nu-tree-item>Oak</nu-tree-item>
+                </nu-tree-item>
 
-                <sl-tree-item>
+                <nu-tree-item>
                   Coniferous
-                  <sl-tree-item>Cedar</sl-tree-item>
-                  <sl-tree-item>Pine</sl-tree-item>
-                  <sl-tree-item>Spruce</sl-tree-item>
-                </sl-tree-item>
+                  <nu-tree-item>Cedar</nu-tree-item>
+                  <nu-tree-item>Pine</nu-tree-item>
+                  <nu-tree-item>Spruce</nu-tree-item>
+                </nu-tree-item>
 
-                <sl-tree-item>
+                <nu-tree-item>
                   Non-trees
-                  <sl-tree-item>Bamboo</sl-tree-item>
-                  <sl-tree-item>Cactus</sl-tree-item>
-                  <sl-tree-item>Fern</sl-tree-item>
-                </sl-tree-item>
-              </sl-tree>
+                  <nu-tree-item>Bamboo</nu-tree-item>
+                  <nu-tree-item>Cactus</nu-tree-item>
+                  <nu-tree-item>Fern</nu-tree-item>
+                </nu-tree-item>
+              </nu-tree>
 
               <style>
                 .tree-with-lines {
@@ -863,46 +895,46 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-345">
+            <div class="code-preview__source-group" id="code-preview-source-group-401">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-1045"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tree-with-lines<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span> <span class="token attr-name">expanded</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-1189"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tree-with-lines<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span> <span class="token attr-name">expanded</span><span class="token punctuation">&gt;</span></span>
     Deciduous
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Birch<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span> <span class="token attr-name">expanded</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Birch<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span> <span class="token attr-name">expanded</span><span class="token punctuation">&gt;</span></span>
       Maple
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Field maple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Red maple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Sugar maple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Oak<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Field maple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Red maple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Sugar maple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Oak<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
     Coniferous
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Cedar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Pine<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Spruce<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Cedar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Pine<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Spruce<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
     Non-trees
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Bamboo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Cactus<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Fern<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Bamboo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Cactus<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Fern<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
   <span class="token selector">.tree-with-lines</span> <span class="token punctuation">{</span>
     <span class="token property">--indent-guide-width</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1045"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1189"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-1046"><span class="token keyword">import</span> SlTree <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-1190"><span class="token keyword">import</span> SlTree <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTreeItem <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree-item'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
@@ -934,7 +966,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTreeItem</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTree</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1046"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1190"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -943,7 +975,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-345"
+                aria-controls="code-preview-source-group-401"
               >
                 Source
                 <svg
@@ -1001,9 +1033,9 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-tree>
-                <sl-tree-item lazy="">Available Trees</sl-tree-item>
-              </sl-tree>
+              <nu-tree>
+                <nu-tree-item lazy="">Available Trees</nu-tree-item>
+              </nu-tree>
 
               <script type="module">
                 const lazyItem = document.querySelector('sl-tree-item[lazy]');
@@ -1030,11 +1062,11 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-346">
+            <div class="code-preview__source-group" id="code-preview-source-group-402">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-1047"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span> <span class="token attr-name">lazy</span><span class="token punctuation">&gt;</span></span>Available Trees<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-1191"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span> <span class="token attr-name">lazy</span><span class="token punctuation">&gt;</span></span>Available Trees<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
   <span class="token keyword">const</span> lazyItem <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'sl-tree-item[lazy]'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1055,11 +1087,11 @@
     <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1047"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1191"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-1048"><span class="token keyword">import</span> SlTree <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-1192"><span class="token keyword">import</span> SlTree <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTreeItem <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree-item'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
@@ -1087,7 +1119,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTree</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1048"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1192"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -1096,7 +1128,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-346"
+                aria-controls="code-preview-source-group-402"
               >
                 Source
                 <svg
@@ -1152,36 +1184,36 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-tree class="custom-icons">
-                <sl-icon name="plus-square" slot="expand-icon"></sl-icon>
-                <sl-icon name="dash-square" slot="collapse-icon"></sl-icon>
+              <nu-tree class="custom-icons">
+                <nu-icon name="plus-square" slot="expand-icon"></nu-icon>
+                <nu-icon name="dash-square" slot="collapse-icon"></nu-icon>
 
-                <sl-tree-item>
+                <nu-tree-item>
                   Deciduous
-                  <sl-tree-item>Birch</sl-tree-item>
-                  <sl-tree-item>
+                  <nu-tree-item>Birch</nu-tree-item>
+                  <nu-tree-item>
                     Maple
-                    <sl-tree-item>Field maple</sl-tree-item>
-                    <sl-tree-item>Red maple</sl-tree-item>
-                    <sl-tree-item>Sugar maple</sl-tree-item>
-                  </sl-tree-item>
-                  <sl-tree-item>Oak</sl-tree-item>
-                </sl-tree-item>
+                    <nu-tree-item>Field maple</nu-tree-item>
+                    <nu-tree-item>Red maple</nu-tree-item>
+                    <nu-tree-item>Sugar maple</nu-tree-item>
+                  </nu-tree-item>
+                  <nu-tree-item>Oak</nu-tree-item>
+                </nu-tree-item>
 
-                <sl-tree-item>
+                <nu-tree-item>
                   Coniferous
-                  <sl-tree-item>Cedar</sl-tree-item>
-                  <sl-tree-item>Pine</sl-tree-item>
-                  <sl-tree-item>Spruce</sl-tree-item>
-                </sl-tree-item>
+                  <nu-tree-item>Cedar</nu-tree-item>
+                  <nu-tree-item>Pine</nu-tree-item>
+                  <nu-tree-item>Spruce</nu-tree-item>
+                </nu-tree-item>
 
-                <sl-tree-item>
+                <nu-tree-item>
                   Non-trees
-                  <sl-tree-item>Bamboo</sl-tree-item>
-                  <sl-tree-item>Cactus</sl-tree-item>
-                  <sl-tree-item>Fern</sl-tree-item>
-                </sl-tree-item>
-              </sl-tree>
+                  <nu-tree-item>Bamboo</nu-tree-item>
+                  <nu-tree-item>Cactus</nu-tree-item>
+                  <nu-tree-item>Fern</nu-tree-item>
+                </nu-tree-item>
+              </nu-tree>
 
               <style>
                 .custom-icons sl-tree-item::part(expand-button) {
@@ -1195,38 +1227,38 @@
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-347">
+            <div class="code-preview__source-group" id="code-preview-source-group-403">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-1049"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom-icons<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>plus-square<span class="token punctuation">"</span></span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>expand-icon<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-icon</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dash-square<span class="token punctuation">"</span></span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>collapse-icon<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-icon</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-1193"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom-icons<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>plus-square<span class="token punctuation">"</span></span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>expand-icon<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-icon</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dash-square<span class="token punctuation">"</span></span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>collapse-icon<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-icon</span><span class="token punctuation">&gt;</span></span>
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
     Deciduous
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Birch<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Birch<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
       Maple
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Field maple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Red maple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Sugar maple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Oak<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Field maple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Red maple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Sugar maple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Oak<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
     Coniferous
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Cedar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Pine<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Spruce<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Cedar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Pine<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Spruce<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
 
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
     Non-trees
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Bamboo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Cactus<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>Fern<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Bamboo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Cactus<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>Fern<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
   <span class="token selector">.custom-icons sl-tree-item::part(expand-button)</span> <span class="token punctuation">{</span>
@@ -1234,11 +1266,11 @@
     <span class="token property">rotate</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1049"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1193"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-1050"><span class="token keyword">import</span> SlTree <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-1194"><span class="token keyword">import</span> SlTree <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTreeItem <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree-item'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
@@ -1273,7 +1305,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTreeItem</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTree</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1050"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1194"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -1282,7 +1314,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-347"
+                aria-controls="code-preview-source-group-403"
               >
                 Source
                 <svg
@@ -1331,99 +1363,99 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-tree class="tree-with-icons">
-                <sl-tree-item expanded="">
-                  <sl-icon name="folder"></sl-icon>
+              <nu-tree class="tree-with-icons">
+                <nu-tree-item expanded="">
+                  <nu-icon name="folder"></nu-icon>
                   Documents
 
-                  <sl-tree-item>
-                    <sl-icon name="folder"> </sl-icon>
+                  <nu-tree-item>
+                    <nu-icon name="folder"> </nu-icon>
                     Photos
-                    <sl-tree-item>
-                      <sl-icon name="image"></sl-icon>
+                    <nu-tree-item>
+                      <nu-icon name="image"></nu-icon>
                       birds.jpg
-                    </sl-tree-item>
-                    <sl-tree-item>
-                      <sl-icon name="image"></sl-icon>
+                    </nu-tree-item>
+                    <nu-tree-item>
+                      <nu-icon name="image"></nu-icon>
                       kitten.jpg
-                    </sl-tree-item>
-                    <sl-tree-item>
-                      <sl-icon name="image"></sl-icon>
+                    </nu-tree-item>
+                    <nu-tree-item>
+                      <nu-icon name="image"></nu-icon>
                       puppy.jpg
-                    </sl-tree-item>
-                  </sl-tree-item>
+                    </nu-tree-item>
+                  </nu-tree-item>
 
-                  <sl-tree-item>
-                    <sl-icon name="folder"></sl-icon>
+                  <nu-tree-item>
+                    <nu-icon name="folder"></nu-icon>
                     Writing
-                    <sl-tree-item>
-                      <sl-icon name="file"></sl-icon>
+                    <nu-tree-item>
+                      <nu-icon name="file"></nu-icon>
                       draft.txt
-                    </sl-tree-item>
-                    <sl-tree-item>
-                      <sl-icon name="file-pdf"></sl-icon>
+                    </nu-tree-item>
+                    <nu-tree-item>
+                      <nu-icon name="file-pdf"></nu-icon>
                       final.pdf
-                    </sl-tree-item>
-                    <sl-tree-item>
-                      <sl-icon name="file-bar-graph"></sl-icon>
+                    </nu-tree-item>
+                    <nu-tree-item>
+                      <nu-icon name="file-bar-graph"></nu-icon>
                       sales.xls
-                    </sl-tree-item>
-                  </sl-tree-item>
-                </sl-tree-item>
-              </sl-tree>
+                    </nu-tree-item>
+                  </nu-tree-item>
+                </nu-tree-item>
+              </nu-tree>
 
               <div class="code-preview__resizer">
                 <sl-icon name="grip-vertical"></sl-icon>
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-348">
+            <div class="code-preview__source-group" id="code-preview-source-group-404">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-1051"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tree-with-icons<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span> <span class="token attr-name">expanded</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>folder<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-icon</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-1195"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tree-with-icons<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span> <span class="token attr-name">expanded</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>folder<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-icon</span><span class="token punctuation">&gt;</span></span>
     Documents
 
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>folder<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-icon</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>folder<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-icon</span><span class="token punctuation">&gt;</span></span>
       Photos
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-icon</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-icon</span><span class="token punctuation">&gt;</span></span>
         birds.jpg
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-icon</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-icon</span><span class="token punctuation">&gt;</span></span>
         kitten.jpg
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-icon</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-icon</span><span class="token punctuation">&gt;</span></span>
         puppy.jpg
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
 
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>folder<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-icon</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>folder<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-icon</span><span class="token punctuation">&gt;</span></span>
       Writing
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-icon</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-icon</span><span class="token punctuation">&gt;</span></span>
         draft.txt
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file-pdf<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-icon</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file-pdf<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-icon</span><span class="token punctuation">&gt;</span></span>
         final.pdf
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file-bar-graph<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-icon</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-icon</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file-bar-graph<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-icon</span><span class="token punctuation">&gt;</span></span>
         sales.xls
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree-item</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-tree</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1051"></sl-copy-button></pre>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree-item</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-tree</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-1195"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-1052"><span class="token keyword">import</span> SlIcon <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/icon'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-1196"><span class="token keyword">import</span> SlIcon <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/icon'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTree <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlTreeItem <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree-item'</span><span class="token punctuation">;</span>
 
@@ -1467,7 +1499,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlTree</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1052"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-1196"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -1476,7 +1508,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-348"
+                aria-controls="code-preview-source-group-404"
               >
                 Source
                 <svg
@@ -1527,13 +1559,13 @@
             <a href="/getting-started/installation#cherry-picking">cherry pick</a> this component.
           </p>
 
-          <sl-tab-group>
-            <sl-tab slot="nav" panel="script">Script</sl-tab>
-            <sl-tab slot="nav" panel="import">Import</sl-tab>
-            <sl-tab slot="nav" panel="bundler">Bundler</sl-tab>
-            <sl-tab slot="nav" panel="react">React</sl-tab>
+          <nu-tab-group>
+            <nu-tab slot="nav" panel="script">Script</nu-tab>
+            <nu-tab slot="nav" panel="import">Import</nu-tab>
+            <nu-tab slot="nav" panel="bundler">Bundler</nu-tab>
+            <nu-tab slot="nav" panel="react">React</nu-tab>
 
-            <sl-tab-panel name="script">
+            <nu-tab-panel name="script">
               <p>
                 To import this component from
                 <a
@@ -1545,10 +1577,10 @@
                 >
                 using a script tag:
               </p>
-              <pre><code class="language-html" id="code-block-1053"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.10/cdn/components/tree/tree.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><sl-copy-button class="copy-code-button" from="code-block-1053"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-html" id="code-block-1197"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/tree/tree.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><sl-copy-button class="copy-code-button" from="code-block-1197"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="import">
+            <nu-tab-panel name="import">
               <p>
                 To import this component from
                 <a
@@ -1560,19 +1592,19 @@
                 >
                 using a JavaScript import:
               </p>
-              <pre><code class="language-js" id="code-block-1054"><span class="token keyword">import</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.10/cdn/components/tree/tree.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-1054"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-js" id="code-block-1198"><span class="token keyword">import</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/tree/tree.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-1198"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="bundler">
+            <nu-tab-panel name="bundler">
               <p>To import this component using <a href="/getting-started/installation#bundling">a bundler</a>:</p>
-              <pre><code class="language-js" id="code-block-1055"><span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/tree/tree.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-1055"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-js" id="code-block-1199"><span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/tree/tree.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-1199"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="react">
+            <nu-tab-panel name="react">
               <p>To import this component as a <a href="/frameworks/react">React component</a>:</p>
-              <pre><code class="language-js" id="code-block-1056"><span class="token keyword">import</span> SlTree <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-1056"></sl-copy-button></pre>
-            </sl-tab-panel>
-          </sl-tab-group>
+              <pre><code class="language-js" id="code-block-1200"><span class="token keyword">import</span> NuTree <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/tree'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-1200"></sl-copy-button></pre>
+            </nu-tab-panel>
+          </nu-tab-group>
 
           <h2 id="slots" class="anchor-heading">Slots<a href="#slots" aria-label='Direct link to "Slots"'></a></h2>
 
@@ -1595,7 +1627,7 @@
                     <code>expand-icon</code>
                   </td>
                   <td>
-                    The icon to show when the tree item is expanded. Works best with <code>&lt;sl-icon&gt;</code>.
+                    The icon to show when the tree item is expanded. Works best with <code>&lt;nu-icon&gt;</code>.
                   </td>
                 </tr>
 
@@ -1604,7 +1636,7 @@
                     <code>collapse-icon</code>
                   </td>
                   <td>
-                    The icon to show when the tree item is collapsed. Works best with <code>&lt;sl-icon&gt;</code>.
+                    The icon to show when the tree item is collapsed. Works best with <code>&lt;nu-icon&gt;</code>.
                   </td>
                 </tr>
               </tbody>
@@ -1684,12 +1716,10 @@
               </thead>
               <tbody>
                 <tr>
-                  <td data-flavor="html"><code class="nowrap">sl-selection-change</code></td>
-                  <td data-flavor="react"><code class="nowrap">onSlSelectionChange</code></td>
+                  <td data-flavor="html"><code class="nowrap">nu-selection-change</code></td>
+                  <td data-flavor="react"><code class="nowrap">onNuSelectionChange</code></td>
                   <td>Emitted when a tree item is selected or deselected.</td>
-                  <td>
-                    <code>{ selection: SlTreeItem[] }</code>
-                  </td>
+                  <td>-</td>
                 </tr>
               </tbody>
             </table>
@@ -1716,13 +1746,13 @@
                 <tr>
                   <td class="nowrap"><code>--indent-size</code></td>
                   <td>The size of the indentation for nested items.</td>
-                  <td>var(–sl-spacing-medium)</td>
+                  <td>var(–nu-spacing-medium)</td>
                 </tr>
 
                 <tr>
                   <td class="nowrap"><code>--indent-guide-color</code></td>
                   <td>The color of the indentation line.</td>
-                  <td>var(–sl-color-neutral-200)</td>
+                  <td>var(–nu-color-neutral-200)</td>
                 </tr>
 
                 <tr>

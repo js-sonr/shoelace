@@ -1,9 +1,9 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIconButton from '../icon-button/icon-button.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIconButton from '../icon-button/icon-button.component.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Tags are used as labels to organize things or to indicate a selection.
- * @documentation https://shoelace.style/components/tag
+ * @documentation https://nebulaui.org/components/tag
  * @status stable
  * @since 2.0
  *
@@ -11,17 +11,17 @@ import type { CSSResultGroup } from 'lit';
  *
  * @slot - The tag's content.
  *
- * @event sl-remove - Emitted when the remove button is activated.
+ * @event nu-remove - Emitted when the remove button is activated.
  *
  * @csspart base - The component's base wrapper.
  * @csspart content - The tag's content.
- * @csspart remove-button - The tag's remove button, an `<sl-icon-button>`.
+ * @csspart remove-button - The tag's remove button, an `<nu-icon-button>`.
  * @csspart remove-button__base - The remove button's exported `base` part.
  */
-export default class SlTag extends ShoelaceElement {
+export default class NuTag extends NebulaElement {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-icon-button': typeof SlIconButton;
+        'nu-icon-button': typeof NuIconButton;
     };
     private readonly localize;
     /** The tag's theme variant. */

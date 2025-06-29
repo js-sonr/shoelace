@@ -1,10 +1,10 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIcon from '../icon/icon.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIcon from '../icon/icon.component.js';
 import type { CSSResultGroup } from 'lit';
-import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
+import type { NebulaFormControl } from '../../internal/nebula-element.js';
 /**
  * @summary Inputs collect data from the user.
- * @documentation https://shoelace.style/components/input
+ * @documentation https://nebulaui.org/components/input
  * @status stable
  * @since 2.0
  *
@@ -18,12 +18,12 @@ import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
  * @slot hide-password-icon - An icon to use in lieu of the default hide password icon.
  * @slot help-text - Text that describes how to use the input. Alternatively, you can use the `help-text` attribute.
  *
- * @event sl-blur - Emitted when the control loses focus.
- * @event sl-change - Emitted when an alteration to the control's value is committed by the user.
- * @event sl-clear - Emitted when the clear button is activated.
- * @event sl-focus - Emitted when the control gains focus.
- * @event sl-input - Emitted when the control receives input.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-blur - Emitted when the control loses focus.
+ * @event nu-change - Emitted when an alteration to the control's value is committed by the user.
+ * @event nu-clear - Emitted when the clear button is activated.
+ * @event nu-focus - Emitted when the control gains focus.
+ * @event nu-input - Emitted when the control receives input.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart form-control - The form control that wraps the label, input, and help text.
  * @csspart form-control-label - The label's wrapper.
@@ -36,10 +36,10 @@ import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
  * @csspart password-toggle-button - The password toggle button.
  * @csspart suffix - The container that wraps the suffix.
  */
-export default class SlInput extends ShoelaceElement implements ShoelaceFormControl {
+export default class NuInput extends NebulaElement implements NebulaFormControl {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-icon': typeof SlIcon;
+        'nu-icon': typeof NuIcon;
     };
     private readonly formControlController;
     private readonly hasSlotController;

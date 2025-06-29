@@ -1,9 +1,9 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIconButton from '../icon-button/icon-button.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIconButton from '../icon-button/icon-button.component.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Tabs are used inside [tab groups](/components/tab-group) to represent and activate [tab panels](/components/tab-panel).
- * @documentation https://shoelace.style/components/tab
+ * @documentation https://nebulaui.org/components/tab
  * @status stable
  * @since 2.0
  *
@@ -11,16 +11,16 @@ import type { CSSResultGroup } from 'lit';
  *
  * @slot - The tab's label.
  *
- * @event sl-close - Emitted when the tab is closable and the close button is activated.
+ * @event nu-close - Emitted when the tab is closable and the close button is activated.
  *
  * @csspart base - The component's base wrapper.
- * @csspart close-button - The close button, an `<sl-icon-button>`.
+ * @csspart close-button - The close button, an `<nu-icon-button>`.
  * @csspart close-button__base - The close button's exported `base` part.
  */
-export default class SlTab extends ShoelaceElement {
+export default class NuTab extends NebulaElement {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-icon-button': typeof SlIconButton;
+        'nu-icon-button': typeof NuIconButton;
     };
     private readonly localize;
     private readonly attrId;
@@ -47,6 +47,6 @@ export default class SlTab extends ShoelaceElement {
 }
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-tab': SlTab;
+        'sl-tab': NuTab;
     }
 }

@@ -1,9 +1,9 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlPopup from '../popup/popup.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuPopup from '../popup/popup.component.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Tooltips display additional information based on a specific action.
- * @documentation https://shoelace.style/components/tooltip
+ * @documentation https://nebulaui.org/components/tooltip
  * @status stable
  * @since 2.0
  *
@@ -12,12 +12,12 @@ import type { CSSResultGroup } from 'lit';
  * @slot - The tooltip's target element. Avoid slotting in more than one element, as subsequent ones will be ignored.
  * @slot content - The content to render in the tooltip. Alternatively, you can use the `content` attribute.
  *
- * @event sl-show - Emitted when the tooltip begins to show.
- * @event sl-after-show - Emitted after the tooltip has shown and all animations are complete.
- * @event sl-hide - Emitted when the tooltip begins to hide.
- * @event sl-after-hide - Emitted after the tooltip has hidden and all animations are complete.
+ * @event nu-show - Emitted when the tooltip begins to show.
+ * @event nu-after-show - Emitted after the tooltip has shown and all animations are complete.
+ * @event nu-hide - Emitted when the tooltip begins to hide.
+ * @event nu-after-hide - Emitted after the tooltip has hidden and all animations are complete.
  *
- * @csspart base - The component's base wrapper, an `<sl-popup>` element.
+ * @csspart base - The component's base wrapper, an `<nu-popup>` element.
  * @csspart base__popup - The popup's exported `popup` part. Use this to target the tooltip's popup container.
  * @csspart base__arrow - The popup's exported `arrow` part. Use this to target the tooltip's arrow.
  * @csspart body - The tooltip's body where its content is rendered.
@@ -29,17 +29,17 @@ import type { CSSResultGroup } from 'lit';
  * @animation tooltip.show - The animation to use when showing the tooltip.
  * @animation tooltip.hide - The animation to use when hiding the tooltip.
  */
-export default class SlTooltip extends ShoelaceElement {
+export default class NuTooltip extends NebulaElement {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-popup': typeof SlPopup;
+        'nu-popup': typeof NuPopup;
     };
     private hoverTimeout;
     private readonly localize;
     private closeWatcher;
     defaultSlot: HTMLSlotElement;
     body: HTMLElement;
-    popup: SlPopup;
+    popup: NuPopup;
     /** The tooltip's content. If you need to display HTML, use the `content` slot instead. */
     content: string;
     /**

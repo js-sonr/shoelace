@@ -1,8 +1,8 @@
-import SlTooltip from './tooltip.component.js';
+import NuTooltip from './tooltip.component.js';
 export * from './tooltip.component.js';
-export default SlTooltip;
+export default NuTooltip;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-tooltip': SlTooltip;
+        'nu-tooltip': NuTooltip;
     }
 }

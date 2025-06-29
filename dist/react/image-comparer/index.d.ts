@@ -1,10 +1,10 @@
 import Component from '../../components/image-comparer/image-comparer.component.js';
 import { type EventName } from '@lit/react';
-import type { SlChangeEvent } from '../../events/events.js';
-export type { SlChangeEvent } from '../../events/events.js';
+import type { NuChangeEvent } from '../../events/events.js';
+export type { NuChangeEvent } from '../../events/events.js';
 /**
  * @summary Compare visual differences between similar photos with a sliding panel.
- * @documentation https://shoelace.style/components/image-comparer
+ * @documentation https://nebulaui.org/components/image-comparer
  * @status stable
  * @since 2.0
  *
@@ -14,7 +14,7 @@ export type { SlChangeEvent } from '../../events/events.js';
  * @slot after - The after image, an `<img>` or `<svg>` element.
  * @slot handle - The icon used inside the handle.
  *
- * @event sl-change - Emitted when the position changes.
+ * @event nu-change - Emitted when the position changes.
  *
  * @csspart base - The component's base wrapper.
  * @csspart before - The container that wraps the before image.
@@ -26,6 +26,6 @@ export type { SlChangeEvent } from '../../events/events.js';
  * @cssproperty --handle-size - The size of the compare handle.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {
-    onSlChange: EventName<SlChangeEvent>;
+    onNuChange: EventName<NuChangeEvent>;
 }>;
 export default reactWrapper;

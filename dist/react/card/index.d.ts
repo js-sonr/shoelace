@@ -1,7 +1,7 @@
 import Component from '../../components/card/card.component.js';
 /**
  * @summary Cards can be used to group related subjects in a container.
- * @documentation https://shoelace.style/components/card
+ * @documentation https://nebulaui.org/components/card
  * @status stable
  * @since 2.0
  *

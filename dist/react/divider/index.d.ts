@@ -1,7 +1,7 @@
 import Component from '../../components/divider/divider.component.js';
 /**
  * @summary Dividers are used to visually separate or group elements.
- * @documentation https://shoelace.style/components/divider
+ * @documentation https://nebulaui.org/components/divider
  * @status stable
  * @since 2.0
  *

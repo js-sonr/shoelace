@@ -1,8 +1,8 @@
-import SlFormatNumber from './format-number.component.js';
+import NuFormatNumber from './format-number.component.js';
 export * from './format-number.component.js';
-export default SlFormatNumber;
+export default NuFormatNumber;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-format-number': SlFormatNumber;
+        'nu-format-number': NuFormatNumber;
     }
 }

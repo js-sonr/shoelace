@@ -1,10 +1,10 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIcon from '../icon/icon.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIcon from '../icon/icon.component.js';
 import type { CSSResultGroup } from 'lit';
-import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
+import type { NebulaFormControl } from '../../internal/nebula-element.js';
 /**
  * @summary Checkboxes allow the user to toggle an option on or off.
- * @documentation https://shoelace.style/components/checkbox
+ * @documentation https://nebulaui.org/components/checkbox
  * @status stable
  * @since 2.0
  *
@@ -13,25 +13,25 @@ import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
  * @slot - The checkbox's label.
  * @slot help-text - Text that describes how to use the checkbox. Alternatively, you can use the `help-text` attribute.
  *
- * @event sl-blur - Emitted when the checkbox loses focus.
- * @event sl-change - Emitted when the checked state changes.
- * @event sl-focus - Emitted when the checkbox gains focus.
- * @event sl-input - Emitted when the checkbox receives input.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-blur - Emitted when the checkbox loses focus.
+ * @event nu-change - Emitted when the checked state changes.
+ * @event nu-focus - Emitted when the checkbox gains focus.
+ * @event nu-input - Emitted when the checkbox receives input.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart base - The component's base wrapper.
  * @csspart control - The square container that wraps the checkbox's checked state.
  * @csspart control--checked - Matches the control part when the checkbox is checked.
  * @csspart control--indeterminate - Matches the control part when the checkbox is indeterminate.
- * @csspart checked-icon - The checked icon, an `<sl-icon>` element.
- * @csspart indeterminate-icon - The indeterminate icon, an `<sl-icon>` element.
+ * @csspart checked-icon - The checked icon, an `<nu-icon>` element.
+ * @csspart indeterminate-icon - The indeterminate icon, an `<nu-icon>` element.
  * @csspart label - The container that wraps the checkbox's label.
  * @csspart form-control-help-text - The help text's wrapper.
  */
-export default class SlCheckbox extends ShoelaceElement implements ShoelaceFormControl {
+export default class NuCheckbox extends NebulaElement implements NebulaFormControl {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-icon': typeof SlIcon;
+        'nu-icon': typeof NuIcon;
     };
     private readonly formControlController;
     private readonly hasSlotController;

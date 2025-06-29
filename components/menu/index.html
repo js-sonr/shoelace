@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="component" data-shoelace-version="0.0.10">
+<html lang="en" data-layout="component" data-nebula-version="0.0.1">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,14 +25,14 @@
 
     <link rel="stylesheet" href="/dist/themes/light.css" />
     <link rel="stylesheet" href="/dist/themes/dark.css" />
-    <script type="module" src="/dist/shoelace-autoloader.js"></script>
+    <script type="module" src="/dist/nebula-autoloader.js"></script>
 
     <script>
       (() => {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = localStorage.getItem('theme') || 'auto';
         document.documentElement.classList.toggle(
-          'sl-theme-dark',
+          'nu-theme-dark',
           theme === 'dark' || (theme === 'auto' && prefersDark)
         );
       })();
@@ -65,7 +65,7 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="github"></sl-icon>
+        <nu-icon name="github"></nu-icon>
       </a>
 
       <a
@@ -75,21 +75,21 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="twitter"></sl-icon>
+        <nu-icon name="twitter"></nu-icon>
       </a>
 
-      <sl-dropdown id="theme-selector" placement="bottom-end" distance="3">
-        <sl-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
-          <sl-icon class="only-light" name="sun-fill"></sl-icon>
-          <sl-icon class="only-dark" name="moon-fill"></sl-icon>
-        </sl-button>
-        <sl-menu>
-          <sl-menu-item type="checkbox" value="light">Light</sl-menu-item>
-          <sl-menu-item type="checkbox" value="dark">Dark</sl-menu-item>
-          <sl-divider></sl-divider>
-          <sl-menu-item type="checkbox" value="auto">System</sl-menu-item>
-        </sl-menu>
-      </sl-dropdown>
+      <nu-dropdown id="theme-selector" placement="bottom-end" distance="3">
+        <nu-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
+          <nu-icon class="only-light" name="sun-fill"></nu-icon>
+          <nu-icon class="only-dark" name="moon-fill"></nu-icon>
+        </nu-button>
+        <nu-menu>
+          <nu-menu-item type="checkbox" value="light">Light</nu-menu-item>
+          <nu-menu-item type="checkbox" value="dark">Dark</nu-menu-item>
+          <nu-divider></nu-divider>
+          <nu-menu-item type="checkbox" value="auto">System</nu-menu-item>
+        </nu-menu>
+      </nu-dropdown>
     </div>
 
     <aside id="sidebar" data-preserve-scroll="">
@@ -97,38 +97,38 @@
         <a href="/">
           <img src="/assets/images/wordmark.svg" alt="Nebula" />
         </a>
-        <div class="sidebar-version">0.0.10</div>
+        <div class="sidebar-version">0.0.1</div>
       </header>
 
       <div class="sidebar-buttons">
-        <sl-button
+        <nu-button
           size="small"
           class="repo-button repo-button--github"
           href="https://github.com/onsonr/nebula"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="github"></sl-icon> Code
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="github"></nu-icon> Code
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--star"
           href="https://github.com/onsonr/nebula/stargazers"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="star-fill"></sl-icon> Star
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="star-fill"></nu-icon> Star
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--twitter"
           href="https://twitter.com/shoelace_style"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="twitter"></sl-icon> Follow
-        </sl-button>
+          <nu-icon slot="prefix" name="twitter"></nu-icon> Follow
+        </nu-button>
       </div>
 
       <button class="search-box" type="button" title="Press / to search" aria-label="Search" data-plugin="search">
-        <sl-icon name="search"></sl-icon>
+        <nu-icon name="search"></nu-icon>
         <span>Search</span>
       </button>
 
@@ -188,6 +188,10 @@
               </li>
 
               <li>
+                <a href="/components/area-chart"> Area Chart </a>
+              </li>
+
+              <li>
                 <a href="/components/avatar"> Avatar </a>
               </li>
 
@@ -209,6 +213,10 @@
 
               <li>
                 <a href="/components/button-group"> Button Group </a>
+              </li>
+
+              <li>
+                <a href="/components/candle-chart"> Candle Chart </a>
               </li>
 
               <li>
@@ -288,6 +296,22 @@
               </li>
 
               <li>
+                <a href="/components/line-chart"> Line Chart </a>
+              </li>
+
+              <li>
+                <a href="/components/list-item"> List Item </a>
+              </li>
+
+              <li>
+                <a href="/components/list-view"> List View </a>
+              </li>
+
+              <li>
+                <a href="/components/login-button"> Login Button </a>
+              </li>
+
+              <li>
                 <a href="/components/menu" class="active-link"> Menu </a>
               </li>
 
@@ -305,6 +329,10 @@
 
               <li>
                 <a href="/components/option"> Option </a>
+              </li>
+
+              <li>
+                <a href="/components/pie-chart"> Pie Chart </a>
               </li>
 
               <li>
@@ -341,6 +369,10 @@
 
               <li>
                 <a href="/components/rating"> Rating </a>
+              </li>
+
+              <li>
+                <a href="/components/register-button"> Register Button </a>
               </li>
 
               <li>
@@ -454,12 +486,12 @@
             <h1>Menu</h1>
 
             <div class="component-header__tag">
-              <code>&lt;sl-menu&gt; | SlMenu</code>
+              <code>&lt;nu-menu&gt; | NuMenu</code>
             </div>
 
             <div class="component-header__info">
-              <sl-badge variant="neutral" pill=""> Since 2.0 </sl-badge>
-              <sl-badge variant="primary" pill="" style="text-transform: capitalize"> stable </sl-badge>
+              <nu-badge variant="neutral" pill=""> Since 2.0 </nu-badge>
+              <nu-badge variant="primary" pill="" style="text-transform: capitalize"> stable </nu-badge>
             </div>
           </header>
 
@@ -473,37 +505,37 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-menu style="max-width: 200px">
-                <sl-menu-item value="undo">Undo</sl-menu-item>
-                <sl-menu-item value="redo">Redo</sl-menu-item>
-                <sl-divider></sl-divider>
-                <sl-menu-item value="cut">Cut</sl-menu-item>
-                <sl-menu-item value="copy">Copy</sl-menu-item>
-                <sl-menu-item value="paste">Paste</sl-menu-item>
-                <sl-menu-item value="delete">Delete</sl-menu-item>
-              </sl-menu>
+              <nu-menu style="max-width: 200px">
+                <nu-menu-item value="undo">Undo</nu-menu-item>
+                <nu-menu-item value="redo">Redo</nu-menu-item>
+                <nu-divider></nu-divider>
+                <nu-menu-item value="cut">Cut</nu-menu-item>
+                <nu-menu-item value="copy">Copy</nu-menu-item>
+                <nu-menu-item value="paste">Paste</nu-menu-item>
+                <nu-menu-item value="delete">Delete</nu-menu-item>
+              </nu-menu>
 
               <div class="code-preview__resizer">
                 <sl-icon name="grip-vertical"></sl-icon>
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-187">
+            <div class="code-preview__source-group" id="code-preview-source-group-228">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-621"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">max-width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>undo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Undo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>redo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Redo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-divider</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-divider</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cut<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Cut<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>copy<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Copy<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>paste<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Paste<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>delete<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Delete<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-621"></sl-copy-button></pre>
+                <pre><code class="language-html" id="code-block-720"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">max-width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>undo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Undo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>redo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Redo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-divider</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-divider</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cut<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Cut<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>copy<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Copy<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>paste<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Paste<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>delete<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Delete<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-720"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-622"><span class="token keyword">import</span> SlDivider <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/divider'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-721"><span class="token keyword">import</span> SlDivider <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/divider'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlMenu <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/menu'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlMenuItem <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/menu-item'</span><span class="token punctuation">;</span>
 
@@ -518,7 +550,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SlMenuItem</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>delete<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Delete</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlMenuItem</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlMenu</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-622"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-721"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -527,7 +559,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-187"
+                aria-controls="code-preview-source-group-228"
               >
                 Source
                 <svg
@@ -586,35 +618,35 @@
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-dropdown>
-                <sl-button slot="trigger" caret="">Edit</sl-button>
-                <sl-menu>
-                  <sl-menu-item value="cut">Cut</sl-menu-item>
-                  <sl-menu-item value="copy">Copy</sl-menu-item>
-                  <sl-menu-item value="paste">Paste</sl-menu-item>
-                </sl-menu>
-              </sl-dropdown>
+              <nu-dropdown>
+                <nu-button slot="trigger" caret="">Edit</nu-button>
+                <nu-menu>
+                  <nu-menu-item value="cut">Cut</nu-menu-item>
+                  <nu-menu-item value="copy">Copy</nu-menu-item>
+                  <nu-menu-item value="paste">Paste</nu-menu-item>
+                </nu-menu>
+              </nu-dropdown>
 
               <div class="code-preview__resizer">
                 <sl-icon name="grip-vertical"></sl-icon>
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-188">
+            <div class="code-preview__source-group" id="code-preview-source-group-229">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-623"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-dropdown</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-button</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>trigger<span class="token punctuation">"</span></span> <span class="token attr-name">caret</span><span class="token punctuation">&gt;</span></span>Edit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-button</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cut<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Cut<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>copy<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Copy<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>paste<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Paste<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-dropdown</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-623"></sl-copy-button></pre>
+                <pre><code class="language-html" id="code-block-722"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-dropdown</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-button</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>trigger<span class="token punctuation">"</span></span> <span class="token attr-name">caret</span><span class="token punctuation">&gt;</span></span>Edit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-button</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cut<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Cut<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>copy<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Copy<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>paste<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Paste<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-dropdown</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-722"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-624"><span class="token keyword">import</span> SlButton <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/button'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-723"><span class="token keyword">import</span> SlButton <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/button'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlDropdown <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/dropdown'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlMenu <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/menu'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlMenuItem <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/menu-item'</span><span class="token punctuation">;</span>
@@ -629,7 +661,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlMenu</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlDropdown</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-624"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-723"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -638,7 +670,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-188"
+                aria-controls="code-preview-source-group-229"
               >
                 Source
                 <svg
@@ -684,75 +716,75 @@
             Submenus<a href="#submenus" aria-label='Direct link to "Submenus"'></a>
           </h3>
           <p>
-            To create a submenu, nest an <code>&lt;sl-menu slot="submenu"&gt;</code> in any
+            To create a submenu, nest an <code>&lt;nu-menu slot="submenu"&gt;</code> in any
             <a href="/components/menu-item">menu item</a>.
           </p>
 
           <div class="code-preview">
             <div class="code-preview__preview">
-              <sl-menu style="max-width: 200px">
-                <sl-menu-item value="undo">Undo</sl-menu-item>
-                <sl-menu-item value="redo">Redo</sl-menu-item>
-                <sl-divider></sl-divider>
-                <sl-menu-item value="cut">Cut</sl-menu-item>
-                <sl-menu-item value="copy">Copy</sl-menu-item>
-                <sl-menu-item value="paste">Paste</sl-menu-item>
-                <sl-divider></sl-divider>
-                <sl-menu-item>
+              <nu-menu style="max-width: 200px">
+                <nu-menu-item value="undo">Undo</nu-menu-item>
+                <nu-menu-item value="redo">Redo</nu-menu-item>
+                <nu-divider></nu-divider>
+                <nu-menu-item value="cut">Cut</nu-menu-item>
+                <nu-menu-item value="copy">Copy</nu-menu-item>
+                <nu-menu-item value="paste">Paste</nu-menu-item>
+                <nu-divider></nu-divider>
+                <nu-menu-item>
                   Find
-                  <sl-menu slot="submenu">
-                    <sl-menu-item value="find">Find…</sl-menu-item>
-                    <sl-menu-item value="find-previous">Find Next</sl-menu-item>
-                    <sl-menu-item value="find-next">Find Previous</sl-menu-item>
-                  </sl-menu>
-                </sl-menu-item>
-                <sl-menu-item>
+                  <nu-menu slot="submenu">
+                    <nu-menu-item value="find">Find…</nu-menu-item>
+                    <nu-menu-item value="find-previous">Find Next</nu-menu-item>
+                    <nu-menu-item value="find-next">Find Previous</nu-menu-item>
+                  </nu-menu>
+                </nu-menu-item>
+                <nu-menu-item>
                   Transformations
-                  <sl-menu slot="submenu">
-                    <sl-menu-item value="uppercase">Make uppercase</sl-menu-item>
-                    <sl-menu-item value="lowercase">Make lowercase</sl-menu-item>
-                    <sl-menu-item value="capitalize">Capitalize</sl-menu-item>
-                  </sl-menu>
-                </sl-menu-item>
-              </sl-menu>
+                  <nu-menu slot="submenu">
+                    <nu-menu-item value="uppercase">Make uppercase</nu-menu-item>
+                    <nu-menu-item value="lowercase">Make lowercase</nu-menu-item>
+                    <nu-menu-item value="capitalize">Capitalize</nu-menu-item>
+                  </nu-menu>
+                </nu-menu-item>
+              </nu-menu>
 
               <div class="code-preview__resizer">
                 <sl-icon name="grip-vertical"></sl-icon>
               </div>
             </div>
 
-            <div class="code-preview__source-group" id="code-preview-source-group-189">
+            <div class="code-preview__source-group" id="code-preview-source-group-230">
               <div class="code-preview__source code-preview__source--html" data-flavor="html">
-                <pre><code class="language-html" id="code-block-625"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">max-width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>undo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Undo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>redo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Redo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-divider</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-divider</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cut<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Cut<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>copy<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Copy<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>paste<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Paste<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-divider</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-divider</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
+                <pre><code class="language-html" id="code-block-724"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">max-width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>undo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Undo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>redo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Redo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-divider</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-divider</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cut<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Cut<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>copy<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Copy<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>paste<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Paste<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-divider</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-divider</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
     Find
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submenu<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>find<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Find…<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>find-previous<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Find Next<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>find-next<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Find Previous<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submenu<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>find<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Find…<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>find-previous<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Find Next<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>find-next<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Find Previous<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
     Transformations
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submenu<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>uppercase<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Make uppercase<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lowercase<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Make lowercase<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sl-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>capitalize<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Capitalize<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu-item</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sl-menu</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-625"></sl-copy-button></pre>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submenu<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>uppercase<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Make uppercase<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lowercase<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Make lowercase<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-menu-item</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>capitalize<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Capitalize<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu-item</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-menu</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-724"></sl-copy-button></pre>
               </div>
 
               <div class="code-preview__source code-preview__source--react" data-flavor="react">
-                <pre><code class="language-jsx" id="code-block-626"><span class="token keyword">import</span> SlDivider <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/divider'</span><span class="token punctuation">;</span>
+                <pre><code class="language-jsx" id="code-block-725"><span class="token keyword">import</span> SlDivider <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/divider'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlMenu <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/menu'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> SlMenuItem <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/menu-item'</span><span class="token punctuation">;</span>
 
@@ -783,7 +815,7 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlMenuItem</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">SlMenu</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-626"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-725"></sl-copy-button></pre>
               </div>
             </div>
 
@@ -792,7 +824,7 @@
                 type="button"
                 class="code-preview__button code-preview__toggle"
                 aria-expanded="false"
-                aria-controls="code-preview-source-group-189"
+                aria-controls="code-preview-source-group-230"
               >
                 Source
                 <svg
@@ -847,13 +879,13 @@
             <a href="/getting-started/installation#cherry-picking">cherry pick</a> this component.
           </p>
 
-          <sl-tab-group>
-            <sl-tab slot="nav" panel="script">Script</sl-tab>
-            <sl-tab slot="nav" panel="import">Import</sl-tab>
-            <sl-tab slot="nav" panel="bundler">Bundler</sl-tab>
-            <sl-tab slot="nav" panel="react">React</sl-tab>
+          <nu-tab-group>
+            <nu-tab slot="nav" panel="script">Script</nu-tab>
+            <nu-tab slot="nav" panel="import">Import</nu-tab>
+            <nu-tab slot="nav" panel="bundler">Bundler</nu-tab>
+            <nu-tab slot="nav" panel="react">React</nu-tab>
 
-            <sl-tab-panel name="script">
+            <nu-tab-panel name="script">
               <p>
                 To import this component from
                 <a
@@ -865,10 +897,10 @@
                 >
                 using a script tag:
               </p>
-              <pre><code class="language-html" id="code-block-627"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.10/cdn/components/menu/menu.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><sl-copy-button class="copy-code-button" from="code-block-627"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-html" id="code-block-726"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/menu/menu.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><sl-copy-button class="copy-code-button" from="code-block-726"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="import">
+            <nu-tab-panel name="import">
               <p>
                 To import this component from
                 <a
@@ -880,19 +912,19 @@
                 >
                 using a JavaScript import:
               </p>
-              <pre><code class="language-js" id="code-block-628"><span class="token keyword">import</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.10/cdn/components/menu/menu.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-628"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-js" id="code-block-727"><span class="token keyword">import</span> <span class="token string">'https://cdn.jsdelivr.net/npm/@onsonr/nebula@0.0.1/cdn/components/menu/menu.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-727"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="bundler">
+            <nu-tab-panel name="bundler">
               <p>To import this component using <a href="/getting-started/installation#bundling">a bundler</a>:</p>
-              <pre><code class="language-js" id="code-block-629"><span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/menu/menu.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-629"></sl-copy-button></pre>
-            </sl-tab-panel>
+              <pre><code class="language-js" id="code-block-728"><span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/menu/menu.js'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-728"></sl-copy-button></pre>
+            </nu-tab-panel>
 
-            <sl-tab-panel name="react">
+            <nu-tab-panel name="react">
               <p>To import this component as a <a href="/frameworks/react">React component</a>:</p>
-              <pre><code class="language-js" id="code-block-630"><span class="token keyword">import</span> SlMenu <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/menu'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-630"></sl-copy-button></pre>
-            </sl-tab-panel>
-          </sl-tab-group>
+              <pre><code class="language-js" id="code-block-729"><span class="token keyword">import</span> NuMenu <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/react/menu'</span><span class="token punctuation">;</span></code><sl-copy-button class="copy-code-button" from="code-block-729"></sl-copy-button></pre>
+            </nu-tab-panel>
+          </nu-tab-group>
 
           <h2 id="slots" class="anchor-heading">Slots<a href="#slots" aria-label='Direct link to "Slots"'></a></h2>
 
@@ -931,12 +963,10 @@
               </thead>
               <tbody>
                 <tr>
-                  <td data-flavor="html"><code class="nowrap">sl-select</code></td>
-                  <td data-flavor="react"><code class="nowrap">onSlSelect</code></td>
+                  <td data-flavor="html"><code class="nowrap">nu-select</code></td>
+                  <td data-flavor="react"><code class="nowrap">onNuSelect</code></td>
                   <td>Emitted when a menu item is selected.</td>
-                  <td>
-                    <code>{ item: SlMenuItem }</code>
-                  </td>
+                  <td>-</td>
                 </tr>
               </tbody>
             </table>

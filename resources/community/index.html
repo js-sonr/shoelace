@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="default" data-shoelace-version="0.0.10">
+<html lang="en" data-layout="default" data-nebula-version="0.0.1">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,14 +31,14 @@
 
     <link rel="stylesheet" href="/dist/themes/light.css" />
     <link rel="stylesheet" href="/dist/themes/dark.css" />
-    <script type="module" src="/dist/shoelace-autoloader.js"></script>
+    <script type="module" src="/dist/nebula-autoloader.js"></script>
 
     <script>
       (() => {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = localStorage.getItem('theme') || 'auto';
         document.documentElement.classList.toggle(
-          'sl-theme-dark',
+          'nu-theme-dark',
           theme === 'dark' || (theme === 'auto' && prefersDark)
         );
       })();
@@ -71,7 +71,7 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="github"></sl-icon>
+        <nu-icon name="github"></nu-icon>
       </a>
 
       <a
@@ -81,21 +81,21 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="twitter"></sl-icon>
+        <nu-icon name="twitter"></nu-icon>
       </a>
 
-      <sl-dropdown id="theme-selector" placement="bottom-end" distance="3">
-        <sl-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
-          <sl-icon class="only-light" name="sun-fill"></sl-icon>
-          <sl-icon class="only-dark" name="moon-fill"></sl-icon>
-        </sl-button>
-        <sl-menu>
-          <sl-menu-item type="checkbox" value="light">Light</sl-menu-item>
-          <sl-menu-item type="checkbox" value="dark">Dark</sl-menu-item>
-          <sl-divider></sl-divider>
-          <sl-menu-item type="checkbox" value="auto">System</sl-menu-item>
-        </sl-menu>
-      </sl-dropdown>
+      <nu-dropdown id="theme-selector" placement="bottom-end" distance="3">
+        <nu-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
+          <nu-icon class="only-light" name="sun-fill"></nu-icon>
+          <nu-icon class="only-dark" name="moon-fill"></nu-icon>
+        </nu-button>
+        <nu-menu>
+          <nu-menu-item type="checkbox" value="light">Light</nu-menu-item>
+          <nu-menu-item type="checkbox" value="dark">Dark</nu-menu-item>
+          <nu-divider></nu-divider>
+          <nu-menu-item type="checkbox" value="auto">System</nu-menu-item>
+        </nu-menu>
+      </nu-dropdown>
     </div>
 
     <aside id="sidebar" data-preserve-scroll="">
@@ -103,38 +103,38 @@
         <a href="/">
           <img src="/assets/images/wordmark.svg" alt="Nebula" />
         </a>
-        <div class="sidebar-version">0.0.10</div>
+        <div class="sidebar-version">0.0.1</div>
       </header>
 
       <div class="sidebar-buttons">
-        <sl-button
+        <nu-button
           size="small"
           class="repo-button repo-button--github"
           href="https://github.com/onsonr/nebula"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="github"></sl-icon> Code
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="github"></nu-icon> Code
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--star"
           href="https://github.com/onsonr/nebula/stargazers"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="star-fill"></sl-icon> Star
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="star-fill"></nu-icon> Star
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--twitter"
           href="https://twitter.com/shoelace_style"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="twitter"></sl-icon> Follow
-        </sl-button>
+          <nu-icon slot="prefix" name="twitter"></nu-icon> Follow
+        </nu-button>
       </div>
 
       <button class="search-box" type="button" title="Press / to search" aria-label="Search" data-plugin="search">
-        <sl-icon name="search"></sl-icon>
+        <nu-icon name="search"></nu-icon>
         <span>Search</span>
       </button>
 
@@ -194,6 +194,10 @@
               </li>
 
               <li>
+                <a href="/components/area-chart"> Area Chart </a>
+              </li>
+
+              <li>
                 <a href="/components/avatar"> Avatar </a>
               </li>
 
@@ -215,6 +219,10 @@
 
               <li>
                 <a href="/components/button-group"> Button Group </a>
+              </li>
+
+              <li>
+                <a href="/components/candle-chart"> Candle Chart </a>
               </li>
 
               <li>
@@ -294,6 +302,22 @@
               </li>
 
               <li>
+                <a href="/components/line-chart"> Line Chart </a>
+              </li>
+
+              <li>
+                <a href="/components/list-item"> List Item </a>
+              </li>
+
+              <li>
+                <a href="/components/list-view"> List View </a>
+              </li>
+
+              <li>
+                <a href="/components/login-button"> Login Button </a>
+              </li>
+
+              <li>
                 <a href="/components/menu"> Menu </a>
               </li>
 
@@ -311,6 +335,10 @@
 
               <li>
                 <a href="/components/option"> Option </a>
+              </li>
+
+              <li>
+                <a href="/components/pie-chart"> Pie Chart </a>
               </li>
 
               <li>
@@ -347,6 +375,10 @@
 
               <li>
                 <a href="/components/rating"> Rating </a>
+              </li>
+
+              <li>
+                <a href="/components/register-button"> Register Button </a>
               </li>
 
               <li>
@@ -484,10 +516,10 @@
             <li>Show the community what you’re working on</li>
             <li>Learn more about the project, its values, and its roadmap</li>
           </ul>
-          <sl-button variant="primary" href="https://github.com/onsonr/nebula/discussions" target="_blank">
-            <sl-icon name="github" slot="prefix"></sl-icon>
+          <nu-button variant="primary" href="https://github.com/onsonr/nebula/discussions" target="_blank">
+            <nu-icon name="github" slot="prefix"></nu-icon>
             Join the Discussion
-          </sl-button>
+          </nu-button>
           <h2 id="community-chat" class="anchor-heading">
             Community Chat<a href="#community-chat" aria-label='Direct link to "Community Chat"'></a>
           </h2>
@@ -506,10 +538,10 @@
             <li>Show the community what you’re working on</li>
             <li>Chat live with other designers, developers, and Nebula fans</li>
           </ul>
-          <sl-button variant="primary" href="https://discord.gg/mg8f26C" target="_blank">
-            <sl-icon name="discord" slot="prefix"></sl-icon>
+          <nu-button variant="primary" href="https://discord.gg/mg8f26C" target="_blank">
+            <nu-icon name="discord" slot="prefix"></nu-icon>
             Join the Chat
-          </sl-button>
+          </nu-button>
           <h2 id="stack-overflow" class="anchor-heading">
             Stack Overflow<a href="#stack-overflow" aria-label='Direct link to "Stack Overflow"'></a>
           </h2>
@@ -524,10 +556,10 @@
             >. This is a public forum where talented developers answer questions. It’s a great way to get help, but it
             is not maintained by the Nebula author.
           </p>
-          <sl-button variant="primary" href="https://stackoverflow.com/questions/ask?tags=shoelace" target="_blank">
-            <sl-icon name="stack-overflow" slot="prefix"></sl-icon>
+          <nu-button variant="primary" href="https://stackoverflow.com/questions/ask?tags=shoelace" target="_blank">
+            <nu-icon name="stack-overflow" slot="prefix"></nu-icon>
             Ask for Help
-          </sl-button>
+          </nu-button>
           <h2 id="twitter" class="anchor-heading">
             Twitter<a href="#twitter" aria-label='Direct link to "Twitter"'></a>
           </h2>
@@ -554,10 +586,10 @@
             is a much better place to share code snippets, screenshots, and other troubleshooting info. You’ll have much
             better luck there, as more users will have a chance to help you.
           </p>
-          <sl-button variant="primary" href="https://twitter.com/shoelace_style" target="_blank">
-            <sl-icon name="twitter" slot="prefix"></sl-icon>
+          <nu-button variant="primary" href="https://twitter.com/shoelace_style" target="_blank">
+            <nu-icon name="twitter" slot="prefix"></nu-icon>
             Follow on Twitter
-          </sl-button>
+          </nu-button>
         </div>
       </article>
     </main>

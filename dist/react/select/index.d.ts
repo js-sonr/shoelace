@@ -1,28 +1,28 @@
 import Component from '../../components/select/select.component.js';
 import { type EventName } from '@lit/react';
-import type { SlChangeEvent } from '../../events/events.js';
-import type { SlClearEvent } from '../../events/events.js';
-import type { SlInputEvent } from '../../events/events.js';
-import type { SlFocusEvent } from '../../events/events.js';
-import type { SlBlurEvent } from '../../events/events.js';
-import type { SlShowEvent } from '../../events/events.js';
-import type { SlAfterShowEvent } from '../../events/events.js';
-import type { SlHideEvent } from '../../events/events.js';
-import type { SlAfterHideEvent } from '../../events/events.js';
-import type { SlInvalidEvent } from '../../events/events.js';
-export type { SlChangeEvent } from '../../events/events.js';
-export type { SlClearEvent } from '../../events/events.js';
-export type { SlInputEvent } from '../../events/events.js';
-export type { SlFocusEvent } from '../../events/events.js';
-export type { SlBlurEvent } from '../../events/events.js';
-export type { SlShowEvent } from '../../events/events.js';
-export type { SlAfterShowEvent } from '../../events/events.js';
-export type { SlHideEvent } from '../../events/events.js';
-export type { SlAfterHideEvent } from '../../events/events.js';
-export type { SlInvalidEvent } from '../../events/events.js';
+import type { NuChangeEvent } from '../../events/events.js';
+import type { NuClearEvent } from '../../events/events.js';
+import type { NuInputEvent } from '../../events/events.js';
+import type { NuFocusEvent } from '../../events/events.js';
+import type { NuBlurEvent } from '../../events/events.js';
+import type { NuShowEvent } from '../../events/events.js';
+import type { NuAfterShowEvent } from '../../events/events.js';
+import type { NuHideEvent } from '../../events/events.js';
+import type { NuAfterHideEvent } from '../../events/events.js';
+import type { NuInvalidEvent } from '../../events/events.js';
+export type { NuChangeEvent } from '../../events/events.js';
+export type { NuClearEvent } from '../../events/events.js';
+export type { NuInputEvent } from '../../events/events.js';
+export type { NuFocusEvent } from '../../events/events.js';
+export type { NuBlurEvent } from '../../events/events.js';
+export type { NuShowEvent } from '../../events/events.js';
+export type { NuAfterShowEvent } from '../../events/events.js';
+export type { NuHideEvent } from '../../events/events.js';
+export type { NuAfterHideEvent } from '../../events/events.js';
+export type { NuInvalidEvent } from '../../events/events.js';
 /**
  * @summary Selects allow you to choose items from a menu of predefined options.
- * @documentation https://shoelace.style/components/select
+ * @documentation https://nebulaui.org/components/select
  * @status stable
  * @since 2.0
  *
@@ -30,23 +30,23 @@ export type { SlInvalidEvent } from '../../events/events.js';
  * @dependency sl-popup
  * @dependency sl-tag
  *
- * @slot - The listbox options. Must be `<sl-option>` elements. You can use `<sl-divider>` to group items visually.
+ * @slot - The listbox options. Must be `<nu-option>` elements. You can use `<nu-divider>` to group items visually.
  * @slot label - The input's label. Alternatively, you can use the `label` attribute.
  * @slot prefix - Used to prepend a presentational icon or similar element to the combobox.
  * @slot clear-icon - An icon to use in lieu of the default clear icon.
  * @slot expand-icon - The icon to show when the control is expanded and collapsed. Rotates on open and close.
  * @slot help-text - Text that describes how to use the input. Alternatively, you can use the `help-text` attribute.
  *
- * @event sl-change - Emitted when the control's value changes.
- * @event sl-clear - Emitted when the control's value is cleared.
- * @event sl-input - Emitted when the control receives input.
- * @event sl-focus - Emitted when the control gains focus.
- * @event sl-blur - Emitted when the control loses focus.
- * @event sl-show - Emitted when the select's menu opens.
- * @event sl-after-show - Emitted after the select's menu opens and all animations are complete.
- * @event sl-hide - Emitted when the select's menu closes.
- * @event sl-after-hide - Emitted after the select's menu closes and all animations are complete.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-change - Emitted when the control's value changes.
+ * @event nu-clear - Emitted when the control's value is cleared.
+ * @event nu-input - Emitted when the control receives input.
+ * @event nu-focus - Emitted when the control gains focus.
+ * @event nu-blur - Emitted when the control loses focus.
+ * @event nu-show - Emitted when the select's menu opens.
+ * @event nu-after-show - Emitted after the select's menu opens and all animations are complete.
+ * @event nu-hide - Emitted when the select's menu closes.
+ * @event nu-after-hide - Emitted after the select's menu closes and all animations are complete.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart form-control - The form control that wraps the label, input, and help text.
  * @csspart form-control-label - The label's wrapper.
@@ -66,15 +66,15 @@ export type { SlInvalidEvent } from '../../events/events.js';
  * @csspart expand-icon - The container that wraps the expand icon.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {
-    onSlChange: EventName<SlChangeEvent>;
-    onSlClear: EventName<SlClearEvent>;
-    onSlInput: EventName<SlInputEvent>;
-    onSlFocus: EventName<SlFocusEvent>;
-    onSlBlur: EventName<SlBlurEvent>;
-    onSlShow: EventName<SlShowEvent>;
-    onSlAfterShow: EventName<SlAfterShowEvent>;
-    onSlHide: EventName<SlHideEvent>;
-    onSlAfterHide: EventName<SlAfterHideEvent>;
-    onSlInvalid: EventName<SlInvalidEvent>;
+    onNuChange: EventName<NuChangeEvent>;
+    onNuClear: EventName<NuClearEvent>;
+    onNuInput: EventName<NuInputEvent>;
+    onNuFocus: EventName<NuFocusEvent>;
+    onNuBlur: EventName<NuBlurEvent>;
+    onNuShow: EventName<NuShowEvent>;
+    onNuAfterShow: EventName<NuAfterShowEvent>;
+    onNuHide: EventName<NuHideEvent>;
+    onNuAfterHide: EventName<NuAfterHideEvent>;
+    onNuInvalid: EventName<NuInvalidEvent>;
 }>;
 export default reactWrapper;

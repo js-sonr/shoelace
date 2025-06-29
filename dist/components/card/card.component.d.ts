@@ -1,8 +1,8 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Cards can be used to group related subjects in a container.
- * @documentation https://shoelace.style/components/card
+ * @documentation https://nebulaui.org/components/card
  * @status stable
  * @since 2.0
  *
@@ -22,7 +22,7 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --border-width - The width of the card's borders.
  * @cssproperty --padding - The padding to use for the card's sections.
  */
-export default class SlCard extends ShoelaceElement {
+export default class NuCard extends NebulaElement {
     static styles: CSSResultGroup;
     private readonly hasSlotController;
     render(): import("lit-html").TemplateResult<1>;

@@ -1,8 +1,8 @@
-import SlMutationObserver from './mutation-observer.component.js';
+import NuMutationObserver from './mutation-observer.component.js';
 export * from './mutation-observer.component.js';
-export default SlMutationObserver;
+export default NuMutationObserver;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-mutation-observer': SlMutationObserver;
+        'nu-mutation-observer': NuMutationObserver;
     }
 }

@@ -1,22 +1,22 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIcon from '../icon/icon.component.js';
-import SlTooltip from '../tooltip/tooltip.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIcon from '../icon/icon.component.js';
+import NuTooltip from '../tooltip/tooltip.component.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Copies text data to the clipboard when the user clicks the trigger.
- * @documentation https://shoelace.style/components/copy
+ * @documentation https://nebulaui.org/components/copy
  * @status experimental
  * @since 2.7
  *
  * @dependency sl-icon
  * @dependency sl-tooltip
  *
- * @event sl-copy - Emitted when the data has been copied.
- * @event sl-error - Emitted when the data could not be copied.
+ * @event nu-copy - Emitted when the data has been copied.
+ * @event nu-error - Emitted when the data could not be copied.
  *
- * @slot copy-icon - The icon to show in the default copy state. Works best with `<sl-icon>`.
- * @slot success-icon - The icon to show when the content is copied. Works best with `<sl-icon>`.
- * @slot error-icon - The icon to show when a copy error occurs. Works best with `<sl-icon>`.
+ * @slot copy-icon - The icon to show in the default copy state. Works best with `<nu-icon>`.
+ * @slot success-icon - The icon to show when the content is copied. Works best with `<nu-icon>`.
+ * @slot error-icon - The icon to show when a copy error occurs. Works best with `<nu-icon>`.
  *
  * @csspart button - The internal `<button>` element.
  * @csspart copy-icon - The container that holds the copy icon.
@@ -33,17 +33,17 @@ import type { CSSResultGroup } from 'lit';
  * @animation copy.in - The animation to use when feedback icons animate in.
  * @animation copy.out - The animation to use when feedback icons animate out.
  */
-export default class SlCopyButton extends ShoelaceElement {
+export default class NuCopyButton extends NebulaElement {
     static styles: CSSResultGroup;
     static dependencies: {
-        'sl-icon': typeof SlIcon;
-        'sl-tooltip': typeof SlTooltip;
+        'nu-icon': typeof NuIcon;
+        'nu-tooltip': typeof NuTooltip;
     };
     private readonly localize;
     copyIcon: HTMLSlotElement;
     successIcon: HTMLSlotElement;
     errorIcon: HTMLSlotElement;
-    tooltip: SlTooltip;
+    tooltip: NuTooltip;
     isCopying: boolean;
     status: 'rest' | 'success' | 'error';
     /** The text value to copy. */

@@ -1,7 +1,7 @@
 import Component from '../../components/carousel/carousel.component.js';
 import { type EventName } from '@lit/react';
-import type { SlSlideChangeEvent } from '../../events/events.js';
-export type { SlSlideChangeEvent } from '../../events/events.js';
+import type { NuSlideChangeEvent } from '../../events/events.js';
+export type { NuSlideChangeEvent } from '../../events/events.js';
 /**
  * @summary Carousels display an arbitrary number of content slides along a horizontal or vertical axis.
  *
@@ -10,11 +10,11 @@ export type { SlSlideChangeEvent } from '../../events/events.js';
  *
  * @dependency sl-icon
  *
- * @event {{ index: number, slide: SlCarouselItem }} sl-slide-change - Emitted when the active slide changes.
+ * @event nu-slide-change - Emitted when the active slide changes.
  *
- * @slot - The carousel's main content, one or more `<sl-carousel-item>` elements.
- * @slot next-icon - Optional next icon to use instead of the default. Works best with `<sl-icon>`.
- * @slot previous-icon - Optional previous icon to use instead of the default. Works best with `<sl-icon>`.
+ * @slot - The carousel's main content, one or more `<nu-carousel-item>` elements.
+ * @slot next-icon - Optional next icon to use instead of the default. Works best with `<nu-icon>`.
+ * @slot previous-icon - Optional previous icon to use instead of the default. Works best with `<nu-icon>`.
  *
  * @csspart base - The carousel's internal wrapper.
  * @csspart scroll-container - The scroll container that wraps the slides.
@@ -32,6 +32,6 @@ export type { SlSlideChangeEvent } from '../../events/events.js';
  *  partially visible as a scroll hint.
  */
 declare const reactWrapper: import("@lit/react").ReactWebComponent<Component, {
-    onSlSlideChange: EventName<SlSlideChangeEvent>;
+    onNuSlideChange: EventName<NuSlideChangeEvent>;
 }>;
 export default reactWrapper;

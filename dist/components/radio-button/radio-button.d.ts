@@ -1,8 +1,8 @@
-import SlRadioButton from './radio-button.component.js';
+import NuRadioButton from './radio-button.component.js';
 export * from './radio-button.component.js';
-export default SlRadioButton;
+export default NuRadioButton;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-radio-button': SlRadioButton;
+        'nu-radio-button': NuRadioButton;
     }
 }

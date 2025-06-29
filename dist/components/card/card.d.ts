@@ -1,8 +1,8 @@
-import SlCard from './card.component.js';
+import NuCard from './card.component.js';
 export * from './card.component.js';
-export default SlCard;
+export default NuCard;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-card': SlCard;
+        'nu-card': NuCard;
     }
 }

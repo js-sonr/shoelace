@@ -1,8 +1,8 @@
-import SlColorPicker from './color-picker.component.js';
+import NuColorPicker from './color-picker.component.js';
 export * from './color-picker.component.js';
-export default SlColorPicker;
+export default NuColorPicker;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-color-picker': SlColorPicker;
+        'nu-color-picker': NuColorPicker;
     }
 }

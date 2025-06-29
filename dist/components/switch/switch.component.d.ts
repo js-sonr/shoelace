@@ -1,20 +1,20 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import type { CSSResultGroup } from 'lit';
-import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
+import type { NebulaFormControl } from '../../internal/nebula-element.js';
 /**
  * @summary Switches allow the user to toggle an option on or off.
- * @documentation https://shoelace.style/components/switch
+ * @documentation https://nebulaui.org/components/switch
  * @status stable
  * @since 2.0
  *
  * @slot - The switch's label.
  * @slot help-text - Text that describes how to use the switch. Alternatively, you can use the `help-text` attribute.
  *
- * @event sl-blur - Emitted when the control loses focus.
- * @event sl-change - Emitted when the control's checked state changes.
- * @event sl-input - Emitted when the control receives input.
- * @event sl-focus - Emitted when the control gains focus.
- * @event sl-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
+ * @event nu-blur - Emitted when the control loses focus.
+ * @event nu-change - Emitted when the control's checked state changes.
+ * @event nu-input - Emitted when the control receives input.
+ * @event nu-focus - Emitted when the control gains focus.
+ * @event nu-invalid - Emitted when the form control has been checked for validity and its constraints aren't satisfied.
  *
  * @csspart base - The component's base wrapper.
  * @csspart control - The control that houses the switch's thumb.
@@ -26,7 +26,7 @@ import type { ShoelaceFormControl } from '../../internal/shoelace-element.js';
  * @cssproperty --height - The height of the switch.
  * @cssproperty --thumb-size - The size of the thumb.
  */
-export default class SlSwitch extends ShoelaceElement implements ShoelaceFormControl {
+export default class NuSwitch extends NebulaElement implements NebulaFormControl {
     static styles: CSSResultGroup;
     private readonly formControlController;
     private readonly hasSlotController;
@@ -86,6 +86,6 @@ export default class SlSwitch extends ShoelaceElement implements ShoelaceFormCon
 }
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-switch': SlSwitch;
+        'sl-switch': NuSwitch;
     }
 }

@@ -1,7 +1,7 @@
 import Component from '../../components/skeleton/skeleton.component.js';
 /**
  * @summary Skeletons are used to provide a visual representation of where content will eventually be drawn.
- * @documentation https://shoelace.style/components/skeleton
+ * @documentation https://nebulaui.org/components/skeleton
  * @status stable
  * @since 2.0
  *

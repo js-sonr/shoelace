@@ -1,9 +1,9 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
-import SlIcon from '../icon/icon.component.js';
+import NebulaElement from '../../internal/nebula-element.js';
+import NuIcon from '../icon/icon.component.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Compare visual differences between similar photos with a sliding panel.
- * @documentation https://shoelace.style/components/image-comparer
+ * @documentation https://nebulaui.org/components/image-comparer
  * @status stable
  * @since 2.0
  *
@@ -13,7 +13,7 @@ import type { CSSResultGroup } from 'lit';
  * @slot after - The after image, an `<img>` or `<svg>` element.
  * @slot handle - The icon used inside the handle.
  *
- * @event sl-change - Emitted when the position changes.
+ * @event nu-change - Emitted when the position changes.
  *
  * @csspart base - The component's base wrapper.
  * @csspart before - The container that wraps the before image.
@@ -24,10 +24,10 @@ import type { CSSResultGroup } from 'lit';
  * @cssproperty --divider-width - The width of the dividing line.
  * @cssproperty --handle-size - The size of the compare handle.
  */
-export default class SlImageComparer extends ShoelaceElement {
+export default class NuImageComparer extends NebulaElement {
     static styles: CSSResultGroup;
     static scopedElement: {
-        'sl-icon': typeof SlIcon;
+        'sl-icon': typeof NuIcon;
     };
     base: HTMLElement;
     handle: HTMLElement;

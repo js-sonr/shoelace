@@ -1,8 +1,8 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 import type { CSSResultGroup } from 'lit';
 /**
  * @summary Menu labels are used to describe a group of menu items.
- * @documentation https://shoelace.style/components/menu-label
+ * @documentation https://nebulaui.org/components/menu-label
  * @status stable
  * @since 2.0
  *
@@ -10,12 +10,12 @@ import type { CSSResultGroup } from 'lit';
  *
  * @csspart base - The component's base wrapper.
  */
-export default class SlMenuLabel extends ShoelaceElement {
+export default class NuMenuLabel extends NebulaElement {
     static styles: CSSResultGroup;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-menu-label': SlMenuLabel;
+        'sl-menu-label': NuMenuLabel;
     }
 }

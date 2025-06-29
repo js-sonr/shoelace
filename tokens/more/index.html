@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="default" data-shoelace-version="0.0.10">
+<html lang="en" data-layout="default" data-nebula-version="0.0.1">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,14 +25,14 @@
 
     <link rel="stylesheet" href="/dist/themes/light.css" />
     <link rel="stylesheet" href="/dist/themes/dark.css" />
-    <script type="module" src="/dist/shoelace-autoloader.js"></script>
+    <script type="module" src="/dist/nebula-autoloader.js"></script>
 
     <script>
       (() => {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = localStorage.getItem('theme') || 'auto';
         document.documentElement.classList.toggle(
-          'sl-theme-dark',
+          'nu-theme-dark',
           theme === 'dark' || (theme === 'auto' && prefersDark)
         );
       })();
@@ -65,7 +65,7 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="github"></sl-icon>
+        <nu-icon name="github"></nu-icon>
       </a>
 
       <a
@@ -75,21 +75,21 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <sl-icon name="twitter"></sl-icon>
+        <nu-icon name="twitter"></nu-icon>
       </a>
 
-      <sl-dropdown id="theme-selector" placement="bottom-end" distance="3">
-        <sl-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
-          <sl-icon class="only-light" name="sun-fill"></sl-icon>
-          <sl-icon class="only-dark" name="moon-fill"></sl-icon>
-        </sl-button>
-        <sl-menu>
-          <sl-menu-item type="checkbox" value="light">Light</sl-menu-item>
-          <sl-menu-item type="checkbox" value="dark">Dark</sl-menu-item>
-          <sl-divider></sl-divider>
-          <sl-menu-item type="checkbox" value="auto">System</sl-menu-item>
-        </sl-menu>
-      </sl-dropdown>
+      <nu-dropdown id="theme-selector" placement="bottom-end" distance="3">
+        <nu-button slot="trigger" size="small" variant="text" caret="" title="Press \ to toggle">
+          <nu-icon class="only-light" name="sun-fill"></nu-icon>
+          <nu-icon class="only-dark" name="moon-fill"></nu-icon>
+        </nu-button>
+        <nu-menu>
+          <nu-menu-item type="checkbox" value="light">Light</nu-menu-item>
+          <nu-menu-item type="checkbox" value="dark">Dark</nu-menu-item>
+          <nu-divider></nu-divider>
+          <nu-menu-item type="checkbox" value="auto">System</nu-menu-item>
+        </nu-menu>
+      </nu-dropdown>
     </div>
 
     <aside id="sidebar" data-preserve-scroll="">
@@ -97,38 +97,38 @@
         <a href="/">
           <img src="/assets/images/wordmark.svg" alt="Nebula" />
         </a>
-        <div class="sidebar-version">0.0.10</div>
+        <div class="sidebar-version">0.0.1</div>
       </header>
 
       <div class="sidebar-buttons">
-        <sl-button
+        <nu-button
           size="small"
           class="repo-button repo-button--github"
           href="https://github.com/onsonr/nebula"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="github"></sl-icon> Code
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="github"></nu-icon> Code
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--star"
           href="https://github.com/onsonr/nebula/stargazers"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="star-fill"></sl-icon> Star
-        </sl-button>
-        <sl-button
+          <nu-icon slot="prefix" name="star-fill"></nu-icon> Star
+        </nu-button>
+        <nu-button
           size="small"
           class="repo-button repo-button--twitter"
           href="https://twitter.com/shoelace_style"
           target="_blank"
         >
-          <sl-icon slot="prefix" name="twitter"></sl-icon> Follow
-        </sl-button>
+          <nu-icon slot="prefix" name="twitter"></nu-icon> Follow
+        </nu-button>
       </div>
 
       <button class="search-box" type="button" title="Press / to search" aria-label="Search" data-plugin="search">
-        <sl-icon name="search"></sl-icon>
+        <nu-icon name="search"></nu-icon>
         <span>Search</span>
       </button>
 
@@ -188,6 +188,10 @@
               </li>
 
               <li>
+                <a href="/components/area-chart"> Area Chart </a>
+              </li>
+
+              <li>
                 <a href="/components/avatar"> Avatar </a>
               </li>
 
@@ -209,6 +213,10 @@
 
               <li>
                 <a href="/components/button-group"> Button Group </a>
+              </li>
+
+              <li>
+                <a href="/components/candle-chart"> Candle Chart </a>
               </li>
 
               <li>
@@ -288,6 +296,22 @@
               </li>
 
               <li>
+                <a href="/components/line-chart"> Line Chart </a>
+              </li>
+
+              <li>
+                <a href="/components/list-item"> List Item </a>
+              </li>
+
+              <li>
+                <a href="/components/list-view"> List View </a>
+              </li>
+
+              <li>
+                <a href="/components/login-button"> Login Button </a>
+              </li>
+
+              <li>
                 <a href="/components/menu"> Menu </a>
               </li>
 
@@ -305,6 +329,10 @@
 
               <li>
                 <a href="/components/option"> Option </a>
+              </li>
+
+              <li>
+                <a href="/components/pie-chart"> Pie Chart </a>
               </li>
 
               <li>
@@ -341,6 +369,10 @@
 
               <li>
                 <a href="/components/rating"> Rating </a>
+              </li>
+
+              <li>
+                <a href="/components/register-button"> Register Button </a>
               </li>
 
               <li>
@@ -489,7 +521,7 @@
           </h2>
           <p>
             Focus ring tokens control the appearance of focus rings. Note that form inputs use
-            <code>--sl-input-focus-ring-*</code> tokens instead.
+            <code>--nu-input-focus-ring-*</code> tokens instead.
           </p>
           <div class="table-scroll">
             <table>
@@ -501,26 +533,26 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><code>--sl-focus-ring-color</code></td>
+                  <td><code>--nu-focus-ring-color</code></td>
                   <td>
-                    <code>var(--sl-color-primary-600)</code> (light theme)<br /><code>var(--sl-color-primary-700)</code>
+                    <code>var(--nu-color-primary-600)</code> (light theme)<br /><code>var(--nu-color-primary-700)</code>
                     (dark theme)
                   </td>
                 </tr>
                 <tr>
-                  <td><code>--sl-focus-ring-style</code></td>
+                  <td><code>--nu-focus-ring-style</code></td>
                   <td><code>solid</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-focus-ring-width</code></td>
+                  <td><code>--nu-focus-ring-width</code></td>
                   <td><code>3px</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-focus-ring</code></td>
-                  <td><code>var(--sl-focus-ring-style) var(--sl-focus-ring-width) var(--sl-focus-ring-color)</code></td>
+                  <td><code>--nu-focus-ring</code></td>
+                  <td><code>var(--nu-focus-ring-style) var(--nu-focus-ring-width) var(--nu-focus-ring-color)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-focus-ring-offset</code></td>
+                  <td><code>--nu-focus-ring-offset</code></td>
                   <td><code>1px</code></td>
                 </tr>
               </tbody>
@@ -531,7 +563,7 @@
           </h2>
           <p>
             Button tokens control the appearance of buttons. In addition, buttons also currently use some form input
-            tokens such as <code>--sl-input-height-*</code> and <code>--sl-input-border-*</code>. More button tokens may
+            tokens such as <code>--nu-input-height-*</code> and <code>--nu-input-border-*</code>. More button tokens may
             be added in the future to make it easier to style them more independently.
           </p>
           <div class="table-scroll">
@@ -544,16 +576,16 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><code>--sl-button-font-size-small</code></td>
-                  <td><code>var(--sl-font-size-x-small)</code></td>
+                  <td><code>--nu-button-font-size-small</code></td>
+                  <td><code>var(--nu-font-size-x-small)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-button-font-size-medium</code></td>
-                  <td><code>var(--sl-font-size-small)</code></td>
+                  <td><code>--nu-button-font-size-medium</code></td>
+                  <td><code>var(--nu-font-size-small)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-button-font-size-large</code></td>
-                  <td><code>var(--sl-font-size-medium)</code></td>
+                  <td><code>--nu-button-font-size-large</code></td>
+                  <td><code>var(--nu-font-size-medium)</code></td>
                 </tr>
               </tbody>
             </table>
@@ -575,155 +607,155 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><code>--sl-input-height-small</code></td>
+                  <td><code>--nu-input-height-small</code></td>
                   <td><code>1.875rem</code> (30px @ 16px base)</td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-height-medium</code></td>
+                  <td><code>--nu-input-height-medium</code></td>
                   <td><code>2.5rem</code> (40px @ 16px base)</td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-height-large</code></td>
+                  <td><code>--nu-input-height-large</code></td>
                   <td><code>3.125rem</code> (50px @ 16px base)</td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-background-color</code></td>
-                  <td><code>var(--sl-color-neutral-0)</code></td>
+                  <td><code>--nu-input-background-color</code></td>
+                  <td><code>var(--nu-color-neutral-0)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-background-color-hover</code></td>
-                  <td><code>var(--sl-input-background-color)</code></td>
+                  <td><code>--nu-input-background-color-hover</code></td>
+                  <td><code>var(--nu-input-background-color)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-background-color-focus</code></td>
-                  <td><code>var(--sl-input-background-color)</code></td>
+                  <td><code>--nu-input-background-color-focus</code></td>
+                  <td><code>var(--nu-input-background-color)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-background-color-disabled</code></td>
-                  <td><code>var(--sl-color-neutral-100)</code></td>
+                  <td><code>--nu-input-background-color-disabled</code></td>
+                  <td><code>var(--nu-color-neutral-100)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-border-color</code></td>
-                  <td><code>var(--sl-color-neutral-300)</code></td>
+                  <td><code>--nu-input-border-color</code></td>
+                  <td><code>var(--nu-color-neutral-300)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-border-color-hover</code></td>
-                  <td><code>var(--sl-color-neutral-400)</code></td>
+                  <td><code>--nu-input-border-color-hover</code></td>
+                  <td><code>var(--nu-color-neutral-400)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-border-color-focus</code></td>
-                  <td><code>var(--sl-color-primary-500)</code></td>
+                  <td><code>--nu-input-border-color-focus</code></td>
+                  <td><code>var(--nu-color-primary-500)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-border-color-disabled</code></td>
-                  <td><code>var(--sl-color-neutral-300)</code></td>
+                  <td><code>--nu-input-border-color-disabled</code></td>
+                  <td><code>var(--nu-color-neutral-300)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-border-width</code></td>
+                  <td><code>--nu-input-border-width</code></td>
                   <td><code>1px</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-required-content</code></td>
+                  <td><code>--nu-input-required-content</code></td>
                   <td><code>*</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-required-content-offset</code></td>
+                  <td><code>--nu-input-required-content-offset</code></td>
                   <td><code>-2px</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-required-content-color</code></td>
-                  <td><code>var(--sl-input-label-color)</code></td>
+                  <td><code>--nu-input-required-content-color</code></td>
+                  <td><code>var(--nu-input-label-color)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-border-radius-small</code></td>
-                  <td><code>var(--sl-border-radius-medium)</code></td>
+                  <td><code>--nu-input-border-radius-small</code></td>
+                  <td><code>var(--nu-border-radius-medium)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-border-radius-medium</code></td>
-                  <td><code>var(--sl-border-radius-medium)</code></td>
+                  <td><code>--nu-input-border-radius-medium</code></td>
+                  <td><code>var(--nu-border-radius-medium)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-border-radius-large</code></td>
-                  <td><code>var(--sl-border-radius-medium)</code></td>
+                  <td><code>--nu-input-border-radius-large</code></td>
+                  <td><code>var(--nu-border-radius-medium)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-font-family</code></td>
-                  <td><code>var(--sl-font-sans)</code></td>
+                  <td><code>--nu-input-font-family</code></td>
+                  <td><code>var(--nu-font-sans)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-font-weight</code></td>
-                  <td><code>var(--sl-font-weight-normal)</code></td>
+                  <td><code>--nu-input-font-weight</code></td>
+                  <td><code>var(--nu-font-weight-normal)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-font-size-small</code></td>
-                  <td><code>var(--sl-font-size-small)</code></td>
+                  <td><code>--nu-input-font-size-small</code></td>
+                  <td><code>var(--nu-font-size-small)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-font-size-medium</code></td>
-                  <td><code>var(--sl-font-size-medium)</code></td>
+                  <td><code>--nu-input-font-size-medium</code></td>
+                  <td><code>var(--nu-font-size-medium)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-font-size-large</code></td>
-                  <td><code>var(--sl-font-size-large)</code></td>
+                  <td><code>--nu-input-font-size-large</code></td>
+                  <td><code>var(--nu-font-size-large)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-letter-spacing</code></td>
-                  <td><code>var(--sl-letter-spacing-normal)</code></td>
+                  <td><code>--nu-input-letter-spacing</code></td>
+                  <td><code>var(--nu-letter-spacing-normal)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-color</code></td>
-                  <td><code>var(--sl-color-neutral-700)</code></td>
+                  <td><code>--nu-input-color</code></td>
+                  <td><code>var(--nu-color-neutral-700)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-color-hover</code></td>
-                  <td><code>var(--sl-color-neutral-700)</code></td>
+                  <td><code>--nu-input-color-hover</code></td>
+                  <td><code>var(--nu-color-neutral-700)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-color-focus</code></td>
-                  <td><code>var(--sl-color-neutral-700)</code></td>
+                  <td><code>--nu-input-color-focus</code></td>
+                  <td><code>var(--nu-color-neutral-700)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-color-disabled</code></td>
-                  <td><code>var(--sl-color-neutral-900)</code></td>
+                  <td><code>--nu-input-color-disabled</code></td>
+                  <td><code>var(--nu-color-neutral-900)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-icon-color</code></td>
-                  <td><code>var(--sl-color-neutral-500)</code></td>
+                  <td><code>--nu-input-icon-color</code></td>
+                  <td><code>var(--nu-color-neutral-500)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-icon-color-hover</code></td>
-                  <td><code>var(--sl-color-neutral-600)</code></td>
+                  <td><code>--nu-input-icon-color-hover</code></td>
+                  <td><code>var(--nu-color-neutral-600)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-icon-color-focus</code></td>
-                  <td><code>var(--sl-color-neutral-600)</code></td>
+                  <td><code>--nu-input-icon-color-focus</code></td>
+                  <td><code>var(--nu-color-neutral-600)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-placeholder-color</code></td>
-                  <td><code>var(--sl-color-neutral-500)</code></td>
+                  <td><code>--nu-input-placeholder-color</code></td>
+                  <td><code>var(--nu-color-neutral-500)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-placeholder-color-disabled</code></td>
-                  <td><code>var(--sl-color-neutral-600)</code></td>
+                  <td><code>--nu-input-placeholder-color-disabled</code></td>
+                  <td><code>var(--nu-color-neutral-600)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-spacing-small</code></td>
-                  <td><code>var(--sl-spacing-small)</code></td>
+                  <td><code>--nu-input-spacing-small</code></td>
+                  <td><code>var(--nu-spacing-small)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-spacing-medium</code></td>
-                  <td><code>var(--sl-spacing-medium)</code></td>
+                  <td><code>--nu-input-spacing-medium</code></td>
+                  <td><code>var(--nu-spacing-medium)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-spacing-large</code></td>
-                  <td><code>var(--sl-spacing-large)</code></td>
+                  <td><code>--nu-input-spacing-large</code></td>
+                  <td><code>var(--nu-spacing-large)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-focus-ring-color</code></td>
+                  <td><code>--nu-input-focus-ring-color</code></td>
                   <td><code>hsl(198.6 88.7% 48.4% / 40%)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-focus-ring-offset</code></td>
+                  <td><code>--nu-input-focus-ring-offset</code></td>
                   <td><code>0</code></td>
                 </tr>
               </tbody>
@@ -743,36 +775,36 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><code>--sl-input-filled-background-color</code></td>
-                  <td><code>var(--sl-color-neutral-100)</code></td>
+                  <td><code>--nu-input-filled-background-color</code></td>
+                  <td><code>var(--nu-color-neutral-100)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-filled-background-color-hover</code></td>
-                  <td><code>var(--sl-color-neutral-100)</code></td>
+                  <td><code>--nu-input-filled-background-color-hover</code></td>
+                  <td><code>var(--nu-color-neutral-100)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-filled-background-color-focus</code></td>
-                  <td><code>var(--sl-color-neutral-100)</code></td>
+                  <td><code>--nu-input-filled-background-color-focus</code></td>
+                  <td><code>var(--nu-color-neutral-100)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-filled-background-color-disabled</code></td>
-                  <td><code>var(--sl-color-neutral-100)</code></td>
+                  <td><code>--nu-input-filled-background-color-disabled</code></td>
+                  <td><code>var(--nu-color-neutral-100)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-filled-color</code></td>
-                  <td><code>var(--sl-color-neutral-800)</code></td>
+                  <td><code>--nu-input-filled-color</code></td>
+                  <td><code>var(--nu-color-neutral-800)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-filled-color-hover</code></td>
-                  <td><code>var(--sl-color-neutral-800)</code></td>
+                  <td><code>--nu-input-filled-color-hover</code></td>
+                  <td><code>var(--nu-color-neutral-800)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-filled-color-focus</code></td>
-                  <td><code>var(--sl-color-neutral-700)</code></td>
+                  <td><code>--nu-input-filled-color-focus</code></td>
+                  <td><code>var(--nu-color-neutral-700)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-filled-color-disabled</code></td>
-                  <td><code>var(--sl-color-neutral-800)</code></td>
+                  <td><code>--nu-input-filled-color-disabled</code></td>
+                  <td><code>var(--nu-color-neutral-800)</code></td>
                 </tr>
               </tbody>
             </table>
@@ -791,19 +823,19 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><code>--sl-input-label-font-size-small</code></td>
-                  <td><code>var(--sl-font-size-small)</code></td>
+                  <td><code>--nu-input-label-font-size-small</code></td>
+                  <td><code>var(--nu-font-size-small)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-label-font-size-medium</code></td>
-                  <td><code>var(--sl-font-size-medium</code>)</td>
+                  <td><code>--nu-input-label-font-size-medium</code></td>
+                  <td><code>var(--nu-font-size-medium</code>)</td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-label-font-size-large</code></td>
-                  <td><code>var(--sl-font-size-large)</code></td>
+                  <td><code>--nu-input-label-font-size-large</code></td>
+                  <td><code>var(--nu-font-size-large)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-label-color</code></td>
+                  <td><code>--nu-input-label-color</code></td>
                   <td><code>inherit</code></td>
                 </tr>
               </tbody>
@@ -823,20 +855,20 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><code>--sl-input-help-text-font-size-small</code></td>
-                  <td><code>var(--sl-font-size-x-small)</code></td>
+                  <td><code>--nu-input-help-text-font-size-small</code></td>
+                  <td><code>var(--nu-font-size-x-small)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-help-text-font-size-medium</code></td>
-                  <td><code>var(--sl-font-size-small)</code></td>
+                  <td><code>--nu-input-help-text-font-size-medium</code></td>
+                  <td><code>var(--nu-font-size-small)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-help-text-font-size-large</code></td>
-                  <td><code>var(--sl-font-size-medium)</code></td>
+                  <td><code>--nu-input-help-text-font-size-large</code></td>
+                  <td><code>var(--nu-font-size-medium)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-input-help-text-color</code></td>
-                  <td><code>var(--sl-color-neutral-500)</code></td>
+                  <td><code>--nu-input-help-text-color</code></td>
+                  <td><code>var(--nu-color-neutral-500)</code></td>
                 </tr>
               </tbody>
             </table>
@@ -858,15 +890,15 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><code>--sl-toggle-size-small</code></td>
+                  <td><code>--nu-toggle-size-small</code></td>
                   <td><code>0.875rem</code> (14px @ 16px base)</td>
                 </tr>
                 <tr>
-                  <td><code>--sl-toggle-size-medium</code></td>
+                  <td><code>--nu-toggle-size-medium</code></td>
                   <td><code>1.125rem</code> (18px @ 16px base)</td>
                 </tr>
                 <tr>
-                  <td><code>--sl-toggle-size-large</code></td>
+                  <td><code>--nu-toggle-size-large</code></td>
                   <td><code>1.375rem</code> (22px @ 16px base)</td>
                 </tr>
               </tbody>
@@ -889,7 +921,7 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><code>--sl-overlay-background-color</code></td>
+                  <td><code>--nu-overlay-background-color</code></td>
                   <td><code>hsl(240 3.8% 46.1% / 33%)</code></td>
                 </tr>
               </tbody>
@@ -910,15 +942,15 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><code>--sl-panel-background-color</code></td>
-                  <td><code>var(--sl-color-neutral-0)</code></td>
+                  <td><code>--nu-panel-background-color</code></td>
+                  <td><code>var(--nu-color-neutral-0)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-panel-border-color</code></td>
-                  <td><code>var(--sl-color-neutral-200)</code></td>
+                  <td><code>--nu-panel-border-color</code></td>
+                  <td><code>var(--nu-color-neutral-200)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-panel-border-width</code></td>
+                  <td><code>--nu-panel-border-width</code></td>
                   <td><code>1px</code></td>
                 </tr>
               </tbody>
@@ -942,39 +974,39 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><code>--sl-tooltip-border-radius</code></td>
-                  <td><code>var(--sl-border-radius-medium)</code></td>
+                  <td><code>--nu-tooltip-border-radius</code></td>
+                  <td><code>var(--nu-border-radius-medium)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-tooltip-background-color</code></td>
-                  <td><code>var(--sl-color-neutral-800)</code></td>
+                  <td><code>--nu-tooltip-background-color</code></td>
+                  <td><code>var(--nu-color-neutral-800)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-tooltip-color</code></td>
-                  <td><code>var(--sl-color-neutral-0)</code></td>
+                  <td><code>--nu-tooltip-color</code></td>
+                  <td><code>var(--nu-color-neutral-0)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-tooltip-font-family</code></td>
-                  <td><code>var(--sl-font-sans)</code></td>
+                  <td><code>--nu-tooltip-font-family</code></td>
+                  <td><code>var(--nu-font-sans)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-tooltip-font-weight</code></td>
-                  <td><code>var(--sl-font-weight-normal)</code></td>
+                  <td><code>--nu-tooltip-font-weight</code></td>
+                  <td><code>var(--nu-font-weight-normal)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-tooltip-font-size</code></td>
-                  <td><code>var(--sl-font-size-small)</code></td>
+                  <td><code>--nu-tooltip-font-size</code></td>
+                  <td><code>var(--nu-font-size-small)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-tooltip-line-height</code></td>
-                  <td><code>var(--sl-line-height-dense)</code></td>
+                  <td><code>--nu-tooltip-line-height</code></td>
+                  <td><code>var(--nu-line-height-dense)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-tooltip-padding</code></td>
-                  <td><code>var(--sl-spacing-2x-small) var(--sl-spacing-x-small)</code></td>
+                  <td><code>--nu-tooltip-padding</code></td>
+                  <td><code>var(--nu-spacing-2x-small) var(--nu-spacing-x-small)</code></td>
                 </tr>
                 <tr>
-                  <td><code>--sl-tooltip-arrow-size</code></td>
+                  <td><code>--nu-tooltip-arrow-size</code></td>
                   <td><code>6px</code></td>
                 </tr>
               </tbody>

@@ -1,6 +1,6 @@
 import { type HasSlotController } from '../../internal/slot.js';
 import type { ReactiveController, ReactiveControllerHost } from 'lit';
-import type SlMenuItem from './menu-item.js';
+import type NuMenuItem from './menu-item.js';
 /** A reactive controller to manage the registration of event listeners for submenus. */
 export declare class SubmenuController implements ReactiveController {
     private host;
@@ -11,7 +11,7 @@ export declare class SubmenuController implements ReactiveController {
     private skidding;
     private readonly hasSlotController;
     private readonly submenuOpenDelay;
-    constructor(host: ReactiveControllerHost & SlMenuItem, hasSlotController: HasSlotController);
+    constructor(host: ReactiveControllerHost & NuMenuItem, hasSlotController: HasSlotController);
     hostConnected(): void;
     hostDisconnected(): void;
     hostUpdated(): void;

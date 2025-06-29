@@ -1,11 +1,11 @@
-import ShoelaceElement from '../../internal/shoelace-element.js';
+import NebulaElement from '../../internal/nebula-element.js';
 /**
  * @summary Outputs a localized time phrase relative to the current date and time.
- * @documentation https://shoelace.style/components/relative-time
+ * @documentation https://nebulaui.org/components/relative-time
  * @status stable
  * @since 2.0
  */
-export default class SlRelativeTime extends ShoelaceElement {
+export default class NuRelativeTime extends NebulaElement {
     private readonly localize;
     private updateTimeout;
     private isoTime;

@@ -1,8 +1,8 @@
-import SlResizeObserver from './resize-observer.component.js';
+import NuResizeObserver from './resize-observer.component.js';
 export * from './resize-observer.component.js';
-export default SlResizeObserver;
+export default NuResizeObserver;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-resize-observer': SlResizeObserver;
+        'nu-resize-observer': NuResizeObserver;
     }
 }

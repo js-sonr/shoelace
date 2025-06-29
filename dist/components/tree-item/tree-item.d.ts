@@ -1,8 +1,8 @@
-import SlTreeItem from './tree-item.component.js';
+import NuTreeItem from './tree-item.component.js';
 export * from './tree-item.component.js';
-export default SlTreeItem;
+export default NuTreeItem;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-tree-item': SlTreeItem;
+        'nu-tree-item': NuTreeItem;
     }
 }

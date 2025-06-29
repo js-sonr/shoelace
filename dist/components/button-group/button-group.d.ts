@@ -1,8 +1,8 @@
-import SlButtonGroup from './button-group.component.js';
+import NuButtonGroup from './button-group.component.js';
 export * from './button-group.component.js';
-export default SlButtonGroup;
+export default NuButtonGroup;
 declare global {
     interface HTMLElementTagNameMap {
-        'sl-button-group': SlButtonGroup;
+        'nu-button-group': NuButtonGroup;
     }
 }
