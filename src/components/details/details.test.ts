@@ -1,9 +1,8 @@
-import '../../../dist/shoelace.js';
+import '../../../dist/nebula.js';
 // cspell:dictionaries lorem-ipsum
 import { expect, fixture, html, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
-import type { NuHideEvent } from '../../events/events.js';
-import type { NuShowEvent } from '../../events/events.js';
+import type { NuHideEvent, NuShowEvent } from '../../events/events.js';
 import type NuDetails from './details.js';
 
 describe('<nu-details>', () => {

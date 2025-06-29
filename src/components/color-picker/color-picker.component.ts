@@ -21,8 +21,7 @@ import NuVisuallyHidden from '../visually-hidden/visually-hidden.component.js';
 import styles from './color-picker.styles.js';
 import type { CSSResultGroup } from 'lit';
 import type { NebulaFormControl } from '../../internal/nebula-element.js';
-import type { NuChangeEvent } from '../../events/events.js';
-import type { NuInputEvent } from '../../events/events.js';
+import type { NuChangeEvent, NuInputEvent } from '../../events/events.js';
 
 const hasEyeDropper = 'EyeDropper' in window;
 

@@ -1,4 +1,4 @@
-import '../../../dist/shoelace.js';
+import '../../../dist/nebula.js';
 import { clickOnElement } from '../../internal/test.js';
 import { expect, fixture, html, oneEvent } from '@open-wc/testing';
 import type NuAnimatedImage from './animated-image.js';

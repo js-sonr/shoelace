@@ -1,4 +1,4 @@
-import '../../../dist/shoelace.js';
+import '../../../dist/nebula.js';
 import { expect, fixture, html } from '@open-wc/testing';
 import type NuCard from './card.js';
 

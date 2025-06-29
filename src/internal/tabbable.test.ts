@@ -6,7 +6,7 @@ import { html } from 'lit';
 import { sendKeys } from '@web/test-runner-commands';
 import type { NuDialog } from '../shoelace.js';
 
-import '../../../dist/shoelace.js';
+import '../../../dist/nebula.js';
 
 async function holdShiftKey(callback: () => Promise<void>) {
   await sendKeys({ down: 'Shift' });

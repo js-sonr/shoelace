@@ -33,7 +33,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addGlobalData('toc', true); // enable the table of contents
   eleventyConfig.addGlobalData('meta', {
     title: 'Nebula',
-    description: 'A specialized fork of Shoelace customized for the Sonr Network, focusing on cryptocurrency and blockchain interfaces.',
+    description:
+      'A specialized fork of Shoelace customized for the Sonr Network, focusing on cryptocurrency and blockchain interfaces.',
     image: 'images/og-image.png',
     version: customElementsManifest.package.version,
     components: allComponents,

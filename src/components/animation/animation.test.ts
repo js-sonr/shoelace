@@ -1,4 +1,4 @@
-import '../../../dist/shoelace.js';
+import '../../../dist/nebula.js';
 import { aTimeout, expect, fixture, oneEvent } from '@open-wc/testing';
 import { html } from 'lit';
 import type NuAnimation from './animation.js';
