@@ -1,6 +1,6 @@
 import {
   NuAlert
-} from "./chunk.EERKLWQ7.js";
+} from "./chunk.AEEQCUOM.js";
 
 // src/react/alert/index.ts
 import * as React from "react";

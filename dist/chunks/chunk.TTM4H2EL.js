@@ -1,7 +1,4 @@
 import {
-  animated_image_styles_default
-} from "./chunk.GF5QJUBP.js";
-import {
   NuIcon
 } from "./chunk.I7KSEQQV.js";
 import {
@@ -16,6 +13,9 @@ import {
   n,
   r
 } from "./chunk.ZEQQFH7C.js";
+import {
+  animated_image_styles_default
+} from "./chunk.GF5QJUBP.js";
 import {
   x
 } from "./chunk.3KZKYYLP.js";

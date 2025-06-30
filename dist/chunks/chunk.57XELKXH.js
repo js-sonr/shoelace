@@ -1,6 +1,6 @@
 import {
   NuAnimatedImage
-} from "./chunk.6TSZKBD7.js";
+} from "./chunk.TTM4H2EL.js";
 
 // src/react/animated-image/index.ts
 import * as React from "react";

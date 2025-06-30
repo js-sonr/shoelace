@@ -1,8 +1,8 @@
 import type { DefineComponent } from "vue";
 
 import type { NuAlert } from "../../components/alert/alert.component.js";
-import type { NuAnimation } from "../../components/animation/animation.component.js";
 import type { NuAnimatedImage } from "../../components/animated-image/animated-image.component.js";
+import type { NuAnimation } from "../../components/animation/animation.component.js";
 import type { NuAreaChart } from "../../components/area-chart/area-chart.component.js";
 import type { NuAvatar } from "../../components/avatar/avatar.component.js";
 import type { NuBadge } from "../../components/badge/badge.component.js";
@@ -91,6 +91,25 @@ the alert will not close on its own. */
   onNuAfterHide?: (e: CustomEvent<never>) => void;
 };
 
+type NuAnimatedImageProps = {
+  /** The path to the image to load. */
+  src?: NuAnimatedImage["src"];
+  /** A description of the image used by assistive devices. */
+  alt?: NuAnimatedImage["alt"];
+  /** Plays the animation. When this attribute is remove, the animation will pause. */
+  play?: NuAnimatedImage["play"];
+  /**  */
+  animatedImage?: NuAnimatedImage["animatedImage"];
+  /**  */
+  frozenFrame?: NuAnimatedImage["frozenFrame"];
+  /**  */
+  isLoaded?: NuAnimatedImage["isLoaded"];
+  /** Emitted when the image loads successfully. */
+  onNuLoad?: (e: CustomEvent<never>) => void;
+  /** Emitted when the image fails to load. */
+  onNuError?: (e: CustomEvent<never>) => void;
+};
+
 type NuAnimationProps = {
   /** The name of the built-in animation to use. For custom animations, use the `keyframes` prop. */
   name?: NuAnimation["name"];
@@ -131,25 +150,6 @@ value can be changed without causing the animation to restart. */
   onNuFinish?: (e: CustomEvent<never>) => void;
   /** Emitted when the animation starts or restarts. */
   onNuStart?: (e: CustomEvent<never>) => void;
-};
-
-type NuAnimatedImageProps = {
-  /** The path to the image to load. */
-  src?: NuAnimatedImage["src"];
-  /** A description of the image used by assistive devices. */
-  alt?: NuAnimatedImage["alt"];
-  /** Plays the animation. When this attribute is remove, the animation will pause. */
-  play?: NuAnimatedImage["play"];
-  /**  */
-  animatedImage?: NuAnimatedImage["animatedImage"];
-  /**  */
-  frozenFrame?: NuAnimatedImage["frozenFrame"];
-  /**  */
-  isLoaded?: NuAnimatedImage["isLoaded"];
-  /** Emitted when the image loads successfully. */
-  onNuLoad?: (e: CustomEvent<never>) => void;
-  /** Emitted when the image fails to load. */
-  onNuError?: (e: CustomEvent<never>) => void;
 };
 
 type NuAreaChartProps = {
@@ -1830,25 +1830,6 @@ export type CustomElements = {
   "nu-alert": DefineComponent<NuAlertProps>;
 
   /**
-   * Animate elements declaratively with nearly 100 baked-in presets, or roll your own with custom keyframes. Powered by the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API).
-   * ---
-   *
-   *
-   * ### **Events:**
-   *  - **nu-cancel** - Emitted when the animation is canceled.
-   * - **nu-finish** - Emitted when the animation finishes.
-   * - **nu-start** - Emitted when the animation starts or restarts.
-   *
-   * ### **Methods:**
-   *  - **cancel()** - Clears all keyframe effects caused by this animation and aborts its playback.
-   * - **finish()** - Sets the playback time to the end of the animation corresponding to the current playback direction.
-   *
-   * ### **Slots:**
-   *  - _default_ - The element to animate. Avoid slotting in more than one element, as subsequent ones will be ignored. To animate multiple elements, either wrap them in a single container or use multiple `<nu-animation>` elements.
-   */
-  "nu-animation": DefineComponent<NuAnimationProps>;
-
-  /**
    * A component for displaying animated GIFs and WEBPs that play and pause on interaction.
    * ---
    *
@@ -1869,6 +1850,25 @@ export type CustomElements = {
    *  - **control-box** - The container that surrounds the pause/play icons and provides their background.
    */
   "nu-animated-image": DefineComponent<NuAnimatedImageProps>;
+
+  /**
+   * Animate elements declaratively with nearly 100 baked-in presets, or roll your own with custom keyframes. Powered by the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API).
+   * ---
+   *
+   *
+   * ### **Events:**
+   *  - **nu-cancel** - Emitted when the animation is canceled.
+   * - **nu-finish** - Emitted when the animation finishes.
+   * - **nu-start** - Emitted when the animation starts or restarts.
+   *
+   * ### **Methods:**
+   *  - **cancel()** - Clears all keyframe effects caused by this animation and aborts its playback.
+   * - **finish()** - Sets the playback time to the end of the animation corresponding to the current playback direction.
+   *
+   * ### **Slots:**
+   *  - _default_ - The element to animate. Avoid slotting in more than one element, as subsequent ones will be ignored. To animate multiple elements, either wrap them in a single container or use multiple `<nu-animation>` elements.
+   */
+  "nu-animation": DefineComponent<NuAnimationProps>;
 
   /**
    * Area charts visualize data over time with filled areas below the line.

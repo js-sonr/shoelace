@@ -547,8 +547,8 @@
               aria-label='Direct link to "Install the Nebula package"'
             ></a>
           </h3>
-          <pre><code class="language-bash" id="code-block-1198"><span class="token function">npm</span> <span class="token function">install</span> @onsonr/nebula
-</code><sl-copy-button class="copy-code-button" from="code-block-1198"></sl-copy-button></pre>
+          <pre><code class="language-bash" id="code-block-123"><span class="token function">npm</span> <span class="token function">install</span> @sonr.io/nebula
+</code><sl-copy-button class="copy-code-button" from="code-block-123"></sl-copy-button></pre>
           <h3 id="import-the-default-theme" class="anchor-heading">
             Import the Default Theme<a
               href="#import-the-default-theme"
@@ -556,8 +556,8 @@
             ></a>
           </h3>
           <p>Import the Nebula default theme (stylesheet) in <code>/resources/css/app.css</code>:</p>
-          <pre><code class="language-css" id="code-block-1199"><span class="token atrule"><span class="token rule">@import</span> <span class="token string">'/node_modules/@onsonr/nebula/dist/themes/light.css'</span><span class="token punctuation">;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1199"></sl-copy-button></pre>
+          <pre><code class="language-css" id="code-block-124"><span class="token atrule"><span class="token rule">@import</span> <span class="token string">'/node_modules/@sonr.io/nebula/dist/themes/light.css'</span><span class="token punctuation">;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-124"></sl-copy-button></pre>
           <h3 id="import-your-nebula-components" class="anchor-heading">
             Import Your Nebula Components<a
               href="#import-your-nebula-components"
@@ -576,10 +576,10 @@
             >). You can find the full import statement for a component in the <em>Importing</em> section of the
             component’s documentation (use the <em>Bundler</em> import). Your imports should look similar to:
           </p>
-          <pre><code class="language-js" id="code-block-1200"><span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/button/button.js'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/icon/icon.js'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/dialog/dialog.js'</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1200"></sl-copy-button></pre>
+          <pre><code class="language-js" id="code-block-125"><span class="token keyword">import</span> <span class="token string">'@sonr.io/nebula/dist/components/button/button.js'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'@sonr.io/nebula/dist/components/icon/icon.js'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'@sonr.io/nebula/dist/components/dialog/dialog.js'</span><span class="token punctuation">;</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-125"></sl-copy-button></pre>
           <h3 id="copy-the-nebula-static-assets-icons-images-etc_-to-a-public-folder" class="anchor-heading">
             Copy the Nebula Static Assets (icons, images, etc.) to a Public Folder<a
               href="#copy-the-nebula-static-assets-icons-images-etc_-to-a-public-folder"
@@ -591,8 +591,8 @@
             Nebula static assets to your project’s public folder. Run this command from your project’s root directory to
             copy the Nebula static assets to the <code>./public/assets</code> folder:
           </p>
-          <pre><code class="language-sh" id="code-block-1201"><span class="token function">cp</span> <span class="token parameter variable">-aR</span> node_modules/@onsonr/nebula/dist/assets/ ./public/assets
-</code><sl-copy-button class="copy-code-button" from="code-block-1201"></sl-copy-button></pre>
+          <pre><code class="language-sh" id="code-block-126"><span class="token function">cp</span> <span class="token parameter variable">-aR</span> node_modules/@sonr.io/nebula/dist/assets/ ./public/assets
+</code><sl-copy-button class="copy-code-button" from="code-block-126"></sl-copy-button></pre>
           <h3 id="set-the-base-path" class="anchor-heading">
             Set the Base Path<a href="#set-the-base-path" aria-label='Direct link to "Set the Base Path"'></a>
           </h3>
@@ -600,17 +600,17 @@
             Add the base path to your Nebula assets (icons, images, etc.) in <code>/resources/js/bootstrap.js</code>.
             The path must point to the same folder where you copy assets to in the next step.
           </p>
-          <pre><code class="language-js" id="code-block-1202"><span class="token keyword">import</span> <span class="token punctuation">{</span> setBasePath <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/utilities/base-path.js'</span><span class="token punctuation">;</span>
+          <pre><code class="language-js" id="code-block-127"><span class="token keyword">import</span> <span class="token punctuation">{</span> setBasePath <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@sonr.io/nebula/dist/utilities/base-path.js'</span><span class="token punctuation">;</span>
 <span class="token function">setBasePath</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1202"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-127"></sl-copy-button></pre>
           <p>Example <code>/resources/js/bootstrap.js</code> file:</p>
-          <pre><code class="language-js" id="code-block-1203"><span class="token keyword">import</span> <span class="token punctuation">{</span> setBasePath <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@onsonr/nebula/dist/utilities/base-path.js'</span><span class="token punctuation">;</span>
+          <pre><code class="language-js" id="code-block-128"><span class="token keyword">import</span> <span class="token punctuation">{</span> setBasePath <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@sonr.io/nebula/dist/utilities/base-path.js'</span><span class="token punctuation">;</span>
 <span class="token function">setBasePath</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/button/button.js'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/icon/icon.js'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token string">'@onsonr/nebula/dist/components/dialog/dialog.js'</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1203"></sl-copy-button></pre>
+<span class="token keyword">import</span> <span class="token string">'@sonr.io/nebula/dist/components/button/button.js'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'@sonr.io/nebula/dist/components/icon/icon.js'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'@sonr.io/nebula/dist/components/dialog/dialog.js'</span><span class="token punctuation">;</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-128"></sl-copy-button></pre>
           <h3 id="verify-vite-entry-points" class="anchor-heading">
             Verify Vite Entry Points<a
               href="#verify-vite-entry-points"
@@ -622,13 +622,13 @@
             <code>resources/css/app.css</code> and <code>resources/js/app.js</code>. If you use a different location for
             your CSS and/or Javascript entry point, update this configuration to accordingly.
           </p>
-          <pre><code class="language-js" id="code-block-1204"><span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <pre><code class="language-js" id="code-block-129"><span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
         <span class="token function">laravel</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
             <span class="token literal-property property">input</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"resources/css/app.css"</span><span class="token punctuation">,</span> <span class="token string">"resources/js/app.js"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
             <span class="token literal-property property">refresh</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
         <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token punctuation">]</span><span class="token punctuation">,</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1204"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-129"></sl-copy-button></pre>
           <h3 id="compile-front-end-assets" class="anchor-heading">
             Compile Front-End Assets<a
               href="#compile-front-end-assets"
@@ -636,12 +636,12 @@
             ></a>
           </h3>
           <p>Run the Vite development server or production build.</p>
-          <pre><code class="language-bash" id="code-block-1205"><span class="token comment">## run the Vite development bundle</span>
+          <pre><code class="language-bash" id="code-block-130"><span class="token comment">## run the Vite development bundle</span>
 <span class="token function">npm</span> run dev
 
 <span class="token comment">## build a production bundle (with versioning)</span>
 <span class="token function">npm</span> run build
-</code><sl-copy-button class="copy-code-button" from="code-block-1205"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-130"></sl-copy-button></pre>
           <h3 id="include-front-end-assets-in-your-layout-file" class="anchor-heading">
             Include Front-End Assets in Your Layout File<a
               href="#include-front-end-assets-in-your-layout-file"
@@ -652,10 +652,10 @@
             Add the <code>@vite()</code> Blade directive to the <code>&lt;head&gt;</code> of your application’s root
             template.
           </p>
-          <pre><code class="language-html" id="code-block-1206"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+          <pre><code class="language-html" id="code-block-131"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
   ... @vite(['resources/css/app.css', 'resources/js/app.js'])
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1206"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-131"></sl-copy-button></pre>
           <p>Have fun using Nebula components in your Laravel app!</p>
         </div>
       </article>

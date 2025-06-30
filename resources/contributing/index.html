@@ -745,13 +745,13 @@
             >
             on GitHub, clone it locally, and install its dependencies.
           </p>
-          <pre><code class="language-bash" id="code-block-1174"><span class="token function">git</span> clone https://github.com/YOUR_GITHUB_USERNAME/shoelace
+          <pre><code class="language-bash" id="code-block-84"><span class="token function">git</span> clone https://github.com/YOUR_GITHUB_USERNAME/shoelace
 <span class="token builtin class-name">cd</span> shoelace
 <span class="token function">npm</span> <span class="token function">install</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1174"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-84"></sl-copy-button></pre>
           <p>Once you’ve cloned the repo, run the following command to spin up the dev server.</p>
-          <pre><code class="language-bash" id="code-block-1175"><span class="token function">npm</span> start
-</code><sl-copy-button class="copy-code-button" from="code-block-1175"></sl-copy-button></pre>
+          <pre><code class="language-bash" id="code-block-85"><span class="token function">npm</span> start
+</code><sl-copy-button class="copy-code-button" from="code-block-85"></sl-copy-button></pre>
           <p>
             After the initial build, a browser will open automatically to a local version of the docs. The documentation
             is powered by Eleventy and a number of custom plugins.
@@ -786,8 +786,8 @@
             To scaffold a new component, run the following command, replacing <code>sl-tag-name</code> with the desired
             tag name.
           </p>
-          <pre><code class="language-bash" id="code-block-1176"><span class="token function">npm</span> run create sl-tag-name
-</code><sl-copy-button class="copy-code-button" from="code-block-1176"></sl-copy-button></pre>
+          <pre><code class="language-bash" id="code-block-86"><span class="token function">npm</span> run create sl-tag-name
+</code><sl-copy-button class="copy-code-button" from="code-block-86"></sl-copy-button></pre>
           <p>
             This will generate a source file, a stylesheet, and a docs page for you. When you start the dev server,
             you’ll find the new component in the “Components” section of the sidebar.
@@ -824,21 +824,21 @@
             >
             for testing. To launch the test runner during development, open a terminal and launch the dev server.
           </p>
-          <pre><code class="language-bash" id="code-block-1177"><span class="token function">npm</span> start
-</code><sl-copy-button class="copy-code-button" from="code-block-1177"></sl-copy-button></pre>
+          <pre><code class="language-bash" id="code-block-87"><span class="token function">npm</span> start
+</code><sl-copy-button class="copy-code-button" from="code-block-87"></sl-copy-button></pre>
           <p>In a second terminal window, launch the test runner.</p>
-          <pre><code class="language-bash" id="code-block-1178"><span class="token function">npm</span> run test:watch
-</code><sl-copy-button class="copy-code-button" from="code-block-1178"></sl-copy-button></pre>
+          <pre><code class="language-bash" id="code-block-88"><span class="token function">npm</span> run test:watch
+</code><sl-copy-button class="copy-code-button" from="code-block-88"></sl-copy-button></pre>
           <p>
             Follow the on-screen instructions to work with the test runner. Tests will automatically re-run as you make
             changes.
           </p>
           <p>To run all tests only once:</p>
-          <pre><code class="language-bash" id="code-block-1179"><span class="token function">npm</span> run <span class="token builtin class-name">test</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1179"></sl-copy-button></pre>
+          <pre><code class="language-bash" id="code-block-89"><span class="token function">npm</span> run <span class="token builtin class-name">test</span>
+</code><sl-copy-button class="copy-code-button" from="code-block-89"></sl-copy-button></pre>
           <p>To test a single component, use the component’s basename as shown in the following example.</p>
-          <pre><code class="language-bash" id="code-block-1180"><span class="token function">npm</span> run test:component breadcrumb-item
-</code><sl-copy-button class="copy-code-button" from="code-block-1180"></sl-copy-button></pre>
+          <pre><code class="language-bash" id="code-block-90"><span class="token function">npm</span> run test:component breadcrumb-item
+</code><sl-copy-button class="copy-code-button" from="code-block-90"></sl-copy-button></pre>
           <h2 id="documentation" class="anchor-heading">
             Documentation<a href="#documentation" aria-label='Direct link to "Documentation"'></a>
           </h2>
@@ -896,19 +896,19 @@
             To render a code preview, use the standard code field syntax and append <code>:preview</code> to the
             language.
           </p>
-          <pre><code class="language-md" id="code-block-1181"><span class="token code"><span class="token punctuation">```</span><span class="token code-language">html:preview</span>
+          <pre><code class="language-md" id="code-block-91"><span class="token code"><span class="token punctuation">```</span><span class="token code-language">html:preview</span>
 <span class="token code-block language-html">[code goes here]</span>
 <span class="token punctuation">```</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1181"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-91"></sl-copy-button></pre>
           <p>
             You can also append <code>:expanded</code> to expand the code by default, and <code>:no-codepen</code> to
             disable the CodePen button. The order of these modifiers doesn’t matter, but no spaces should exist between
             the language and the modifiers.
           </p>
-          <pre><code class="language-md" id="code-block-1182"><span class="token code"><span class="token punctuation">```</span><span class="token code-language">html:preview:expanded:no-codepen</span>
+          <pre><code class="language-md" id="code-block-92"><span class="token code"><span class="token punctuation">```</span><span class="token code-language">html:preview:expanded:no-codepen</span>
 <span class="token code-block language-html">[code goes here]</span>
 <span class="token punctuation">```</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1182"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-92"></sl-copy-button></pre>
           <p>This particular syntax was chosen for a few reasons:</p>
           <ol>
             <li>It’s easy to remember</li>
@@ -922,7 +922,7 @@
             Callouts<a href="#callouts" aria-label='Direct link to "Callouts"'></a>
           </h4>
           <p>Special callouts can be added using the following syntax.</p>
-          <pre><code id="code-block-1183">:::tip
+          <pre><code id="code-block-93">:::tip
 This is a tip/informational callout
 :::
 
@@ -933,27 +933,27 @@ This is a warning callout
 :::danger
 This is a danger callout
 :::
-</code><sl-copy-button class="copy-code-button" from="code-block-1183"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-93"></sl-copy-button></pre>
           <h4 id="asides" class="anchor-heading">Asides<a href="#asides" aria-label='Direct link to "Asides"'></a></h4>
           <p>To place content that’s indirectly related, use the following syntax.</p>
-          <pre><code id="code-block-1184">:::aside
+          <pre><code id="code-block-94">:::aside
 This content is indirectly related and will appear in an `&lt;aside&gt;` element.
 :::
-</code><sl-copy-button class="copy-code-button" from="code-block-1184"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-94"></sl-copy-button></pre>
           <h4 id="details" class="anchor-heading">
             Details<a href="#details" aria-label='Direct link to "Details"'></a>
           </h4>
           <p>To provide additional details that can be expanded/collapses, use the following syntax.</p>
-          <pre><code id="code-block-1185">:::details Title Here
+          <pre><code id="code-block-95">:::details Title Here
 The details here are expandable.
 :::
-</code><sl-copy-button class="copy-code-button" from="code-block-1185"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-95"></sl-copy-button></pre>
           <h4 id="github-issues" class="anchor-heading">
             GitHub Issues<a href="#github-issues" aria-label='Direct link to "GitHub Issues"'></a>
           </h4>
           <p>To link to a GitHub issue, PR, or discussion, use the following syntax.</p>
-          <pre><code id="code-block-1186">[#1234]
-</code><sl-copy-button class="copy-code-button" from="code-block-1186"></sl-copy-button></pre>
+          <pre><code id="code-block-96">[#1234]
+</code><sl-copy-button class="copy-code-button" from="code-block-96"></sl-copy-button></pre>
           <h2 id="best-practices" class="anchor-heading">
             Best Practices<a href="#best-practices" aria-label='Direct link to "Best Practices"'></a>
           </h2>
@@ -1036,10 +1036,10 @@ The details here are expandable.
             Make sure to always set the host element’s <code>display</code> property to the appropriate value depending
             on your needs, as the default is <code>inline</code> per the custom element spec.
           </p>
-          <pre><code class="language-css" id="code-block-1187"><span class="token selector">:host</span> <span class="token punctuation">{</span>
+          <pre><code class="language-css" id="code-block-97"><span class="token selector">:host</span> <span class="token punctuation">{</span>
   <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1187"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-97"></sl-copy-button></pre>
           <p>
             Aside from <code>display</code>, avoid setting styles on the host element when possible. The reason for this
             is that styles applied to the host element are not encapsulated. Instead, create a base element that wraps
@@ -1170,10 +1170,10 @@ The details here are expandable.
             ></a>
           </h3>
           <p>When providing fallback content inside of <code>&lt;slot&gt;</code> elements, avoid adding parts, e.g.:</p>
-          <pre><code class="language-html" id="code-block-1188"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>icon<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+          <pre><code class="language-html" id="code-block-98"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>icon<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-icon</span> <span class="token attr-name">part</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>close-icon<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-icon</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1188"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-98"></sl-copy-button></pre>
           <p>
             This creates confusion because the part will be documented, but it won’t work when the user slots in their
             own content. The recommended way to customize this example is for the user to slot in their own content and
@@ -1215,23 +1215,23 @@ The details here are expandable.
             ></a>
           </h3>
           <p>To expose custom properties as part of a component’s API, scope them to the <code>:host</code> block.</p>
-          <pre><code class="language-css" id="code-block-1189"><span class="token selector">:host</span> <span class="token punctuation">{</span>
+          <pre><code class="language-css" id="code-block-99"><span class="token selector">:host</span> <span class="token punctuation">{</span>
   <span class="token property">--color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-primary-500<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token property">--background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--nu-color-neutral-100<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1189"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-99"></sl-copy-button></pre>
           <p>
             Then use the following syntax for comments so they appear in the generated docs. Do not use the
             <code>--nu-</code> prefix, as that is reserved for design tokens that live in the global scope.
           </p>
-          <pre><code class="language-js" id="code-block-1190"><span class="token comment">/**
+          <pre><code class="language-js" id="code-block-100"><span class="token comment">/**
  * @cssproperty --color: The component's text color.
  * @cssproperty --background-color: The component's background color.
  */</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">SlExample</span> <span class="token punctuation">{</span>
   <span class="token comment">// ...</span>
 <span class="token punctuation">}</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1190"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-100"></sl-copy-button></pre>
           <h3 id="focusing-on-disabled-items" class="anchor-heading">
             Focusing on Disabled Items<a
               href="#focusing-on-disabled-items"
@@ -1310,14 +1310,14 @@ The details here are expandable.
             When composing elements, use <code>part</code> to export the host element and <code>exportparts</code> to
             export its parts.
           </p>
-          <pre><code class="language-js" id="code-block-1191"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <pre><code class="language-js" id="code-block-101"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> html<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
     &lt;div part="base"&gt;
       &lt;nu-icon part="icon" exportparts="base:icon__base" ...&gt;&lt;/nu-icon&gt;
     &lt;/div&gt;
   </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1191"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-101"></sl-copy-button></pre>
           <p>
             This results in a consistent, easy to understand structure for parts. In this example, the
             <code>icon</code> part will target the host element and the <code>icon__base</code> part will target the
@@ -1392,8 +1392,8 @@ The details here are expandable.
             <code>&lt;nu-icon&gt;</code> is a dependency of the component and use the
             <a href="/components/icon#customizing-the-system-library">system library</a>:
           </p>
-          <pre><code class="language-html" id="code-block-1192"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-icon</span> <span class="token attr-name">library</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>system<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-icon</span><span class="token punctuation">&gt;</span></span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1192"></sl-copy-button></pre>
+          <pre><code class="language-html" id="code-block-102"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nu-icon</span> <span class="token attr-name">library</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>system<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nu-icon</span><span class="token punctuation">&gt;</span></span>
+</code><sl-copy-button class="copy-code-button" from="code-block-102"></sl-copy-button></pre>
           <p>
             This will render the icons instantly whereas the default library will fetch them from a remote source. If an
             icon isn’t available in the system library, you will need to add it to <code>library.system.ts</code>. Using
@@ -1412,10 +1412,10 @@ The details here are expandable.
               to cover all scenarios.):
             </li>
           </ul>
-          <pre><code class="language-ts" id="code-block-1193"><span class="token keyword">const</span> myComponent <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token generic-function"><span class="token function">fixture</span><span class="token generic class-name"><span class="token operator">&lt;</span>NuAlert<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>html<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;nu-my-component&gt;SomeContent&lt;/nu-my-component&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <pre><code class="language-ts" id="code-block-103"><span class="token keyword">const</span> myComponent <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token generic-function"><span class="token function">fixture</span><span class="token generic class-name"><span class="token operator">&lt;</span>NuAlert<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>html<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;nu-my-component&gt;SomeContent&lt;/nu-my-component&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token keyword">await</span> <span class="token function">expect</span><span class="token punctuation">(</span>myComponent<span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>be<span class="token punctuation">.</span><span class="token function">accessible</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code><sl-copy-button class="copy-code-button" from="code-block-1193"></sl-copy-button></pre>
+</code><sl-copy-button class="copy-code-button" from="code-block-103"></sl-copy-button></pre>
           <ul>
             <li>Try to cover all features advertised in the component’s description</li>
           </ul>

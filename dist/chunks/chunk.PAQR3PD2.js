@@ -1,6 +1,6 @@
 import {
   NuAnimatedImage
-} from "./chunk.6TSZKBD7.js";
+} from "./chunk.TTM4H2EL.js";
 
 // src/components/animated-image/animated-image.ts
 var animated_image_default = NuAnimatedImage;
