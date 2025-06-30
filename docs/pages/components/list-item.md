@@ -20,7 +20,7 @@ List items are the building blocks for activity feeds and transaction lists. The
 ```
 
 ```jsx:react
-import { NuListItem } from '@onsonr/nebula/dist/react/list-item';
+import { NuListItem } from '@sonr.io/nebula/dist/react/list-item';
 
 const App = () => (
   <NuListItem

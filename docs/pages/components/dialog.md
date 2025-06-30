@@ -27,8 +27,8 @@ layout: component
 
 ```jsx:react
 import { useState } from 'react';
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlDialog from '@onsonr/nebula/dist/react/dialog';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlDialog from '@sonr.io/nebula/dist/react/dialog';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -76,8 +76,8 @@ Use the `--width` custom property to set the dialog's width.
 
 ```jsx:react
 import { useState } from 'react';
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlDialog from '@onsonr/nebula/dist/react/dialog';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlDialog from '@sonr.io/nebula/dist/react/dialog';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -127,8 +127,8 @@ By design, a dialog's height will never exceed that of the viewport. As such, di
 
 ```jsx:react
 import { useState } from 'react';
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlDialog from '@onsonr/nebula/dist/react/dialog';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlDialog from '@sonr.io/nebula/dist/react/dialog';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -186,9 +186,9 @@ The header shows a functional close button by default. You can use the `header-a
 
 ```jsx:react
 import { useState } from 'react';
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlDialog from '@onsonr/nebula/dist/react/dialog';
-import SlIconButton from '@onsonr/nebula/dist/react/icon-button';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlDialog from '@sonr.io/nebula/dist/react/dialog';
+import SlIconButton from '@sonr.io/nebula/dist/react/icon-button';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -249,8 +249,8 @@ You can use `event.detail.source` to determine what triggered the request to clo
 
 ```jsx:react
 import { useState } from 'react';
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlDialog from '@onsonr/nebula/dist/react/dialog';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlDialog from '@sonr.io/nebula/dist/react/dialog';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -302,9 +302,9 @@ By default, the dialog's panel will gain focus when opened. This allows a subseq
 
 ```jsx:react
 import { useState } from 'react';
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlDialog from '@onsonr/nebula/dist/react/dialog';
-import SlInput from '@onsonr/nebula/dist/react/input';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlDialog from '@sonr.io/nebula/dist/react/dialog';
+import SlInput from '@sonr.io/nebula/dist/react/input';
 
 const App = () => {
   const [open, setOpen] = useState(false);

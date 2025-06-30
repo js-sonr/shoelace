@@ -70,7 +70,7 @@ Icons inherit their color from the current text color. Thus, you can set the `co
 {% raw %}
 
 ```jsx:react
-import SlIcon from '@onsonr/nebula/dist/react/icon';
+import SlIcon from '@sonr.io/nebula/dist/react/icon';
 
 const App = () => (
   <>
@@ -140,7 +140,7 @@ For non-decorative icons, use the `label` attribute to announce it to assistive 
 {% raw %}
 
 ```jsx:react
-import SlIcon from '@onsonr/nebula/dist/react/icon';
+import SlIcon from '@sonr.io/nebula/dist/react/icon';
 
 const App = () => <NuIcon name="star-fill" label="Add to favorites" />;
 ```

@@ -17,21 +17,21 @@ These instructions are for Vue 3 and above. If you're using Vue 2, please see th
 To add Nebula to your Vue app, install the package from npm.
 
 ```bash
-npm install @onsonr/nebula
+npm install @sonr.io/nebula
 ```
 
 Next, [include a theme](/getting-started/themes) and set the [base path](/getting-started/installation#setting-the-base-path) for icons and other assets. In this example, we'll import the light theme and use the CDN as a base path.
 
 ```jsx
 // main.js or main.ts
-import '@onsonr/nebula/dist/themes/light.css';
-import { setBasePath } from '@onsonr/nebula/dist/utilities/base-path';
+import '@sonr.io/nebula/dist/themes/light.css';
+import { setBasePath } from '@sonr.io/nebula/dist/utilities/base-path';
 
-setBasePath('https://cdn.jsdelivr.net/npm/@onsonr/nebula@%VERSION%/%CDNDIR%/');
+setBasePath('https://cdn.jsdelivr.net/npm/@sonr.io/nebula@%VERSION%/%CDNDIR%/');
 ```
 
 :::tip
-If you'd rather not use the CDN for assets, you can create a build task that copies `node_modules/@onsonr/nebula/dist/assets` into a public folder in your app. Then you can point the base path to that folder instead.
+If you'd rather not use the CDN for assets, you can create a build task that copies `node_modules/@sonr.io/nebula/dist/assets` into a public folder in your app. Then you can point the base path to that folder instead.
 :::
 
 ## Configuration
@@ -47,7 +47,7 @@ Once you have configured your application for custom elements, you should be abl
 ```json
 {
   "compilerOptions": {
-    "types": ["@onsonr/nebula/dist/types/vue"]
+    "types": ["@sonr.io/nebula/dist/types/vue"]
   }
 }
 ```
@@ -69,8 +69,8 @@ Once you have configured your application for custom elements, you should be abl
 
 <script setup>
   import { ref } from 'vue';
-  import '@onsonr/nebula/dist/components/qr-code/qr-code.js';
-  import '@onsonr/nebula/dist/components/input/input.js';
+  import '@sonr.io/nebula/dist/components/qr-code/qr-code.js';
+  import '@sonr.io/nebula/dist/components/input/input.js';
 
   const qrCode = ref();
 </script>

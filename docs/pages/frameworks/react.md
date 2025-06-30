@@ -13,21 +13,21 @@ Nebula offers a React version of every component to provide an idiomatic experie
 To add Nebula to your React app, install the package from npm.
 
 ```bash
-npm install @onsonr/nebula
+npm install @sonr.io/nebula
 ```
 
 Next, [include a theme](/getting-started/themes) and set the [base path](/getting-started/installation#setting-the-base-path) for icons and other assets. In this example, we'll import the light theme and use the CDN as a base path.
 
 ```jsx
 // App.jsx
-import '@onsonr/nebula/%NPMDIR%/themes/light.css';
-import { setBasePath } from '@onsonr/nebula/%NPMDIR%/utilities/base-path';
+import '@sonr.io/nebula/%NPMDIR%/themes/light.css';
+import { setBasePath } from '@sonr.io/nebula/%NPMDIR%/utilities/base-path';
 
-setBasePath('https://cdn.jsdelivr.net/npm/@onsonr/nebula@%VERSION%/%CDNDIR%/');
+setBasePath('https://cdn.jsdelivr.net/npm/@sonr.io/nebula@%VERSION%/%CDNDIR%/');
 ```
 
 :::tip
-If you'd rather not use the CDN for assets, you can create a [build task](https://webpack.js.org/plugins/copy-webpack-plugin/) that copies `node_modules/@onsonr/nebula/%NPMDIR%/assets` into your app's `public` directory. Then you can point the base path to that folder instead.
+If you'd rather not use the CDN for assets, you can create a [build task](https://webpack.js.org/plugins/copy-webpack-plugin/) that copies `node_modules/@sonr.io/nebula/%NPMDIR%/assets` into your app's `public` directory. Then you can point the base path to that folder instead.
 :::
 
 Now you can start using components!
@@ -43,7 +43,7 @@ Preact users facing type errors using components may benefit from setting "paths
 Every Nebula component is available to import as a React component. Note that we're importing the `<NuButton>` _React component_ instead of the `<nu-button>` _custom element_ in the example below.
 
 ```jsx
-import SlButton from '@onsonr/nebula/%NPMDIR%/react/button';
+import SlButton from '@sonr.io/nebula/%NPMDIR%/react/button';
 
 const MyComponent = () => <NuButton variant="primary">Click me</NuButton>;
 
@@ -55,14 +55,14 @@ export default MyComponent;
 Previously, it was recommended to import from a single entrypoint like so:
 
 ```jsx
-import { SlButton } from '@onsonr/nebula/%NPMDIR%/react';
+import { SlButton } from '@sonr.io/nebula/%NPMDIR%/react';
 ```
 
 However, tree-shaking extra Nebula components proved to be a challenge. As a result, we now recommend cherry-picking components you want to use, rather than importing from a single entrypoint.
 
 ```diff
-- import { SlButton } from '@onsonr/nebula/%NPMDIR%/react';
-+ import SlButton from '@onsonr/nebula/%NPMDIR%/react/button';
+- import { SlButton } from '@sonr.io/nebula/%NPMDIR%/react';
++ import SlButton from '@sonr.io/nebula/%NPMDIR%/react/button';
 ```
 
 You can find a copy + paste import for each component in the "importing" section of its documentation.
@@ -75,7 +75,7 @@ Here's how you can bind the input's value to a state variable.
 
 ```jsx
 import { useState } from 'react';
-import SlInput from '@onsonr/nebula/%NPMDIR%/react/input';
+import SlInput from '@sonr.io/nebula/%NPMDIR%/react/input';
 
 function MyComponent() {
   const [value, setValue] = useState('');
@@ -90,8 +90,8 @@ If you're using TypeScript, it's important to note that `event.target` will be a
 
 ```tsx
 import { useState } from 'react';
-import SlInput from '@onsonr/nebula/%NPMDIR%/react/input';
-import type SlInputElement from '@onsonr/nebula/%NPMDIR%/components/input/input';
+import SlInput from '@sonr.io/nebula/%NPMDIR%/react/input';
+import type SlInputElement from '@sonr.io/nebula/%NPMDIR%/components/input/input';
 
 function MyComponent() {
   const [value, setValue] = useState('');
@@ -106,8 +106,8 @@ You can also import the event type for use in your callbacks, shown below.
 
 ```tsx
 import { useCallback, useState } from 'react';
-import SlInput, { type SlInputEvent } from '@onsonr/nebula/%NPMDIR%/react/input';
-import type SlInputElement from '@onsonr/nebula/%NPMDIR%/components/input/input';
+import SlInput, { type SlInputEvent } from '@sonr.io/nebula/%NPMDIR%/react/input';
+import type SlInputElement from '@sonr.io/nebula/%NPMDIR%/components/input/input';
 
 function MyComponent() {
   const [value, setValue] = useState('');

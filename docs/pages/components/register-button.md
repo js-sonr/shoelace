@@ -17,7 +17,7 @@ Register buttons provide WebAuthn-based user registration functionality, enablin
 ```
 
 ```jsx:react
-import NuRegisterButton from '@onsonr/nebula/dist/react/register-button';
+import NuRegisterButton from '@sonr.io/nebula/dist/react/register-button';
 
 const App = () => (
   <NuRegisterButton
@@ -46,7 +46,7 @@ Use the `variant` attribute to set the button's variant, inheriting from the bas
 ```
 
 ```jsx:react
-import NuRegisterButton from '@onsonr/nebula/dist/react/register-button';
+import NuRegisterButton from '@sonr.io/nebula/dist/react/register-button';
 
 const App = () => (
   <>
@@ -71,7 +71,7 @@ Use the `size` attribute to change the button's size.
 ```
 
 ```jsx:react
-import NuRegisterButton from '@onsonr/nebula/dist/react/register-button';
+import NuRegisterButton from '@sonr.io/nebula/dist/react/register-button';
 
 const App = () => (
   <>
@@ -104,8 +104,8 @@ The register button uses the Sonr passkey icon by default to maintain consistent
 ```
 
 ```jsx:react
-import NuRegisterButton from '@onsonr/nebula/dist/react/register-button';
-import NuIcon from '@onsonr/nebula/dist/react/icon';
+import NuRegisterButton from '@sonr.io/nebula/dist/react/register-button';
+import NuIcon from '@sonr.io/nebula/dist/react/icon';
 
 const App = () => (
   <>
@@ -242,7 +242,7 @@ The register button emits three events during the registration process:
 ### React Event Handling
 
 ```jsx:react
-import NuRegisterButton from '@onsonr/nebula/dist/react/register-button';
+import NuRegisterButton from '@sonr.io/nebula/dist/react/register-button';
 
 const App = () => {
   const handleRegisterStart = () => {

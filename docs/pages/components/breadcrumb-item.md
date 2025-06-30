@@ -17,9 +17,9 @@ layout: component
 ```
 
 ```jsx:react
-import SlBreadcrumb from '@onsonr/nebula/dist/react/breadcrumb';
-import SlBreadcrumbItem from '@onsonr/nebula/dist/react/breadcrumb-item';
-import SlIcon from '@onsonr/nebula/dist/react/icon';
+import SlBreadcrumb from '@sonr.io/nebula/dist/react/breadcrumb';
+import SlBreadcrumbItem from '@sonr.io/nebula/dist/react/breadcrumb-item';
+import SlIcon from '@sonr.io/nebula/dist/react/icon';
 
 const App = () => (
   <NuBreadcrumb>

@@ -23,7 +23,7 @@ For best results, use images that share the same dimensions. The slider can be c
 ```
 
 ```jsx:react
-import SlImageComparer from '@onsonr/nebula/dist/react/image-comparer';
+import SlImageComparer from '@sonr.io/nebula/dist/react/image-comparer';
 
 const App = () => (
   <NuImageComparer>
@@ -63,7 +63,7 @@ Use the `position` attribute to set the initial position of the slider. This is 
 ```
 
 ```jsx:react
-import SlImageComparer from '@onsonr/nebula/dist/react/image-comparer';
+import SlImageComparer from '@sonr.io/nebula/dist/react/image-comparer';
 
 const App = () => (
   <NuImageComparer position={25}>

@@ -17,20 +17,20 @@ These instructions are for Vue 2. If you're using Vue 3 or above, please see the
 To add Nebula to your Vue app, install the package from npm.
 
 ```bash
-npm install @onsonr/nebula
+npm install @sonr.io/nebula
 ```
 
 Next, [include a theme](/getting-started/themes) and set the [base path](/getting-started/installation#setting-the-base-path) for icons and other assets. In this example, we'll import the light theme and use the CDN as a base path.
 
 ```jsx
-import '@onsonr/nebula/%NPMDIR%/themes/light.css';
-import { setBasePath } from '@onsonr/nebula/%NPMDIR%/utilities/base-path';
+import '@sonr.io/nebula/%NPMDIR%/themes/light.css';
+import { setBasePath } from '@sonr.io/nebula/%NPMDIR%/utilities/base-path';
 
-setBasePath('https://cdn.jsdelivr.net/npm/@onsonr/nebula@%VERSION%/%CDNDIR%/');
+setBasePath('https://cdn.jsdelivr.net/npm/@sonr.io/nebula@%VERSION%/%CDNDIR%/');
 ```
 
 :::tip
-If you'd rather not use the CDN for assets, you can create a build task that copies `node_modules/@onsonr/nebula/dist/assets` into a public folder in your app. Then you can point the base path to that folder instead.
+If you'd rather not use the CDN for assets, you can create a build task that copies `node_modules/@sonr.io/nebula/dist/assets` into a public folder in your app. Then you can point the base path to that folder instead.
 :::
 
 ## Configuration

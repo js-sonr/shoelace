@@ -36,7 +36,7 @@ The resize observer will report changes to the dimensions of the elements it wra
 ```
 
 ```jsx:react
-import SlResizeObserver from '@onsonr/nebula/dist/react/resize-observer';
+import SlResizeObserver from '@sonr.io/nebula/dist/react/resize-observer';
 
 const css = `
   .resize-observer-overview div {

@@ -13,8 +13,8 @@ layout: component
 ```
 
 ```jsx:react
-import SlAlert from '@onsonr/nebula/dist/react/alert';
-import SlIcon from '@onsonr/nebula/dist/react/icon';
+import SlAlert from '@sonr.io/nebula/dist/react/alert';
+import SlIcon from '@sonr.io/nebula/dist/react/icon';
 
 const App = () => (
   <NuAlert open>
@@ -75,8 +75,8 @@ Set the `variant` attribute to change the alert's variant.
 ```
 
 ```jsx:react
-import SlAlert from '@onsonr/nebula/dist/react/alert';
-import SlIcon from '@onsonr/nebula/dist/react/icon';
+import SlAlert from '@sonr.io/nebula/dist/react/alert';
+import SlIcon from '@sonr.io/nebula/dist/react/icon';
 
 const App = () => (
   <>
@@ -146,8 +146,8 @@ Add the `closable` attribute to show a close button that will hide the alert.
 
 ```jsx:react
 import { useState } from 'react';
-import SlAlert from '@onsonr/nebula/dist/react/alert';
-import SlIcon from '@onsonr/nebula/dist/react/icon';
+import SlAlert from '@sonr.io/nebula/dist/react/alert';
+import SlIcon from '@sonr.io/nebula/dist/react/icon';
 
 const App = () => {
   const [open, setOpen] = useState(true);
@@ -175,7 +175,7 @@ Icons are optional. Simply omit the `icon` slot if you don't want them.
 ```
 
 ```jsx:react
-import SlAlert from '@onsonr/nebula/dist/react/alert';
+import SlAlert from '@sonr.io/nebula/dist/react/alert';
 
 const App = () => (
   <NuAlert variant="primary" open>
@@ -215,9 +215,9 @@ Set the `duration` attribute to automatically hide an alert after a period of ti
 
 ```jsx:react
 import { useState } from 'react';
-import SlAlert from '@onsonr/nebula/dist/react/alert';
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlIcon from '@onsonr/nebula/dist/react/icon';
+import SlAlert from '@sonr.io/nebula/dist/react/alert';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlIcon from '@sonr.io/nebula/dist/react/icon';
 
 const css = `
   .alert-duration sl-alert {
@@ -306,9 +306,9 @@ You should always use the `closable` attribute so users can dismiss the notifica
 
 ```jsx:react
 import { useRef } from 'react';
-import SlAlert from '@onsonr/nebula/dist/react/alert';
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlIcon from '@onsonr/nebula/dist/react/icon';
+import SlAlert from '@sonr.io/nebula/dist/react/alert';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlIcon from '@sonr.io/nebula/dist/react/icon';
 
 function showToast(alert) {
   alert.toast();

@@ -22,10 +22,10 @@ layout: component
 {% raw %}
 
 ```jsx:react
-import SlDivider from '@onsonr/nebula/dist/react/divider';
-import SlMenu from '@onsonr/nebula/dist/react/menu';
-import SlMenuLabel from '@onsonr/nebula/dist/react/menu-label';
-import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
+import SlDivider from '@sonr.io/nebula/dist/react/divider';
+import SlMenu from '@sonr.io/nebula/dist/react/menu';
+import SlMenuLabel from '@sonr.io/nebula/dist/react/menu-label';
+import SlMenuItem from '@sonr.io/nebula/dist/react/menu-item';
 
 const App = () => (
   <NuMenu style={{ maxWidth: '200px' }}>

@@ -41,8 +41,8 @@ layout: component
 ```
 
 ```jsx:react
-import SlCarousel from '@onsonr/nebula/dist/react/carousel';
-import SlCarouselItem from '@onsonr/nebula/dist/react/carousel-item';
+import SlCarousel from '@sonr.io/nebula/dist/react/carousel';
+import SlCarouselItem from '@sonr.io/nebula/dist/react/carousel-item';
 
 const App = () => (
   <NuCarousel pagination>

@@ -325,8 +325,8 @@ This is the first stable release of Nebula 2, meaning breaking changes to the AP
 - [274 pull requests](https://github.com/onsonr/nebula/pulls) have been opened
 - [More than 150 discussions](https://github.com/onsonr/nebula/discussions) have been started on GitHub
 - [Over 500 people](https://discord.com/invite/mg8f26C) have joined the Nebula community on Discord
-- [Over 300 million CDN hits](https://www.jsdelivr.com/package/npm/@onsonr/nebula) per month
-- [Over 13,000 npm downloads](https://www.npmjs.com/package/@onsonr/nebula) per week
+- [Over 300 million CDN hits](https://www.jsdelivr.com/package/npm/@sonr.io/nebula) per month
+- [Over 13,000 npm downloads](https://www.npmjs.com/package/@sonr.io/nebula) per week
 - [73rd most popular project](https://www.jsdelivr.com/statistics) on jsDelivr
 - [#2
 
@@ -1324,10 +1324,10 @@ The most elegant solution I found was to use the [Web Animations API](https://de
 
 This release changes the way components are registered if you're [cherry picking](/getting-started/installation#cherry-picking) or [using a bundler](/getting-started/installation#bundling). This recommendation came from the LitElement team and simplifies Nebula's dependency graph. It also eliminates the need to call a `register()` function before using each component.
 
-From now on, importing a component will register it automatically. The caveat is that bundlers may not tree shake the library properly if you import from `@onsonr/nebula`, so the recommendation is to import components and utilities from their corresponding files instead.
+From now on, importing a component will register it automatically. The caveat is that bundlers may not tree shake the library properly if you import from `@sonr.io/nebula`, so the recommendation is to import components and utilities from their corresponding files instead.
 
 - 🚨 BREAKING: removed `all.shoelace.js` (use `shoelace.js` instead)
-- 🚨 BREAKING: component modules now have a side effect, so bundlers may not tree shake properly when importing from `@onsonr/nebula` (see the [installation page](/getting-started/installation#bundling) for more details and how to update)
+- 🚨 BREAKING: component modules now have a side effect, so bundlers may not tree shake properly when importing from `@sonr.io/nebula` (see the [installation page](/getting-started/installation#bundling) for more details and how to update)
 - Added `sl-clear` event to `<nu-select>`
 - Fixed a bug where dynamically changing menu items in `<nu-select>` would cause the display label to be blank [#374]
 - Fixed a bug where setting the `value` attribute or property on `<nu-input>` and `<nu-textarea>` would trigger validation too soon

@@ -17,8 +17,8 @@ Breadcrumbs are usually placed before a page's main content with the current pag
 ```
 
 ```jsx:react
-import SlBreadcrumb from '@onsonr/nebula/dist/react/breadcrumb';
-import SlBreadcrumbItem from '@onsonr/nebula/dist/react/breadcrumb-item';
+import SlBreadcrumb from '@sonr.io/nebula/dist/react/breadcrumb';
+import SlBreadcrumbItem from '@sonr.io/nebula/dist/react/breadcrumb-item';
 
 const App = () => (
   <NuBreadcrumb>
@@ -51,8 +51,8 @@ For websites, you'll probably want to use links instead. You can make any breadc
 ```
 
 ```jsx:react
-import SlBreadcrumb from '@onsonr/nebula/dist/react/breadcrumb';
-import SlBreadcrumbItem from '@onsonr/nebula/dist/react/breadcrumb-item';
+import SlBreadcrumb from '@sonr.io/nebula/dist/react/breadcrumb';
+import SlBreadcrumbItem from '@sonr.io/nebula/dist/react/breadcrumb-item';
 
 const App = () => (
   <NuBreadcrumb>
@@ -99,9 +99,9 @@ Use the `separator` slot to change the separator that goes between breadcrumb it
 ```
 
 ```jsx:react
-import '@onsonr/nebula/dist/components/icon/icon.js';
-import SlBreadcrumb from '@onsonr/nebula/dist/react/breadcrumb';
-import SlBreadcrumbItem from '@onsonr/nebula/dist/react/breadcrumb-item';
+import '@sonr.io/nebula/dist/components/icon/icon.js';
+import SlBreadcrumb from '@sonr.io/nebula/dist/react/breadcrumb';
+import SlBreadcrumbItem from '@sonr.io/nebula/dist/react/breadcrumb-item';
 
 const App = () => (
   <>
@@ -149,9 +149,9 @@ Use the `prefix` slot to add content before any breadcrumb item.
 ```
 
 ```jsx:react
-import SlBreadcrumb from '@onsonr/nebula/dist/react/breadcrumb';
-import SlBreadcrumbItem from '@onsonr/nebula/dist/react/breadcrumb-item';
-import SlIcon from '@onsonr/nebula/dist/react/icon';
+import SlBreadcrumb from '@sonr.io/nebula/dist/react/breadcrumb';
+import SlBreadcrumbItem from '@sonr.io/nebula/dist/react/breadcrumb-item';
+import SlIcon from '@sonr.io/nebula/dist/react/icon';
 
 const App = () => (
   <NuBreadcrumb>
@@ -181,9 +181,9 @@ Use the `suffix` slot to add content after any breadcrumb item.
 ```
 
 ```jsx:react
-import SlBreadcrumb from '@onsonr/nebula/dist/react/breadcrumb';
-import SlBreadcrumbItem from '@onsonr/nebula/dist/react/breadcrumb-item';
-import SlIcon from '@onsonr/nebula/dist/react/icon';
+import SlBreadcrumb from '@sonr.io/nebula/dist/react/breadcrumb';
+import SlBreadcrumbItem from '@sonr.io/nebula/dist/react/breadcrumb-item';
+import SlIcon from '@sonr.io/nebula/dist/react/icon';
 
 const App = () => (
   <NuBreadcrumb>
@@ -231,7 +231,7 @@ import {
   SlIcon,
   SlMenu,
   SlMenuItem
-} from '@onsonr/nebula/dist/react';
+} from '@sonr.io/nebula/dist/react';
 
 const App = () => (
   <NuBreadcrumb>

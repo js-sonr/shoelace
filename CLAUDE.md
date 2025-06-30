@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is **@onsonr/nebula** - a specialized fork of Shoelace customized for the Sonr Network, focusing on cryptocurrency and blockchain interfaces. It's a comprehensive web components library built with LitElement that provides UI components specifically designed for blockchain applications.
+This is **@sonr.io/nebula** - a specialized fork of Shoelace customized for the Sonr Network, focusing on cryptocurrency and blockchain interfaces. It's a comprehensive web components library built with LitElement that provides UI components specifically designed for blockchain applications.
 
 ## Commands
 

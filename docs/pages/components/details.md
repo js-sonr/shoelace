@@ -15,7 +15,7 @@ layout: component
 ```
 
 ```jsx:react
-import SlDetails from '@onsonr/nebula/dist/react/details';
+import SlDetails from '@sonr.io/nebula/dist/react/details';
 
 const App = () => (
   <NuDetails summary="Toggle Me">
@@ -39,7 +39,7 @@ Use the `disable` attribute to prevent the details from expanding.
 ```
 
 ```jsx:react
-import SlDetails from '@onsonr/nebula/dist/react/details';
+import SlDetails from '@sonr.io/nebula/dist/react/details';
 
 const App = () => (
   <NuDetails summary="Disabled" disabled>
@@ -71,8 +71,8 @@ Use the `expand-icon` and `collapse-icon` slots to change the expand and collaps
 ```
 
 ```jsx:react
-import SlDetails from '@onsonr/nebula/dist/react/details';
-import SlIcon from '@onsonr/nebula/dist/react/icon';
+import SlDetails from '@sonr.io/nebula/dist/react/details';
+import SlIcon from '@sonr.io/nebula/dist/react/icon';
 
 const css = `
   sl-details.custom-icon::part(summary-icon) {

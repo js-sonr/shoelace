@@ -10,7 +10,7 @@ layout: component
 ```
 
 ```jsx:react
-import SlSwitch from '@onsonr/nebula/dist/react/switch';
+import SlSwitch from '@sonr.io/nebula/dist/react/switch';
 
 const App = () => <NuSwitch>Switch</NuSwitch>;
 ```
@@ -30,7 +30,7 @@ Use the `checked` attribute to activate the switch.
 ```
 
 ```jsx:react
-import SlSwitch from '@onsonr/nebula/dist/react/switch';
+import SlSwitch from '@sonr.io/nebula/dist/react/switch';
 
 const App = () => <NuSwitch checked>Checked</NuSwitch>;
 ```
@@ -44,7 +44,7 @@ Use the `disabled` attribute to disable the switch.
 ```
 
 ```jsx:react
-import SlSwitch from '@onsonr/nebula/dist/react/switch';
+import SlSwitch from '@sonr.io/nebula/dist/react/switch';
 
 const App = () => <NuSwitch disabled>Disabled</NuSwitch>;
 ```
@@ -62,7 +62,7 @@ Use the `size` attribute to change a switch's size.
 ```
 
 ```jsx:react
-import SlSwitch from '@onsonr/nebula/dist/react/switch';
+import SlSwitch from '@sonr.io/nebula/dist/react/switch';
 
 const App = () => (
   <>
@@ -84,7 +84,7 @@ Add descriptive help text to a switch with the `help-text` attribute. For help t
 ```
 
 ```jsx:react
-import SlSwitch from '@onsonr/nebula/dist/react/checkbox';
+import SlSwitch from '@sonr.io/nebula/dist/react/checkbox';
 
 const App = () => <NuSwitch help-text="What should the user know about the switch?">Label</NuSwitch>;
 ```
@@ -100,7 +100,7 @@ Use the available custom properties to change how the switch is styled.
 {% raw %}
 
 ```jsx:react
-import SlSwitch from '@onsonr/nebula/dist/react/switch';
+import SlSwitch from '@sonr.io/nebula/dist/react/switch';
 
 const App = () => (
   <NuSwitch

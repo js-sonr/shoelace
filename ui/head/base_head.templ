@@ -113,16 +113,16 @@ templ Nebula(version string) {
 	<link
 		rel="stylesheet"
 		media="(prefers-color-scheme:light)"
-		href={ jsDelivrURL("@onsonr/nebula", version, "cdn/themes/light.css") }
+		href={ jsDelivrURL("@sonr.io/nebula", version, "cdn/themes/light.css") }
 	/>
 	<link
 		rel="stylesheet"
 		media="(prefers-color-scheme:dark)"
-		href={ jsDelivrURL("@onsonr/nebula", version, "cdn/themes/dark.css") }
+		href={ jsDelivrURL("@sonr.io/nebula", version, "cdn/themes/dark.css") }
 		onload="document.documentElement.classList.add('sl-theme-dark');"
 	/>
 	@nebulaHandle.Once() {
-		<script type="module" src={ jsDelivrURL("@onsonr/nebula", version, "cdn/shoelace-autoloader.js") }></script>
+		<script type="module" src={ jsDelivrURL("@sonr.io/nebula", version, "cdn/shoelace-autoloader.js") }></script>
 	}
 }
 

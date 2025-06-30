@@ -28,10 +28,10 @@ layout: component
 {% raw %}
 
 ```jsx:react
-import SlDivider from '@onsonr/nebula/dist/react/divider';
-import SlIcon from '@onsonr/nebula/dist/react/icon';
-import SlMenu from '@onsonr/nebula/dist/react/menu';
-import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
+import SlDivider from '@sonr.io/nebula/dist/react/divider';
+import SlIcon from '@sonr.io/nebula/dist/react/icon';
+import SlMenu from '@sonr.io/nebula/dist/react/menu';
+import SlMenuItem from '@sonr.io/nebula/dist/react/menu-item';
 
 const App = () => (
   <NuMenu style={{ maxWidth: '200px' }}>
@@ -89,11 +89,11 @@ Add content to the start and end of menu items using the `prefix` and `suffix` s
 {% raw %}
 
 ```jsx:react
-import SlBadge from '@onsonr/nebula/dist/react/badge';
-import SlDivider from '@onsonr/nebula/dist/react/divider';
-import SlIcon from '@onsonr/nebula/dist/react/icon';
-import SlMenu from '@onsonr/nebula/dist/react/menu';
-import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
+import SlBadge from '@sonr.io/nebula/dist/react/badge';
+import SlDivider from '@sonr.io/nebula/dist/react/divider';
+import SlIcon from '@sonr.io/nebula/dist/react/icon';
+import SlMenu from '@sonr.io/nebula/dist/react/menu';
+import SlMenuItem from '@sonr.io/nebula/dist/react/menu-item';
 
 const App = () => (
   <NuMenu style={{ maxWidth: '200px' }}>
@@ -137,8 +137,8 @@ Add the `disabled` attribute to disable the menu item so it cannot be selected.
 {% raw %}
 
 ```jsx:react
-import SlMenu from '@onsonr/nebula/dist/react/menu';
-import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
+import SlMenu from '@sonr.io/nebula/dist/react/menu';
+import SlMenuItem from '@sonr.io/nebula/dist/react/menu-item';
 
 const App = () => (
   <NuMenu style={{ maxWidth: '200px' }}>
@@ -166,8 +166,8 @@ Use the `loading` attribute to indicate that a menu item is busy. Like a disable
 {% raw %}
 
 ```jsx:react
-import SlMenu from '@onsonr/nebula/dist/react/menu';
-import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
+import SlMenu from '@sonr.io/nebula/dist/react/menu';
+import SlMenuItem from '@sonr.io/nebula/dist/react/menu-item';
 
 const App = () => (
   <NuMenu style={{ maxWidth: '200px' }}>
@@ -197,8 +197,8 @@ Checkbox menu items are visually indistinguishable from regular menu items. Thei
 {% raw %}
 
 ```jsx:react
-import SlMenu from '@onsonr/nebula/dist/react/menu';
-import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
+import SlMenu from '@sonr.io/nebula/dist/react/menu';
+import SlMenuItem from '@sonr.io/nebula/dist/react/menu-item';
 
 const App = () => (
   <NuMenu style={{ maxWidth: '200px' }}>
@@ -247,8 +247,8 @@ The `value` attribute can be used to assign a hidden value, such as a unique ide
 {% raw %}
 
 ```jsx:react
-import SlMenu from '@onsonr/nebula/dist/react/menu';
-import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
+import SlMenu from '@sonr.io/nebula/dist/react/menu';
+import SlMenuItem from '@sonr.io/nebula/dist/react/menu-item';
 
 const App = () => {
   function handleSelect(event) {

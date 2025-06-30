@@ -14,8 +14,8 @@ layout: component
 ```
 
 ```jsx:react
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlButtonGroup from '@onsonr/nebula/dist/react/button-group';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlButtonGroup from '@sonr.io/nebula/dist/react/button-group';
 
 const App = () => (
   <NuButtonGroup label="Alignment">
@@ -57,8 +57,8 @@ All button sizes are supported, but avoid mixing sizes within the same button gr
 ```
 
 ```jsx:react
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlButtonGroup from '@onsonr/nebula/dist/react/button-group';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlButtonGroup from '@sonr.io/nebula/dist/react/button-group';
 
 const App = () => (
   <>
@@ -134,8 +134,8 @@ Theme buttons are supported through the button's `variant` attribute.
 ```
 
 ```jsx:react
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlButtonGroup from '@onsonr/nebula/dist/react/button-group';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlButtonGroup from '@sonr.io/nebula/dist/react/button-group';
 
 const App = () => (
   <>
@@ -213,8 +213,8 @@ Pill buttons are supported through the button's `pill` attribute.
 ```
 
 ```jsx:react
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlButtonGroup from '@onsonr/nebula/dist/react/button-group';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlButtonGroup from '@sonr.io/nebula/dist/react/button-group';
 
 const App = () => (
   <>
@@ -283,11 +283,11 @@ Dropdowns can be placed inside button groups as long as the trigger is an `<nu-b
 ```
 
 ```jsx:react
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlButtonGroup from '@onsonr/nebula/dist/react/button-group';
-import SlDropdown from '@onsonr/nebula/dist/react/dropdown';
-import SlMenu from '@onsonr/nebula/dist/react/menu';
-import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlButtonGroup from '@sonr.io/nebula/dist/react/button-group';
+import SlDropdown from '@sonr.io/nebula/dist/react/dropdown';
+import SlMenu from '@sonr.io/nebula/dist/react/menu';
+import SlMenuItem from '@sonr.io/nebula/dist/react/menu-item';
 
 const App = () => (
   <NuButtonGroup label="Example Button Group">
@@ -328,11 +328,11 @@ Create a split button using a button and a dropdown. Use a [visually hidden](/co
 ```
 
 ```jsx:react
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlButtonGroup from '@onsonr/nebula/dist/react/button-group';
-import SlDropdown from '@onsonr/nebula/dist/react/dropdown';
-import SlMenu from '@onsonr/nebula/dist/react/menu';
-import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlButtonGroup from '@sonr.io/nebula/dist/react/button-group';
+import SlDropdown from '@sonr.io/nebula/dist/react/dropdown';
+import SlMenu from '@sonr.io/nebula/dist/react/menu';
+import SlMenuItem from '@sonr.io/nebula/dist/react/menu-item';
 
 const App = () => (
   <NuButtonGroup label="Example Button Group">
@@ -370,9 +370,9 @@ Buttons can be wrapped in tooltips to provide more detail when the user interact
 ```
 
 ```jsx:react
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlButtonGroup from '@onsonr/nebula/dist/react/button-group';
-import SlTooltip from '@onsonr/nebula/dist/react/tooltip';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlButtonGroup from '@sonr.io/nebula/dist/react/button-group';
+import SlTooltip from '@sonr.io/nebula/dist/react/tooltip';
 
 const App = () => (
   <>
@@ -441,10 +441,10 @@ Create interactive toolbars with button groups.
 ```
 
 ```jsx:react
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlButtonGroup from '@onsonr/nebula/dist/react/button-group';
-import SlIcon from '@onsonr/nebula/dist/react/icon';
-import SlTooltip from '@onsonr/nebula/dist/react/tooltip';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlButtonGroup from '@sonr.io/nebula/dist/react/button-group';
+import SlIcon from '@sonr.io/nebula/dist/react/icon';
+import SlTooltip from '@sonr.io/nebula/dist/react/tooltip';
 
 const css = `
   .button-group-toolbar sl-button-group:not(:last-of-type) {

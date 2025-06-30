@@ -129,7 +129,7 @@ To install the dark theme, add the following to the `<head>` section of your pag
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@onsonr/nebula@%VERSION%/%CDNDIR%/themes/dark.css"
+  href="https://cdn.jsdelivr.net/npm/@sonr.io/nebula@%VERSION%/%CDNDIR%/themes/dark.css"
 />
 ```
 

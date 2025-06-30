@@ -22,8 +22,8 @@ While convenient, autoloading may lead to a [Flash of Undefined Custom Elements]
 
 <!-- prettier-ignore -->
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@onsonr/nebula@%VERSION%/%CDNDIR%/themes/light.css" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/@onsonr/nebula@%VERSION%/%CDNDIR%/shoelace-autoloader.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sonr.io/nebula@%VERSION%/%CDNDIR%/themes/light.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/@sonr.io/nebula@%VERSION%/%CDNDIR%/shoelace-autoloader.js"></script>
 ```
 
 </nu-tab-panel>
@@ -34,8 +34,8 @@ The traditional CDN loader registers all Nebula elements up front. Note that, if
 
 <!-- prettier-ignore -->
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@onsonr/nebula@%VERSION%/%CDNDIR%/themes/light.css" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/@onsonr/nebula@%VERSION%/%CDNDIR%/shoelace.js" ></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sonr.io/nebula@%VERSION%/%CDNDIR%/themes/light.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/@sonr.io/nebula@%VERSION%/%CDNDIR%/shoelace.js" ></script>
 ```
 
 </nu-tab-panel>
@@ -47,7 +47,7 @@ The code above will load the light theme. If you want to use the [dark theme](/g
 
 <!-- prettier-ignore -->
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@onsonr/nebula@%VERSION%/%CDNDIR%/themes/dark.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sonr.io/nebula@%VERSION%/%CDNDIR%/themes/dark.css" />
 ```
 
 ### Light & Dark Theme
@@ -58,12 +58,12 @@ If you want to load the light or dark theme based on the user's `prefers-color-s
 <link
   rel="stylesheet"
   media="(prefers-color-scheme:light)"
-  href="https://cdn.jsdelivr.net/npm/@onsonr/nebula@%VERSION%/%CDNDIR%/themes/light.css"
+  href="https://cdn.jsdelivr.net/npm/@sonr.io/nebula@%VERSION%/%CDNDIR%/themes/light.css"
 />
 <link
   rel="stylesheet"
   media="(prefers-color-scheme:dark)"
-  href="https://cdn.jsdelivr.net/npm/@onsonr/nebula@%VERSION%/%CDNDIR%/themes/dark.css"
+  href="https://cdn.jsdelivr.net/npm/@sonr.io/nebula@%VERSION%/%CDNDIR%/themes/dark.css"
   onload="document.documentElement.classList.add('sl-theme-dark');"
 />
 ```
@@ -75,10 +75,10 @@ Now you can [start using Nebula!](/getting-started/usage)
 If you don't want to use the CDN, you can install Nebula from npm with the following command.
 
 ```bash
-npm install @onsonr/nebula
+npm install @sonr.io/nebula
 ```
 
-It's up to you to make the source files available to your app. One way to do this is to create a route in your app called `/shoelace` that serves static files from `node_modules/@onsonr/nebula`.
+It's up to you to make the source files available to your app. One way to do this is to create a route in your app called `/shoelace` that serves static files from `node_modules/@sonr.io/nebula`.
 
 Once you've done that, add the following tags to your page. Make sure to update `href` and `src` so they point to the route you created.
 
@@ -90,7 +90,7 @@ Once you've done that, add the following tags to your page. Make sure to update 
 Alternatively, [you can use a bundler](#bundling).
 
 :::tip
-For clarity, the docs will usually show imports from `@onsonr/nebula`. If you're not using a module resolver or bundler, you'll need to adjust these paths to point to the folder Nebula is in.
+For clarity, the docs will usually show imports from `@sonr.io/nebula`. If you're not using a module resolver or bundler, you'll need to adjust these paths to point to the folder Nebula is in.
 :::
 
 ## Setting the Base Path
@@ -106,7 +106,7 @@ However, if you're [cherry picking](#cherry-picking) or [bundling](#bundling) Ne
 <!-- Option 2: the setBasePath() method -->
 <script src="bundle.js"></script>
 <script type="module">
-  import { setBasePath } from '@onsonr/nebula/%NPMDIR%/utilities/base-path.js';
+  import { setBasePath } from '@sonr.io/nebula/%NPMDIR%/utilities/base-path.js';
   setBasePath('/path/to/shoelace/%NPMDIR%');
 </script>
 ```
@@ -121,7 +121,7 @@ Most of the magic behind assets is handled internally by Nebula, but if you need
 
 ```html
 <script type="module">
-  import { getBasePath, setBasePath } from '@onsonr/nebula/%NPMDIR%/utilities/base-path.js';
+  import { getBasePath, setBasePath } from '@sonr.io/nebula/%NPMDIR%/utilities/base-path.js';
 
   setBasePath('/path/to/assets');
 
@@ -145,7 +145,7 @@ Here's an example that loads only the button component. Again, if you're not usi
 <link rel="stylesheet" href="/path/to/shoelace/%NPMDIR%/themes/light.css" />
 
 <script type="module" data-shoelace="/path/to/shoelace/%NPMDIR%">
-  import '@onsonr/nebula/%NPMDIR%/components/button/button.js';
+  import '@sonr.io/nebula/%NPMDIR%/components/button/button.js';
 
   // <nu-button> is ready to use!
 </script>
@@ -168,7 +168,7 @@ Nebula is distributed as a collection of standard ES modules that [all modern br
 To use Nebula with a bundler, first install Nebula along with your bundler of choice.
 
 ```bash
-npm install @onsonr/nebula
+npm install @sonr.io/nebula
 ```
 
 Now it's time to configure your bundler. Configurations vary for each tool, but here are some examples to help you get started.
@@ -179,12 +179,12 @@ Now it's time to configure your bundler. Configurations vary for each tool, but 
 Once your bundler is configured, you'll be able to import Nebula components and utilities.
 
 ```js
-import '@onsonr/nebula/%NPMDIR%/themes/light.css';
-import '@onsonr/nebula/%NPMDIR%/components/button/button.js';
-import '@onsonr/nebula/%NPMDIR%/components/icon/icon.js';
-import '@onsonr/nebula/%NPMDIR%/components/input/input.js';
-import '@onsonr/nebula/%NPMDIR%/components/rating/rating.js';
-import { setBasePath } from '@onsonr/nebula/%NPMDIR%/utilities/base-path.js';
+import '@sonr.io/nebula/%NPMDIR%/themes/light.css';
+import '@sonr.io/nebula/%NPMDIR%/components/button/button.js';
+import '@sonr.io/nebula/%NPMDIR%/components/icon/icon.js';
+import '@sonr.io/nebula/%NPMDIR%/components/input/input.js';
+import '@sonr.io/nebula/%NPMDIR%/components/rating/rating.js';
+import { setBasePath } from '@sonr.io/nebula/%NPMDIR%/utilities/base-path.js';
 
 // Set the base path to the folder you copied Nebula's assets to
 setBasePath('/path/to/shoelace/%NPMDIR%');
@@ -193,7 +193,7 @@ setBasePath('/path/to/shoelace/%NPMDIR%');
 ```
 
 :::warning
-Component modules include side effects for registration purposes. Because of this, importing directly from `@onsonr/nebula` may result in a larger bundle size than necessary. For optimal tree shaking, always cherry pick, i.e. import components and utilities from their respective files, as shown above.
+Component modules include side effects for registration purposes. Because of this, importing directly from `@sonr.io/nebula` may result in a larger bundle size than necessary. For optimal tree shaking, always cherry pick, i.e. import components and utilities from their respective files, as shown above.
 :::
 
 ### Avoiding auto-registering imports
@@ -201,8 +201,8 @@ Component modules include side effects for registration purposes. Because of thi
 By default, imports to components will auto-register themselves. This may not be ideal in all cases. To import just the component's class without auto-registering it's tag we can do the following:
 
 ```diff
-- import SlButton from '@onsonr/nebula/%NPMDIR%/components/button/button.js';
-+ import SlButton from '@onsonr/nebula/%NPMDIR%/components/button/button.component.js';
+- import SlButton from '@sonr.io/nebula/%NPMDIR%/components/button/button.js';
++ import SlButton from '@sonr.io/nebula/%NPMDIR%/components/button/button.component.js';
 ```
 
 Notice how the import ends with `.component.js`. This is the current convention to convey the import does not register itself.
@@ -217,7 +217,7 @@ You'll notice that the CDN links all start with `/%CDNDIR%/<path>` and npm impor
 
 TL;DR:
 
-- `@onsonr/nebula/%CDNDIR%` is for CDN users
-- `@onsonr/nebula/%NPMDIR%` is for npm users
+- `@sonr.io/nebula/%CDNDIR%` is for CDN users
+- `@sonr.io/nebula/%NPMDIR%` is for npm users
 
 This change was introduced in `v2.5.0` to address issues around installations from npm loading multiple versions of libraries (such as the Lit) that Nebula uses internally.

@@ -13,7 +13,7 @@ layout: component
 ```
 
 ```jsx:react
-import SlAnimatedImage from '@onsonr/nebula/dist/react/animated-image';
+import SlAnimatedImage from '@sonr.io/nebula/dist/react/animated-image';
 
 const App = () => (
   <NuAnimatedImage
@@ -41,7 +41,7 @@ Both GIF and WEBP images are supported.
 ```
 
 ```jsx:react
-import SlAnimatedImage from '@onsonr/nebula/dist/react/animated-image';
+import SlAnimatedImage from '@sonr.io/nebula/dist/react/animated-image';
 
 const App = () => (
   <NuAnimatedImage src="https://nebulaui.org/assets/images/tie.webp" alt="Animation of a shoe being tied" />
@@ -64,7 +64,7 @@ To set a custom size, apply a width and/or height to the host element.
 {% raw %}
 
 ```jsx:react
-import SlAnimatedImage from '@onsonr/nebula/dist/react/animated-image';
+import SlAnimatedImage from '@sonr.io/nebula/dist/react/animated-image';
 
 const App = () => (
   <NuAnimatedImage
@@ -102,7 +102,7 @@ You can change the appearance and location of the control box by targeting the `
 ```
 
 ```jsx:react
-import SlAnimatedImage from '@onsonr/nebula/dist/react/animated-image';
+import SlAnimatedImage from '@sonr.io/nebula/dist/react/animated-image';
 
 const css = `
   .animated-image-custom-control-box::part(control-box) {

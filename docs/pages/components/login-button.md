@@ -14,7 +14,7 @@ Login buttons provide WebAuthn-based authentication functionality, enabling secu
 ```
 
 ```jsx:react
-import NuLoginButton from '@onsonr/nebula/dist/react/login-button';
+import NuLoginButton from '@sonr.io/nebula/dist/react/login-button';
 
 const App = () => (
   <NuLoginButton credentialIds={['credential-id-1', 'credential-id-2']}>
@@ -39,7 +39,7 @@ Use the `variant` attribute to set the button's variant, inheriting from the bas
 ```
 
 ```jsx:react
-import NuLoginButton from '@onsonr/nebula/dist/react/login-button';
+import NuLoginButton from '@sonr.io/nebula/dist/react/login-button';
 
 const App = () => (
   <>
@@ -64,7 +64,7 @@ Use the `size` attribute to change the button's size.
 ```
 
 ```jsx:react
-import NuLoginButton from '@onsonr/nebula/dist/react/login-button';
+import NuLoginButton from '@sonr.io/nebula/dist/react/login-button';
 
 const App = () => (
   <>
@@ -97,8 +97,8 @@ The login button uses the Sonr passkey icon by default to maintain consistent br
 ```
 
 ```jsx:react
-import NuLoginButton from '@onsonr/nebula/dist/react/login-button';
-import NuIcon from '@onsonr/nebula/dist/react/icon';
+import NuLoginButton from '@sonr.io/nebula/dist/react/login-button';
+import NuIcon from '@sonr.io/nebula/dist/react/icon';
 
 const App = () => (
   <>
@@ -219,7 +219,7 @@ The login button emits three events during the authentication process:
 ### React Event Handling
 
 ```jsx:react
-import NuLoginButton from '@onsonr/nebula/dist/react/login-button';
+import NuLoginButton from '@sonr.io/nebula/dist/react/login-button';
 
 const App = () => {
   const handleLoginStart = () => {

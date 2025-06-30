@@ -22,9 +22,9 @@ You can use [menu items](/components/menu-item), [menu labels](/components/menu-
 {% raw %}
 
 ```jsx:react
-import SlDivider from '@onsonr/nebula/dist/react/divider';
-import SlMenu from '@onsonr/nebula/dist/react/menu';
-import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
+import SlDivider from '@sonr.io/nebula/dist/react/divider';
+import SlMenu from '@sonr.io/nebula/dist/react/menu';
+import SlMenuItem from '@sonr.io/nebula/dist/react/menu-item';
 
 const App = () => (
   <NuMenu style={{ maxWidth: '200px' }}>
@@ -63,10 +63,10 @@ Menus work really well when used inside [dropdowns](/components/dropdown).
 ```
 
 ```jsx:react
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlDropdown from '@onsonr/nebula/dist/react/dropdown';
-import SlMenu from '@onsonr/nebula/dist/react/menu';
-import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlDropdown from '@sonr.io/nebula/dist/react/dropdown';
+import SlMenu from '@sonr.io/nebula/dist/react/menu';
+import SlMenuItem from '@sonr.io/nebula/dist/react/menu-item';
 
 const App = () => (
   <NuDropdown>
@@ -115,9 +115,9 @@ To create a submenu, nest an `<nu-menu slot="submenu">` in any [menu item](/comp
 {% raw %}
 
 ```jsx:react
-import SlDivider from '@onsonr/nebula/dist/react/divider';
-import SlMenu from '@onsonr/nebula/dist/react/menu';
-import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
+import SlDivider from '@sonr.io/nebula/dist/react/divider';
+import SlMenu from '@sonr.io/nebula/dist/react/menu';
+import SlMenuItem from '@sonr.io/nebula/dist/react/menu-item';
 
 const App = () => (
   <NuMenu style={{ maxWidth: '200px' }}>

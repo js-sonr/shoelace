@@ -14,8 +14,8 @@ layout: component
 ```
 
 ```jsx:react
-import SlRadio from '@onsonr/nebula/dist/react/radio';
-import SlRadioGroup from '@onsonr/nebula/dist/react/radio-group';
+import SlRadio from '@sonr.io/nebula/dist/react/radio';
+import SlRadioGroup from '@sonr.io/nebula/dist/react/radio-group';
 
 const App = () => (
   <NuRadioGroup label="Select an option" name="a" value="1">
@@ -41,8 +41,8 @@ Add descriptive help text to a radio group with the `help-text` attribute. For h
 ```
 
 ```jsx:react
-import SlRadio from '@onsonr/nebula/dist/react/radio';
-import SlRadioGroup from '@onsonr/nebula/dist/react/radio-group';
+import SlRadio from '@sonr.io/nebula/dist/react/radio';
+import SlRadioGroup from '@sonr.io/nebula/dist/react/radio-group';
 
 const App = () => (
   <NuRadioGroup label="Select an option" help-text="Choose the most appropriate option." name="a" value="1">
@@ -66,8 +66,8 @@ const App = () => (
 ```
 
 ```jsx:react
-import SlRadioButton from '@onsonr/nebula/dist/react/radio-button';
-import SlRadioGroup from '@onsonr/nebula/dist/react/radio-group';
+import SlRadioButton from '@sonr.io/nebula/dist/react/radio-button';
+import SlRadioGroup from '@sonr.io/nebula/dist/react/radio-group';
 
 const App = () => (
   <NuRadioGroup label="Select an option" name="a" value="1">
@@ -91,8 +91,8 @@ Radios and radio buttons can be disabled by adding the `disabled` attribute to t
 ```
 
 ```jsx:react
-import SlRadio from '@onsonr/nebula/dist/react/radio';
-import SlRadioGroup from '@onsonr/nebula/dist/react/radio-group';
+import SlRadio from '@sonr.io/nebula/dist/react/radio';
+import SlRadioGroup from '@sonr.io/nebula/dist/react/radio-group';
 
 const App = () => (
   <NuRadioGroup label="Select an option" name="a" value="1">
@@ -127,8 +127,8 @@ The size of [Radios](/components/radio) and [Radio Buttons](/components/radio-bu
 
 ```jsx react
 import { useState } from 'react';
-import SlRadio from '@onsonr/nebula/dist/react/radio';
-import SlRadioGroup from '@onsonr/nebula/dist/react/radio-group';
+import SlRadio from '@sonr.io/nebula/dist/react/radio';
+import SlRadioGroup from '@sonr.io/nebula/dist/react/radio-group';
 
 const App = () => {
   const [size, setSize] = useState('medium');
@@ -182,10 +182,10 @@ Setting the `required` attribute to make selecting an option mandatory. If a val
 ```
 
 ```jsx:react
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlIcon from '@onsonr/nebula/dist/react/icon';
-import SlRadio from '@onsonr/nebula/dist/react/radio';
-import SlRadioGroup from '@onsonr/nebula/dist/react/radio-group';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlIcon from '@sonr.io/nebula/dist/react/icon';
+import SlRadio from '@sonr.io/nebula/dist/react/radio';
+import SlRadioGroup from '@sonr.io/nebula/dist/react/radio-group';
 const App = () => {
   function handleSubmit(event) {
     event.preventDefault();
@@ -255,10 +255,10 @@ Use the `setCustomValidity()` method to set a custom validation message. This wi
 
 ```jsx:react
 import { useEffect, useRef } from 'react';
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlIcon from '@onsonr/nebula/dist/react/icon';
-import SlRadio from '@onsonr/nebula/dist/react/radio';
-import SlRadioGroup from '@onsonr/nebula/dist/react/radio-group';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlIcon from '@sonr.io/nebula/dist/react/icon';
+import SlRadio from '@sonr.io/nebula/dist/react/radio';
+import SlRadioGroup from '@sonr.io/nebula/dist/react/radio-group';
 const App = () => {
   const radioGroup = useRef(null);
   const errorMessage = 'You must choose this option';

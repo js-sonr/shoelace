@@ -10,7 +10,7 @@ layout: component
 ```
 
 ```jsx:react
-import SlDivider from '@onsonr/nebula/dist/react/divider';
+import SlDivider from '@sonr.io/nebula/dist/react/divider';
 
 const App = () => <NuDivider />;
 ```
@@ -28,7 +28,7 @@ Use the `--width` custom property to change the width of the divider.
 {% raw %}
 
 ```jsx:react
-import SlDivider from '@onsonr/nebula/dist/react/divider';
+import SlDivider from '@sonr.io/nebula/dist/react/divider';
 
 const App = () => <NuDivider style={{ '--width': '4px' }} />;
 ```
@@ -46,7 +46,7 @@ Use the `--color` custom property to change the color of the divider.
 {% raw %}
 
 ```jsx:react
-import SlDivider from '@onsonr/nebula/dist/react/divider';
+import SlDivider from '@sonr.io/nebula/dist/react/divider';
 
 const App = () => <NuDivider style={{ '--color': 'tomato' }} />;
 ```
@@ -68,7 +68,7 @@ Use the `--spacing` custom property to change the amount of space between the di
 {% raw %}
 
 ```jsx:react
-import SlDivider from '@onsonr/nebula/dist/react/divider';
+import SlDivider from '@sonr.io/nebula/dist/react/divider';
 
 const App = () => (
   <>
@@ -98,7 +98,7 @@ Add the `vertical` attribute to draw the divider in a vertical orientation. The 
 {% raw %}
 
 ```jsx:react
-import SlDivider from '@onsonr/nebula/dist/react/divider';
+import SlDivider from '@sonr.io/nebula/dist/react/divider';
 
 const App = () => (
   <div
@@ -138,9 +138,9 @@ Use dividers in [menus](/components/menu) to visually group menu items.
 {% raw %}
 
 ```jsx:react
-import SlDivider from '@onsonr/nebula/dist/react/divider';
-import SlMenu from '@onsonr/nebula/dist/react/menu';
-import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
+import SlDivider from '@sonr.io/nebula/dist/react/divider';
+import SlMenu from '@sonr.io/nebula/dist/react/menu';
+import SlMenuItem from '@sonr.io/nebula/dist/react/menu-item';
 
 const App = () => (
   <NuMenu style={{ maxWidth: '200px' }}>

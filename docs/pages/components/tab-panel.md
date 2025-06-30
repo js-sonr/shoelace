@@ -20,9 +20,9 @@ layout: component
 ```
 
 ```jsx:react
-import SlTab from '@onsonr/nebula/dist/react/tab';
-import SlTabGroup from '@onsonr/nebula/dist/react/tab-group';
-import SlTabPanel from '@onsonr/nebula/dist/react/tab-panel';
+import SlTab from '@sonr.io/nebula/dist/react/tab';
+import SlTabGroup from '@sonr.io/nebula/dist/react/tab-group';
+import SlTabPanel from '@sonr.io/nebula/dist/react/tab-panel';
 
 const App = () => (
   <NuTabGroup>

@@ -10,7 +10,7 @@ layout: component
 ```
 
 ```jsx:react
-import SlCheckbox from '@onsonr/nebula/dist/react/checkbox';
+import SlCheckbox from '@sonr.io/nebula/dist/react/checkbox';
 
 const App = () => <NuCheckbox>Checkbox</NuCheckbox>;
 ```
@@ -30,7 +30,7 @@ Use the `checked` attribute to activate the checkbox.
 ```
 
 ```jsx:react
-import SlCheckbox from '@onsonr/nebula/dist/react/checkbox';
+import SlCheckbox from '@sonr.io/nebula/dist/react/checkbox';
 
 const App = () => <NuCheckbox checked>Checked</NuCheckbox>;
 ```
@@ -44,7 +44,7 @@ Use the `indeterminate` attribute to make the checkbox indeterminate.
 ```
 
 ```jsx:react
-import SlCheckbox from '@onsonr/nebula/dist/react/checkbox';
+import SlCheckbox from '@sonr.io/nebula/dist/react/checkbox';
 
 const App = () => <NuCheckbox indeterminate>Indeterminate</NuCheckbox>;
 ```
@@ -58,7 +58,7 @@ Use the `disabled` attribute to disable the checkbox.
 ```
 
 ```jsx:react
-import SlCheckbox from '@onsonr/nebula/dist/react/checkbox';
+import SlCheckbox from '@sonr.io/nebula/dist/react/checkbox';
 
 const App = () => <NuCheckbox disabled>Disabled</NuCheckbox>;
 ```
@@ -76,7 +76,7 @@ Use the `size` attribute to change a checkbox's size.
 ```
 
 ```jsx:react
-import SlCheckbox from '@onsonr/nebula/dist/react/checkbox';
+import SlCheckbox from '@sonr.io/nebula/dist/react/checkbox';
 
 const App = () => (
   <>
@@ -98,7 +98,7 @@ Add descriptive help text to a switch with the `help-text` attribute. For help t
 ```
 
 ```jsx:react
-import SlCheckbox from '@onsonr/nebula/dist/react/checkbox';
+import SlCheckbox from '@sonr.io/nebula/dist/react/checkbox';
 
 const App = () => <NuCheckbox help-text="What should the user know about the switch?">Label</NuCheckbox>;
 ```
@@ -141,8 +141,8 @@ Use the `setCustomValidity()` method to set a custom validation message. This wi
 
 ```jsx:react
 import { useEffect, useRef } from 'react';
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlCheckbox from '@onsonr/nebula/dist/react/checkbox';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlCheckbox from '@sonr.io/nebula/dist/react/checkbox';
 
 const App = () => {
   const checkbox = useRef(null);

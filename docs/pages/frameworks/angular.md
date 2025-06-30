@@ -15,7 +15,7 @@ Angular [plays nice](https://custom-elements-everywhere.com/#angular) with custo
 To add Nebula to your Angular app, install the package from npm.
 
 ```bash
-npm install @onsonr/nebula
+npm install @sonr.io/nebula
 ```
 
 ### Update the Angular Configuration
@@ -32,10 +32,10 @@ Its also important to load the components by using a `<script>` tag into the ind
       ...
       "styles": [
         "src/styles.scss",
-        "@onsonr/nebula/dist/themes/light.css"
+        "@sonr.io/nebula/dist/themes/light.css"
        ],
       "scripts": [
-        "@onsonr/nebula/dist/shoelace.js"
+        "@sonr.io/nebula/dist/shoelace.js"
       ]
       ...
 ```
@@ -45,13 +45,13 @@ Its also important to load the components by using a `<script>` tag into the ind
 Next, set the [base path](/getting-started/installation#setting-the-base-path) for icons and other assets in the `main.ts`. In this example, we'll use the CDN as a base path.
 
 ```jsx
-import { setBasePath } from '@onsonr/nebula/%NPMDIR%/utilities/base-path';
+import { setBasePath } from '@sonr.io/nebula/%NPMDIR%/utilities/base-path';
 
-setBasePath('https://cdn.jsdelivr.net/npm/@onsonr/nebula@%VERSION%/%CDNDIR%/');
+setBasePath('https://cdn.jsdelivr.net/npm/@sonr.io/nebula@%VERSION%/%CDNDIR%/');
 ```
 
 :::tip
-If you'd rather not use the CDN for assets, you can create a build task that copies `node_modules/@onsonr/nebula/%NPMDIR%/assets` into a public folder in your app. Then you can point the base path to that folder instead.
+If you'd rather not use the CDN for assets, you can create a build task that copies `node_modules/@sonr.io/nebula/%NPMDIR%/assets` into a public folder in your app. Then you can point the base path to that folder instead.
 :::
 
 ## Configuration
@@ -77,7 +77,7 @@ export class AppModule {}
 ## Reference Nebula components in your Angular component code
 
 ```js
-import { SlDrawer } from '@onsonr/nebula';
+import { SlDrawer } from '@sonr.io/nebula';
 
 @Component({
   selector: 'app-drawer-example',

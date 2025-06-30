@@ -17,8 +17,8 @@ layout: component
 ```
 
 ```jsx:react
-import SlOption from '@onsonr/nebula/dist/react/option';
-import SlSelect from '@onsonr/nebula/dist/react/select';
+import SlOption from '@sonr.io/nebula/dist/react/option';
+import SlSelect from '@sonr.io/nebula/dist/react/select';
 
 const App = () => (
   <NuSelect>
@@ -51,8 +51,8 @@ Use the `label` attribute to give the select an accessible label. For labels tha
 ```
 
 ```jsx:react
-import SlOption from '@onsonr/nebula/dist/react/option';
-import SlSelect from '@onsonr/nebula/dist/react/select';
+import SlOption from '@sonr.io/nebula/dist/react/option';
+import SlSelect from '@sonr.io/nebula/dist/react/select';
 
 const App = () => (
   <NuSelect label="Select one">
@@ -76,8 +76,8 @@ Add descriptive help text to a select with the `help-text` attribute. For help t
 ```
 
 ```jsx:react
-import SlOption from '@onsonr/nebula/dist/react/option';
-import SlSelect from '@onsonr/nebula/dist/react/select';
+import SlOption from '@sonr.io/nebula/dist/react/option';
+import SlSelect from '@sonr.io/nebula/dist/react/select';
 
 const App = () => (
   <NuSelect label="Experience" help-text="Please tell us your skill level.">
@@ -101,8 +101,8 @@ Use the `placeholder` attribute to add a placeholder.
 ```
 
 ```jsx:react
-import SlOption from '@onsonr/nebula/dist/react/option';
-import SlSelect from '@onsonr/nebula/dist/react/select';
+import SlOption from '@sonr.io/nebula/dist/react/option';
+import SlSelect from '@sonr.io/nebula/dist/react/select';
 
 const App = () => (
   <NuSelect placeholder="Select one">
@@ -126,8 +126,8 @@ Use the `clearable` attribute to make the control clearable. The clear button on
 ```
 
 ```jsx:react
-import SlOption from '@onsonr/nebula/dist/react/option';
-import SlSelect from '@onsonr/nebula/dist/react/select';
+import SlOption from '@sonr.io/nebula/dist/react/option';
+import SlSelect from '@sonr.io/nebula/dist/react/select';
 
 const App = () => (
   <NuSelect placeholder="Clearable" clearable>
@@ -151,8 +151,8 @@ Add the `filled` attribute to draw a filled select.
 ```
 
 ```jsx:react
-import SlOption from '@onsonr/nebula/dist/react/option';
-import SlSelect from '@onsonr/nebula/dist/react/select';
+import SlOption from '@sonr.io/nebula/dist/react/option';
+import SlSelect from '@sonr.io/nebula/dist/react/select';
 
 const App = () => (
   <NuSelect filled>
@@ -176,8 +176,8 @@ Use the `pill` attribute to give selects rounded edges.
 ```
 
 ```jsx:react
-import SlOption from '@onsonr/nebula/dist/react/option';
-import SlSelect from '@onsonr/nebula/dist/react/select';
+import SlOption from '@sonr.io/nebula/dist/react/option';
+import SlSelect from '@sonr.io/nebula/dist/react/select';
 
 const App = () => (
   <NuSelect pill>
@@ -201,8 +201,8 @@ Use the `disabled` attribute to disable a select.
 ```
 
 ```jsx:react
-import SlOption from '@onsonr/nebula/dist/react/option';
-import SlSelect from '@onsonr/nebula/dist/react/select';
+import SlOption from '@sonr.io/nebula/dist/react/option';
+import SlSelect from '@sonr.io/nebula/dist/react/select';
 
 const App = () => (
   <NuSelect placeholder="Disabled" disabled>
@@ -229,8 +229,8 @@ To allow multiple options to be selected, use the `multiple` attribute. It's a g
 ```
 
 ```jsx:react
-import SlOption from '@onsonr/nebula/dist/react/option';
-import SlSelect from '@onsonr/nebula/dist/react/select';
+import SlOption from '@sonr.io/nebula/dist/react/option';
+import SlSelect from '@sonr.io/nebula/dist/react/select';
 
 const App = () => (
   <NuSelect label="Select a Few" value={["option-1", "option-2", "option-3"]} multiple clearable>
@@ -264,9 +264,9 @@ When using `multiple`, the `value` _attribute_ uses space-delimited values to se
 ```
 
 ```jsx:react
-import SlDivider from '@onsonr/nebula/dist/react/divider';
-import SlOption from '@onsonr/nebula/dist/react/option';
-import SlSelect from '@onsonr/nebula/dist/react/select';
+import SlDivider from '@sonr.io/nebula/dist/react/divider';
+import SlOption from '@sonr.io/nebula/dist/react/option';
+import SlSelect from '@sonr.io/nebula/dist/react/select';
 
 const App = () => (
   <NuSelect value={["option-1", "option-2"]} multiple clearable>
@@ -296,8 +296,8 @@ Use `<nu-divider>` to group listbox items visually. You can also use `<small>` t
 ```
 
 ```jsx:react
-import SlOption from '@onsonr/nebula/dist/react/option';
-import SlSelect from '@onsonr/nebula/dist/react/select';
+import SlOption from '@sonr.io/nebula/dist/react/option';
+import SlSelect from '@sonr.io/nebula/dist/react/select';
 
 const App = () => (
   <NuSelect>
@@ -340,8 +340,8 @@ Use the `size` attribute to change a select's size. Note that size does not appl
 ```
 
 ```jsx:react
-import SlOption from '@onsonr/nebula/dist/react/option';
-import SlSelect from '@onsonr/nebula/dist/react/select';
+import SlOption from '@sonr.io/nebula/dist/react/option';
+import SlSelect from '@sonr.io/nebula/dist/react/select';
 
 const App = () => (
   <>
@@ -383,8 +383,8 @@ The preferred placement of the select's listbox can be set with the `placement` 
 ```
 
 ```jsx:react
-import SlOption from '@onsonr/nebula/dist/react/option';
-import SlSelect from '@onsonr/nebula/dist/react/select';
+import SlOption from '@sonr.io/nebula/dist/react/option';
+import SlSelect from '@sonr.io/nebula/dist/react/select';
 
 const App = () => (
   <NuSelect placement="top">
@@ -423,9 +423,9 @@ Use the `prefix` slot to prepend an icon to the control.
 ```
 
 ```jsx:react
-import SlIcon from '@onsonr/nebula/dist/react/icon';
-import SlOption from '@onsonr/nebula/dist/react/option';
-import SlSelect from '@onsonr/nebula/dist/react/select';
+import SlIcon from '@sonr.io/nebula/dist/react/icon';
+import SlOption from '@sonr.io/nebula/dist/react/option';
+import SlSelect from '@sonr.io/nebula/dist/react/select';
 
 const App = () => (
   <>

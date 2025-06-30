@@ -14,8 +14,8 @@ layout: component
 ```
 
 ```jsx:react
-import SlOption from '@onsonr/nebula/dist/react/option';
-import SlSelect from '@onsonr/nebula/dist/react/select';
+import SlOption from '@sonr.io/nebula/dist/react/option';
+import SlSelect from '@sonr.io/nebula/dist/react/select';
 
 const App = () => (
   <NuSelect>
@@ -41,8 +41,8 @@ Use the `disabled` attribute to disable an option and prevent it from being sele
 ```
 
 ```jsx:react
-import SlOption from '@onsonr/nebula/dist/react/option';
-import SlSelect from '@onsonr/nebula/dist/react/select';
+import SlOption from '@sonr.io/nebula/dist/react/option';
+import SlSelect from '@sonr.io/nebula/dist/react/select';
 
 const App = () => (
   <NuSelect>

@@ -27,8 +27,8 @@ toc: false
 
 <div class="badges">
 
-[![jsDelivr](https://data.jsdelivr.com/v1/package/npm/@onsonr/nebula/badge)](https://www.jsdelivr.com/package/npm/@onsonr/nebula)
-[![npm](https://img.shields.io/npm/dw/@onsonr/nebula?label=npm&style=flat-square)](https://www.npmjs.com/package/@onsonr/nebula)
+[![jsDelivr](https://data.jsdelivr.com/v1/package/npm/@sonr.io/nebula/badge)](https://www.jsdelivr.com/package/npm/@sonr.io/nebula)
+[![npm](https://img.shields.io/npm/dw/@sonr.io/nebula?label=npm&style=flat-square)](https://www.npmjs.com/package/@sonr.io/nebula)
 [![License](https://img.shields.io/badge/license-MIT-232323.svg?style=flat-square)](https://github.com/onsonr/nebula/blob/next/LICENSE.md)<br>
 [![Twitter](https://img.shields.io/badge/Twitter-Follow-00acee.svg?style=flat-square&logo=twitter&logoColor=white)](https://twitter.com/sonr_io)
 
@@ -40,8 +40,8 @@ Add the following code to your page.
 
 <!-- prettier-ignore -->
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@onsonr/nebula@%VERSION%/%CDNDIR%/themes/light.css" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/@onsonr/nebula@%VERSION%/%CDNDIR%/shoelace-autoloader.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sonr.io/nebula@%VERSION%/%CDNDIR%/themes/light.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/@sonr.io/nebula@%VERSION%/%CDNDIR%/shoelace-autoloader.js"></script>
 ```
 
 Now you have access to all of Nebula's components! Try adding a button:

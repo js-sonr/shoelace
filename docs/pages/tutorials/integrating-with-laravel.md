@@ -27,7 +27,7 @@ Be sure to run `npm install` to install the default Laravel front-end dependenci
 ### Install the Nebula package
 
 ```bash
-npm install @onsonr/nebula
+npm install @sonr.io/nebula
 ```
 
 ### Import the Default Theme
@@ -35,7 +35,7 @@ npm install @onsonr/nebula
 Import the Nebula default theme (stylesheet) in `/resources/css/app.css`:
 
 ```css
-@import '/node_modules/@onsonr/nebula/dist/themes/light.css';
+@import '/node_modules/@sonr.io/nebula/dist/themes/light.css';
 ```
 
 ### Import Your Nebula Components
@@ -43,9 +43,9 @@ Import the Nebula default theme (stylesheet) in `/resources/css/app.css`:
 Import each Nebula component you plan to use in `/resources/js/bootstrap.js`. Use the full path to each component (as outlined in the [Cherry Picking instructions](https://nebulaui.org/getting-started/installation#cherry-picking)). You can find the full import statement for a component in the _Importing_ section of the component's documentation (use the _Bundler_ import). Your imports should look similar to:
 
 ```js
-import '@onsonr/nebula/dist/components/button/button.js';
-import '@onsonr/nebula/dist/components/icon/icon.js';
-import '@onsonr/nebula/dist/components/dialog/dialog.js';
+import '@sonr.io/nebula/dist/components/button/button.js';
+import '@sonr.io/nebula/dist/components/icon/icon.js';
+import '@sonr.io/nebula/dist/components/dialog/dialog.js';
 ```
 
 ### Copy the Nebula Static Assets (icons, images, etc.) to a Public Folder
@@ -53,7 +53,7 @@ import '@onsonr/nebula/dist/components/dialog/dialog.js';
 Since Vite has no way to copy arbitrary assets into your build (like webpack), you need to manually copy the Nebula static assets to your project's public folder. Run this command from your project's root directory to copy the Nebula static assets to the `./public/assets` folder:
 
 ```sh
-cp -aR node_modules/@onsonr/nebula/dist/assets/ ./public/assets
+cp -aR node_modules/@sonr.io/nebula/dist/assets/ ./public/assets
 ```
 
 ### Set the Base Path
@@ -61,19 +61,19 @@ cp -aR node_modules/@onsonr/nebula/dist/assets/ ./public/assets
 Add the base path to your Nebula assets (icons, images, etc.) in `/resources/js/bootstrap.js`. The path must point to the same folder where you copy assets to in the next step.
 
 ```js
-import { setBasePath } from '@onsonr/nebula/dist/utilities/base-path.js';
+import { setBasePath } from '@sonr.io/nebula/dist/utilities/base-path.js';
 setBasePath('/');
 ```
 
 Example `/resources/js/bootstrap.js` file:
 
 ```js
-import { setBasePath } from '@onsonr/nebula/dist/utilities/base-path.js';
+import { setBasePath } from '@sonr.io/nebula/dist/utilities/base-path.js';
 setBasePath('/');
 
-import '@onsonr/nebula/dist/components/button/button.js';
-import '@onsonr/nebula/dist/components/icon/icon.js';
-import '@onsonr/nebula/dist/components/dialog/dialog.js';
+import '@sonr.io/nebula/dist/components/button/button.js';
+import '@sonr.io/nebula/dist/components/icon/icon.js';
+import '@sonr.io/nebula/dist/components/dialog/dialog.js';
 ```
 
 ### Verify Vite Entry Points

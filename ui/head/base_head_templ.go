@@ -498,7 +498,7 @@ func Nebula(version string) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var24 string
-		templ_7745c5c3_Var24, templ_7745c5c3_Err = templ.JoinStringErrs(jsDelivrURL("@onsonr/nebula", version, "cdn/themes/light.css"))
+		templ_7745c5c3_Var24, templ_7745c5c3_Err = templ.JoinStringErrs(jsDelivrURL("@sonr.io/nebula", version, "cdn/themes/light.css"))
 		if templ_7745c5c3_Err != nil {
 			return templ.Error{Err: templ_7745c5c3_Err, FileName: `ui/head/base_head.templ`, Line: 116, Col: 71}
 		}
@@ -511,7 +511,7 @@ func Nebula(version string) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var25 string
-		templ_7745c5c3_Var25, templ_7745c5c3_Err = templ.JoinStringErrs(jsDelivrURL("@onsonr/nebula", version, "cdn/themes/dark.css"))
+		templ_7745c5c3_Var25, templ_7745c5c3_Err = templ.JoinStringErrs(jsDelivrURL("@sonr.io/nebula", version, "cdn/themes/dark.css"))
 		if templ_7745c5c3_Err != nil {
 			return templ.Error{Err: templ_7745c5c3_Err, FileName: `ui/head/base_head.templ`, Line: 121, Col: 70}
 		}
@@ -540,7 +540,7 @@ func Nebula(version string) templ.Component {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var27 string
-			templ_7745c5c3_Var27, templ_7745c5c3_Err = templ.JoinStringErrs(jsDelivrURL("@onsonr/nebula", version, "cdn/shoelace-autoloader.js"))
+			templ_7745c5c3_Var27, templ_7745c5c3_Err = templ.JoinStringErrs(jsDelivrURL("@sonr.io/nebula", version, "cdn/shoelace-autoloader.js"))
 			if templ_7745c5c3_Err != nil {
 				return templ.Error{Err: templ_7745c5c3_Err, FileName: `ui/head/base_head.templ`, Line: 125, Col: 98}
 			}

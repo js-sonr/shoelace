@@ -27,7 +27,7 @@ There is a [Lit + Astro integration for SSR](https://docs.astro.build/en/guides/
 To get started using Nebula with Astro, the following packages must be installed.
 
 ```bash
-npm install @onsonr/nebula rollup-plugin-copy
+npm install @sonr.io/nebula rollup-plugin-copy
 ```
 
 ### Importing components
@@ -37,7 +37,7 @@ In `/src/pages/index.astro`, set the base path and import Nebula.
 ```html
 ---
 // import default stylesheet
-import "@onsonr/nebula/dist/themes/light.css";
+import "@sonr.io/nebula/dist/themes/light.css";
 ---
 
 <html>
@@ -48,16 +48,16 @@ import "@onsonr/nebula/dist/themes/light.css";
 
 <script>
   // setBasePath to tell Nebula where to load icons from.
-  import { setBasePath } from '@onsonr/nebula/dist/utilities/base-path.js';
+  import { setBasePath } from '@sonr.io/nebula/dist/utilities/base-path.js';
   setBasePath('/shoelace-assets/');
 
   // Load all components.
-  import '@onsonr/nebula';
+  import '@sonr.io/nebula';
 </script>
 ```
 
 :::tip
-If you want to cherry pick components, replace the main Nebula import with 'import "@onsonr/nebula/dist/components/button/button.js";' for whichever component you would like.
+If you want to cherry pick components, replace the main Nebula import with 'import "@sonr.io/nebula/dist/components/button/button.js";' for whichever component you would like.
 :::
 
 You only have to import in the main `index.astro` file. The components can be used anywhere throughout the project.
@@ -68,7 +68,7 @@ In `/src/pages/index.astro`, set custom animations after the Nebula import.
 
 ```html
 ---
-import { setBasePath } from "@onsonr/nebula/dist/utilities/base-path.js";
+import { setBasePath } from "@sonr.io/nebula/dist/utilities/base-path.js";
 setBasePath("dist/assets");
 ---
 
@@ -82,14 +82,14 @@ setBasePath("dist/assets");
 
 <script>
   // setBasePath to tell Nebula where to load icons from.
-  import { setBasePath } from '@onsonr/nebula/dist/utilities/base-path.js';
+  import { setBasePath } from '@sonr.io/nebula/dist/utilities/base-path.js';
   setBasePath('/shoelace-assets/');
 
   // Load all components.
-  import '@onsonr/nebula';
+  import '@sonr.io/nebula';
 
   const duration = 3000;
-  import { setDefaultAnimation } from '@onsonr/nebula/dist/utilities/animation-registry.js';
+  import { setDefaultAnimation } from '@sonr.io/nebula/dist/utilities/animation-registry.js';
 
   setDefaultAnimation('tooltip.show', {
     keyframes: [
@@ -122,7 +122,7 @@ export default defineConfig({
         copyOnce: true,
         hook: 'buildStart',
         targets: [
-          { src: 'node_modules/@onsonr/nebula/dist/assets/*', dest: 'public/shoelace-assets/assets/' }
+          { src: 'node_modules/@sonr.io/nebula/dist/assets/*', dest: 'public/shoelace-assets/assets/' }
         ]
       })
     ]

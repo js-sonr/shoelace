@@ -25,32 +25,32 @@ Nebula can be loaded via CDN or installed locally through npm. The CDN approach 
   <Tab value="CDN (Recommended)">
     ```html
     <!-- Autoloader (Recommended) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@onsonr/nebula@latest/dist/themes/light.css" />
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@onsonr/nebula@latest/dist/shoelace-autoloader.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sonr.io/nebula@latest/dist/themes/light.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@sonr.io/nebula@latest/dist/shoelace-autoloader.js"></script>
     ```
     
     The autoloader watches for unregistered Nebula elements and loads them on demand.
   </Tab>
   <Tab value="npm">
     ```bash
-    npm install @onsonr/nebula
+    npm install @sonr.io/nebula
     ```
     
     Then include the files in your HTML:
     ```html
-    <link rel="stylesheet" href="/node_modules/@onsonr/nebula/dist/themes/light.css" />
-    <script type="module" src="/node_modules/@onsonr/nebula/dist/shoelace.js"></script>
+    <link rel="stylesheet" href="/node_modules/@sonr.io/nebula/dist/themes/light.css" />
+    <script type="module" src="/node_modules/@sonr.io/nebula/dist/shoelace.js"></script>
     ```
   </Tab>
   <Tab value="Bundler">
     ```javascript
-    import '@onsonr/nebula/dist/themes/light.css';
-    import '@onsonr/nebula/dist/components/button/button.js';
-    import '@onsonr/nebula/dist/components/icon/icon.js';
-    import { setBasePath } from '@onsonr/nebula/dist/utilities/base-path.js';
+    import '@sonr.io/nebula/dist/themes/light.css';
+    import '@sonr.io/nebula/dist/components/button/button.js';
+    import '@sonr.io/nebula/dist/components/icon/icon.js';
+    import { setBasePath } from '@sonr.io/nebula/dist/utilities/base-path.js';
     
     // Set the base path for assets
-    setBasePath('/node_modules/@onsonr/nebula/dist');
+    setBasePath('/node_modules/@sonr.io/nebula/dist');
     ```
   </Tab>
 </Tabs>
@@ -73,7 +73,7 @@ Once Nebula is loaded, you can start using components immediately. Here's a simp
   </Tab>
   <Tab value="React">
     ```tsx
-    import SlButton from '@onsonr/nebula/dist/react/button';
+    import SlButton from '@sonr.io/nebula/dist/react/button';
     
     function App() {
       return (
@@ -105,12 +105,12 @@ Nebula supports both light and dark themes. You can set the theme by adding a cl
 <link
   rel="stylesheet"
   media="(prefers-color-scheme:light)"
-  href="https://cdn.jsdelivr.net/npm/@onsonr/nebula@latest/dist/themes/light.css"
+  href="https://cdn.jsdelivr.net/npm/@sonr.io/nebula@latest/dist/themes/light.css"
 />
 <link
   rel="stylesheet"
   media="(prefers-color-scheme:dark)"
-  href="https://cdn.jsdelivr.net/npm/@onsonr/nebula@latest/dist/themes/dark.css"
+  href="https://cdn.jsdelivr.net/npm/@sonr.io/nebula@latest/dist/themes/dark.css"
   onload="document.documentElement.classList.add('sl-theme-dark');"
 />
 ```
@@ -124,11 +124,11 @@ Nebula supports both light and dark themes. You can set the theme by adding a cl
 Nebula includes a comprehensive set of cryptocurrency icons. Enable them by registering the crypto icon library:
 
 ```javascript
-import { registerIconLibrary } from '@onsonr/nebula/dist/utilities/icon-library.js';
+import { registerIconLibrary } from '@sonr.io/nebula/dist/utilities/icon-library.js';
 
 // Register cryptocurrency icons
 registerIconLibrary('crypto', {
-  resolver: name => `https://cdn.jsdelivr.net/npm/@onsonr/nebula@latest/dist/assets/crypto-icons/${name}.svg`
+  resolver: name => `https://cdn.jsdelivr.net/npm/@sonr.io/nebula@latest/dist/assets/crypto-icons/${name}.svg`
 });
 ```
 
@@ -188,7 +188,7 @@ Explore our most commonly used components designed for blockchain applications:
     Nebula provides React wrappers for all components:
     
     ```tsx
-    import { SlButton, SlIcon, SlCard } from '@onsonr/nebula/dist/react';
+    import { SlButton, SlIcon, SlCard } from '@sonr.io/nebula/dist/react';
     
     function WalletCard() {
       return (
@@ -310,7 +310,7 @@ Explore our most commonly used components designed for blockchain applications:
     Yes! Nebula is written in TypeScript and provides full type definitions. When using npm/bundler installation, types are automatically included:
     
     ```typescript
-    import type { SlButton } from '@onsonr/nebula';
+    import type { SlButton } from '@sonr.io/nebula';
     
     const button = document.querySelector<SlButton>('nu-button');
     button?.click();
@@ -322,7 +322,7 @@ Explore our most commonly used components designed for blockchain applications:
     
     ```javascript
     // Lazy load when needed
-    import('@onsonr/nebula/dist/components/dialog/dialog.js').then(() => {
+    import('@sonr.io/nebula/dist/components/dialog/dialog.js').then(() => {
       // nu-dialog is now available
       const dialog = document.querySelector('nu-dialog');
       dialog.show();

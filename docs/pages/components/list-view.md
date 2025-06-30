@@ -46,7 +46,7 @@ List views are designed to display collections of activities such as transaction
 ```
 
 ```jsx:react
-import { NuListView } from '@onsonr/nebula/dist/react/list-view';
+import { NuListView } from '@sonr.io/nebula/dist/react/list-view';
 
 const App = () => {
   const items = [

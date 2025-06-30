@@ -30,7 +30,7 @@ const data = new FormData(form);
 However, some folks find `FormData` tricky to work with or they need to pass a JSON payload to their server. To accommodate this, Nebula offers a serialization utility that gathers form data and returns a simple JavaScript object instead.
 
 ```js
-import { serialize } from '@onsonr/nebula/dist/utilities/form.js';
+import { serialize } from '@sonr.io/nebula/dist/utilities/form.js';
 
 const form = document.querySelector('form');
 const data = serialize(form);
@@ -99,12 +99,12 @@ The form will not be submitted if a required field is incomplete.
 ```
 
 ```jsx:react
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlCheckbox from '@onsonr/nebula/dist/react/checkbox';
-import SlInput from '@onsonr/nebula/dist/react/input';
-import SlMenuItem from '@onsonr/nebula/dist/react/menu-item';
-import SlSelect from '@onsonr/nebula/dist/react/select';
-import SlTextarea from '@onsonr/nebula/dist/react/textarea';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlCheckbox from '@sonr.io/nebula/dist/react/checkbox';
+import SlInput from '@sonr.io/nebula/dist/react/input';
+import SlMenuItem from '@sonr.io/nebula/dist/react/menu-item';
+import SlSelect from '@sonr.io/nebula/dist/react/select';
+import SlTextarea from '@sonr.io/nebula/dist/react/textarea';
 
 const App = () => {
   function handleSubmit(event) {
@@ -165,8 +165,8 @@ To restrict a value to a specific [pattern](https://developer.mozilla.org/en-US/
 ```
 
 ```jsx:react
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlInput from '@onsonr/nebula/dist/react/input';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlInput from '@sonr.io/nebula/dist/react/input';
 
 const App = () => {
   function handleSubmit(event) {
@@ -217,8 +217,8 @@ Some input types will automatically trigger constraints, such as `email` and `ur
 ```
 
 ```jsx:react
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlInput from '@onsonr/nebula/dist/react/input';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlInput from '@sonr.io/nebula/dist/react/input';
 
 const App = () => {
   function handleSubmit(event) {
@@ -279,8 +279,8 @@ To create a custom validation error, pass a non-empty string to the `setCustomVa
 
 ```jsx:react
 import { useRef, useState } from 'react';
-import SlButton from '@onsonr/nebula/dist/react/button';
-import SlInput from '@onsonr/nebula/dist/react/input';
+import SlButton from '@sonr.io/nebula/dist/react/button';
+import SlInput from '@sonr.io/nebula/dist/react/input';
 
 const App = () => {
   const input = useRef(null);
@@ -557,7 +557,7 @@ This example is meant to demonstrate the concept of providing your own error mes
 At this time, using [`HTMLFormElement.elements`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/elements) will not return Nebula form controls because the browser is unaware of their status as custom element form controls. Fortunately, Nebula provides an `elements()` function that does something very similar. However, instead of returning an [`HTMLFormControlsCollection`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormControlsCollection), it returns an array of HTML and Nebula form controls in the order they appear in the DOM.
 
 ```js
-import { getFormControls } from '@onsonr/nebula/dist/utilities/form.js';
+import { getFormControls } from '@sonr.io/nebula/dist/utilities/form.js';
 
 const form = document.querySelector('#my-form');
 const formControls = getFormControls(form);

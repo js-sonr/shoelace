@@ -25,7 +25,7 @@ This integration has been tested with the following:
 To get started using Nebula with Rails, the following packages must be installed.
 
 ```bash
-yarn add @onsonr/nebula copy-webpack-plugin
+yarn add @sonr.io/nebula copy-webpack-plugin
 ```
 
 ### Importing the Default Theme
@@ -33,8 +33,8 @@ yarn add @onsonr/nebula copy-webpack-plugin
 The next step is to import Nebula's default theme (stylesheet) in `app/javascript/stylesheets/application.scss`.
 
 ```css
-@import '@onsonr/nebula/dist/themes/light';
-@import '@onsonr/nebula/dist/themes/dark'; // Optional dark theme
+@import '@sonr.io/nebula/dist/themes/light';
+@import '@sonr.io/nebula/dist/themes/dark'; // Optional dark theme
 ```
 
 Fore more details about themes, please refer to [Theme Basics](/getting-started/themes#theme-basics).
@@ -45,7 +45,7 @@ After importing the theme, you'll need to import the JavaScript files for Nebula
 
 ```js
 import '../stylesheets/application.scss'
-import { setBasePath, SlAlert, SlAnimation, SlButton, ... } from '@onsonr/nebula'
+import { setBasePath, SlAlert, SlAnimation, SlButton, ... } from '@sonr.io/nebula'
 
 // ...
 
@@ -73,7 +73,7 @@ environment.plugins.append(
   new CopyPlugin({
     patterns: [
       {
-        from: path.resolve(__dirname, '../../node_modules/@onsonr/nebula/dist/assets'),
+        from: path.resolve(__dirname, '../../node_modules/@sonr.io/nebula/dist/assets'),
         to: path.resolve(__dirname, '../../public/packs/js/assets')
       }
     ]
