@@ -23,7 +23,7 @@ While convenient, autoloading may lead to a [Flash of Undefined Custom Elements]
 <!-- prettier-ignore -->
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sonr.io/nebula@%VERSION%/%CDNDIR%/themes/light.css" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/@sonr.io/nebula@%VERSION%/%CDNDIR%/shoelace-autoloader.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@sonr.io/nebula@%VERSION%/%CDNDIR%/nebula-autoloader.js"></script>
 ```
 
 </nu-tab-panel>
@@ -95,7 +95,7 @@ For clarity, the docs will usually show imports from `@sonr.io/nebula`. If you'r
 
 ## Setting the Base Path
 
-Some components rely on assets (icons, images, etc.) and Nebula needs to know where they're located. For convenience, Nebula will try to auto-detect the correct location based on the script you've loaded it from. This assumes assets are colocated with `shoelace.js` or `shoelace-autoloader.js` and will "just work" for most users.
+Some components rely on assets (icons, images, etc.) and Nebula needs to know where they're located. For convenience, Nebula will try to auto-detect the correct location based on the script you've loaded it from. This assumes assets are colocated with `shoelace.js` or `nebula-autoloader.js` and will "just work" for most users.
 
 However, if you're [cherry picking](#cherry-picking) or [bundling](#bundling) Nebula, you'll need to set the base path. You can do this one of two ways.
 

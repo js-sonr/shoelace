@@ -178,7 +178,7 @@ New versions of Nebula are released as-needed and generally occur when a critica
 - Added support for pressing [[Space]] to select/toggle selected `<nu-menu-item>` elements [#1429]
 - Added support for virtual elements in `<nu-popup>` [#1449]
 - Added the `spinner` part to `<nu-button>` [#1460]
-- Added a `shoelace.js` and `shoelace-autoloader.js` to exportmaps. [#1450]
+- Added a `shoelace.js` and `nebula-autoloader.js` to exportmaps. [#1450]
 - Added types to events emitted by React wrapped components [#1419]
 - Fixed React component treeshaking by introducing `sideEffects` key in `package.json`. [#1450]
 - Fixed a bug in `<nu-tree>` where it was auto-defining `<nu-tree-item>`. [#1450]
